@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "template_sha256": "bea1521d4c9d68b27591a483b19463b86ef49a0d7ea1fd8ec5e73b61001b81f8",
+  "payload_sha256": "c7d4d4584ce22c6e597fb634a20bcd2a933e798ef528635d0ba9bb729016d1df",
+  "manifest_sha256": "a4bb0fb70b5e544bb8b3f02993ea509e5a79d736ea1c63d8583a213558cfe216",
+  "files": [
+    {
+      "path": "solution/__init__.py",
+      "size_bytes": 157,
+      "sha256": "59ddcd5624b285618fbd45fca494c717b6f3dd9bab329ef78d8faaca2a56abea"
+    },
+    {
+      "path": "solution/metrics.py",
+      "size_bytes": 12135,
+      "sha256": "50352c62c4eb0e2f6135a90c04ac435bcfc7ecf95ab8b2c3e059a0ef4db21998"
+    },
+    {
+      "path": "solution/mlp_storage.py",
+      "size_bytes": 6673,
+      "sha256": "709c2b293c4d4dfc9abedff2124fac8b6730c752708eb77436564bd3c9889119"
+    },
+    {
+      "path": "solution/my_kernels.py",
+      "size_bytes": 546,
+      "sha256": "fcebd11a9167689207e79f83e72cc75f58869ccde1df1a7c828ff00fc7bb96cc"
+    },
+    {
+      "path": "solution/rmsnorm.py",
+      "size_bytes": 5718,
+      "sha256": "4bd55d0f3508a3f4b6151c97ae25e9c042898c094cbdd5ccfc46aa92f7af9488"
+    },
+    {
+      "path": "solution/swiglu.py",
+      "size_bytes": 3185,
+      "sha256": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6"
+    }
+  ],
+  "out": "/workspace/scratch/5c267d6b8448/soup_candidate/notebooks/soup_rms_entropy_half_v1.ipynb",
+  "insert_before": 1,
+  "notebook_sha256": "fc800d7dee4b1d3333fb449fdccc7bd8fa0e07d6c287d5c83ae7e26b356074f7",
+  "installer_sha256": "270523b648226f79ec1133f0c6f3d5578ad3baecd4fbd14274698bb010b07204",
+  "original_cell_count": 3,
+  "template_roundtrip_verified": true
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "file": "notebook-training-template.ipynb",
+    "bytes": 1966,
+    "sha256": "bea1521d4c9d68b27591a483b19463b86ef49a0d7ea1fd8ec5e73b61001b81f8",
+    "http_status": 200,
+    "tls_verified": true
+  },
+  {
+    "file": "notebook_client.py",
+    "bytes": 5527,
+    "sha256": "7d7b5222b040c58af5d2f7a3d4846a7d04945809a3f6fd52d5ce73ca1312f4ff",
+    "http_status": 200,
+    "tls_verified": true
+  }
+]

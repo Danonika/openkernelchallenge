@@ -1,0 +1,14 @@
+{
+  "client_date": "2026-10-31",
+  "request": "unauthenticated GET /notebook-training-template.ipynb",
+  "route": "existing configured HTTP CONNECT proxy; no network configuration changes",
+  "certificate_verification_required": true,
+  "ip_verification_required": true,
+  "openssl_returncode": 1,
+  "error": "HTTP CONNECT failed, reason=426 Upgrade Required",
+  "service_tls_established": false,
+  "token_transmitted": false,
+  "job_submitted": false,
+  "public_attachment_hashes_match_manifest": true,
+  "python_retry": "CERTIFICATE_VERIFY_FAILED: IP address mismatch; standard verified HTTPS, no token"
+}

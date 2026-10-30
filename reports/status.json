@@ -1,6 +1,6 @@
 {
   "candidate_id": "duo-rms-entropy-half-v1",
-  "stage": "awaiting_verified_service_access",
+  "stage": "complete_service_notebooks_await_verified_connection",
   "gpu_job_id": null,
   "gpu_job_submitted": false,
   "access_token_transmitted": false,
@@ -10,7 +10,8 @@
   "connection_observations": {
     "python": "SSLCertVerificationError: IP address mismatch, certificate is not valid for 35.200.1.242",
     "browser": "net::ERR_CERT_COMMON_NAME_INVALID",
-    "attribution_limit": "The certificate observed by the local client is a proxy certificate. These observations do not establish the origin server's certificate configuration."
+    "attribution_limit": "The certificate observed by the local client is a proxy certificate. These observations do not establish the origin server's certificate configuration.",
+    "openssl_retry": "HTTP CONNECT failed, reason=426 Upgrade Required; public GET only; no token"
   },
   "local_runtime": {
     "python": "3.12.14",
@@ -28,7 +29,12 @@
   "time_relative_to_baseline": null,
   "memory_relative_to_baseline": null,
   "original_kernel_share": null,
-  "notebook_completion": "no service notebook generated; exact template unavailable",
+  "notebook_completion": "assembled and statically checked; no notebook execution or remote submission",
   "jury_admission": "not established",
-  "final_submission": false
+  "final_submission": false,
+  "service_template_available": true,
+  "official_api_client_available": true,
+  "template_provenance": "user-attached connection bundle; byte counts and SHA256 values match included manifest",
+  "measured_notebook": "notebooks/soup_rms_entropy_half_v1.ipynb",
+  "preflight_notebook": "notebooks/soup_preflight_v1.ipynb"
 }

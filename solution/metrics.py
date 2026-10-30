@@ -26,7 +26,7 @@ def soup_entropy_partials(
     X,
     Partials,
     VOCAB: tl.constexpr,
-    ROWS: tl.constexpr,
+    ROWS,
     TILES: tl.constexpr,
     BLOCK: tl.constexpr,
 ):
@@ -60,7 +60,7 @@ def soup_entropy_partials(
 def soup_entropy_merge(
     Partials,
     Entropy,
-    ROWS: tl.constexpr,
+    ROWS,
     TILES: tl.constexpr,
     BLOCK: tl.constexpr,
 ):
@@ -96,6 +96,8 @@ def _can_use_entropy(logits, chunk_size):
         and logits.ndim >= 1
         and 0 < logits.shape[-1] <= 262144
         and 0 < logits.numel() <= 2147483647
+        # Bound all four temporary-plane offsets, including small-vocab calls.
+        and 4 * (logits.numel() // logits.shape[-1]) * triton.cdiv(logits.shape[-1], 4096) <= 2147483648
         and logits.is_contiguous()
         and isinstance(chunk_size, int)
         and chunk_size > 0
@@ -112,6 +114,9 @@ def _entropy_forward(logits):
     tiles = triton.cdiv(vocab, block)
     partials = torch.empty((4, rows, tiles), dtype=torch.float32, device=logits.device)
     entropy = torch.empty(logits.shape[:-1], dtype=torch.float32, device=logits.device)
+    # ROWS is a runtime scalar in both kernels: it only determines plane
+    # offsets, and padded batch lengths vary across otherwise identical work.
+    # Making it constexpr would compile new kernels for every such length.
     with torch.cuda.device(logits.device):
         soup_entropy_partials[(rows, tiles)](
             logits, partials, vocab, rows, tiles, block, num_warps=4

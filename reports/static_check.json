@@ -3,7 +3,7 @@
   "scope": "static source and entry-point checks only; no CUDA or official regression execution",
   "files_sha256": {
     "solution/__init__.py": "59ddcd5624b285618fbd45fca494c717b6f3dd9bab329ef78d8faaca2a56abea",
-    "solution/metrics.py": "e729e6a7f14710f76c878c4513895bb1349aac3792cd8a3a6d64cee1bc92d6fb",
+    "solution/metrics.py": "50352c62c4eb0e2f6135a90c04ac435bcfc7ecf95ab8b2c3e059a0ef4db21998",
     "solution/mlp_storage.py": "709c2b293c4d4dfc9abedff2124fac8b6730c752708eb77436564bd3c9889119",
     "solution/my_kernels.py": "fcebd11a9167689207e79f83e72cc75f58869ccde1df1a7c828ff00fc7bb96cc",
     "solution/rmsnorm.py": "4bd55d0f3508a3f4b6151c97ae25e9c042898c094cbdd5ccfc46aa92f7af9488",

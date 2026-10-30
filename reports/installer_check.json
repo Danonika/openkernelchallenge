@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "scope": "actual six-file CPU installer round trip; no Torch imports or GPU execution",
+  "scope": "actual notebook installer and six-file source package; CPU only",
   "first": {
     "soup_solution_install": {
       "files": 6,
-      "manifest_sha256": "64cad9edb4df26d8a44546f03b07a35f719c9d878dc1a2214f80017c67b84a71",
-      "payload_sha256": "474d20e57c5d359441b39d11f33ea57258577a4f1882317af90d03305417885a",
+      "manifest_sha256": "a4bb0fb70b5e544bb8b3f02993ea509e5a79d736ea1c63d8583a213558cfe216",
+      "payload_sha256": "c7d4d4584ce22c6e597fb634a20bcd2a933e798ef528635d0ba9bb729016d1df",
       "unchanged": 0,
       "written": 6
     }
@@ -13,10 +13,14 @@
   "repeat": {
     "soup_solution_install": {
       "files": 6,
-      "manifest_sha256": "64cad9edb4df26d8a44546f03b07a35f719c9d878dc1a2214f80017c67b84a71",
-      "payload_sha256": "474d20e57c5d359441b39d11f33ea57258577a4f1882317af90d03305417885a",
+      "manifest_sha256": "a4bb0fb70b5e544bb8b3f02993ea509e5a79d736ea1c63d8583a213558cfe216",
+      "payload_sha256": "c7d4d4584ce22c6e597fb634a20bcd2a933e798ef528635d0ba9bb729016d1df",
       "unchanged": 6,
       "written": 0
     }
-  }
+  },
+  "original_template_cells_unchanged": true,
+  "notebook_cells_compile": true,
+  "outputs_empty": true,
+  "gpu_executed": false
 }

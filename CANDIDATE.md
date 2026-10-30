@@ -2,11 +2,13 @@
 
 ## Current status
 
-The `solution/` implementation and development checks are ready for a first GPU trial. **No GPU training run has been submitted or measured.** This is a development candidate, not a claim of official admission or a final jury submission.
+The `solution/` implementation, development checks, and complete service notebook are ready for a first GPU trial. **No GPU training run has been submitted or measured.** This is a development candidate, not a claim of official admission or a final jury submission.
 
 The requested service at `https://35.200.1.242/` cannot currently be reached through a verified HTTPS connection from this environment. The Python download fails with `CERTIFICATE_VERIFY_FAILED` / IP address mismatch, and the browser reports `ERR_CERT_COMMON_NAME_INVALID`. The presented certificate in the local connection belongs to the environment's proxy and does not cover the service IP, so this evidence does not establish that the origin server's certificate itself is wrong. No access token was sent. Certificate verification remained enabled.
 
-As a result, the exact service notebook template and official API client have not been downloaded. A builder is provided to insert the solution into that exact template once it is available. It does not invent harness cells or substitute the public Kaggle notebook for the service template.
+On 31 October 2026 the user supplied the missing service template and official API client in a connection bundle. Both attached files match the byte counts and SHA-256 hashes in that bundle's manifest. The template is now incorporated into `notebooks/soup_rms_entropy_half_v1.ipynb`: one solution installer is inserted before training, and all three supplied template cells remain unchanged. A separate `notebooks/soup_preflight_v1.ipynb` performs diagnostics before a measured submission.
+
+The bundle's OpenSSL transport was tried with a fresh public template GET, certificate-chain verification, and IP verification enabled. It fails in this environment with `HTTP CONNECT failed, reason=426 Upgrade Required`, before TLS authentication or token transmission. The attached files unblock notebook preparation; they do not establish a working authenticated connection from this environment.
 
 ## What this candidate implements
 
@@ -36,7 +38,7 @@ Different parallel reduction trees can produce different FP32 rounding. The impl
 
 ### Entropy
 
-`solution/metrics.py` processes the entire vocabulary. Each tile stores a maximum, exponential sum, weighted displacement sum, and nonfinite flag. A second kernel merges those statistics to produce per-token Shannon entropy. It avoids materializing vocabulary-sized log-softmax and probability outputs for the metric.
+`solution/metrics.py` processes the entire vocabulary. Each tile stores a maximum, exponential sum, weighted displacement sum, and nonfinite flag. A second kernel merges those statistics to produce per-token Shannon entropy. It avoids materializing vocabulary-sized log-softmax and probability outputs for the metric. The row count is a runtime scalar used only for temporary-plane addressing, so different padded batch lengths do not each require their own constexpr kernel specialization.
 
 For the maximum prepared shape `[4, 512, 151936]`, with tiles of 4096 logits, the statistics tensor contains `4 × 2048 × 38` FP32 values: 1,245,184 bytes, or 1.1875 MiB. This is a buffer-size calculation, not a measured whole-run memory result.
 
@@ -84,6 +86,8 @@ On the prepared GPU runtime, run the synthetic probes as separate processes:
 python dev/run_gpu_probes.py --out /kaggle/working/probe_reports
 ```
 
+For the notebook service, `notebooks/soup_preflight_v1.ipynb` embeds the matching solution and development scripts, runs the official regression suite with `SOUP_APPLY_SOLUTION=1`, and runs the GPU probes in isolated child processes. It writes diagnostic reports to `SOUP_RESULTS` before reporting failure. This is a separate diagnostic job; it does not train, benchmark, or establish admission. The four-cell measured notebook follows it after those checks pass.
+
 Add `--check-accuracy` only when investigating the optional copy removal. It remains disabled in the submitted patch hook regardless of that probe flag.
 
 The probe runner's parent uses only the Python standard library. Each child gets fresh Triton and Inductor cache directories, and those directories are removed after the child exits. The probes do not run concurrently with measured training and do not alter harness allocator or measurement settings. Do not reuse their compiler cache for a measured run.
@@ -92,30 +96,34 @@ The RMSNorm probe covers the maximum batch shape, several input scales, backward
 
 ## Build the real service notebook
 
-Once the official `notebook-training-template.ipynb` has been downloaded through verified HTTPS or supplied directly, inspect its cells:
+The complete measured notebook is already built at `notebooks/soup_rms_entropy_half_v1.ipynb`. It has four code cells: original setup, our source installer, original training, and original report export. Every cell compiles, outputs are empty, and removing the inserted installer reproduces the supplied template JSON exactly.
+
+The original training command contains `--timeout 900`. It is preserved exactly. The service's independent 80-second training cutoff still applies; this argument does not extend that policy. The attached bundle's other candidate and its timeout edit are not part of this six-file candidate.
+
+To inspect or rebuild from the retained supplied template:
 
 ```bash
 python dev/build_service_notebook.py \
-  --template notebook-training-template.ipynb --list-cells
+  --template service/notebook-training-template.ipynb --list-cells
 ```
 
-Choose the insertion index **after repository setup and any starter-solution creation, and before the first solution test or training invocation**. Then build:
+The correct insertion index for this template is **1**, after repository setup and before training. For a new output file, run:
 
 ```bash
 python dev/build_service_notebook.py \
-  --template notebook-training-template.ipynb \
-  --insert-before CELL_INDEX \
-  --out candidate.ipynb
+  --template service/notebook-training-template.ipynb \
+  --insert-before 1 \
+  --out notebooks/candidate_rebuilt.ipynb
 ```
 
-Replace `CELL_INDEX` with the inspected zero-based index. The builder inserts one cell that writes the package to `Path(os.environ['SOUP_REPO']) / 'solution'`. It embeds the source files and verifies their SHA-256 digests. Removing that single cell must reconstruct the original template object exactly, including every harness and export cell.
+The builder inserts one cell that writes the package to `Path(os.environ['SOUP_REPO']) / 'solution'`. It embeds the source files and verifies their SHA-256 digests. Removing that single cell must reconstruct the original template object exactly, including every harness and export cell.
 
 The installer does not invoke `apply()` inside the notebook kernel. The preserved harness invokes it in its own training process. All implementation dependencies needed by that hook are under `solution/`.
 
 Use the downloaded official API client with an environment-provided token or its prompt:
 
 ```bash
-python notebook_client.py submit candidate.ipynb \
+python service/notebook_client.py submit notebooks/soup_rms_entropy_half_v1.ipynb \
   --candidate duo-rms-entropy-half-v1 \
   --wait --out duo-rms-entropy-half-v1-results.zip
 ```
@@ -124,6 +132,6 @@ No token belongs in the notebook or repository. Keep HTTPS verification enabled.
 
 ## Files and provenance
 
-Only `solution/` is needed by the jury hook. `dev/` contains validation and notebook construction tools, and `reports/` records local checks. `CREDITS.md` identifies the official example and the reference formulas. The full official template, API client, actual GPU reports, and a final Kaggle notebook are not present yet because the service connection is blocked.
+Only `solution/` is needed by the jury hook. `dev/` contains validation and notebook construction tools, and `reports/` records local checks. `service/` retains the supplied template and client; `notebooks/` contains the prepared measured and diagnostic notebooks. `CREDITS.md` identifies the official example and the reference formulas. Actual GPU reports and a validated final Kaggle submission remain pending verified service access and execution.
 
 The earlier research's n-gram/model-architecture ideas are not applied: this challenge fixes the model and task. This candidate transfers the useful general lesson—reduce intermediate storage and memory traffic—into the permitted implementation layer.

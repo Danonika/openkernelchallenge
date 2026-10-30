@@ -19,6 +19,6 @@ test_rejects_traversal_duplicates_and_file_directory_conflicts (test_notebook_bu
 test_roundtrip_preserves_every_original_cell_and_metadata (test_notebook_builder.NotebookBuilderTests.test_roundtrip_preserves_every_original_cell_and_metadata) ... ok
 
 ----------------------------------------------------------------------
-Ran 19 tests in 0.076s
+Ran 19 tests in 0.072s
 
 OK

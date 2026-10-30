@@ -1,40 +1,40 @@
 {
+  "schema_version": 1,
+  "template_sha256": null,
+  "payload_sha256": "c7d4d4584ce22c6e597fb634a20bcd2a933e798ef528635d0ba9bb729016d1df",
+  "manifest_sha256": "a4bb0fb70b5e544bb8b3f02993ea509e5a79d736ea1c63d8583a213558cfe216",
   "files": [
     {
       "path": "solution/__init__.py",
-      "sha256": "59ddcd5624b285618fbd45fca494c717b6f3dd9bab329ef78d8faaca2a56abea",
-      "size_bytes": 157
+      "size_bytes": 157,
+      "sha256": "59ddcd5624b285618fbd45fca494c717b6f3dd9bab329ef78d8faaca2a56abea"
     },
     {
       "path": "solution/metrics.py",
-      "sha256": "e729e6a7f14710f76c878c4513895bb1349aac3792cd8a3a6d64cee1bc92d6fb",
-      "size_bytes": 11753
+      "size_bytes": 12135,
+      "sha256": "50352c62c4eb0e2f6135a90c04ac435bcfc7ecf95ab8b2c3e059a0ef4db21998"
     },
     {
       "path": "solution/mlp_storage.py",
-      "sha256": "709c2b293c4d4dfc9abedff2124fac8b6730c752708eb77436564bd3c9889119",
-      "size_bytes": 6673
+      "size_bytes": 6673,
+      "sha256": "709c2b293c4d4dfc9abedff2124fac8b6730c752708eb77436564bd3c9889119"
     },
     {
       "path": "solution/my_kernels.py",
-      "sha256": "fcebd11a9167689207e79f83e72cc75f58869ccde1df1a7c828ff00fc7bb96cc",
-      "size_bytes": 546
+      "size_bytes": 546,
+      "sha256": "fcebd11a9167689207e79f83e72cc75f58869ccde1df1a7c828ff00fc7bb96cc"
     },
     {
       "path": "solution/rmsnorm.py",
-      "sha256": "4bd55d0f3508a3f4b6151c97ae25e9c042898c094cbdd5ccfc46aa92f7af9488",
-      "size_bytes": 5718
+      "size_bytes": 5718,
+      "sha256": "4bd55d0f3508a3f4b6151c97ae25e9c042898c094cbdd5ccfc46aa92f7af9488"
     },
     {
       "path": "solution/swiglu.py",
-      "sha256": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6",
-      "size_bytes": 3185
+      "size_bytes": 3185,
+      "sha256": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6"
     }
   ],
   "installer_out": "/workspace/scratch/5c267d6b8448/soup_candidate/install_solution.py",
-  "installer_sha256": "254a0778913f31b7d2f610b913e8da7fc947eb6dbd0ab86dbf2c7f050a158776",
-  "manifest_sha256": "64cad9edb4df26d8a44546f03b07a35f719c9d878dc1a2214f80017c67b84a71",
-  "payload_sha256": "474d20e57c5d359441b39d11f33ea57258577a4f1882317af90d03305417885a",
-  "schema_version": 1,
-  "template_sha256": null
+  "installer_sha256": "270523b648226f79ec1133f0c6f3d5578ad3baecd4fbd14274698bb010b07204"
 }
