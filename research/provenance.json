@@ -1,0 +1,35 @@
+{
+  "auto_research": {
+    "repository": "rohanarun/Auto-research-agent",
+    "commit": "cf8ca67c07f9eaf96e544f1bc4e6ba333936d859",
+    "license": "MIT"
+  },
+  "starter": {
+    "repository": "MakazhanAlpamys/soup-kernel-challenge",
+    "commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+    "license": "Apache-2.0"
+  },
+  "protected_sha256": {
+    "auto-research.md": "8d610b7a229af331444188ed8f31e38c2f255027e6f21d040be1978bff75cba4",
+    "docs/requirements/Decentrathon 6.0_ Soup Kernel Challenge.pdf": "91cadd9ea877871d271b3f9ade234df01c903267120a75787f6804d67cc6a665",
+    "docs/requirements/SUMMARY.md": "f2fceeb1432e89c4b97dfad4041123b1e4094dfe62924c978c23eac6812c9933",
+    "harness/_train.py": "45a62642dceab32cf3efcda504de87a9c25ea28b119b1806f56d14ff1146a89d",
+    "harness/check_rules.py": "879ab1861674f6e714eadd00aaf044235d98526dd75fab1035deec3401121ef5",
+    "harness/common.py": "c83066f24f266dab62ebcc9c2d44f5a65902760b53da912e65ebfe511579c2db",
+    "harness/eval_adapter.py": "47cddbb8e4579c69f9535b099ff2371b1c3af08bfbd93d14bf79aadd74d38482",
+    "harness/example_reference.py": "6a11055f4a1822e53971c228c6e3e3aa6b88edd9eb6db81a388e26a70a030ceb",
+    "harness/run_task.py": "d935a8959f348977313f2eef36870ff2699b9ba013a7978918ff35e148968a79",
+    "harness/score.py": "731c9b644dcc4069b0b069616f438064d1f7f376a202feb15201fd910ec688c5",
+    "research/continue.md": "1938730b092d8b1bf4f03882cd5f443841ad7f32c09b30ff2084d534490fb2e6",
+    "research/policy.md": "c13da833857650ddcdc931d7d0399169c30a5ef2c76c50768b00cb05647a1eb1",
+    "scripts/auto_research.py": "ee05ba40e9656bd7fa542184c23cf5788bbee82ca97de08c45e4be1743ac76fd",
+    "task/prepare_data.py": "a8543f11a55aff80dbdc714a0e62391244a5296616eea2e34dc2eb3ff3ec18f7",
+    "task/task.yaml": "dd70c739fcd143e06aef3bb1efcc9386f682bf1de26f30e08409d86a97ff47ce",
+    "tests/conftest.py": "a82eabab468ea0ef1e003cccd7c3827ce2f4d00d09c32948a34fb48221f7337a",
+    "tests/test_callback.py": "1919303a3670c0a33abbfce9b33eab0913bb64a3a21c3312d86531c32b5bf490",
+    "tests/test_config.py": "db808c44470d144b7cf18b7329492f41f76e37cfc24306e7cba0488bca9d787c",
+    "tests/test_formats.py": "5d656ed50c59f794e934473d459ea85635f892ba028e192414474e9b5d65919e",
+    "tests/test_loader.py": "3dad1bea2d33aab97e52b7cd44888d768bc9519af44fbe6cf3e96c260026632f",
+    "tests/test_trainer_init.py": "b7608d62a40983bf7c9e5b270e0e527b641a837e462d6df2909fec88f607e821"
+  }
+}
