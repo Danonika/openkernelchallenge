@@ -1,6 +1,0 @@
-{
-  "name": "soup-auto-research",
-  "version": "1.0.0",
-  "description": "Evidence-based Soup Kernel Challenge research adapted from Auto-research-agent",
-  "skills": "./skills/"
-}

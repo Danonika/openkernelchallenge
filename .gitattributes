@@ -1,3 +1,0 @@
-# Keep frozen evaluator hashes portable across Windows and Kaggle/Linux.
-* text=auto eol=lf
-*.pdf binary
