@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "scope": "actual six-file CPU installer round trip; no Torch imports or GPU execution",
+  "first": {
+    "soup_solution_install": {
+      "files": 6,
+      "manifest_sha256": "64cad9edb4df26d8a44546f03b07a35f719c9d878dc1a2214f80017c67b84a71",
+      "payload_sha256": "474d20e57c5d359441b39d11f33ea57258577a4f1882317af90d03305417885a",
+      "unchanged": 0,
+      "written": 6
+    }
+  },
+  "repeat": {
+    "soup_solution_install": {
+      "files": 6,
+      "manifest_sha256": "64cad9edb4df26d8a44546f03b07a35f719c9d878dc1a2214f80017c67b84a71",
+      "payload_sha256": "474d20e57c5d359441b39d11f33ea57258577a4f1882317af90d03305417885a",
+      "unchanged": 6,
+      "written": 0
+    }
+  }
+}

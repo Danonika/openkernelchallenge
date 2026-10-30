@@ -1,0 +1,34 @@
+{
+  "candidate_id": "duo-rms-entropy-half-v1",
+  "stage": "awaiting_verified_service_access",
+  "gpu_job_id": null,
+  "gpu_job_submitted": false,
+  "access_token_transmitted": false,
+  "https_verification_disabled": false,
+  "service_template_downloaded": false,
+  "official_api_client_downloaded": false,
+  "connection_observations": {
+    "python": "SSLCertVerificationError: IP address mismatch, certificate is not valid for 35.200.1.242",
+    "browser": "net::ERR_CERT_COMMON_NAME_INVALID",
+    "attribution_limit": "The certificate observed by the local client is a proxy certificate. These observations do not establish the origin server's certificate configuration."
+  },
+  "local_runtime": {
+    "python": "3.12.14",
+    "torch_available": false,
+    "triton_available": false,
+    "cuda_tests_executed": false
+  },
+  "static_source_check": "passed",
+  "cpu_installation_tests": 11,
+  "notebook_builder_tests": 8,
+  "official_regression_tests": "not run",
+  "gpu_probe_results": "not run",
+  "measured_training": "not run",
+  "evaluation_loss": null,
+  "time_relative_to_baseline": null,
+  "memory_relative_to_baseline": null,
+  "original_kernel_share": null,
+  "notebook_completion": "no service notebook generated; exact template unavailable",
+  "jury_admission": "not established",
+  "final_submission": false
+}

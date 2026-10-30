@@ -1,0 +1,24 @@
+test_fallback_mismatched_entropy_bindings (test_metrics_install.MetricsInstallCPUChecks.test_fallback_mismatched_entropy_bindings) ... ok
+test_fallback_missing_dependency_import (test_metrics_install.MetricsInstallCPUChecks.test_fallback_missing_dependency_import) ... ok
+test_fallback_missing_sft_binding (test_metrics_install.MetricsInstallCPUChecks.test_fallback_missing_sft_binding) ... ok
+test_fallback_missing_trainer_class (test_metrics_install.MetricsInstallCPUChecks.test_fallback_missing_trainer_class) ... ok
+test_fallback_missing_trainer_method (test_metrics_install.MetricsInstallCPUChecks.test_fallback_missing_trainer_method) ... ok
+test_fallback_missing_utils_helper (test_metrics_install.MetricsInstallCPUChecks.test_fallback_missing_utils_helper) ... ok
+test_fallback_mock_entropy_helper (test_metrics_install.MetricsInstallCPUChecks.test_fallback_mock_entropy_helper) ... ok
+test_fallback_mock_module (test_metrics_install.MetricsInstallCPUChecks.test_fallback_mock_module) ... ok
+test_fallback_mock_trainer_class (test_metrics_install.MetricsInstallCPUChecks.test_fallback_mock_trainer_class) ... ok
+test_installation_is_idempotent_and_accuracy_stays_disabled (test_metrics_install.MetricsInstallCPUChecks.test_installation_is_idempotent_and_accuracy_stays_disabled) ... ok
+test_simulated_kernel_runtime_error_propagates (test_metrics_install.MetricsInstallCPUChecks.test_simulated_kernel_runtime_error_propagates) ... ok
+test_checks_payload_manifest_and_individual_source_hashes (test_notebook_builder.NotebookBuilderTests.test_checks_payload_manifest_and_individual_source_hashes) ... ok
+test_installer_replaces_starter_preserves_unrelated_and_is_idempotent (test_notebook_builder.NotebookBuilderTests.test_installer_replaces_starter_preserves_unrelated_and_is_idempotent) ... ok
+test_missing_environment_fails_without_implicit_repository (test_notebook_builder.NotebookBuilderTests.test_missing_environment_fails_without_implicit_repository) ... ok
+test_output_conflicts_are_non_destructive_and_identical_rebuild_is_allowed (test_notebook_builder.NotebookBuilderTests.test_output_conflicts_are_non_destructive_and_identical_rebuild_is_allowed) ... ok
+test_rejects_destination_symlink_or_directory_before_any_replacement (test_notebook_builder.NotebookBuilderTests.test_rejects_destination_symlink_or_directory_before_any_replacement) ... ok
+test_rejects_symlinked_solution_root_and_source (test_notebook_builder.NotebookBuilderTests.test_rejects_symlinked_solution_root_and_source) ... ok
+test_rejects_traversal_duplicates_and_file_directory_conflicts (test_notebook_builder.NotebookBuilderTests.test_rejects_traversal_duplicates_and_file_directory_conflicts) ... ok
+test_roundtrip_preserves_every_original_cell_and_metadata (test_notebook_builder.NotebookBuilderTests.test_roundtrip_preserves_every_original_cell_and_metadata) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.076s
+
+OK
