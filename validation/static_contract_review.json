@@ -1,0 +1,14 @@
+{
+  "scope": "static source review, not measured eligibility",
+  "protected_files_match": true,
+  "own_candidate_function_count": 22,
+  "excluded_example_names": [
+    "example_swiglu_fwd_kernel",
+    "example_swiglu_bwd_kernel"
+  ],
+  "lookalikes_for_review": [
+    "soup_dropout_half_gradient_epilogue (0.91)"
+  ],
+  "banned_imports": [],
+  "parse_errors": []
+}
