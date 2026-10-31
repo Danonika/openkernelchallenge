@@ -1,0 +1,1326 @@
+{
+  "triton_version": "3.6.0",
+  "target": "cuda:sm75:warp32",
+  "scope": "Offline compilation and instruction inspection only; no GPU execution or timing.",
+  "compiled_artifacts_in_delivery": false,
+  "cases": [
+    {
+      "case": "rmsnorm_forward_fp16",
+      "kernel": "soup_rmsnorm_forward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rmsnorm.py",
+      "source_sha256": "bf2c73ff515745e0d071890e011f1fd926fcb1b3415d1c978b56bf51bd47ed5a",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp32",
+        "Y": "*fp32",
+        "INV_RMS": "*fp32"
+      },
+      "constants": {
+        "WIDTH": 1536,
+        "EPS": 1e-06,
+        "BLOCK": 2048
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 16,
+      "dynamic_shared_memory_bytes": 16,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "6eaaf37083ec68c7bccddd8ac281ce62bb9e73efe3f4e3806bf188224b983dfa",
+      "cubin_sha256": "b14bb449b8335c90047c11ea70a5ff452ff679b02d60290d5947201e067c6176",
+      "cubin_bytes": 18736,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "rmsnorm_backward_fp16",
+      "kernel": "soup_rmsnorm_backward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rmsnorm.py",
+      "source_sha256": "bf2c73ff515745e0d071890e011f1fd926fcb1b3415d1c978b56bf51bd47ed5a",
+      "signature": {
+        "DY": "*fp32",
+        "X": "*fp16",
+        "W": "*fp32",
+        "INV_RMS": "*fp32",
+        "DX": "*fp16"
+      },
+      "constants": {
+        "WIDTH": 1536,
+        "BLOCK": 2048
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 16,
+      "dynamic_shared_memory_bytes": 16,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "2e4a287d484e891849206bc118b0ccc16a4ae8954877088a41bd8c7a3974c586",
+      "cubin_sha256": "90164c5bef65ca5c473859462cbfb1e5818abf44bc8c662f1cb58f52d897ea2e",
+      "cubin_bytes": 23648,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "rmsnorm_forward_fp32",
+      "kernel": "soup_rmsnorm_forward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rmsnorm.py",
+      "source_sha256": "bf2c73ff515745e0d071890e011f1fd926fcb1b3415d1c978b56bf51bd47ed5a",
+      "signature": {
+        "X": "*fp32",
+        "W": "*fp32",
+        "Y": "*fp32",
+        "INV_RMS": "*fp32"
+      },
+      "constants": {
+        "WIDTH": 1536,
+        "EPS": 1e-06,
+        "BLOCK": 2048
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 16,
+      "dynamic_shared_memory_bytes": 16,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "15fb6c7a17838b75b4d6b1f8dcfeced3273d7d0d6d9d34f1b7e4696b79edbf89",
+      "cubin_sha256": "367db80e4f53e5e3ec8fc4e525086e8a3cfed7904061c7ea61e7c303e5d76b3e",
+      "cubin_bytes": 16304,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "rmsnorm_backward_fp32",
+      "kernel": "soup_rmsnorm_backward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rmsnorm.py",
+      "source_sha256": "bf2c73ff515745e0d071890e011f1fd926fcb1b3415d1c978b56bf51bd47ed5a",
+      "signature": {
+        "DY": "*fp32",
+        "X": "*fp32",
+        "W": "*fp32",
+        "INV_RMS": "*fp32",
+        "DX": "*fp32"
+      },
+      "constants": {
+        "WIDTH": 1536,
+        "BLOCK": 2048
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 16,
+      "dynamic_shared_memory_bytes": 16,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "1b79351b56a7934397efa561c648e7f5001577ee5a95ec3764f17f4c657c8ded",
+      "cubin_sha256": "b57928d659f75241e08b22928fa24d0a2396c2772f50ac53b13ac2af1c0a0d60",
+      "cubin_bytes": 20192,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "head_partial",
+      "kernel": "soup_head_partial_statistics",
+      "status": "offline_compilation_passed",
+      "source": "solution/streamed_head.py",
+      "source_sha256": "519d3c101b54d35d9f688b5876f75b2340fc589b66f64e8b9f3ded31c805fa60",
+      "signature": {
+        "scores": "*fp16",
+        "partial_max": "*fp32",
+        "partial_sum": "*fp32",
+        "partial_centered_sum": "*fp32",
+        "partial_argmax": "*i32"
+      },
+      "constants": {
+        "VOCAB": 151936,
+        "TILES": 38,
+        "BLOCK": 4096
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "shared_memory_bytes": 16,
+      "dynamic_shared_memory_bytes": 16,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "e68535220d6462fc31248ebf638be9b27e4ae70ba412984d2885b791ccd447eb",
+      "cubin_sha256": "52fc1fe7a607ee45eae8755888e073c8cff32d13e2ebffe27111921d03d1effe",
+      "cubin_bytes": 53984,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "head_merge",
+      "kernel": "soup_head_merge_statistics",
+      "status": "offline_compilation_passed",
+      "source": "solution/streamed_head.py",
+      "source_sha256": "519d3c101b54d35d9f688b5876f75b2340fc589b66f64e8b9f3ded31c805fa60",
+      "signature": {
+        "scores": "*fp16",
+        "targets": "*i64",
+        "partial_max": "*fp32",
+        "partial_sum": "*fp32",
+        "partial_centered_sum": "*fp32",
+        "partial_argmax": "*i32",
+        "token_loss": "*fp32",
+        "token_entropy": "*fp32",
+        "predictions": "*i64",
+        "logsumexp": "*fp32",
+        "row_max": "*fp32",
+        "log_normalizer": "*fp32"
+      },
+      "constants": {
+        "VOCAB": 151936,
+        "TILES": 38,
+        "MERGE_BLOCK": 64
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "shared_memory_bytes": 8,
+      "dynamic_shared_memory_bytes": 8,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "a6dba51251d1bb0f84a20c32a987d5d6aa989ec9763e7a42fa18d6d6749f061d",
+      "cubin_sha256": "c6949eb7c59aef93824438bb6564c4530f2453ead44f04081c1f1ff83b099869",
+      "cubin_bytes": 18224,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "head_gradient",
+      "kernel": "soup_head_logit_gradient",
+      "status": "offline_compilation_passed",
+      "source": "solution/streamed_head.py",
+      "source_sha256": "519d3c101b54d35d9f688b5876f75b2340fc589b66f64e8b9f3ded31c805fa60",
+      "signature": {
+        "scores_and_gradient": "*fp16",
+        "targets": "*i64",
+        "row_max": "*fp32",
+        "log_normalizer": "*fp32",
+        "loss_gradient_over_denominator": "*fp32",
+        "n_elements": "i32"
+      },
+      "constants": {
+        "VOCAB": 151936,
+        "BLOCK": 4096
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "9a33f4e2801b714f97a93458ee72718f2b626ebd02b13a058ccb8ffe20afcd74",
+      "cubin_sha256": "6bc9e54aa6d6d31147c96c1d1a3caefcf7435f2a56fc1791f7fc0abdad127c59",
+      "cubin_bytes": 83048,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "generic_dot_experiment",
+      "kernel": "soup_head_projection",
+      "status": "offline_compilation_passed",
+      "source": "solution/head_matmul.py",
+      "source_sha256": "c834bc001e3c6f9449ef4f5cd60d34aa961262e27c81e98e9a47186af5ec7e39",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "Y": "*fp16",
+        "TOKENS": "i32"
+      },
+      "constants": {
+        "DEPTH": 1536,
+        "VOCAB": 151936,
+        "TILE_M": 32,
+        "TILE_V": 128,
+        "TILE_D": 64
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "shared_memory_bytes": 32768,
+      "dynamic_shared_memory_bytes": 32768,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "19ce9ce26965df4db34bede266ec3d8fc1598e24a90671c3fb22735c89187b62",
+      "cubin_sha256": "6387d1a4fb30081b8c0828f5cfd9dd381e40760dfa662d63488e084d3bbf9cc3",
+      "cubin_bytes": 275040,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "explicit_t4_mma_full",
+      "kernel": "soup_head_t4_projection",
+      "status": "offline_compilation_passed",
+      "source": "solution/head_matmul_t4.py",
+      "source_sha256": "b29ed64e0d1537f6682d2b75d5a979c8269030a306aa8f1dee263bb9e3be3134",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "Y": "*fp16",
+        "TOKENS": "i32"
+      },
+      "constants": {
+        "DEPTH": 1536,
+        "VOCAB": 151936,
+        "PACKED_LOADS": true
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "efb108c1e53245c637a87a41753e8ae2545774bde995ac36166e99504deeb706",
+      "cubin_sha256": "2da97ca97ec91606f4e05d789c7a66ba144058adbead319aca1938ebbd234b45",
+      "cubin_bytes": 14184,
+      "mma_instruction_sites": 4,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "explicit_t4_mma_odd",
+      "kernel": "soup_head_t4_projection",
+      "status": "offline_compilation_passed",
+      "source": "solution/head_matmul_t4.py",
+      "source_sha256": "b29ed64e0d1537f6682d2b75d5a979c8269030a306aa8f1dee263bb9e3be3134",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "Y": "*fp16",
+        "TOKENS": "i32"
+      },
+      "constants": {
+        "DEPTH": 35,
+        "VOCAB": 137,
+        "PACKED_LOADS": false
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "8ccb550099d02a7ab202e497b34b14ceb81462af527b2f0fc0958572e193bc54",
+      "cubin_sha256": "7bbabd96e88b33759e5e43df6866861c1be0ca1f7b325b41f83a2328da755283",
+      "cubin_bytes": 18280,
+      "mma_instruction_sites": 4,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "explicit_t4_mma_unaligned",
+      "kernel": "soup_head_t4_projection",
+      "status": "offline_compilation_passed",
+      "source": "solution/head_matmul_t4.py",
+      "source_sha256": "b29ed64e0d1537f6682d2b75d5a979c8269030a306aa8f1dee263bb9e3be3134",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "Y": "*fp16",
+        "TOKENS": "i32"
+      },
+      "constants": {
+        "DEPTH": 16,
+        "VOCAB": 9,
+        "PACKED_LOADS": false
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "390587ad2c26ad02c34ffa728b76d4bc12a942d1303e097dbc51f4e88d226cd7",
+      "cubin_sha256": "6d403088adf603e8ff55e5aa86dc5a49a99e4f6ce4dbc7a833a3c50a855fbdc6",
+      "cubin_bytes": 15464,
+      "mma_instruction_sites": 4,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "fused_t4_statistics_full",
+      "kernel": "soup_head_t4_fused_statistics",
+      "status": "offline_compilation_passed",
+      "source": "solution/head_fused_t4.py",
+      "source_sha256": "ac75f93ce5b46eeb564afd8c74409cbbeda36804c0399d639c159bf8779b14ce",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "targets": "*i64",
+        "partial_max": "*fp32",
+        "partial_sum": "*fp32",
+        "partial_centered_sum": "*fp32",
+        "partial_argmax": "*i32",
+        "target_score": "*fp32",
+        "TOKENS": "i32"
+      },
+      "constants": {
+        "DEPTH": 1536,
+        "VOCAB": 151936,
+        "TILES": 1187
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "shared_memory_bytes": 15360,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 15360,
+      "ptx_sha256": "b06780f5820f33a50fcd49bc420abaf9f32ae898eb61c8e801f5149eaae220d8",
+      "cubin_sha256": "f689b07da9aa664cf6ef9e8f9361ffb00d108425d35839a188293719da0c86de",
+      "cubin_bytes": 153440,
+      "mma_instruction_sites": 64,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "projection_sequence_sha256": "e673102dcc453524a9ce81b0acb0035eadf2da08cf2be12b36d75be216e5ac69",
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 128,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 1,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "fused_t4_gradient_full",
+      "kernel": "soup_head_t4_fused_logit_gradient",
+      "status": "offline_compilation_passed",
+      "source": "solution/head_fused_t4.py",
+      "source_sha256": "ac75f93ce5b46eeb564afd8c74409cbbeda36804c0399d639c159bf8779b14ce",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "targets": "*i64",
+        "row_max": "*fp32",
+        "log_normalizer": "*fp32",
+        "loss_gradient_over_denominator": "*fp32",
+        "output": "*fp16",
+        "TOKENS": "i32"
+      },
+      "constants": {
+        "DEPTH": 1536,
+        "VOCAB": 151936
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "shared_memory_bytes": 15360,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 15360,
+      "ptx_sha256": "847a88409c32772b63aff128749e2c4069cd9fc29146985db7ce3bdaa046288c",
+      "cubin_sha256": "b311f68b3dde69deae141a1fe7f4cd56cf3b08a7693046450213837581a3f569",
+      "cubin_bytes": 123744,
+      "mma_instruction_sites": 64,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "projection_sequence_sha256": "e673102dcc453524a9ce81b0acb0035eadf2da08cf2be12b36d75be216e5ac69",
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 128,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 1,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "fused_t4_statistics_tail",
+      "kernel": "soup_head_t4_fused_statistics",
+      "status": "offline_compilation_passed",
+      "source": "solution/head_fused_t4.py",
+      "source_sha256": "ac75f93ce5b46eeb564afd8c74409cbbeda36804c0399d639c159bf8779b14ce",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "targets": "*i64",
+        "partial_max": "*fp32",
+        "partial_sum": "*fp32",
+        "partial_centered_sum": "*fp32",
+        "partial_argmax": "*i32",
+        "target_score": "*fp32",
+        "TOKENS": "i32"
+      },
+      "constants": {
+        "DEPTH": 32,
+        "VOCAB": 129,
+        "TILES": 2
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "shared_memory_bytes": 15360,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 15360,
+      "ptx_sha256": "6efe1b9c8eb333b89e6f6b61459076dfcc92c5dd4cff2bedc43bdd6f7572b2ba",
+      "cubin_sha256": "7c3418788349f3231590baaad05d2f2b5e6015df06ddf7b825caca10c28e43f7",
+      "cubin_bytes": 153056,
+      "mma_instruction_sites": 64,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "projection_sequence_sha256": "e673102dcc453524a9ce81b0acb0035eadf2da08cf2be12b36d75be216e5ac69",
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 133,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 1,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "fused_t4_gradient_tail",
+      "kernel": "soup_head_t4_fused_logit_gradient",
+      "status": "offline_compilation_passed",
+      "source": "solution/head_fused_t4.py",
+      "source_sha256": "ac75f93ce5b46eeb564afd8c74409cbbeda36804c0399d639c159bf8779b14ce",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "targets": "*i64",
+        "row_max": "*fp32",
+        "log_normalizer": "*fp32",
+        "loss_gradient_over_denominator": "*fp32",
+        "output": "*fp16",
+        "TOKENS": "i32"
+      },
+      "constants": {
+        "DEPTH": 32,
+        "VOCAB": 129
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "shared_memory_bytes": 15360,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 15360,
+      "ptx_sha256": "97afff7e0609e72bcbbe7b13a290776b12e5526692a758fb35c3382c7529c052",
+      "cubin_sha256": "13f145626bfee4189311cc96ddb37fb03f6b02317cd19c61b0f1b4bcf6775147",
+      "cubin_bytes": 122976,
+      "mma_instruction_sites": 64,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "projection_sequence_sha256": "e673102dcc453524a9ce81b0acb0035eadf2da08cf2be12b36d75be216e5ac69",
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 118,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 1,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "fused_t4_merge",
+      "kernel": "soup_head_t4_merge_statistics",
+      "status": "offline_compilation_passed",
+      "source": "solution/head_fused_t4.py",
+      "source_sha256": "ac75f93ce5b46eeb564afd8c74409cbbeda36804c0399d639c159bf8779b14ce",
+      "signature": {
+        "targets": "*i64",
+        "target_score": "*fp32",
+        "partial_max": "*fp32",
+        "partial_sum": "*fp32",
+        "partial_centered_sum": "*fp32",
+        "partial_argmax": "*i32",
+        "token_loss": "*fp32",
+        "entropy": "*fp32",
+        "predictions": "*i64",
+        "logsumexp": "*fp32",
+        "row_max": "*fp32",
+        "log_normalizer": "*fp32"
+      },
+      "constants": {
+        "TILES": 1187,
+        "BLOCK": 2048
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "shared_memory_bytes": 16,
+      "dynamic_shared_memory_bytes": 16,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "d5407e01ee4eb854c0fbd6ea4602cbebd51549f45b74306aed274e2a62681059",
+      "cubin_sha256": "d4e9b58dff0dfd1607f0124ab56ba00b50a47e1c5b3478fd88ef55549b8f378a",
+      "cubin_bytes": 35632,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "nf4_flat_fp16",
+      "kernel": "soup_nf4_dequantize",
+      "status": "offline_compilation_passed",
+      "source": "solution/nf4.py",
+      "source_sha256": "9e07a73d45f7b7119fc1f5d1d3422351e5d34e2fbd9612f7b90f56bc17ad697a",
+      "signature": {
+        "packed": "*u8",
+        "scales": "*fp32",
+        "nested_scales": "*fp32",
+        "nested_code": "*fp32",
+        "offset": "*fp32",
+        "nf4_code": "*fp32",
+        "output": "*fp16",
+        "n_values": "i32"
+      },
+      "constants": {
+        "QUANT_BLOCK": 64,
+        "NESTED_BLOCK": 256,
+        "NESTED": false,
+        "PACKED_OUTPUT": true,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "14ceb25cba3630d2f95c0c86a0fe62d69564df122e2c1e0267a930b2a39dd26b",
+      "cubin_sha256": "830809327a737531efbfeefa9a21946dadd73f674d555cdded9bdfd8f781ee30",
+      "cubin_bytes": 19944,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "nf4_flat_fp32",
+      "kernel": "soup_nf4_dequantize",
+      "status": "offline_compilation_passed",
+      "source": "solution/nf4.py",
+      "source_sha256": "9e07a73d45f7b7119fc1f5d1d3422351e5d34e2fbd9612f7b90f56bc17ad697a",
+      "signature": {
+        "packed": "*u8",
+        "scales": "*fp32",
+        "nested_scales": "*fp32",
+        "nested_code": "*fp32",
+        "offset": "*fp32",
+        "nf4_code": "*fp32",
+        "output": "*fp32",
+        "n_values": "i32"
+      },
+      "constants": {
+        "QUANT_BLOCK": 64,
+        "NESTED_BLOCK": 256,
+        "NESTED": false,
+        "PACKED_OUTPUT": false,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "b99b716d2ec34e1bbef9970e5f438a8e0e03ae01641cd05792edd59254df6867",
+      "cubin_sha256": "88e1d0e1a071af73a78fd95ace7b0bbcc01a9ad0b78b69160b13201018dbd23b",
+      "cubin_bytes": 17384,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "nf4_nested_fp16",
+      "kernel": "soup_nf4_dequantize",
+      "status": "offline_compilation_passed",
+      "source": "solution/nf4.py",
+      "source_sha256": "9e07a73d45f7b7119fc1f5d1d3422351e5d34e2fbd9612f7b90f56bc17ad697a",
+      "signature": {
+        "packed": "*u8",
+        "scales": "*u8",
+        "nested_scales": "*fp32",
+        "nested_code": "*fp32",
+        "offset": "*fp32",
+        "nf4_code": "*fp32",
+        "output": "*fp16",
+        "n_values": "i32"
+      },
+      "constants": {
+        "QUANT_BLOCK": 64,
+        "NESTED_BLOCK": 256,
+        "NESTED": true,
+        "PACKED_OUTPUT": true,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "445a8366210b93180e10ef283865f930fe0522f55e9fc4caaafb7bbd084c58d5",
+      "cubin_sha256": "5734381b0ede76fa125afe7430d90d9ab9689fc33087f2ed1682471780d799ab",
+      "cubin_bytes": 25704,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "nf4_nested_fp32",
+      "kernel": "soup_nf4_dequantize",
+      "status": "offline_compilation_passed",
+      "source": "solution/nf4.py",
+      "source_sha256": "9e07a73d45f7b7119fc1f5d1d3422351e5d34e2fbd9612f7b90f56bc17ad697a",
+      "signature": {
+        "packed": "*u8",
+        "scales": "*u8",
+        "nested_scales": "*fp32",
+        "nested_code": "*fp32",
+        "offset": "*fp32",
+        "nf4_code": "*fp32",
+        "output": "*fp32",
+        "n_values": "i32"
+      },
+      "constants": {
+        "QUANT_BLOCK": 64,
+        "NESTED_BLOCK": 256,
+        "NESTED": true,
+        "PACKED_OUTPUT": false,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "44d8f2b41b1759882ded03eb7bf3d6cf7e615965548723486bd72d179ff0c1fd",
+      "cubin_sha256": "b31f05dfa68a610176de5446d09625b13db18e99dca9f764070268748db7f688",
+      "cubin_bytes": 22760,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "nf4_nested_fp16_unaligned",
+      "kernel": "soup_nf4_dequantize",
+      "status": "offline_compilation_passed",
+      "source": "solution/nf4.py",
+      "source_sha256": "9e07a73d45f7b7119fc1f5d1d3422351e5d34e2fbd9612f7b90f56bc17ad697a",
+      "signature": {
+        "packed": "*u8",
+        "scales": "*u8",
+        "nested_scales": "*fp32",
+        "nested_code": "*fp32",
+        "offset": "*fp32",
+        "nf4_code": "*fp32",
+        "output": "*fp16",
+        "n_values": "i32"
+      },
+      "constants": {
+        "QUANT_BLOCK": 64,
+        "NESTED_BLOCK": 256,
+        "NESTED": true,
+        "PACKED_OUTPUT": false,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "41840864d2e0fe09a7a5f1b5556aea3b1f438b51e0295d974999be873c797705",
+      "cubin_sha256": "d55386f783f31c4d7cd962b346212829ba3e39b075ca0b0db1918e0d37181575",
+      "cubin_bytes": 23784,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "frozen_embedding",
+      "kernel": "soup_frozen_embedding_forward",
+      "status": "offline_compilation_passed",
+      "source": "solution/frozen_storage.py",
+      "source_sha256": "c27dc833f9b7ceb15b3f7e96169c5a6572060abead71c093aac8625636aa0fe0",
+      "signature": {
+        "TOKEN_IDS": "*i64",
+        "WEIGHT": "*fp16",
+        "OUTPUT": "*fp32",
+        "n_elements": "i32"
+      },
+      "constants": {
+        "WIDTH": 1536,
+        "BLOCK": 512
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "a529a28899124b17fa0a990c27424cbaa26dfd811eeffdd07f52b65bbf9d7102",
+      "cubin_sha256": "979e8e2db310ba3c4b75cb5c7ed8b5398e4b36cd23a4619edeba7874631b6879",
+      "cubin_bytes": 8424,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false
+    },
+    {
+      "case": "rotary_forward_broadcast",
+      "kernel": "soup_rotary_forward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rotary.py",
+      "source_sha256": "8e8ef322d70eba6ac898a040a14d74b9dc8e276b3f93bd033414eeaf927b5429",
+      "signature": {
+        "Q": "*fp32",
+        "K": "*fp32",
+        "COS": "*fp32",
+        "SIN": "*fp32",
+        "Q_OUT": "*fp32",
+        "K_OUT": "*fp32",
+        "LENGTH": "i32",
+        "Q_BLOCKS": "i32"
+      },
+      "constants": {
+        "Q_HEADS": 12,
+        "K_HEADS": 2,
+        "WIDTH": 128,
+        "BATCHED_COEFFICIENTS": false,
+        "BLOCK": 512
+      },
+      "options": {
+        "num_warps": 4,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "a69edf8e06f3999bb174e80dba408a85ccd9d02cd3d9e97b59eb32c816ba81f3",
+      "cubin_sha256": "d7bf132910c6dcb4ea93b6dcc101bb1341a9d8bf9a596dfc83ebe5d91e0ec9fd",
+      "cubin_bytes": 24552,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 44,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 0,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "rotary_backward_0_1_1",
+      "kernel": "soup_rotary_backward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rotary.py",
+      "source_sha256": "8e8ef322d70eba6ac898a040a14d74b9dc8e276b3f93bd033414eeaf927b5429",
+      "signature": {
+        "DQ_OUT": "*fp32",
+        "DK_OUT": "*fp32",
+        "COS": "*fp32",
+        "SIN": "*fp32",
+        "DQ": "*fp32",
+        "DK": "*fp32",
+        "LENGTH": "i32",
+        "Q_BLOCKS": "i32",
+        "Q_SB": "i64",
+        "Q_SH": "i64",
+        "Q_ST": "i64",
+        "Q_SD": "i64",
+        "K_SB": "i64",
+        "K_SH": "i64",
+        "K_ST": "i64",
+        "K_SD": "i64"
+      },
+      "constants": {
+        "Q_HEADS": 12,
+        "K_HEADS": 2,
+        "WIDTH": 128,
+        "BATCHED_COEFFICIENTS": false,
+        "BLOCK": 512,
+        "DO_Q": true,
+        "DO_K": true
+      },
+      "options": {
+        "num_warps": 4,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "e645d50207597807804ef5d107348d73933dd7f3550b4026a06713072e165b73",
+      "cubin_sha256": "911ba7de1bb318f1ab304ff2deb85c1064c372be1b4f4b1e6c7647b9495a4773",
+      "cubin_bytes": 34920,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 58,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 0,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "rotary_forward_batched",
+      "kernel": "soup_rotary_forward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rotary.py",
+      "source_sha256": "8e8ef322d70eba6ac898a040a14d74b9dc8e276b3f93bd033414eeaf927b5429",
+      "signature": {
+        "Q": "*fp32",
+        "K": "*fp32",
+        "COS": "*fp32",
+        "SIN": "*fp32",
+        "Q_OUT": "*fp32",
+        "K_OUT": "*fp32",
+        "LENGTH": "i32",
+        "Q_BLOCKS": "i32"
+      },
+      "constants": {
+        "Q_HEADS": 12,
+        "K_HEADS": 2,
+        "WIDTH": 128,
+        "BATCHED_COEFFICIENTS": true,
+        "BLOCK": 512
+      },
+      "options": {
+        "num_warps": 4,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "3d66fa7b4adbd6a640ced209745253a32d2d666998504a2bb622b84a1bb41278",
+      "cubin_sha256": "3c57090a499681f6aa71aa3f4f32dce6bad94fa5f11b99e23aa3da2eabbedb26",
+      "cubin_bytes": 25064,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 45,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 0,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "rotary_backward_1_1_1",
+      "kernel": "soup_rotary_backward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rotary.py",
+      "source_sha256": "8e8ef322d70eba6ac898a040a14d74b9dc8e276b3f93bd033414eeaf927b5429",
+      "signature": {
+        "DQ_OUT": "*fp32",
+        "DK_OUT": "*fp32",
+        "COS": "*fp32",
+        "SIN": "*fp32",
+        "DQ": "*fp32",
+        "DK": "*fp32",
+        "LENGTH": "i32",
+        "Q_BLOCKS": "i32",
+        "Q_SB": "i64",
+        "Q_SH": "i64",
+        "Q_ST": "i64",
+        "Q_SD": "i64",
+        "K_SB": "i64",
+        "K_SH": "i64",
+        "K_ST": "i64",
+        "K_SD": "i64"
+      },
+      "constants": {
+        "Q_HEADS": 12,
+        "K_HEADS": 2,
+        "WIDTH": 128,
+        "BATCHED_COEFFICIENTS": true,
+        "BLOCK": 512,
+        "DO_Q": true,
+        "DO_K": true
+      },
+      "options": {
+        "num_warps": 4,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "6d3263aef770cfb1193fabbbaf999aa16b78cc39d6040444bc40607fc718a4df",
+      "cubin_sha256": "73f7b05a0154fc1486957c4cd893371b101ad2a42bb18962079d2a3b1ab3d376",
+      "cubin_bytes": 35048,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 58,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 0,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "rotary_backward_1_1_0",
+      "kernel": "soup_rotary_backward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rotary.py",
+      "source_sha256": "8e8ef322d70eba6ac898a040a14d74b9dc8e276b3f93bd033414eeaf927b5429",
+      "signature": {
+        "DQ_OUT": "*fp32",
+        "DK_OUT": "*fp32",
+        "COS": "*fp32",
+        "SIN": "*fp32",
+        "DQ": "*fp32",
+        "DK": "*fp32",
+        "LENGTH": "i32",
+        "Q_BLOCKS": "i32",
+        "Q_SB": "i64",
+        "Q_SH": "i64",
+        "Q_ST": "i64",
+        "Q_SD": "i64",
+        "K_SB": "i64",
+        "K_SH": "i64",
+        "K_ST": "i64",
+        "K_SD": "i64"
+      },
+      "constants": {
+        "Q_HEADS": 12,
+        "K_HEADS": 2,
+        "WIDTH": 128,
+        "BATCHED_COEFFICIENTS": true,
+        "BLOCK": 512,
+        "DO_Q": true,
+        "DO_K": false
+      },
+      "options": {
+        "num_warps": 4,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "0411b1ddccd0261e3e35fb4388d22f612395ac7e03cf4576106ec9ee79545999",
+      "cubin_sha256": "fb4d7b470bd2d3a78f27598d1c6e6cee61726fc808d188de5d31dc64d5f2d1d2",
+      "cubin_bytes": 20072,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 56,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 0,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "rotary_backward_1_0_1",
+      "kernel": "soup_rotary_backward",
+      "status": "offline_compilation_passed",
+      "source": "solution/rotary.py",
+      "source_sha256": "8e8ef322d70eba6ac898a040a14d74b9dc8e276b3f93bd033414eeaf927b5429",
+      "signature": {
+        "DQ_OUT": "*fp32",
+        "DK_OUT": "*fp32",
+        "COS": "*fp32",
+        "SIN": "*fp32",
+        "DQ": "*fp32",
+        "DK": "*fp32",
+        "LENGTH": "i32",
+        "Q_BLOCKS": "i32",
+        "Q_SB": "i64",
+        "Q_SH": "i64",
+        "Q_ST": "i64",
+        "Q_SD": "i64",
+        "K_SB": "i64",
+        "K_SH": "i64",
+        "K_ST": "i64",
+        "K_SD": "i64"
+      },
+      "constants": {
+        "Q_HEADS": 12,
+        "K_HEADS": 2,
+        "WIDTH": 128,
+        "BATCHED_COEFFICIENTS": true,
+        "BLOCK": 512,
+        "DO_Q": false,
+        "DO_K": true
+      },
+      "options": {
+        "num_warps": 4,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "049f63446f7a05dc4a7a797d44bdb66163f7bdd670a642de2b0d5c6f58d88605",
+      "cubin_sha256": "cec11c9e2f328fd6f3ec953e3a8c892831e33ff459a6cc8f0e583518e45de281",
+      "cubin_bytes": 19432,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 50,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 0,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "lora_epilogue_forward",
+      "kernel": "soup_lora_epilogue_forward",
+      "status": "offline_compilation_passed",
+      "source": "solution/lora_epilogue.py",
+      "source_sha256": "4fbbd8697ce95283458e81b6afa7aca581b9604eef7ae5f4565d7b38d2ac6f2f",
+      "signature": {
+        "BASE": "*fp16",
+        "ADAPTER": "*fp16",
+        "OUT": "*fp32",
+        "N": "i32"
+      },
+      "constants": {
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "d861f95218afeee37d39a05ed627fe91ca23c34036b4f55da22c5d89cc1f6eba",
+      "cubin_sha256": "051cbd97eb97e8564975fdebd85f806c552e8afb93aa1995a3d1a980a5d90bf1",
+      "cubin_bytes": 10472,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 30,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 0,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "lora_epilogue_backward_0",
+      "kernel": "soup_lora_epilogue_backward",
+      "status": "offline_compilation_passed",
+      "source": "solution/lora_epilogue.py",
+      "source_sha256": "4fbbd8697ce95283458e81b6afa7aca581b9604eef7ae5f4565d7b38d2ac6f2f",
+      "signature": {
+        "DOUT": "*fp32",
+        "DBASE": "*fp16",
+        "DADAPTER": "*fp16",
+        "N": "i32"
+      },
+      "constants": {
+        "BLOCK": 1024,
+        "WRITE_BASE": false
+      },
+      "options": {
+        "num_warps": 4,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "7b31f3116f7e44f306c6f699c8d23cc49e28a73b70d0530b72de1273ee559862",
+      "cubin_sha256": "edb9acf5a335b50f6077d6d04e2bdc4f1198247d8a325dbcc884eae082eafb1e",
+      "cubin_bytes": 8552,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 20,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 0,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "lora_epilogue_backward_1",
+      "kernel": "soup_lora_epilogue_backward",
+      "status": "offline_compilation_passed",
+      "source": "solution/lora_epilogue.py",
+      "source_sha256": "4fbbd8697ce95283458e81b6afa7aca581b9604eef7ae5f4565d7b38d2ac6f2f",
+      "signature": {
+        "DOUT": "*fp32",
+        "DBASE": "*fp16",
+        "DADAPTER": "*fp16",
+        "N": "i32"
+      },
+      "constants": {
+        "BLOCK": 1024,
+        "WRITE_BASE": true
+      },
+      "options": {
+        "num_warps": 4,
+        "enable_fp_fusion": false
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "52e892011e3d974c304218bec9a5b2240c386480a0ee2996a2efa9273a7b6814",
+      "cubin_sha256": "06a617f8b46bc415bdbab35934cbae8cfd9b898383db6820304e831488828866",
+      "cubin_bytes": 9320,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": false,
+      "ptxas_resource_audit": {
+        "compiler": "the Triton-selected ptxas for SM75",
+        "registers_per_thread": 22,
+        "stack_frame_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "barrier_resources": 0,
+        "physical_gpu_execution": false
+      }
+    },
+    {
+      "case": "credited_starter_compact_saved_backward",
+      "kernel": "example_swiglu_bwd_kernel",
+      "status": "offline_compilation_passed",
+      "source": "solution/swiglu.py",
+      "source_sha256": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6",
+      "signature": {
+        "grad_ptr": "*fp32",
+        "gate_ptr": "*fp16",
+        "up_ptr": "*fp16",
+        "dgate_ptr": "*fp32",
+        "dup_ptr": "*fp32",
+        "n_elements": "i32"
+      },
+      "constants": {
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "a8a67bb08fc2f1f0891c13e1a9d1d17321ba8cf50b17f49192c648739d41ca51",
+      "cubin_sha256": "7580ba861b12e85cc91c640a5afc73041717fbb87696df6b9198ec71f21dd4b2",
+      "cubin_bytes": 18536,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": true
+    },
+    {
+      "case": "credited_starter_fp16_to_fp32_forward",
+      "kernel": "example_swiglu_fwd_kernel",
+      "status": "offline_compilation_passed",
+      "source": "solution/swiglu.py",
+      "source_sha256": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6",
+      "signature": {
+        "gate_ptr": "*fp16",
+        "up_ptr": "*fp16",
+        "out_ptr": "*fp32",
+        "n_elements": "i32"
+      },
+      "constants": {
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "67c9d3266d7671db23d7d0443669482c68c0e57b97d027e1334638e64e6f0a75",
+      "cubin_sha256": "4d430c83131851f36f2fcc12347ad52fa22530cc742ba74c859634b48d1e39fa",
+      "cubin_bytes": 14056,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": true
+    },
+    {
+      "case": "credited_starter_fp32_to_fp16_backward",
+      "kernel": "example_swiglu_bwd_kernel",
+      "status": "offline_compilation_passed",
+      "source": "solution/swiglu.py",
+      "source_sha256": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6",
+      "signature": {
+        "grad_ptr": "*fp32",
+        "gate_ptr": "*fp16",
+        "up_ptr": "*fp16",
+        "dgate_ptr": "*fp16",
+        "dup_ptr": "*fp16",
+        "n_elements": "i32"
+      },
+      "constants": {
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "shared_memory_bytes": 0,
+      "dynamic_shared_memory_bytes": 0,
+      "static_shared_memory_bytes": 0,
+      "ptx_sha256": "9f8b872b2028776a1aa78a06b1e72536ac50971cf9d3697c4f4e23fc61f89416",
+      "cubin_sha256": "3068299eb1f1f140f153b371280f75f53344da1cccf13e2ab571b97931705025",
+      "cubin_bytes": 19432,
+      "mma_instruction_sites": 0,
+      "physical_gpu_execution": false,
+      "credited_starter_example": true
+    }
+  ]
+}
