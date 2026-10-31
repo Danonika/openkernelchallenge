@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "physical_gpu_execution": false,
+  "nf4_execution": false,
+  "full_soup_cli": false,
+  "actual_soup_factory": true,
+  "optimizer_steps": 4,
+  "microbatches": 4,
+  "exact_gradient_snapshots": 4,
+  "exact_parameter_snapshots": 4,
+  "rng_exact": true,
+  "native_dropout_calls": 16,
+  "l1e_kernel_backwards": 8,
+  "cached_head_summary_calls": 4,
+  "native_head_forwards": 4,
+  "native_head_backwards": 4,
+  "metrics_max_abs": {
+    "loss": 4.76837158203125e-07,
+    "grad_norm": 0.0,
+    "learning_rate": 0.0,
+    "entropy": 2.384185791015625e-07,
+    "num_tokens": 0.0,
+    "mean_token_accuracy": 0.0,
+    "epoch": 0.0,
+    "step": 0.0
+  },
+  "rewind_row_loss_max_abs": 4.76837158203125e-07,
+  "row_order": [
+    3,
+    5,
+    0,
+    11,
+    7,
+    6,
+    8,
+    2,
+    10,
+    1,
+    4,
+    9
+  ],
+  "tokens_exact": true,
+  "outer_cpu_autocast_off": true,
+  "test_substitutions": [
+    "CPU FP16 model autocast",
+    "CPU native bool-mask dropout on both sides",
+    "explicit head/LoRA device admission overrides",
+    "Triton interpreter"
+  ],
+  "source_sha256": {
+    "candidate/solution/test_soup_fusion_factory.py": "058daac741c427dd1d39bf91317b86b5bf5b64fc1f8494e14f73b153c4cfdc71",
+    "candidate/solution/cached_head.py": "8517f37d7d879b35b8b4255460f9a6bf39fe57c05375a69cd5c8d0e800c14de6",
+    "candidate/solution/integration.py": "fd2db3fc3f367751f9eb439fa5901dbf16a06934e4d6ae56fd61063b4363cb5b",
+    "candidate/solution/lora_dropout.py": "7da9cfe16433dc9934d0cd79e2062b20463a7d16254247e7c89639b8e70073a4"
+  }
+}
