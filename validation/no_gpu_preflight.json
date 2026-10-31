@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-10-30T14:43:40.543554+00:00",
+  "target_seconds": 33.0,
+  "user_reported_baseline_seconds": 77,
+  "status": "blocked_no_single_t4",
+  "profiles": [],
+  "best_admitted_profile": null,
+  "target_met_under_official_public_protocol": false,
+  "world_record_verified": false,
+  "hidden_jury_admission": "not_established",
+  "preflight": {
+    "hardware": {
+      "cuda_available": false,
+      "torch_cuda_version": null,
+      "triton_interpret": null,
+      "cuda_visible_devices": "0"
+    },
+    "versions": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cpu",
+      "triton": "3.6.0",
+      "soup-cli": "0.77.0",
+      "transformers": "5.16.1",
+      "peft": "0.20.0",
+      "trl": "0.29.1",
+      "bitsandbytes": "0.50.2",
+      "accelerate": "1.14.0"
+    }
+  }
+}

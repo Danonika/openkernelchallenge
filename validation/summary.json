@@ -1,0 +1,97 @@
+{
+  "created_utc": "2026-10-30T14:56:03.048471+00:00",
+  "status": "source_candidate_cpu_validated_physical_t4_pending",
+  "physical_gpu_execution": false,
+  "official_full_training_executed": false,
+  "target_seconds": 33,
+  "baseline_seconds_user_reported": 77,
+  "record_protocol_verified": false,
+  "candidate_wall_seconds": null,
+  "candidate_peak_gpu_mib": null,
+  "candidate_speedup": null,
+  "candidate_original_kernel_share": null,
+  "target_met": false,
+  "official_admission": null,
+  "hidden_jury_admission": null,
+  "solution_sha256": "dfe2b63ee35ff1e93dd2fa109a7eed84b0ac0f45cde50a0b4c4e9f89c8aee8e2",
+  "settings": {
+    "HEAD_MODE": "cached",
+    "CACHED_CE_CHUNK_TOKENS": 128,
+    "CHUNK_TOKENS": 256,
+    "SPARSE_BACKWARD": true,
+    "HEAD_PROJECTION": "torch",
+    "FUSED_NF4": true,
+    "FROZEN_STORAGE": false,
+    "COMPACT_MLP_ACTIVATIONS": true,
+    "FUSED_ROTARY": false,
+    "FUSED_LORA_EPILOGUE": false,
+    "FUSED_LORA_DROPOUT": true,
+    "SHARED_ATTENTION_MASK": false,
+    "FUSED_RMSNORM": true
+  },
+  "tests": {
+    "official_regressions": {
+      "passed": 79,
+      "skipped": 0,
+      "failed": 0,
+      "errors": 0
+    },
+    "candidate_cpu_interpreter": {
+      "passed": 250,
+      "skipped": 63,
+      "failed": 0,
+      "errors": 0
+    },
+    "final_guard_revalidation": {
+      "passed": 20,
+      "skipped": 5,
+      "failed": 0,
+      "errors": 0
+    },
+    "verifier_synthetic_fixtures": {
+      "passed": 32,
+      "skipped": 0,
+      "failed": 0,
+      "errors": 0
+    }
+  },
+  "offline_codegen": {
+    "base_cases": 34,
+    "base_all_pass": true,
+    "head_cases": 2,
+    "lora_mask_cases": 2,
+    "physical_gpu_execution": false,
+    "compiled_artifacts_in_delivery": false
+  },
+  "protected_source": {
+    "starter_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+    "ok": true,
+    "changed": [],
+    "missing": [],
+    "extra": []
+  },
+  "static_scan": {
+    "candidate_jit_definitions": 22,
+    "excluded_starter_functions": [
+      "example_swiglu_fwd_kernel",
+      "example_swiglu_bwd_kernel"
+    ],
+    "lookalikes_for_manual_review": [
+      "soup_dropout_half_gradient_epilogue (0.91)"
+    ],
+    "banned_imports": [],
+    "parse_errors": []
+  },
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.11.0+cpu",
+    "triton": "3.6.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "trl": "0.29.1",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.14.0",
+    "soup-cli": "0.77.0"
+  },
+  "scope_note": "CPU/interpreter tests and offline assembly do not establish GPU numerical parity, throughput, whole-run memory or eligibility. Final guard tests are a subset revalidation, not extra independent coverage."
+}
