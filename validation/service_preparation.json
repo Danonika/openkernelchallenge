@@ -1,0 +1,20 @@
+{
+  "installation_executed_without_gpu": true,
+  "solution_files_identical": 34,
+  "protected_files_identical": 15,
+  "no_arg_apply_ast_verified": true,
+  "solution_sha256": "dfe2b63ee35ff1e93dd2fa109a7eed84b0ac0f45cde50a0b4c4e9f89c8aee8e2",
+  "template_cells_preserved": true,
+  "notebook_sha256": "f135d88b223b63aa28f18b911608ae5ed1ad2206e0cf487b99cf7f0af62b49e8",
+  "code_cells_compiled": true,
+  "failure_export_simulated_fixture_passed": true,
+  "ipython_event_execution_tested": false,
+  "nbformat_schema_validator_available": false,
+  "gpu_execution": false,
+  "api_submission_attempted": false,
+  "jobs_created": 0,
+  "service_access_blocker": "Workspace HTTPS proxy certificate does not contain the GPU service IP SAN; browser and verified HTTP clients reject it; no token was sent.",
+  "readiness_export_simulated_fixture_passed": true,
+  "readiness_export_budget_bytes": 8388608,
+  "readiness_export_file_limit": 20
+}

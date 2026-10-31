@@ -1,0 +1,81 @@
+{
+  "scope": "Offline SM75 compilation and resource inspection only. No physical GPU launch, numerical CUDA validation, runtime, memory-peak or qualification evidence.",
+  "torch": "2.11.0+cpu",
+  "triton": "3.6.0",
+  "cuda_available": false,
+  "compiled_configuration_count": 2,
+  "no_compiled_binaries_or_caches_shipped": true,
+  "configurations": [
+    {
+      "kernel": "soup_dropout_half_gradient_epilogue",
+      "source_file": "solution/lora_dropout.py",
+      "source_file_sha256": "c6f4df8cc95eac7a76b36b0a84c0372b2678192cabe7d4227302378587bdd277",
+      "kernel_source_sha256": "310676d413df1937254ae51d2ad837e4ebca45df3751941982fd5d51f59aa55e",
+      "signature": {
+        "GRAD": "*fp16",
+        "MASK": "*i1",
+        "OUT": "*fp32",
+        "N": "i32"
+      },
+      "constants": {
+        "SCALE": 1.0526316165924072,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1,
+        "enable_fp_fusion": false
+      },
+      "target": "sm75",
+      "compiled": true,
+      "assembled": true,
+      "launched": false,
+      "ptx_target_matches": true,
+      "registers_per_thread": 14,
+      "shared_bytes": 0,
+      "local_bytes": 0,
+      "stack_bytes": 0,
+      "resource_listing": "Resource usage:\n Common:\n  GLOBAL:0\n Function soup_dropout_half_gradient_epilogue:\n  REG:14 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "ptx_sha256": "a7a26cd57e6be82c93ee2bb6fa7db84528bc41a52561ad61d46a29811635d533",
+      "cubin_sha256": "05c4a3211978aa63d6fc912ec3765314a8d9d5c22c9ebf4f5affbcfa77f2da54",
+      "cubin_bytes": 6760
+    },
+    {
+      "kernel": "soup_aligned_additive_mask",
+      "source_file": "solution/shared_attention_mask.py",
+      "source_file_sha256": "93b6f6c2704685075fb14ac29901445350e0cf1c89a453ee1ef6e9500bd745d7",
+      "kernel_source_sha256": "d86b7cb46479e01d035f99f9556e2c71ef3ee84ce774efed7ebbd1fd02ab3f16",
+      "signature": {
+        "BOOL": "*i1",
+        "OUT": "*fp16",
+        "B": "i32",
+        "T": "i32",
+        "PITCH": "i32",
+        "SB": "i32",
+        "SR": "i32",
+        "SC": "i32"
+      },
+      "constants": {
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1,
+        "enable_fp_fusion": false
+      },
+      "target": "sm75",
+      "compiled": true,
+      "assembled": true,
+      "launched": false,
+      "ptx_target_matches": true,
+      "registers_per_thread": 24,
+      "shared_bytes": 0,
+      "local_bytes": 0,
+      "stack_bytes": 0,
+      "resource_listing": "Resource usage:\n Common:\n  GLOBAL:0\n Function soup_aligned_additive_mask:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:408 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "ptx_sha256": "af256001351204204c4abbc9e55971b6822a7113bed0c5653b7291862ee2b8a5",
+      "cubin_sha256": "077e1d7a902ced4d6b71f3c1eb043ff99d8b7a724ab7025d00c03e0abfebfdab",
+      "cubin_bytes": 9832
+    }
+  ]
+}
