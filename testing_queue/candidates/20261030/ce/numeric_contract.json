@@ -1,0 +1,13 @@
+{
+  "provenance": "Original project materialized CE, retained from trial009. These hashes bind AST bodies, not CUDA correctness.",
+  "prior_core_sha256": "247ba4173b0d36870326d786cd6670788dc16c43cb218d86754a7913c0592bc1",
+  "kernel_ast_sha256": {
+    "soup_ce_exp_tile_max": "ca7d026575fdf31842ffc247fdd4b4d3a51ca846c430de222c61a1c2f7c07d91",
+    "soup_ce_exp_row_max": "b0ee570e5124204537bb55ce8de15be9b11f61b71dd7acb1c1bcfd4a1146c086",
+    "soup_ce_exp_tile_sum": "71afa729769873d150336104567cc6c4e4b826f6726c39a79416da2ac5a15db2",
+    "soup_ce_exp_selected": "6b250eb6de678d4be167bdd4f1b78de89aed4cdf581f5a912bb04784e9f2dcdc",
+    "soup_ce_exp_backward": "941aa825d7074084ab835c4e2f6eda3714bcd45c3276fc37c7363f80cbf51389"
+  },
+  "native_causal_loss_ast_sha256": "1e32dee426f5e757405a2d3f53190fffc83f7a3d65f1e4f66a5f88762f74088b",
+  "numerical_gates_sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+}

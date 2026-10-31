@@ -1,0 +1,252 @@
+{
+  "created_at": "2026-10-30T13:40:12.269527+00:00",
+  "physical_gpu_execution": false,
+  "scope": "CPU/source observations and logical traffic models only. No measured speed or GPU-memory claim.",
+  "lora_epilogue": {
+    "status": "Pinned source and CPU checks plus logical traffic arithmetic; no physical GPU profiling",
+    "elements_per_layer": 3670016,
+    "elements_28_layers": 102760448,
+    "forward_bytes_per_element": {
+      "native": 28,
+      "fused": 8,
+      "removed": 20
+    },
+    "backward_bytes_per_element_with_both_gradients": {
+      "native": 16,
+      "fused": 8,
+      "removed": 8
+    },
+    "removed_bytes_28_layers": 2877292544,
+    "removed_GiB_28_layers": 2.6796875,
+    "nominal_pointwise_launches_removed_28_layers": 280,
+    "first_block_adapter_only_adjustment": {
+      "removed_traffic_bytes_less_than_full_gradient_model": 14680064,
+      "removed_launches_less_than_full_gradient_model": 2
+    },
+    "assumptions": [
+      "All28 layers use maximum batch4x512 and q/v output widths1536/256.",
+      "Full-gradient upper bound; adapter-only first-block backward requires less original work.",
+      "Logical array reads/writes are not measured DRAM, allocator peak or runtime.",
+      "Native dropout and A/B GEMMs/retained activations remain unchanged."
+    ],
+    "cpu_tests": {
+      "passed": 11,
+      "physical_cuda_skipped": 6
+    }
+  },
+  "rotary": {
+    "schema": "soup.rotary.logical_traffic.v1",
+    "status": "CPU-observed operator counts plus arithmetic traffic model; not GPU profiling",
+    "physical_gpu_execution": false,
+    "versions": {
+      "torch": "2.11.0+cpu",
+      "transformers": "5.16.1",
+      "triton": "3.6.0"
+    },
+    "files": [
+      "solution/rotary.py",
+      "solution/test_rotary.py"
+    ],
+    "cpu_observation": {
+      "shape": {
+        "B": 2,
+        "T": 7,
+        "Hq": 12,
+        "Hk": 2,
+        "D": 128,
+        "coefficient_batch": 1
+      },
+      "method": "TorchDispatchMode over pinned eager apply_rotary_pos_emb and torch.autograd.grad; nested CPU torch.profiler confirms slice_backward zero-fill plus half-copy",
+      "forward_calls": {
+        "mul": 4,
+        "neg": 2,
+        "cat": 2,
+        "add": 2,
+        "slice_view": 4,
+        "unsqueeze_view": 2
+      },
+      "backward_dispatch_calls": {
+        "mul": 4,
+        "neg": 2,
+        "slice_backward": 4,
+        "add": 4,
+        "slice_view": 4
+      },
+      "backward_nested_data_operations": {
+        "mul": 4,
+        "neg": 2,
+        "zero_fill": 4,
+        "half_copy": 4,
+        "add_in_place": 4
+      },
+      "backward_excludes": "leaf .grad storage allocation/copy; autograd.grad returns Q/K gradients directly",
+      "data_operation_counts": {
+        "forward_eager": 10,
+        "backward_eager_decomposed": 18,
+        "forward_fused_launches": 1,
+        "backward_fused_launches_if_any_gradient": 1
+      }
+    },
+    "equations": {
+      "R": "FP32 round-to-nearest-even after each listed multiply and addition",
+      "neg": "exact sign-bit flip, including signed zero; not zero-minus",
+      "Z": "Z(z)=positive zero if z==0, otherwise z; reproduces slice-backward positive-zero padding",
+      "forward_first_half": "R(R(u*c0)+R(neg(v)*s0))",
+      "forward_second_half": "R(R(v*c1)+R(u*s1))",
+      "backward_first_half": "R(R(g0*c0)+Z(R(g1*s1)))",
+      "backward_second_half": "R(R(g1*c1)+Z(neg(R(g0*s0))))",
+      "coefficient_halves": "c0,c1,s0,s1 are read independently; no duplicated-half assumption"
+    },
+    "nominal_shape": {
+      "B": 4,
+      "T": 512,
+      "Hq": 12,
+      "Hk": 2,
+      "D": 128,
+      "layers": 28,
+      "dtype": "FP32",
+      "both_Q_and_K_gradients_requested": true
+    },
+    "elements": 3670016,
+    "tensor_sizes": {
+      "Q_bytes": 12582912,
+      "K_bytes": 2097152,
+      "Q_plus_K_bytes": 14680064,
+      "broadcast_cos_plus_sin_bytes": 524288,
+      "per_batch_cos_plus_sin_bytes": 2097152
+    },
+    "traffic_basis": {
+      "unit": "N is total Q+K elements, each FP32 element is 4 bytes; coefficients excluded from the traffic table",
+      "forward_eager_terms_bytes_per_N": {
+        "two_multiply_passes": 16,
+        "half_negation": 4,
+        "concatenate": 8,
+        "final_add": 12
+      },
+      "backward_eager_terms_bytes_per_N": {
+        "two_multiply_passes": 16,
+        "half_negation": 4,
+        "two_padded_slice_gradients_zero_plus_copy": 16,
+        "two_gradient_additions": 24
+      },
+      "fused_each_direction_bytes_per_N": {
+        "read_tensor_or_upstream_gradient": 4,
+        "write_result_or_input_gradient": 4
+      },
+      "coefficient_logical_reads_if_counted": "Add 8*N bytes to EACH direction for BOTH eager and fused; broadcast addresses repeat and are usually cacheable, so this is not unique DRAM volume."
+    },
+    "traffic": {
+      "forward": {
+        "eager_bytes_per_element": 40,
+        "fused_bytes_per_element": 8,
+        "eager_bytes_per_layer": 146800640,
+        "fused_bytes_per_layer": 29360128,
+        "avoided_bytes_per_layer": 117440512,
+        "eager_MiB_per_layer": 140.0,
+        "fused_MiB_per_layer": 28.0,
+        "avoided_MiB_per_layer": 112.0,
+        "avoided_bytes_28_layers": 3288334336,
+        "avoided_GiB_28_layers": 3.0625
+      },
+      "backward": {
+        "eager_bytes_per_element": 60,
+        "fused_bytes_per_element": 8,
+        "eager_bytes_per_layer": 220200960,
+        "fused_bytes_per_layer": 29360128,
+        "avoided_bytes_per_layer": 190840832,
+        "eager_MiB_per_layer": 210.0,
+        "fused_MiB_per_layer": 28.0,
+        "avoided_MiB_per_layer": 182.0,
+        "avoided_bytes_28_layers": 5343543296,
+        "avoided_GiB_28_layers": 4.9765625
+      },
+      "combined": {
+        "eager_bytes_per_element": 100,
+        "fused_bytes_per_element": 16,
+        "eager_bytes_per_layer": 367001600,
+        "fused_bytes_per_layer": 58720256,
+        "avoided_bytes_per_layer": 308281344,
+        "eager_MiB_per_layer": 350.0,
+        "fused_MiB_per_layer": 56.0,
+        "avoided_MiB_per_layer": 294.0,
+        "avoided_bytes_28_layers": 8631877632,
+        "avoided_GiB_28_layers": 8.0390625
+      }
+    },
+    "launch_model": {
+      "conditional_assumption": "Treat each observed eager data operation as one CUDA launch; real CUDA cat/copy/fill dispatch must be profiled.",
+      "nominal_per_layer": {
+        "eager_forward": 10,
+        "eager_backward": 18,
+        "fused_forward": 1,
+        "fused_backward": 1
+      },
+      "nominal_28_layers": {
+        "eager": 784,
+        "fused": 56,
+        "avoided": 728
+      }
+    },
+    "optional_first_layer_frozen_K_adjustment": {
+      "condition": "Only if first-layer K does not require a gradient (depends on actual input-gradient hooks).",
+      "reduce_28_layer_avoided_bytes_by": 27262976,
+      "adjusted_28_layer_avoided_GiB": 8.013671875
+    },
+    "validation": {
+      "command": "TRITON_INTERPRET=1 python -m pytest solution/test_rotary.py -q",
+      "passed": 28,
+      "physical_CUDA_tests_skipped": 4,
+      "real_pinned_Qwen2Attention_CPU_checks": {
+        "scales": [
+          1,
+          65536
+        ],
+        "patched_calls_each": 1,
+        "forward": "exact",
+        "all_projection_and_hidden_gradient_tolerance_after_dividing_by_scale": {
+          "rtol": 2e-06,
+          "atol": 1e-07
+        },
+        "CPU_RNG": "unchanged"
+      },
+      "standalone_boundary_checks": "exact finite values, scaled derivatives, distinct halves, tails, signed zeros, nonfinite classification, unusual upstream strides, optional/frozen gradients, alias/dispatch guards",
+      "GQA_cast_counterexample": {
+        "native_FP32_repeat_then_half_gradient": [
+          0,
+          -113137.0859375
+        ],
+        "half_before_repeat_gradient": [
+          "NaN",
+          "-Inf"
+        ]
+      }
+    },
+    "limitations": [
+      "Logical tensor-pass savings are an uncached upper-bound model of avoidable transfer. They are not measured DRAM bytes, peak-memory reduction, time, throughput, or a speedup prediction.",
+      "The 28-layer model assumes maximum sequence length and both gradients in every layer. Actual token lengths, frozen paths, dispatch choices, and cache reuse change the amount.",
+      "Forward tensors are transient. Neither reference nor fusion needs to save Q/K values for this frozen-coefficient backward; do not claim persistent per-layer Q/K activation savings or sum transient peaks over layers.",
+      "The custom autograd node can reschedule Q/K/V contributions to shared upstream hidden inputs even when Q/K have separate storage. Boundary exactness and the small CPU attention test do not prove whole-model bitwise parity.",
+      "The patch preserves FP32 Q/K, original meaningful layout, SDPA autocast, GQA replication/reduction, masks, attention scale, dropout, and RNG order. It does not fuse projections or trig generation.",
+      "Direct Q/K shared storage is guarded out. Trainable coefficients, unsupported shapes/layouts/dtypes/devices, and other unsqueeze dimensions delegate before custom work.",
+      "Physical T4 numerical tests, full-training metrics/gradients, event timings, sanitizer checks if needed, and the organizer measured-original-JIT-runtime gate remain outstanding. No claim of meeting the 5-percent eligibility threshold."
+    ],
+    "eligible_runtime_fraction": null,
+    "measured_speedup": null,
+    "sources": [
+      "https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/models/qwen2/modeling_qwen2.py",
+      "https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/integrations/sdpa_attention.py",
+      "https://github.com/huggingface/peft/blob/v0.20.0/src/peft/tuners/lora/bnb.py",
+      "https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/autocast_mode.h",
+      "https://github.com/triton-lang/triton/blob/v3.6.0/python/triton/language/semantic.py",
+      "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/raw/main/config.json",
+      "https://docs.nvidia.com/cuda/archive/11.7.1/parallel-thread-execution/index.html#floating-point-instructions-mul"
+    ],
+    "source_note": "Pinned implementation contents were read from installed packages. NVIDIA PTX and official model config were also retrieved from the web. CPU profiler, not an unverified C++ source fetch, established nested slice-backward counts."
+  },
+  "source_files": {
+    "solution/rotary.py": "8e8ef322d70eba6ac898a040a14d74b9dc8e276b3f93bd033414eeaf927b5429",
+    "solution/lora_epilogue.py": "124f3ff31c7f1328bfa2a0e7760fd6bd7b48d9daa654d1addef154760767964e",
+    "solution/test_rotary.py": "a8659bbb8455c6f20868672a7a41e4c96c67b5a066cd443addd0067acf4faf37",
+    "solution/test_lora_epilogue.py": "c7394c871558fe12ab684aca5e5872ecd18763467e2ace460ff9016c7efd6421"
+  }
+}

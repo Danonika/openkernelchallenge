@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU notebook runner</title><link rel="stylesheet" href="/notebooks.css"><script src="/notebooks.js" defer></script></head>
+<body><main>
+<header class="masthead"><div><p class="eyebrow">SOUP / EXPERIMENTS</p><h1>GPU notebook runner</h1><p class="subtitle">Compare every run. See what improved.</p></div><div class="hardware"><span class="live-dot"></span> Tesla T4 · GPU 0 <span class="hardware-sub">4 CPUs · 30 GiB container limit</span></div></header>
+<section class="connection" aria-label="Connection">
+<div class="connection-fields"><label for="token">Access token</label><input id="token" type="password" autocomplete="off" placeholder="Paste your access token"><button id="connect">Connect</button><button id="disconnect" class="secondary">Disconnect</button></div>
+<div class="connection-note"><span id="status" role="status">Disconnected</span><span>Token stays in this page’s memory.</span></div>
+<details class="runtime-details"><summary>Runtime and limits</summary><pre id="runtime">Connect to inspect the pinned runtime.</pre></details></section>
+<section class="runs-panel" aria-labelledby="runs-title">
+<div class="section-heading"><div><p class="eyebrow">LIVE RESULTS</p><h2 id="runs-title">Your experiments</h2></div><span id="updated" class="muted">Refreshes every 5 seconds</span></div>
+<div class="stats" aria-label="Run statistics">
+<div><span>Latest jobs</span><strong id="stat-total">—</strong><small>Up to 100 jobs</small></div>
+<div><span>Active</span><strong id="stat-active">—</strong><small>Queued or running</small></div>
+<div><span>Beat baseline</span><strong id="stat-wins">—</strong><small>Faster, no extra VRAM, checks pass</small></div>
+<div><span>Best speedup</span><strong id="stat-speedup">—</strong><small>Completed runs with checks passed</small></div></div>
+<div class="toolbar">
+<label class="search-label" for="search">Find a run<input id="search" type="search" placeholder="Candidate name or job ID"></label>
+<label for="filter">Show<select id="filter"><option value="all">All jobs</option><option value="comparable">Comparable reports</option><option value="active">Active jobs</option><option value="failed">Failed jobs</option><option value="wins">Beat baseline</option></select></label>
+<label for="sort">Sort<select id="sort"><option value="newest">Newest first</option><option value="speedup">Best speedup</option><option value="memory">Lowest GPU memory</option><option value="loss">Lowest eval loss</option></select></label>
+<button id="refresh" class="secondary">Refresh</button></div>
+<p class="scroll-hint">Scroll sideways to see all metrics and actions →</p>
+<div class="table-wrap" tabindex="0" aria-label="Scrollable experiment comparison table">
+<table><thead><tr><th>Candidate / status</th><th>Outcome</th><th class="numeric">Training</th><th class="numeric">Speedup</th><th class="numeric">GPU peak</th><th class="numeric">Eval loss</th><th>Public checks</th><th>Actions</th></tr></thead><tbody id="jobs"></tbody></table>
+<p id="empty" class="empty">Connect to see your experiments.</p></div>
+<div class="table-footer"><span id="row-count">No jobs loaded</span><span>Training time excludes warm-up and evaluation. Metrics are reported public results, not official admission.</span></div></section>
+<section id="new-run" class="submit-panel">
+<div class="section-heading"><div><p class="eyebrow">NEXT EXPERIMENT</p><h2>Run a notebook</h2></div><a href="/notebook-training-template.ipynb" class="text-link">Download solution template ↗</a></div>
+<p class="muted">The solution template reuses the saved compatible baseline; no extra base run is needed. Each training run has an 80-second limit. Jobs stop at the first detected failure.</p>
+<form id="submit"><div class="submit-grid">
+<label for="candidate">Candidate name<input id="candidate" value="agent-notebook" required maxlength="100" pattern="[A-Za-z0-9_.-]+"></label>
+<label for="file">Notebook<input id="file" type="file" accept=".ipynb" required></label>
+<label for="timeout">Whole notebook limit (seconds)<input id="timeout" type="number" value="3600" min="10" max="14400" required></label></div>
+<div class="submit-bottom"><label class="check"><input id="no-secrets" type="checkbox" required> This notebook contains no secrets or access tokens.</label><button type="submit" disabled>Submit notebook</button></div></form>
+<details class="help"><summary>Paths, templates and API calls</summary>
+<p>Use <code>/kaggle/working</code> for work and <code>/kaggle/working/results</code> for downloadable files. Runtime, model and public data are preinstalled. Internet access is disabled.</p>
+<p><a href="/notebook-gpu-smoke.ipynb">GPU check notebook</a> · <a href="/notebook_client.py">Python client</a></p><pre>python notebook_client.py submit candidate.ipynb --wait --out results.zip
+
+POST https://35.200.1.242/v1/notebooks
+Authorization: Bearer YOUR_TOKEN
+Content-Type: application/json
+
+{
+  "candidate_id": "experiment-001",
+  "request_id": "a-new-unique-request-id",
+  "contains_secrets": false,
+  "notebook_base64": "BASE64_ENCODED_NOTEBOOK"
+}
+
+GET /v1/notebooks/{id}
+GET /v1/notebooks/{id}/outputs</pre>
+<p>Loss must be at most baseline +0.5%; solution GPU peak at most baseline +10%. “Beat baseline” means faster training with no increase in GPU memory and all displayed checks passed. Speedup = baseline training seconds / solution training seconds. Stopped runs show partial measurements, with speedup as an upper bound. Eval loss appears whenever evaluation completed.</p></details></section>
+<footer>GPU 0 runs one job at a time. Logs and outputs remain available after a failure.</footer>
+</main></body></html>
+

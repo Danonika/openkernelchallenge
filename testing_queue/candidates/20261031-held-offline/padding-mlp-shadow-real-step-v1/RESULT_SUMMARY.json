@@ -1,0 +1,15 @@
+{
+  "status": "UNRUN_HELD_SERVER_UPDATE",
+  "submitted": false,
+  "GPU_executed": false,
+  "scope": "Reviewed bounded shadow diagnostic on one fresh-model real-public-batch step; asks which of 84 frozen MLP dX GEMMs have finite exactly-zero padded adjoints. Dense starter-half forward and full-M native-return backward remain downstream; compact results are discarded. No optimizer, full training, finite-range certificate, performance or admission result.",
+  "next_action": "After explicit server resume and recovery of existing accepted jobs, execute the exact frozen diagnostic. Inspect source-bound eligibility and numerical observations before proposing any production padding-removal change.",
+  "notebook_sha256": "a01558a4e9d3c1bd94cf10663441c0c22eb825591d56b0393663d4830ecfeefd",
+  "source_zip_sha256": "9d8d043c14732b0d96e335b4c6a1659d2f4cf6f01fc3d275bf49b8513743b5b6",
+  "independent_review_receipt_sha256": "1be723320b69602b79fc9c7391bf10116e7a8203f8c73e1722b5af6d5cc6a2c1",
+  "review_receipt_exported": false,
+  "performance": null,
+  "score": null,
+  "admission": "UNKNOWN",
+  "not_final_submission": true
+}

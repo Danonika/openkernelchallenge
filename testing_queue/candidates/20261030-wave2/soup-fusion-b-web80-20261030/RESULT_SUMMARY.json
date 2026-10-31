@@ -1,0 +1,39 @@
+{
+  "candidate": "soup-fusion-b-web80-20261030",
+  "complete_measurements": null,
+  "individual_command_observations_not_paired": [
+    {
+      "reported_external_peak_mib": 14345,
+      "reported_wall_s": 74.31,
+      "run": "base_1",
+      "scope": "harness log observation only; incomplete cohort; no ratio"
+    }
+  ],
+  "limits": [
+    "API state is not task correctness.",
+    "Internal 64 steps do not override a full-command timeout.",
+    "No ratio is formed from an incomplete cohort or another job.",
+    "Do not rerun unchanged failures automatically."
+  ],
+  "notebook_sha256": "302559091e58eada776c0c6ef0ff62d860881c8c8848d3e20fdf9ab38647dee0",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "ac5efcb675dd29ca3fb55ae83e29c2941131417a355aac81d58960085d431793",
+  "paired_ratios": null,
+  "platform": "GCP development evidence, not Kaggle",
+  "preflight_statuses": [
+    "PASS_PREFLIGHT_ONLY"
+  ],
+  "public_eval_verified": false,
+  "raw_receipt_filename": "fusion_b_attempt01_receipt_v3.json",
+  "raw_receipt_sha256": "e200d0210e621e37678f17dfb3407e266aff7bbad1acf6c59a855f0d69a36022",
+  "raw_review_status": "INCOMPLETE_CENSORED_OR_UNBOUND",
+  "score": null,
+  "training_limit": {
+    "deadline_reached": true,
+    "elapsed_s": 80.00013648599997,
+    "limit_s": 80.0,
+    "reason": "training_run_exceeded_limit",
+    "reported_wall_s": 80.0,
+    "run_name": "solution_1"
+  }
+}

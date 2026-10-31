@@ -1,0 +1,32 @@
+[Unit]
+Description=Google Sheets intake for the Soup notebook queue
+After=network-online.target soup-api.service
+Wants=network-online.target
+Requires=soup-api.service
+
+[Service]
+Type=simple
+DynamicUser=yes
+StateDirectory=soup-sheets-queue
+StateDirectoryMode=0700
+LoadCredential=soup-token:/etc/soup-queue/submitter.env
+LoadCredential=google-writer-token:/etc/soup-queue/sheets-access-token.json
+ExecStart=/usr/bin/python3 /opt/soup-sheets-queue-v2/sheets_queue_worker.py --soup-token-file ${CREDENTIALS_DIRECTORY}/soup-token --state-dir /var/lib/soup-sheets-queue --poll-seconds 30 --google-access-token-file ${CREDENTIALS_DIRECTORY}/google-writer-token
+Restart=on-failure
+RestartSec=15
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+MemoryMax=768M
+CPUWeight=10
+AllowedCPUs=4-7
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

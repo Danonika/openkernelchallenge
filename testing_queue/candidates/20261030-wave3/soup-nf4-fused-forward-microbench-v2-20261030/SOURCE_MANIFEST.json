@@ -1,0 +1,121 @@
+{
+  "candidate": "soup-nf4-fused-forward-microbench-v2-20261030",
+  "notebook_sha256": "72bb6f812c329359ddf82e16862738fa029fcdc6ceb246887cfc43596e3661be",
+  "embedded_payload_sha256": {
+    "solution/__init__.py": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41",
+    "solution/fixtures.py": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50",
+    "solution/guarded_forward.py": "1e15c10626515be88ac4c4cdf4753b71b1c2af4ac2bfa81dba32b8fb9a63e4b9",
+    "solution/kernel.py": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8",
+    "solution/native_source_manifest.json": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7",
+    "solution/nf4_format.py": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4",
+    "solution/operand_probe.py": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528",
+    "solution/web_preflight.py": "a9c804d25b729449239448f637438e4c425e9a4a14b396d60c291b5dc3ced804",
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "reviewed_support.py": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c",
+    "worker.py": "c27b164216f6ceb71d0145faf965a72879768e39c8afc3e0dd6f12d62bee1ba7",
+    "driver.py": "68bc24799bf67b2d27eb611f40eee8aa15e93d21e974e67fdbf8c82e490c08c0",
+    "source_manifest.json": "62300431a93e89ab3effc19697e6471851dc1ee820117344df91974c76d08c69",
+    "payload_manifest.json": "5f46d112499c359b475008df8589caa8f8a9d3444fb809aaaecf8891ead08892"
+  },
+  "decoded_source_archives": [],
+  "exported_payload_files": {
+    "driver.py": {
+      "bytes": 6753,
+      "sha256": "68bc24799bf67b2d27eb611f40eee8aa15e93d21e974e67fdbf8c82e490c08c0"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "payload_manifest.json": {
+      "bytes": 1512,
+      "sha256": "5f46d112499c359b475008df8589caa8f8a9d3444fb809aaaecf8891ead08892"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "solution/__init__.py": {
+      "bytes": 77,
+      "sha256": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41"
+    },
+    "solution/fixtures.py": {
+      "bytes": 1802,
+      "sha256": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50"
+    },
+    "solution/guarded_forward.py": {
+      "bytes": 5180,
+      "sha256": "1e15c10626515be88ac4c4cdf4753b71b1c2af4ac2bfa81dba32b8fb9a63e4b9"
+    },
+    "solution/kernel.py": {
+      "bytes": 3047,
+      "sha256": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8"
+    },
+    "solution/native_source_manifest.json": {
+      "bytes": 167,
+      "sha256": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7"
+    },
+    "solution/nf4_format.py": {
+      "bytes": 1266,
+      "sha256": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4"
+    },
+    "solution/operand_probe.py": {
+      "bytes": 753,
+      "sha256": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528"
+    },
+    "solution/web_preflight.py": {
+      "bytes": 5779,
+      "sha256": "a9c804d25b729449239448f637438e4c425e9a4a14b396d60c291b5dc3ced804"
+    },
+    "source_manifest.json": {
+      "bytes": 788,
+      "sha256": "62300431a93e89ab3effc19697e6471851dc1ee820117344df91974c76d08c69"
+    },
+    "worker.py": {
+      "bytes": 3750,
+      "sha256": "c27b164216f6ceb71d0145faf965a72879768e39c8afc3e0dd6f12d62bee1ba7"
+    }
+  },
+  "validation_tests": {
+    "tests/cpu_lane_proof.py": {
+      "bytes": 4735,
+      "sha256": "c76a32b06f9bfc6ac8b6912ca67cb32b906f8683f7e19e956f211f2ce8f2ee5d"
+    },
+    "tests/offline_mma.py": {
+      "bytes": 2022,
+      "sha256": "e8f71c4bc6b8d5a790d6563bf83a53a1eed3a603b872dc3c313f1fde6cb5de04"
+    },
+    "tests/offline_original.py": {
+      "bytes": 2248,
+      "sha256": "5cbafa2c35f957becb3de53dfb8a6b62023c1d19ecf036b88e3fc50401a49d6d"
+    },
+    "tests/offline_solution_mma.py": {
+      "bytes": 2014,
+      "sha256": "ea6224a487bbe13b4c31991dacf4ee7115f370f4131750881905f78553987d4b"
+    },
+    "tests/test_guards.py": {
+      "bytes": 3716,
+      "sha256": "281afccc8cfe8f956ded797b5a30ffbb6c3e9199cc5fed6cf9a6d338038ba82f"
+    },
+    "tests/test_packet.py": {
+      "bytes": 7411,
+      "sha256": "53274d9fa906b84ef7dc985323322e0b073db610c8fe2035f61070c8a3e32630"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

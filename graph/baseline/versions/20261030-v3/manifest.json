@@ -1,0 +1,20 @@
+{
+  "scope": "Sanitized versioned mirror; one provisional measured baseline only",
+  "source_commit": "e3ba9231c1e7f917e709c2d9e57e84dc9961bd8a",
+  "files": {
+    "README.md": "25a8a3c85eb99158ccf0bb80768d0953932449e6bd4c95ffe78d2bbbd50c9016",
+    "app.js": "f28459d5004a34369aafb0d7fd66dd6b3b8e25cff21ee3318b96c96156324ce0",
+    "data.js": "0051344d245cd0118df59ce6cd614da8f30c2c1a2bda0f5ddc433785db90255b",
+    "evidence/kaggle-v3/environment.json": "68dc6a80fbf0d9e178b7b6ac2511f3f9ac9106165e898480b80ef5f6209f997e",
+    "evidence/kaggle-v3/eval_base.json": "aa82d4963e5ab288190589e4c978dffd89b3f428b3f4262739da3dec75377d42",
+    "evidence/kaggle-v3/metrics.json": "2454f2d0db3b70cba7e6bbb0f26909ee42169bc2bc5071670337bcb03af25db6",
+    "evidence/kaggle-v3/result.json": "6e80eaee67ea7431aa5b0354b80253b67f8f5226b91822f18360c559922c5c08",
+    "evidence/kaggle-v3/summary.json": "8a5f646b8997e5e75bc2432d578664e4bf371070753b35d888f4c31eb872a7ef",
+    "graph.json": "8e724d83b242803aece8dc1f67ca4add4d17333d161f8f3c02fde786993f9a41",
+    "index.html": "196bc2c9c5146db55d51db8fd01292408d6cc1cbe87aa76801987324c0a4eb10",
+    "publication.json": "7ddbb36b907cb7ea01e672f076dcd9c760519e8c6fae76e4787aebbbda56a70b",
+    "schema.json": "dceb1a106615b00e5f9a566690162be0270913da69919cc3087b745cd38e89ee",
+    "style.css": "5d97039a8cec6ffb6a38cffdeab3f91cb70d7c54d35285cca6f66ac43c549feb",
+    "verify_snapshot.py": "2a1377674511d26435017f8144f878f3512f82d7d0d0955bf35cabaeac686c63"
+  }
+}

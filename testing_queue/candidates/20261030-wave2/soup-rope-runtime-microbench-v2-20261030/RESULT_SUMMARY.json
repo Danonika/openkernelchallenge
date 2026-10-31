@@ -1,0 +1,24 @@
+{
+  "candidate": "soup-rope-runtime-microbench-v2-20261030",
+  "complete_fixed_task": false,
+  "error": "RuntimeError('Process receipt already exists; refuse to overwrite')",
+  "limits": [
+    "Native and old fixtures only; runtime method did not execute due to process-receipt path collision.",
+    "Synthetic five-shape RoPE timings, fixed native/old/runtime order; no full-training speed or memory claim.",
+    "Cold first-call wall includes allocation, dispatch, compilation where needed and device work; not pure compilation time.",
+    "Warm CUDA-event stream intervals include host launch gaps; not pure kernel timing.",
+    "No payload source executed by reader."
+  ],
+  "notebook_sha256": "671ab6ca97a95242a4027cad17362902a6364f3b33debfb63ef15efa17d128c3",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "3234bc8b95ae56ddcd11b8282a3989a92a84047ecb5baa3bbd7fd8c38a198578",
+  "platform": "GCP development evidence, not Kaggle",
+  "raw_receipt_filename": "rope_microbench_v2_attempt01_partial_receipt.json",
+  "raw_receipt_sha256": "98c0bf59971bc9c266fff609667d3c8c76abcb407b334e4681787fbe6ab95841",
+  "raw_review_status": "PARTIAL_SOURCE_BOUND_MICROBENCH_ONLY",
+  "scope": "Synthetic microbenchmark only",
+  "score": null,
+  "summary": "Native and old fixtures completed; runtime method never started because process receipt path already existed. No runtime timing or training claim.",
+  "task_wall_peak_eval_share_ratios": null,
+  "training_executed": false
+}

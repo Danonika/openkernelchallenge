@@ -1,0 +1,67 @@
+{
+  "cycle": 3,
+  "scope": "Incremental review of existing RoPE and RMSNorm/residual IDs; no new graph nodes or performance points",
+  "previous_snapshot": "jury_snapshots/cycle2_closed_20261030T1131Z/manifest.json",
+  "sources": [
+    {
+      "repository": "huggingface/transformers",
+      "commit": "93c8b7b485963a10800c91f55304db6be211c2bd",
+      "path": "src/transformers/models/qwen2/modeling_qwen2.py",
+      "git_blob_sha": "b4fed98fafae8e4ee39be3b8cd766b1c85b079cd",
+      "reviewed_lines": [[1, 285], [280, 400]],
+      "url": "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py",
+      "contracts": [
+        "RoPE frequencies/trig computed under disabled autocast, then cast to inputs_embeds dtype; position embeddings generated once per model forward and passed to all layers.",
+        "rotate_half uses first/second feature halves, not even/odd interleaving; q/k multiplication and addition are separate expressions.",
+        "q/k are projection outputs viewed then head/token transposed; query and key head counts differ. Generic rotary API accepts broadcast unsqueeze dimension.",
+        "Rotated keys enter optional cache update before attention, so early output dtype changes are not automatically a consumer-only optimization.",
+        "RMSNorm converts input to FP32, computes square mean and reciprocal square root, normalizes, casts normalized value to original input dtype, then applies weight.",
+        "Decoder returns residual+attention, then residual+MLP. Residual output is a true bypass value, not scratch that may be overwritten."
+      ]
+    },
+    {
+      "repository": "huggingface/transformers",
+      "commit": "93c8b7b485963a10800c91f55304db6be211c2bd",
+      "path": "src/transformers/integrations/sdpa_attention.py",
+      "git_blob_sha": "726ddda5d070632523d6524f69c85fd05e21dcd4",
+      "reviewed_lines": [[1, 190]],
+      "url": "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/integrations/sdpa_attention.py",
+      "contracts": [
+        "GQA routing depends on mask and head dimension; mask-present paths may repeat KV rather than enable_gqa.",
+        "Preserve attention mask, scaling, causal routing and outputs; changing RoPE output layout can change downstream backend behavior even when logical values match.",
+        "Narrow proposed RoPE kernel does not replace SDPA, alter precision before its original boundary, or import a hub attention kernel."
+      ]
+    },
+    {
+      "repository": "bitsandbytes-foundation/bitsandbytes",
+      "commit": "08a9956b939857ae2c4fbd56753960cc370fa7cf",
+      "path": "bitsandbytes/autograd/_functions.py",
+      "git_blob_sha": "8a069bd101a089afc59b7d4d3d48e5dd399bc967",
+      "reviewed_lines": [[320, 405]],
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py#L350-L390",
+      "contracts": [
+        "Nonempty MatMul4Bit stores quantization state and packed B, not activation A; backward dequantizes B for grad_A.",
+        "Do not assume normalized output is already retained by frozen base matmul when proposing a saved-state swap. Real autograd lifetimes must be measured."
+      ]
+    },
+    {
+      "repository": "huggingface/peft",
+      "commit": "a5526d27a9d47d1e8264d5e1b1f96c0fdc79464e",
+      "path": "src/peft/tuners/lora/bnb.py",
+      "git_blob_sha": "15c9d201e6afe611ea7c7a47501ef2758338935b",
+      "reviewed_lines": [[500, 570]],
+      "url": "https://github.com/huggingface/peft/blob/a5526d27a9d47d1e8264d5e1b1f96c0fdc79464e/src/peft/tuners/lora/bnb.py#L513-L565",
+      "contracts": [
+        "Vanilla q/v LoRA preserves base call and clone, then independent dropout/A/B/scale/add; early norm or q dtype changes affect more than a single cast.",
+        "Do not substitute a different saved input or shared dropout branch while optimizing RoPE/norm."
+      ]
+    }
+  ],
+  "known_pending_proof": [
+    "Source-derived expected Soup FP32 norm/q/k/cos/sin boundaries still require actual T4 prepared-model inspection.",
+    "Residual backward association can be affected by autograd InputBuffer accumulation order; mathematical sum does not prove bitwise fusion equivalence.",
+    "Count unique retained storage rather than saved Tensor references; CPU saved-state inventory is not GPU peak-memory measurement.",
+    "FMA contraction and early half conversion are not assumed lossless; preserve separate-rounding baseline first.",
+    "All existing 121 IDs remain; category mappings unchanged; no experimental coordinate points created."
+  ]
+}

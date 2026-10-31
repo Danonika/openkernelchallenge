@@ -1,0 +1,18 @@
+---
+name: soup-evidence-publication
+description: Publish and maintain Soup research, run evidence and submission checklists with immutable provenance, explicit verification states, preserved catalog IDs, and scoped disclosure.
+---
+
+# Soup evidence and publication
+
+Read the shared [canonical rules](../soup-jury-admission/references/rules-v1.json) and [checklist](../soup-jury-admission/references/CHECKLIST.md). Rules, evidence, admission, score and publication authority are separate.
+
+- Preserve immutable dated cutoffs, source pins, exact hashes, original catalog IDs and prior negative results. Classify observed measurements, source-derived facts, arithmetic bounds, hypothetical sensitivities and CPU toy evidence explicitly. A fixture PASS means its stated claim was established; it is not a challenge pass. Retain genuine FAILs rather than renaming all results positive.
+- Do not overwrite a measured failure with a later repaired result. Make each attempt independently traceable to its exact source, environment, result and checks. “Verified baseline” is not “verified candidate”; public eval is not hidden admission; missing evidence remains UNKNOWN.
+- Before an external write, confirm current destination, visibility and disclosure scope. Public source citations are not permission to publish nonpublic research/logs. A previous denial requires the actual requested approval, not a new bundle/path or alternate transfer. Skills do not grant blanket privacy or mutation permission.
+- Exclude credentials, signed URLs, private account/notebook identifiers, quota metadata, model/adapter weights and unapproved raw logs. The contest ultimately requires a public saved final notebook; creating that public deliverable and publishing its link requires explicit final-submission authorization, not inference from this skill. Do not include a user's private current notebook URL as a substitute.
+- Preserve the current user-authorized tabs and all unrelated user content. The user subsequently authorized Research Files for the uploaded-file archive; the earlier three-tab limit is superseded for that addition. Keep Fusion Ideas blank. Soup Ideas preserves every canonical ID and historical verdict/evidence; Soup Runs contains only genuine measurements with verification status. Add checklist links/notes in existing headers, and create or delete no further tabs without authorization. After ranking sorts, resolve rows by live canonical ID and include all populated columns. Do not disturb user formatting or edits; read before writing and verify exact changed ranges afterward.
+- Keep performance graphs baseline-only until a real reviewed candidate result and parent instruction permit another point. CPU cases, theoretical bytes/FLOPs and guessed coordinates cannot create performance nodes. Ratios below the canonical noise floor are a scoring tie, not an admission failure or permission to alter loss. A verified failed-admission trial may be shown only when authorized, explicitly unranked; a display Z=0 is not earned correctness or performance points.
+- A research repository is not automatically the platform-created submission repository. Track the final commit, complete root SUBMISSION.md, README, authorized public saved notebook/version, demo and presentation separately. Never submit to the platform or contact judges without specific authorization.
+
+Handoff concise result first: changed IDs/ranges, immutable cutoff and hashes, verified links, tests/readback, exact remaining blockers. Canonical rule changes are versioned once in the shared contract; generated checklist views are not competing rule sources.

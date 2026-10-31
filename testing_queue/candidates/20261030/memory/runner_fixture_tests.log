@@ -1,0 +1,32 @@
+{
+  "scope": "synthetic reporter fixtures only",
+  "passed": true,
+  "cases": [
+    {
+      "case": "complete_component",
+      "passed": true,
+      "status": "COMPLETE_COMPONENT_MEASUREMENT"
+    },
+    {
+      "case": "native_timeout",
+      "passed": true,
+      "status": "FAILED_OR_INCOMPLETE"
+    },
+    {
+      "case": "missing_eval",
+      "passed": true,
+      "status": "FAILED_OR_INCOMPLETE"
+    },
+    {
+      "case": "missing_final_routes",
+      "passed": true,
+      "status": "FAILED_OR_INCOMPLETE"
+    },
+    {
+      "case": "wrapper_no_result",
+      "passed": true,
+      "status": "FAILED_OR_INCOMPLETE"
+    }
+  ],
+  "gpu_executed": false
+}

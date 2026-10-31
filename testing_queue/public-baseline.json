@@ -1,0 +1,42 @@
+{
+  "job_id": "n_6e7375b093154fca990312c240e88402",
+  "output_sha256": "3438128eaf4511e757382f280cd206d574144311ab0dce19de72b8a18bea0abd",
+  "image_id": "sha256:d28139f69c56ac897b26487f0f7d8236d701f030214341b5113b4714267c3ec9",
+  "metrics": {
+    "ok": true,
+    "runs": 1,
+    "wall_s": 71.85,
+    "gpu_peak_mib": 14345,
+    "train_loop_s": 54.1,
+    "eval_loss": 2.04968
+  },
+  "task_fingerprint": "39c5f0eca188d35616a380a242aeb1f64a48b0b46dc82606bebe6891a9655cc1",
+  "eval_data_sha256": "b7f85b78ba3186dce4deab7cfb8bf8dcf7998e1517c5749ac0f5005886c6f70e",
+  "versions": {
+    "python": "3.13.15",
+    "soup-cli": "0.77.0",
+    "torch": "2.11.0+cu128",
+    "triton": "3.6.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "trl": "0.29.1",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.14.0",
+    "datasets": "4.8.5",
+    "gpus": [
+      "Tesla T4, 580.178.04"
+    ]
+  },
+  "harness_files": {
+    "harness/example_reference.py": "6a11055f4a1822e53971c228c6e3e3aa6b88edd9eb6db81a388e26a70a030ceb",
+    "harness/_train.py": "45a62642dceab32cf3efcda504de87a9c25ea28b119b1806f56d14ff1146a89d",
+    "harness/score.py": "731c9b644dcc4069b0b069616f438064d1f7f376a202feb15201fd910ec688c5",
+    "harness/common.py": "c83066f24f266dab62ebcc9c2d44f5a65902760b53da912e65ebfe511579c2db",
+    "harness/eval_adapter.py": "47cddbb8e4579c69f9535b099ff2371b1c3af08bfbd93d14bf79aadd74d38482",
+    "harness/run_task.py": "d935a8959f348977313f2eef36870ff2699b9ba013a7978918ff35e148968a79",
+    "harness/check_rules.py": "879ab1861674f6e714eadd00aaf044235d98526dd75fab1035deec3401121ef5"
+  },
+  "compatible_outputs": [
+    "418ef2c5f66452407ce01d4a06990a23d334002762a723ca1e87c074f53afd83"
+  ]
+}

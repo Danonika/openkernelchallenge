@@ -1,0 +1,1466 @@
+{
+  "schema_version": 1,
+  "cycle": 2,
+  "generated_utc": "2026-10-30T11:23:49.726780+00:00",
+  "scope": "Cloud-only original bounded CPU numerical/semantic fixtures",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "threads": 2,
+    "interop_threads": 2
+  },
+  "script_sha256": "c99335ce9f4267aaeeb2383c24f239496f5b73da727e935085b60b1b2b32d813",
+  "nonfinite_classes": {
+    "0": "finite",
+    "1": "NaN",
+    "2": "+Inf",
+    "3": "-Inf"
+  },
+  "summary": {
+    "passed": 6,
+    "failed": 0
+  },
+  "not_validated": [
+    "CUDA kernels or T4 timing",
+    "actual CUDA GradScaler/optimizer overflow skips",
+    "full model quality",
+    "actual integration or legal routing",
+    "GPU reduction/GEMM rounding",
+    "challenge gates or owned-kernel share"
+  ],
+  "results": [
+    {
+      "name": "finite_centered_vocabulary_tile_merge",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "status": "PASS",
+      "details": {
+        "trials": 900,
+        "max_abs_errors": {
+          "ce": 1.9073486328125e-06,
+          "entropy": 1.6685808077454567e-06,
+          "probability": 1.6689300537109375e-06
+        },
+        "max_abs_errors_by_merge_order": {
+          "forward": {
+            "ce": 1.9073486328125e-06,
+            "entropy": 1.6685808077454567e-06,
+            "probability": 1.6689300537109375e-06
+          },
+          "reverse": {
+            "ce": 1.9073486328125e-06,
+            "entropy": 7.152557373046875e-07,
+            "probability": 4.172325134277344e-07
+          },
+          "balanced": {
+            "ce": 1.9073486328125e-06,
+            "entropy": 4.76837158203125e-07,
+            "probability": 3.5762786865234375e-07
+          }
+        },
+        "near_certain_singleton_tile_witness": [
+          {
+            "order": "forward",
+            "target_zero_ce": 3.0517112463712692e-05,
+            "baseline_target_zero_ce": 2.884823152271565e-05,
+            "entropy": 0.0004914477467536926,
+            "baseline_entropy": 0.0004897791659459472,
+            "target_zero_probability": 0.999969482421875,
+            "baseline_target_zero_probability": 0.9999711513519287
+          },
+          {
+            "order": "reverse",
+            "target_zero_ce": 2.884823152271565e-05,
+            "baseline_target_zero_ce": 2.884823152271565e-05,
+            "entropy": 0.0004897789913229644,
+            "baseline_entropy": 0.0004897791659459472,
+            "target_zero_probability": 0.9999711513519287,
+            "baseline_target_zero_probability": 0.9999711513519287
+          },
+          {
+            "order": "balanced",
+            "target_zero_ce": 2.884823152271565e-05,
+            "baseline_target_zero_ce": 2.884823152271565e-05,
+            "entropy": 0.0004897789913229644,
+            "baseline_entropy": 0.0004897791659459472,
+            "target_zero_probability": 0.9999711513519287,
+            "baseline_target_zero_probability": 0.9999711513519287
+          }
+        ],
+        "worst_entropy_case": {
+          "vocabulary": 257,
+          "pattern": "near_certain",
+          "widths": [
+            1
+          ],
+          "order": "forward"
+        },
+        "exploratory_tolerances": {
+          "atol": 3e-06,
+          "rtol": 2e-05,
+          "challenge_gate": false
+        },
+        "argmax_first_global_index_exact": true,
+        "noncontiguous_rows": true,
+        "largest_logits_shape": [
+          3,
+          257
+        ],
+        "actual_gpu_kernels_tested": false,
+        "decision": "Centered merge is CPU-supported for finite rounded logits, with explicit empty-tile handling and global-index ties; no bitwise/GPU/performance claim."
+      }
+    },
+    {
+      "name": "padding_empty_tile_and_global_argmax",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "status": "PASS",
+      "details": {
+        "padded_tail_exact": true,
+        "empty_tile_identity_both_orders_exact": true,
+        "naive_empty_merge": {
+          "shape": [
+            2
+          ],
+          "finite": 0,
+          "nan": 2,
+          "posinf": 0,
+          "neginf": 0,
+          "classes": [
+            1,
+            1
+          ]
+        },
+        "wrong_reverse_tie_indices": [
+          1,
+          1
+        ],
+        "correct_global_tie_indices": [
+          0,
+          0
+        ],
+        "decision": "Reject unguarded empty-tile moment merges and traversal-order tie selection."
+      }
+    },
+    {
+      "name": "ignored_nonfinite_logits_and_nll_boundary",
+      "candidates": [
+        "SOUP-TRAIN-001"
+      ],
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "ignored_row": "nan",
+            "all_ignored": false,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 3,
+              "mismatch_indices": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          },
+          {
+            "ignored_row": "nan",
+            "all_ignored": true,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 3,
+              "mismatch_indices": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          },
+          {
+            "ignored_row": "positive_inf",
+            "all_ignored": false,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 3,
+              "mismatch_indices": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          },
+          {
+            "ignored_row": "positive_inf",
+            "all_ignored": true,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 3,
+              "mismatch_indices": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          },
+          {
+            "ignored_row": "all_negative_inf",
+            "all_ignored": false,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 3,
+              "mismatch_indices": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          },
+          {
+            "ignored_row": "all_negative_inf",
+            "all_ignored": true,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 3,
+              "mismatch_indices": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          },
+          {
+            "ignored_row": "mixed_finite_negative_inf",
+            "all_ignored": false,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          },
+          {
+            "ignored_row": "mixed_finite_negative_inf",
+            "all_ignored": true,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          },
+          {
+            "ignored_row": "finite_control",
+            "all_ignored": false,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          },
+          {
+            "ignored_row": "finite_control",
+            "all_ignored": true,
+            "dense_loss": {
+              "shape": [],
+              "finite": 1,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": 0
+            },
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "nll_ignored_gradient_zero": true
+          }
+        ],
+        "decision": "Unconditional scatter-zero changes baseline nonfinite propagation. Preserve finite-path opportunity but guard all actual rounded logits or use an exact reference fallback."
+      }
+    },
+    {
+      "name": "nonfinite_incoming_gradient_and_denominator",
+      "candidates": [
+        "SOUP-TRAIN-001",
+        "SOUP-NEW-002"
+      ],
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "case": "finite",
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_autograd_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "naive_selected_gradient": {
+              "shape": [
+                1,
+                3
+              ],
+              "finite": 3,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "naive_selected_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            }
+          },
+          {
+            "case": "positive_inf_scale",
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 1,
+              "posinf": 2,
+              "neginf": 0,
+              "classes": [
+                [
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_autograd_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "naive_selected_gradient": {
+              "shape": [
+                1,
+                3
+              ],
+              "finite": 0,
+              "nan": 0,
+              "posinf": 2,
+              "neginf": 1,
+              "classes": [
+                [
+                  3,
+                  2,
+                  2
+                ]
+              ]
+            },
+            "naive_selected_comparison": {
+              "nonfinite_class_mismatch": 1,
+              "mismatch_indices": [
+                [
+                  0,
+                  0
+                ]
+              ],
+              "finite_max_abs": null
+            }
+          },
+          {
+            "case": "nan_scale",
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_autograd_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "naive_selected_gradient": {
+              "shape": [
+                1,
+                3
+              ],
+              "finite": 0,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "naive_selected_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null
+            }
+          },
+          {
+            "case": "zero_denominator",
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 1,
+              "posinf": 2,
+              "neginf": 0,
+              "classes": [
+                [
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_autograd_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "naive_selected_gradient": {
+              "shape": [
+                1,
+                3
+              ],
+              "finite": 0,
+              "nan": 0,
+              "posinf": 2,
+              "neginf": 1,
+              "classes": [
+                [
+                  3,
+                  2,
+                  2
+                ]
+              ]
+            },
+            "naive_selected_comparison": {
+              "nonfinite_class_mismatch": 1,
+              "mismatch_indices": [
+                [
+                  0,
+                  0
+                ]
+              ],
+              "finite_max_abs": null
+            }
+          },
+          {
+            "case": "inf_denominator",
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 6,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_autograd_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "naive_selected_gradient": {
+              "shape": [
+                1,
+                3
+              ],
+              "finite": 3,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "naive_selected_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            }
+          },
+          {
+            "case": "nan_denominator",
+            "dense_gradient": {
+              "shape": [
+                2,
+                3
+              ],
+              "finite": 3,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "compact_autograd_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            },
+            "naive_selected_gradient": {
+              "shape": [
+                1,
+                3
+              ],
+              "finite": 0,
+              "nan": 3,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "naive_selected_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null
+            }
+          }
+        ],
+        "decision": "Compaction with reference autograd preserves this finite-logit fixture; naive softmax-minus-onehot loses target-NaN parity for infinite effective upstream gradients. Guard or preserve reference operation order."
+      }
+    },
+    {
+      "name": "nonfinite_effective_head_weights",
+      "candidates": [
+        "SOUP-TRAIN-001"
+      ],
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "weight_case": "nan",
+            "dense_zero_row_matmul": {
+              "shape": [
+                2,
+                2
+              ],
+              "finite": 2,
+              "nan": 2,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            "scatter_comparison": {
+              "nonfinite_class_mismatch": 2,
+              "mismatch_indices": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "finite_max_abs": 0.0
+            }
+          },
+          {
+            "weight_case": "positive_inf",
+            "dense_zero_row_matmul": {
+              "shape": [
+                2,
+                2
+              ],
+              "finite": 2,
+              "nan": 2,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            "scatter_comparison": {
+              "nonfinite_class_mismatch": 2,
+              "mismatch_indices": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "finite_max_abs": 0.0
+            }
+          },
+          {
+            "weight_case": "negative_inf",
+            "dense_zero_row_matmul": {
+              "shape": [
+                2,
+                2
+              ],
+              "finite": 2,
+              "nan": 2,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            "scatter_comparison": {
+              "nonfinite_class_mismatch": 2,
+              "mismatch_indices": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "finite_max_abs": 0.0
+            }
+          },
+          {
+            "weight_case": "finite_control",
+            "dense_zero_row_matmul": {
+              "shape": [
+                2,
+                2
+              ],
+              "finite": 4,
+              "nan": 0,
+              "posinf": 0,
+              "neginf": 0,
+              "classes": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            },
+            "scatter_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0
+            }
+          }
+        ],
+        "finite_fp32_weight_can_cast_to_nonfinite_fp16": true,
+        "decision": "Zero dlogits @ nonfinite W is not zero. Validate effective FP16 head weights, not only FP32 source weights, before zero-row elision."
+      }
+    },
+    {
+      "name": "finite_operands_fp16_logit_overflow",
+      "candidates": [
+        "SOUP-TRAIN-001"
+      ],
+      "status": "PASS",
+      "details": {
+        "rounded_inputs_and_weights_finite": true,
+        "dense_logits": {
+          "shape": [
+            2,
+            3
+          ],
+          "finite": 4,
+          "nan": 0,
+          "posinf": 1,
+          "neginf": 1,
+          "classes": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ]
+          ]
+        },
+        "dense_loss": {
+          "shape": [],
+          "finite": 1,
+          "nan": 0,
+          "posinf": 0,
+          "neginf": 0,
+          "classes": 0
+        },
+        "dense_dlogits": {
+          "shape": [
+            2,
+            3
+          ],
+          "finite": 3,
+          "nan": 3,
+          "posinf": 0,
+          "neginf": 0,
+          "classes": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        "dense_hidden_gradient": {
+          "shape": [
+            2,
+            2
+          ],
+          "finite": 2,
+          "nan": 2,
+          "posinf": 0,
+          "neginf": 0,
+          "classes": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        "compact_hidden_gradient": {
+          "shape": [
+            2,
+            2
+          ],
+          "finite": 4,
+          "nan": 0,
+          "posinf": 0,
+          "neginf": 0,
+          "classes": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "comparison": {
+          "nonfinite_class_mismatch": 2,
+          "mismatch_indices": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "finite_max_abs": 0.0
+        },
+        "decision": "Finite inputs/weights alone do not guard FP16 GEMM-output overflow. Check actual rounded logits already produced by metric forward, otherwise exact fallback."
+      }
+    }
+  ]
+}

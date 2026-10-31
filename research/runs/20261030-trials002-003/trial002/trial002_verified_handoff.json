@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "trial": "trial002",
+  "catalog_id": "SOUP-NEW-003",
+  "verified_at": "2026-10-30T13:02:12Z",
+  "evidence_level": "terminal execution console verified; exact raw result/checks artifacts unavailable",
+  "status": "measured_standalone_failed_own_share_only",
+  "kaggle_terminal_state": "COMPLETE",
+  "source_manifest_matches_execution": true,
+  "source_sha256": {
+    "solution/__init__.py": "dc0e60d1b9b5980e14ce47148175648bf74816830c52bcce86444a0a74002570",
+    "solution/nf4_decode.py": "b8ae9ba1a3d1e86517bea7b94b61462c5132efd19079ca32cc09e5f7d3f151f8",
+    "solution/verify_trial002.py": "941b17ffff650197fd838fc9f3c7f580c18d4e33c81ccf948817b856ee918218"
+  },
+  "runner_sha256": "7bbfe3f4797f44b98420211256b6abe4687011d1673fdb1a6285adbe91a97b6c",
+  "starter_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "triton": "3.6.0",
+    "soup-cli": "0.77.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "trl": "0.29.1",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.14.0",
+    "datasets": "4.8.5"
+  },
+  "preflight": {
+    "status": "passed",
+    "elapsed_s": 9.754441679000024,
+    "case_group_counts": {
+      "actual_states": 16,
+      "full_table": 4,
+      "nonfinite_metadata": 3,
+      "native_gradient_cases": 8,
+      "fallback_cases": 4
+    }
+  },
+  "runs_from_harness_log": [
+    {
+      "run": "base_1",
+      "side": "base",
+      "wall_s": 86.7,
+      "gpu_peak_mib": 14345
+    },
+    {
+      "run": "solution_1",
+      "side": "solution",
+      "wall_s": 85.28,
+      "gpu_peak_mib": 14345
+    },
+    {
+      "run": "solution_2",
+      "side": "solution",
+      "wall_s": 85.19,
+      "gpu_peak_mib": 14345
+    },
+    {
+      "run": "base_2",
+      "side": "base",
+      "wall_s": 82.21,
+      "gpu_peak_mib": 14345
+    }
+  ],
+  "summary_from_logs": {
+    "base_median_wall_s_unrounded": 84.455,
+    "solution_median_wall_s_unrounded": 85.235,
+    "base_over_solution_ratio_unrounded": 0.9908488297061067,
+    "harness_printed_speedup": 0.991,
+    "base_peak_mib": 14345,
+    "solution_peak_mib": 14345,
+    "base_public_eval_loss": 2.04967,
+    "solution_public_eval_loss": 2.04968,
+    "lowest_own_share_pct_printed": 2.5,
+    "own_share_exact_fraction": null
+  },
+  "official_checks_from_log": [
+    {
+      "number": 1,
+      "status": "PASS",
+      "check": "every base and solution run finished",
+      "detail": "2 base and 2 solution runs of 2 each"
+    },
+    {
+      "number": 2,
+      "status": "PASS",
+      "check": "no ready-made kernel libraries",
+      "detail": "loaded: none; imported in solution/: none; packages changed during the run: none"
+    },
+    {
+      "number": 3,
+      "status": "PASS",
+      "check": "own @triton.jit kernels in solution/ run in training",
+      "detail": "soup_nested_nf4_decode (solution/nf4_decode.py); the example's kernels do not count, under any name: example_swiglu_fwd_kernel, example_swiglu_bwd_kernel"
+    },
+    {
+      "number": 4,
+      "status": "FAIL",
+      "check": "own kernels together take >= 5% of the training time",
+      "detail": "2.5% of the training time (lowest of 2 runs, steps 3+)"
+    },
+    {
+      "number": 5,
+      "status": "PASS",
+      "check": "same task and Soup outputs (steps, adapter, settings, tokens, metrics, rewind)",
+      "detail": "identical within tolerance"
+    },
+    {
+      "number": 6,
+      "status": "PASS",
+      "check": "loss curve follows the base",
+      "detail": "base_2: first step 0.00%, mean of all steps 0.01%; solution_1: first step 0.00%, mean of all steps 0.01%; solution_2: first step 0.00%, mean of all steps 0.01% (max 1% and 3%)"
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "check": "quality: eval loss at most 0.5% above the base",
+      "detail": "+0.000%"
+    },
+    {
+      "number": 8,
+      "status": "PASS",
+      "check": "not worse than the base on time or memory (10% margin)",
+      "detail": "time x1.009, memory x1.000 of the base"
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "check": "clean measurement (a T4, idle GPUs, one GPU, harness allocator, peaks agree)",
+      "detail": "clean"
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "check": "Soup regression tests with your patches",
+      "detail": "79 passed, 14 warnings in 6.06s"
+    }
+  ],
+  "terminal_from_log": {
+    "status": "measured_checks_failed",
+    "nested_training_exit_codes": {
+      "base": [
+        0,
+        0
+      ],
+      "solution": [
+        0,
+        0
+      ]
+    },
+    "nested_training_and_eval_success": true,
+    "official_checks_exit_code": 1,
+    "elapsed_seconds": 581.396655491,
+    "result_sha256": "20b63d9abad9f62ab97a6678f10d62bd66ad884911fb8b0e91d1ef2e7f924854",
+    "note": "Read exact checks and raw runs; no official jury or leaderboard claim."
+  },
+  "reported_result_sha256": "20b63d9abad9f62ab97a6678f10d62bd66ad884911fb8b0e91d1ef2e7f924854",
+  "result_sha256_independently_verified": false,
+  "artifact_completeness": {
+    "complete_archive": false,
+    "raw_result_downloaded": false,
+    "raw_checks_downloaded": false,
+    "standalone_solution_metrics_downloaded": false,
+    "preflight_individual_arrays_complete": false,
+    "preflight_summary_verified": true,
+    "source": "Standard authenticated API execution log; no alternate artifact-host route",
+    "reason": "Previous explicit artifact-host policy denial; this lane did not retry denied downloads"
+  },
+  "parallel_experiment": {
+    "separate_sessions_accepted": true,
+    "trial003_accepted_while_trial002_reported_running": true,
+    "trial002_actual_t4_verified": true,
+    "trial002_clean_gpu_official_check": "PASS",
+    "trial003_actual_gpu_preflight_pending": true,
+    "distinct_physical_gpu_uuids_captured": false,
+    "base_repeat_span_s": 4.490000000000009,
+    "base_repeat_span_fraction_of_median": 0.05316440708069397,
+    "solution_repeat_span_s": 0.09000000000000341,
+    "solution_repeat_span_fraction_of_median": 0.0010559042646800423,
+    "conclusion": "Observed accepted overlap and clean per-run resource check, not proof of zero timing effect. No same-candidate serial-vs-parallel control or enough repeats to isolate a concurrency effect."
+  },
+  "full_admission": false,
+  "eligible_for_points": false,
+  "score_points_claimed": null,
+  "publication_status": "paused; no external publication attempted",
+  "retry_needed": false
+}

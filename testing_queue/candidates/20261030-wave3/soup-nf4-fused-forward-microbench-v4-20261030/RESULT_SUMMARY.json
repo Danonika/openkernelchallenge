@@ -1,0 +1,32 @@
+{
+  "candidate": "soup-nf4-fused-forward-microbench-v4-20261030",
+  "family": "NF4 MMA/diagnostics",
+  "status": "STOP_SLOW_TESTED_VERSION",
+  "conclusion": "Numerical/MMA gates and12 actual standalone Linear4bit Parameter/native-gradient cases pass. Original16x8 one-warp warm medians slower all6 shapes1.10–18.76x; smallest observed sample ranges overlap, task-sized3.42–18.76x. No full training.",
+  "notebook_sha256": "fa0f8796d691fb3f3176ad493b4edc5d30d192a464cdb6a1b5b73843aa84bda0",
+  "raw_output_archive_sha256": "ae195b1e5a5613fb257e2eba47a983ef8058b02b706a30798000842557025d69",
+  "source_bound_receipt_bindings": [
+    {
+      "receipt": "nf4_mma_v4_microbench_attempt01_sourcebound_receipt.json",
+      "sha256": "538901c1cca8925acf47e6275c4fda3d57e145f2d1832f3ba6d9fba6f92d3cc5",
+      "status": "COMPLETE_SOURCE_BOUND_MICROBENCH_ONLY",
+      "raw_output_archive_sha256": "ae195b1e5a5613fb257e2eba47a983ef8058b02b706a30798000842557025d69",
+      "receipt_exported": false
+    }
+  ],
+  "official_score": null,
+  "admission": "UNKNOWN",
+  "full_task_success_claim": false,
+  "cap_seconds": 80,
+  "scope_limits": [
+    "Components are not full-model measurements.",
+    "Incomplete or diagnostic commands are not validated pairs.",
+    "Source availability and local tests do not imply Kaggle admission.",
+    "Prior failures remain tied to exact tested versions, not whole idea families."
+  ],
+  "export_exclusions": [
+    "No API identity/status blobs.",
+    "No raw output archive or private Sheet snapshot.",
+    "No credentials,model/cache files,or separately supplied native-dab4 package."
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "candidate": "memory-vs1",
+  "scope": "actual tiny CPU modules, explicitly CPU-equivalent mode",
+  "torch": "2.15.0+cpu",
+  "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "threads": 2,
+  "bnb": "0.50.2",
+  "source_sha256": "dee688af8fe8cba35757e7613cd1c2e9f7195a780463bee8e19b230abf03284a",
+  "results": [
+    {
+      "group": "actual_module_parity",
+      "status": "PASS",
+      "details": {
+        "actual_qwen_mlp_bnb_cases": [
+          {
+            "output": {
+              "finite_elements": 192,
+              "nan_elements": 0,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "gradient": {
+              "finite_elements": 192,
+              "nan_elements": 0,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "native_graph_unchanged": true,
+            "stats": {
+              "encoded_operands": 2,
+              "logical_half_payload_bytes": 1536,
+              "observed_mlp_calls": 1,
+              "restores": 4
+            }
+          },
+          {
+            "output": {
+              "finite_elements": 192,
+              "nan_elements": 0,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "gradient": {
+              "finite_elements": 192,
+              "nan_elements": 0,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "native_graph_unchanged": true,
+            "stats": {
+              "encoded_operands": 2,
+              "logical_half_payload_bytes": 1536,
+              "observed_mlp_calls": 1,
+              "restores": 2
+            }
+          },
+          {
+            "output": {
+              "finite_elements": 384,
+              "nan_elements": 0,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "gradient": {
+              "finite_elements": 384,
+              "nan_elements": 0,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "native_graph_unchanged": true,
+            "stats": {
+              "encoded_operands": 2,
+              "logical_half_payload_bytes": 3072,
+              "observed_mlp_calls": 1,
+              "restores": 4
+            }
+          },
+          {
+            "output": {
+              "finite_elements": 384,
+              "nan_elements": 0,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "gradient": {
+              "finite_elements": 384,
+              "nan_elements": 0,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "native_graph_unchanged": true,
+            "stats": {
+              "encoded_operands": 2,
+              "logical_half_payload_bytes": 3072,
+              "observed_mlp_calls": 1,
+              "restores": 2
+            }
+          }
+        ],
+        "note": "Real CPU quantized modules/native CPU backend; no CUDA equivalence inference"
+      }
+    },
+    {
+      "group": "nonfinite_contract",
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "output": {
+              "finite_elements": 64,
+              "nan_elements": 64,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "gradient": {
+              "finite_elements": 64,
+              "nan_elements": 64,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "native_graph_unchanged": true,
+            "stats": {
+              "encoded_operands": 2,
+              "logical_half_payload_bytes": 1024,
+              "observed_mlp_calls": 1,
+              "restores": 2
+            }
+          },
+          {
+            "output": {
+              "finite_elements": 64,
+              "nan_elements": 64,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "gradient": {
+              "finite_elements": 64,
+              "nan_elements": 64,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "native_graph_unchanged": true,
+            "stats": {
+              "encoded_operands": 2,
+              "logical_half_payload_bytes": 1024,
+              "observed_mlp_calls": 1,
+              "restores": 2
+            }
+          },
+          {
+            "output": {
+              "finite_elements": 128,
+              "nan_elements": 0,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "gradient": {
+              "finite_elements": 64,
+              "nan_elements": 64,
+              "inf_elements": 0,
+              "finite_bit_mismatches": 0
+            },
+            "native_graph_unchanged": true,
+            "stats": {
+              "encoded_operands": 2,
+              "logical_half_payload_bytes": 1024,
+              "observed_mlp_calls": 1,
+              "restores": 2
+            }
+          }
+        ],
+        "nan_payload_identity": "not claimed"
+      }
+    },
+    {
+      "group": "scoped_fallbacks",
+      "status": "PASS",
+      "details": [
+        {
+          "case": "half_input",
+          "stats": {
+            "fallback_input_metadata": 1
+          }
+        },
+        {
+          "case": "no_input_gradient",
+          "stats": {
+            "fallback_not_first_order_training": 1
+          }
+        },
+        {
+          "case": "eval",
+          "stats": {
+            "fallback_not_first_order_training": 1
+          }
+        },
+        {
+          "case": "no_grad",
+          "stats": {
+            "fallback_not_first_order_training": 1
+          }
+        },
+        {
+          "case": "other_compute_dtype",
+          "stats": {
+            "fallback_projection_compute_contract": 1
+          }
+        },
+        {
+          "case": "foreign_gate_hook",
+          "stats": {
+            "fallback_foreign_module_hooks": 1
+          }
+        },
+        {
+          "case": "instance_projection_forward",
+          "stats": {
+            "fallback_instance_projection_forward": 1
+          }
+        },
+        {
+          "case": "higher_order_preselected_fallback",
+          "stats": {
+            "fallback_first_order_contract_absent": 1
+          }
+        }
+      ]
+    },
+    {
+      "group": "existing_hooks_and_failures",
+      "status": "PASS",
+      "details": {
+        "outer_hook_counts": [
+          {
+            "pack": 3,
+            "unpack": 3
+          },
+          {
+            "pack": 3,
+            "unpack": 3
+          }
+        ],
+        "escaped_alias": "native fallback/version check",
+        "partial_operand_outcomes": "allowed by contract; not inferred atomic"
+      }
+    },
+    {
+      "group": "ownership_release_and_registration",
+      "status": "PASS",
+      "details": {
+        "wide_python_objects_released_before_backward": true,
+        "installed_hook_counts": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "note": "Python object release only; allocation peak and hidden aliases not universally proved"
+      }
+    },
+    {
+      "group": "static_and_environment_gates",
+      "status": "PASS",
+      "details": {
+        "no_value_scan_or_broad_saved_hooks_in_adapter": true,
+        "production_rejected_on_cpu_build": {
+          "installed": false,
+          "reason": "target_torch_triton_version"
+        },
+        "foreign_source_rejected": {
+          "installed": false,
+          "reason": "source_identity"
+        },
+        "decorated_foreign_source_rejected": {
+          "installed": false,
+          "reason": "source_unavailable"
+        }
+      }
+    }
+  ],
+  "passed": 6,
+  "failed": 0,
+  "not_validated": [
+    "T4 restore compilation/numerics",
+    "actual full model",
+    "AMP/GradScaler on CUDA",
+    "full upstream trajectory",
+    "allocator peak/time/own share",
+    "79 regressions or speed screen"
+  ]
+}

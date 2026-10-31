@@ -1,0 +1,9 @@
+# Bootstrap only, before production certificate exists. No API on HTTP.
+server {
+    listen 80;
+    server_name __PUBLIC_IP__;
+    if ($host != "__PUBLIC_IP__") { return 444; }
+    access_log off;
+    location /.well-known/acme-challenge/ { root /var/www/acme; }
+    location / { return 404; }
+}

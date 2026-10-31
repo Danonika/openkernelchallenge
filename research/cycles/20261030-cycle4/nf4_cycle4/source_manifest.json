@@ -1,0 +1,59 @@
+{
+  "repository": "bitsandbytes-foundation/bitsandbytes",
+  "commit": "08a9956b939857ae2c4fbd56753960cc370fa7cf",
+  "version": "0.50.2",
+  "files": [
+    {
+      "path": "bitsandbytes/functional.py",
+      "blob_sha": "33b2cd9ac674f338429fc972669596dbedc88143",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py"
+    },
+    {
+      "path": "bitsandbytes/backends/default/ops.py",
+      "blob_sha": "521802922810fd6f6432564ef1f71233936d2508",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py"
+    },
+    {
+      "path": "bitsandbytes/backends/cpu/ops.py",
+      "blob_sha": "44fb5dcebc794d7cd8e5a509f5144016d775fbee",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cpu/ops.py"
+    },
+    {
+      "path": "bitsandbytes/backends/cuda/ops.py",
+      "blob_sha": "a0d9ffe8311a649b9d77f93af4f70a909b24a811",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py"
+    },
+    {
+      "path": "bitsandbytes/autograd/_functions.py",
+      "blob_sha": "8a069bd101a089afc59b7d4d3d48e5dd399bc967",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py"
+    },
+    {
+      "path": "bitsandbytes/backends/utils.py",
+      "blob_sha": "a63e59a99609e1ee42a982590cc1e9e67023d33c",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/utils.py"
+    },
+    {
+      "path": "bitsandbytes/_ops.py",
+      "blob_sha": "43efd860999f38d8d0b20a0398dd73ad41e5ad2e",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/_ops.py"
+    },
+    {
+      "path": "bitsandbytes/nn/modules.py",
+      "blob_sha": "ebc0b09439c4620ef015b18b242328aa65f14c18",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py"
+    },
+    {
+      "path": "csrc/cpu_ops.cpp",
+      "blob_sha": "dfb9046ac561f79f06114d9faaaf89a2efcf13d7",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/cpu_ops.cpp"
+    },
+    {
+      "path": "csrc/kernels.cu",
+      "blob_sha": "df0f093df449c6c50cebcfbbeb2c78d8378962b4",
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/kernels.cu"
+    }
+  ],
+  "source_text_executed": false,
+  "implementation_copied": false
+}

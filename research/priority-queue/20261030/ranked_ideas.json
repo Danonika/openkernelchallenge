@@ -1,0 +1,2216 @@
+{
+  "schema_version": 1,
+  "snapshot_utc": "2026-10-30T15:34:40Z",
+  "source": "Fresh read of Soup Ideas A:P; exported by canonical ID in displayed order",
+  "catalog_count": 131,
+  "preserved_existing_ids": 121,
+  "new_distinct_proposals": 10,
+  "decision_counts": {
+    "DEFER": 118,
+    "REJECT": 5,
+    "DUPLICATE": 8
+  },
+  "rubric": {
+    "version": "attachment-triage-v1",
+    "scope": "Non-contest planning priority, not performance forecast, admission, or earned points",
+    "criteria_weights": {
+      "speed_potential": 5,
+      "memory_potential": 5,
+      "readiness": 4,
+      "evidence_level": 3,
+      "ease_low_cost": 2,
+      "useful_original_kernel_coverage": 1
+    },
+    "criterion_range": [
+      0,
+      5
+    ],
+    "max_score": 100,
+    "anchors": {
+      "speed_potential": "0 none/inapplicable;1 tiny;2 narrow;3 material hypothesis;4 broad plausible bottleneck;5 dominant-path potential. No numeric speed forecast.",
+      "memory_potential": "0 none;1 transient/tiny;2 narrow saved state;3 material allocation;4 broad saved state;5 major logits/MLP representation. Allocation arithmetic is not peak.",
+      "readiness": "0 prohibited/no matching path;1 idea only;2 supplied CPU/code design or unreviewed prototype;3 locally reviewed CPU implementation;4 sealed GPU packet;5 measured matching T4 variant.",
+      "evidence_level": "0 speculation;1 source/arithmetic;2 supplied CPU/interpreter/offline report;3 local CPU semantics;4 T4 primitive/full public comparison with missing admission;5 full required admission (none currently).",
+      "ease_low_cost": "0 incompatible;1 large rewrite;2 high integration cost;3 moderate;4 narrow patch;5 trivial/local methodology.",
+      "useful_original_kernel_coverage": "0 no eligible original work;1 very small;2 small;3 material hypothesis;4 broad useful original work;5 observed >=5% every run. No additive forecast."
+    },
+    "queue_gate": "REJECT and DUPLICATE remain recorded with queue priority zero; no scores recalculated in this export.",
+    "decision_definitions": {
+      "TEST_NOW": "Reviewed concrete local packet ready for next bounded GPU gate; no launch authority.",
+      "DEFER": "Useful possible work; implementation/integration/evidence or source recovery needed, or no justified standalone rerun.",
+      "REJECT": "Specified prohibited/inapplicable route; preserve abstract lessons/history.",
+      "DUPLICATE": "Merge execution slot into named canonical mechanism, preserving source-specific refinements."
+    }
+  },
+  "current_measured_status": {
+    "fully_paired_candidate_variants": 4,
+    "T4tested_canonical_rows": 3,
+    "admitted_candidates": 0,
+    "summary": "All four fully paired variants failed useful-own-kernel share. No official/earned competition scores. Public evaluation does not establish hidden admission. CPU proof is not T4 testing.",
+    "pending_accuracy_variant": "Trial006 package queued; no T4 result represented in this snapshot."
+  },
+  "future_engineering_policy": {
+    "candidate_full_training_command_limit_seconds": 79,
+    "trigger": "Elapsed full candidate training command crosses 79 seconds",
+    "action": "Abort the candidate and skip remaining quality checks; preserve cache",
+    "interpretation": "User engineering cutoff, not a contest disqualification gate. Censored timing is a lower bound, not completed timing or a fabricated speedup; historical completed runs remain unchanged."
+  },
+  "scope": "Scientific project priority fields only; no raw datasets, execution source, infrastructure, account identifiers, approval metadata, cell notes or full CPU/GPU logs. Citations preserve existing catalog references; no new source audit or performance claim.",
+  "ideas": [
+    {
+      "id": "SOUP-NEW-002",
+      "title": "One vocabulary reduction produces stable logsumexp, weighted exponential sum for entropy, target logit and first-wins argmax; reuses reads (T, S; C1/C2)",
+      "rank": 1,
+      "heuristic_priority_score": 74,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Shared loss/entropy/accuracy/rewind reductions remain high-value; entropy-only trial003 failed standalone share. Do not rerun unchanged subset or sum shares. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": true,
+      "exact_tested_variants": [
+        {
+          "run_id": "trial003",
+          "variant": "Entropy-only helper on materialized logits; not full CE/shared-head or accuracy-only variants",
+          "standalone_admission": "FAIL: useful-own-kernel share below 5%",
+          "evidence": "Console-backed; raw result/checks unavailable; announced hashes not independently byte-verified",
+          "report": "https://example.invalid/redacted"
+        }
+      ],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/loss/loss_utils.py#L35-L73",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py#L1238-L1320",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py#L572-L609",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py#L168-L229",
+        "https://github.com/pytorch/pytorch/blob/70d99e998b4955e0049d13a98d77ae1b14db1f45/aten/src/ATen/native/cuda/SoftMax.cu#L52-L62"
+      ]
+    },
+    {
+      "id": "SOUP-TRAIN-001",
+      "title": "Recompute and differentiate frozen head only for causally supervised final-hidden rows",
+      "rank": 2,
+      "heuristic_priority_score": 58,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Supervised-row head backward is distinct from pruning transformer prompts; original geometry/nonfinite fallback and GPU GEMM rounding remain open. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py#L1238-L1320",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/loss/loss_utils.py#L35-L73",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py#L572-L609",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py#L168-L229",
+        "https://github.com/pytorch/pytorch/blob/70d99e998b4955e0049d13a98d77ae1b14db1f45/aten/src/ATen/native/cuda/SoftMax.cu#L52-L62"
+      ]
+    },
+    {
+      "id": "liger_castaware_norm",
+      "title": "Make norm fusion's cast boundaries explicit rather than assuming all RMSNorms match",
+      "rank": 3,
+      "heuristic_priority_score": 56,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Trial001 compatible under declared ordinary gates but own share1.20525% failed; speed ratio1.0256 is below scoring floor. Preserve as useful component, no unchanged rerun. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": true,
+      "exact_tested_variants": [
+        {
+          "run_id": "trial001",
+          "variant": "Original RMSNorm only; not broader norm/residual variants",
+          "standalone_admission": "FAIL: useful-own-kernel share below 5%",
+          "evidence": "Raw result/checks independently verified; full artifact archive incomplete",
+          "report": "https://example.invalid/redacted"
+        }
+      ],
+      "source_citations": [
+        "https://github.com/linkedin/Liger-Kernel/blob/781a8aef64bf6105bdefb5f4c991e0d14c08e793/src/liger_kernel/ops/fused_add_rms_norm.py",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297",
+        "https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171"
+      ]
+    },
+    {
+      "id": "SOUP-NEW-001",
+      "title": "Stream frozen-head token chunks, release logits and recompute in backward; apply incoming GradScaler gradient before FP16 dlogits rounding (S, T; C1/C2 corroboration only)",
+      "rank": 4,
+      "heuristic_priority_score": 55,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Materialized private-FP16 native-head/native-backward control first; streamed/recomputed variant later. Full trainer integration and GPU implementation incomplete. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/loss/loss_utils.py#L35-L73",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py#L1238-L1320",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py#L572-L609",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py#L168-L229",
+        "https://github.com/pytorch/pytorch/blob/70d99e998b4955e0049d13a98d77ae1b14db1f45/aten/src/ATen/native/cuda/SoftMax.cu#L52-L62"
+      ]
+    },
+    {
+      "id": "SOUP-MEM-001",
+      "title": "Exact producer-owned FP16 gate/up saved activations",
+      "rank": 5,
+      "heuristic_priority_score": 54,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Preserve unchanged FP32 SwiGLU arithmetic, separate gradient edges and exact saved values; producer-owned reuse avoids redundant repacking. Starter kernel time earns no own credit. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "SOUP-NEW-005",
+      "title": "Store already-exact-fp16 frozen values in fp16 only after exhaustive round-trip equality; restore baseline activation dtype at boundary (C1)",
+      "rank": 6,
+      "heuristic_priority_score": 50,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Exact original-half tied-parameter storage has material representation potential; source recovery, dtype/tying/consumer guards and measured peak needed. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json"
+      ]
+    },
+    {
+      "id": "SOUP-NEW-003",
+      "title": "Fuse nested absmax dequantization + offset + NF4 decoding into one output pass (B; C1)",
+      "rank": 7,
+      "heuristic_priority_score": 47,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "SKIP_STANDALONE: trial004 forward-only decode finished9/10 checks, own-share2.7448%<5% FAIL; speed0.9538 and unchanged14345MiB show no demonstrated win. Historical backward-only002 failure preserved. Composition/new fused routes remain hypotheses requiring separate tests; no additive shares. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": true,
+      "exact_tested_variants": [
+        {
+          "run_id": "trial002",
+          "variant": "Backward-functional nested NF4 decode; not fused NF4/GEMM",
+          "standalone_admission": "FAIL: useful-own-kernel share below 5%",
+          "evidence": "Console-backed; raw result/checks unavailable; announced hashes not independently byte-verified",
+          "report": "https://example.invalid/redacted"
+        },
+        {
+          "run_id": "trial004",
+          "variant": "Forward-only nested NF4 fallback decode; not fused NF4/GEMM",
+          "standalone_admission": "FAIL: useful-own-kernel share below 5%",
+          "evidence": "Raw result/checks independently verified",
+          "report": "https://example.invalid/redacted"
+        }
+      ],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L418-L607",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L927-L1077",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py#L199-L342",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cpu/ops.py#L94-L240",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py#L904-L981",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py#L294-L498",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py#L609-L637",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/utils.py#L15-L34",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/cpu_ops.cpp#L355-L434"
+      ]
+    },
+    {
+      "id": "SOUP-LORA-001",
+      "title": "Share B-adjoint incoming gradient tiles between dS=D@B and dB=D.T@S",
+      "rank": 8,
+      "heuristic_priority_score": 44,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Sibling B adjoints/composite boundary preserve native casts; tile occupancy, partial reductions and exact GPU implementation still missing. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://arxiv.org/html/2510.00206v1#S5.SS1"
+      ]
+    },
+    {
+      "id": "attn-sgl-rounding-fusion",
+      "title": "Fuse QK normalization and RoPE without erasing BF16 rounding points",
+      "rank": 9,
+      "heuristic_priority_score": 42,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "FP32 half-split RoPE only; supplied boundary tests add useful detail, missing implementation/GPU. No QKnorm or retained-QK saving. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/sgl-project/sglang/blob/655059819cda56f4c0feb5e3f09056caa6907bc7/python/sglang/kernels/ops/attention/muse_spark_qk_norm_rope_store.py",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L51-L135",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L180-L233",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L355-L397",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/integrations/sdpa_attention.py"
+      ]
+    },
+    {
+      "id": "L6-10",
+      "title": "Fuse pointwise chains while preserving arithmetic and aliasing",
+      "rank": 10,
+      "heuristic_priority_score": 42,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Native-GEMM pointwise epilogues are preferred LoRA boundary; supplied source bundles absent. Preserve original dropout and exact cast order. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/gpu-mode/lectures/blob/77a8df418834e5789c12da23e7d2719e0efabef1/lecture_018/kernels/triton_fused_add_mul_activation.py",
+        "https://github.com/gpu-mode/lectures/blob/77a8df418834e5789c12da23e7d2719e0efabef1/lecture_018/README.md"
+      ]
+    },
+    {
+      "id": "SOUP-ATTN-002",
+      "title": "Native maskless GQA dispatch through explicit KV replication",
+      "rank": 11,
+      "heuristic_priority_score": 42,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Distinct native dispatch experiment only for an actually observed maskless math fallback. Not mask elision, custom attention, or a guaranteed faster route. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "SOUP-NEW-006",
+      "title": "Unpad within each unchanged batch while producing dropout mask on original padded geometry and selecting live positions (C1, R)",
+      "rank": 12,
+      "heuristic_priority_score": 41,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Within-batch unpadding must preserve original dropout geometry, order, metrics and exceptional rows; costly integration. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json"
+      ]
+    },
+    {
+      "id": "SOUP-NANO-002",
+      "title": "Keep changing scalars out of compile-time specialization; bound shape variants to reduce cold-start compilation (N optim.py, R)",
+      "rank": 13,
+      "heuristic_priority_score": 41,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Already adopted compile-budget discipline; not a standalone GPU candidate or eligible kernel contribution. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json"
+      ]
+    },
+    {
+      "id": "SOUP-NEW-007",
+      "title": "Cache only reconstructed frozen FP32 **block scales**, not full weights, across forward/backward and steps. Decode packed NF4 weights from that table.",
+      "rank": 14,
+      "heuristic_priority_score": 40,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Block-scale-only cache can complement decoder; do not count full-weight cache or assume unchanged share. Needs immutable-state lifetime integration. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/commit/08a9956b939857ae2c4fbd56753960cc370fa7cf",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/kernels.cu",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/gemm_4bit.cu",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py",
+        "https://github.com/huggingface/peft/blob/a5526d27a9d47d1e8264d5e1b1f96c0fdc79464e/src/peft/tuners/lora/bnb.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/quant_menu.py",
+        "https://docs.nvidia.com/cuda/pdf/Turing_Tuning_Guide.pdf",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/releases/tag/0.50.0",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L418-L607",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L927-L1077",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py#L199-L342",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cpu/ops.py#L94-L240",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py#L904-L981",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py#L294-L498",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py#L609-L637",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/utils.py#L15-L34",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/cpu_ops.cpp#L355-L434"
+      ]
+    },
+    {
+      "id": "L1-TILELANG-03",
+      "title": "Packed FP4 to BF16 decode inside GEMM",
+      "rank": 15,
+      "heuristic_priority_score": 39,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Independent inline NF4+GEMM only: ordinary Triton3.6 dot uses SM75 FMA, not assumed Tensor-Core path. Explicit MMA source/device gates missing. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/tile-ai/tilelang/blob/015caa20fd273229fb473f3861bf502dfd69b0d5/examples/dequantize_gemm/example_dequant_gemm_bf16_fp4_hopper.py",
+        "https://github.com/tile-ai/tilelang/blob/015caa20fd273229fb473f3861bf502dfd69b0d5/examples/dequantize_gemm/quantize/nvfp4.py"
+      ]
+    },
+    {
+      "id": "gemm-09",
+      "title": "Shape-only GEMV/GEMM crossover dispatch",
+      "rank": 16,
+      "heuristic_priority_score": 39,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Dispatch-aware native-GEMM boundary is useful; rank as refinement of NF4 trials, not a measured new kernel. Shape-specific crossover matters. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/qmodule.py#L202-L227"
+      ]
+    },
+    {
+      "id": "SOUP-LORA-002",
+      "title": "Losslessly bit-pack only native-dropout boolean saved masks through narrow autograd saved-tensor hooks",
+      "rank": 17,
+      "heuristic_priority_score": 39,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Lossless native-mask bit packing is a small complementary memory idea; live saved-hook release and CUDA cost unknown. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/pytorch/pytorch/blob/31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457/aten/src/ATen/native/Dropout.cpp",
+        "https://github.com/pytorch/pytorch/blob/31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457/aten/src/ATen/native/cuda/Dropout.cu",
+        "https://github.com/pytorch/pytorch/blob/31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457/tools/autograd/derivatives.yaml",
+        "https://docs.pytorch.org/docs/stable/autograd.html#torch.autograd.graph.saved_tensors_hooks"
+      ]
+    },
+    {
+      "id": "SOUP-LORA-003",
+      "title": "Native-GEMM cast and dropout-gradient epilogue",
+      "rank": 18,
+      "heuristic_priority_score": 38,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Keep native dropout forward and A/B GEMMs; fuse input-gradient half-to-FP32/mask/scale boundary. Different from output scale/add, B-adjoint sharing or mask compression. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "sglang_norm_boundary",
+      "title": "Fuse post-norm → gated FP32 residual → pre-norm, preserving rounding boundaries",
+      "rank": 19,
+      "heuristic_priority_score": 37,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Residual/saved-state replay requires exact branch ownership; known native0 versus regrouped1 counterexample retained. Not universal contest veto. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/sgl-project/sglang/blob/655059819cda56f4c0feb5e3f09056caa6907bc7/python/sglang/kernels/ops/layernorm/muse_spark_norm_residual.py",
+        "https://github.com/sgl-project/sglang/blob/655059819cda56f4c0feb5e3f09056caa6907bc7/python/sglang/kernels/ops/layernorm/muse_spark_norm_residual_jit.py",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297",
+        "https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171"
+      ]
+    },
+    {
+      "id": "inductor_mem_bound_mm",
+      "title": "Treat very skinny matmul as fused multiply-reduce candidate",
+      "rank": 20,
+      "heuristic_priority_score": 35,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Skinny rank16 input-gradient GEMM plus dropout is distinct from dependent GEMM fusion. Native-GEMM epilogue is lower risk; source missing and ordinarySM75 dot usesFMA. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/pytorch/pytorch/blob/4d05f41122fdc72bd509c512b4deacc58036f519/torch/_inductor/fx_passes/decompose_mem_bound_mm.py"
+      ]
+    },
+    {
+      "id": "SOUP-NEW-004",
+      "title": "Cache frozen head's autocast-equivalent fp16 weight; invalidate on version/device/dtype change (C2; N Linear shows repeated weight casting)",
+      "rank": 21,
+      "heuristic_priority_score": 35,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Cache actual frozen autocast-equivalent head operand once with version/device invalidation; integration and full ownership proof needed. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json"
+      ]
+    },
+    {
+      "id": "SOUP-MEM-003",
+      "title": "Selective own-code MLP projection replay",
+      "rank": 22,
+      "heuristic_priority_score": 32,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Replay only selected deterministic frozen gate/up work as a memory tradeoff; preserve task switches and all rounding boundaries. Prefer lossless saved-state first. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "SOUP-MEM-004",
+      "title": "Bounded own-code saved-activation offload and prefetch",
+      "rank": 23,
+      "heuristic_priority_score": 32,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Custom own-code offload is distinct from enabling forbidden built-in activation_offloading. Bound slots, event readiness and storage lifetime; no work outside measured scope. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "SOUP-ATTN-003",
+      "title": "Masked KV repeat-plus-cast with FP32 backward reduction",
+      "rank": 24,
+      "heuristic_priority_score": 31,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Fuse existing masked-path repeat and final cast; promote each replica gradient before factor-six FP32 reduction. Keep native attention backend. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "L1-CUDAPY-02",
+      "title": "Offline launch-configuration sweep as an occupancy control",
+      "rank": 25,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cuda-python/blob/94625c1a33402bab45f244a8fee9edae6c2958d0/samples/cuda_core/launchConfigTuning/launchConfigTuning.py"
+      ]
+    },
+    {
+      "id": "L1-TVM-01",
+      "title": "Measured schedule search with persistent tuning records",
+      "rank": 26,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/apache/tvm/blob/e345029cedf0be76a087fcad9c89a97bed4f7204/docs/deep_dive/tensor_ir/tutorials/meta_schedule.py"
+      ]
+    },
+    {
+      "id": "L4-APACHE-TVM-01",
+      "title": "Represent candidate changes as replayable schedule traces and explore a union of generic rules plus task-specific expert transformations.",
+      "rank": 27,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://discuss.tvm.apache.org/t/rfc-meta-schedule-autotensorir/10120"
+      ]
+    },
+    {
+      "id": "L4-APACHE-TVM-02",
+      "title": "Combine cost-model-guided evolution with explicit random exploration and real hardware feedback.",
+      "rank": 28,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/apache/tvm/blob/e345029cedf0be76a087fcad9c89a97bed4f7204/python/tvm/s_tir/meta_schedule/search_strategy/evolutionary_search.py"
+      ]
+    },
+    {
+      "id": "L4-APACHE-TVM-03",
+      "title": "Allocate a global tuning budget across subgraphs by end-to-end improvement potential, retaining workload-target measurement databases.",
+      "rank": 29,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/apache/tvm/blob/e345029cedf0be76a087fcad9c89a97bed4f7204/python/tvm/s_tir/meta_schedule/tir_integration.py"
+      ]
+    },
+    {
+      "id": "L4-GPU-MODE-KERNELBOT-01",
+      "title": "Separate compile, test, benchmark, ranked and profile results with seeds, timeouts and structured evidence.",
+      "rank": 30,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/gpu-mode/kernelbot/blob/ec4669669d368c395675565831f98b509db2b0b3/src/libkernelbot/run_eval.py"
+      ]
+    },
+    {
+      "id": "L4-GPU-MODE-KERNELBOT-02",
+      "title": "Use controlled cache state, synchronization and statistical stopping for reproducible microbenchmarks.",
+      "rank": 31,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/gpu-mode/kernelbot/blob/ec4669669d368c395675565831f98b509db2b0b3/examples/eval.py#L250-L309"
+      ]
+    },
+    {
+      "id": "L4-GPU-MODE-KERNELBOT-03",
+      "title": "Revalidate leading candidates on a versioned application workload after microbenchmark promotion.",
+      "rank": 32,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/gpu-mode/kernelbot/blob/ec4669669d368c395675565831f98b509db2b0b3/docs/application-validation.md"
+      ]
+    },
+    {
+      "id": "L4-KERNELTUNER-KERNEL_TUNER-01",
+      "title": "Use LLMs for semantic/template changes, then constrained numerical search for launch, tile and unroll parameters.",
+      "rank": 33,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/KernelTuner/kernel_tuner/blob/8e71bbf5b04f570870212095c3df5c6816e73aba/README.md"
+      ]
+    },
+    {
+      "id": "L4-KERNELTUNER-KERNEL_TUNER-02",
+      "title": "Persist every configuration's measurement and replay complete caches to compare search policies fairly.",
+      "rank": 34,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/KernelTuner/kernel_tuner/blob/8e71bbf5b04f570870212095c3df5c6816e73aba/doc/source/cache_files.rst"
+      ]
+    },
+    {
+      "id": "L4-KERNELTUNER-KERNEL_TUNER-03",
+      "title": "Keep latency, energy and accuracy as separate signals and enforce correctness before benchmarking.",
+      "rank": 35,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/KernelTuner/kernel_tuner/blob/8e71bbf5b04f570870212095c3df5c6816e73aba/doc/source/metrics.rst"
+      ]
+    },
+    {
+      "id": "L4-META-PYTORCH-KERNELAGENT-01",
+      "title": "Extract reusable subgraph contracts (ops/shapes/dtypes/parameters), deduplicate by signature, synthesize independently, then verify recomposition.",
+      "rank": 36,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/meta-pytorch/KernelAgent/blob/e0647170da36ef9b059ac0bd3d60103aa4ed378b/README.md"
+      ]
+    },
+    {
+      "id": "L4-META-PYTORCH-KERNELAGENT-02",
+      "title": "Separate diagnosis, rewrite, correctness and timing stages; feed hardware counters into explicit bottleneck hypotheses.",
+      "rank": 37,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/meta-pytorch/KernelAgent/blob/e0647170da36ef9b059ac0bd3d60103aa4ed378b/triton_kernel_agent/opt_worker_component/orchestrator/optimization_orchestrator.py"
+      ]
+    },
+    {
+      "id": "L4-META-PYTORCH-KERNELAGENT-03",
+      "title": "Use behavior-level dedup (PTX fingerprints) and equal-budget diversity ablations rather than only textual novelty.",
+      "rank": 38,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/meta-pytorch/KernelAgent/blob/e0647170da36ef9b059ac0bd3d60103aa4ed378b/examples/configs/beam_search_diverse.yaml"
+      ]
+    },
+    {
+      "id": "L4-NEETHANWU-AUTORESEARCH-01",
+      "title": "Use append-only results, immutable hashed configuration and resume reconstruction for durable experiments.",
+      "rank": 39,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/SKILL.md"
+      ]
+    },
+    {
+      "id": "L4-NEETHANWU-AUTORESEARCH-02",
+      "title": "Separate hard correctness/resource gates from a primary optimization metric and log secondary signals.",
+      "rank": 40,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/references/scoring/gated_scorer.py"
+      ]
+    },
+    {
+      "id": "L4-NEETHANWU-AUTORESEARCH-03",
+      "title": "Maintain explicit hypotheses, dead ends and an ideas backlog across context resets.",
+      "rank": 41,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/README.md"
+      ]
+    },
+    {
+      "id": "L4-NVLABS-KDA-01",
+      "title": "Define a task/evaluator/promotion contract before proposing optimizations.",
+      "rank": 42,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVlabs/kda/blob/acdd79343c5e9d0c7cb96289f26fd3f1051ce785/prompts/basic-flow.md"
+      ]
+    },
+    {
+      "id": "L4-NVLABS-KDA-02",
+      "title": "Record candidate parent relationships and rejected-candidate reasons rather than silently discarding them.",
+      "rank": 43,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVlabs/kda/blob/acdd79343c5e9d0c7cb96289f26fd3f1051ce785/docs/agent-flow.md"
+      ]
+    },
+    {
+      "id": "L4-NVLABS-KDA-03",
+      "title": "Separate reusable research instructions from implementation workspaces, preserving profiler and validation evidence.",
+      "rank": 44,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVlabs/kda/blob/acdd79343c5e9d0c7cb96289f26fd3f1051ce785/README.md"
+      ]
+    },
+    {
+      "id": "L4-RIGHTNOW-AI-AUTOKERNEL-01",
+      "title": "Separate agent-editable kernel code from fixed reference/benchmark ownership and record every experiment in a simple ledger.",
+      "rank": 45,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/RightNow-AI/autokernel/blob/78435821cc3d5756ba6ee1785c397f6d8fa8c90d/program.md"
+      ]
+    },
+    {
+      "id": "L4-RIGHTNOW-AI-AUTOKERNEL-02",
+      "title": "Profile model bottlenecks and prioritize subgraphs by estimated end-to-end payoff rather than isolated speedup.",
+      "rank": 46,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/RightNow-AI/autokernel/blob/78435821cc3d5756ba6ee1785c397f6d8fa8c90d/orchestrate.py"
+      ]
+    },
+    {
+      "id": "L4-RIGHTNOW-AI-AUTOKERNEL-03",
+      "title": "Stage correctness to reject cheap failures early, then test adversarial numerics, determinism and awkward shapes.",
+      "rank": 47,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/RightNow-AI/autokernel/blob/78435821cc3d5756ba6ee1785c397f6d8fa8c90d/bench.py"
+      ]
+    },
+    {
+      "id": "L4-SCALINGINTELLIGENCE-KERNELBENCH-01",
+      "title": "Make correctness a hard gate and report fast_p alongside raw speedup, so incorrect fast candidates never win.",
+      "rank": 48,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/ScalingIntelligence/KernelBench/blob/423217d9fda91e0c2d67e4a43bf62f96f6d104f1/README.md"
+      ]
+    },
+    {
+      "id": "L4-SCALINGINTELLIGENCE-KERNELBENCH-02",
+      "title": "Turn known evaluator exploits into adversarial regression tests.",
+      "rank": 49,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/ScalingIntelligence/KernelBench/blob/423217d9fda91e0c2d67e4a43bf62f96f6d104f1/EVAL.md"
+      ]
+    },
+    {
+      "id": "L4-SCALINGINTELLIGENCE-KERNELBENCH-03",
+      "title": "Separate generation from measurement, cache compilation, and repeat across held-out inputs.",
+      "rank": 50,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/ScalingIntelligence/KernelBench/blob/423217d9fda91e0c2d67e4a43bf62f96f6d104f1/src/kernelbench/eval.py#L394-L413"
+      ]
+    },
+    {
+      "id": "liger_scalar_promotion",
+      "title": "Prevent torch.compile scalar promotion from silently making SwiGLU FP64",
+      "rank": 51,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/linkedin/Liger-Kernel/blob/781a8aef64bf6105bdefb5f4c991e0d14c08e793/src/liger_kernel/ops/swiglu.py"
+      ]
+    },
+    {
+      "id": "L6-01",
+      "title": "Coalesce global accesses; remove shared-memory bank conflicts",
+      "rank": 52,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cuda-samples/blob/5443602d89ed99aede2e4b7bf329daddeadb320e/cpp/6_Performance/transpose/transpose.cu",
+        "https://github.com/NVIDIA/cuda-samples/blob/5443602d89ed99aede2e4b7bf329daddeadb320e/cpp/6_Performance/alignedTypes/alignedTypes.cu"
+      ]
+    },
+    {
+      "id": "L6-04",
+      "title": "Fuse block reduction into the producer; tune items per thread",
+      "rank": 53,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cccl/blob/215868f3138407833d1706b38513957740628b0f/cub/examples/block/example_block_reduce.cu"
+      ]
+    },
+    {
+      "id": "L6-06",
+      "title": "Select vector loads versus warp-transpose loads with valid fallbacks",
+      "rank": 54,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cccl/blob/215868f3138407833d1706b38513957740628b0f/cub/cub/block/block_load.cuh",
+        "https://github.com/NVIDIA/cccl/blob/215868f3138407833d1706b38513957740628b0f/cub/examples/block/example_block_scan.cu"
+      ]
+    },
+    {
+      "id": "L6-08",
+      "title": "Use constrained axes and conservative regression classification",
+      "rank": 55,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/nvbench/blob/a7fe2f3d47980a48a21dac5d407dd8eff007dfc4/docs/benchmarks.md",
+        "https://github.com/NVIDIA/nvbench/blob/a7fe2f3d47980a48a21dac5d407dd8eff007dfc4/docs/nvbench_compare_robust.md"
+      ]
+    },
+    {
+      "id": "L6-09",
+      "title": "Control repeated-call state and reset timing",
+      "rank": 56,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/nvbench/blob/a7fe2f3d47980a48a21dac5d407dd8eff007dfc4/docs/benchmarks.md"
+      ]
+    },
+    {
+      "id": "L6-11",
+      "title": "Profile the full hot region before choosing a kernel change",
+      "rank": 57,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/gpu-mode/lectures/blob/77a8df418834e5789c12da23e7d2719e0efabef1/lecture_001/pt_profiler.py",
+        "https://github.com/gpu-mode/lectures/blob/77a8df418834e5789c12da23e7d2719e0efabef1/lecture_001/nsys_square.py"
+      ]
+    },
+    {
+      "id": "L6-12",
+      "title": "Treat occupancy as a resource constraint, not an optimum",
+      "rank": 58,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/gpu-mode/lectures/blob/77a8df418834e5789c12da23e7d2719e0efabef1/lecture_008/occupancy.cu"
+      ]
+    },
+    {
+      "id": "L6-13",
+      "title": "Make tiny adversarial indexing and tail tests before tuning",
+      "rank": 59,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/GPU_puzzlers.py",
+        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/lib.py"
+      ]
+    },
+    {
+      "id": "L6-14",
+      "title": "Use explicit traffic/reuse models, then test real hardware",
+      "rank": 60,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/GPU_puzzlers.py",
+        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/lib.py"
+      ]
+    },
+    {
+      "id": "L6-15",
+      "title": "Measure a vendor-library baseline rather than trusting the first heuristic",
+      "rank": 61,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Adopted research/measurement technique, not a separate executable kernel. Apply within leading candidate; do not spend a standalone GPU slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/CUDALibrarySamples/blob/9b347f161cce5cd2a51a0406b140f2a2d81df024/cuBLASLt/LtSgemmSimpleAutoTuning/sample_cublasLt_LtSgemmSimpleAutoTuning.cu",
+        "https://github.com/NVIDIA/CUDALibrarySamples/blob/9b347f161cce5cd2a51a0406b140f2a2d81df024/cuBLASLt/README.md"
+      ]
+    },
+    {
+      "id": "SOUP-MEM-002",
+      "title": "Shared detached FP16 projection input payload with separate gradient edges",
+      "rank": 62,
+      "heuristic_priority_score": 30,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Share representation bytes, not one graph cast; each branch promotes its gradient before FP32 accumulation. Keep PEFT dropout input untouched. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "L1-CUDAPY-01",
+      "title": "Compile once for target and launch on the framework stream",
+      "rank": 63,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cuda-python/blob/94625c1a33402bab45f244a8fee9edae6c2958d0/samples/cuda_core/customPyTorchKernel/customPyTorchKernel.py"
+      ]
+    },
+    {
+      "id": "L1-CUTILE-01",
+      "title": "Persistent tile traversal plus grouped swizzle",
+      "rank": 64,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cutile-python/blob/dc52634a5e51ad850b72e2d520dd019effd1073b/samples/MatMul.py"
+      ]
+    },
+    {
+      "id": "L1-CUTILE-02",
+      "title": "Online softmax GQA with explicit occupancy/tile tuning",
+      "rank": 65,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cutile-python/blob/dc52634a5e51ad850b72e2d520dd019effd1073b/samples/AttentionFMHA.py"
+      ]
+    },
+    {
+      "id": "L1-CUTLASS-02",
+      "title": "Lossless narrow-weight reordering before fused upcast",
+      "rank": 66,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cutlass/blob/91843b71d90737e0a9b86f7d9df213cff5a3526f/examples/55_hopper_mixed_dtype_gemm/README.md"
+      ]
+    },
+    {
+      "id": "L1-NUMBA-01",
+      "title": "Two-level reduction with bank-conflict padding",
+      "rank": 67,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/numba-cuda-mlir/blob/bd28aef6eef61e0fc0fd69257cf1b119925842b1/src/numba_cuda_mlir/numba_cuda/kernels/reduction.py"
+      ]
+    },
+    {
+      "id": "L1-TILELANG-01",
+      "title": "Stage asynchronous loads against tile compute",
+      "rank": 68,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/tile-ai/tilelang/blob/015caa20fd273229fb473f3861bf502dfd69b0d5/docs/programming_guides/software_pipeline.md"
+      ]
+    },
+    {
+      "id": "L1-TRITON-01",
+      "title": "Grouped tile ordering for L2 weight reuse",
+      "rank": 69,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/triton-lang/triton/blob/9bf3826c6ea36a11b507c40010bc09b72713fce4/python/tutorials/03-matrix-multiplication.py"
+      ]
+    },
+    {
+      "id": "L1-TRITON-02",
+      "title": "Persistent grouped GEMM with device-side scheduling",
+      "rank": 70,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/triton-lang/triton/blob/9bf3826c6ea36a11b507c40010bc09b72713fce4/python/tutorials/08-grouped-gemm.py"
+      ]
+    },
+    {
+      "id": "L1-TVM-02",
+      "title": "Inline producers/consumers around a scheduled matmul",
+      "rank": 71,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/apache/tvm/blob/e345029cedf0be76a087fcad9c89a97bed4f7204/python/tvm/s_tir/dlight/gpu/matmul.py"
+      ]
+    },
+    {
+      "id": "attn-fi-state-merge",
+      "title": "Split KV with stable exact attention-state merging",
+      "rank": 72,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/flashinfer-ai/flashinfer/blob/0e44b0ef80f6ecdf3052143862b786cf5be49045/include/flashinfer/attention/state.cuh",
+        "https://github.com/flashinfer-ai/flashinfer/blob/0e44b0ef80f6ecdf3052143862b786cf5be49045/include/flashinfer/attention/scheduler.cuh",
+        "https://docs.flashinfer.ai/tutorials/recursive_attention.html",
+        "https://github.com/flashinfer-ai/flashinfer/blob/0e44b0ef80f6ecdf3052143862b786cf5be49045/flashinfer/decode.py"
+      ]
+    },
+    {
+      "id": "attn-tk-resource-shape",
+      "title": "Specialize shared-memory staging and reuse Q storage for output",
+      "rank": 73,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/HazyResearch/ThunderKittens/blob/67845f5fa48d05343dbbc1ba1403f11061f08d2d/kernels/attention/mha_h100/mha_h100.cu"
+      ]
+    },
+    {
+      "id": "gemm-05",
+      "title": "Stream one-use weights without evicting reusable activations",
+      "rank": 74,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/IST-DASLab/marlin/blob/1f25790bdd49fba53106164a24666dade68d7c90/marlin/marlin_cuda_kernel.cu#L50-L89",
+        "https://github.com/IST-DASLab/marlin/blob/1f25790bdd49fba53106164a24666dade68d7c90/marlin/marlin_cuda_kernel.cu#L386-L466",
+        "https://github.com/IST-DASLab/marlin/blob/1f25790bdd49fba53106164a24666dade68d7c90/marlin/marlin_cuda_kernel.cu#L700-L706"
+      ]
+    },
+    {
+      "id": "gemm-06",
+      "title": "Striped work allocation without enlarging output tiles",
+      "rank": 75,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/IST-DASLab/marlin/blob/1f25790bdd49fba53106164a24666dade68d7c90/marlin/marlin_cuda_kernel.cu#L191-L242",
+        "https://github.com/IST-DASLab/marlin/blob/1f25790bdd49fba53106164a24666dade68d7c90/marlin/marlin_cuda_kernel.cu#L443-L466",
+        "https://github.com/IST-DASLab/marlin/blob/1f25790bdd49fba53106164a24666dade68d7c90/marlin/marlin_cuda_kernel.cu#L510-L551"
+      ]
+    },
+    {
+      "id": "gemm-07",
+      "title": "Vector lookup decoding for the fixed E2M1 codebook",
+      "rank": 76,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel.hpp#L543-L609",
+        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel_example.cu#L134-L144"
+      ]
+    },
+    {
+      "id": "gemm-08",
+      "title": "Stream-K versus Split-K with high-precision partials",
+      "rank": 77,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/config.hpp#L62-L67",
+        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/config.hpp#L111-L119",
+        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel_example.cu#L116-L118",
+        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/tile_scheduler_utils.hpp"
+      ]
+    },
+    {
+      "id": "gemm-10",
+      "title": "Lossless row/nibble repacking for the consuming instruction",
+      "rank": 78,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/qmodule.py#L26-L65",
+        "https://openkernelchallenge.dev/rules"
+      ]
+    },
+    {
+      "id": "gemm-12",
+      "title": "Reuse MoE scratch by proven tensor lifetimes",
+      "rank": 79,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Keep abstract scratch-lifetime reuse; MoE source workload is absent and a cache is not automatically scratch reuse. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/cpp/tensorrt_llm/kernels/moe/cutlass/moe_kernels.cu#L3314-L3334"
+      ]
+    },
+    {
+      "id": "inductor_shape_padding",
+      "title": "Use measured alignment padding only when saved GEMM time beats padding overhead",
+      "rank": 80,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Internal zero-padding of a GEMM is not batch/data padding; mathematically plausible but major Qwen feature dimensions already aligned. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/pytorch/pytorch/blob/4d05f41122fdc72bd509c512b4deacc58036f519/torch/_inductor/fx_passes/pad_mm.py"
+      ]
+    },
+    {
+      "id": "xformers_multitile_gemm",
+      "title": "Multiple logical projection tiles in one matmul launch",
+      "rank": 81,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/facebookresearch/xformers/blob/4f701fad69a6308e6b9f0c3f7863c40c881b30a7/xformers/ops/tiled_matmul.py",
+        "https://github.com/facebookresearch/xformers/blob/4f701fad69a6308e6b9f0c3f7863c40c881b30a7/xformers/ops/_triton/tiled_matmul_kernels.py"
+      ]
+    },
+    {
+      "id": "L6-05",
+      "title": "Use scan and aliased shared storage for required work compaction",
+      "rank": 82,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain independent-Triton hypothesis; prove fixed-task semantics before promotion. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cccl/blob/215868f3138407833d1706b38513957740628b0f/cub/examples/block/example_block_scan.cu"
+      ]
+    },
+    {
+      "id": "L6-16",
+      "title": "Keep dependent GEMM intermediates on chip only when dependencies fit",
+      "rank": 83,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Legal hypothesis, not next implementation: two trainable adjoints, FP16 boundaries and dropout widen proof surface. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/CUDALibrarySamples/blob/9b347f161cce5cd2a51a0406b140f2a2d81df024/MathDx/cuBLASDx/14_gemm_fused/gemm_fusion.cu",
+        "https://github.com/NVIDIA/CUDALibrarySamples/blob/9b347f161cce5cd2a51a0406b140f2a2d81df024/MathDx/cuBLASDx/14_gemm_fused/fused_gemm_performance.cu",
+        "https://github.com/NVIDIA/CUDALibrarySamples/blob/9b347f161cce5cd2a51a0406b140f2a2d81df024/MathDx/cuBLASDx/README.md"
+      ]
+    },
+    {
+      "id": "SOUP-LORA-004",
+      "title": "Shared LoRA saved-input representation with independent native masks",
+      "rank": 84,
+      "heuristic_priority_score": 28,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Retain distinct q/v native decisions; reconstruct saved operands from a shared suitable representation. Union operands and norm-state replay are separate implementation variants, not proven interchangeable. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "SOUP-ATTN-001",
+      "title": "One invocation-owned aligned additive attention mask",
+      "rank": 85,
+      "heuristic_priority_score": 27,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Convert original bool mask once to aligned additive form and reuse within invocation, without changing logicalmask orbackend. QWEN-MASK/P3/A0 are one mechanism. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "SOUP-MEM-005",
+      "title": "Bounded decoded-weight subset cache with native backward ownership",
+      "rank": 86,
+      "heuristic_priority_score": 27,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Persistent decoded subset is distinct from lossless narrow-weight reordering. Retain packed-state backward and versioned eviction; whole-weight caching can worsen memory. Ordinal planning judgment only; supplied evidence is not a GPU forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted",
+        "https://example.invalid/redacted"
+      ]
+    },
+    {
+      "id": "SOUP-NANO-001",
+      "title": "Fused AdamW arithmetic with runtime step/LR/betas/epsilon/decay scalars, avoiding per-step specialization (N optim.py)",
+      "rank": 87,
+      "heuristic_priority_score": 20,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Task AdamW preserved; small adapter parameter volume and optimizer/GradScaler integration cost make this lower priority. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json"
+      ]
+    },
+    {
+      "id": "SOUP-COMP-X01",
+      "title": "Compile on background worker while loading model (C1)",
+      "rank": 88,
+      "heuristic_priority_score": 19,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Background compile remains scope/rule/cold-measurement risk; no source or timing evidence justifies implementation now. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json"
+      ]
+    },
+    {
+      "id": "SOUP-COMP-001",
+      "title": "Suppress **pointer-alignment specialization only on scalar metadata arguments**, avoiding extra variants when views have different offsets. [Triton v3.8 runtime](https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/runtime/jit.py), [API](https://triton-lang.org/main/python-api/generated/triton.jit.html); recent motivating [upstream issue Aug15](https://github.com/vllm-project/vllm/issues/52413).",
+      "rank": 89,
+      "heuristic_priority_score": 18,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Later-version compiler option requires pinned3.6 support and actual specialization evidence; no independent kernel gain. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/runtime/jit.py",
+        "https://triton-lang.org/main/python-api/generated/triton.jit.html",
+        "https://github.com/vllm-project/vllm/issues/52413",
+        "https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/language/core.py",
+        "https://triton-lang.org/main/python-api/generated/triton.language.range.html",
+        "https://github.com/triton-lang/triton/issues/12525",
+        "https://github.com/dh8116/triton-kernels/blob/c03502565dde5c1fcb664692f23f10898334b5d2/README.md",
+        "https://github.com/0sec-labs/noeris/blob/2c0d64c64771624076096972c5c32118177688b8/README.md",
+        "https://arxiv.org/abs/2606.22932",
+        "https://arxiv.org/abs/2609.37241",
+        "https://github.com/triton-lang/triton/issues/10140",
+        "https://arxiv.org/abs/2607.23089"
+      ]
+    },
+    {
+      "id": "SOUP-COMP-002",
+      "title": "Selectively shorten loop live ranges using **disable_licm**, and independently test **disallow_acc_multi_buffer** on dot-loop accumulators. [Triton v3.8 language core](https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/language/core.py), [range API](https://triton-lang.org/main/python-api/generated/triton.language.range.html).",
+      "rank": 90,
+      "heuristic_priority_score": 18,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Later-version loop knobs require pinned3.6 support and measured register/codegen bottleneck; not automatic improvement. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/runtime/jit.py",
+        "https://triton-lang.org/main/python-api/generated/triton.jit.html",
+        "https://github.com/vllm-project/vllm/issues/52413",
+        "https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/language/core.py",
+        "https://triton-lang.org/main/python-api/generated/triton.language.range.html",
+        "https://github.com/triton-lang/triton/issues/12525",
+        "https://github.com/dh8116/triton-kernels/blob/c03502565dde5c1fcb664692f23f10898334b5d2/README.md",
+        "https://github.com/0sec-labs/noeris/blob/2c0d64c64771624076096972c5c32118177688b8/README.md",
+        "https://arxiv.org/abs/2606.22932",
+        "https://arxiv.org/abs/2609.37241",
+        "https://github.com/triton-lang/triton/issues/10140",
+        "https://arxiv.org/abs/2607.23089"
+      ]
+    },
+    {
+      "id": "L1-CUTLASS-01",
+      "title": "Warp-specialized persistent TMA/WGMMA GEMM",
+      "rank": 91,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cutlass/blob/91843b71d90737e0a9b86f7d9df213cff5a3526f/examples/python/CuTeDSL/cute/hopper/kernel/dense_gemm/dense_gemm_persistent.py"
+      ]
+    },
+    {
+      "id": "L1-CUTLASS-03",
+      "title": "Device grouped scheduling with per-group TMA descriptor changes",
+      "rank": 92,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cutlass/blob/91843b71d90737e0a9b86f7d9df213cff5a3526f/examples/57_hopper_grouped_gemm/57_hopper_grouped_gemm.cu"
+      ]
+    },
+    {
+      "id": "L1-NUMBA-02",
+      "title": "Warp votes/matches to compact routing metadata on device",
+      "rank": 93,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/numba-cuda-mlir/blob/bd28aef6eef61e0fc0fd69257cf1b119925842b1/tests/test_warp_ops.py"
+      ]
+    },
+    {
+      "id": "L1-TILELANG-02",
+      "title": "Split-KV GQA decode with exact softmax merge",
+      "rank": 94,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/tile-ai/tilelang/blob/015caa20fd273229fb473f3861bf502dfd69b0d5/examples/flash_decoding/example_gqa_decode.py"
+      ]
+    },
+    {
+      "id": "L1-TRITON-03",
+      "title": "Persistent matmul with Hopper TMA pipeline",
+      "rank": 95,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/triton-lang/triton/blob/9bf3826c6ea36a11b507c40010bc09b72713fce4/python/tutorials/09-persistent-matmul.py"
+      ]
+    },
+    {
+      "id": "attn-fa-l2-schedule",
+      "title": "Persistent work ordering sized to KV cache footprint",
+      "rank": 96,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/Dao-AILab/flash-attention/blob/98c1cee0ed59307833841cdbf567fe336ceec13a/hopper/tile_scheduler.hpp"
+      ]
+    },
+    {
+      "id": "attn-fa-pack-split",
+      "title": "Pack GQA heads and split long KV separately",
+      "rank": 97,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/Dao-AILab/flash-attention/blob/98c1cee0ed59307833841cdbf567fe336ceec13a/hopper/flash_attn_interface.py",
+        "https://github.com/Dao-AILab/flash-attention/blob/98c1cee0ed59307833841cdbf567fe336ceec13a/hopper/tile_scheduler.hpp",
+        "https://github.com/Dao-AILab/flash-attention/blob/98c1cee0ed59307833841cdbf567fe336ceec13a/README.md"
+      ]
+    },
+    {
+      "id": "attn-fa-paged-copy-overlap",
+      "title": "Use cp.async for irregular paged KV while retaining Hopper compute overlap",
+      "rank": 98,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/Dao-AILab/flash-attention/blob/98c1cee0ed59307833841cdbf567fe336ceec13a/hopper/mainloop_fwd_sm90_tma_gmma_ws.hpp",
+        "https://github.com/Dao-AILab/flash-attention/blob/98c1cee0ed59307833841cdbf567fe336ceec13a/hopper/flash_fwd_kernel_sm90.h"
+      ]
+    },
+    {
+      "id": "attn-fi-metadata-layout",
+      "title": "Use supplied paged NHD cache without a full cache transpose",
+      "rank": 99,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://docs.flashinfer.ai/tutorials/kv_layout.html",
+        "https://github.com/flashinfer-ai/flashinfer/blob/0e44b0ef80f6ecdf3052143862b786cf5be49045/flashinfer/decode.py"
+      ]
+    },
+    {
+      "id": "attn-mla-copy-granularity",
+      "title": "Expose memory-copy completion at compute-use granularity",
+      "rank": 100,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/deepseek-ai/FlashMLA/blob/395cb3afbb331fef7b1b21e9340861b9436b42d8/docs/20250422-new-kernel-deep-dive.md"
+      ]
+    },
+    {
+      "id": "attn-mla-register-schedule",
+      "title": "Study register-budgeted seesaw scheduling, not MLA semantics",
+      "rank": 101,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/deepseek-ai/FlashMLA/blob/395cb3afbb331fef7b1b21e9340861b9436b42d8/docs/20250422-new-kernel-deep-dive.md",
+        "https://github.com/deepseek-ai/FlashMLA/tree/ba89a3466e9470ad08ab39738d4e7bb66989e1e7",
+        "https://github.com/deepseek-ai/FlashMLA/blob/395cb3afbb331fef7b1b21e9340861b9436b42d8/README.md"
+      ]
+    },
+    {
+      "id": "attn-sgl-grouped-heads",
+      "title": "Make each decode tile reuse KV across a GQA head group",
+      "rank": 102,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/sgl-project/sglang/blob/655059819cda56f4c0feb5e3f09056caa6907bc7/python/sglang/kernels/ops/attention/decode_attention.py"
+      ]
+    },
+    {
+      "id": "attn-sgl-verify-prefix",
+      "title": "Separate long shared prefix from tiny causal verify block",
+      "rank": 103,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/sgl-project/sglang/blob/655059819cda56f4c0feb5e3f09056caa6907bc7/python/sglang/kernels/ops/attention/verify_splitkv.py"
+      ]
+    },
+    {
+      "id": "attn-tk-lcf-pipeline",
+      "title": "Load-compute-finish pipeline for prefill tiles",
+      "rank": 104,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/HazyResearch/ThunderKittens/blob/67845f5fa48d05343dbbc1ba1403f11061f08d2d/kernels/attention/mha_h100_lcf/mha_h100_lcf.cu",
+        "https://github.com/HazyResearch/ThunderKittens/blob/67845f5fa48d05343dbbc1ba1403f11061f08d2d/README.md"
+      ]
+    },
+    {
+      "id": "attn-trt-multiblock-threshold",
+      "title": "Dispatch multi-block attention by available parallel work",
+      "rank": 105,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/docs/source/features/attention.md",
+        "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/cpp/tensorrt_llm/kernels/decoderMaskedMultiheadAttention/decoderXQARunner.cpp"
+      ]
+    },
+    {
+      "id": "attn-trt-xqa-reuse",
+      "title": "Use tensor-core grouped-query decode only when configuration actually fits",
+      "rank": 106,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/docs/source/features/attention.md",
+        "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/cpp/tensorrt_llm/kernels/decoderMaskedMultiheadAttention/decoderXQARunner.cpp",
+        "https://nvidia.github.io/TensorRT-LLM/blogs/XQA-kernel.html"
+      ]
+    },
+    {
+      "id": "attn-vllm-unified-short-q",
+      "title": "One attention body with direct and segmented short-query paths",
+      "rank": 107,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/vllm-project/vllm/blob/36f5ff3172eb75433e54e496d64c473e951f8ecc/vllm/v1/attention/ops/triton_unified_attention.py"
+      ]
+    },
+    {
+      "id": "gemm-01",
+      "title": "Persistent BF16 TMA pipeline tuned by shape",
+      "rank": 108,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/deepseek-ai/DeepGEMM/blob/5081f8513af57e61696de4f4f04b0e707ffb503e/csrc/jit_kernels/impls/sm90_bf16_gemm.hpp#L46-L124",
+        "https://github.com/deepseek-ai/DeepGEMM/blob/5081f8513af57e61696de4f4f04b0e707ffb503e/csrc/apis/gemm.hpp#L488-L533"
+      ]
+    },
+    {
+      "id": "gemm-02",
+      "title": "Choose contiguous versus masked grouped scheduling by workload",
+      "rank": 109,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/deepseek-ai/DeepGEMM/blob/5081f8513af57e61696de4f4f04b0e707ffb503e/README.md#grouped-gemms-contiguous-layout",
+        "https://github.com/deepseek-ai/DeepGEMM/blob/5081f8513af57e61696de4f4f04b0e707ffb503e/README.md#grouped-gemms-masked-layout",
+        "https://github.com/deepseek-ai/DeepGEMM/blob/5081f8513af57e61696de4f4f04b0e707ffb503e/csrc/apis/gemm.hpp#L567-L682"
+      ]
+    },
+    {
+      "id": "gemm-03",
+      "title": "Hopper register-side E2M1 upconversion, not native FP4 MMA",
+      "rank": 110,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cutlass/blob/91843b71d90737e0a9b86f7d9df213cff5a3526f/examples/55_hopper_mixed_dtype_gemm/55_hopper_int4_bf16_gemm.cu#L33-L74",
+        "https://github.com/NVIDIA/cutlass/blob/91843b71d90737e0a9b86f7d9df213cff5a3526f/examples/55_hopper_mixed_dtype_gemm/55_hopper_int4_bf16_gemm.cu#L118-L179"
+      ]
+    },
+    {
+      "id": "gemm-04",
+      "title": "Explicit operand swap preserves a TMA output path",
+      "rank": 111,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cutlass/blob/91843b71d90737e0a9b86f7d9df213cff5a3526f/examples/55_hopper_mixed_dtype_gemm/55_hopper_int4_bf16_gemm.cu#L33-L74",
+        "https://github.com/NVIDIA/cutlass/blob/91843b71d90737e0a9b86f7d9df213cff5a3526f/examples/55_hopper_mixed_dtype_gemm/55_hopper_int4_bf16_gemm.cu#L191-L228"
+      ]
+    },
+    {
+      "id": "gemm-11",
+      "title": "Fuse small-batch expert maps and ranking",
+      "rank": 112,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/cpp/tensorrt_llm/kernels/moe/cutlass/moe_kernels.cu#L339-L577"
+      ]
+    },
+    {
+      "id": "liger_portable_grouped_moe",
+      "title": "GPU route histogram/prefix/scatter feeding portable grouped GEMM",
+      "rank": 113,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/linkedin/Liger-Kernel/blob/781a8aef64bf6105bdefb5f4c991e0d14c08e793/src/liger_kernel/ops/fused_moe_kernels.py"
+      ]
+    },
+    {
+      "id": "sglang_fused_routing",
+      "title": "Fuse sigmoid, selection-only bias, exact top-8 and weight normalization",
+      "rank": 114,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/sgl-project/sglang/blob/655059819cda56f4c0feb5e3f09056caa6907bc7/python/sglang/kernels/ops/moe/muse_spark_routing.py"
+      ]
+    },
+    {
+      "id": "vllm_chunked_prefill",
+      "title": "Decode-priority batching with a tunable prefill token budget",
+      "rank": 115,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/vllm-project/vllm/blob/36f5ff3172eb75433e54e496d64c473e951f8ecc/docs/configuration/optimization.md"
+      ]
+    },
+    {
+      "id": "vllm_packed_swiglu",
+      "title": "Vectorized SiLU-and-multiply for packed gate/up projection",
+      "rank": 116,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "SwiGLU itself is valid, but starter and renamed/close rewritten example do not supply own-kernel admission. Packed first GEMM is a separate higher-risk proposal. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/vllm-project/vllm/blob/36f5ff3172eb75433e54e496d64c473e951f8ecc/csrc/activation_kernels.cu"
+      ]
+    },
+    {
+      "id": "xformers_packed_swiglu",
+      "title": "Pack gate/up weights and fuse SwiGLU pointwise work",
+      "rank": 117,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "SwiGLU itself is valid, but starter and renamed/close rewritten example do not supply own-kernel admission. Packed first GEMM is a separate higher-risk proposal. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/facebookresearch/xformers/blob/4f701fad69a6308e6b9f0c3f7863c40c881b30a7/xformers/ops/swiglu_op.py"
+      ]
+    },
+    {
+      "id": "L6-02",
+      "title": "Pipeline global-to-shared copies without assuming Hopper TMA",
+      "rank": 118,
+      "heuristic_priority_score": 16,
+      "decision": "DEFER",
+      "duplicate_of": null,
+      "reason": "Not a direct fixed-task T4 candidate; require a separately specified compatible subproblem before implementation. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cuda-samples/blob/5443602d89ed99aede2e4b7bf329daddeadb320e/cpp/3_CUDA_Features/globalToShmemAsyncCopy/globalToShmemAsyncCopy.cu"
+      ]
+    },
+    {
+      "id": "attn-fi-packed-fp8-convert",
+      "title": "Convert packed E4M3 cache bytes in pairs",
+      "rank": 119,
+      "heuristic_priority_score": 0,
+      "decision": "REJECT",
+      "duplicate_of": null,
+      "reason": "Fix misleading conditional direct route: reject format conversion as applied here; vector-load lesson already covered elsewhere. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/flashinfer-ai/flashinfer/commit/0e44b0ef80f6ecdf3052143862b786cf5be49045",
+        "https://github.com/flashinfer-ai/flashinfer/blob/0e44b0ef80f6ecdf3052143862b786cf5be49045/csrc/xqa/utils.cuh"
+      ]
+    },
+    {
+      "id": "attn-vllm-vector-prep",
+      "title": "Vectorize Muse QK norm, interleaved RoPE and FP8 cache insert",
+      "rank": 120,
+      "heuristic_priority_score": 0,
+      "decision": "DUPLICATE",
+      "duplicate_of": "attn-sgl-rounding-fusion",
+      "reason": "Same execution family as attn-sgl-rounding-fusion; retain this source-specific tiling/layout/rounding refinement under that canonical candidate, not a second implementation queue slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/vllm-project/vllm/blob/36f5ff3172eb75433e54e496d64c473e951f8ecc/csrc/fused_muse_spark_qknorm_rope_kv_insert_kernel.cu",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L51-L135",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L180-L233",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L355-L397",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/integrations/sdpa_attention.py"
+      ]
+    },
+    {
+      "id": "apex_rms_reduction",
+      "title": "Hierarchical warp/shared-memory FP32 RMS reduction",
+      "rank": 121,
+      "heuristic_priority_score": 0,
+      "decision": "DUPLICATE",
+      "duplicate_of": "liger_castaware_norm",
+      "reason": "Same execution family as liger_castaware_norm; retain this source-specific tiling/layout/rounding refinement under that canonical candidate, not a second implementation queue slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/apex/blob/575968bc1f9127ccd61003a681472a83af4ff1a1/csrc/layer_norm_cuda_kernel.cu",
+        "https://github.com/NVIDIA/apex/blob/575968bc1f9127ccd61003a681472a83af4ff1a1/apex/normalization/fused_layer_norm.py",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297",
+        "https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171"
+      ]
+    },
+    {
+      "id": "apex_shape_specialization",
+      "title": "Shape-specialized norm tiling and persistent row loop",
+      "rank": 122,
+      "heuristic_priority_score": 0,
+      "decision": "DUPLICATE",
+      "duplicate_of": "liger_castaware_norm",
+      "reason": "Same execution family as liger_castaware_norm; retain this source-specific tiling/layout/rounding refinement under that canonical candidate, not a second implementation queue slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/apex/blob/575968bc1f9127ccd61003a681472a83af4ff1a1/apex/contrib/csrc/layer_norm/ln_fwd_cuda_kernel.cu",
+        "https://github.com/NVIDIA/apex/blob/575968bc1f9127ccd61003a681472a83af4ff1a1/apex/contrib/csrc/layer_norm/ln_fwd_kernels.cuh",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297",
+        "https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171"
+      ]
+    },
+    {
+      "id": "inductor_b2b_fusion",
+      "title": "Fuse two GEMMs around a pointwise subgraph only after preserving the BF16 boundary",
+      "rank": 123,
+      "heuristic_priority_score": 0,
+      "decision": "DUPLICATE",
+      "duplicate_of": "L6-16",
+      "reason": "Same execution family as L6-16; retain this source-specific tiling/layout/rounding refinement under that canonical candidate, not a second implementation queue slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/pytorch/pytorch/blob/4d05f41122fdc72bd509c512b4deacc58036f519/torch/_inductor/fx_passes/b2b_gemm.py"
+      ]
+    },
+    {
+      "id": "trt_qknorm_rope_fusion",
+      "title": "One warp per head for fused QK normalization and RoPE",
+      "rank": 124,
+      "heuristic_priority_score": 0,
+      "decision": "DUPLICATE",
+      "duplicate_of": "attn-sgl-rounding-fusion",
+      "reason": "Same execution family as attn-sgl-rounding-fusion; retain this source-specific tiling/layout/rounding refinement under that canonical candidate, not a second implementation queue slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/cpp/tensorrt_llm/kernels/fusedQKNormRopeKernel.cu",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L51-L135",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L180-L233",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L355-L397",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/integrations/sdpa_attention.py"
+      ]
+    },
+    {
+      "id": "trt_rms_shmem",
+      "title": "Retain RMSNorm inputs on chip across reduction and affine output",
+      "rank": 125,
+      "heuristic_priority_score": 0,
+      "decision": "DUPLICATE",
+      "duplicate_of": "liger_castaware_norm",
+      "reason": "Same execution family as liger_castaware_norm; retain this source-specific tiling/layout/rounding refinement under that canonical candidate, not a second implementation queue slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/cpp/tensorrt_llm/kernels/rmsnormKernels.cu",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297",
+        "https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171"
+      ]
+    },
+    {
+      "id": "vllm_vector_norm",
+      "title": "Vectorized RMSNorm and residual-add fusion with batch-aware CTA sizing",
+      "rank": 126,
+      "heuristic_priority_score": 0,
+      "decision": "DUPLICATE",
+      "duplicate_of": "liger_castaware_norm",
+      "reason": "Same execution family as liger_castaware_norm; retain this source-specific tiling/layout/rounding refinement under that canonical candidate, not a second implementation queue slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/vllm-project/vllm/blob/36f5ff3172eb75433e54e496d64c473e951f8ecc/csrc/layernorm_kernels.cu",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297",
+        "https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171"
+      ]
+    },
+    {
+      "id": "xformers_rms_cachepolicy",
+      "title": "Fuse add+RMSNorm and choose cache eviction policy across two passes",
+      "rank": 127,
+      "heuristic_priority_score": 0,
+      "decision": "DUPLICATE",
+      "duplicate_of": "sglang_norm_boundary",
+      "reason": "Same execution family as sglang_norm_boundary; retain this source-specific tiling/layout/rounding refinement under that canonical candidate, not a second implementation queue slot. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/facebookresearch/xformers/blob/4f701fad69a6308e6b9f0c3f7863c40c881b30a7/xformers/ops/_triton/rmsnorm_kernels.py",
+        "https://github.com/facebookresearch/xformers/blob/4f701fad69a6308e6b9f0c3f7863c40c881b30a7/xformers/ops/rmsnorm.py",
+        "https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297",
+        "https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171"
+      ]
+    },
+    {
+      "id": "L6-03",
+      "title": "Separate graph construction, first launch, replay and device time",
+      "rank": 128,
+      "heuristic_priority_score": 0,
+      "decision": "REJECT",
+      "duplicate_of": null,
+      "reason": "Reject direct route; preserve source row and any separately stated lawful abstract lesson. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/cuda-samples/blob/5443602d89ed99aede2e4b7bf329daddeadb320e/cpp/6_Performance/cudaGraphsPerfScaling/cudaGraphPerfScaling.cu"
+      ]
+    },
+    {
+      "id": "L6-07",
+      "title": "Report cold-cache, hot-batch and explicit graph-replay measurements separately",
+      "rank": 129,
+      "heuristic_priority_score": 0,
+      "decision": "REJECT",
+      "duplicate_of": null,
+      "reason": "Reject direct route; preserve source row and any separately stated lawful abstract lesson. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/NVIDIA/nvbench/blob/a7fe2f3d47980a48a21dac5d407dd8eff007dfc4/README.md",
+        "https://github.com/NVIDIA/nvbench/blob/a7fe2f3d47980a48a21dac5d407dd8eff007dfc4/nvbench/detail/measure_hot.cuh"
+      ]
+    },
+    {
+      "id": "SOUP-NANO-X01",
+      "title": "Muon, NorMuon, Polar Express, new residual/value-embedding gates, ReLU², sliding-window attention, logit softcap, changed batch/dataset (N)",
+      "rank": 130,
+      "heuristic_priority_score": 0,
+      "decision": "REJECT",
+      "duplicate_of": null,
+      "reason": "Reject direct route; preserve source row and any separately stated lawful abstract lesson. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json"
+      ]
+    },
+    {
+      "id": "SOUP-NANO-X02",
+      "title": "Nanochat FA3 downloader / FP8 training route (N)",
+      "rank": 131,
+      "heuristic_priority_score": 0,
+      "decision": "REJECT",
+      "duplicate_of": null,
+      "reason": "Reject direct route; preserve source row and any separately stated lawful abstract lesson. Ordinal planning judgment only; not a forecast or admission result.",
+      "T4tested": false,
+      "exact_tested_variants": [],
+      "source_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py",
+        "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py",
+        "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py",
+        "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py",
+        "https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md",
+        "https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md",
+        "https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json"
+      ]
+    }
+  ]
+}

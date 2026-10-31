@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "cycle": "2b",
+  "generated_utc": "2026-10-30T11:28:54.759917+00:00",
+  "scope": "Cloud-only original bounded CPU LoRA and saved-mask fixtures",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "threads": 2,
+    "interop_threads": 2
+  },
+  "script_sha256": "78d5e58daa2d843ca21089afa5f81b4cbf23db87e3293d1a824de8578c375425",
+  "summary": {
+    "passed": 3,
+    "failed": 0
+  },
+  "not_validated": [
+    "actual CUDA/PEFT dropout dispatch and routing",
+    "actual bnb base layer",
+    "fused GPU launches/T4 resources",
+    "peak memory or storage release",
+    "actual GradScaler/optimizer steps",
+    "full training/quality or challenge gates"
+  ],
+  "results": [
+    {
+      "name": "lora_b_scale_add_custom_autograd_ownership",
+      "candidates": [
+        "SOUP-LORA-001"
+      ],
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "mode": "normal",
+            "training": true,
+            "outputs_exact": true,
+            "rng_endstate_exact": true,
+            "q_v_separate_dropout_preserved": true,
+            "gradient_comparisons": {
+              "x": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "aq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "av": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bv": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              }
+            }
+          },
+          {
+            "mode": "normal",
+            "training": false,
+            "outputs_exact": true,
+            "rng_endstate_exact": true,
+            "q_v_separate_dropout_preserved": true,
+            "gradient_comparisons": {
+              "x": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "aq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "av": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bv": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              }
+            }
+          },
+          {
+            "mode": "subnormal",
+            "training": true,
+            "outputs_exact": true,
+            "rng_endstate_exact": true,
+            "q_v_separate_dropout_preserved": true,
+            "gradient_comparisons": {
+              "x": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "aq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "av": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bv": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              }
+            }
+          },
+          {
+            "mode": "subnormal",
+            "training": false,
+            "outputs_exact": true,
+            "rng_endstate_exact": true,
+            "q_v_separate_dropout_preserved": true,
+            "gradient_comparisons": {
+              "x": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "aq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "av": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bv": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              }
+            }
+          },
+          {
+            "mode": "overflow",
+            "training": true,
+            "outputs_exact": true,
+            "rng_endstate_exact": true,
+            "q_v_separate_dropout_preserved": true,
+            "gradient_comparisons": {
+              "x": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 221,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "aq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 208,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 368,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "av": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 208,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bv": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 176,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 272,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 272,
+                "exact_finite_and_nonfinite_classes": true
+              }
+            }
+          },
+          {
+            "mode": "overflow",
+            "training": false,
+            "outputs_exact": true,
+            "rng_endstate_exact": true,
+            "q_v_separate_dropout_preserved": true,
+            "gradient_comparisons": {
+              "x": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 221,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "aq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 208,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bq": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 368,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "av": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 208,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "bv": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 176,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_q": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 272,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "s16_v": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 272,
+                "exact_finite_and_nonfinite_classes": true
+              }
+            }
+          }
+        ],
+        "shape": {
+          "M": 17,
+          "H": 13,
+          "rank": 16,
+          "qN": 23,
+          "vN": 11
+        },
+        "graphs": {
+          "baseline": {
+            "root": "AddBackward0",
+            "direct_inputs": [
+              "CloneBackward0",
+              "MulBackward0"
+            ]
+          },
+          "custom": {
+            "root": "BScaleAddBackward",
+            "direct_inputs": [
+              "MmBackward0",
+              "torch::autograd::AccumulateGrad",
+              "CloneBackward0"
+            ]
+          }
+        },
+        "frozen_base": "Independent FP32 toy linear, not a bnb emulation",
+        "defensive_base_clone_retained": true,
+        "decision": "CPU supports B+scale+add ownership while retaining A/dropout and exact cast boundaries. This custom Function still runs ordinary Torch ops; no launch fusion or T4 feasibility measured."
+      }
+    },
+    {
+      "name": "per_saved_native_dropout_mask_hooks",
+      "candidates": [
+        "SOUP-LORA-002"
+      ],
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "length": 1,
+            "outputs_gradients_rng_exact": true,
+            "retained_graph_backward_passes": 2,
+            "surrounding_saved_tensors_untouched": true,
+            "pack_calls": 1,
+            "unpack_calls": 2,
+            "packed_payload_bytes": 1,
+            "identity_fallbacks": 0
+          },
+          {
+            "length": 7,
+            "outputs_gradients_rng_exact": true,
+            "retained_graph_backward_passes": 2,
+            "surrounding_saved_tensors_untouched": true,
+            "pack_calls": 1,
+            "unpack_calls": 2,
+            "packed_payload_bytes": 1,
+            "identity_fallbacks": 0
+          },
+          {
+            "length": 8,
+            "outputs_gradients_rng_exact": true,
+            "retained_graph_backward_passes": 2,
+            "surrounding_saved_tensors_untouched": true,
+            "pack_calls": 1,
+            "unpack_calls": 2,
+            "packed_payload_bytes": 1,
+            "identity_fallbacks": 0
+          },
+          {
+            "length": 9,
+            "outputs_gradients_rng_exact": true,
+            "retained_graph_backward_passes": 2,
+            "surrounding_saved_tensors_untouched": true,
+            "pack_calls": 1,
+            "unpack_calls": 2,
+            "packed_payload_bytes": 2,
+            "identity_fallbacks": 0
+          },
+          {
+            "length": 257,
+            "outputs_gradients_rng_exact": true,
+            "retained_graph_backward_passes": 2,
+            "surrounding_saved_tensors_untouched": true,
+            "pack_calls": 1,
+            "unpack_calls": 2,
+            "packed_payload_bytes": 33,
+            "identity_fallbacks": 0
+          }
+        ],
+        "fallbacks": {
+          "no_grad": "skip_no_node",
+          "eval": "skip_eval",
+          "unsupported": "skip_unsupported_node",
+          "metadata_mismatch": "registered",
+          "metadata_identity_fallbacks": 1,
+          "existing_hooks": "skip_existing_hooks"
+        },
+        "outer_hooks_preserved": {
+          "pack": 1,
+          "unpack": 1
+        },
+        "intentional_pack_failures": [
+          {
+            "mode": "value",
+            "propagated": true,
+            "error": "intentional pack failure"
+          },
+          {
+            "mode": "conflict_text",
+            "propagated": true,
+            "error": "Calling register_hooks on a saved tensor whose hooks have already been set. Hint: only one pair of hooks is allowed at a time."
+          }
+        ],
+        "exact_target": "NativeDropoutBackward0._raw_saved_result1 on installed CPU build",
+        "private_version_specific_api": true,
+        "original_masks_debug_cloned": false,
+        "output_graph_not_captured_by_pack_closure": true,
+        "memory_release_or_peak_savings_measured": false,
+        "decision": "Per-saved-mask hooks preserve tested outputs/RNG/retained backward and leave neighboring saved tensors untouched. Skip known pre-mutation conflicts; propagate all pack failures. Actual PEFT/CUDA routing and memory benefit remain unvalidated."
+      }
+    },
+    {
+      "name": "cpu_autocast_b_tail_contract",
+      "candidates": [
+        "SOUP-LORA-001"
+      ],
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "mode": "normal",
+            "output_exact": true,
+            "branch_dtype": "torch.float16",
+            "gradient_comparisons": {
+              "s": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "b": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              }
+            }
+          },
+          {
+            "mode": "subnormal",
+            "output_exact": true,
+            "branch_dtype": "torch.float16",
+            "gradient_comparisons": {
+              "s": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "b": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              }
+            }
+          },
+          {
+            "mode": "overflow",
+            "output_exact": true,
+            "branch_dtype": "torch.float16",
+            "gradient_comparisons": {
+              "s": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 272,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "b": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": null,
+                "reference_nonfinite": 368,
+                "exact_finite_and_nonfinite_classes": true
+              },
+              "base": {
+                "nonfinite_class_mismatch": 0,
+                "finite_max_abs": 0.0,
+                "reference_nonfinite": 0,
+                "exact_finite_and_nonfinite_classes": true
+              }
+            }
+          }
+        ],
+        "decision": "Installed CPU autocast F.linear agrees with explicit half-cast B-tail oracle in these fixtures; this does not prove CUDA autocast or actual PEFT dtype routing."
+      }
+    }
+  ]
+}

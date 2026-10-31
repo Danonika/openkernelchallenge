@@ -1,0 +1,31 @@
+{
+  "candidate": "soup-baseline-web80-20261030-2113",
+  "complete_measurements": [
+    {
+      "base": {
+        "external_peak_mib_max": 14345,
+        "public_eval_loss": 2.04962,
+        "wall_s_median": 71.29
+      }
+    }
+  ],
+  "individual_command_observations_not_paired": [],
+  "limits": [
+    "API state is not task correctness.",
+    "Internal 64 steps do not override a full-command timeout.",
+    "No ratio is formed from an incomplete cohort or another job.",
+    "Do not rerun unchanged failures automatically."
+  ],
+  "notebook_sha256": "f1e0c4bda09cef9d72d50953dbdcf2865726e98d4c2b8f560dc4e000972bb912",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "26cdf01f026aaf2a184270fb82652d7e84ad1211453275b035c769b4f61c8463",
+  "paired_ratios": null,
+  "platform": "GCP development evidence, not Kaggle",
+  "preflight_statuses": [],
+  "public_eval_verified": true,
+  "raw_receipt_filename": "baseline_receipt_v3.json",
+  "raw_receipt_sha256": "6e69ea4495df26ec236a5e48679457af21362b155a8627fa870d1d463da662a6",
+  "raw_review_status": "COMPLETE_BOUND_RESEARCH_EVIDENCE",
+  "score": null,
+  "training_limit": null
+}

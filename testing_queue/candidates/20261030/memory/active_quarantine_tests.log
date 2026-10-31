@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "gpu_executed": false,
+  "scope": "active owner-token quarantine lifecycle only",
+  "cases": [
+    {
+      "case": "normal_completion",
+      "passed": true,
+      "marker_present": false
+    },
+    {
+      "case": "scientific_failure",
+      "passed": true,
+      "marker_present": true
+    },
+    {
+      "case": "raised_failure",
+      "passed": true,
+      "marker_present": true
+    },
+    {
+      "case": "foreign_token",
+      "passed": true,
+      "marker_present": true
+    },
+    {
+      "case": "abrupt_sigkill",
+      "passed": true,
+      "marker_retained": true
+    }
+  ]
+}

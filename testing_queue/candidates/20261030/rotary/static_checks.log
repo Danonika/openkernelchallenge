@@ -1,0 +1,22 @@
+{
+  "status": "STATIC_PASS",
+  "compiled_code_cells": 3,
+  "solution_source_files": 5,
+  "source_sha256": "b874e6a4f23b9912014ed3f39e30c44716fc3af5aece742d5c03d447643d3829",
+  "notebook_sha256": "a9072b0653bcba603d16e32208c4697e40e25fd580b543e817b7cbc04857f10f",
+  "notebook_embedded_bytes_match": true,
+  "deterministic_queue_bundle": true,
+  "queue_artifact_schema_pass": true,
+  "official_static_owned_kernel_names": [
+    "_signflip_f32",
+    "rotary_adjoint_f32",
+    "rotary_apply_f32"
+  ],
+  "example_copies": [],
+  "example_lookalikes": [],
+  "banned_imports": [],
+  "broken_source": [],
+  "gpu_executed": false,
+  "score": null,
+  "admission": "UNKNOWN"
+}

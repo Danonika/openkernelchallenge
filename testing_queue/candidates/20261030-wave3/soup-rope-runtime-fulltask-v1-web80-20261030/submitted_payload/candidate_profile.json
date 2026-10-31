@@ -1,0 +1,37 @@
+{
+  "rotary_runtime_dims": {
+    "mode": "rotary_runtime_dims",
+    "title": "Signature-only runtime-T/N/backward-stride FP32 RoPE",
+    "preflight": "solution.web_preflight",
+    "preflight_status": "PASSED_PREFLIGHT_ONLY",
+    "kernels": [
+      "rotary_apply_f32",
+      "rotary_adjoint_f32"
+    ],
+    "routes": [
+      {
+        "prefix": "ROTARY_EVIDENCE ",
+        "event": "patch_installed",
+        "match": {
+          "source_blob": "b4fed98fafae8e4ee39be3b8cd766b1c85b079cd"
+        },
+        "positive_field": "count"
+      },
+      {
+        "prefix": "ROTARY_EVIDENCE ",
+        "event": "forward_launch_returned",
+        "match": {
+          "dtype": "torch.float32"
+        },
+        "positive_field": "count"
+      },
+      {
+        "prefix": "ROTARY_EVIDENCE ",
+        "event": "backward_launch_returned",
+        "positive_field": "count"
+      }
+    ],
+    "requires_original_kernels": true,
+    "zip_sha256": "0d02a6c69c63351f63d12ef706cf5a2f9572dd4ad6d2cc28578e80f81ef1955e"
+  }
+}

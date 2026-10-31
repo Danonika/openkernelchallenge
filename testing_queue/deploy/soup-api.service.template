@@ -1,0 +1,20 @@
+[Unit]
+Description=Private Soup queue API (no candidate execution)
+After=network.target
+[Service]
+Type=simple
+User=soup-web
+Group=soup-web
+WorkingDirectory=/opt/soup-queue
+EnvironmentFile=/etc/soup-queue/api.env
+ExecStart=/usr/bin/python3 /opt/soup-queue/api.py --root /var/lib/soup-queue --port 8765 --serve-local --trusted-public-origin https://__PUBLIC_IP__
+Restart=on-failure
+RestartSec=3
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/soup-queue
+[Install]
+WantedBy=multi-user.target

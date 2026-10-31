@@ -1,0 +1,18 @@
+{
+  "solution/__init__.py": "5885b4a789103e14b8ffb2283ed5058eee05ec46b6bba1aff6b8be3de8b0eb11",
+  "solution/branch_capture.py": "35e36fe7a255e3e21726961c237ba60a1662175b082b5babaa641b4ef91fb3e9",
+  "solution/contracts.py": "728f06bf475fde4f8344507bb8f889105969d732742686d5004fe52faf06e700",
+  "solution/native_branch_fixture.py": "f29c31226c0abfb48bdedca0ba2f342ab35ceb56efe84236ba26ac4812423d51",
+  "solution/residual_norm.py": "bfabb808ba188b0ffa03e8825a90508e0d8b75d02c2b9388c28e7ce24d883abf",
+  "solution/web_preflight.py": "dfcd98c249b393342739679094c2150eacb235f633f41c62005126e77431fa78",
+  "old_solution/__init__.py": "94e10a1271fec2a429d69e28e4d8b3adfac59bdd323c3bf0d0fa3cf616534b0d",
+  "old_solution/rmsnorm.py": "95f22a8e09309d1d6be57d389d5dc8fc8feaa05ba4a8510192443a94009a9dde",
+  "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+  "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+  "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+  "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+  "reviewed_support.py": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c",
+  "worker.py": "8a990ded16f0f582745eae14351938fce5716caed39d67b97450606b4da638d4",
+  "driver.py": "5903c543e8def05c8de2b68fb3301353100f8ea54410aa19ce8087809ee4730b",
+  "source_manifest.json": "e420deccd57813e779d17b0d5d09007d33b2bf855a8cefb5071b6e85871cb3a4"
+}

@@ -1,0 +1,29 @@
+{
+  "head_shared_cast_v3": {
+    "mode": "head_shared_cast_v3",
+    "title": "N33 native shared head cast v3 \u2014 Python-stable source guard, target untested",
+    "preflight": "solution.web_preflight",
+    "preflight_status": "PASS_NATIVE_SHARED_CAST_PREFLIGHT_ONLY",
+    "kernels": [],
+    "requires_original_kernels": false,
+    "routes": [
+      {
+        "prefix": "SOUP_HEAD_SHARED ",
+        "event": "shared_cast",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_HEAD_SHARED ",
+        "event": "owned_loss_return",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      }
+    ],
+    "zip_sha256": "c46c381bdf7f4ecd40b65d1c6c6ef87f50494e58c9daf2628c920cb37e51eca9"
+  }
+}

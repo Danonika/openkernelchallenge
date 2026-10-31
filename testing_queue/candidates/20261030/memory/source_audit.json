@@ -1,0 +1,26 @@
+{
+  "scope": "actual local source plus explicitly historical review; no model or GPU probe",
+  "source_sha256": {
+    "/workspace/shared/soup_cloud_env/source/README.md": "e6a51185fd61383861f7ca23ed779899a734190d548a2daa40b0a7b7a25c45f5",
+    "/workspace/shared/soup_cloud_env/source/harness/_train.py": "45a62642dceab32cf3efcda504de87a9c25ea28b119b1806f56d14ff1146a89d",
+    "/workspace/shared/soup_cloud_env/source/harness/run_task.py": "d935a8959f348977313f2eef36870ff2699b9ba013a7978918ff35e148968a79",
+    "/workspace/shared/soup_cloud_env/source/harness/common.py": "c83066f24f266dab62ebcc9c2d44f5a65902760b53da912e65ebfe511579c2db",
+    "/workspace/shared/soup_cloud_env/source/harness/eval_adapter.py": "47cddbb8e4579c69f9535b099ff2371b1c3af08bfbd93d14bf79aadd74d38482",
+    "/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/soup_cli/trainer/sft.py": "c9215642984edf94f3fd7b5368753a973b37da7d96b01e93257bc600b0615073",
+    "/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/soup_cli/utils/gpu.py": "520a3da62cd017dfbe3ce18b84765f599644354a2c550193019a14ff8da5e4c7",
+    "/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/transformers/modeling_utils.py": "f103dc66dd3f08e7842c3624c586b281250349e1c0707f394f98db992ec3cd8f",
+    "/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py": "34390fea7648b444d5727abef0b85acceba28f856aedec6c335d51253806bfee",
+    "/workspace/shared/soup_cycle/new005_tied_storage/review/jury_source_contract.json": "deda9fb838a48273fa976d8489c21f06dcea4ea6ee60bec7b5e40e070de133a4",
+    "/workspace/shared/soup_cycle/new005_tied_storage/review/results.json": "b561a3c2d6d52ece0de51910e1163a2e861bc73562ab624725cf2df7ecda6e34"
+  },
+  "peft_local_implementation_available": false,
+  "tied_storage_decision": "BLOCKED",
+  "reasons": [
+    "actual table exact representation unobserved",
+    "pre-PEFT capture provenance and post-vocabulary-expansion identity unproven",
+    "complete aliases/exclusive storage not established",
+    "first-floating-parameter dtype and all save consumers not established"
+  ],
+  "alternative": "MEM001 version-witness safety revision, authorized by parent",
+  "target_integration_unexecuted": true
+}

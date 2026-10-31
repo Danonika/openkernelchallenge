@@ -1,0 +1,70 @@
+{
+  "candidate_id": "soup-ce-v3-routing-20261030",
+  "canonical_idea": "SOUP-NEW-002",
+  "status": "PREPARED_STATIC_CPU_VALIDATED_GPU_UNTESTED",
+  "official_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "source_sha256": "b2e2622bb95d7d01bd69ae525d2d2098f42f3e4d43c807f058635ec60a20ed34",
+  "source_manifest_sha256": "eec0aa2ba1b8c8c1df3cc62d55de071520c4fc31088262f0fe738186d17d5808",
+  "notebook_sha256": "de59f30104f2b7ff1d6b8d88fd650e28318bbc485a3de2b2cd280d1601754a5b",
+  "runner_sha256": "9a99e1d269a7c8074002a5930528ab7318228b0df0c28391d512c76297bd4215",
+  "numeric_contract_sha256": "abfa693b12ecb451f199323ecbcb31e79f1ad7ce8bcde0462346c5a90065bfdd",
+  "static_checks_sha256": "1babc91e2c5470279aff593c59c6dfd67523211b9843667fc926cae71dac7d57",
+  "cpu_test_log_sha256": "8fbbce5d19664aee3b17422f3f49f9705a4004ddadb5dbc326378c09687c7b57",
+  "cpu_validation": {
+    "tests_passed": 8,
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "triton": "3.9.0",
+    "target_runtime": false
+  },
+  "static_and_cpu_infrastructure_checks_passed": 10,
+  "delta_vs_trial009": [
+    "single denominator validation host read",
+    "captured-native original-argument fallback",
+    "bounded flushed timeout-visible route telemetry",
+    "fresh guarded executable paired notebook"
+  ],
+  "unchanged": [
+    "five numerical Triton kernel ASTs",
+    "native loss expression AST",
+    "fixed numeric gate bytes",
+    "full-vocabulary/task/model/LoRA/optimizer/RNG contracts",
+    "official harness/task/tests"
+  ],
+  "prior_evidence": {
+    "trial008": "all native task routes; killed79.04s; no optimized performance",
+    "trial009": "tiny integration pass; killed79.04s; actual task route/share unknown"
+  },
+  "next_required": [
+    "new v3 actual-class target T4 gate",
+    "same-environment fresh baseline/candidate native pair",
+    "target Soup regression/quality/output/rule checks",
+    "own original useful kernel share>=5% after two warmup steps",
+    "separate official Kaggle admission"
+  ],
+  "gpu_query_or_execution_during_preparation": false,
+  "remote_edits": false,
+  "queue_submitted": false,
+  "new_packages_or_assets": false,
+  "measured_baseline_id": null,
+  "speedup": null,
+  "peak_memory_ratio": null,
+  "quality": null,
+  "own_kernel_share": null,
+  "score": null,
+  "admission": "UNKNOWN",
+  "measured_order": [
+    "base",
+    "solution",
+    "solution",
+    "base"
+  ],
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "gpu_lock": "/tmp/soup-gpu0.lock",
+  "cleanup_checks_sha256": "71b4455311467c7ca466a96aadf4cd2e2ba6452562bce9007196387349294250",
+  "cpu_process_lifecycle_fixtures_passed": 5,
+  "gpu_quarantine": "/tmp/soup-gpu0.lock.blocked",
+  "active_owner_guard_before_gpu": true,
+  "interrupted_guard_auto_clear": false,
+  "normal_verified_same_owner_clear": true
+}

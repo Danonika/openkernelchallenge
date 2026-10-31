@@ -1,0 +1,15 @@
+{
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "triton": "3.6.0",
+    "soup-cli": "0.77.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "trl": "0.29.1",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.14.0"
+  },
+  "gpu": "Tesla T4\nTesla T4\n",
+  "starter_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "purpose": "single baseline smoke, not final score"
+}

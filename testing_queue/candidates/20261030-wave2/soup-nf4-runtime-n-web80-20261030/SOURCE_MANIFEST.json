@@ -1,0 +1,43 @@
+{
+  "candidate": "soup-nf4-runtime-n-web80-20261030",
+  "no_model_data_or_credentials_included": true,
+  "notebook": "candidate.ipynb",
+  "notebook_sha256": "af478baca35d6c6d842f178051f58a39cae5cb920177443964fc0aa943693d0e",
+  "source_files": [
+    {
+      "path": "solution/__init__.py",
+      "sha256": "4a4b6685b3818151a26692319c9a5e6ce9039b0708265e10bcd3abac2a19b9bc"
+    },
+    {
+      "path": "solution/gpu_preflight.py",
+      "sha256": "4441736068b2bc2ff1f44f70564343c397d73017bc43c48a9889a4d6924dc7df"
+    },
+    {
+      "path": "solution/packed_nf4.py",
+      "sha256": "3e3bb581c3af97523b38e16d02396bb37bc775a6b93b8fd9096c8690b5067479"
+    },
+    {
+      "path": "solution/routes.py",
+      "sha256": "f501b3bed0b006febe64ba71749739a777dfaa932a6adfb67afb54b29fd75c28"
+    }
+  ],
+  "validation_scope": "Copied historical validation sources for audit; not executed from this relocated export. Submitted notebook bytes are unchanged and self-contained.",
+  "validation_tests": [
+    {
+      "path": "validation_tests/tests/cpu_fixtures.py",
+      "sha256": "9b67ccbd8844abdfbcf2d72be4621413a441f309bfbc2dc7a3d6f7b674810c19"
+    },
+    {
+      "path": "validation_tests/tests/offline_compile.py",
+      "sha256": "76cf2e9dc8210a7fbaf3ee07dbfb55bee1ea0f17761f0b132f71c6cc6b94c412"
+    },
+    {
+      "path": "validation_tests/tests/validate_web_packet.py",
+      "sha256": "999deffe716097cb340175acc70f09979e19f5861419554faa9493ca861b83f0"
+    },
+    {
+      "path": "validation_tests/tests/test_runtime_contract.py",
+      "sha256": "56776396f3b248cc3b11c09c653201f79e3df8de58756534632dd932088d5bbd"
+    }
+  ]
+}

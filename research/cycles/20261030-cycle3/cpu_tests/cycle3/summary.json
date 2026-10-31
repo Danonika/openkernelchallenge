@@ -1,0 +1,80 @@
+{
+  "cycle": 3,
+  "generated_utc": "2026-10-30T11:40:46.012865+00:00",
+  "scope": "Original bounded cloud CPU norm/residual and RoPE semantic fixtures",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "threads": 2,
+    "interop_threads": 2
+  },
+  "script_sha256": "285ec2e2013d6b19b7f2955220aaf0ed9778dda7b7cd4f911d3146d457c7b1c9",
+  "summary": {
+    "passed": 6,
+    "failed": 0
+  },
+  "not_validated": [
+    "actual model dtype/stride routing",
+    "CUDA kernels/T4 timing",
+    "allocator peak memory or storage release",
+    "GPU accumulation/reduction order",
+    "signed-zero or NaN-payload bit identity",
+    "RoPE nonfinite inputs or gradients",
+    "FP16/mixed RoPE custom-kernel equivalence (reference fallback only)",
+    "full training quality or challenge numerical gates",
+    "performance graph points or own-kernel share"
+  ],
+  "outcomes": [
+    {
+      "name": "staged_norm_backward_and_saved_state",
+      "candidates": [
+        "cast-aware-norm"
+      ],
+      "status": "PASS",
+      "decision": "Frozen FP32 standalone norm needs the actual staged derivative for these exact CPU results. Reject universal compact-formula, FP16-saved-input, or reconstructed-input equivalence."
+    },
+    {
+      "name": "norm_unique_saved_storage_and_trainable_fallback",
+      "candidates": [
+        "cast-aware-norm"
+      ],
+      "status": "PASS",
+      "decision": "Native frozen norm already saves only x/r/w storage. Deduplicating five references to three is not a storage saving; recomputing r removes only its tiny referenced storage in this toy inventory and adds unmeasured work."
+    },
+    {
+      "name": "residual_alias_outputs_and_branch_association",
+      "candidates": [
+        "cast-aware-norm",
+        "residual-norm"
+      ],
+      "status": "PASS",
+      "decision": "Standalone norm exactness does not establish residual-fusion exactness. Native graph branch accumulation can change 0 into 1 under regrouping; retain both outputs, alias handling, version checks and branch-order validation."
+    },
+    {
+      "name": "rope_fp32_layout_broadcast_and_adjoint",
+      "candidates": [
+        "attn-sgl-rounding-fusion"
+      ],
+      "status": "PASS",
+      "decision": "Split-half pair adjoints match the tested FP32 strided/broadcast/unequal-head contracts. Preserve actual output strides and unused-gradient None semantics; this is not runtime Qwen dtype or CUDA evidence."
+    },
+    {
+      "name": "rope_saved_storage_and_dtype_fallback",
+      "candidates": [
+        "attn-sgl-rounding-fusion"
+      ],
+      "status": "PASS",
+      "decision": "Native frozen-coefficient RoPE already saves cos/sin, not q/k. Four-to-two saved references is no unique-storage saving. Keep FP16/mixed/trainable-coefficient cases on reference until separately validated."
+    },
+    {
+      "name": "rope_wrong_layout_inverse_and_contraction",
+      "candidates": [
+        "attn-sgl-rounding-fusion"
+      ],
+      "status": "PASS",
+      "decision": "Reject interleaved rotation and generic inverse-RoPE adjoint assumptions. FP32 contraction can change valid split-half/trig outputs; preserve multiply/add rounding unless separately accepted by actual gates."
+    }
+  ]
+}

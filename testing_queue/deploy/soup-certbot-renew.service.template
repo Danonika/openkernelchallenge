@@ -1,0 +1,5 @@
+[Unit]
+Description=Renew short-lived Soup IP TLS certificate
+[Service]
+Type=oneshot
+ExecStart=/opt/soup-certbot/bin/certbot renew --quiet --deploy-hook /usr/local/sbin/soup-reload-nginx

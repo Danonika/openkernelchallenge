@@ -1,0 +1,2626 @@
+{
+  "cycle": 4,
+  "lane": "head",
+  "generated_utc": "2026-10-30T12:03:17.824363+00:00",
+  "torch": "2.15.0+cpu",
+  "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "threads": [
+    2,
+    2
+  ],
+  "script_sha256": "4a5ad5e41f56be6eaf61b5b9ba5360be02debfeb26d88300c773a11c3d403513",
+  "summary": {
+    "passed": 4,
+    "failed": 0
+  },
+  "candidates": [
+    "SOUP-NEW-001",
+    "SOUP-NEW-002",
+    "SOUP-TRAIN-001"
+  ],
+  "not_validated": [
+    "GPU gathered/dense GEMM equivalence",
+    "actual trainer hooks/FIFO",
+    "streamed forward or memory savings",
+    "CUDA GradScaler/optimizer behavior",
+    "signed-zero/NaN payload bit identity",
+    "full quality or performance graph points"
+  ],
+  "results": [
+    {
+      "name": "combined_finite_head_metrics_and_guarded_backward",
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "vocabulary": 19,
+            "pattern": "mixed",
+            "denominator": null,
+            "scale": 0.25,
+            "loss": 2.9333267211914062,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 12,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "mixed",
+            "denominator": null,
+            "scale": 65536.0,
+            "loss": 2.9333267211914062,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 12,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "mixed",
+            "denominator": 17.0,
+            "scale": 0.25,
+            "loss": 2.0705835819244385,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 12,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "mixed",
+            "denominator": 17.0,
+            "scale": 65536.0,
+            "loss": 2.0705835819244385,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 12,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "ignored_sequence",
+            "denominator": null,
+            "scale": 0.25,
+            "loss": 2.903047800064087,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 9,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "ignored_sequence",
+            "denominator": null,
+            "scale": 65536.0,
+            "loss": 2.903047800064087,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 9,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "ignored_sequence",
+            "denominator": 14.0,
+            "scale": 0.25,
+            "loss": 1.8662450313568115,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 9,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "ignored_sequence",
+            "denominator": 14.0,
+            "scale": 65536.0,
+            "loss": 1.8662450313568115,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 9,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "finite_ties",
+            "denominator": null,
+            "scale": 0.25,
+            "loss": 2.944438934326172,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 18,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "finite_ties",
+            "denominator": null,
+            "scale": 65536.0,
+            "loss": 2.944438934326172,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 18,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "finite_ties",
+            "denominator": 23.0,
+            "scale": 0.25,
+            "loss": 2.3043434619903564,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 18,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 19,
+            "pattern": "finite_ties",
+            "denominator": 23.0,
+            "scale": 65536.0,
+            "loss": 2.3043434619903564,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 18,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "mixed",
+            "denominator": null,
+            "scale": 0.25,
+            "loss": 3.4514544010162354,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 12,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "mixed",
+            "denominator": null,
+            "scale": 65536.0,
+            "loss": 3.4514544010162354,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 12,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "mixed",
+            "denominator": 17.0,
+            "scale": 0.25,
+            "loss": 2.4363207817077637,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 12,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "mixed",
+            "denominator": 17.0,
+            "scale": 65536.0,
+            "loss": 2.4363207817077637,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 12,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "ignored_sequence",
+            "denominator": null,
+            "scale": 0.25,
+            "loss": 3.47834849357605,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 9,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "ignored_sequence",
+            "denominator": null,
+            "scale": 65536.0,
+            "loss": 3.47834849357605,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 9,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "ignored_sequence",
+            "denominator": 14.0,
+            "scale": 0.25,
+            "loss": 2.236081123352051,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 9,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "ignored_sequence",
+            "denominator": 14.0,
+            "scale": 65536.0,
+            "loss": 2.236081123352051,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 9,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "finite_ties",
+            "denominator": null,
+            "scale": 0.25,
+            "loss": 3.4339869022369385,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 18,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "finite_ties",
+            "denominator": null,
+            "scale": 65536.0,
+            "loss": 3.4339869022369385,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 18,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "finite_ties",
+            "denominator": 23.0,
+            "scale": 0.25,
+            "loss": 2.6874680519104004,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 18,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "vocabulary": 31,
+            "pattern": "finite_ties",
+            "denominator": 23.0,
+            "scale": 65536.0,
+            "loss": 2.6874680519104004,
+            "dispatch": {
+              "route": "compact_native_ce",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [],
+              "selected_rows": 18,
+              "total_rows": 21
+            },
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true,
+            "dense_leaf_stride": [
+              91,
+              13,
+              1
+            ],
+            "dense_head_input_stride": [
+              91,
+              13,
+              1
+            ]
+          },
+          {
+            "pattern": "immutable_scalar_int64_tensor_denominator",
+            "denominator": 23,
+            "scale": 0.25,
+            "loss_metrics_gradients_exact": true,
+            "selected_fp16_logits_exact": true
+          }
+        ],
+        "trials": 25,
+        "dense_materialized_forward": true,
+        "actual_streaming_memory_savings": false,
+        "decision": "Combined reference-ordered metrics and guarded compact native-autograd backward match these CPU fixtures exactly, including selected FP16 logits/dX16. Dense-versus-gathered GPU GEMM equivalence remains open."
+      }
+    },
+    {
+      "name": "full_geometry_exceptional_guard_dispatch",
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "case": "ignored_nan",
+            "loss": 0.5586660504341125,
+            "entropy": "NaN",
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": false,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "all_forward_logits_finite"
+              ],
+              "selected_rows": 3,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "padded_nan",
+            "loss": 0.5586660504341125,
+            "entropy": "NaN",
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": false,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "all_forward_logits_finite"
+              ],
+              "selected_rows": 3,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "last_position_nan",
+            "loss": 0.6053178906440735,
+            "entropy": "NaN",
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": false,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "all_forward_logits_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "ignored_positive_infinity",
+            "loss": 0.5586660504341125,
+            "entropy": "NaN",
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": false,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "all_forward_logits_finite"
+              ],
+              "selected_rows": 3,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "finite_operands_head_overflow",
+            "loss": 0.5586660504341125,
+            "entropy": "NaN",
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": false,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "all_forward_logits_finite"
+              ],
+              "selected_rows": 3,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "effective_weight_overflow",
+            "loss": "NaN",
+            "entropy": "NaN",
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": false,
+                "all_forward_logits_finite": false,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "effective_weight_finite",
+                "all_forward_logits_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": 1
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "weight_nan",
+            "loss": "NaN",
+            "entropy": "NaN",
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": false,
+                "all_forward_logits_finite": false,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "effective_weight_finite",
+                "all_forward_logits_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": 1
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "incoming_inf",
+            "loss": 0.6053178906440735,
+            "entropy": 0.7781314849853516,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": false,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": false,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "incoming_scalar_finite",
+                "normalized_upstream_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "incoming_nan",
+            "loss": 0.6053178906440735,
+            "entropy": 0.7781314849853516,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": false,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": false,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "incoming_scalar_finite",
+                "normalized_upstream_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "zero_denominator",
+            "loss": "+Inf",
+            "entropy": 0.7781314849853516,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": false,
+                "normalized_upstream_finite": false,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "denominator_positive_finite",
+                "normalized_upstream_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": 2
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "nan_denominator",
+            "loss": "NaN",
+            "entropy": 0.7781314849853516,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": false,
+                "normalized_upstream_finite": false,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "denominator_positive_finite",
+                "normalized_upstream_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": 1
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "infinite_denominator",
+            "loss": 0.0,
+            "entropy": 0.7781314849853516,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": false,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "denominator_positive_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "normalized_upstream_overflow",
+            "loss": "+Inf",
+            "entropy": 0.7781314849853516,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": false,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "normalized_upstream_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": 2
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "all_ignored_mean",
+            "loss": "NaN",
+            "entropy": 0.7781314849853516,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": false,
+                "normalized_upstream_finite": false,
+                "has_supervised_rows": false
+              },
+              "failed_checks": [
+                "denominator_positive_finite",
+                "normalized_upstream_finite",
+                "has_supervised_rows"
+              ],
+              "selected_rows": 0,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": 1
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "all_ignored_positive_denominator",
+            "loss": 0.0,
+            "entropy": 0.7781314849853516,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": false
+              },
+              "failed_checks": [
+                "has_supervised_rows"
+              ],
+              "selected_rows": 0,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "t1_native_mean",
+            "loss": "NaN",
+            "entropy": 0.8196303844451904,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": false,
+                "normalized_upstream_finite": false,
+                "has_supervised_rows": false
+              },
+              "failed_checks": [
+                "denominator_positive_finite",
+                "normalized_upstream_finite",
+                "has_supervised_rows"
+              ],
+              "selected_rows": 0,
+              "total_rows": 2
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": null,
+              "reference_classes": 1
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "t1_supplied_denominator",
+            "loss": 0.0,
+            "entropy": 0.8196303844451904,
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": true,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": false
+              },
+              "failed_checks": [
+                "has_supervised_rows"
+              ],
+              "selected_rows": 0,
+              "total_rows": 2
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "case": "last_nan_connected_zero_upstream",
+            "loss": 0.6053178906440735,
+            "entropy": "NaN",
+            "dispatch": {
+              "route": "dense_reference_fallback",
+              "checks": {
+                "effective_weight_finite": true,
+                "all_forward_logits_finite": false,
+                "incoming_scalar_finite": true,
+                "denominator_positive_finite": true,
+                "normalized_upstream_finite": true,
+                "has_supervised_rows": true
+              },
+              "failed_checks": [
+                "all_forward_logits_finite"
+              ],
+              "selected_rows": 4,
+              "total_rows": 6
+            },
+            "loss_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": 0
+            },
+            "gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "dx16_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "mismatch_indices": [],
+              "finite_max_abs": 0.0,
+              "reference_classes": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    1
+                  ]
+                ],
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ]
+            }
+          }
+        ],
+        "all_reference_fallbacks_match_positional_nonfinite_classes": true,
+        "full_hidden_state_retained_for_backward_only_guard_failures": true,
+        "decision": "Conservative guards plus recomputation of the original full geometry preserve these exceptional CPU paths. Finite loss is not a sufficient guard; upstream failures require the original full hidden state."
+      }
+    },
+    {
+      "name": "metric_nonfinite_and_final_position_discriminators",
+      "status": "PASS",
+      "details": {
+        "masked_padding_entropy": "NaN",
+        "incorrect_selected_only_entropy": 0.9655039310455322,
+        "mixed_finite_negative_inf_explicit_entropy": [
+          [
+            "NaN"
+          ]
+        ],
+        "final_nan_main_loss": 0.39422959089279175,
+        "final_nan_rewind_losses": [
+          1.3798035383224487
+        ],
+        "trimmed_final_position_gradient_comparison": {
+          "nonfinite_class_mismatch": 2,
+          "mismatch_indices": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ]
+          ],
+          "finite_max_abs": 0.0,
+          "reference_classes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          ]
+        },
+        "decision": "Do not select entropy mask rows, replace 0*\u2212Inf with zero, or drop final ignored logits from the main CE graph: these alter observed exceptional semantics."
+      }
+    },
+    {
+      "name": "synthetic_metric_packet_lifecycle",
+      "status": "PASS",
+      "details": {
+        "train_packets_recorded": 2,
+        "eval_packets_enqueued": 0,
+        "rejections": [
+          {
+            "case": "duplicate",
+            "error": "duplicate training packet"
+          },
+          {
+            "case": "wrong_order",
+            "error": "stale or out-of-order packet"
+          },
+          {
+            "case": "stale_reconsume",
+            "error": "empty training FIFO"
+          }
+        ],
+        "train_attention_tokens": 30,
+        "per_packet_supervised_tokens": 6,
+        "per_packet_attention_tokens": 15,
+        "eval_did_not_increment_training_tokens": true,
+        "original_row_order_preserved": true,
+        "global_mean_loss": 1.945910096168518,
+        "wrong_average_row_means": 1.2972733974456787,
+        "actual_trainer_integration": false,
+        "decision": "Synthetic FIFO protocol rejects stale/duplicate packets and isolates eval from train. Row means cannot replace global CE; this is not verified Soup/TRL integration."
+      }
+    }
+  ]
+}

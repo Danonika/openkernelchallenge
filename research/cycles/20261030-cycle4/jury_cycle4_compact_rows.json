@@ -1,0 +1,228 @@
+[
+  {
+    "id": "SOUP-NEW-001",
+    "category": "Head / loss / metrics",
+    "verdict": "conditional",
+    "priority": "P0/P1",
+    "implementation_group": "complete_head_pipeline",
+    "semantic_risk": "Distinct main CE full-B*T, entropy all-row-then-mask and accuracy/rewind T-1 contracts; preserve global denominator, cast/GradScaler order, first-index ties, full decoder gradients and detached per-call metrics. Naive ignored-row pruning and exceptional sanitization are disproved; finite guarded compact CPU oracle does not establish CUDA rounding or analytic-gradient equivalence.",
+    "cpu_evidence": "Cycle4 four head evidence groups: 25 finite dense/guarded-compact native-autograd cases and 18 original-full-geometry exceptional fallbacks match tested finite values/nonfinite positions; metric and synthetic packet-lifecycle discriminators retained. Full CE final ignored rows can contribute NaN gradients; masked entropy multiplies rather than selects. Actual tested strides are contiguous. Shared dense forward/native metric helper is an oracle, not optimized-metric/streaming proof. Prior single-LSE and ~5.785% near-certain relative-CE witnesses remain.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Use finalized CPU oracle for a later bounded T4 dense-versus-gathered/recomputed head test; preserve original-geometry fallback. Trial001 currently isolates norm, not head.",
+    "required_proof": [
+      "Main causal CE consumes full B*T logits with final ignored labels; entropy computes all B*T rows then multiplies attention mask, including 0*NaN contamination. Accuracy/rewind use T-1. No selected-only entropy or sanitizing exp(logp)*logp at negative infinity.",
+      "Finite compact route requires effective FP16 W, every actual rounded FP16 logit, incoming scalar and normalized upstream finite, plus positive finite denominator/count. Retain full unmodified hidden state until backward-only guards settle; exceptional fallback restores original full geometry and native operation order.",
+      "Native summed CE then division normalizes incoming scalar before NLL/log-softmax; neither ((p-onehot)/D)*g nor (p-onehot)*(g/D) is proved equivalent to native target subtraction. Preserve scaled dlogits cast boundary; no scaler/optimizer intervention.",
+      "Per-call detached metric packet must preserve original row identities, supervised versus attention token counts, exact train/eval association and once-only consumption. Actual HF/TRL/Soup integration remains untested; no dummy logits or stale packet.",
+      "CPU oracle intentionally shares dense forward/native metrics and native-autograd backward. It does not validate streamed reductions, analytic gradients, strided layouts, full-vocabulary151936, gathered CUDA GEMM rounding, CUDA scaler, allocations, own-share or complete cold-command gates.",
+      "Centered tile merges still need near-zero RELATIVE CE/rewind tests, not only absolute allclose: sequential singleton merge CPU witness is ~5.785% relative CE error. Empty states must be explicit identities; ties use minimum GLOBAL index. Balanced/reverse improvement in a single witness is not universal proof.",
+      "For a simple finite-domain analytic/compact backward: check effective FP16 head weights, actual rounded FP16 logits, incoming gradient and effective normalized upstream are finite with positive finite denominator; retain full hidden/exceptional data for exact reference-ordered fallback. Finite loss or finite source operands alone are insufficient; include guard synchronization/fallback costs. No nan_to_num, clamping, manufactured gradients or scaler intervention.",
+      "Do not use single rounded LSE=m+log(s) as a generic oracle: preserve max and centered log-normalizer separately, or recompute a baseline-style centered form. CPU finite-FP16 counterexample loses tiny CE; centered entropy still needs real GPU reduction-order testing.",
+      "Verify actual Accelerate/TRL/rewind prepared-model boundary and generic output fallbacks.",
+      "All forward metrics/row mapping exactly as SOUP-NEW-002; no giant dummy logits or use_cut_ce/streaming config switch.",
+      "Recompute rounded FP16 logits in backward and apply incoming scalar gradient before FP16 dlogits conversion. No forward-time unscaled FP16 dHidden cache.",
+      "Compare actual scaled LoRA gradients, finite/overflow step, clip norm, optimizer moments/parameters and scheduler advancement.",
+      "Full command and max sampled peak must include recomputation, head cache, launch and cold compilation costs."
+    ],
+    "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/loss/loss_utils.py#L35-L73; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py#L1238-L1320; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py#L572-L609; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py#L168-L229; https://github.com/pytorch/pytorch/blob/70d99e998b4955e0049d13a98d77ae1b14db1f45/aten/src/ATen/native/cuda/SoftMax.cu#L52-L62",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L151-L164",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "SOUP-NEW-002",
+    "category": "Head / loss / metrics",
+    "verdict": "conditional",
+    "priority": "P0/P1",
+    "implementation_group": "complete_head_pipeline",
+    "semantic_risk": "Distinct main CE full-B*T, entropy all-row-then-mask and accuracy/rewind T-1 contracts; preserve global denominator, cast/GradScaler order, first-index ties, full decoder gradients and detached per-call metrics. Naive ignored-row pruning and exceptional sanitization are disproved; finite guarded compact CPU oracle does not establish CUDA rounding or analytic-gradient equivalence.",
+    "cpu_evidence": "Cycle4 four head evidence groups: 25 finite dense/guarded-compact native-autograd cases and 18 original-full-geometry exceptional fallbacks match tested finite values/nonfinite positions; metric and synthetic packet-lifecycle discriminators retained. Full CE final ignored rows can contribute NaN gradients; masked entropy multiplies rather than selects. Actual tested strides are contiguous. Shared dense forward/native metric helper is an oracle, not optimized-metric/streaming proof. Prior single-LSE and ~5.785% near-certain relative-CE witnesses remain.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Validate original reductions against materialized baseline logits and full metric contracts before any streamed forward or custom analytic backward.",
+    "required_proof": [
+      "Main causal CE consumes full B*T logits with final ignored labels; entropy computes all B*T rows then multiplies attention mask, including 0*NaN contamination. Accuracy/rewind use T-1. No selected-only entropy or sanitizing exp(logp)*logp at negative infinity.",
+      "Finite compact route requires effective FP16 W, every actual rounded FP16 logit, incoming scalar and normalized upstream finite, plus positive finite denominator/count. Retain full unmodified hidden state until backward-only guards settle; exceptional fallback restores original full geometry and native operation order.",
+      "Native summed CE then division normalizes incoming scalar before NLL/log-softmax; neither ((p-onehot)/D)*g nor (p-onehot)*(g/D) is proved equivalent to native target subtraction. Preserve scaled dlogits cast boundary; no scaler/optimizer intervention.",
+      "Per-call detached metric packet must preserve original row identities, supervised versus attention token counts, exact train/eval association and once-only consumption. Actual HF/TRL/Soup integration remains untested; no dummy logits or stale packet.",
+      "CPU oracle intentionally shares dense forward/native metrics and native-autograd backward. It does not validate streamed reductions, analytic gradients, strided layouts, full-vocabulary151936, gathered CUDA GEMM rounding, CUDA scaler, allocations, own-share or complete cold-command gates.",
+      "Centered tile merges still need near-zero RELATIVE CE/rewind tests, not only absolute allclose: sequential singleton merge CPU witness is ~5.785% relative CE error. Empty states must be explicit identities; ties use minimum GLOBAL index. Balanced/reverse improvement in a single witness is not universal proof.",
+      "For a simple finite-domain analytic/compact backward: check effective FP16 head weights, actual rounded FP16 logits, incoming gradient and effective normalized upstream are finite with positive finite denominator; retain full hidden/exceptional data for exact reference-ordered fallback. Finite loss or finite source operands alone are insufficient; include guard synchronization/fallback costs. No nan_to_num, clamping, manufactured gradients or scaler intervention.",
+      "Do not use single rounded LSE=m+log(s) as a generic oracle: preserve max and centered log-normalizer separately, or recompute a baseline-style centered form. CPU finite-FP16 counterexample loses tiny CE; centered entropy still needs real GPU reduction-order testing.",
+      "CE and accuracy use causal-shifted supervised labels; entropy uses all attention-mask positions including prompt and last token.",
+      "Global num_items_in_batch denominator, row rewind identities/counts and first-index argmax ties.",
+      "Baseline receives FP32 upcasts of rounded FP16 head logits; compare stable entropy identity against actual log_softmax/exp baseline, especially near-zero entropy.",
+      "Use baseline materialized logits first; missing tail/empty/finite cases must not be hidden by padding or chunk averaging."
+    ],
+    "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/loss/loss_utils.py#L35-L73; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py#L1238-L1320; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py#L572-L609; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py#L168-L229; https://github.com/pytorch/pytorch/blob/70d99e998b4955e0049d13a98d77ae1b14db1f45/aten/src/ATen/native/cuda/SoftMax.cu#L52-L62",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L151-L164",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "SOUP-TRAIN-001",
+    "category": "Head / loss / metrics",
+    "verdict": "conditional",
+    "priority": "P1",
+    "implementation_group": "complete_head_pipeline",
+    "semantic_risk": "Distinct main CE full-B*T, entropy all-row-then-mask and accuracy/rewind T-1 contracts; preserve global denominator, cast/GradScaler order, first-index ties, full decoder gradients and detached per-call metrics. Naive ignored-row pruning and exceptional sanitization are disproved; finite guarded compact CPU oracle does not establish CUDA rounding or analytic-gradient equivalence.",
+    "cpu_evidence": "Cycle4 four head evidence groups: 25 finite dense/guarded-compact native-autograd cases and 18 original-full-geometry exceptional fallbacks match tested finite values/nonfinite positions; metric and synthetic packet-lifecycle discriminators retained. Full CE final ignored rows can contribute NaN gradients; masked entropy multiplies rather than selects. Actual tested strides are contiguous. Shared dense forward/native metric helper is an oracle, not optimized-metric/streaming proof. Prior single-LSE and ~5.785% near-certain relative-CE witnesses remain.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Use finalized CPU oracle for a later bounded T4 dense-versus-gathered/recomputed head test; preserve original-geometry fallback. Trial001 currently isolates norm, not head.",
+    "required_proof": [
+      "Main causal CE consumes full B*T logits with final ignored labels; entropy computes all B*T rows then multiplies attention mask, including 0*NaN contamination. Accuracy/rewind use T-1. No selected-only entropy or sanitizing exp(logp)*logp at negative infinity.",
+      "Finite compact route requires effective FP16 W, every actual rounded FP16 logit, incoming scalar and normalized upstream finite, plus positive finite denominator/count. Retain full unmodified hidden state until backward-only guards settle; exceptional fallback restores original full geometry and native operation order.",
+      "Native summed CE then division normalizes incoming scalar before NLL/log-softmax; neither ((p-onehot)/D)*g nor (p-onehot)*(g/D) is proved equivalent to native target subtraction. Preserve scaled dlogits cast boundary; no scaler/optimizer intervention.",
+      "Per-call detached metric packet must preserve original row identities, supervised versus attention token counts, exact train/eval association and once-only consumption. Actual HF/TRL/Soup integration remains untested; no dummy logits or stale packet.",
+      "CPU oracle intentionally shares dense forward/native metrics and native-autograd backward. It does not validate streamed reductions, analytic gradients, strided layouts, full-vocabulary151936, gathered CUDA GEMM rounding, CUDA scaler, allocations, own-share or complete cold-command gates.",
+      "For a simple finite-domain analytic/compact backward: check effective FP16 head weights, actual rounded FP16 logits, incoming gradient and effective normalized upstream are finite with positive finite denominator; retain full hidden/exceptional data for exact reference-ordered fallback. Finite loss or finite source operands alone are insufficient; include guard synchronization/fallback costs. No nan_to_num, clamping, manufactured gradients or scaler intervention.",
+      "Dense-vs-compact toy fixture already targeted; actual T4 GEMM output/gradient rounding remains untested.",
+      "All-ignore mean versus sum/global-denominator semantics, masks/tails/strides, full forward metric and rewind contracts.",
+      "Preserve scaled dlogits before FP16 cast and nonfinite/scaler skip behavior; decoder prompts can still have gradients.",
+      "Measure unchanged-batch supervised fraction U/N and full gather/scatter/recompute cost; N+2U arithmetic bound is not speedup."
+    ],
+    "source_urls": "https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py#L1238-L1320; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/loss/loss_utils.py#L35-L73; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py#L572-L609; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py#L168-L229; https://github.com/pytorch/pytorch/blob/70d99e998b4955e0049d13a98d77ae1b14db1f45/aten/src/ATen/native/cuda/SoftMax.cu#L52-L62",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L151-L164",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "SOUP-NEW-003",
+    "category": "NF4 dequantization / GEMM",
+    "verdict": "conditional",
+    "priority": "P1",
+    "implementation_group": "nested_NF4_decode",
+    "semantic_risk": "Use actual QuantState and supplied FP32 state2.code dynamic256 table; outer code metadata does not replace canonical NF4 lookup. Flat block indexing, separate FP32 scale multiply then offset add, high-even nibble/tails and BC layout are mandatory. CUDA forward fallback decodes directly to A.dtype; backward first dequantizes to state.dtype then casts to grad.dtype. CPU native misaligned-row result is not a universal oracle.",
+    "cpu_evidence": "Cycle4 NF4: three passing groups and one genuine native CPU parity FAIL. Independent scalar/vector/publicAPI decode covers all16 NF4 x all256 supplied nested indices, real default and synthetic tables, FP16/FP32, tails/layouts and six tiny quantizer-returned states. Primary odd-K exhaustive fixtures use generic4bit fallback; aligned-native controls are distinguished in results. Native shape[3,80],block64 differs in48/240 values,maxabs1; same payload/scales flat[1,240] is exact. This is CPU oracle limitation, not Qwen/CUDA/candidate failure. Dtype-shortcut negatives retained.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Later implement original fused nested decode only on observed baseline fallback/backward routes; use real-state oracle and actual CUDA comparison. Not selected for norm trial001.",
+    "required_proof": [
+      "Real installed CPU package/source identity is established only for tested states; confirm actual CUDA route, state metadata and compiled rounding on T4. Preserve existing small-M fused bnb paths unless separately justified.",
+      "Guard NF4 uint8 storage, actual shape/block64, nested block256/FP32 tables and scalar offset, compatible device/layout/dtype; unsupported routes use original reference. Byte reinterpretation is not numeric conversion; one-byte BC shim is a recorded corner.",
+      "Forward and backward use distinct output-cast contracts; compare actual input/LoRA gradients and original ordinary matmul/bias behavior, not just weight decoder outputs.",
+      "Retain native CPU[3,80] parity FAIL and flat/aligned controls; do not modify an independent flat-format oracle to match that backend limitation, infer CUDA failure or infer failure on actual aligned Qwen dimensions.",
+      "Bit/rounding oracle covers all 16 NF4 and 256 scale codes; FP32 scale multiply THEN offset add, then NF4 multiply/cast. Do not contract into FMA.",
+      "QuantState block sizes, orientation, bias, dtype, nested state, storage views and odd tails come from real objects.",
+      "Instrument actual forward CUDA-backend fallback and separate functional backward dispatch; prove replaced paths, no measurement-specific behavior.",
+      "Dense decode scratch survives consumer GEMM and is released; no all-layer dense cache.",
+      "Compare input and LoRA gradients under real scaler, not only decoded weights."
+    ],
+    "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L418-L607; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L927-L1077; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py#L199-L342; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cpu/ops.py#L94-L240; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py#L904-L981; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py#L294-L498; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py#L609-L637; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/utils.py#L15-L34; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/cpu_ops.cpp#L355-L434",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "SOUP-NEW-007",
+    "category": "NF4 dequantization / GEMM",
+    "verdict": "conditional",
+    "priority": "P2",
+    "implementation_group": "nested_NF4_decode",
+    "semantic_risk": "Use actual QuantState and supplied FP32 state2.code dynamic256 table; outer code metadata does not replace canonical NF4 lookup. Flat block indexing, separate FP32 scale multiply then offset add, high-even nibble/tails and BC layout are mandatory. CUDA forward fallback decodes directly to A.dtype; backward first dequantizes to state.dtype then casts to grad.dtype. CPU native misaligned-row result is not a universal oracle. Cache only exact reconstructed scales with full metadata/lifetime invalidation; no QuantState mutation or dense-weight cache.",
+    "cpu_evidence": "Cycle4 NF4: three passing groups and one genuine native CPU parity FAIL. Independent scalar/vector/publicAPI decode covers all16 NF4 x all256 supplied nested indices, real default and synthetic tables, FP16/FP32, tails/layouts and six tiny quantizer-returned states. Primary odd-K exhaustive fixtures use generic4bit fallback; aligned-native controls are distinguished in results. Native shape[3,80],block64 differs in48/240 values,maxabs1; same payload/scales flat[1,240] is exact. This is CPU oracle limitation, not Qwen/CUDA/candidate failure. Dtype-shortcut negatives retained.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Only after inline decoder is correct/profiled, compare exact scale cache with on-the-fly reconstruction, including construction, invalidation and peak lifetime. No cache trial authorized here.",
+    "required_proof": [
+      "Real installed CPU package/source identity is established only for tested states; confirm actual CUDA route, state metadata and compiled rounding on T4. Preserve existing small-M fused bnb paths unless separately justified.",
+      "Guard NF4 uint8 storage, actual shape/block64, nested block256/FP32 tables and scalar offset, compatible device/layout/dtype; unsupported routes use original reference. Byte reinterpretation is not numeric conversion; one-byte BC shim is a recorded corner.",
+      "Forward and backward use distinct output-cast contracts; compare actual input/LoRA gradients and original ordinary matmul/bias behavior, not just weight decoder outputs.",
+      "Retain native CPU[3,80] parity FAIL and flat/aligned controls; do not modify an independent flat-format oracle to match that backend limitation, infer CUDA failure or infer failure on actual aligned Qwen dimensions.",
+      "Reconstructed frozen FP32 scales exactly match separate mul+offset path; invalidate all relevant metadata/device/version changes.",
+      "Compare real cached-load cost vs inline arithmetic and include initialization plus ~78 MiB derived all-projection storage.",
+      "Own initialization-only kernel cannot satisfy timed steady-step share."
+    ],
+    "source_urls": "https://github.com/bitsandbytes-foundation/bitsandbytes/commit/08a9956b939857ae2c4fbd56753960cc370fa7cf; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/kernels.cu; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/gemm_4bit.cu; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py; https://github.com/huggingface/peft/blob/a5526d27a9d47d1e8264d5e1b1f96c0fdc79464e/src/peft/tuners/lora/bnb.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/quant_menu.py; https://docs.nvidia.com/cuda/pdf/Turing_Tuning_Guide.pdf; https://github.com/bitsandbytes-foundation/bitsandbytes/releases/tag/0.50.0; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L418-L607; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L927-L1077; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py#L199-L342; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cpu/ops.py#L94-L240; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py#L904-L981; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py#L294-L498; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py#L609-L637; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/utils.py#L15-L34; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/cpu_ops.cpp#L355-L434",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L129-L145",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "liger_castaware_norm",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P1",
+    "implementation_group": "FP32_Qwen2_RMSNorm",
+    "semantic_risk": "Expected fixed path: FP32 input/output and frozen FP32 affine; preserve true H=1536, epsilon, casts and actual needs_input_grad. Compact backward is not universally floating-point equivalent. Even an atomic standalone custom norm can regroup direct/variance/bypass accumulation in a residual-connected graph. Two-output fusion must distinguish unused None from connected-zero gradients and preserve rounded residual, aliases and version checks.",
+    "cpu_evidence": "Shared cycle3 norm evidence: 144 staged standalone cases match tested finite values/nonfinite classes; compact formula differs in 46, including 14 nonfinite-class cases. Native 5 saved refs and custom 3 refs both retain 3 x/r/w storages. Actual-width1536 cancellation yields expanded native0 versus regrouped1; unused norm branch zero-materialization can introduce NaN where baseline bypass gradient1. No signed-zero/payload/GPU/whole-training proof.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Parent authorized trial001: independently implemented guarded contiguous FP32 frozen-affine H1536 standalone norm on all matching Qwen modules. Run fixed realistic/full-width/scaled-gradient/expanded-bypass T4 preflight, then one bounded unchanged-harness trial; no residual fusion or starter activation.",
+    "required_proof": [
+      "Observe actual prepared FP32 input/weight, frozen affine, epsilon, true width, strides and forward identity; unsupported/trainable/no-grad paths preserve reference and do not force state or gradients.",
+      "Use source-staged first-order backward as initial oracle: g=dy*w; direct=g*r; dr=sum(g*x); dv=(-.5*dr)*r^3; variance=(dv/H)*(2*x). Verify actual CUDA compiler/reduction behavior; CPU exact finite/class tests do not prove bit identity or full gate compliance.",
+      "Compare norm inside original residual-connected expanded graph, not just isolated module: custom backward granularity may change InputBuffer accumulation. H1536 native0/regrouped1 witness prevents universal lossless-fusion claims.",
+      "For two outputs preserve rounded FP32 residual and norm value, both alias edges, independent consumers, saved version checks and unused None versus connected-zero semantics. No in-place corruption or raw-ctx workaround.",
+      "Storage inventory must deduplicate storage and account for actual liveness: baseline already retains x/r/w, and no-grad input/frozen weight saves nothing. Reconstructing x from output or saving half x is not lossless by definition. Recompute-r variant stays P3 pending actual reduction parity and cost.",
+      "Original useful Triton normal launches plus full unchanged T4 loss/metrics/adapter/quality/time/memory/own-share gates; no performance coordinates from CPU.",
+      "Trial001 fixed engineering preflight: forward allclose rtol1e-4/atol1e-5; gradient comparison after diagnostic division of both observations by known incoming scale rtol1e-3/atol2e-5. These are not challenge thresholds and do not alter training gradients.",
+      "Retain H1536 native0/atomic1 cancellation diagnostic; ordinary realistic branched cases and unchanged end-to-end contest tolerances decide this conditional trial. A cross-session single solution run versus prior baseline is diagnostic, not official paired/repeated admission or score."
+    ],
+    "source_urls": "https://github.com/linkedin/Liger-Kernel/blob/781a8aef64bf6105bdefb5f4c991e0d14c08e793/src/liger_kernel/ops/fused_add_rms_norm.py; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+    ],
+    "measured_soup_t4_gain": null
+  }
+]

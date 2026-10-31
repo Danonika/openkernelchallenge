@@ -1,0 +1,64 @@
+{
+  "cycle": 4,
+  "passed": 7,
+  "failed": 1,
+  "head_summary": {
+    "passed": 4,
+    "failed": 0
+  },
+  "nf4_summary": {
+    "passed": 3,
+    "failed": 1
+  },
+  "failure_policy": "Actual CPU backend parity failures are retained, not turned into passes.",
+  "outcomes": [
+    {
+      "lane": "head",
+      "name": "combined_finite_head_metrics_and_guarded_backward",
+      "status": "PASS",
+      "decision": "Combined reference-ordered metrics and guarded compact native-autograd backward match these CPU fixtures exactly, including selected FP16 logits/dX16. Dense-versus-gathered GPU GEMM equivalence remains open."
+    },
+    {
+      "lane": "head",
+      "name": "full_geometry_exceptional_guard_dispatch",
+      "status": "PASS",
+      "decision": "Conservative guards plus recomputation of the original full geometry preserve these exceptional CPU paths. Finite loss is not a sufficient guard; upstream failures require the original full hidden state."
+    },
+    {
+      "lane": "head",
+      "name": "metric_nonfinite_and_final_position_discriminators",
+      "status": "PASS",
+      "decision": "Do not select entropy mask rows, replace 0*\u2212Inf with zero, or drop final ignored logits from the main CE graph: these alter observed exceptional semantics."
+    },
+    {
+      "lane": "head",
+      "name": "synthetic_metric_packet_lifecycle",
+      "status": "PASS",
+      "decision": "Synthetic FIFO protocol rejects stale/duplicate packets and isolates eval from train. Row means cannot replace global CE; this is not verified Soup/TRL integration."
+    },
+    {
+      "lane": "nf4",
+      "name": "nf4_exhaustive_independent_metadata_and_cpu_decode",
+      "status": "PASS",
+      "decision": "Independent decoders agree and exhaustive manually constructed QuantStates compare to installed CPU decode. Actual-table data and synthetic tables are distinguished; no CUDA or real-model state claim."
+    },
+    {
+      "lane": "nf4",
+      "name": "actual_nested_quantstate_and_public_layouts",
+      "status": "PASS",
+      "decision": "Tiny actual nested CPU quantizer states and public decode layouts are checked. Byte reinterpretation is not numeric casting; single-byte canonical storage also triggers the API transpose quirk."
+    },
+    {
+      "lane": "nf4",
+      "name": "forward_backward_dtype_and_inner_block_contracts",
+      "status": "PASS",
+      "decision": "Forward requested dtype and backward QuantState-dtype-then-grad-dtype are distinct contracts. Generic dequant inner-block metadata is not MatMul4Bit forward eligibility; no optional CPU GEMM package installed."
+    },
+    {
+      "lane": "nf4",
+      "name": "actual_cpu_row_alignment_parity_probe",
+      "status": "FAIL",
+      "decision": "Retain any [3,80] parity failure as a CPU-backend oracle limitation. Do not redefine the flat-format oracle to match it, infer CUDA failure, or install/fix unrelated kernels."
+    }
+  ]
+}

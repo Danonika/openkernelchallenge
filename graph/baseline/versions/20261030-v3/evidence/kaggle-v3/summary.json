@@ -1,0 +1,56 @@
+{
+  "evidence_id": "kaggle-v3-verified-20261030T114501Z",
+  "verified_at": "2026-10-30T11:45:01Z",
+  "scope": "Official public base-only single-repeat baseline; no solution/candidate comparison",
+  "harness_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "measurements": {
+    "wall_s": 77.92,
+    "train_loop_s": 54.04,
+    "gpu_peak_mib": 14345,
+    "gpu_start_mib": 0,
+    "torch_max_reserved_mib": 14202.0,
+    "steps": 64,
+    "eval_loss": 2.04965,
+    "eval_rows": 256,
+    "eval_tokens": 38109,
+    "eval_skipped_rows": 0
+  },
+  "seed": 1,
+  "repeats": 1,
+  "visible_gpu_count": 1,
+  "cuda_visible_devices": "0",
+  "admission_status": "unknown",
+  "score_points": null,
+  "limits": [
+    "One repeat only; not a stable distribution or official competition score.",
+    "No candidate/solution run, relative speedup, memory ratio or own-kernel share.",
+    "No hidden-data evaluation or full jury checks/admission.",
+    "Starter 4 GPU tests are not the 79 Soup regression tests.",
+    "Private notebook remains private; no contest submission or publication performed."
+  ],
+  "artifacts": [
+    {
+      "relative_path": "runs_baseline/result.json",
+      "sha256": "6e80eaee67ea7431aa5b0354b80253b67f8f5226b91822f18360c559922c5c08",
+      "bytes": 59208
+    },
+    {
+      "relative_path": "runs_baseline/base_1/metrics.json",
+      "sha256": "2454f2d0db3b70cba7e6bbb0f26909ee42169bc2bc5071670337bcb03af25db6",
+      "bytes": 2100
+    },
+    {
+      "relative_path": "runs_baseline/eval_base.json",
+      "sha256": "aa82d4963e5ab288190589e4c978dffd89b3f428b3f4262739da3dec75377d42",
+      "bytes": 222
+    },
+    {
+      "relative_path": "baseline_environment.json",
+      "sha256": "68dc6a80fbf0d9e178b7b6ac2511f3f9ac9106165e898480b80ef5f6209f997e",
+      "bytes": 383
+    }
+  ],
+  "publication_redactions": [
+    "Private notebook/account identifiers, URLs and account/quota information omitted; scientific values and artifact hashes unchanged."
+  ]
+}

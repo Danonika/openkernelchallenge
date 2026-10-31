@@ -1,0 +1,15 @@
+{
+  "status": "ACTUAL_TARGET_DIAGNOSTIC_BOUND",
+  "job_id": "n_3e844e8aaf404e8ebc1e38c65f5f9083",
+  "accepted_source_sha256": "fc88a1a2ec80ab8c48b9336ac22522195a30a1984900d519fdcee9496a4b37c3",
+  "output_zip_sha256": "5f0e6821754f89a292fc136d3df38404b1ce9777231298bee3c046507b4a51f3",
+  "diagnostic_report_sha256": "0d0b5190d21760de866a06016b2ccac13985091c4a9c60b463a9f2d7ffec847d",
+  "frozen_v3_kernel_sha256": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8",
+  "observed_native_Flinear_and_dispatch": 1.0,
+  "observed_candidate_and_fp32_add_then_half": 1.0009765625,
+  "decoded_fp16_weights_exact": true,
+  "native_internal_accumulator_not_observed": true,
+  "inference_scope": "One exact sparse target witness disproves previous required exact-native FP32-bias-stage assumption; does not identify every native accumulation stage.",
+  "revised_gate": "Kernel unchanged. Exact candidate intended FP32-add-before-half stage; same predeclared native engineering_close atol .003 rtol .002. Native equality/staged comparisons exported as observations.",
+  "old_v3_exact_native_failure_preserved": true
+}

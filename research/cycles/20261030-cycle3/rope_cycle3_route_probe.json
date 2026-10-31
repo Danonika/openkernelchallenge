@@ -1,0 +1,48 @@
+{
+  "scope": "Tiny CPU Qwen2Attention only; eager attention, no hub runtime/full model/pretrained download",
+  "torch": "2.15.0+cpu",
+  "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "transformers": "5.16.1",
+  "installed_qwen2_git_blob_sha": "b4fed98fafae8e4ee39be3b8cd766b1c85b079cd",
+  "expected_source_blob_sha": "b4fed98fafae8e4ee39be3b8cd766b1c85b079cd",
+  "source_blob_matches": true,
+  "kernels_package_present": false,
+  "module_global_patch_called": 1,
+  "calls": [
+    {
+      "q_shape": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "k_shape": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "q_stride": [
+        24,
+        4,
+        8,
+        1
+      ],
+      "k_stride": [
+        12,
+        4,
+        4,
+        1
+      ],
+      "dtype": "torch.float32"
+    }
+  ],
+  "output_shape": [
+    1,
+    3,
+    8
+  ],
+  "finite_input_grad": true,
+  "gpu": false,
+  "performance_measured": false
+}

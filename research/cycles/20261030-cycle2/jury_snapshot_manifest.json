@@ -1,0 +1,17 @@
+{
+  "jury_review.md": "e5e85322ea738647ed165f92564563b4b8b50ce4f38caf1246caace1a2a1cd89",
+  "jury_verdicts.json": "295e6d5f995c2110e532339f4682a75756e062464f6f0dcdb1f79df75ed2ef52",
+  "jury_verdicts.csv": "dada812808e8576d1a3a4e9ff51e5320cdab36d6cf6c5f4de8cdf0b801b8dc6f",
+  "jury_validation.json": "003d61f9b6ea1c9180e20852af24708b04396d69d8c00791dd51807293ff5e8b",
+  "category_mapping.json": "46ff295c2787655e47c129188c197587a39520211e5b3aba69b95957184d8a9b",
+  "category_mapping_incoming.json": "5f6ad310563c4fa92d4830fa0d5a0f80944b25566284708ef2e22bae5fc2f452",
+  "jury_build.py": "874d2526b12f6ae3214732596d2358ea03626faeb13c41f914ebbe921751f8b1",
+  "jury_incoming.json": "d9560e133cf46d76e052f50dc9d77085e693c1624c0ced489736e81835c5ba8f",
+  "jury_incoming_build.py": "e63182cd3d3df13ab24c2e5edf53eb32a622b27ed18543523538afe6bc3e2d2d",
+  "jury_cpu_updates.json": "52e8fbead58198342816d57724bb5a008c0e659ac69d755420f78b972df0266e",
+  "jury_cpu_merge.py": "1f57f93f6fe08a097e6c600e185135746501644d3db446da9e4e9c9c1dc3cf33",
+  "jury_cycle2_updates.json": "b905b7a7ddc2058d82f78f77e4560c46ec87851f8f860919c50820aa49acc806",
+  "jury_cycle2_merge.py": "411995def671f39f44b0896135ee608cc61cb14f91de00aa95d05e5ff8916d80",
+  "jury_cycle2b_updates.json": "695f370cb4c628311c380b7977a0a96db8bea5c07ab19753fadd23d35e56e45a",
+  "jury_cycle2b_merge.py": "de1583254c3a48b9f24c309717182f8fa4d7ab75d9906ec8039b0cba8baf48c7"
+}

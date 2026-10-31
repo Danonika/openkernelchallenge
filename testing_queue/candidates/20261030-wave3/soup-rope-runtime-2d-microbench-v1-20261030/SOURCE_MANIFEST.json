@@ -1,0 +1,121 @@
+{
+  "candidate": "soup-rope-runtime-2d-microbench-v1-20261030",
+  "notebook_sha256": "45c615579e948147164f651a1fb5198e28f797cef7ccacf1ad1188443735a45f",
+  "embedded_payload_sha256": {
+    "solution/__init__.py": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1",
+    "solution/cpu_contract.py": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550",
+    "solution/gpu_preflight.py": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd",
+    "solution/rotary.py": "a07720f3106a94144b74a971950583574b789fa0188ce7300c4cbe30a1e83c07",
+    "solution/test_rotary.py": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062",
+    "solution/web_preflight.py": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491",
+    "old_solution/__init__.py": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1",
+    "old_solution/cpu_contract.py": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550",
+    "old_solution/gpu_preflight.py": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd",
+    "old_solution/rotary.py": "cbea5c7a64c70695fa009a7b98129889d9ec434993da4f9d123a87808ee766b0",
+    "old_solution/test_rotary.py": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062",
+    "old_solution/web_preflight.py": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491",
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "reviewed_support.py": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c",
+    "worker.py": "12487f949f490db95d0072419949cea83f81e1089a51c090030a4c391ab91723",
+    "driver.py": "e2bda3848a2193f9b418d92e2e583ea0a7c26c4652f2ae904669040010bbb7e8",
+    "source_manifest.json": "4f4310f3fd577916f2dca60eb24a2ec83047854c08f2408d09e84d52f0507cb9",
+    "payload_manifest.json": "4b6b01642e6d56e915b39b2f9d8f687524bdc95ccc220506bce9a18a8714d17e"
+  },
+  "decoded_source_archives": [],
+  "exported_payload_files": {
+    "driver.py": {
+      "bytes": 6879,
+      "sha256": "e2bda3848a2193f9b418d92e2e583ea0a7c26c4652f2ae904669040010bbb7e8"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "old_solution/__init__.py": {
+      "bytes": 333,
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    "old_solution/cpu_contract.py": {
+      "bytes": 1913,
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    "old_solution/gpu_preflight.py": {
+      "bytes": 8253,
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    "old_solution/rotary.py": {
+      "bytes": 9344,
+      "sha256": "cbea5c7a64c70695fa009a7b98129889d9ec434993da4f9d123a87808ee766b0"
+    },
+    "old_solution/test_rotary.py": {
+      "bytes": 8248,
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    "old_solution/web_preflight.py": {
+      "bytes": 2289,
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "payload_manifest.json": {
+      "bytes": 1909,
+      "sha256": "4b6b01642e6d56e915b39b2f9d8f687524bdc95ccc220506bce9a18a8714d17e"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "solution/__init__.py": {
+      "bytes": 333,
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    "solution/cpu_contract.py": {
+      "bytes": 1913,
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    "solution/gpu_preflight.py": {
+      "bytes": 8253,
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    "solution/rotary.py": {
+      "bytes": 9334,
+      "sha256": "a07720f3106a94144b74a971950583574b789fa0188ce7300c4cbe30a1e83c07"
+    },
+    "solution/test_rotary.py": {
+      "bytes": 8248,
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    "solution/web_preflight.py": {
+      "bytes": 2289,
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    "source_manifest.json": {
+      "bytes": 1185,
+      "sha256": "4f4310f3fd577916f2dca60eb24a2ec83047854c08f2408d09e84d52f0507cb9"
+    },
+    "worker.py": {
+      "bytes": 8722,
+      "sha256": "12487f949f490db95d0072419949cea83f81e1089a51c090030a4c391ab91723"
+    }
+  },
+  "validation_tests": {
+    "test_microbench_packet.py": {
+      "bytes": 11422,
+      "sha256": "6641a77500da047a2f6a32f686ef22a9e3ae08bcbf5f7aebd6443308885d7521"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

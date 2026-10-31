@@ -1,0 +1,29 @@
+{
+  "head_shared_cast_v4": {
+    "mode": "head_shared_cast_v4",
+    "title": "N33 native shared head cast v4 \u2014 frozen preflight observations, target untested",
+    "preflight": "solution.web_preflight",
+    "preflight_status": "PASS_NATIVE_SHARED_CAST_PREFLIGHT_ONLY",
+    "kernels": [],
+    "requires_original_kernels": false,
+    "routes": [
+      {
+        "prefix": "SOUP_HEAD_SHARED ",
+        "event": "shared_cast",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_HEAD_SHARED ",
+        "event": "owned_loss_return",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      }
+    ],
+    "zip_sha256": "145863d3371fe0264dbf49ecb75552e78978866b82c2b6562dc8da0d276a0a3f"
+  }
+}

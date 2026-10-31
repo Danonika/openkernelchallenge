@@ -1,0 +1,13 @@
+{
+  "source_sha256": "b2e2622bb95d7d01bd69ae525d2d2098f42f3e4d43c807f058635ec60a20ed34",
+  "files": {
+    "solution/__init__.py": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6",
+    "solution/adapter.py": "2cf4c09d6450dcdaf829da2921e379475aaf10c499f284f6c17b52f6da4c0ac0",
+    "solution/materialized_ce.py": "79628d5ca19c8999227832398293f2530db20e191674b22323c88b446021f705",
+    "solution/numerical_gates.py": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990",
+    "solution/telemetry.py": "f98a5212f85368fdad47efa2f4a800511269bae800460f09847318bb799d0fb2",
+    "solution/test_cpu_contract.py": "2b177aeca4b6e0afc6cb5fcb264f53221391edbed67fada7b5252ee179b5e18f",
+    "solution/verify_integration.py": "bcc16afce2587811b8f4614b07128bff89a84b143c6e17b1d417f44437e93129"
+  },
+  "review_required": true
+}

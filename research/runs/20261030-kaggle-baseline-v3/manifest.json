@@ -1,0 +1,21 @@
+{
+  "scope": "Verified public base-only single-repeat Kaggle T4 reference; not candidate admission",
+  "verified_at": "2026-10-30T11:45:01Z",
+  "files": {
+    "README.md": "988243e4c6e77414046a8e9a952a8c310331a6bbca5988df59727744be805acc",
+    "artifacts/baseline_environment.json": "68dc6a80fbf0d9e178b7b6ac2511f3f9ac9106165e898480b80ef5f6209f997e",
+    "artifacts/baseline_session_status.json": "b48ef247eefd18f8e7ff7bf51d889971f931b0a10f02e3fa10da11fb1bc38a2e",
+    "artifacts/runs_baseline/base_1/adapter/adapter_config.json": "433dea9f4ca0e14a986391637ea64a1a14055fa3585eefcc048aea25b92664d3",
+    "artifacts/runs_baseline/base_1/adapter/checkpoint-64/trainer_state.json": "ca5e525f738a7a927d2653db28076fec781307ca0fc39cad12c06bb45201e88b",
+    "artifacts/runs_baseline/base_1/metrics.json": "2454f2d0db3b70cba7e6bbb0f26909ee42169bc2bc5071670337bcb03af25db6",
+    "artifacts/runs_baseline/eval_base.json": "aa82d4963e5ab288190589e4c978dffd89b3f428b3f4262739da3dec75377d42",
+    "artifacts/runs_baseline/result.json": "6e80eaee67ea7431aa5b0354b80253b67f8f5226b91822f18360c559922c5c08",
+    "baseline.py": "1e8c7d879ba4a805b51a07ae8e83d3ec81cf955461fc8333d2d74f461f12caea",
+    "v3_artifact_consistency.json": "c71b361128ca4feb4ca0adc01114d098335b154c6069ac6566eaede57d65cea3",
+    "v3_artifact_validation.json": "c86d25bb4b3b6ae1e37c3d6b0904dfa46103882702fedc35e9fd488c193f944b",
+    "v3_verified_handoff.json": "c309d4a4db74fb126a580aa0b6c4aa8e76d7f2f22fcc4909db57992968bc03d1",
+    "v3_verified_report.md": "51b1a1d8412516b0c13c87087271f8a1c7da7eeac0cff8b112f3bab17ab3272e",
+    "validate_baseline.py": "99bd00792e1182426a3e56ab307de0e7723d01864c97c496b8b1f8fb515dfd5e",
+    "validator_tests.json": "8e99c83d53bc04f22aa192d5bddef93fbbd75c23f0bda9b2d273ca74f9a602bf"
+  }
+}

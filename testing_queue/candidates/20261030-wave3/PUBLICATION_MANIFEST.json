@@ -1,0 +1,2102 @@
+{
+  "schema": "soup-frozen-publication-v1",
+  "prepared_at": "2026-10-30T23:43:00Z",
+  "cutoff_utc": "2026-10-30T23:43:00Z",
+  "state": "LOCAL_ONLY_PENDING_EXACT_PAYLOAD_APPROVAL",
+  "repo": "BAITC-Hacks/hack-57faaa42-duo",
+  "branch": "testing-queue",
+  "destination": "testing_queue/candidates/20261030-wave3",
+  "prior_published_wave2_commit": "1594adf4b0326f9819392b0feb61b593a2a34910",
+  "preserve_user_deployment_commit": "3a4953f76288969bb91956f114eda5b7e541f104",
+  "attempt_count": 18,
+  "families": {
+    "CE rowmix/metrics": 2,
+    "NF4 MMA/diagnostics": 6,
+    "Native timing diagnostic": 1,
+    "Native-head controls": 3,
+    "Residual norm": 2,
+    "RoPE": 2,
+    "Streaming head": 2
+  },
+  "candidates": [
+    {
+      "candidate": "soup-ce-metrics-combined-v1-web80-20261030",
+      "family": "CE rowmix/metrics",
+      "notebook": "soup-ce-metrics-combined-v1-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "43ff82d47ddd26d026796d4f25f2d8edb1ce767dc484105e0a6829e9d0b0746a",
+      "payload_file_count": 31,
+      "validation_test_count": 2,
+      "status": "STOP_SLOW_TESTED_VERSION"
+    },
+    {
+      "candidate": "soup-ce-rowmix-sync-v2-web80-20261030",
+      "family": "CE rowmix/metrics",
+      "notebook": "soup-ce-rowmix-sync-v2-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "84920412a3f010bf4edb22f0d55afce94fe8b5a2205b0fda9d8e6f6aeb6b6841",
+      "payload_file_count": 20,
+      "validation_test_count": 10,
+      "status": "STOP_SLOW_TESTED_VERSION"
+    },
+    {
+      "candidate": "soup-head-shared-cast-v2-web80-20261030",
+      "family": "Native-head controls",
+      "notebook": "soup-head-shared-cast-v2-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "ed8873c598eeebf5adbdfe3d880079013bdea4e71a363a4792ac65042f865d52",
+      "payload_file_count": 16,
+      "validation_test_count": 2,
+      "status": "PREFLIGHT_GUARD_FAILURE"
+    },
+    {
+      "candidate": "soup-head-shared-cast-v3-web80-20261030",
+      "family": "Native-head controls",
+      "notebook": "soup-head-shared-cast-v3-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "e81b0ed314c2fc37e320a363a7dc2633d005462fa7d8c1d722ee9c5154caf3e4",
+      "payload_file_count": 16,
+      "validation_test_count": 2,
+      "status": "PREFLIGHT_FIXTURE_FAILURE"
+    },
+    {
+      "candidate": "soup-head-shared-cast-v4-web80-20261030",
+      "family": "Native-head controls",
+      "notebook": "soup-head-shared-cast-v4-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "5f45363038d554ab58a65ab3e26c7dae711a12d85ac7350b2c3ab768dc977d20",
+      "payload_file_count": 16,
+      "validation_test_count": 2,
+      "status": "STOP_INACTIVE_SLOW_CONTROL"
+    },
+    {
+      "candidate": "soup-mixed-residual-branch-component-v2-20261030",
+      "family": "Residual norm",
+      "notebook": "soup-mixed-residual-branch-component-v2-20261030/candidate.ipynb",
+      "notebook_sha256": "5d62e5057c0a649159b5b654d7edef4103fbbe0ff7cb02d65601308231e8dadf",
+      "payload_file_count": 17,
+      "validation_test_count": 4,
+      "status": "POSITIVE_COMPONENT_ONLY"
+    },
+    {
+      "candidate": "soup-nf4-bias-diagnostic-v1-20261030",
+      "family": "NF4 MMA/diagnostics",
+      "notebook": "soup-nf4-bias-diagnostic-v1-20261030/candidate.ipynb",
+      "notebook_sha256": "fc88a1a2ec80ab8c48b9336ac22522195a30a1984900d519fdcee9496a4b37c3",
+      "payload_file_count": 18,
+      "validation_test_count": 1,
+      "status": "DIAGNOSTIC_ASSUMPTION_CORRECTED"
+    },
+    {
+      "candidate": "soup-nf4-dense-control-diagnostic-v1-20261030",
+      "family": "NF4 MMA/diagnostics",
+      "notebook": "soup-nf4-dense-control-diagnostic-v1-20261030/candidate.ipynb",
+      "notebook_sha256": "46c2123da97d587dd4663a9a8fe215a9048a666f7a97a53af476490a3483be85",
+      "payload_file_count": 26,
+      "validation_test_count": 11,
+      "status": "STOP_ORIGINAL_MMA_ROUTE"
+    },
+    {
+      "candidate": "soup-nf4-fused-forward-microbench-v2-20261030",
+      "family": "NF4 MMA/diagnostics",
+      "notebook": "soup-nf4-fused-forward-microbench-v2-20261030/candidate.ipynb",
+      "notebook_sha256": "72bb6f812c329359ddf82e16862738fa029fcdc6ceb246887cfc43596e3661be",
+      "payload_file_count": 17,
+      "validation_test_count": 6,
+      "status": "PREFLIGHT_GUARD_FAILURE"
+    },
+    {
+      "candidate": "soup-nf4-fused-forward-microbench-v3-20261030",
+      "family": "NF4 MMA/diagnostics",
+      "notebook": "soup-nf4-fused-forward-microbench-v3-20261030/candidate.ipynb",
+      "notebook_sha256": "8eae9a97f176475b5de77457581f18ae0116300111eaf6b46c4ae9f9a8789129",
+      "payload_file_count": 17,
+      "validation_test_count": 6,
+      "status": "PREFLIGHT_BIAS_WITNESS_FAILURE"
+    },
+    {
+      "candidate": "soup-nf4-fused-forward-microbench-v4-20261030",
+      "family": "NF4 MMA/diagnostics",
+      "notebook": "soup-nf4-fused-forward-microbench-v4-20261030/candidate.ipynb",
+      "notebook_sha256": "fa0f8796d691fb3f3176ad493b4edc5d30d192a464cdb6a1b5b73843aa84bda0",
+      "payload_file_count": 21,
+      "validation_test_count": 8,
+      "status": "STOP_SLOW_TESTED_VERSION"
+    },
+    {
+      "candidate": "soup-nf4-tiled-reuse-microbench-v1-20261030",
+      "family": "NF4 MMA/diagnostics",
+      "notebook": "soup-nf4-tiled-reuse-microbench-v1-20261030/candidate.ipynb",
+      "notebook_sha256": "a5ca49f639a6831191b553cc255412042948ea9229dcdd2528a127070afd94a9",
+      "payload_file_count": 23,
+      "validation_test_count": 10,
+      "status": "STOP_SLOW_TESTED_VERSION"
+    },
+    {
+      "candidate": "soup-residual-norm-component-v1-20261030",
+      "family": "Residual norm",
+      "notebook": "soup-residual-norm-component-v1-20261030/candidate.ipynb",
+      "notebook_sha256": "ee35b397a9ecb02a40dfba0bda4802ff08c2bc5fd5a026d5ce88f6f8e1e9aec3",
+      "payload_file_count": 15,
+      "validation_test_count": 2,
+      "status": "POSITIVE_COMPONENT_ONLY"
+    },
+    {
+      "candidate": "soup-rope-runtime-2d-microbench-v1-20261030",
+      "family": "RoPE",
+      "notebook": "soup-rope-runtime-2d-microbench-v1-20261030/candidate.ipynb",
+      "notebook_sha256": "45c615579e948147164f651a1fb5198e28f797cef7ccacf1ad1188443735a45f",
+      "payload_file_count": 21,
+      "validation_test_count": 1,
+      "status": "STOP_SLOW_COMPONENT"
+    },
+    {
+      "candidate": "soup-rope-runtime-fulltask-v1-web80-20261030",
+      "family": "RoPE",
+      "notebook": "soup-rope-runtime-fulltask-v1-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "f9eddd814b5cfb824781b631fe60f97d1fd2c8f619582352490057aa6940e394",
+      "payload_file_count": 17,
+      "validation_test_count": 1,
+      "status": "STOP_TIMEOUT_TESTED_VERSION"
+    },
+    {
+      "candidate": "soup-stage-timing-diagnostic-v1-20261030",
+      "family": "Native timing diagnostic",
+      "notebook": "soup-stage-timing-diagnostic-v1-20261030/candidate.ipynb",
+      "notebook_sha256": "b710f8d72b309d71812ce716db8f7cbb7c132b120fcc60c091e1e63ffceb7bad",
+      "payload_file_count": 14,
+      "validation_test_count": 2,
+      "status": "DIAGNOSTIC_COMPLETED_REPORTING_FAILURE"
+    },
+    {
+      "candidate": "soup-token-chunk-ce-component-v1-20261030",
+      "family": "Streaming head",
+      "notebook": "soup-token-chunk-ce-component-v1-20261030/candidate.ipynb",
+      "notebook_sha256": "72dc8d56db6a770d829d7f33b6e787691df3750234bd79b299aa0e76c2475937",
+      "payload_file_count": 26,
+      "validation_test_count": 3,
+      "status": "POSITIVE_COMPONENT_ONLY"
+    },
+    {
+      "candidate": "soup-token-chunk-head-component-v3-20261030",
+      "family": "Streaming head",
+      "notebook": "soup-token-chunk-head-component-v3-20261030/candidate.ipynb",
+      "notebook_sha256": "e042e14b1dc75889dcdae4d15ba4c8f44855f41a27a9bab18facb9b94f50190b",
+      "payload_file_count": 16,
+      "validation_test_count": 3,
+      "status": "STOP_MEMORY_SAVING_BUT_SLOW_COMPONENT"
+    }
+  ],
+  "file_count_including_this_manifest": 479,
+  "content_tree_sha256_excluding_manifest": "baa083bbdf8be0855073fbf86d01c09e41f7c3b973c3205b6fc0431df1897ca8",
+  "tree_digest_algorithm": "sha256(sorted(relative_path + NUL + file_sha256 + newline))",
+  "files": {
+    "README.md": {
+      "bytes": 1816,
+      "sha256": "5c2c0c6dc7e412d4dcf56d039bae96626af0d74f1a60698df8159c93b137a519"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1595,
+      "sha256": "4b9a2409aabc0f4e280de6859b5479e092ecda3add2fe910074e76d7ae86227f"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 7518,
+      "sha256": "153add6d1bd40f666019b776484e31cb27199992d9371eb480e8126fc248c2df"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/candidate.ipynb": {
+      "bytes": 130381,
+      "sha256": "43ff82d47ddd26d026796d4f25f2d8edb1ce767dc484105e0a6829e9d0b0746a"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/candidate_profile.json": {
+      "bytes": 1319,
+      "sha256": "eeb23059c0cf652501f666f73445176993e9222218debc91c1f48e29cfb2b57f"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/ce_metrics_combined_v1_manifest.json": {
+      "bytes": 2074,
+      "sha256": "c41dc192de5a645e54d8c2ff529018126a603f799a98f73b03c892f35bd17be8"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 920,
+      "sha256": "97e96dd1d186b2544a002a3eed74e3ec41dda273599479279c4a202230aa4b50"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/chain.py": {
+      "bytes": 3701,
+      "sha256": "99f0b18cc98da0971fbbdede0b796b98bfe5472aa93e61c9de29b09eb529dc2e"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/common/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/common/bridge_state.py": {
+      "bytes": 9674,
+      "sha256": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/common/consumer.py": {
+      "bytes": 9632,
+      "sha256": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/install.py": {
+      "bytes": 9860,
+      "sha256": "607b202c8f16a337e3bda8065fb088d7f2f5fc255221547da3fff1b36fd333c9"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/__init__.py": {
+      "bytes": 1401,
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/adapter.py": {
+      "bytes": 9523,
+      "sha256": "e51082e41f21e3e1e6b43ccc72074429cc9cd103b064db8b8e0b6912fd249f7b"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/materialized_ce.py": {
+      "bytes": 14846,
+      "sha256": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/metric_summary.py": {
+      "bytes": 3256,
+      "sha256": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/mixed_rows.py": {
+      "bytes": 7670,
+      "sha256": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/numerical_gates.py": {
+      "bytes": 3425,
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/telemetry.py": {
+      "bytes": 5351,
+      "sha256": "c60d73a2ee932990ae32a8d2619fadc935803fd621c913f2ca390065cc7d201d"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/test_cpu_contract.py": {
+      "bytes": 10559,
+      "sha256": "7df43cf9d3defcddfe93733af7680c749dcdd35578de287f0560ac3cdbcdc288"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/verify_integration.py": {
+      "bytes": 10119,
+      "sha256": "54cc216efeebab9d5c5b80204fbba5744880f3f7a4a36b439fa482d89bfa6772"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/verify_metric_producer.py": {
+      "bytes": 7165,
+      "sha256": "293d40ea9cb5622a845793bebdcfaf4e9f92f549330c58710eaadd3895c10d88"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/producer/verify_rowmix.py": {
+      "bytes": 6641,
+      "sha256": "10e9dbab399ddf63c08a8c394bd50cde914a86ca3ee5ed6db3aa0ee82934d916"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/source_owners.py": {
+      "bytes": 7989,
+      "sha256": "c701bfd7063e289d91c8e5b856b62827f6a9f4f2579aa23bbed4a911a5d38e5b"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/telemetry.py": {
+      "bytes": 731,
+      "sha256": "9b2ba7aa90839766df556169472fdaa8252e145535ebf202f91f5952744efb1e"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 12293,
+      "sha256": "160f547c27ee839539f5f767dc702e93eb71c1273b8cbeec76e0ce8a803f77f8"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/submitted_payload/web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/validation_tests/test_packet.py": {
+      "bytes": 6022,
+      "sha256": "c0a7d5209b8a208abc8e499a38fb1aaca224550d5be8c010d0ddbf3aa0369771"
+    },
+    "soup-ce-metrics-combined-v1-web80-20261030/validation_tests/tests/test_guard.py": {
+      "bytes": 5570,
+      "sha256": "ed6d155882f7e4f0277ac462d029fc7fa205ccfbc6723ba55bdf7fa58d41ecc4"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1869,
+      "sha256": "4f881057095294e4530aac8f9635bf1acf5ed55c59a7b74377aaf75696c7f98c"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 6492,
+      "sha256": "bc929f9e8716a41c4e05cbcf03451b4d069f2989b6ccb3d4193a2dd2090649d2"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/candidate.ipynb": {
+      "bytes": 96834,
+      "sha256": "84920412a3f010bf4edb22f0d55afce94fe8b5a2205b0fda9d8e6f6aeb6b6841"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/candidate_profile.json": {
+      "bytes": 850,
+      "sha256": "cce72db15c8c6778187d7ab4af4cdf6cdfb993564684bb62cbfb7314d9c87de7"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/ce_rowmix_sync_v2_manifest.json": {
+      "bytes": 889,
+      "sha256": "9bee69229fabde126e567f3259dc3321c487dd533c7f24d2a3248c93ef9e119f"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 1401,
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/solution/adapter.py": {
+      "bytes": 8840,
+      "sha256": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/solution/materialized_ce.py": {
+      "bytes": 14066,
+      "sha256": "0064ed0506c73efbbd750457147ff22c33b9926b60633e930063fd9c32ac727a"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/solution/mixed_rows.py": {
+      "bytes": 7356,
+      "sha256": "f32a277c2d6d16c9ce9a731ef027a254785351ddea42160e4a77402dcb3f05b5"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/solution/numerical_gates.py": {
+      "bytes": 3425,
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/solution/telemetry.py": {
+      "bytes": 5351,
+      "sha256": "c60d73a2ee932990ae32a8d2619fadc935803fd621c913f2ca390065cc7d201d"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/solution/test_cpu_contract.py": {
+      "bytes": 10559,
+      "sha256": "7df43cf9d3defcddfe93733af7680c749dcdd35578de287f0560ac3cdbcdc288"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/solution/verify_integration.py": {
+      "bytes": 10119,
+      "sha256": "54cc216efeebab9d5c5b80204fbba5744880f3f7a4a36b439fa482d89bfa6772"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/solution/verify_rowmix.py": {
+      "bytes": 6641,
+      "sha256": "10e9dbab399ddf63c08a8c394bd50cde914a86ca3ee5ed6db3aa0ee82934d916"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/submitted_payload/web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/test_process_guard.py": {
+      "bytes": 4567,
+      "sha256": "9775742d759d8fefdaba9e67987ba6da4f34f9abb0e4db80f02b6865c798cc6f"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/test_v2_reader.py": {
+      "bytes": 1766,
+      "sha256": "89bd27f78bf06227f50b1da07c0b5870d2607df6a465464d95e08f6729c450f4"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/test_web_packet.py": {
+      "bytes": 10625,
+      "sha256": "8425e76c56a5374e071fbf5a84f58eb75670825ccf6a2a10741dc1cabdae8aff"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/tests/cpu_target_preflight_fixture.py": {
+      "bytes": 1155,
+      "sha256": "7e39e7510c092ddd82340ddc4c68bcf20e900fc951464d9b1c315b69ed6882e3"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/tests/offline_compile.py": {
+      "bytes": 1616,
+      "sha256": "9458648d4595eb97ed550612e5c0a2415ccebe2eb3f3fe204857f9a63c687986"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/tests/test_lazy_flags.py": {
+      "bytes": 2471,
+      "sha256": "a5872bdcf5492a7ebc86829dc5e333cb21d90978cf2ec457cda6cd38183b0fff"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/tests/test_quiet_telemetry.py": {
+      "bytes": 8604,
+      "sha256": "47a2da59c9bb7a8ea0bcf52d2a93ec3806f39a9b16cbd69294e76c6ccc68d751"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/tests/test_rowmix_discriminators.py": {
+      "bytes": 9315,
+      "sha256": "13b172047281037ac92460968d2e3fd8038bcb141111fa9ab3745a777e7fb309"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/tests/test_rowmix_dispatch.py": {
+      "bytes": 5800,
+      "sha256": "21fefd0f2de95b4231da3dd8ab19e7e75e2dbbac8b81f43144198e98b591a351"
+    },
+    "soup-ce-rowmix-sync-v2-web80-20261030/validation_tests/tests/test_sync_consolidation.py": {
+      "bytes": 7039,
+      "sha256": "f383554cbd958ebfb18d97f7870dd2b8d03d29d666d378e93b98adce4fbac0a6"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1539,
+      "sha256": "1102c9628fdec2af9c01278d2dd0d628e2405a95e905205f48ff3063901c9507"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 4547,
+      "sha256": "b931eb0f38083ab5630f0463258e5dcab60f4cb5f671cc2e3b6b3ffc794c6cc6"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/candidate.ipynb": {
+      "bytes": 79001,
+      "sha256": "ed8873c598eeebf5adbdfe3d880079013bdea4e71a363a4792ac65042f865d52"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/candidate_profile.json": {
+      "bytes": 788,
+      "sha256": "473fb90811423fcc3f2417cdbee2eefd89c460c708111e2a387bc05eafbb6b8c"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/head_shared_cast_v2_manifest.json": {
+      "bytes": 481,
+      "sha256": "5e95b9539991579fc04683e265ebdd6a9d65e0ee048f3e7ad54d1ce0fec5ef5f"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 775,
+      "sha256": "5110ab39b0ae226d3f3c282f0a603715a4e2eb6d3ed882fd4126b2a3aa607ebc"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/solution/install.py": {
+      "bytes": 5477,
+      "sha256": "c9238247b41472a9253f3861493884f5a5bddc14ba41f798aceb066b13fa7875"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/solution/scoped_head.py": {
+      "bytes": 12867,
+      "sha256": "22ec74f59297840de667e0ff4efa7408f90c71f0cc562a29c99f4a1952e183ae"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/solution/telemetry.py": {
+      "bytes": 889,
+      "sha256": "816e50a874e20f5aff179ac4ce183b7d73153d118d9a91016146d44cfeb16839"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 8117,
+      "sha256": "c5fd8a84b34baac23d4f38e134ea194aeeb429461a805884a1baa89e78444323"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/submitted_payload/web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/validation_tests/test_packet.py": {
+      "bytes": 4884,
+      "sha256": "0d017cc5abae5d6eedd3e0ec60e016e5e529145a09401c05afd1cf96ed4c452b"
+    },
+    "soup-head-shared-cast-v2-web80-20261030/validation_tests/tests/test_scoped_head.py": {
+      "bytes": 13756,
+      "sha256": "dfb1b5653f5af9505d52b125f79879b7177db3f2ac159e0b9f9ac5b2de0db322"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1773,
+      "sha256": "1fe8df60a51cf2ad27fc874100ace6f10646b76d0d60c550b15c26eb46255464"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 4547,
+      "sha256": "a12e19bf010db35ced61c75228dcafd1db51c7396f935a02ff34b031e4177342"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/candidate.ipynb": {
+      "bytes": 78970,
+      "sha256": "e81b0ed314c2fc37e320a363a7dc2633d005462fa7d8c1d722ee9c5154caf3e4"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/candidate_profile.json": {
+      "bytes": 797,
+      "sha256": "c83850703498878970c254258a79b9d4818c6cdca3fe1617ada0b9cdb7282f81"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/head_shared_cast_v3_manifest.json": {
+      "bytes": 481,
+      "sha256": "626e6ba074316a5eb932fa99ddefa6f99b9328c3b84367ed1b61ebddf9f4e922"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 775,
+      "sha256": "5110ab39b0ae226d3f3c282f0a603715a4e2eb6d3ed882fd4126b2a3aa607ebc"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/solution/install.py": {
+      "bytes": 5293,
+      "sha256": "6b8b6e5f22cffd175e965c295528f8f32d6550004e98587bd1c90ac027c62fcc"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/solution/scoped_head.py": {
+      "bytes": 12867,
+      "sha256": "22ec74f59297840de667e0ff4efa7408f90c71f0cc562a29c99f4a1952e183ae"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/solution/telemetry.py": {
+      "bytes": 889,
+      "sha256": "816e50a874e20f5aff179ac4ce183b7d73153d118d9a91016146d44cfeb16839"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 8117,
+      "sha256": "c5fd8a84b34baac23d4f38e134ea194aeeb429461a805884a1baa89e78444323"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/submitted_payload/web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/validation_tests/test_packet.py": {
+      "bytes": 4884,
+      "sha256": "9c0950daec7b156512515dbae5a7398b1ca513ffd26de4e432d7e6972653a80b"
+    },
+    "soup-head-shared-cast-v3-web80-20261030/validation_tests/tests/test_scoped_head.py": {
+      "bytes": 13803,
+      "sha256": "7afdc9bafe11435012034c442f974696cbd7ff7cb99b67f0fa9607674fd452f7"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/RESULT_SUMMARY.json": {
+      "bytes": 2002,
+      "sha256": "72ef029646b06aa9c0de5f43ad128b46a90114ff0c8f6c8e92e0d743cbe1670c"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 4547,
+      "sha256": "a98c08dc0df881a23dc200d4b1184c6096b085488bcaf24c0a60727aff1a9e8b"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/candidate.ipynb": {
+      "bytes": 79397,
+      "sha256": "5f45363038d554ab58a65ab3e26c7dae711a12d85ac7350b2c3ab768dc977d20"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/candidate_profile.json": {
+      "bytes": 800,
+      "sha256": "3083816c6f265f0c221318681ee9bf0565f1b548c32b0fda818c20c05718c1a5"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/head_shared_cast_v4_manifest.json": {
+      "bytes": 481,
+      "sha256": "91a56546cf7a1d7cf865687b04051b48fa3ae49423e74710265e9c380fb1191d"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 775,
+      "sha256": "5110ab39b0ae226d3f3c282f0a603715a4e2eb6d3ed882fd4126b2a3aa607ebc"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/solution/install.py": {
+      "bytes": 5293,
+      "sha256": "6b8b6e5f22cffd175e965c295528f8f32d6550004e98587bd1c90ac027c62fcc"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/solution/scoped_head.py": {
+      "bytes": 12867,
+      "sha256": "22ec74f59297840de667e0ff4efa7408f90c71f0cc562a29c99f4a1952e183ae"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/solution/telemetry.py": {
+      "bytes": 889,
+      "sha256": "816e50a874e20f5aff179ac4ce183b7d73153d118d9a91016146d44cfeb16839"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 9120,
+      "sha256": "d20374bf75df036381f0a55e7e1c577b569f741e5917e8c4b56a5e6218b09ec4"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/submitted_payload/web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/validation_tests/test_packet.py": {
+      "bytes": 4884,
+      "sha256": "5beb36cd0724b82e2ea62a563fc92b0a9d3f0f058bfeee634041f9b52771ce63"
+    },
+    "soup-head-shared-cast-v4-web80-20261030/validation_tests/tests/test_scoped_head.py": {
+      "bytes": 14916,
+      "sha256": "51fab6521abb329642f23bb363d0c15b50a3b87a1992986064f6fcf1540109d0"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1654,
+      "sha256": "6ac752e01df5eb87eb537818c84c2a6a694c618c375ff55d0d750eb0e004bc2b"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 5062,
+      "sha256": "547080f551b608b7455ecde5ff929d80970ee9886411dacde4a48bb663bdde4a"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/candidate.ipynb": {
+      "bytes": 92350,
+      "sha256": "5d62e5057c0a649159b5b654d7edef4103fbbe0ff7cb02d65601308231e8dadf"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/driver.py": {
+      "bytes": 6977,
+      "sha256": "5903c543e8def05c8de2b68fb3301353100f8ea54410aa19ce8087809ee4730b"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/old_solution/__init__.py": {
+      "bytes": 80,
+      "sha256": "94e10a1271fec2a429d69e28e4d8b3adfac59bdd323c3bf0d0fa3cf616534b0d"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/old_solution/rmsnorm.py": {
+      "bytes": 4544,
+      "sha256": "95f22a8e09309d1d6be57d389d5dc8fc8feaa05ba4a8510192443a94009a9dde"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 1516,
+      "sha256": "bfbffb83f0c1758bd0acda8aee77cddbfe8b1761bab73f9ce87763604b3b6b2c"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 79,
+      "sha256": "5885b4a789103e14b8ffb2283ed5058eee05ec46b6bba1aff6b8be3de8b0eb11"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/solution/branch_capture.py": {
+      "bytes": 4350,
+      "sha256": "35e36fe7a255e3e21726961c237ba60a1662175b082b5babaa641b4ef91fb3e9"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/solution/contracts.py": {
+      "bytes": 5441,
+      "sha256": "728f06bf475fde4f8344507bb8f889105969d732742686d5004fe52faf06e700"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/solution/native_branch_fixture.py": {
+      "bytes": 4364,
+      "sha256": "f29c31226c0abfb48bdedca0ba2f342ab35ceb56efe84236ba26ac4812423d51"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/solution/residual_norm.py": {
+      "bytes": 4573,
+      "sha256": "bfabb808ba188b0ffa03e8825a90508e0d8b75d02c2b9388c28e7ce24d883abf"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 6563,
+      "sha256": "dfcd98c249b393342739679094c2150eacb235f633f41c62005126e77431fa78"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 792,
+      "sha256": "e420deccd57813e779d17b0d5d09007d33b2bf855a8cefb5071b6e85871cb3a4"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/submitted_payload/worker.py": {
+      "bytes": 4709,
+      "sha256": "8a990ded16f0f582745eae14351938fce5716caed39d67b97450606b4da638d4"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/validation_tests/tests/offline_compile.py": {
+      "bytes": 1641,
+      "sha256": "7540cf97e15ddb1ea1e41cf16cb4bb5b7f690ceced1f20cffbdefffd9deee965"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/validation_tests/tests/test_cpu_contract.py": {
+      "bytes": 2008,
+      "sha256": "445b8f3c3bb4ef27452e807591c64a85873040c8acb1f4fbf913fff434020e03"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/validation_tests/tests/test_mixed_capture.py": {
+      "bytes": 3183,
+      "sha256": "0012e69abb517f1efe8221e21a7155b3b2b3aa4bf252c2563113664c84fb0031"
+    },
+    "soup-mixed-residual-branch-component-v2-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 4079,
+      "sha256": "ac4209aa60fdc3f1f3aa2fdf42452186cd08e383eab37dff54d9ee403250b1c9"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1570,
+      "sha256": "0f37a40fbddc7a471015509948688d7caad129ab0b196adf20ce41e32376980d"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 4853,
+      "sha256": "b5d1cf9c6be75c9990053f0fd35e46daf9256fed7b5339731bf745a1a91660db"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/candidate.ipynb": {
+      "bytes": 82562,
+      "sha256": "fc88a1a2ec80ab8c48b9336ac22522195a30a1984900d519fdcee9496a4b37c3"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/driver.py": {
+      "bytes": 5420,
+      "sha256": "e726fe3c5187e02d5ff77b5a6b9ea67312c3d74d1bd8042a8706b62be1a6530f"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 1613,
+      "sha256": "cb16a73d77ab78004119a271f1ee67e38107693c0336691a171cab16cb92c502"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 77,
+      "sha256": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/solution/bias_diagnostic.py": {
+      "bytes": 6797,
+      "sha256": "0f6b4f189650ac1d9f47f88d7f572d49064389757757887fdf82706b0baff891"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/solution/fixtures.py": {
+      "bytes": 1802,
+      "sha256": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/solution/guarded_forward.py": {
+      "bytes": 5272,
+      "sha256": "ec292402af8a4e855a505d6471e713a71307933025fc97b4c8d22e4eda0ecd1b"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/solution/kernel.py": {
+      "bytes": 3047,
+      "sha256": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/solution/native_source_manifest.json": {
+      "bytes": 167,
+      "sha256": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/solution/nf4_format.py": {
+      "bytes": 1266,
+      "sha256": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/solution/operand_probe.py": {
+      "bytes": 753,
+      "sha256": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 6328,
+      "sha256": "99ade6f0bf26efeeb03a92e35853670644f49256bc89a3b54309b036bc5fa38a"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 889,
+      "sha256": "0bc958615db0a7043327110133cdc3bd57615426c2784dd4dcca2ca91999dc5c"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/submitted_payload/worker.py": {
+      "bytes": 3750,
+      "sha256": "c27b164216f6ceb71d0145faf965a72879768e39c8afc3e0dd6f12d62bee1ba7"
+    },
+    "soup-nf4-bias-diagnostic-v1-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 7285,
+      "sha256": "77dc9c6eca65c8918cc6895b02977402914c4cc7a17dff53fbc61e092b5b71a9"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1765,
+      "sha256": "34fc0610e684e24dcf5af9fc3c3b93458e4ff13e1f6fd4ee49975107da4dcc72"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 8334,
+      "sha256": "f023d90ce5f51d05fb3737116b1819e4aefc9ae345d8e77f7ac356922e51b137"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/candidate.ipynb": {
+      "bytes": 131779,
+      "sha256": "46c2123da97d587dd4663a9a8fe215a9048a666f7a97a53af476490a3483be85"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/driver.py": {
+      "bytes": 6782,
+      "sha256": "e25dd8eecdafe85768c94bd8ff02a9f236d562ba4429abc26ada0ee5d770f141"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 2420,
+      "sha256": "5344dd5e955edcd84311db39ef3a6a70fe3fe98049e1a3d85e55deaa7dc59e70"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 77,
+      "sha256": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/bias_gate_provenance.json": {
+      "bytes": 1120,
+      "sha256": "2ab66935361271946f6b947ffe8360be6b2b8f8a093deda6d4b3cd4e9c81637a"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/bias_stage_gate.py": {
+      "bytes": 2129,
+      "sha256": "efbac4b8f37250eea9115e41707762fb03c9d83592b70bc64bf746ffc3d7bdc0"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/fixtures.py": {
+      "bytes": 1802,
+      "sha256": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/fused_guard.py": {
+      "bytes": 5604,
+      "sha256": "ff783cb6167279ae62251d62903e621f2f8a2008813b1beefd09a94efad6317b"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/fused_kernel.py": {
+      "bytes": 9940,
+      "sha256": "3fc771917904a05d9d4a9adeff83f0794aa4f5d7da10f70826bfb874bf04c3cf"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/guarded_forward.py": {
+      "bytes": 6083,
+      "sha256": "a580813e15dfd9a6f850131d77f16e7130f1d4e610965b01e92c6a5cdc5eede6"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/kernel.py": {
+      "bytes": 7578,
+      "sha256": "259cdcef0b4cb155e4cc8e21ee44d54cb573df45fe80a8eaeacf30fcaf494a2f"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/materialize.py": {
+      "bytes": 1734,
+      "sha256": "1d425614cb2d381c9fec41b13094c8ef96e3e31dc060df220eb8b593ceda3a79"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/module_preflight.py": {
+      "bytes": 6101,
+      "sha256": "8d531d82e195042cecc71e623dcf9d329b39aac38419ffd87ca2a9e0c0743573"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/native_source_manifest.json": {
+      "bytes": 167,
+      "sha256": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/nf4_format.py": {
+      "bytes": 1266,
+      "sha256": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/operand_probe.py": {
+      "bytes": 753,
+      "sha256": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/parameter_bias.py": {
+      "bytes": 1158,
+      "sha256": "e5ac4022012487632734392d382499919302f3438f232bdc58169f992f0cddc7"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/reference_forward.py": {
+      "bytes": 624,
+      "sha256": "e3c300e875ae7133fdb4e58cbd886cff5826a548408a8dde3226861836d78c80"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/reference_kernel.py": {
+      "bytes": 3047,
+      "sha256": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 7923,
+      "sha256": "5e44a0cce13e8613090198a954f8176f11167c44a1885e06db5eaec128db2118"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 1696,
+      "sha256": "eccba3e9465544346bf4a3a90bd79a851c3c9745dd6cadde9ffd60bc5f330f3c"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/submitted_payload/worker.py": {
+      "bytes": 4723,
+      "sha256": "a22b897880c34c848d7a0151569c6cda49c3f7fc920016672bc2a0a5a9e388bf"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/cpu_lane_proof.py": {
+      "bytes": 4735,
+      "sha256": "c76a32b06f9bfc6ac8b6912ca67cb32b906f8683f7e19e956f211f2ce8f2ee5d"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/offline_mma.py": {
+      "bytes": 2022,
+      "sha256": "e8f71c4bc6b8d5a790d6563bf83a53a1eed3a603b872dc3c313f1fde6cb5de04"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/offline_original.py": {
+      "bytes": 2248,
+      "sha256": "5cbafa2c35f957becb3de53dfb8a6b62023c1d19ecf036b88e3fc50401a49d6d"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/offline_solution_mma.py": {
+      "bytes": 2014,
+      "sha256": "ea6224a487bbe13b4c31991dacf4ee7115f370f4131750881905f78553987d4b"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/test_bias_stage_gate.py": {
+      "bytes": 4538,
+      "sha256": "f4d38cd2b288c3e664fc72f8e4e4781d8c7a5ee5a6158a50a67304cc7cceac4b"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/test_dense_control.py": {
+      "bytes": 3830,
+      "sha256": "d2f50f07a7529fc0117563711656a7e75bb8b954f6ab15950eb3f0f574d1d618"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/test_guards.py": {
+      "bytes": 4796,
+      "sha256": "66986132c4650eb0c0b115b5389a8956894f59385c0ad659d606706417d32c38"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 7427,
+      "sha256": "98314ff411ab1959ec964a19498b18a83bb0f9425eb7988dab881f1393fe0c0e"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/test_parameter_bias.py": {
+      "bytes": 7163,
+      "sha256": "47cc4b87d79c24211ed01562177e323f68a7473ebbc39ce10e018124b589ea4a"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/test_tiled_boundary.py": {
+      "bytes": 1897,
+      "sha256": "eed7b2c088f44bb96d8fa6f970f74bd591ecf273b77dd9c8b5c773960e6d20ee"
+    },
+    "soup-nf4-dense-control-diagnostic-v1-20261030/validation_tests/tests/test_tiled_mapping.py": {
+      "bytes": 4989,
+      "sha256": "20c27129ccaf4f128eff12a0a95456eb3b8432deea0b4726c3c3b1394a0f1c12"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1782,
+      "sha256": "cbfa35eda1ef8e31a45acdb91455eaa74eeb1393655b53403ada2aa4c5f1a48d"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 5333,
+      "sha256": "cfa97077ce5a6c69d1fcfae91c13ee4a8ff15e8a9ea7496b2b4af440da6a812b"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/candidate.ipynb": {
+      "bytes": 74632,
+      "sha256": "72bb6f812c329359ddf82e16862738fa029fcdc6ceb246887cfc43596e3661be"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/driver.py": {
+      "bytes": 6753,
+      "sha256": "68bc24799bf67b2d27eb611f40eee8aa15e93d21e974e67fdbf8c82e490c08c0"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 1512,
+      "sha256": "5f46d112499c359b475008df8589caa8f8a9d3444fb809aaaecf8891ead08892"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 77,
+      "sha256": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/solution/fixtures.py": {
+      "bytes": 1802,
+      "sha256": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/solution/guarded_forward.py": {
+      "bytes": 5180,
+      "sha256": "1e15c10626515be88ac4c4cdf4753b71b1c2af4ac2bfa81dba32b8fb9a63e4b9"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/solution/kernel.py": {
+      "bytes": 3047,
+      "sha256": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/solution/native_source_manifest.json": {
+      "bytes": 167,
+      "sha256": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/solution/nf4_format.py": {
+      "bytes": 1266,
+      "sha256": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/solution/operand_probe.py": {
+      "bytes": 753,
+      "sha256": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 5779,
+      "sha256": "a9c804d25b729449239448f637438e4c425e9a4a14b396d60c291b5dc3ced804"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 788,
+      "sha256": "62300431a93e89ab3effc19697e6471851dc1ee820117344df91974c76d08c69"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/submitted_payload/worker.py": {
+      "bytes": 3750,
+      "sha256": "c27b164216f6ceb71d0145faf965a72879768e39c8afc3e0dd6f12d62bee1ba7"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/validation_tests/tests/cpu_lane_proof.py": {
+      "bytes": 4735,
+      "sha256": "c76a32b06f9bfc6ac8b6912ca67cb32b906f8683f7e19e956f211f2ce8f2ee5d"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/validation_tests/tests/offline_mma.py": {
+      "bytes": 2022,
+      "sha256": "e8f71c4bc6b8d5a790d6563bf83a53a1eed3a603b872dc3c313f1fde6cb5de04"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/validation_tests/tests/offline_original.py": {
+      "bytes": 2248,
+      "sha256": "5cbafa2c35f957becb3de53dfb8a6b62023c1d19ecf036b88e3fc50401a49d6d"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/validation_tests/tests/offline_solution_mma.py": {
+      "bytes": 2014,
+      "sha256": "ea6224a487bbe13b4c31991dacf4ee7115f370f4131750881905f78553987d4b"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/validation_tests/tests/test_guards.py": {
+      "bytes": 3716,
+      "sha256": "281afccc8cfe8f956ded797b5a30ffbb6c3e9199cc5fed6cf9a6d338038ba82f"
+    },
+    "soup-nf4-fused-forward-microbench-v2-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 7411,
+      "sha256": "53274d9fa906b84ef7dc985323322e0b073db610c8fe2035f61070c8a3e32630"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1560,
+      "sha256": "dd93ff7fbb3c7ae50b7ee8b72050e85f0fa5157c4c8e9dcdb256eec3492b852b"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 5333,
+      "sha256": "b5153c79c9f5b696a06eb29400c8218d7721e32aa165613ef08178d0da3e4976"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/candidate.ipynb": {
+      "bytes": 75488,
+      "sha256": "8eae9a97f176475b5de77457581f18ae0116300111eaf6b46c4ae9f9a8789129"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/driver.py": {
+      "bytes": 6753,
+      "sha256": "68bc24799bf67b2d27eb611f40eee8aa15e93d21e974e67fdbf8c82e490c08c0"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 1512,
+      "sha256": "ed1f6dfc86f2ca503bca855b724f4116e892739b54390db5a5ce0fd4f44fd06e"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 77,
+      "sha256": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/solution/fixtures.py": {
+      "bytes": 1802,
+      "sha256": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/solution/guarded_forward.py": {
+      "bytes": 5272,
+      "sha256": "ec292402af8a4e855a505d6471e713a71307933025fc97b4c8d22e4eda0ecd1b"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/solution/kernel.py": {
+      "bytes": 3047,
+      "sha256": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/solution/native_source_manifest.json": {
+      "bytes": 167,
+      "sha256": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/solution/nf4_format.py": {
+      "bytes": 1266,
+      "sha256": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/solution/operand_probe.py": {
+      "bytes": 753,
+      "sha256": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 6328,
+      "sha256": "99ade6f0bf26efeeb03a92e35853670644f49256bc89a3b54309b036bc5fa38a"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 788,
+      "sha256": "77e2d534072b26f8045bcfbb1ec131870634bdf0998b784118cb1c708c7c45f5"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/submitted_payload/worker.py": {
+      "bytes": 3750,
+      "sha256": "c27b164216f6ceb71d0145faf965a72879768e39c8afc3e0dd6f12d62bee1ba7"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/validation_tests/tests/cpu_lane_proof.py": {
+      "bytes": 4735,
+      "sha256": "c76a32b06f9bfc6ac8b6912ca67cb32b906f8683f7e19e956f211f2ce8f2ee5d"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/validation_tests/tests/offline_mma.py": {
+      "bytes": 2022,
+      "sha256": "e8f71c4bc6b8d5a790d6563bf83a53a1eed3a603b872dc3c313f1fde6cb5de04"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/validation_tests/tests/offline_original.py": {
+      "bytes": 2248,
+      "sha256": "5cbafa2c35f957becb3de53dfb8a6b62023c1d19ecf036b88e3fc50401a49d6d"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/validation_tests/tests/offline_solution_mma.py": {
+      "bytes": 2014,
+      "sha256": "ea6224a487bbe13b4c31991dacf4ee7115f370f4131750881905f78553987d4b"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/validation_tests/tests/test_guards.py": {
+      "bytes": 4796,
+      "sha256": "66986132c4650eb0c0b115b5389a8956894f59385c0ad659d606706417d32c38"
+    },
+    "soup-nf4-fused-forward-microbench-v3-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 7411,
+      "sha256": "94765a65ac01301f5296766765323028878e157cf0deb1cb46de30ec15ddd444"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1616,
+      "sha256": "4e5759985d3a0f9593629ccd8a8315e90333604ee5b5ce5e1c73d757172a6a04"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 6651,
+      "sha256": "8f57fed5a7b986ba9fb199558e2a663ceb3f5746f4a6fe249b3a68c628342290"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/candidate.ipynb": {
+      "bytes": 93182,
+      "sha256": "fa0f8796d691fb3f3176ad493b4edc5d30d192a464cdb6a1b5b73843aa84bda0"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/driver.py": {
+      "bytes": 6779,
+      "sha256": "a26549a9d265184ff096e09dc97c37407435f2b800c41759ddc1f5c10ec32ddb"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 1923,
+      "sha256": "164c0e9b6d26967d640479cab4958a06f1dac6eae0e85b4945e34c69dc13b8db"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 77,
+      "sha256": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/bias_gate_provenance.json": {
+      "bytes": 1120,
+      "sha256": "2ab66935361271946f6b947ffe8360be6b2b8f8a093deda6d4b3cd4e9c81637a"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/bias_stage_gate.py": {
+      "bytes": 2129,
+      "sha256": "efbac4b8f37250eea9115e41707762fb03c9d83592b70bc64bf746ffc3d7bdc0"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/fixtures.py": {
+      "bytes": 1802,
+      "sha256": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/guarded_forward.py": {
+      "bytes": 5526,
+      "sha256": "d52db811ea255cc2a4577ba7355546fe73797a9179e6fb70c427939c7c039aae"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/kernel.py": {
+      "bytes": 3047,
+      "sha256": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/module_preflight.py": {
+      "bytes": 6101,
+      "sha256": "8d531d82e195042cecc71e623dcf9d329b39aac38419ffd87ca2a9e0c0743573"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/native_source_manifest.json": {
+      "bytes": 167,
+      "sha256": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/nf4_format.py": {
+      "bytes": 1266,
+      "sha256": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/operand_probe.py": {
+      "bytes": 753,
+      "sha256": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/parameter_bias.py": {
+      "bytes": 1158,
+      "sha256": "e5ac4022012487632734392d382499919302f3438f232bdc58169f992f0cddc7"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 7101,
+      "sha256": "a2928ca2d69d65e7d5749d1a33b9a18d3bb961ddc040d1ea6098883c8b78d7a5"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 1199,
+      "sha256": "fb0cde8fd858ec426dab4bb4f5d2a504a81b588b5efe1582099d1346996cc001"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/submitted_payload/worker.py": {
+      "bytes": 3750,
+      "sha256": "c27b164216f6ceb71d0145faf965a72879768e39c8afc3e0dd6f12d62bee1ba7"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/validation_tests/tests/cpu_lane_proof.py": {
+      "bytes": 4735,
+      "sha256": "c76a32b06f9bfc6ac8b6912ca67cb32b906f8683f7e19e956f211f2ce8f2ee5d"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/validation_tests/tests/offline_mma.py": {
+      "bytes": 2022,
+      "sha256": "e8f71c4bc6b8d5a790d6563bf83a53a1eed3a603b872dc3c313f1fde6cb5de04"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/validation_tests/tests/offline_original.py": {
+      "bytes": 2248,
+      "sha256": "5cbafa2c35f957becb3de53dfb8a6b62023c1d19ecf036b88e3fc50401a49d6d"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/validation_tests/tests/offline_solution_mma.py": {
+      "bytes": 2014,
+      "sha256": "ea6224a487bbe13b4c31991dacf4ee7115f370f4131750881905f78553987d4b"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/validation_tests/tests/test_bias_stage_gate.py": {
+      "bytes": 4463,
+      "sha256": "04ea991d9e747f3859d4f199f48feb49de5d9b7ae98729fdbfd8d71e4e72555d"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/validation_tests/tests/test_guards.py": {
+      "bytes": 4796,
+      "sha256": "66986132c4650eb0c0b115b5389a8956894f59385c0ad659d606706417d32c38"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 7411,
+      "sha256": "8a3ec790a4273beb84cdb48e29c7da304c3bad926eca5a059299062aad80e946"
+    },
+    "soup-nf4-fused-forward-microbench-v4-20261030/validation_tests/tests/test_parameter_bias.py": {
+      "bytes": 6945,
+      "sha256": "702a87f3bbaad4568f73d9c3d72e6c6eef41f2936f619d7b572940a6eca26686"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1589,
+      "sha256": "839cae1b522d2533ce7b4c9ada2c82e9c4440375ed4f0e3965c7e2e8e92682a6"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 7453,
+      "sha256": "960e501ff920d364344de694ae2d5e616c5729c016e8880baa6ce72bc1d0dd3e"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/candidate.ipynb": {
+      "bytes": 108591,
+      "sha256": "a5ca49f639a6831191b553cc255412042948ea9229dcdd2528a127070afd94a9"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/driver.py": {
+      "bytes": 6779,
+      "sha256": "a26549a9d265184ff096e09dc97c37407435f2b800c41759ddc1f5c10ec32ddb"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 2128,
+      "sha256": "21d36f29fa99b224a3b177a19b721dea69e45b42ac7fd29e7114e52834d578cc"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 77,
+      "sha256": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/bias_gate_provenance.json": {
+      "bytes": 1120,
+      "sha256": "2ab66935361271946f6b947ffe8360be6b2b8f8a093deda6d4b3cd4e9c81637a"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/bias_stage_gate.py": {
+      "bytes": 2129,
+      "sha256": "efbac4b8f37250eea9115e41707762fb03c9d83592b70bc64bf746ffc3d7bdc0"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/fixtures.py": {
+      "bytes": 1802,
+      "sha256": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/guarded_forward.py": {
+      "bytes": 5598,
+      "sha256": "48d7d6aaf37d7d6dae933a4696a41152782a0388aa7336b52a71b89dc5d999fd"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/kernel.py": {
+      "bytes": 9940,
+      "sha256": "3fc771917904a05d9d4a9adeff83f0794aa4f5d7da10f70826bfb874bf04c3cf"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/module_preflight.py": {
+      "bytes": 6101,
+      "sha256": "8d531d82e195042cecc71e623dcf9d329b39aac38419ffd87ca2a9e0c0743573"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/native_source_manifest.json": {
+      "bytes": 167,
+      "sha256": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/nf4_format.py": {
+      "bytes": 1266,
+      "sha256": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/operand_probe.py": {
+      "bytes": 753,
+      "sha256": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/parameter_bias.py": {
+      "bytes": 1158,
+      "sha256": "e5ac4022012487632734392d382499919302f3438f232bdc58169f992f0cddc7"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/reference_forward.py": {
+      "bytes": 623,
+      "sha256": "765d1fe96e9a6958d6cde7d9989eccb3418d8ca27a498abee044234e3950e140"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/reference_kernel.py": {
+      "bytes": 3047,
+      "sha256": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 7619,
+      "sha256": "49e1147e224470f6090250189ce11aa11ee298e9bfb2b948059f1f675c16a87f"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 1404,
+      "sha256": "9eba4748af6f07ffec8a974cddafc25c86482d90a44fac6466cec38d89b136f6"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/submitted_payload/worker.py": {
+      "bytes": 3752,
+      "sha256": "5aab91d47f3a954a99ad8abb1c1d3b40639960927d4680afedf753beadba6a12"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/cpu_lane_proof.py": {
+      "bytes": 4735,
+      "sha256": "c76a32b06f9bfc6ac8b6912ca67cb32b906f8683f7e19e956f211f2ce8f2ee5d"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/offline_mma.py": {
+      "bytes": 2022,
+      "sha256": "e8f71c4bc6b8d5a790d6563bf83a53a1eed3a603b872dc3c313f1fde6cb5de04"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/offline_original.py": {
+      "bytes": 2248,
+      "sha256": "5cbafa2c35f957becb3de53dfb8a6b62023c1d19ecf036b88e3fc50401a49d6d"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/offline_solution_mma.py": {
+      "bytes": 2014,
+      "sha256": "ea6224a487bbe13b4c31991dacf4ee7115f370f4131750881905f78553987d4b"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/test_bias_stage_gate.py": {
+      "bytes": 4538,
+      "sha256": "f4d38cd2b288c3e664fc72f8e4e4781d8c7a5ee5a6158a50a67304cc7cceac4b"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/test_guards.py": {
+      "bytes": 4796,
+      "sha256": "66986132c4650eb0c0b115b5389a8956894f59385c0ad659d606706417d32c38"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 7411,
+      "sha256": "f1b41b89f725cea7f8fb9ed54b7d3f0c60d9b6b8d74e196b46cb2708f4e9f17b"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/test_parameter_bias.py": {
+      "bytes": 6946,
+      "sha256": "38e62bff4b0047ac6d7b5917cab0de09fed4aa835891f2108f4b349d7aba6720"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/test_tiled_boundary.py": {
+      "bytes": 2987,
+      "sha256": "b9f16e49d08ceec58fa9178915d6e661ed5be17a43415ba2ed54926be13269ac"
+    },
+    "soup-nf4-tiled-reuse-microbench-v1-20261030/validation_tests/tests/test_tiled_mapping.py": {
+      "bytes": 4995,
+      "sha256": "d578ea70c97edfb0a33c644230249051cd28a1a27b4ddc17005668cae3b4b2ae"
+    },
+    "soup-residual-norm-component-v1-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1616,
+      "sha256": "bb8af3ca68d39ee70009c11467c71372539f27227f3eb8633d7349d94bc88dcc"
+    },
+    "soup-residual-norm-component-v1-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 4249,
+      "sha256": "c8dcdc7889252a06dd7709c15770b9916637c2af93293d5786ff083d01f5764f"
+    },
+    "soup-residual-norm-component-v1-20261030/candidate.ipynb": {
+      "bytes": 75786,
+      "sha256": "ee35b397a9ecb02a40dfba0bda4802ff08c2bc5fd5a026d5ce88f6f8e1e9aec3"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/driver.py": {
+      "bytes": 6961,
+      "sha256": "aef30cf1a22e7e7a9fc82f59d65c830268aa48f38b4c0f2e2840b90ae5f3e798"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/old_solution/__init__.py": {
+      "bytes": 80,
+      "sha256": "94e10a1271fec2a429d69e28e4d8b3adfac59bdd323c3bf0d0fa3cf616534b0d"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/old_solution/rmsnorm.py": {
+      "bytes": 4544,
+      "sha256": "95f22a8e09309d1d6be57d389d5dc8fc8feaa05ba4a8510192443a94009a9dde"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 1309,
+      "sha256": "cb0cd914797d771d6a0c2c53f7d9a1e345542a08e844e2b77ab638f64f5a4d78"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 79,
+      "sha256": "5885b4a789103e14b8ffb2283ed5058eee05ec46b6bba1aff6b8be3de8b0eb11"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/solution/contracts.py": {
+      "bytes": 4793,
+      "sha256": "ac54cd1da59ecf38c9b5f22b387b1173f31c4f1959d1d5bf3caa35ad9b2c455f"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/solution/residual_norm.py": {
+      "bytes": 3935,
+      "sha256": "80203f2557b0c314c8c525f5d8ce0e4cf989bf0f2ec85b034cd5b71e5347050a"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 5088,
+      "sha256": "b55f150cdd3da10912e12755781a367ea79c6dad0b39112d02ed0433064d9bb9"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 585,
+      "sha256": "4f56aeba6901b2ecb254d969dbabc3c367294cf096f3a1b6b1199117f01d1ab6"
+    },
+    "soup-residual-norm-component-v1-20261030/submitted_payload/worker.py": {
+      "bytes": 4600,
+      "sha256": "1f49cb89ba38f93faf1a63ba2cc3ecc95daf38e4c72a2a97b23e35692a0bd725"
+    },
+    "soup-residual-norm-component-v1-20261030/validation_tests/tests/test_cpu_contract.py": {
+      "bytes": 2008,
+      "sha256": "445b8f3c3bb4ef27452e807591c64a85873040c8acb1f4fbf913fff434020e03"
+    },
+    "soup-residual-norm-component-v1-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 3452,
+      "sha256": "b3e82971901252024076f0268cef384b7311e1770dd9213332a0bbb56115e0c4"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1473,
+      "sha256": "027b1add004c9579a1300cf115a60ce4e70329b420e5f32ac519fc61bb37d83d"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 5608,
+      "sha256": "b07223889351024ffa66d69eb9d3071e77c83572146dae885bda9a18102399ab"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/candidate.ipynb": {
+      "bytes": 139480,
+      "sha256": "45c615579e948147164f651a1fb5198e28f797cef7ccacf1ad1188443735a45f"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/driver.py": {
+      "bytes": 6879,
+      "sha256": "e2bda3848a2193f9b418d92e2e583ea0a7c26c4652f2ae904669040010bbb7e8"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/old_solution/__init__.py": {
+      "bytes": 333,
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/old_solution/cpu_contract.py": {
+      "bytes": 1913,
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/old_solution/gpu_preflight.py": {
+      "bytes": 8253,
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/old_solution/rotary.py": {
+      "bytes": 9344,
+      "sha256": "cbea5c7a64c70695fa009a7b98129889d9ec434993da4f9d123a87808ee766b0"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/old_solution/test_rotary.py": {
+      "bytes": 8248,
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/old_solution/web_preflight.py": {
+      "bytes": 2289,
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 1909,
+      "sha256": "4b6b01642e6d56e915b39b2f9d8f687524bdc95ccc220506bce9a18a8714d17e"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 333,
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/solution/cpu_contract.py": {
+      "bytes": 1913,
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/solution/gpu_preflight.py": {
+      "bytes": 8253,
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/solution/rotary.py": {
+      "bytes": 9334,
+      "sha256": "a07720f3106a94144b74a971950583574b789fa0188ce7300c4cbe30a1e83c07"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/solution/test_rotary.py": {
+      "bytes": 8248,
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 2289,
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 1185,
+      "sha256": "4f4310f3fd577916f2dca60eb24a2ec83047854c08f2408d09e84d52f0507cb9"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/submitted_payload/worker.py": {
+      "bytes": 8722,
+      "sha256": "12487f949f490db95d0072419949cea83f81e1089a51c090030a4c391ab91723"
+    },
+    "soup-rope-runtime-2d-microbench-v1-20261030/validation_tests/test_microbench_packet.py": {
+      "bytes": 11422,
+      "sha256": "6641a77500da047a2f6a32f686ef22a9e3ae08bcbf5f7aebd6443308885d7521"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1512,
+      "sha256": "e0cee88c9c76b6106f6fe6c8ab707838591d84c45c6c538b54681c023b2b0f49"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 4597,
+      "sha256": "f7f8233c2ed89d187334938138986a43c4bac0f9b564d4fc26a59e9da6716045"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/candidate.ipynb": {
+      "bytes": 81265,
+      "sha256": "f9eddd814b5cfb824781b631fe60f97d1fd2c8f619582352490057aa6940e394"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/candidate_profile.json": {
+      "bytes": 1009,
+      "sha256": "cb8ac6aff5641454572fe79438cf958fa7a8587dfcf4a3a210b2374ff5638430"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/rotary_runtime_dims_manifest.json": {
+      "bytes": 582,
+      "sha256": "e88885a5fe92b8d537962470fd990042e753b8a7af1e14166aefe15ae85eabe6"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 333,
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/solution/cpu_contract.py": {
+      "bytes": 1913,
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/solution/gpu_preflight.py": {
+      "bytes": 8253,
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/solution/rotary.py": {
+      "bytes": 9344,
+      "sha256": "cbea5c7a64c70695fa009a7b98129889d9ec434993da4f9d123a87808ee766b0"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/solution/test_rotary.py": {
+      "bytes": 8248,
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/solution/web_preflight.py": {
+      "bytes": 2289,
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/submitted_payload/web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    },
+    "soup-rope-runtime-fulltask-v1-web80-20261030/validation_tests/validate_packet.py": {
+      "bytes": 6620,
+      "sha256": "149c6125df7fae1400244db55ffe24e593d0d9012bee17b58c16001699ba7c88"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1598,
+      "sha256": "b2d8fea8f809ce6b4fbd94352dd51f427b3eb10adf14c2cfce88d4c0d812e2a5"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 4185,
+      "sha256": "cac41466bd07f34ef05b38be9fd7d1a86644e1432720e2f1f585d3562244f24c"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/candidate.ipynb": {
+      "bytes": 73412,
+      "sha256": "b710f8d72b309d71812ce716db8f7cbb7c132b120fcc60c091e1e63ffceb7bad"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/candidate_registry.json": {
+      "bytes": 124,
+      "sha256": "08e520a1303fa12d52d9dbc0a9659f8dfd3839557c889d9c18e87b812002ca14"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/driver.py": {
+      "bytes": 8548,
+      "sha256": "18a112f341220532cdfd040107713e6f9a4f16954e4ddf88a5824adad12a3eea"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 1033,
+      "sha256": "403017d6bb8d1bb1ca5d215ca46691813fd9c700e7208b18b5e8b49b710834a5"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 17265,
+      "sha256": "cc06088f35a870b4912b9a78c8938ff330c833ecd63b04816c50ee2b6e54d01c"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 156,
+      "sha256": "f1fe3c41752b20873ae3ef60a600843eb87a09141e2dd3d2826b8cd4eeb58ff3"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/solution/preflight.py": {
+      "bytes": 1520,
+      "sha256": "4dd8ee83ac8018407bf4af44db54cbda48c87c8948e8c0c65e231ab1fd051194"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/solution/stage_probe.py": {
+      "bytes": 3128,
+      "sha256": "ef48831500908c4620d8ca8b93e2f416b009f9c7c05df0fccfcf5e9bb786398c"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 289,
+      "sha256": "82de71c57f4661a7cafe9a2fadd717c8f122980ca2558abc5cfb846ff027967d"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 4195,
+      "sha256": "8443ab77c3346f4b74d397600b2b84b6f8168b2ef4d54cf83f4435fa26ea0bb2"
+    },
+    "soup-stage-timing-diagnostic-v1-20261030/validation_tests/tests/test_stage_probe.py": {
+      "bytes": 2920,
+      "sha256": "61966a5b4db659d2df53b434f7375d8ddf2b92d843b1e734d5d34a3af90baffd"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1710,
+      "sha256": "340e1a928d27e02a2be665b606846035720e5de84efd90ce13d3f4bf1fbc9310"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 7206,
+      "sha256": "9bc4f953e6a7cf1eea9cfe4b00f23943cd66a84f8c866d9f74820474382b4ba2"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/candidate.ipynb": {
+      "bytes": 172043,
+      "sha256": "72dc8d56db6a770d829d7f33b6e787691df3750234bd79b299aa0e76c2475937"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/driver.py": {
+      "bytes": 7364,
+      "sha256": "e64a58475b458e81dc856c6774934f440c37af685a66652b9409c0841f9ef622"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/native_source_manifest.json": {
+      "bytes": 345,
+      "sha256": "12de6991fd41f2dea6ca8930079f10ba2cd7c752f955836e3774f3997666a816"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/old_solution/__init__.py": {
+      "bytes": 86,
+      "sha256": "94794d4f4ab4ba76eb58f73383008ea605e3a6e25afb91f550723b5c801e03aa"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/old_solution/token_chunk_head.py": {
+      "bytes": 6642,
+      "sha256": "c75d33b7adfa42e659c049ce9933a57501324bab7d7af8b3bbda0832bce73fb5"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 2449,
+      "sha256": "d992f90cea406d987d2d643d1a512fe9d95cad8fdb8d99904ff69c5733320b4a"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/shared_consumer/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/shared_consumer/bridge_state.py": {
+      "bytes": 9674,
+      "sha256": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/shared_consumer/consumer.py": {
+      "bytes": 9632,
+      "sha256": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/shared_consumer_manifest.json": {
+      "bytes": 262,
+      "sha256": "7c32833bfec7f8d17ec6771e9683b922109f2e1c09e7e47359a86c03ad0ff395"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 68,
+      "sha256": "cfff518be5acf5f493ab8450002a0321740b4c87456795499e28898595266f94"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/solution/ce_tile.py": {
+      "bytes": 8481,
+      "sha256": "2baea1f4b7c567379e3674b76204d39e9fb128eb6cfcda9a8d8edebbfd230e7b"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/solution/contracts.py": {
+      "bytes": 1671,
+      "sha256": "561dd3f790f6744bff878be6680f957abd2918e1d350e7d3794c93fdbbe14c0c"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/solution/original/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/solution/original/materialized_ce.py": {
+      "bytes": 14846,
+      "sha256": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/solution/original/metric_summary.py": {
+      "bytes": 3256,
+      "sha256": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/solution/original/mixed_rows.py": {
+      "bytes": 7670,
+      "sha256": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/solution/token_chunk_head.py": {
+      "bytes": 4436,
+      "sha256": "58ecf5b9a83f91f128616d954f59a27f189969d62e44ad60ed2c67df2011fdb3"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/solution/verify_tile.py": {
+      "bytes": 6201,
+      "sha256": "f4f6251987b6199365b853d48979a136ec2dc2626bed68f374ae2940ee6047a1"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 1422,
+      "sha256": "f25662da56a6dda8943aa9ecbd45eadefd6fedc7213e96afd265811eb31e962e"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/tile_source_manifest.json": {
+      "bytes": 714,
+      "sha256": "5e9b2767afa94a4e85bd18fc3bdf610bf5ff562d836af9f95db8ebad6ce6d894"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/submitted_payload/worker.py": {
+      "bytes": 16799,
+      "sha256": "70947337b2dc3b2b199d7394bd2d6530b69cc3e2b03336290b32f079fd074f72"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/validation_tests/tests/cpu_tile_oracle.py": {
+      "bytes": 1399,
+      "sha256": "fc20010da15e4813007f30e5b0b26a7d967dc1051bd15384bb325d783bdda4c3"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/validation_tests/tests/test_head_owner.py": {
+      "bytes": 3728,
+      "sha256": "d1688e587e2311bea1aed5fe2882441b7a61cde17fa5082f378b3997f7c1dd6f"
+    },
+    "soup-token-chunk-ce-component-v1-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 6140,
+      "sha256": "127a8f532268e05781e719c732cbec0c5e3dba2ae49541622ba68045e4de4a92"
+    },
+    "soup-token-chunk-head-component-v3-20261030/RESULT_SUMMARY.json": {
+      "bytes": 1670,
+      "sha256": "91ebead0da0624865f184588b51daee6b39bba19fab64a194f0f1230e4bca817"
+    },
+    "soup-token-chunk-head-component-v3-20261030/SOURCE_MANIFEST.json": {
+      "bytes": 4703,
+      "sha256": "f482a00d2b14c49c3da6ee6973a91a3acfd1ee4da7999b75f154dddd7d75ee83"
+    },
+    "soup-token-chunk-head-component-v3-20261030/candidate.ipynb": {
+      "bytes": 99793,
+      "sha256": "e042e14b1dc75889dcdae4d15ba4c8f44855f41a27a9bab18facb9b94f50190b"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/driver.py": {
+      "bytes": 7242,
+      "sha256": "abfd8d9a226767ed274d2e4a4e0ed7359e29d5fbcbcfe4371b8d9c34fc71072a"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/native_source_manifest.json": {
+      "bytes": 345,
+      "sha256": "12de6991fd41f2dea6ca8930079f10ba2cd7c752f955836e3774f3997666a816"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/payload_manifest.json": {
+      "bytes": 1434,
+      "sha256": "79600b5ccfabf12c0bdc7c9a969f9bff93a8b7dd033c293ebd34f10bd4bb114a"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/shared_consumer/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/shared_consumer/bridge_state.py": {
+      "bytes": 9674,
+      "sha256": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/shared_consumer/consumer.py": {
+      "bytes": 9632,
+      "sha256": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/shared_consumer_manifest.json": {
+      "bytes": 262,
+      "sha256": "7c32833bfec7f8d17ec6771e9683b922109f2e1c09e7e47359a86c03ad0ff395"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/solution/__init__.py": {
+      "bytes": 86,
+      "sha256": "94794d4f4ab4ba76eb58f73383008ea605e3a6e25afb91f550723b5c801e03aa"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/solution/token_chunk_head.py": {
+      "bytes": 6642,
+      "sha256": "c75d33b7adfa42e659c049ce9933a57501324bab7d7af8b3bbda0832bce73fb5"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/source_manifest.json": {
+      "bytes": 506,
+      "sha256": "7a305c5ca9ba0b37ecb5789bf93e8c12640307dd5f6c73e110d2439eefcbac8a"
+    },
+    "soup-token-chunk-head-component-v3-20261030/submitted_payload/worker.py": {
+      "bytes": 13426,
+      "sha256": "435759a34108ac0d73ba51fbc6cf9251a7b18ab98296ae695532af8ce3d49d7d"
+    },
+    "soup-token-chunk-head-component-v3-20261030/validation_tests/tests/test_packet.py": {
+      "bytes": 4636,
+      "sha256": "cc5834742bb13010602f01ebe1fa038665b43e3b8b825f60141fe788908b45b2"
+    },
+    "soup-token-chunk-head-component-v3-20261030/validation_tests/tests/test_streaming_bridge.py": {
+      "bytes": 3888,
+      "sha256": "991537ca4062f4ce6bc6881181706881849967a9f228153e90a0602123fd4f1d"
+    },
+    "soup-token-chunk-head-component-v3-20261030/validation_tests/tests/test_token_component.py": {
+      "bytes": 6056,
+      "sha256": "a440b83f37be0c6ff4c56ac90fabe4efb607862c422a630e8ec5528fd980796c"
+    }
+  }
+}

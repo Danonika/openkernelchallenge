@@ -1,0 +1,39 @@
+{
+  "status": "provisional_baseline_validated",
+  "full_admission": false,
+  "score_points_claimed": null,
+  "scope": "Official public base-only single-repeat smoke; not a solution comparison",
+  "failures": [],
+  "measurements": [
+    {
+      "run": "base_1",
+      "wall_s": 77.92,
+      "train_loop_s": 54.04,
+      "gpu_peak_mib": 14345,
+      "gpu_start_mib": 0,
+      "torch_max_reserved_mib": 14202.0,
+      "cuda_device": "Tesla T4",
+      "steps": 64
+    }
+  ],
+  "eval_loss": 2.04965,
+  "eval_rows": 256,
+  "eval_tokens": 38109,
+  "versions": {
+    "python": "3.13.15",
+    "soup-cli": "0.77.0",
+    "torch": "2.11.0+cu128",
+    "triton": "3.6.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "trl": "0.29.1",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.14.0",
+    "datasets": "4.8.5",
+    "gpus": [
+      "Tesla T4, 580.178.04",
+      "Tesla T4, 580.178.04"
+    ]
+  },
+  "warning": "Wrapper completion or Kaggle COMPLETE alone does not prove training/evaluation succeeded."
+}

@@ -1,0 +1,186 @@
+{
+  "candidate": "soup-nf4-dense-control-diagnostic-v1-20261030",
+  "notebook_sha256": "46c2123da97d587dd4663a9a8fe215a9048a666f7a97a53af476490a3483be85",
+  "embedded_payload_sha256": {
+    "solution/__init__.py": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41",
+    "solution/bias_gate_provenance.json": "2ab66935361271946f6b947ffe8360be6b2b8f8a093deda6d4b3cd4e9c81637a",
+    "solution/bias_stage_gate.py": "efbac4b8f37250eea9115e41707762fb03c9d83592b70bc64bf746ffc3d7bdc0",
+    "solution/fixtures.py": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50",
+    "solution/fused_guard.py": "ff783cb6167279ae62251d62903e621f2f8a2008813b1beefd09a94efad6317b",
+    "solution/fused_kernel.py": "3fc771917904a05d9d4a9adeff83f0794aa4f5d7da10f70826bfb874bf04c3cf",
+    "solution/guarded_forward.py": "a580813e15dfd9a6f850131d77f16e7130f1d4e610965b01e92c6a5cdc5eede6",
+    "solution/kernel.py": "259cdcef0b4cb155e4cc8e21ee44d54cb573df45fe80a8eaeacf30fcaf494a2f",
+    "solution/materialize.py": "1d425614cb2d381c9fec41b13094c8ef96e3e31dc060df220eb8b593ceda3a79",
+    "solution/module_preflight.py": "8d531d82e195042cecc71e623dcf9d329b39aac38419ffd87ca2a9e0c0743573",
+    "solution/native_source_manifest.json": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7",
+    "solution/nf4_format.py": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4",
+    "solution/operand_probe.py": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528",
+    "solution/parameter_bias.py": "e5ac4022012487632734392d382499919302f3438f232bdc58169f992f0cddc7",
+    "solution/reference_forward.py": "e3c300e875ae7133fdb4e58cbd886cff5826a548408a8dde3226861836d78c80",
+    "solution/reference_kernel.py": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8",
+    "solution/web_preflight.py": "5e44a0cce13e8613090198a954f8176f11167c44a1885e06db5eaec128db2118",
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "reviewed_support.py": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c",
+    "worker.py": "a22b897880c34c848d7a0151569c6cda49c3f7fc920016672bc2a0a5a9e388bf",
+    "driver.py": "e25dd8eecdafe85768c94bd8ff02a9f236d562ba4429abc26ada0ee5d770f141",
+    "source_manifest.json": "eccba3e9465544346bf4a3a90bd79a851c3c9745dd6cadde9ffd60bc5f330f3c",
+    "payload_manifest.json": "5344dd5e955edcd84311db39ef3a6a70fe3fe98049e1a3d85e55deaa7dc59e70"
+  },
+  "decoded_source_archives": [],
+  "exported_payload_files": {
+    "driver.py": {
+      "bytes": 6782,
+      "sha256": "e25dd8eecdafe85768c94bd8ff02a9f236d562ba4429abc26ada0ee5d770f141"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "payload_manifest.json": {
+      "bytes": 2420,
+      "sha256": "5344dd5e955edcd84311db39ef3a6a70fe3fe98049e1a3d85e55deaa7dc59e70"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "solution/__init__.py": {
+      "bytes": 77,
+      "sha256": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41"
+    },
+    "solution/bias_gate_provenance.json": {
+      "bytes": 1120,
+      "sha256": "2ab66935361271946f6b947ffe8360be6b2b8f8a093deda6d4b3cd4e9c81637a"
+    },
+    "solution/bias_stage_gate.py": {
+      "bytes": 2129,
+      "sha256": "efbac4b8f37250eea9115e41707762fb03c9d83592b70bc64bf746ffc3d7bdc0"
+    },
+    "solution/fixtures.py": {
+      "bytes": 1802,
+      "sha256": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50"
+    },
+    "solution/fused_guard.py": {
+      "bytes": 5604,
+      "sha256": "ff783cb6167279ae62251d62903e621f2f8a2008813b1beefd09a94efad6317b"
+    },
+    "solution/fused_kernel.py": {
+      "bytes": 9940,
+      "sha256": "3fc771917904a05d9d4a9adeff83f0794aa4f5d7da10f70826bfb874bf04c3cf"
+    },
+    "solution/guarded_forward.py": {
+      "bytes": 6083,
+      "sha256": "a580813e15dfd9a6f850131d77f16e7130f1d4e610965b01e92c6a5cdc5eede6"
+    },
+    "solution/kernel.py": {
+      "bytes": 7578,
+      "sha256": "259cdcef0b4cb155e4cc8e21ee44d54cb573df45fe80a8eaeacf30fcaf494a2f"
+    },
+    "solution/materialize.py": {
+      "bytes": 1734,
+      "sha256": "1d425614cb2d381c9fec41b13094c8ef96e3e31dc060df220eb8b593ceda3a79"
+    },
+    "solution/module_preflight.py": {
+      "bytes": 6101,
+      "sha256": "8d531d82e195042cecc71e623dcf9d329b39aac38419ffd87ca2a9e0c0743573"
+    },
+    "solution/native_source_manifest.json": {
+      "bytes": 167,
+      "sha256": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7"
+    },
+    "solution/nf4_format.py": {
+      "bytes": 1266,
+      "sha256": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4"
+    },
+    "solution/operand_probe.py": {
+      "bytes": 753,
+      "sha256": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528"
+    },
+    "solution/parameter_bias.py": {
+      "bytes": 1158,
+      "sha256": "e5ac4022012487632734392d382499919302f3438f232bdc58169f992f0cddc7"
+    },
+    "solution/reference_forward.py": {
+      "bytes": 624,
+      "sha256": "e3c300e875ae7133fdb4e58cbd886cff5826a548408a8dde3226861836d78c80"
+    },
+    "solution/reference_kernel.py": {
+      "bytes": 3047,
+      "sha256": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8"
+    },
+    "solution/web_preflight.py": {
+      "bytes": 7923,
+      "sha256": "5e44a0cce13e8613090198a954f8176f11167c44a1885e06db5eaec128db2118"
+    },
+    "source_manifest.json": {
+      "bytes": 1696,
+      "sha256": "eccba3e9465544346bf4a3a90bd79a851c3c9745dd6cadde9ffd60bc5f330f3c"
+    },
+    "worker.py": {
+      "bytes": 4723,
+      "sha256": "a22b897880c34c848d7a0151569c6cda49c3f7fc920016672bc2a0a5a9e388bf"
+    }
+  },
+  "validation_tests": {
+    "tests/cpu_lane_proof.py": {
+      "bytes": 4735,
+      "sha256": "c76a32b06f9bfc6ac8b6912ca67cb32b906f8683f7e19e956f211f2ce8f2ee5d"
+    },
+    "tests/offline_mma.py": {
+      "bytes": 2022,
+      "sha256": "e8f71c4bc6b8d5a790d6563bf83a53a1eed3a603b872dc3c313f1fde6cb5de04"
+    },
+    "tests/offline_original.py": {
+      "bytes": 2248,
+      "sha256": "5cbafa2c35f957becb3de53dfb8a6b62023c1d19ecf036b88e3fc50401a49d6d"
+    },
+    "tests/offline_solution_mma.py": {
+      "bytes": 2014,
+      "sha256": "ea6224a487bbe13b4c31991dacf4ee7115f370f4131750881905f78553987d4b"
+    },
+    "tests/test_bias_stage_gate.py": {
+      "bytes": 4538,
+      "sha256": "f4d38cd2b288c3e664fc72f8e4e4781d8c7a5ee5a6158a50a67304cc7cceac4b"
+    },
+    "tests/test_dense_control.py": {
+      "bytes": 3830,
+      "sha256": "d2f50f07a7529fc0117563711656a7e75bb8b954f6ab15950eb3f0f574d1d618"
+    },
+    "tests/test_guards.py": {
+      "bytes": 4796,
+      "sha256": "66986132c4650eb0c0b115b5389a8956894f59385c0ad659d606706417d32c38"
+    },
+    "tests/test_packet.py": {
+      "bytes": 7427,
+      "sha256": "98314ff411ab1959ec964a19498b18a83bb0f9425eb7988dab881f1393fe0c0e"
+    },
+    "tests/test_parameter_bias.py": {
+      "bytes": 7163,
+      "sha256": "47cc4b87d79c24211ed01562177e323f68a7473ebbc39ce10e018124b589ea4a"
+    },
+    "tests/test_tiled_boundary.py": {
+      "bytes": 1897,
+      "sha256": "eed7b2c088f44bb96d8fa6f970f74bd591ecf273b77dd9c8b5c773960e6d20ee"
+    },
+    "tests/test_tiled_mapping.py": {
+      "bytes": 4989,
+      "sha256": "20c27129ccaf4f128eff12a0a95456eb3b8432deea0b4726c3c3b1394a0f1c12"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

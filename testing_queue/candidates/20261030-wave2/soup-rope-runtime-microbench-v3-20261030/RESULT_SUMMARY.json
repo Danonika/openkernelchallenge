@@ -1,0 +1,25 @@
+{
+  "candidate": "soup-rope-runtime-microbench-v3-20261030",
+  "complete_fixed_task": false,
+  "error": null,
+  "limits": [
+    "All three native/old/runtime five-shape microbench fixtures completed; no model training was executed.",
+    "Synthetic five-shape RoPE timings, fixed native/old/runtime order; no full-training speed or memory claim.",
+    "Cold first-call wall includes allocation, dispatch, compilation where needed and device work; not pure compilation time.",
+    "Warm CUDA-event stream intervals include host launch gaps; not pure kernel timing.",
+    "No payload source executed by reader.",
+    "Reported whole-notebook peak GPU memory is not model-training peak memory and must not populate task metric columns."
+  ],
+  "notebook_sha256": "3fc15f4fe9c52e978b668d319c391623146ed48e945c9a82e576f323f7a4477a",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "8898d6c970d5bbaf8977f2435e8007375d5bfb1591b7e78e9482b33db88f0c3d",
+  "platform": "GCP development evidence, not Kaggle",
+  "raw_receipt_filename": "rope_microbench_v3_attempt02_complete_receipt.json",
+  "raw_receipt_sha256": "8561e1686be8f5083c4e03cc0a1f04f14c9b1274f48004ee77fa67c8b1ed4a6b",
+  "raw_review_status": "COMPLETE_SOURCE_BOUND_MICROBENCH_ONLY",
+  "scope": "Synthetic microbenchmark only",
+  "score": null,
+  "summary": "All native/old/runtime five-shape fixtures completed. Final runtime JIT keys 2 forward + 2 backward versus old 10 + 10. No training or admission claim.",
+  "task_wall_peak_eval_share_ratios": null,
+  "training_executed": false
+}

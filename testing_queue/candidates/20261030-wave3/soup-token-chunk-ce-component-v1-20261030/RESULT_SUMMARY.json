@@ -1,0 +1,32 @@
+{
+  "candidate": "soup-token-chunk-ce-component-v1-20261030",
+  "family": "Streaming head",
+  "status": "POSITIVE_COMPONENT_ONLY",
+  "conclusion": "Seven head+ten direct originalCEtile gates pass. T133warm73.511→58.294ms(-20.70%),peak2431.65→1434.77MiB;T512242.922→204.209ms(-15.94%),5515.90→1457.07MiB. Directtile gradients compare frozen originalCE, not independentnativeeveryrow. Actual-model integration/fulltaskquality/time/peak/usefulshare next; not model3GB/admission.",
+  "notebook_sha256": "72dc8d56db6a770d829d7f33b6e787691df3750234bd79b299aa0e76c2475937",
+  "raw_output_archive_sha256": "dc2d46928bd2560de6f2bfad3a2643b0a601e385ed54c3059a617177108bf415",
+  "source_bound_receipt_bindings": [
+    {
+      "receipt": "streaming_ce_v1_component_attempt01_independent_binding_v2.json",
+      "sha256": "dc4e1eaf5c77295554c52f3a17c8e5af9754e91982a7a13dd65ad0fd94923bd5",
+      "status": "INDEPENDENT_SOURCE_BOUND_COMPONENT_COMPLETE",
+      "raw_output_archive_sha256": "dc2d46928bd2560de6f2bfad3a2643b0a601e385ed54c3059a617177108bf415",
+      "receipt_exported": false
+    }
+  ],
+  "official_score": null,
+  "admission": "UNKNOWN",
+  "full_task_success_claim": false,
+  "cap_seconds": 80,
+  "scope_limits": [
+    "Components are not full-model measurements.",
+    "Incomplete or diagnostic commands are not validated pairs.",
+    "Source availability and local tests do not imply Kaggle admission.",
+    "Prior failures remain tied to exact tested versions, not whole idea families."
+  ],
+  "export_exclusions": [
+    "No API identity/status blobs.",
+    "No raw output archive or private Sheet snapshot.",
+    "No credentials,model/cache files,or separately supplied native-dab4 package."
+  ]
+}

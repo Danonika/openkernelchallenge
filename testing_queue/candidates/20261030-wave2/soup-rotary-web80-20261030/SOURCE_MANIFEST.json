@@ -1,0 +1,43 @@
+{
+  "candidate": "soup-rotary-web80-20261030",
+  "no_model_data_or_credentials_included": true,
+  "notebook": "candidate.ipynb",
+  "notebook_sha256": "e6bae793229acc6e2f70a2a10f3e511b48710549e014c2ac020d082db36ed660",
+  "source_files": [
+    {
+      "path": "solution/__init__.py",
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    {
+      "path": "solution/cpu_contract.py",
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    {
+      "path": "solution/gpu_preflight.py",
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    {
+      "path": "solution/rotary.py",
+      "sha256": "11af78e6d5ea9eca6604b18d565e8990167d14342fc3f0f4a23a93dcfddca4c7"
+    },
+    {
+      "path": "solution/test_rotary.py",
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    {
+      "path": "solution/web_preflight.py",
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    }
+  ],
+  "validation_scope": "Copied historical validation sources for audit; not executed from this relocated export. Submitted notebook bytes are unchanged and self-contained.",
+  "validation_tests": [
+    {
+      "path": "validation_tests/test_web_profile.py",
+      "sha256": "469bcc9457600042213d9a971ac7dab681e26488f106989225c7f92338f3bbb1"
+    },
+    {
+      "path": "validation_tests/next_revision_evidence/test_reader.py",
+      "sha256": "e3aafceeb1bc44a4e9934d30d50366840b08fc2958186f8bfd3c31afcbf891db"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/triton/runtime/interpreter.py:599: RuntimeWarning: invalid value encountered in multiply
+  output = op(lhs.data, rhs.data)
+{
+  "status": "CPU_INTERPRETER_FIXTURES_PASSED",
+  "gpu_tested": false,
+  "target_triton": "3.6.0",
+  "actual_triton": "3.9.0",
+  "actual_torch": "2.15.0+cpu",
+  "cases": 48,
+  "fallback_contract_checks": 5,
+  "finite_bits_and_nonfinite_classes": true,
+  "nan_payload_identity_claimed": false,
+  "limitations": [
+    "No CUDA compilation or execution",
+    "No actual T4 speed/share/peak/quality",
+    "No full Soup/LoRA integration",
+    "No final admission or score"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "verified_source_mirror",
+  "commit_sha": "e3ba9231c1e7f917e709c2d9e57e84dc9961bd8a",
+  "graph_nodes": 1,
+  "candidate_nodes": 0,
+  "base_runs": 1,
+  "coordinates": {
+    "x": 0,
+    "y": 0,
+    "z": null
+  },
+  "observed": {
+    "wall_s": 77.92,
+    "gpu_peak_mib": 14345,
+    "train_loop_s": 54.04,
+    "public_eval_loss": 2.04965,
+    "eval_rows": 256,
+    "steps": 64,
+    "repeats": 1,
+    "seed": 1,
+    "visible_gpu_count": 1
+  },
+  "admission": "unknown",
+  "official_points": null,
+  "checks": [
+    "B0 configuration hash unchanged",
+    "4 selected original artifact hashes match immutable v3 handoff",
+    "JSON Schema passed",
+    "only B0 with one completed base run; no candidates or comparisons",
+    "node syntax check passed",
+    "cloud-browser visual metrics and evidence controls verified",
+    "owner-private access read before update; private deployment succeeded"
+  ],
+  "limits": [
+    "one repeat only; provisional baseline, not stable distribution",
+    "public data only; no hidden eval",
+    "no candidate performance or full jury admission",
+    "mobile viewport not tested"
+  ],
+  "repository_mirror_changes": [
+    "Private notebook/account identifiers and URLs omitted; private session identifier redacted, not substituted with an equivalent identifier.",
+    "Cloud machine paths replaced with repository links.",
+    "Notebook UI link replaced with local sanitized scientific evidence summary.",
+    "No .git, .openai, credentials, model weights, account/quota metadata or runtime configuration copied."
+  ],
+  "live_site_mutated_by_publication": false,
+  "private_deployment_details": "Intentionally omitted; no equivalent URL or account/access identifier substituted."
+}

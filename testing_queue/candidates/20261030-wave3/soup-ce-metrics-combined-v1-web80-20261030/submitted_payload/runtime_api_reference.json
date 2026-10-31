@@ -1,0 +1,14 @@
+{
+  "provenance": "Parent agent authenticated read-only runtime GET, verified TLS, 2026-10-30 around 20:50 UTC; no request by this adapter author and no GPU job",
+  "image": "sha256:d28139f69c56ac897b26487f0f7d8236d701f030214341b5113b4714267c3ec9",
+  "gpu": "Tesla T4", "vram_mib": 15360, "driver": "580.178.04",
+  "python": "3.13.15", "torch": "2.11.0+cu128", "cuda_build": "12.8", "triton": "3.6.0", "numpy": "2.3.5",
+  "cpu_affinity": [0,1,2,3], "cgroup_ram_gib": 30, "host_reported_ram_gib": 29.37,
+  "SOUP_REPO": "/kaggle/working/repo", "SOUP_RESULTS": "/kaggle/working/results",
+  "official_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "training_timeout_s": 80, "public_quality_delta_limit_pct": 0.5, "peak_regression_limit_pct": 10,
+  "concurrency": 1, "network": "none", "authenticated_upload_auto_starts": true,
+  "notebook_limit_bytes": 8388608, "export_limit_bytes": 67108864,
+  "default_job_timeout_s": 3600, "max_job_timeout_s": 14400,
+  "device_execution_proof": false, "gpu_job_run_by_us": false
+}

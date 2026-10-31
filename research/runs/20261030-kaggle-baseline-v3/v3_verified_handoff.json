@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "evidence_id": "kaggle-v3-verified-20261030T114501Z",
+  "verified_at": "2026-10-30T11:45:01Z",
+  "kernel_version": 3,
+  "visibility": "private",
+  "kaggle_terminal_state": "COMPLETE",
+  "status": "provisional_baseline_validated",
+  "scope": "Official public base-only single-repeat baseline; no solution/candidate comparison",
+  "official_starter_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "baseline_script_sha256": "1e8c7d879ba4a805b51a07ae8e83d3ec81cf955461fc8333d2d74f461f12caea",
+  "command": "python harness/run_task.py --only base --repeats 1 --timeout 900 --out /kaggle/working/runs_baseline",
+  "measurements": {
+    "run": "base_1",
+    "wall_s": 77.92,
+    "train_loop_s": 54.04,
+    "gpu_peak_mib": 14345,
+    "gpu_start_mib": 0,
+    "torch_max_reserved_mib": 14202.0,
+    "cuda_device": "Tesla T4",
+    "steps": 64,
+    "torch_max_allocated_mib": 13373.2,
+    "median_step_s": 0.8497,
+    "eval_loss": 2.04965,
+    "eval_rows": 256,
+    "eval_tokens": 38109,
+    "eval_skipped_rows": 0,
+    "session_elapsed_s": 214.63105495499997
+  },
+  "physical_gpu_count": 2,
+  "visible_gpu_count": 1,
+  "cuda_visible_devices": "0",
+  "versions": {
+    "python": "3.13.15",
+    "soup-cli": "0.77.0",
+    "torch": "2.11.0+cu128",
+    "triton": "3.6.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "trl": "0.29.1",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.14.0",
+    "datasets": "4.8.5",
+    "gpus": [
+      "Tesla T4, 580.178.04",
+      "Tesla T4, 580.178.04"
+    ]
+  },
+  "trainer": {
+    "class": "RewindSFTTrainer",
+    "fp16": true,
+    "bf16": false,
+    "per_device_train_batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 0.0002,
+    "num_train_epochs": 1,
+    "max_steps": -1,
+    "seed": 1,
+    "data_seed": null,
+    "optim": "adamw_torch",
+    "lr_scheduler_type": "cosine",
+    "warmup_steps": 0.03,
+    "warmup_ratio": null,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "gradient_checkpointing": false,
+    "torch_compile": false,
+    "logging_steps": 1,
+    "max_length": 512,
+    "packing": false,
+    "padding_free": false,
+    "completion_only_loss": null,
+    "assistant_only_loss": false,
+    "loss_type": "nll",
+    "use_liger_kernel": false,
+    "activation_offloading": false
+  },
+  "data_provenance": {
+    "dataset": "AmanMussa/kazakh-instruction-v2",
+    "revision": "c641407ee50723c84a43ea2ec867b464d3893c12",
+    "train_rows": "0–255",
+    "eval_rows": "40000–40255",
+    "data_script": "Unmodified official task/prepare_data.py at pinned starter",
+    "train_row_ids_artifact_verified": true,
+    "hidden_rows_used": false
+  },
+  "tests": {
+    "starter_solution_gpu_tests_passed": 4,
+    "starter_solution_gpu_tests_seconds": 16.09,
+    "full_79_soup_regressions_run": false,
+    "baseline_evidence_checks": {
+      "nested_training_exit_zero": true,
+      "nested_eval_exit_zero": true,
+      "finite_public_eval_loss": true,
+      "exactly_64_training_steps": true,
+      "checkpoint_global_step_64": true,
+      "public_training_row_ids_exact_0_255": true,
+      "public_eval_256_rows_0_skipped": true,
+      "one_visible_t4_device_0": true,
+      "idle_start_below_1000_mib": true,
+      "sampled_peak_at_least_97pct_reserved": true,
+      "official_allocator": true,
+      "pinned_library_versions": true,
+      "no_packages_changed_during_measurement": true,
+      "no_banned_runtime_modules_loaded": true,
+      "all_64_soup_log_entries_finite": true,
+      "rewind_and_adapter_metadata_present": true,
+      "downloaded_artifacts_agree": true
+    },
+    "synthetic_validator_tests_passed": 8
+  },
+  "artifact_consistency": {
+    "result_metrics_equal": true,
+    "result_eval_equal": true,
+    "result_global_step_equals_checkpoint": true,
+    "result_64_logs_equal_checkpoint": true,
+    "public_row_identity_count": 256,
+    "public_row_identity_unique_count": 256,
+    "public_row_ids_exact_0_255": true,
+    "rewind_batch_count": 64,
+    "rewind_batch_sizes": [
+      4
+    ],
+    "adapter_tensor_count": 112,
+    "trainer_class": "RewindSFTTrainer",
+    "loss_first": 2.0589325428009033,
+    "loss_last": 2.008910655975342,
+    "loss_mean": 2.0569571405649185,
+    "evaluation_skipped_rows": 0
+  },
+  "limits": [
+    "One repeat only; not a stable distribution or official competition score.",
+    "No candidate/solution run, relative speedup, memory ratio or own-kernel share.",
+    "No hidden-data evaluation or full jury checks/admission.",
+    "Starter 4 GPU tests are not the 79 Soup regression tests.",
+    "Private notebook remains private; no contest submission or publication performed."
+  ],
+  "full_admission": false,
+  "score_points_claimed": null,
+  "candidate_gpu_measurements": null,
+  "retry_needed": false,
+  "blockers": [],
+  "artifacts": [
+    {
+      "relative_path": "baseline_environment.json",
+      "sha256": "68dc6a80fbf0d9e178b7b6ac2511f3f9ac9106165e898480b80ef5f6209f997e",
+      "bytes": 383
+    },
+    {
+      "relative_path": "baseline_session_status.json",
+      "sha256": "b48ef247eefd18f8e7ff7bf51d889971f931b0a10f02e3fa10da11fb1bc38a2e",
+      "bytes": 62
+    },
+    {
+      "relative_path": "runs_baseline/result.json",
+      "sha256": "6e80eaee67ea7431aa5b0354b80253b67f8f5226b91822f18360c559922c5c08",
+      "bytes": 59208
+    },
+    {
+      "relative_path": "runs_baseline/base_1/metrics.json",
+      "sha256": "2454f2d0db3b70cba7e6bbb0f26909ee42169bc2bc5071670337bcb03af25db6",
+      "bytes": 2100
+    },
+    {
+      "relative_path": "runs_baseline/eval_base.json",
+      "sha256": "aa82d4963e5ab288190589e4c978dffd89b3f428b3f4262739da3dec75377d42",
+      "bytes": 222
+    },
+    {
+      "relative_path": "runs_baseline/base_1/adapter/checkpoint-64/trainer_state.json",
+      "sha256": "ca5e525f738a7a927d2653db28076fec781307ca0fc39cad12c06bb45201e88b",
+      "bytes": 19069
+    },
+    {
+      "relative_path": "runs_baseline/base_1/adapter/adapter_config.json",
+      "sha256": "433dea9f4ca0e14a986391637ea64a1a14055fa3585eefcc048aea25b92664d3",
+      "bytes": 1082
+    }
+  ],
+  "publication_redactions": [
+    "Private Kaggle notebook/account identifiers, notebook URL and account quota usage removed. Scientific measurements and original artifact SHA-256 values are unchanged."
+  ]
+}

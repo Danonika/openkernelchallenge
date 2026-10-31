@@ -1,0 +1,19 @@
+{
+  "command": "SOUP_APPLY_SOLUTION=1 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 /workspace/shared/soup_cloud_env/venv/bin/python -m pytest tests -q",
+  "passed": 79,
+  "failed": 0,
+  "exit_code": 0,
+  "log_sha256": "6d6e9e07911af89f107ca6bca48ed6d7b887b1b96ecf65ca8acc4ef21016de98",
+  "candidate_zip_sha256": "055183cdd11a254e3462f25b95b4c0ec87a556cc58cb9bcc08e77f5390548979",
+  "source_manifest": {
+    "solution/__init__.py": "bd440ab58a4391f5311e2491e80e1661602e9d7ebee41069923fa5d6099605c6",
+    "solution/adapter.py": "dee688af8fe8cba35757e7613cd1c2e9f7195a780463bee8e19b230abf03284a",
+    "solution/fixture_common.py": "3681aeaa6020ab722110ca23c952657d2e8103340b874dee00d90c1d4bad317e",
+    "solution/restore.py": "ef7d677ef08e01123b360f7c503e80873a245d8901c9374b08fdd7ab090b1b87",
+    "solution/restore_kernel.py": "64811560821f78f1bfeadf2b0eeda55d8258fa4d8daed866e0ec727c9ea617ef",
+    "solution/verify_memory.py": "770aec249b0b9eb286f855955b384656da412595318dee7d3de7a8b451a207b4",
+    "solution/version_sentinel.py": "76dcaabc808f3b9c051f05c8705ccba66150b2a25e1649bcd87a9cc1addd13db"
+  },
+  "protected_source_unchanged": true,
+  "scope": "CPU regression compatibility; production route declines wrong Torch version, not target codec proof"
+}

@@ -1,0 +1,13 @@
+test_adapter_output_controls_and_original_arguments (solution.test_cpu_contract.CPUContracts.test_adapter_output_controls_and_original_arguments) ... ok
+test_core_delegates_same_objects_to_supplied_native (solution.test_cpu_contract.CPUContracts.test_core_delegates_same_objects_to_supplied_native) ... ok
+test_denominator_single_read_and_identity (solution.test_cpu_contract.CPUContracts.test_denominator_single_read_and_identity) ... ok
+test_flush_survives_killed_child (solution.test_cpu_contract.CPUContracts.test_flush_survives_killed_child) ... ok
+test_native_exceptions_and_denominator_version_are_preserved (solution.test_cpu_contract.CPUContracts.test_native_exceptions_and_denominator_version_are_preserved) ... ok
+test_native_fallback_values_gradients_rng_and_no_cuda_queries (solution.test_cpu_contract.CPUContracts.test_native_fallback_values_gradients_rng_and_no_cuda_queries) ... ok
+test_reversible_constructor_fixture_without_forward_patch (solution.test_cpu_contract.CPUContracts.test_reversible_constructor_fixture_without_forward_patch) ... ok
+test_telemetry_bounded_and_explicit (solution.test_cpu_contract.CPUContracts.test_telemetry_bounded_and_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.387s
+
+OK
