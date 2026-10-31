@@ -23,7 +23,7 @@ HEAD_PROJECTION = "torch"
 FUSED_NF4 = True
 
 # Optional lossless storage experiments. Enable only after target-GPU checks.
-FROZEN_STORAGE = False
+FROZEN_STORAGE = True
 COMPACT_MLP_ACTIVATIONS = True
 
 # Optional original pointwise fusions; keep off until physical T4 parity and
