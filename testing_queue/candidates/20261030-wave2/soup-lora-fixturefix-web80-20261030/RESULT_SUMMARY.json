@@ -1,0 +1,39 @@
+{
+  "candidate": "soup-lora-fixturefix-web80-20261030",
+  "complete_measurements": null,
+  "individual_command_observations_not_paired": [
+    {
+      "reported_external_peak_mib": 14345,
+      "reported_wall_s": 79.28,
+      "run": "base_1",
+      "scope": "harness log observation only; incomplete cohort; no ratio"
+    }
+  ],
+  "limits": [
+    "API state is not task correctness.",
+    "Internal 64 steps do not override a full-command timeout.",
+    "No ratio is formed from an incomplete cohort or another job.",
+    "Do not rerun unchanged failures automatically."
+  ],
+  "notebook_sha256": "21578e583ef82a907778fc7acc2f57a7df5d9645c5b0972a04ccc4a700639766",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "af5ed943fe9a81a899917a24c33e794196be3a7a2939a8d13bdc4bc452f98a5d",
+  "paired_ratios": null,
+  "platform": "GCP development evidence, not Kaggle",
+  "preflight_statuses": [
+    "GPU_PREFLIGHT_PASSED"
+  ],
+  "public_eval_verified": false,
+  "raw_receipt_filename": "lora_fixturefix_attempt02_receipt_v4_1.json",
+  "raw_receipt_sha256": "807276ac047340240383d10bc4ed18f47eeb8604aee2755efbc559253c97058a",
+  "raw_review_status": "INCOMPLETE_CENSORED_OR_UNBOUND",
+  "score": null,
+  "training_limit": {
+    "deadline_reached": true,
+    "elapsed_s": 80.00012699699982,
+    "limit_s": 80.0,
+    "reason": "training_run_exceeded_limit",
+    "reported_wall_s": 80.0,
+    "run_name": "solution_1"
+  }
+}

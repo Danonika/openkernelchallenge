@@ -1,0 +1,299 @@
+{
+  "status": "CPU_INTERPRETER_FIXTURES_PASSED",
+  "gpu_tested": false,
+  "target_triton": "3.6.0",
+  "actual_triton": "3.9.0",
+  "actual_torch": "2.15.0+cpu",
+  "interpreter_cases": [
+    {
+      "n": 1,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 1,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 1,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 1,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 63,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 63,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 63,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 63,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 64,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 64,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 64,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 64,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 65,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 65,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 65,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 65,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 195,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 195,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 195,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 195,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 512,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 512,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 512,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 512,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 16383,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 16383,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 16383,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 16383,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 16384,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 16384,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 16384,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 16384,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 16385,
+      "dtype": "torch.float16",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 16385,
+      "dtype": "torch.float16",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "n": 16385,
+      "dtype": "torch.float32",
+      "start": 0,
+      "passed": true
+    },
+    {
+      "n": 16385,
+      "dtype": "torch.float32",
+      "start": 1,
+      "passed": true
+    },
+    {
+      "nonfinite_or_zero_scale": "inf",
+      "dtype": "torch.float16",
+      "passed": true
+    },
+    {
+      "nonfinite_or_zero_scale": "inf",
+      "dtype": "torch.float32",
+      "passed": true
+    },
+    {
+      "nonfinite_or_zero_scale": "-inf",
+      "dtype": "torch.float16",
+      "passed": true
+    },
+    {
+      "nonfinite_or_zero_scale": "-inf",
+      "dtype": "torch.float32",
+      "passed": true
+    },
+    {
+      "nonfinite_or_zero_scale": "nan",
+      "dtype": "torch.float16",
+      "passed": true
+    },
+    {
+      "nonfinite_or_zero_scale": "nan",
+      "dtype": "torch.float32",
+      "passed": true
+    },
+    {
+      "nonfinite_or_zero_scale": "-0.0",
+      "dtype": "torch.float16",
+      "passed": true
+    },
+    {
+      "nonfinite_or_zero_scale": "-0.0",
+      "dtype": "torch.float32",
+      "passed": true
+    }
+  ],
+  "cases": 48,
+  "fallback_contract_checks": 5,
+  "finite_bits_and_nonfinite_classes": true,
+  "nan_payload_identity_claimed": false,
+  "limitations": [
+    "No CUDA compilation or execution",
+    "No actual T4 speed/share/peak/quality",
+    "No full Soup/LoRA integration",
+    "No final admission or score"
+  ]
+}

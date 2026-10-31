@@ -1,0 +1,55 @@
+{
+  "candidate": "soup-memory-vs1-web80-20261030",
+  "no_model_data_or_credentials_included": true,
+  "notebook": "candidate.ipynb",
+  "notebook_sha256": "a5583c9a7208c2c186a9cd7cf271c27ed443f9ea40f3080b5b46d10f9aeaf336",
+  "source_files": [
+    {
+      "path": "solution/__init__.py",
+      "sha256": "bd440ab58a4391f5311e2491e80e1661602e9d7ebee41069923fa5d6099605c6"
+    },
+    {
+      "path": "solution/adapter.py",
+      "sha256": "dee688af8fe8cba35757e7613cd1c2e9f7195a780463bee8e19b230abf03284a"
+    },
+    {
+      "path": "solution/fixture_common.py",
+      "sha256": "3681aeaa6020ab722110ca23c952657d2e8103340b874dee00d90c1d4bad317e"
+    },
+    {
+      "path": "solution/restore.py",
+      "sha256": "ef7d677ef08e01123b360f7c503e80873a245d8901c9374b08fdd7ab090b1b87"
+    },
+    {
+      "path": "solution/restore_kernel.py",
+      "sha256": "64811560821f78f1bfeadf2b0eeda55d8258fa4d8daed866e0ec727c9ea617ef"
+    },
+    {
+      "path": "solution/verify_memory.py",
+      "sha256": "770aec249b0b9eb286f855955b384656da412595318dee7d3de7a8b451a207b4"
+    },
+    {
+      "path": "solution/version_sentinel.py",
+      "sha256": "76dcaabc808f3b9c051f05c8705ccba66150b2a25e1649bcd87a9cc1addd13db"
+    }
+  ],
+  "validation_scope": "Copied historical validation sources for audit; not executed from this relocated export. Submitted notebook bytes are unchanged and self-contained.",
+  "validation_tests": [
+    {
+      "path": "validation_tests/test_process_guard.py",
+      "sha256": "bee56cff64344a76076311cf92298eb593986bf85cd46810ffd0ff3a66909d38"
+    },
+    {
+      "path": "validation_tests/test_version_sentinel.py",
+      "sha256": "ac9b48f4387e9fe20ab922ca7ec619c3455604fe170ce24eae47757750b125b8"
+    },
+    {
+      "path": "validation_tests/test_cpu_integration.py",
+      "sha256": "6708686d5bd2cbb4ebd43943e7605a6c723d94ceaf42229d3dcf98ab2b8c25af"
+    },
+    {
+      "path": "validation_tests/test_preparation.py",
+      "sha256": "2416fe2d32aa0428085e27815da446ea14c1af4d2a966af87759097064022bfc"
+    }
+  ]
+}

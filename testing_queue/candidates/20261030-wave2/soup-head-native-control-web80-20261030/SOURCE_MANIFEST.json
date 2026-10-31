@@ -1,0 +1,31 @@
+{
+  "candidate": "soup-head-native-control-web80-20261030",
+  "no_model_data_or_credentials_included": true,
+  "notebook": "03_head_native_control.ipynb",
+  "notebook_sha256": "02eca1c12f2f437d851ba5275b2a3eeed0ccca9bf8f544760f854c053aaeb251",
+  "source_files": [
+    {
+      "path": "solution/__init__.py",
+      "sha256": "a37ec810fecee820867439ddb5282c5b68c0822e371cb74ece8b8ec0f344c1db"
+    },
+    {
+      "path": "solution/install.py",
+      "sha256": "a4de59c63316d10756e7bd0ee7499d2e8c7e6028b5a5fb954179670b1741f9f1"
+    },
+    {
+      "path": "solution/native_head.py",
+      "sha256": "a292565b3286174cf474107206df3db492d9cddc8ee7047fbf228e2bd9a20442"
+    },
+    {
+      "path": "solution/web_preflight.py",
+      "sha256": "fe59f0b3c5861fb017febe450fe4a1045e1349db3d984ce5aa34cb35a9b683cf"
+    }
+  ],
+  "validation_scope": "Copied historical validation sources for audit; not executed from this relocated export. Submitted notebook bytes are unchanged and self-contained.",
+  "validation_tests": [
+    {
+      "path": "validation_tests/test_preparation.py",
+      "sha256": "4d2cb1989483292e0fd8a198ff1b6e0d0a322f0e281dcfb03e0f644e2c9e0649"
+    }
+  ]
+}

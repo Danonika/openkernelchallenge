@@ -1,0 +1,87 @@
+{
+  "candidate": "soup-fusion-a-web80-20261030",
+  "no_model_data_or_credentials_included": true,
+  "notebook": "01_fusion_a.ipynb",
+  "notebook_sha256": "266e9289ed14bb477363f5678cf96adc96c7c617d8c1ab78cde038390e12afcc",
+  "source_files": [
+    {
+      "path": "solution/__init__.py",
+      "sha256": "66ffabdaaadf35e028858a8140c4b6c6aa60abe0443337ec00453210d1f15db9"
+    },
+    {
+      "path": "solution/ce_component/__init__.py",
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    {
+      "path": "solution/ce_component/adapter.py",
+      "sha256": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750"
+    },
+    {
+      "path": "solution/ce_component/materialized_ce.py",
+      "sha256": "d7bed700a826f4e681289a3157ed412cf7f299a3022b4b5401105fb1ae713e98"
+    },
+    {
+      "path": "solution/ce_component/numerical_gates.py",
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    {
+      "path": "solution/ce_component/telemetry.py",
+      "sha256": "f98a5212f85368fdad47efa2f4a800511269bae800460f09847318bb799d0fb2"
+    },
+    {
+      "path": "solution/ce_component/test_cpu_contract.py",
+      "sha256": "87893d08a833bdf7ee495b9a6079e55b3e25a6ad65280c7b9b7e7c6cb3b0d322"
+    },
+    {
+      "path": "solution/ce_component/verify_integration.py",
+      "sha256": "bcc16afce2587811b8f4614b07128bff89a84b143c6e17b1d417f44437e93129"
+    },
+    {
+      "path": "solution/lifecycle.py",
+      "sha256": "3809856abe2706f77959730220a59cd4afc61533d493d96b82a0d5f64734757b"
+    },
+    {
+      "path": "solution/lora_component/__init__.py",
+      "sha256": "dcf225b5c2da76e6680cc66bcda674699ce6c33f35d3c655498dee39333d505a"
+    },
+    {
+      "path": "solution/lora_component/epilogue.py",
+      "sha256": "b3c12b2739d25416c2bb2e87c0a425efa74f46ff8573bef1e75966cace25ca41"
+    },
+    {
+      "path": "solution/lora_component/patch.py",
+      "sha256": "3d5920504c3c46433e82c93be3b0ac305274ca982679b3c3f80757dfb57e6840"
+    },
+    {
+      "path": "solution/nf4_component/__init__.py",
+      "sha256": "4a4b6685b3818151a26692319c9a5e6ce9039b0708265e10bcd3abac2a19b9bc"
+    },
+    {
+      "path": "solution/nf4_component/packed_nf4.py",
+      "sha256": "b716d54940621eb316f5b976ab0c2c1455d9805bc06758876d5ae481b9bb340c"
+    },
+    {
+      "path": "solution/nf4_component/routes.py",
+      "sha256": "0de6583186d45410f1577f0b26366bc560f2108f1f55cc58f8a39890f6b0cfb5"
+    },
+    {
+      "path": "solution/telemetry.py",
+      "sha256": "3fd09d70f855e9bec35765450b26ce994aeeee466aaf48ee55fdb630d3e6cad9"
+    },
+    {
+      "path": "solution/verify_integration.py",
+      "sha256": "18383b4e173954fe93c4e776ff4879c1cf4041cad5aef0f7b058998563a4fde6"
+    }
+  ],
+  "validation_scope": "Copied historical validation sources for audit; not executed from this relocated export. Submitted notebook bytes are unchanged and self-contained.",
+  "validation_tests": [
+    {
+      "path": "validation_tests/test_process_guard.py",
+      "sha256": "bee56cff64344a76076311cf92298eb593986bf85cd46810ffd0ff3a66909d38"
+    },
+    {
+      "path": "validation_tests/test_preparation.py",
+      "sha256": "1af9cf8dd35938acdb5a47142c3babf4322c572dc7564c9f067f034222abbc91"
+    }
+  ]
+}

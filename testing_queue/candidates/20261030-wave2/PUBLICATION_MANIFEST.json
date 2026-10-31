@@ -1,0 +1,1599 @@
+{
+  "branch": "testing-queue",
+  "candidates": [
+    {
+      "candidate": "soup-baseline-web80-20261030-2113",
+      "notebook": "soup-baseline-web80-20261030-2113/00_baseline.ipynb",
+      "notebook_sha256": "f1e0c4bda09cef9d72d50953dbdcf2865726e98d4c2b8f560dc4e000972bb912",
+      "source_file_count": 0,
+      "validation_test_count": 2
+    },
+    {
+      "candidate": "soup-ce-rowmix-v1-web80-20261030",
+      "notebook": "soup-ce-rowmix-v1-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "6990a2daff21e672198c57fed5b6b5b5a96c38f8db10faafcd903e017ed40fda",
+      "source_file_count": 9,
+      "validation_test_count": 9
+    },
+    {
+      "candidate": "soup-ce-v3-fixed-web80-20261030",
+      "notebook": "soup-ce-v3-fixed-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "5a64e08c8e11d6fc7b72edcd15ce21b04da1a36e154b41d36a9de60742a1be34",
+      "source_file_count": 7,
+      "validation_test_count": 3
+    },
+    {
+      "candidate": "soup-fusion-a-fixturefix-web80-20261030",
+      "notebook": "soup-fusion-a-fixturefix-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "6b575db902bbeadadbfb034899ad3fe35d520f35e5083bdd794d71f0647e9979",
+      "source_file_count": 17,
+      "validation_test_count": 6
+    },
+    {
+      "candidate": "soup-fusion-a-web80-20261030",
+      "notebook": "soup-fusion-a-web80-20261030/01_fusion_a.ipynb",
+      "notebook_sha256": "266e9289ed14bb477363f5678cf96adc96c7c617d8c1ab78cde038390e12afcc",
+      "source_file_count": 17,
+      "validation_test_count": 2
+    },
+    {
+      "candidate": "soup-fusion-b-web80-20261030",
+      "notebook": "soup-fusion-b-web80-20261030/02_fusion_b.ipynb",
+      "notebook_sha256": "302559091e58eada776c0c6ef0ff62d860881c8c8848d3e20fdf9ab38647dee0",
+      "source_file_count": 18,
+      "validation_test_count": 2
+    },
+    {
+      "candidate": "soup-head-native-control-web80-20261030",
+      "notebook": "soup-head-native-control-web80-20261030/03_head_native_control.ipynb",
+      "notebook_sha256": "02eca1c12f2f437d851ba5275b2a3eeed0ccca9bf8f544760f854c053aaeb251",
+      "source_file_count": 4,
+      "validation_test_count": 1
+    },
+    {
+      "candidate": "soup-head-quiet-v2-web80-20261030",
+      "notebook": "soup-head-quiet-v2-web80-20261030/08_head_bounded_telemetry_v2.ipynb",
+      "notebook_sha256": "c5c061855d32d6b1239b696e9dea72e940191a4958a6f55ce066dc4f0dcf6f8c",
+      "source_file_count": 4,
+      "validation_test_count": 1
+    },
+    {
+      "candidate": "soup-lora-epilogue-fixed-web80-20261030",
+      "notebook": "soup-lora-epilogue-fixed-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "525024d5cb247319b5bd9f5df5c6e5291e775e543280ccabe0eb45ae7fe6b07f",
+      "source_file_count": 4,
+      "validation_test_count": 3
+    },
+    {
+      "candidate": "soup-lora-fixturefix-web80-20261030",
+      "notebook": "soup-lora-fixturefix-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "21578e583ef82a907778fc7acc2f57a7df5d9645c5b0972a04ccc4a700639766",
+      "source_file_count": 4,
+      "validation_test_count": 4
+    },
+    {
+      "candidate": "soup-memory-vs1-web80-20261030",
+      "notebook": "soup-memory-vs1-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "a5583c9a7208c2c186a9cd7cf271c27ed443f9ea40f3080b5b46d10f9aeaf336",
+      "source_file_count": 7,
+      "validation_test_count": 4
+    },
+    {
+      "candidate": "soup-nf4-packed-web80-20261030",
+      "notebook": "soup-nf4-packed-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "35bdebad98d08810be44374b93edc46237465c9af190df17523328b0f08fe54b",
+      "source_file_count": 4,
+      "validation_test_count": 3
+    },
+    {
+      "candidate": "soup-nf4-runtime-n-web80-20261030",
+      "notebook": "soup-nf4-runtime-n-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "af478baca35d6c6d842f178051f58a39cae5cb920177443964fc0aa943693d0e",
+      "source_file_count": 4,
+      "validation_test_count": 4
+    },
+    {
+      "candidate": "soup-rope-runtime-microbench-v2-20261030",
+      "notebook": "soup-rope-runtime-microbench-v2-20261030/rope_runtime_dims_MICROBENCH_ONLY_v2.ipynb",
+      "notebook_sha256": "671ab6ca97a95242a4027cad17362902a6364f3b33debfb63ef15efa17d128c3",
+      "source_file_count": 21,
+      "validation_test_count": 1
+    },
+    {
+      "candidate": "soup-rope-runtime-microbench-v3-20261030",
+      "notebook": "soup-rope-runtime-microbench-v3-20261030/rope_runtime_dims_MICROBENCH_ONLY_v3.ipynb",
+      "notebook_sha256": "3fc15f4fe9c52e978b668d319c391623146ed48e945c9a82e576f323f7a4477a",
+      "source_file_count": 21,
+      "validation_test_count": 1
+    },
+    {
+      "candidate": "soup-rotary-web80-20261030",
+      "notebook": "soup-rotary-web80-20261030/candidate.ipynb",
+      "notebook_sha256": "e6bae793229acc6e2f70a2a10f3e511b48710549e014c2ac020d082db36ed660",
+      "source_file_count": 6,
+      "validation_test_count": 2
+    }
+  ],
+  "checks": {
+    "exact_submitted_notebook_hashes": true,
+    "gpu_or_payload_execution": false,
+    "notebook_outputs_empty": true,
+    "original_source_bound": true,
+    "output_zips_included": false,
+    "private_sheet_snapshots_included": false,
+    "python_syntax_only": "PASS",
+    "raw_api_blobs_included": false,
+    "selected_payload_secret_pattern_scan": "PASS"
+  },
+  "destination": "testing_queue/candidates/20261030-wave2/",
+  "files": [
+    {
+      "bytes": 1973,
+      "git_blob_sha1": "968113263fe632e6bee76d1a485b43caa2820407",
+      "path": "README.md",
+      "sha256": "781d58597315ea7f811527608b50e3d1204d874e9f5bfcb4b22e0c1067b8e85e"
+    },
+    {
+      "bytes": 64518,
+      "git_blob_sha1": "9341b452cff2e03ddd82e3f3034cb70cfdfc59e4",
+      "path": "soup-baseline-web80-20261030-2113/00_baseline.ipynb",
+      "sha256": "f1e0c4bda09cef9d72d50953dbdcf2865726e98d4c2b8f560dc4e000972bb912"
+    },
+    {
+      "bytes": 1138,
+      "git_blob_sha1": "b0deec78d7deb2f84934237efb006d130a8bc356",
+      "path": "soup-baseline-web80-20261030-2113/RESULT_SUMMARY.json",
+      "sha256": "5420d360797328f63f7f57f86a4410a5cf5236aa6ce8cad5b92c0f9f8f0a9414"
+    },
+    {
+      "bytes": 753,
+      "git_blob_sha1": "920c857c9040e650aab456febe7caa4242e829cd",
+      "path": "soup-baseline-web80-20261030-2113/SOURCE_MANIFEST.json",
+      "sha256": "c6bb026cf45ba7920cd1e82da1faad374a5c1d6e46cfb98da8d617b2b7256847"
+    },
+    {
+      "bytes": 7385,
+      "git_blob_sha1": "9dd12f625a9d14a4c1edc86d63ca4cfeafdedad9",
+      "path": "soup-baseline-web80-20261030-2113/validation_tests/test_preparation.py",
+      "sha256": "1af9cf8dd35938acdb5a47142c3babf4322c572dc7564c9f067f034222abbc91"
+    },
+    {
+      "bytes": 4563,
+      "git_blob_sha1": "d1249517e8bc7e0c684c35c0e00a860b3fb1918a",
+      "path": "soup-baseline-web80-20261030-2113/validation_tests/test_process_guard.py",
+      "sha256": "bee56cff64344a76076311cf92298eb593986bf85cd46810ffd0ff3a66909d38"
+    },
+    {
+      "bytes": 2079,
+      "git_blob_sha1": "a1deecf5e5024eae517dd70be410de51560692d1",
+      "path": "soup-ce-rowmix-v1-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "949b96afb27416adf431bf3159d80439198df37fcfcb2efee2aa26b2442a683b"
+    },
+    {
+      "bytes": 3109,
+      "git_blob_sha1": "e12d81c9ffcc2f177ef6f8d2f0596ba3f40c2275",
+      "path": "soup-ce-rowmix-v1-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "2c6dea08f3f295a9b9299d8d0309d583400299f471b182a072378b732745e5d1"
+    },
+    {
+      "bytes": 96486,
+      "git_blob_sha1": "c09637d4b9bb76afd176ca03883b96b9b384709e",
+      "path": "soup-ce-rowmix-v1-web80-20261030/candidate.ipynb",
+      "sha256": "6990a2daff21e672198c57fed5b6b5b5a96c38f8db10faafcd903e017ed40fda"
+    },
+    {
+      "bytes": 1401,
+      "git_blob_sha1": "3bcfdfd5e06408128ef93d84a25779dcf75c3ac2",
+      "path": "soup-ce-rowmix-v1-web80-20261030/solution/__init__.py",
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    {
+      "bytes": 8840,
+      "git_blob_sha1": "54dc49b277d1742870da0414ad074f2fe7be6a00",
+      "path": "soup-ce-rowmix-v1-web80-20261030/solution/adapter.py",
+      "sha256": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750"
+    },
+    {
+      "bytes": 14191,
+      "git_blob_sha1": "0de4b04048da703ba4a1d0df1504916a4d238193",
+      "path": "soup-ce-rowmix-v1-web80-20261030/solution/materialized_ce.py",
+      "sha256": "28ee8bfc7376867155fc776820ca82ed1b4dcc4d9e6ad9fcc85ca2689ef81d0e"
+    },
+    {
+      "bytes": 6457,
+      "git_blob_sha1": "8d5a49e3078ce9cef5c9c421e622cacffa3ae47f",
+      "path": "soup-ce-rowmix-v1-web80-20261030/solution/mixed_rows.py",
+      "sha256": "e19f150314f8b53627c51902fdeadc5d515d46417803d9ab5d0abcfed8a4f031"
+    },
+    {
+      "bytes": 3425,
+      "git_blob_sha1": "f1cca66abadd72d22f27a2573ab882070f75f2da",
+      "path": "soup-ce-rowmix-v1-web80-20261030/solution/numerical_gates.py",
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    {
+      "bytes": 5351,
+      "git_blob_sha1": "e04318e3af10d6c1dde8496a5fc3ad4fd63969d2",
+      "path": "soup-ce-rowmix-v1-web80-20261030/solution/telemetry.py",
+      "sha256": "c60d73a2ee932990ae32a8d2619fadc935803fd621c913f2ca390065cc7d201d"
+    },
+    {
+      "bytes": 10559,
+      "git_blob_sha1": "9cf53de5da6475d35622dda6e635d576c4ceac25",
+      "path": "soup-ce-rowmix-v1-web80-20261030/solution/test_cpu_contract.py",
+      "sha256": "7df43cf9d3defcddfe93733af7680c749dcdd35578de287f0560ac3cdbcdc288"
+    },
+    {
+      "bytes": 10119,
+      "git_blob_sha1": "861d475371a90718a20346ea9b484f6721cdb6e7",
+      "path": "soup-ce-rowmix-v1-web80-20261030/solution/verify_integration.py",
+      "sha256": "54cc216efeebab9d5c5b80204fbba5744880f3f7a4a36b439fa482d89bfa6772"
+    },
+    {
+      "bytes": 6641,
+      "git_blob_sha1": "d940242ff1a0cf83b0b24362a137498d4dfe90fc",
+      "path": "soup-ce-rowmix-v1-web80-20261030/solution/verify_rowmix.py",
+      "sha256": "10e9dbab399ddf63c08a8c394bd50cde914a86ca3ee5ed6db3aa0ee82934d916"
+    },
+    {
+      "bytes": 4567,
+      "git_blob_sha1": "e52acbc105a180e89cd8fb45fe1b228142aceec0",
+      "path": "soup-ce-rowmix-v1-web80-20261030/validation_tests/test_process_guard.py",
+      "sha256": "9775742d759d8fefdaba9e67987ba6da4f34f9abb0e4db80f02b6865c798cc6f"
+    },
+    {
+      "bytes": 1751,
+      "git_blob_sha1": "129aec02014afc34e95b6f981ac9c9c49bb99eab",
+      "path": "soup-ce-rowmix-v1-web80-20261030/validation_tests/test_v2_reader.py",
+      "sha256": "db17bd5d9a0b015140ad57a497c86430b1160614a88bb61c62e697d3e9e91573"
+    },
+    {
+      "bytes": 10590,
+      "git_blob_sha1": "515df09c47ee8d8e3e122efd26765b33a39a5859",
+      "path": "soup-ce-rowmix-v1-web80-20261030/validation_tests/test_web_packet.py",
+      "sha256": "2375963d77e1849c64b82e60535ac84c0706c155dc13e72a09d8d4fa1f02d2a1"
+    },
+    {
+      "bytes": 1155,
+      "git_blob_sha1": "3ed5d4946ba86b223cf1bb29981918227b4a0b01",
+      "path": "soup-ce-rowmix-v1-web80-20261030/validation_tests/tests/cpu_target_preflight_fixture.py",
+      "sha256": "7e39e7510c092ddd82340ddc4c68bcf20e900fc951464d9b1c315b69ed6882e3"
+    },
+    {
+      "bytes": 1616,
+      "git_blob_sha1": "b78036a9a7eae5f3b50374a093dbd1ca6e244c68",
+      "path": "soup-ce-rowmix-v1-web80-20261030/validation_tests/tests/offline_compile.py",
+      "sha256": "9458648d4595eb97ed550612e5c0a2415ccebe2eb3f3fe204857f9a63c687986"
+    },
+    {
+      "bytes": 2471,
+      "git_blob_sha1": "abe38c4673db112830b30bbd3970de391c20dbcc",
+      "path": "soup-ce-rowmix-v1-web80-20261030/validation_tests/tests/test_lazy_flags.py",
+      "sha256": "a5872bdcf5492a7ebc86829dc5e333cb21d90978cf2ec457cda6cd38183b0fff"
+    },
+    {
+      "bytes": 8604,
+      "git_blob_sha1": "ff59463cbf6700489202baf549476511b605e727",
+      "path": "soup-ce-rowmix-v1-web80-20261030/validation_tests/tests/test_quiet_telemetry.py",
+      "sha256": "47a2da59c9bb7a8ea0bcf52d2a93ec3806f39a9b16cbd69294e76c6ccc68d751"
+    },
+    {
+      "bytes": 9140,
+      "git_blob_sha1": "35e008b9aa1e430ccb97769a77773b8096a6e948",
+      "path": "soup-ce-rowmix-v1-web80-20261030/validation_tests/tests/test_rowmix_discriminators.py",
+      "sha256": "4ccee7880c7a900be3b8480996e75bffe00ec2b57e17718038c8861ffb50a8c1"
+    },
+    {
+      "bytes": 5768,
+      "git_blob_sha1": "74f03bf0b3d05412076c49bd9396aff1220af074",
+      "path": "soup-ce-rowmix-v1-web80-20261030/validation_tests/tests/test_rowmix_dispatch.py",
+      "sha256": "a9fce99c1785e5d696054c9a0782e876a69efe6f006e575a69682ae07d583b11"
+    },
+    {
+      "bytes": 1415,
+      "git_blob_sha1": "962d51ed9c2916ae9f3f388f276b53c250c2f20b",
+      "path": "soup-ce-v3-fixed-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "36c805d295b20070eb2619e76358229ce6eba2c00b39f669ac5f6af7de339521"
+    },
+    {
+      "bytes": 1876,
+      "git_blob_sha1": "1c4c7a933497be3043210a349ff843ac95752638",
+      "path": "soup-ce-v3-fixed-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "d6a9d4f251ad246bd02501924d11035a149d7a95b1c009856dc5f356417957df"
+    },
+    {
+      "bytes": 89029,
+      "git_blob_sha1": "9a51ff9da902b196f9ee278609092af6b3b5d82d",
+      "path": "soup-ce-v3-fixed-web80-20261030/candidate.ipynb",
+      "sha256": "5a64e08c8e11d6fc7b72edcd15ce21b04da1a36e154b41d36a9de60742a1be34"
+    },
+    {
+      "bytes": 1401,
+      "git_blob_sha1": "3bcfdfd5e06408128ef93d84a25779dcf75c3ac2",
+      "path": "soup-ce-v3-fixed-web80-20261030/solution/__init__.py",
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    {
+      "bytes": 8840,
+      "git_blob_sha1": "54dc49b277d1742870da0414ad074f2fe7be6a00",
+      "path": "soup-ce-v3-fixed-web80-20261030/solution/adapter.py",
+      "sha256": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750"
+    },
+    {
+      "bytes": 13480,
+      "git_blob_sha1": "e39d64c8fed6fab98f385873a8362b2812880d2b",
+      "path": "soup-ce-v3-fixed-web80-20261030/solution/materialized_ce.py",
+      "sha256": "d7bed700a826f4e681289a3157ed412cf7f299a3022b4b5401105fb1ae713e98"
+    },
+    {
+      "bytes": 3425,
+      "git_blob_sha1": "f1cca66abadd72d22f27a2573ab882070f75f2da",
+      "path": "soup-ce-v3-fixed-web80-20261030/solution/numerical_gates.py",
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    {
+      "bytes": 3064,
+      "git_blob_sha1": "22d6eee892944c8e7c7641ef2a0cf18774928717",
+      "path": "soup-ce-v3-fixed-web80-20261030/solution/telemetry.py",
+      "sha256": "f98a5212f85368fdad47efa2f4a800511269bae800460f09847318bb799d0fb2"
+    },
+    {
+      "bytes": 10414,
+      "git_blob_sha1": "4bfa3af9761cd241f61d81e46d69fedd4e9a6564",
+      "path": "soup-ce-v3-fixed-web80-20261030/solution/test_cpu_contract.py",
+      "sha256": "2b177aeca4b6e0afc6cb5fcb264f53221391edbed67fada7b5252ee179b5e18f"
+    },
+    {
+      "bytes": 9835,
+      "git_blob_sha1": "065fa4b2e09030875093736f20d1b69bf59215b2",
+      "path": "soup-ce-v3-fixed-web80-20261030/solution/verify_integration.py",
+      "sha256": "bcc16afce2587811b8f4614b07128bff89a84b143c6e17b1d417f44437e93129"
+    },
+    {
+      "bytes": 4567,
+      "git_blob_sha1": "e52acbc105a180e89cd8fb45fe1b228142aceec0",
+      "path": "soup-ce-v3-fixed-web80-20261030/validation_tests/test_process_guard.py",
+      "sha256": "9775742d759d8fefdaba9e67987ba6da4f34f9abb0e4db80f02b6865c798cc6f"
+    },
+    {
+      "bytes": 10493,
+      "git_blob_sha1": "57e92f94ffce10681db57b73701c540251f182cd",
+      "path": "soup-ce-v3-fixed-web80-20261030/validation_tests/test_web_packet.py",
+      "sha256": "779a24ece3228475707e026905020d71450f24ba18b0bb22cc1635f8c8704fb0"
+    },
+    {
+      "bytes": 2471,
+      "git_blob_sha1": "abe38c4673db112830b30bbd3970de391c20dbcc",
+      "path": "soup-ce-v3-fixed-web80-20261030/validation_tests/tests/test_lazy_flags.py",
+      "sha256": "a5872bdcf5492a7ebc86829dc5e333cb21d90978cf2ec457cda6cd38183b0fff"
+    },
+    {
+      "bytes": 1441,
+      "git_blob_sha1": "b41a79320c750ffb50d398eb5e63289c0bf3bf87",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "0d2566d150753ef293fbbffe1832332d8f3bb235f95f6efb3a8d83be54024411"
+    },
+    {
+      "bytes": 3888,
+      "git_blob_sha1": "208c78a73dead3f63a8428cc520ca7235f5a8169",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "3b75d6542c05ee0c33fac1233eb12ae81e51d0cfec72eb7b975aa540c2ab4463"
+    },
+    {
+      "bytes": 111798,
+      "git_blob_sha1": "a5c43a2755f62d113fb38351b2b8955de3caa9af",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/candidate.ipynb",
+      "sha256": "6b575db902bbeadadbfb034899ad3fe35d520f35e5083bdd794d71f0647e9979"
+    },
+    {
+      "bytes": 5307,
+      "git_blob_sha1": "321b8552f2d49bb1201d22ed02ce8c10a1f1c05c",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/__init__.py",
+      "sha256": "66ffabdaaadf35e028858a8140c4b6c6aa60abe0443337ec00453210d1f15db9"
+    },
+    {
+      "bytes": 1401,
+      "git_blob_sha1": "3bcfdfd5e06408128ef93d84a25779dcf75c3ac2",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/ce_component/__init__.py",
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    {
+      "bytes": 8840,
+      "git_blob_sha1": "54dc49b277d1742870da0414ad074f2fe7be6a00",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/ce_component/adapter.py",
+      "sha256": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750"
+    },
+    {
+      "bytes": 13480,
+      "git_blob_sha1": "e39d64c8fed6fab98f385873a8362b2812880d2b",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/ce_component/materialized_ce.py",
+      "sha256": "d7bed700a826f4e681289a3157ed412cf7f299a3022b4b5401105fb1ae713e98"
+    },
+    {
+      "bytes": 3425,
+      "git_blob_sha1": "f1cca66abadd72d22f27a2573ab882070f75f2da",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/ce_component/numerical_gates.py",
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    {
+      "bytes": 3064,
+      "git_blob_sha1": "22d6eee892944c8e7c7641ef2a0cf18774928717",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/ce_component/telemetry.py",
+      "sha256": "f98a5212f85368fdad47efa2f4a800511269bae800460f09847318bb799d0fb2"
+    },
+    {
+      "bytes": 10414,
+      "git_blob_sha1": "75c36c09be7a4b0aec3560b455ce78fee016f27e",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/ce_component/test_cpu_contract.py",
+      "sha256": "87893d08a833bdf7ee495b9a6079e55b3e25a6ad65280c7b9b7e7c6cb3b0d322"
+    },
+    {
+      "bytes": 9835,
+      "git_blob_sha1": "065fa4b2e09030875093736f20d1b69bf59215b2",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/ce_component/verify_integration.py",
+      "sha256": "bcc16afce2587811b8f4614b07128bff89a84b143c6e17b1d417f44437e93129"
+    },
+    {
+      "bytes": 1509,
+      "git_blob_sha1": "4b7944369252be3d604196f3ee4a184d99d4c6fe",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/lifecycle.py",
+      "sha256": "3809856abe2706f77959730220a59cd4afc61533d493d96b82a0d5f64734757b"
+    },
+    {
+      "bytes": 138,
+      "git_blob_sha1": "1bae5550b80be8b368071f9e6e24b316d4ebbe6e",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/lora_component/__init__.py",
+      "sha256": "dcf225b5c2da76e6680cc66bcda674699ce6c33f35d3c655498dee39333d505a"
+    },
+    {
+      "bytes": 3549,
+      "git_blob_sha1": "38d4ee32d07167772252ec504f2b092e321abd56",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/lora_component/epilogue.py",
+      "sha256": "b3c12b2739d25416c2bb2e87c0a425efa74f46ff8573bef1e75966cace25ca41"
+    },
+    {
+      "bytes": 5543,
+      "git_blob_sha1": "f828d60d4d614603d6c8bce909d1566658521c66",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/lora_component/patch.py",
+      "sha256": "3d5920504c3c46433e82c93be3b0ac305274ca982679b3c3f80757dfb57e6840"
+    },
+    {
+      "bytes": 397,
+      "git_blob_sha1": "280465af8044c61181eca7ad33e90c10c267c869",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/nf4_component/__init__.py",
+      "sha256": "4a4b6685b3818151a26692319c9a5e6ce9039b0708265e10bcd3abac2a19b9bc"
+    },
+    {
+      "bytes": 6213,
+      "git_blob_sha1": "0d00c07a4854f2550471e6e9595321937f9f8fe0",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/nf4_component/packed_nf4.py",
+      "sha256": "b716d54940621eb316f5b976ab0c2c1455d9805bc06758876d5ae481b9bb340c"
+    },
+    {
+      "bytes": 4924,
+      "git_blob_sha1": "945b01a5fb66aed3dbc68891f4fe3e32cb88ec71",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/nf4_component/routes.py",
+      "sha256": "0de6583186d45410f1577f0b26366bc560f2108f1f55cc58f8a39890f6b0cfb5"
+    },
+    {
+      "bytes": 125,
+      "git_blob_sha1": "5b4b065c569d5d2197ec77fc32bc31e422ca3e81",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/telemetry.py",
+      "sha256": "3fd09d70f855e9bec35765450b26ce994aeeee466aaf48ee55fdb630d3e6cad9"
+    },
+    {
+      "bytes": 8044,
+      "git_blob_sha1": "43d869a98984911971fe622f382b04cc1070e9f5",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/solution/verify_integration.py",
+      "sha256": "99f9248ccd74913fe5bffb54e1e802fb3fdeebd5bfd525ab24a0108f25147577"
+    },
+    {
+      "bytes": 4567,
+      "git_blob_sha1": "e52acbc105a180e89cd8fb45fe1b228142aceec0",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/validation_tests/test_process_guard.py",
+      "sha256": "9775742d759d8fefdaba9e67987ba6da4f34f9abb0e4db80f02b6865c798cc6f"
+    },
+    {
+      "bytes": 10759,
+      "git_blob_sha1": "347e8ed76c4e1aa2fa503d8b7e61d4d95b6d4ddc",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/validation_tests/test_web_packet.py",
+      "sha256": "375777b1520e70001f1180361c9f9a08084551eec3dc29766cb461be1b694b97"
+    },
+    {
+      "bytes": 4374,
+      "git_blob_sha1": "d73ce17672ca008c007059dcf8c3e8019f3adf7c",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/validation_tests/tests/test_composed_cpu.py",
+      "sha256": "f41eb7d651584f9229fcf4b7bcabe75ee99a06d95c5f3a17645a1e90b7003a80"
+    },
+    {
+      "bytes": 4510,
+      "git_blob_sha1": "fc0d9889cfa42a988f5852deb54b48502dc2cd8f",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/validation_tests/tests/test_lazy_flags.py",
+      "sha256": "c3aa63085f85d2f83661ffe4e00a35394f77370e391e3b63b00cb5cb7b0cac35"
+    },
+    {
+      "bytes": 6634,
+      "git_blob_sha1": "1ae2934a78470e5edbbebcee78c1ab5d6502f3f2",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/validation_tests/tests/test_lifecycle.py",
+      "sha256": "50c4d9bb5a4049a85fe58e66107957b6fb21c18ed26fa6429fd8519777322982"
+    },
+    {
+      "bytes": 4743,
+      "git_blob_sha1": "69b25467061be21e0e4077b5f64c7a583934761a",
+      "path": "soup-fusion-a-fixturefix-web80-20261030/validation_tests/tests/test_native_adapter_upcast.py",
+      "sha256": "e13b4afa940548985e478eb0223f1c02d8c3b7939fd5ad15508cbb2e4ee045d3"
+    },
+    {
+      "bytes": 110580,
+      "git_blob_sha1": "93cc3e4440e21e8b653351a7564e367f34919454",
+      "path": "soup-fusion-a-web80-20261030/01_fusion_a.ipynb",
+      "sha256": "266e9289ed14bb477363f5678cf96adc96c7c617d8c1ab78cde038390e12afcc"
+    },
+    {
+      "bytes": 1013,
+      "git_blob_sha1": "28b99c71dac5ff4104004d32b33f9d18f9f8d05f",
+      "path": "soup-fusion-a-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "47b20d8810c2ffdc9938e2228303c8316423cb64b0fb70429dbc4bee0eb5f43d"
+    },
+    {
+      "bytes": 3248,
+      "git_blob_sha1": "195806eef2c0c595a5997084751e2807ebfe0d75",
+      "path": "soup-fusion-a-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "2e24f034373614022df53da6254fa0cf467d40b143c0e75cbdb0894ad01e976f"
+    },
+    {
+      "bytes": 5307,
+      "git_blob_sha1": "321b8552f2d49bb1201d22ed02ce8c10a1f1c05c",
+      "path": "soup-fusion-a-web80-20261030/solution/__init__.py",
+      "sha256": "66ffabdaaadf35e028858a8140c4b6c6aa60abe0443337ec00453210d1f15db9"
+    },
+    {
+      "bytes": 1401,
+      "git_blob_sha1": "3bcfdfd5e06408128ef93d84a25779dcf75c3ac2",
+      "path": "soup-fusion-a-web80-20261030/solution/ce_component/__init__.py",
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    {
+      "bytes": 8840,
+      "git_blob_sha1": "54dc49b277d1742870da0414ad074f2fe7be6a00",
+      "path": "soup-fusion-a-web80-20261030/solution/ce_component/adapter.py",
+      "sha256": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750"
+    },
+    {
+      "bytes": 13480,
+      "git_blob_sha1": "e39d64c8fed6fab98f385873a8362b2812880d2b",
+      "path": "soup-fusion-a-web80-20261030/solution/ce_component/materialized_ce.py",
+      "sha256": "d7bed700a826f4e681289a3157ed412cf7f299a3022b4b5401105fb1ae713e98"
+    },
+    {
+      "bytes": 3425,
+      "git_blob_sha1": "f1cca66abadd72d22f27a2573ab882070f75f2da",
+      "path": "soup-fusion-a-web80-20261030/solution/ce_component/numerical_gates.py",
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    {
+      "bytes": 3064,
+      "git_blob_sha1": "22d6eee892944c8e7c7641ef2a0cf18774928717",
+      "path": "soup-fusion-a-web80-20261030/solution/ce_component/telemetry.py",
+      "sha256": "f98a5212f85368fdad47efa2f4a800511269bae800460f09847318bb799d0fb2"
+    },
+    {
+      "bytes": 10414,
+      "git_blob_sha1": "75c36c09be7a4b0aec3560b455ce78fee016f27e",
+      "path": "soup-fusion-a-web80-20261030/solution/ce_component/test_cpu_contract.py",
+      "sha256": "87893d08a833bdf7ee495b9a6079e55b3e25a6ad65280c7b9b7e7c6cb3b0d322"
+    },
+    {
+      "bytes": 9835,
+      "git_blob_sha1": "065fa4b2e09030875093736f20d1b69bf59215b2",
+      "path": "soup-fusion-a-web80-20261030/solution/ce_component/verify_integration.py",
+      "sha256": "bcc16afce2587811b8f4614b07128bff89a84b143c6e17b1d417f44437e93129"
+    },
+    {
+      "bytes": 1509,
+      "git_blob_sha1": "4b7944369252be3d604196f3ee4a184d99d4c6fe",
+      "path": "soup-fusion-a-web80-20261030/solution/lifecycle.py",
+      "sha256": "3809856abe2706f77959730220a59cd4afc61533d493d96b82a0d5f64734757b"
+    },
+    {
+      "bytes": 138,
+      "git_blob_sha1": "1bae5550b80be8b368071f9e6e24b316d4ebbe6e",
+      "path": "soup-fusion-a-web80-20261030/solution/lora_component/__init__.py",
+      "sha256": "dcf225b5c2da76e6680cc66bcda674699ce6c33f35d3c655498dee39333d505a"
+    },
+    {
+      "bytes": 3549,
+      "git_blob_sha1": "38d4ee32d07167772252ec504f2b092e321abd56",
+      "path": "soup-fusion-a-web80-20261030/solution/lora_component/epilogue.py",
+      "sha256": "b3c12b2739d25416c2bb2e87c0a425efa74f46ff8573bef1e75966cace25ca41"
+    },
+    {
+      "bytes": 5543,
+      "git_blob_sha1": "f828d60d4d614603d6c8bce909d1566658521c66",
+      "path": "soup-fusion-a-web80-20261030/solution/lora_component/patch.py",
+      "sha256": "3d5920504c3c46433e82c93be3b0ac305274ca982679b3c3f80757dfb57e6840"
+    },
+    {
+      "bytes": 397,
+      "git_blob_sha1": "280465af8044c61181eca7ad33e90c10c267c869",
+      "path": "soup-fusion-a-web80-20261030/solution/nf4_component/__init__.py",
+      "sha256": "4a4b6685b3818151a26692319c9a5e6ce9039b0708265e10bcd3abac2a19b9bc"
+    },
+    {
+      "bytes": 6213,
+      "git_blob_sha1": "0d00c07a4854f2550471e6e9595321937f9f8fe0",
+      "path": "soup-fusion-a-web80-20261030/solution/nf4_component/packed_nf4.py",
+      "sha256": "b716d54940621eb316f5b976ab0c2c1455d9805bc06758876d5ae481b9bb340c"
+    },
+    {
+      "bytes": 4924,
+      "git_blob_sha1": "945b01a5fb66aed3dbc68891f4fe3e32cb88ec71",
+      "path": "soup-fusion-a-web80-20261030/solution/nf4_component/routes.py",
+      "sha256": "0de6583186d45410f1577f0b26366bc560f2108f1f55cc58f8a39890f6b0cfb5"
+    },
+    {
+      "bytes": 125,
+      "git_blob_sha1": "5b4b065c569d5d2197ec77fc32bc31e422ca3e81",
+      "path": "soup-fusion-a-web80-20261030/solution/telemetry.py",
+      "sha256": "3fd09d70f855e9bec35765450b26ce994aeeee466aaf48ee55fdb630d3e6cad9"
+    },
+    {
+      "bytes": 7666,
+      "git_blob_sha1": "1fe1a1871711b5f30766f35c17a13ab4c4b9b9dc",
+      "path": "soup-fusion-a-web80-20261030/solution/verify_integration.py",
+      "sha256": "18383b4e173954fe93c4e776ff4879c1cf4041cad5aef0f7b058998563a4fde6"
+    },
+    {
+      "bytes": 7385,
+      "git_blob_sha1": "9dd12f625a9d14a4c1edc86d63ca4cfeafdedad9",
+      "path": "soup-fusion-a-web80-20261030/validation_tests/test_preparation.py",
+      "sha256": "1af9cf8dd35938acdb5a47142c3babf4322c572dc7564c9f067f034222abbc91"
+    },
+    {
+      "bytes": 4563,
+      "git_blob_sha1": "d1249517e8bc7e0c684c35c0e00a860b3fb1918a",
+      "path": "soup-fusion-a-web80-20261030/validation_tests/test_process_guard.py",
+      "sha256": "bee56cff64344a76076311cf92298eb593986bf85cd46810ffd0ff3a66909d38"
+    },
+    {
+      "bytes": 110500,
+      "git_blob_sha1": "e5a5cae7efb6bdc70cc00d3e6d0ca0ba0f7dc8fb",
+      "path": "soup-fusion-b-web80-20261030/02_fusion_b.ipynb",
+      "sha256": "302559091e58eada776c0c6ef0ff62d860881c8c8848d3e20fdf9ab38647dee0"
+    },
+    {
+      "bytes": 1405,
+      "git_blob_sha1": "739e827419e81853cf865139ee3bf0d0b6a1b6d5",
+      "path": "soup-fusion-b-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "0b7253d63dc12a4faeb2ac31e818d9fcf4b5676af62c859e309389a608cb1595"
+    },
+    {
+      "bytes": 3462,
+      "git_blob_sha1": "e7dcd8f1a4e2582c1b7aaefb46004284598803eb",
+      "path": "soup-fusion-b-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "5e848963b6f9cbadffb781d91de720c27da9172e4a4ab6725d31aa209e0a8437"
+    },
+    {
+      "bytes": 815,
+      "git_blob_sha1": "254223267942c286a3ff2b38d0cca6f83e61518e",
+      "path": "soup-fusion-b-web80-20261030/solution/__init__.py",
+      "sha256": "6b06b53b23852eaf016b147841ceff53551094a399245ba6d63f1834885764b3"
+    },
+    {
+      "bytes": 5511,
+      "git_blob_sha1": "b6df849381752044c23ccf59e94f5440c3714368",
+      "path": "soup-fusion-b-web80-20261030/solution/composition_fixture.py",
+      "sha256": "98cb7738c9acb74a64598f14acf7e89bb534082de7a03e744fe97e6b649da750"
+    },
+    {
+      "bytes": 2630,
+      "git_blob_sha1": "814cde77672b39d7e0ecf972f50ec93938153711",
+      "path": "soup-fusion-b-web80-20261030/solution/gpu_preflight.py",
+      "sha256": "b7a7f1d5d0235c2dc42a11def3d82ef7c9437c77ad58a6ebc440a6d4a8d90f21"
+    },
+    {
+      "bytes": 1315,
+      "git_blob_sha1": "7693017394fce30a6447ce548ee3625d80019cec",
+      "path": "soup-fusion-b-web80-20261030/solution/head_component/__init__.py",
+      "sha256": "a37ec810fecee820867439ddb5282c5b68c0822e371cb74ece8b8ec0f344c1db"
+    },
+    {
+      "bytes": 3630,
+      "git_blob_sha1": "0414d8a8dc0a5ca7a9eadaaa9226d92a418d26ba",
+      "path": "soup-fusion-b-web80-20261030/solution/head_component/install.py",
+      "sha256": "a4de59c63316d10756e7bd0ee7499d2e8c7e6028b5a5fb954179670b1741f9f1"
+    },
+    {
+      "bytes": 7062,
+      "git_blob_sha1": "15254817753667835ac85a4e06867c40fbf2b02b",
+      "path": "soup-fusion-b-web80-20261030/solution/head_component/native_head.py",
+      "sha256": "a292565b3286174cf474107206df3db492d9cddc8ee7047fbf228e2bd9a20442"
+    },
+    {
+      "bytes": 534,
+      "git_blob_sha1": "76e583476d710cb2c31b1c2b2911025ef2a6d452",
+      "path": "soup-fusion-b-web80-20261030/solution/memory_component/__init__.py",
+      "sha256": "bd440ab58a4391f5311e2491e80e1661602e9d7ebee41069923fa5d6099605c6"
+    },
+    {
+      "bytes": 16878,
+      "git_blob_sha1": "00d8bbb227c9e2b9aa37322a0c96ba5f030dbe21",
+      "path": "soup-fusion-b-web80-20261030/solution/memory_component/adapter.py",
+      "sha256": "dee688af8fe8cba35757e7613cd1c2e9f7195a780463bee8e19b230abf03284a"
+    },
+    {
+      "bytes": 3896,
+      "git_blob_sha1": "b579851cbde8ecbeedfd3d77c08ce7c8f7052c3e",
+      "path": "soup-fusion-b-web80-20261030/solution/memory_component/fixture_common.py",
+      "sha256": "3681aeaa6020ab722110ca23c952657d2e8103340b874dee00d90c1d4bad317e"
+    },
+    {
+      "bytes": 384,
+      "git_blob_sha1": "888ba7de3c185948896ff52f7f9cc46cd9250f97",
+      "path": "soup-fusion-b-web80-20261030/solution/memory_component/restore.py",
+      "sha256": "ef7d677ef08e01123b360f7c503e80873a245d8901c9374b08fdd7ab090b1b87"
+    },
+    {
+      "bytes": 944,
+      "git_blob_sha1": "c0c10daf12e3351ffa7d34dcda5a71bb674bb2d4",
+      "path": "soup-fusion-b-web80-20261030/solution/memory_component/restore_kernel.py",
+      "sha256": "64811560821f78f1bfeadf2b0eeda55d8258fa4d8daed866e0ec727c9ea617ef"
+    },
+    {
+      "bytes": 8410,
+      "git_blob_sha1": "25cf38c2f20c980f392d066020cee33a55edcd54",
+      "path": "soup-fusion-b-web80-20261030/solution/memory_component/verify_memory.py",
+      "sha256": "770aec249b0b9eb286f855955b384656da412595318dee7d3de7a8b451a207b4"
+    },
+    {
+      "bytes": 2461,
+      "git_blob_sha1": "200abf47cd525f5bed06d2ff876487e3762fb99a",
+      "path": "soup-fusion-b-web80-20261030/solution/memory_component/version_sentinel.py",
+      "sha256": "76dcaabc808f3b9c051f05c8705ccba66150b2a25e1649bcd87a9cc1addd13db"
+    },
+    {
+      "bytes": 333,
+      "git_blob_sha1": "bcd18fce6860939838f3fc40be36f84a4b9304b7",
+      "path": "soup-fusion-b-web80-20261030/solution/rotary_component/__init__.py",
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    {
+      "bytes": 1913,
+      "git_blob_sha1": "5648cdbea2b9baf0f0fd0008144062a7aaa6622d",
+      "path": "soup-fusion-b-web80-20261030/solution/rotary_component/cpu_contract.py",
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    {
+      "bytes": 8253,
+      "git_blob_sha1": "f6daaa6bec02564172f556dfd65acbd955a5b736",
+      "path": "soup-fusion-b-web80-20261030/solution/rotary_component/gpu_preflight.py",
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    {
+      "bytes": 9372,
+      "git_blob_sha1": "bb8c101306d3c4fbf77401ef04fb9a7a402321d7",
+      "path": "soup-fusion-b-web80-20261030/solution/rotary_component/rotary.py",
+      "sha256": "11af78e6d5ea9eca6604b18d565e8990167d14342fc3f0f4a23a93dcfddca4c7"
+    },
+    {
+      "bytes": 8248,
+      "git_blob_sha1": "cac7477099145210455d3d493c7cae7872518924",
+      "path": "soup-fusion-b-web80-20261030/solution/rotary_component/test_rotary.py",
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    {
+      "bytes": 7385,
+      "git_blob_sha1": "9dd12f625a9d14a4c1edc86d63ca4cfeafdedad9",
+      "path": "soup-fusion-b-web80-20261030/validation_tests/test_preparation.py",
+      "sha256": "1af9cf8dd35938acdb5a47142c3babf4322c572dc7564c9f067f034222abbc91"
+    },
+    {
+      "bytes": 4563,
+      "git_blob_sha1": "d1249517e8bc7e0c684c35c0e00a860b3fb1918a",
+      "path": "soup-fusion-b-web80-20261030/validation_tests/test_process_guard.py",
+      "sha256": "bee56cff64344a76076311cf92298eb593986bf85cd46810ffd0ff3a66909d38"
+    },
+    {
+      "bytes": 74607,
+      "git_blob_sha1": "8732d450618b1f71d0f0e42ad755f8950d66703d",
+      "path": "soup-head-native-control-web80-20261030/03_head_native_control.ipynb",
+      "sha256": "02eca1c12f2f437d851ba5275b2a3eeed0ccca9bf8f544760f854c053aaeb251"
+    },
+    {
+      "bytes": 1424,
+      "git_blob_sha1": "1c20ac38928b4fcb5f5dd2b0e1f1fc4e1c034cbf",
+      "path": "soup-head-native-control-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "604634d8777d2ff39e1ec3d3e2c85e10632904cfbe78546aab2ce09596465751"
+    },
+    {
+      "bytes": 1163,
+      "git_blob_sha1": "b8a1cae9d7165a5422435593b72e84d5d7a86a4e",
+      "path": "soup-head-native-control-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "a4fecbd55ee4917b3bfe06bb3382b295b171b1872f0d0bb929681ef5311d52f2"
+    },
+    {
+      "bytes": 1315,
+      "git_blob_sha1": "7693017394fce30a6447ce548ee3625d80019cec",
+      "path": "soup-head-native-control-web80-20261030/solution/__init__.py",
+      "sha256": "a37ec810fecee820867439ddb5282c5b68c0822e371cb74ece8b8ec0f344c1db"
+    },
+    {
+      "bytes": 3630,
+      "git_blob_sha1": "0414d8a8dc0a5ca7a9eadaaa9226d92a418d26ba",
+      "path": "soup-head-native-control-web80-20261030/solution/install.py",
+      "sha256": "a4de59c63316d10756e7bd0ee7499d2e8c7e6028b5a5fb954179670b1741f9f1"
+    },
+    {
+      "bytes": 7062,
+      "git_blob_sha1": "15254817753667835ac85a4e06867c40fbf2b02b",
+      "path": "soup-head-native-control-web80-20261030/solution/native_head.py",
+      "sha256": "a292565b3286174cf474107206df3db492d9cddc8ee7047fbf228e2bd9a20442"
+    },
+    {
+      "bytes": 5694,
+      "git_blob_sha1": "38b6157155645b9fec5a508ebb7efef4dbe3dad4",
+      "path": "soup-head-native-control-web80-20261030/solution/web_preflight.py",
+      "sha256": "fe59f0b3c5861fb017febe450fe4a1045e1349db3d984ce5aa34cb35a9b683cf"
+    },
+    {
+      "bytes": 13221,
+      "git_blob_sha1": "72fce1756ce58c6a11bd89d955a0302bd5d7868a",
+      "path": "soup-head-native-control-web80-20261030/validation_tests/test_preparation.py",
+      "sha256": "4d2cb1989483292e0fd8a198ff1b6e0d0a322f0e281dcfb03e0f644e2c9e0649"
+    },
+    {
+      "bytes": 74694,
+      "git_blob_sha1": "8056c96a5c7cad9441966ab4547fb237bc9636d2",
+      "path": "soup-head-quiet-v2-web80-20261030/08_head_bounded_telemetry_v2.ipynb",
+      "sha256": "c5c061855d32d6b1239b696e9dea72e940191a4958a6f55ce066dc4f0dcf6f8c"
+    },
+    {
+      "bytes": 1433,
+      "git_blob_sha1": "1a84a813e8f41318dd371189d13029b53797b0e8",
+      "path": "soup-head-quiet-v2-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "841e2f8fdc5f8d122ab140082eb71dc42ee3a4b1da88a560bbbcd53eaaf04425"
+    },
+    {
+      "bytes": 1163,
+      "git_blob_sha1": "8b5880ccf4cd8c44e89852cd41ee580270d230c4",
+      "path": "soup-head-quiet-v2-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "70a4938d6c7b718316224e6196305f41c560d1e7a272cb662ce31e10236d4099"
+    },
+    {
+      "bytes": 1315,
+      "git_blob_sha1": "7693017394fce30a6447ce548ee3625d80019cec",
+      "path": "soup-head-quiet-v2-web80-20261030/solution/__init__.py",
+      "sha256": "a37ec810fecee820867439ddb5282c5b68c0822e371cb74ece8b8ec0f344c1db"
+    },
+    {
+      "bytes": 3630,
+      "git_blob_sha1": "0414d8a8dc0a5ca7a9eadaaa9226d92a418d26ba",
+      "path": "soup-head-quiet-v2-web80-20261030/solution/install.py",
+      "sha256": "a4de59c63316d10756e7bd0ee7499d2e8c7e6028b5a5fb954179670b1741f9f1"
+    },
+    {
+      "bytes": 7963,
+      "git_blob_sha1": "bbaa1af23efd906e868acf0fc11e4222b8ce2221",
+      "path": "soup-head-quiet-v2-web80-20261030/solution/native_head.py",
+      "sha256": "8c777005605911fb92b2a73c815a48dfd8cd0826352a5b8d087364aa9a4a7225"
+    },
+    {
+      "bytes": 5694,
+      "git_blob_sha1": "38b6157155645b9fec5a508ebb7efef4dbe3dad4",
+      "path": "soup-head-quiet-v2-web80-20261030/solution/web_preflight.py",
+      "sha256": "fe59f0b3c5861fb017febe450fe4a1045e1349db3d984ce5aa34cb35a9b683cf"
+    },
+    {
+      "bytes": 12047,
+      "git_blob_sha1": "aff1bfec8a2a4b933ee82c47a8b4cdabc9da7ef4",
+      "path": "soup-head-quiet-v2-web80-20261030/validation_tests/test_preparation.py",
+      "sha256": "7b8c85cce71f6df05494df822f0ff836e699ac4d25c4dfb886f33964a1b216ce"
+    },
+    {
+      "bytes": 1034,
+      "git_blob_sha1": "308b78678d041d9a71c2421a7b64a90224c8905d",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "30411de5caed1e59111d04e79c25e968b528e705249c8dbb09a2498ae6cc26bd"
+    },
+    {
+      "bytes": 1472,
+      "git_blob_sha1": "8273f6f40f532cef212894968b4cb2440b7f3e44",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "b70c2ae030ba329c6894662962680e28aab7ac7d5708375b049a015fd3e84d74"
+    },
+    {
+      "bytes": 73849,
+      "git_blob_sha1": "1397044fa50b594a1eabf7d6e3abda236efe9448",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/candidate.ipynb",
+      "sha256": "525024d5cb247319b5bd9f5df5c6e5291e775e543280ccabe0eb45ae7fe6b07f"
+    },
+    {
+      "bytes": 138,
+      "git_blob_sha1": "1bae5550b80be8b368071f9e6e24b316d4ebbe6e",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/solution/__init__.py",
+      "sha256": "dcf225b5c2da76e6680cc66bcda674699ce6c33f35d3c655498dee39333d505a"
+    },
+    {
+      "bytes": 3549,
+      "git_blob_sha1": "38d4ee32d07167772252ec504f2b092e321abd56",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/solution/epilogue.py",
+      "sha256": "b3c12b2739d25416c2bb2e87c0a425efa74f46ff8573bef1e75966cace25ca41"
+    },
+    {
+      "bytes": 6245,
+      "git_blob_sha1": "450b34db16300d8af6952f62f9cb350396aeaeb7",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/solution/gpu_preflight.py",
+      "sha256": "61a332d6f73974238ad205e4fc4ae6fdaba4d9a3d03b3e5f02cf8f6589750295"
+    },
+    {
+      "bytes": 5543,
+      "git_blob_sha1": "f828d60d4d614603d6c8bce909d1566658521c66",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/solution/patch.py",
+      "sha256": "3d5920504c3c46433e82c93be3b0ac305274ca982679b3c3f80757dfb57e6840"
+    },
+    {
+      "bytes": 5947,
+      "git_blob_sha1": "8013836798f553b17f6781521891a06a754f3e79",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/validation_tests/tests/test_cpu_contract.py",
+      "sha256": "54d8b18539270611144db466967c0e5abbc97c4887187a0246a8336fd9b729a3"
+    },
+    {
+      "bytes": 2713,
+      "git_blob_sha1": "70d23a8276c3c9ef21ae9774e80d0c2253cf452f",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/validation_tests/tests/test_guarded_contract.py",
+      "sha256": "8a4ab7901b669e869e77ec243da75d9c3858443d2fafdb8ec73cde88d1fedf0e"
+    },
+    {
+      "bytes": 6244,
+      "git_blob_sha1": "2564570c8f43019394e1f5d86aea48a7d977fe6f",
+      "path": "soup-lora-epilogue-fixed-web80-20261030/validation_tests/tests/validate_web_packet.py",
+      "sha256": "7fd54ffc2157061e91ed66123249f73fe78713922b447ab8ce7d5f37e717300c"
+    },
+    {
+      "bytes": 1422,
+      "git_blob_sha1": "1ef6cfb9faa4e8ebc002d11e4961437778613c0c",
+      "path": "soup-lora-fixturefix-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "2a618dffcb38a2dffbc768e125b0d92229430701f8988bac1666426c6bfe5c2c"
+    },
+    {
+      "bytes": 1634,
+      "git_blob_sha1": "5c687a1b8e3123289e86391bc009840788101099",
+      "path": "soup-lora-fixturefix-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "d2ee70677fb6b0e05fb118a292f8228684181f8aa26134bac699001e22012253"
+    },
+    {
+      "bytes": 74149,
+      "git_blob_sha1": "0c4fd45972a9c9644d3586f675c2cef7e3a1ec39",
+      "path": "soup-lora-fixturefix-web80-20261030/candidate.ipynb",
+      "sha256": "21578e583ef82a907778fc7acc2f57a7df5d9645c5b0972a04ccc4a700639766"
+    },
+    {
+      "bytes": 138,
+      "git_blob_sha1": "1bae5550b80be8b368071f9e6e24b316d4ebbe6e",
+      "path": "soup-lora-fixturefix-web80-20261030/solution/__init__.py",
+      "sha256": "dcf225b5c2da76e6680cc66bcda674699ce6c33f35d3c655498dee39333d505a"
+    },
+    {
+      "bytes": 3549,
+      "git_blob_sha1": "38d4ee32d07167772252ec504f2b092e321abd56",
+      "path": "soup-lora-fixturefix-web80-20261030/solution/epilogue.py",
+      "sha256": "b3c12b2739d25416c2bb2e87c0a425efa74f46ff8573bef1e75966cace25ca41"
+    },
+    {
+      "bytes": 7034,
+      "git_blob_sha1": "96e305d70af930bfa8a8c7c119e9c4aede492fc1",
+      "path": "soup-lora-fixturefix-web80-20261030/solution/gpu_preflight.py",
+      "sha256": "b60603f4bcd9606e0c0d79ab179d95cb938929835a879a889c49243c997037d8"
+    },
+    {
+      "bytes": 5543,
+      "git_blob_sha1": "f828d60d4d614603d6c8bce909d1566658521c66",
+      "path": "soup-lora-fixturefix-web80-20261030/solution/patch.py",
+      "sha256": "3d5920504c3c46433e82c93be3b0ac305274ca982679b3c3f80757dfb57e6840"
+    },
+    {
+      "bytes": 5947,
+      "git_blob_sha1": "8013836798f553b17f6781521891a06a754f3e79",
+      "path": "soup-lora-fixturefix-web80-20261030/validation_tests/tests/test_cpu_contract.py",
+      "sha256": "54d8b18539270611144db466967c0e5abbc97c4887187a0246a8336fd9b729a3"
+    },
+    {
+      "bytes": 2713,
+      "git_blob_sha1": "70d23a8276c3c9ef21ae9774e80d0c2253cf452f",
+      "path": "soup-lora-fixturefix-web80-20261030/validation_tests/tests/test_guarded_contract.py",
+      "sha256": "8a4ab7901b669e869e77ec243da75d9c3858443d2fafdb8ec73cde88d1fedf0e"
+    },
+    {
+      "bytes": 4738,
+      "git_blob_sha1": "c749efacf0b1208365281fb7a65d47a0f2e23259",
+      "path": "soup-lora-fixturefix-web80-20261030/validation_tests/tests/test_native_adapter_upcast.py",
+      "sha256": "8c100c07942c78eade302bfe6d4a0cde34eb9d23c58f7d55fc77905cb8cda305"
+    },
+    {
+      "bytes": 6244,
+      "git_blob_sha1": "2564570c8f43019394e1f5d86aea48a7d977fe6f",
+      "path": "soup-lora-fixturefix-web80-20261030/validation_tests/tests/validate_web_packet.py",
+      "sha256": "7fd54ffc2157061e91ed66123249f73fe78713922b447ab8ce7d5f37e717300c"
+    },
+    {
+      "bytes": 1390,
+      "git_blob_sha1": "746ac97e7220e2c53602c947b9bfa0470564bd25",
+      "path": "soup-memory-vs1-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "81a1cec55eb291f03a65c871c20f399f27f3b4288b905d3e4b408181b05baeab"
+    },
+    {
+      "bytes": 2020,
+      "git_blob_sha1": "b816a7dc7560d8139944d8ece32679491648ae65",
+      "path": "soup-memory-vs1-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "bbbb723c02212039021302233ffcb975545442565343ed563c207827a56ab43d"
+    },
+    {
+      "bytes": 80139,
+      "git_blob_sha1": "79f1798ba988de951675bdc077f37cabf05b9a48",
+      "path": "soup-memory-vs1-web80-20261030/candidate.ipynb",
+      "sha256": "a5583c9a7208c2c186a9cd7cf271c27ed443f9ea40f3080b5b46d10f9aeaf336"
+    },
+    {
+      "bytes": 534,
+      "git_blob_sha1": "76e583476d710cb2c31b1c2b2911025ef2a6d452",
+      "path": "soup-memory-vs1-web80-20261030/solution/__init__.py",
+      "sha256": "bd440ab58a4391f5311e2491e80e1661602e9d7ebee41069923fa5d6099605c6"
+    },
+    {
+      "bytes": 16878,
+      "git_blob_sha1": "00d8bbb227c9e2b9aa37322a0c96ba5f030dbe21",
+      "path": "soup-memory-vs1-web80-20261030/solution/adapter.py",
+      "sha256": "dee688af8fe8cba35757e7613cd1c2e9f7195a780463bee8e19b230abf03284a"
+    },
+    {
+      "bytes": 3896,
+      "git_blob_sha1": "b579851cbde8ecbeedfd3d77c08ce7c8f7052c3e",
+      "path": "soup-memory-vs1-web80-20261030/solution/fixture_common.py",
+      "sha256": "3681aeaa6020ab722110ca23c952657d2e8103340b874dee00d90c1d4bad317e"
+    },
+    {
+      "bytes": 384,
+      "git_blob_sha1": "888ba7de3c185948896ff52f7f9cc46cd9250f97",
+      "path": "soup-memory-vs1-web80-20261030/solution/restore.py",
+      "sha256": "ef7d677ef08e01123b360f7c503e80873a245d8901c9374b08fdd7ab090b1b87"
+    },
+    {
+      "bytes": 944,
+      "git_blob_sha1": "c0c10daf12e3351ffa7d34dcda5a71bb674bb2d4",
+      "path": "soup-memory-vs1-web80-20261030/solution/restore_kernel.py",
+      "sha256": "64811560821f78f1bfeadf2b0eeda55d8258fa4d8daed866e0ec727c9ea617ef"
+    },
+    {
+      "bytes": 8410,
+      "git_blob_sha1": "25cf38c2f20c980f392d066020cee33a55edcd54",
+      "path": "soup-memory-vs1-web80-20261030/solution/verify_memory.py",
+      "sha256": "770aec249b0b9eb286f855955b384656da412595318dee7d3de7a8b451a207b4"
+    },
+    {
+      "bytes": 2461,
+      "git_blob_sha1": "200abf47cd525f5bed06d2ff876487e3762fb99a",
+      "path": "soup-memory-vs1-web80-20261030/solution/version_sentinel.py",
+      "sha256": "76dcaabc808f3b9c051f05c8705ccba66150b2a25e1649bcd87a9cc1addd13db"
+    },
+    {
+      "bytes": 9829,
+      "git_blob_sha1": "87bf7683f91302288a6c92c76382b2215e55eb24",
+      "path": "soup-memory-vs1-web80-20261030/validation_tests/test_cpu_integration.py",
+      "sha256": "6708686d5bd2cbb4ebd43943e7605a6c723d94ceaf42229d3dcf98ab2b8c25af"
+    },
+    {
+      "bytes": 9073,
+      "git_blob_sha1": "a96d6c3974ae274d0d90bd97c862e02429a17850",
+      "path": "soup-memory-vs1-web80-20261030/validation_tests/test_preparation.py",
+      "sha256": "2416fe2d32aa0428085e27815da446ea14c1af4d2a966af87759097064022bfc"
+    },
+    {
+      "bytes": 4563,
+      "git_blob_sha1": "d1249517e8bc7e0c684c35c0e00a860b3fb1918a",
+      "path": "soup-memory-vs1-web80-20261030/validation_tests/test_process_guard.py",
+      "sha256": "bee56cff64344a76076311cf92298eb593986bf85cd46810ffd0ff3a66909d38"
+    },
+    {
+      "bytes": 6010,
+      "git_blob_sha1": "3406a86ad6c19268d5bd548cd86280977adec1a0",
+      "path": "soup-memory-vs1-web80-20261030/validation_tests/test_version_sentinel.py",
+      "sha256": "ac9b48f4387e9fe20ab922ca7ec619c3455604fe170ce24eae47757750b125b8"
+    },
+    {
+      "bytes": 1403,
+      "git_blob_sha1": "6ffdad1947263e46cd60b04948d0e016b42d19fe",
+      "path": "soup-nf4-packed-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "5093bc31d71d5eb81ba6b124d9317f31cfe13f6460b72803d67bb1175938efb5"
+    },
+    {
+      "bytes": 1460,
+      "git_blob_sha1": "f53503597ffecfaf538de6a3c375416086431516",
+      "path": "soup-nf4-packed-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "3e1e231630f1c9727061a49c5cd0adf040da8804c704b521f93b98b655391471"
+    },
+    {
+      "bytes": 74423,
+      "git_blob_sha1": "409b602f4b6f06a5a7e0a1cf240fa2ce558d4f50",
+      "path": "soup-nf4-packed-web80-20261030/candidate.ipynb",
+      "sha256": "35bdebad98d08810be44374b93edc46237465c9af190df17523328b0f08fe54b"
+    },
+    {
+      "bytes": 397,
+      "git_blob_sha1": "280465af8044c61181eca7ad33e90c10c267c869",
+      "path": "soup-nf4-packed-web80-20261030/solution/__init__.py",
+      "sha256": "4a4b6685b3818151a26692319c9a5e6ce9039b0708265e10bcd3abac2a19b9bc"
+    },
+    {
+      "bytes": 4890,
+      "git_blob_sha1": "ae3bed5b231e932eee38be8ac01508acbf5ca54d",
+      "path": "soup-nf4-packed-web80-20261030/solution/gpu_preflight.py",
+      "sha256": "4441736068b2bc2ff1f44f70564343c397d73017bc43c48a9889a4d6924dc7df"
+    },
+    {
+      "bytes": 6213,
+      "git_blob_sha1": "0d00c07a4854f2550471e6e9595321937f9f8fe0",
+      "path": "soup-nf4-packed-web80-20261030/solution/packed_nf4.py",
+      "sha256": "b716d54940621eb316f5b976ab0c2c1455d9805bc06758876d5ae481b9bb340c"
+    },
+    {
+      "bytes": 4924,
+      "git_blob_sha1": "945b01a5fb66aed3dbc68891f4fe3e32cb88ec71",
+      "path": "soup-nf4-packed-web80-20261030/solution/routes.py",
+      "sha256": "0de6583186d45410f1577f0b26366bc560f2108f1f55cc58f8a39890f6b0cfb5"
+    },
+    {
+      "bytes": 5931,
+      "git_blob_sha1": "bc365af4159e3260b26699e479c45c61b8532648",
+      "path": "soup-nf4-packed-web80-20261030/validation_tests/tests/cpu_fixtures.py",
+      "sha256": "9b67ccbd8844abdfbcf2d72be4621413a441f309bfbc2dc7a3d6f7b674810c19"
+    },
+    {
+      "bytes": 2716,
+      "git_blob_sha1": "b34579aa68ff2e7ae0ff062202d4ecdf628e2901",
+      "path": "soup-nf4-packed-web80-20261030/validation_tests/tests/test_metadata_guards.py",
+      "sha256": "4b7c49644f4e200dc87269f452a92c90215c3f8b53517526ce5de0bf92282911"
+    },
+    {
+      "bytes": 6618,
+      "git_blob_sha1": "b7a2ae5f2b85caf6a640d808c05a8885bbb9d0db",
+      "path": "soup-nf4-packed-web80-20261030/validation_tests/tests/validate_web_packet.py",
+      "sha256": "8c9ac7aad45294daef85745b1fde4a5a31aaa7edbe608760158993222f1426d0"
+    },
+    {
+      "bytes": 1418,
+      "git_blob_sha1": "49f6ffca0fd6ee532659c353a7e07c60c8ca4fa9",
+      "path": "soup-nf4-runtime-n-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "b4409e0d6c8f06778145eeba7aed65db7b23a7a2b101f53542d8fa20f642745e"
+    },
+    {
+      "bytes": 1619,
+      "git_blob_sha1": "e8cf599c4a6dcac60a15baed43844188b0cf6874",
+      "path": "soup-nf4-runtime-n-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "0ff06536a36e24d1617e69be86fa81ff60954aeb8de570037d2b539ea52af459"
+    },
+    {
+      "bytes": 74256,
+      "git_blob_sha1": "29e3ffd2a23f0f22dda0458843fef6b046fb4856",
+      "path": "soup-nf4-runtime-n-web80-20261030/candidate.ipynb",
+      "sha256": "af478baca35d6c6d842f178051f58a39cae5cb920177443964fc0aa943693d0e"
+    },
+    {
+      "bytes": 397,
+      "git_blob_sha1": "280465af8044c61181eca7ad33e90c10c267c869",
+      "path": "soup-nf4-runtime-n-web80-20261030/solution/__init__.py",
+      "sha256": "4a4b6685b3818151a26692319c9a5e6ce9039b0708265e10bcd3abac2a19b9bc"
+    },
+    {
+      "bytes": 4890,
+      "git_blob_sha1": "ae3bed5b231e932eee38be8ac01508acbf5ca54d",
+      "path": "soup-nf4-runtime-n-web80-20261030/solution/gpu_preflight.py",
+      "sha256": "4441736068b2bc2ff1f44f70564343c397d73017bc43c48a9889a4d6924dc7df"
+    },
+    {
+      "bytes": 6366,
+      "git_blob_sha1": "8625b0ce263d193745b99c42ba5de11d2fe4d2db",
+      "path": "soup-nf4-runtime-n-web80-20261030/solution/packed_nf4.py",
+      "sha256": "3e3bb581c3af97523b38e16d02396bb37bc775a6b93b8fd9096c8690b5067479"
+    },
+    {
+      "bytes": 5227,
+      "git_blob_sha1": "d8270fb13df46ffd68201a7c92690e3506d9da69",
+      "path": "soup-nf4-runtime-n-web80-20261030/solution/routes.py",
+      "sha256": "f501b3bed0b006febe64ba71749739a777dfaa932a6adfb67afb54b29fd75c28"
+    },
+    {
+      "bytes": 5931,
+      "git_blob_sha1": "bc365af4159e3260b26699e479c45c61b8532648",
+      "path": "soup-nf4-runtime-n-web80-20261030/validation_tests/tests/cpu_fixtures.py",
+      "sha256": "9b67ccbd8844abdfbcf2d72be4621413a441f309bfbc2dc7a3d6f7b674810c19"
+    },
+    {
+      "bytes": 3517,
+      "git_blob_sha1": "f2e6a76400d3524fd3519c4bb53f1fbf4b9a6225",
+      "path": "soup-nf4-runtime-n-web80-20261030/validation_tests/tests/offline_compile.py",
+      "sha256": "76cf2e9dc8210a7fbaf3ee07dbfb55bee1ea0f17761f0b132f71c6cc6b94c412"
+    },
+    {
+      "bytes": 4614,
+      "git_blob_sha1": "06e669172717b5af33f91de5fc7acc27fee1d25a",
+      "path": "soup-nf4-runtime-n-web80-20261030/validation_tests/tests/test_runtime_contract.py",
+      "sha256": "56776396f3b248cc3b11c09c653201f79e3df8de58756534632dd932088d5bbd"
+    },
+    {
+      "bytes": 7546,
+      "git_blob_sha1": "2798b4c5468c584e92606cfb8c6cc12fc69e8f2d",
+      "path": "soup-nf4-runtime-n-web80-20261030/validation_tests/tests/validate_web_packet.py",
+      "sha256": "999deffe716097cb340175acc70f09979e19f5861419554faa9493ca861b83f0"
+    },
+    {
+      "bytes": 1483,
+      "git_blob_sha1": "795dc226e060a9d9a37edff613d60f48492132df",
+      "path": "soup-rope-runtime-microbench-v2-20261030/RESULT_SUMMARY.json",
+      "sha256": "e7d5f3285b229a1f9616ca3ff1821652f20593c605f20836f0c28ed8f967fd50"
+    },
+    {
+      "bytes": 3818,
+      "git_blob_sha1": "09eb335c384f6675a50b429505257025f637a4d9",
+      "path": "soup-rope-runtime-microbench-v2-20261030/SOURCE_MANIFEST.json",
+      "sha256": "84a3cad780dcab0e6520f0cac56f76347fab9c5335f063ee9599db15a70f042e"
+    },
+    {
+      "bytes": 6727,
+      "git_blob_sha1": "5af489ada39ab702aef57ab82408748e61411d09",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/driver.py",
+      "sha256": "caeb011f9767809ea431333f5559391b4748831f91b80d63dbf0863af7ccf997"
+    },
+    {
+      "bytes": 1415,
+      "git_blob_sha1": "5f70a5a7264bb8716d87da8f4c2ff35e3465fbda",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/official_manifest.json",
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    {
+      "bytes": 333,
+      "git_blob_sha1": "bcd18fce6860939838f3fc40be36f84a4b9304b7",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/old_solution/__init__.py",
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    {
+      "bytes": 1913,
+      "git_blob_sha1": "5648cdbea2b9baf0f0fd0008144062a7aaa6622d",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/old_solution/cpu_contract.py",
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    {
+      "bytes": 8253,
+      "git_blob_sha1": "f6daaa6bec02564172f556dfd65acbd955a5b736",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/old_solution/gpu_preflight.py",
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    {
+      "bytes": 9372,
+      "git_blob_sha1": "bb8c101306d3c4fbf77401ef04fb9a7a402321d7",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/old_solution/rotary.py",
+      "sha256": "11af78e6d5ea9eca6604b18d565e8990167d14342fc3f0f4a23a93dcfddca4c7"
+    },
+    {
+      "bytes": 8248,
+      "git_blob_sha1": "cac7477099145210455d3d493c7cae7872518924",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/old_solution/test_rotary.py",
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    {
+      "bytes": 2289,
+      "git_blob_sha1": "e9fa886739208d4f6bcb327806f9c28de8faeb4c",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/old_solution/web_preflight.py",
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    {
+      "bytes": 5956,
+      "git_blob_sha1": "51ed9ff6e6c908d34778e418c4975631d818ddcc",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/owned_process_tree.py",
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    {
+      "bytes": 1909,
+      "git_blob_sha1": "d9f833cf5a225db84a2d8ba953e93150c09a8be4",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/payload_manifest.json",
+      "sha256": "84ad03efbfb57c6d99243a1dfd3fa5a9787fd221b2c297d380213b9b799222f0"
+    },
+    {
+      "bytes": 7506,
+      "git_blob_sha1": "060b6caaa9926bfae2bcd23c1528ea6379c0e6fb",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/process_guard.py",
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    {
+      "bytes": 3420,
+      "git_blob_sha1": "06f53ef9f09f547a3c5ede6331b2480da9d679a8",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/reviewed_support.py",
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    {
+      "bytes": 2328,
+      "git_blob_sha1": "aad5d7396482b185cafc6a330e192352b0b01d14",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/runtime_probe.py",
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    {
+      "bytes": 333,
+      "git_blob_sha1": "bcd18fce6860939838f3fc40be36f84a4b9304b7",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/solution/__init__.py",
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    {
+      "bytes": 1913,
+      "git_blob_sha1": "5648cdbea2b9baf0f0fd0008144062a7aaa6622d",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/solution/cpu_contract.py",
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    {
+      "bytes": 8253,
+      "git_blob_sha1": "f6daaa6bec02564172f556dfd65acbd955a5b736",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/solution/gpu_preflight.py",
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    {
+      "bytes": 9344,
+      "git_blob_sha1": "0f002008cd3e80641c2d7739ac29437382853e3b",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/solution/rotary.py",
+      "sha256": "cbea5c7a64c70695fa009a7b98129889d9ec434993da4f9d123a87808ee766b0"
+    },
+    {
+      "bytes": 8248,
+      "git_blob_sha1": "cac7477099145210455d3d493c7cae7872518924",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/solution/test_rotary.py",
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    {
+      "bytes": 2289,
+      "git_blob_sha1": "e9fa886739208d4f6bcb327806f9c28de8faeb4c",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/solution/web_preflight.py",
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    {
+      "bytes": 1185,
+      "git_blob_sha1": "e838b0615c2a3c85b0e6fbdaa0095183b75194be",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/source_manifest.json",
+      "sha256": "8e7a1aa0f34b6ef1aef9162376ebd6c71ce9f1bbe6c72554a8abf9dae974769f"
+    },
+    {
+      "bytes": 8594,
+      "git_blob_sha1": "b95a7a0959967de9c5b14819e90cc3a4c6db7628",
+      "path": "soup-rope-runtime-microbench-v2-20261030/embedded_source/worker.py",
+      "sha256": "c59a0f17abcd4c6658d008fc1f1d09180c8c1de379b6cca3e40bef82d65fcc5a"
+    },
+    {
+      "bytes": 138943,
+      "git_blob_sha1": "a19abd9ecd4ff98b9ba996d9ababf424eb47c036",
+      "path": "soup-rope-runtime-microbench-v2-20261030/rope_runtime_dims_MICROBENCH_ONLY_v2.ipynb",
+      "sha256": "671ab6ca97a95242a4027cad17362902a6364f3b33debfb63ef15efa17d128c3"
+    },
+    {
+      "bytes": 7358,
+      "git_blob_sha1": "0dbcc497724774acedca672b7424caa1978cc9ba",
+      "path": "soup-rope-runtime-microbench-v2-20261030/validation_tests/test_microbench_packet.py",
+      "sha256": "38568b0d45344be22e8b7197f84cd7ced645b61d83c0bbe8055f7515cc8f99af"
+    },
+    {
+      "bytes": 1552,
+      "git_blob_sha1": "e3733e2130a0aa2c2b813f6cb83ea2ed19427ded",
+      "path": "soup-rope-runtime-microbench-v3-20261030/RESULT_SUMMARY.json",
+      "sha256": "342321b3bd2279262fddff2d9a0809d263dd1ae62bfafbffe3adc15cdb0ae15c"
+    },
+    {
+      "bytes": 3821,
+      "git_blob_sha1": "e1fa49506111023bb9dd759aeae24fa0df11fece",
+      "path": "soup-rope-runtime-microbench-v3-20261030/SOURCE_MANIFEST.json",
+      "sha256": "9007f927ff5867420458f59e688141d9a6a017f7c1a707f2e8018a4566367acd"
+    },
+    {
+      "bytes": 6751,
+      "git_blob_sha1": "5b38818339b0eb14d359022d8b9d9c2b1cc47b79",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/driver.py",
+      "sha256": "837036183d40f4a2ddae51f4ed76bc618fc45a5a5c60f6451d6ad8eef2088a95"
+    },
+    {
+      "bytes": 1415,
+      "git_blob_sha1": "5f70a5a7264bb8716d87da8f4c2ff35e3465fbda",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/official_manifest.json",
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    {
+      "bytes": 333,
+      "git_blob_sha1": "bcd18fce6860939838f3fc40be36f84a4b9304b7",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/old_solution/__init__.py",
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    {
+      "bytes": 1913,
+      "git_blob_sha1": "5648cdbea2b9baf0f0fd0008144062a7aaa6622d",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/old_solution/cpu_contract.py",
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    {
+      "bytes": 8253,
+      "git_blob_sha1": "f6daaa6bec02564172f556dfd65acbd955a5b736",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/old_solution/gpu_preflight.py",
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    {
+      "bytes": 9372,
+      "git_blob_sha1": "bb8c101306d3c4fbf77401ef04fb9a7a402321d7",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/old_solution/rotary.py",
+      "sha256": "11af78e6d5ea9eca6604b18d565e8990167d14342fc3f0f4a23a93dcfddca4c7"
+    },
+    {
+      "bytes": 8248,
+      "git_blob_sha1": "cac7477099145210455d3d493c7cae7872518924",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/old_solution/test_rotary.py",
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    {
+      "bytes": 2289,
+      "git_blob_sha1": "e9fa886739208d4f6bcb327806f9c28de8faeb4c",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/old_solution/web_preflight.py",
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    {
+      "bytes": 5956,
+      "git_blob_sha1": "51ed9ff6e6c908d34778e418c4975631d818ddcc",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/owned_process_tree.py",
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    {
+      "bytes": 1909,
+      "git_blob_sha1": "5df197681a30cfc283d85deeb406f9d40386b3f9",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/payload_manifest.json",
+      "sha256": "a00dae90a2c8d20a6d4698381499e79701227bcbd1c5b10501a36d6a5235bfbc"
+    },
+    {
+      "bytes": 7506,
+      "git_blob_sha1": "060b6caaa9926bfae2bcd23c1528ea6379c0e6fb",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/process_guard.py",
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    {
+      "bytes": 3420,
+      "git_blob_sha1": "06f53ef9f09f547a3c5ede6331b2480da9d679a8",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/reviewed_support.py",
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    {
+      "bytes": 2328,
+      "git_blob_sha1": "aad5d7396482b185cafc6a330e192352b0b01d14",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/runtime_probe.py",
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    {
+      "bytes": 333,
+      "git_blob_sha1": "bcd18fce6860939838f3fc40be36f84a4b9304b7",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/solution/__init__.py",
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    {
+      "bytes": 1913,
+      "git_blob_sha1": "5648cdbea2b9baf0f0fd0008144062a7aaa6622d",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/solution/cpu_contract.py",
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    {
+      "bytes": 8253,
+      "git_blob_sha1": "f6daaa6bec02564172f556dfd65acbd955a5b736",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/solution/gpu_preflight.py",
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    {
+      "bytes": 9344,
+      "git_blob_sha1": "0f002008cd3e80641c2d7739ac29437382853e3b",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/solution/rotary.py",
+      "sha256": "cbea5c7a64c70695fa009a7b98129889d9ec434993da4f9d123a87808ee766b0"
+    },
+    {
+      "bytes": 8248,
+      "git_blob_sha1": "cac7477099145210455d3d493c7cae7872518924",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/solution/test_rotary.py",
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    {
+      "bytes": 2289,
+      "git_blob_sha1": "e9fa886739208d4f6bcb327806f9c28de8faeb4c",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/solution/web_preflight.py",
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    {
+      "bytes": 1185,
+      "git_blob_sha1": "e838b0615c2a3c85b0e6fbdaa0095183b75194be",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/source_manifest.json",
+      "sha256": "8e7a1aa0f34b6ef1aef9162376ebd6c71ce9f1bbe6c72554a8abf9dae974769f"
+    },
+    {
+      "bytes": 8594,
+      "git_blob_sha1": "b95a7a0959967de9c5b14819e90cc3a4c6db7628",
+      "path": "soup-rope-runtime-microbench-v3-20261030/embedded_source/worker.py",
+      "sha256": "c59a0f17abcd4c6658d008fc1f1d09180c8c1de379b6cca3e40bef82d65fcc5a"
+    },
+    {
+      "bytes": 138975,
+      "git_blob_sha1": "4ba25495b370a55e27d62f311532be687155b16d",
+      "path": "soup-rope-runtime-microbench-v3-20261030/rope_runtime_dims_MICROBENCH_ONLY_v3.ipynb",
+      "sha256": "3fc15f4fe9c52e978b668d319c391623146ed48e945c9a82e576f323f7a4477a"
+    },
+    {
+      "bytes": 10027,
+      "git_blob_sha1": "ee7170ef5e5f540e4ecd67250a78fa4e95c28b3e",
+      "path": "soup-rope-runtime-microbench-v3-20261030/validation_tests/test_microbench_packet_v3.py",
+      "sha256": "aefb5415a80263d397bc46ca5592f293c90ec3bf06195fc546380a3232aba464"
+    },
+    {
+      "bytes": 1403,
+      "git_blob_sha1": "02d305c61c541bc959183bf5dbebe2f67b8dd2f8",
+      "path": "soup-rotary-web80-20261030/RESULT_SUMMARY.json",
+      "sha256": "bb7dede74e6048f0e7cc38f28f365b156e5fd51b74562f1181a24684694891c3"
+    },
+    {
+      "bytes": 1581,
+      "git_blob_sha1": "e203f4471a260d6d2159b265eea4f2ab1d18aca9",
+      "path": "soup-rotary-web80-20261030/SOURCE_MANIFEST.json",
+      "sha256": "6ae486eec4c503bcbd0526c30e1a80d312ad53dcfb87ddbe010fa4dec7b1f953"
+    },
+    {
+      "bytes": 81727,
+      "git_blob_sha1": "ccbac979284b3845d125528112be1f67a9b5ca21",
+      "path": "soup-rotary-web80-20261030/candidate.ipynb",
+      "sha256": "e6bae793229acc6e2f70a2a10f3e511b48710549e014c2ac020d082db36ed660"
+    },
+    {
+      "bytes": 333,
+      "git_blob_sha1": "bcd18fce6860939838f3fc40be36f84a4b9304b7",
+      "path": "soup-rotary-web80-20261030/solution/__init__.py",
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    {
+      "bytes": 1913,
+      "git_blob_sha1": "5648cdbea2b9baf0f0fd0008144062a7aaa6622d",
+      "path": "soup-rotary-web80-20261030/solution/cpu_contract.py",
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    {
+      "bytes": 8253,
+      "git_blob_sha1": "f6daaa6bec02564172f556dfd65acbd955a5b736",
+      "path": "soup-rotary-web80-20261030/solution/gpu_preflight.py",
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    {
+      "bytes": 9372,
+      "git_blob_sha1": "bb8c101306d3c4fbf77401ef04fb9a7a402321d7",
+      "path": "soup-rotary-web80-20261030/solution/rotary.py",
+      "sha256": "11af78e6d5ea9eca6604b18d565e8990167d14342fc3f0f4a23a93dcfddca4c7"
+    },
+    {
+      "bytes": 8248,
+      "git_blob_sha1": "cac7477099145210455d3d493c7cae7872518924",
+      "path": "soup-rotary-web80-20261030/solution/test_rotary.py",
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    {
+      "bytes": 2289,
+      "git_blob_sha1": "e9fa886739208d4f6bcb327806f9c28de8faeb4c",
+      "path": "soup-rotary-web80-20261030/solution/web_preflight.py",
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    {
+      "bytes": 2675,
+      "git_blob_sha1": "a409ad5f80b1c5a30e706152d7dda19690243b61",
+      "path": "soup-rotary-web80-20261030/validation_tests/next_revision_evidence/test_reader.py",
+      "sha256": "e3aafceeb1bc44a4e9934d30d50366840b08fc2958186f8bfd3c31afcbf891db"
+    },
+    {
+      "bytes": 9200,
+      "git_blob_sha1": "67e3b70e4d811abe18973cec04533041c5c1b695",
+      "path": "soup-rotary-web80-20261030/validation_tests/test_web_profile.py",
+      "sha256": "469bcc9457600042213d9a971ac7dab681e26488f106989225c7f92338f3bbb1"
+    }
+  ],
+  "prior_release_preserved": "c5161178d91330c537af5f89ecc57659a402ec06",
+  "repository": "BAITC-Hacks/hack-57faaa42-duo",
+  "schema_version": 1,
+  "scope": "16 submitted notebooks and original source, audit tests, minimized results; no external write"
+}

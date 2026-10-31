@@ -1,0 +1,46 @@
+{
+  "type": "synthetic_validator_tests_not_gpu_evidence",
+  "tests": [
+    {
+      "name": "synthetic_valid",
+      "status": "pass",
+      "validator_status": "provisional_baseline_validated"
+    },
+    {
+      "name": "wrapper_complete_but_train_failed",
+      "status": "pass",
+      "validator_status": "validation_failed"
+    },
+    {
+      "name": "wrapper_complete_but_eval_failed",
+      "status": "pass",
+      "validator_status": "validation_failed"
+    },
+    {
+      "name": "nonfinite_eval_loss",
+      "status": "pass",
+      "validator_status": "validation_failed"
+    },
+    {
+      "name": "false_gpu_metadata",
+      "status": "pass",
+      "validator_status": "validation_failed"
+    },
+    {
+      "name": "incomplete_steps",
+      "status": "pass",
+      "validator_status": "validation_failed"
+    },
+    {
+      "name": "false_memory_measurement",
+      "status": "pass",
+      "validator_status": "validation_failed"
+    },
+    {
+      "name": "missing_soup_output",
+      "status": "pass",
+      "validator_status": "validation_failed"
+    }
+  ],
+  "passed": 8
+}

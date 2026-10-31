@@ -1,0 +1,23 @@
+{
+  "scope": "Service-reported public metrics from the latest available page; not a complete competition leaderboard",
+  "observed_utc": "2026-10-31T05:39:43.181726+00:00",
+  "available_jobs": 100,
+  "eligible_reported_screens": 66,
+  "raw_competitor_outputs_verified": false,
+  "paired": false,
+  "jury_admission": "UNKNOWN",
+  "raw_output_access": "Blocked by automatic approval review; private output archives are excluded",
+  "fastest_reported": {
+    "candidate": "storage-fullcache-mlppad-fp16reuse-v2",
+    "whole_command_s": 60.24,
+    "peak_gpu_mib": 8827,
+    "eval_loss": 2.04969
+  },
+  "lowest_memory_reported": {
+    "candidate": "storage-mlp-padding-scatter-triton-v2",
+    "whole_command_s": 64.83,
+    "peak_gpu_mib": 5345,
+    "eval_loss": 2.04965
+  },
+  "reported_screens_below_both_targets": 0
+}

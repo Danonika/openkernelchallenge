@@ -1,0 +1,120 @@
+{
+  "full_m_batched_ce_storage_single_v1": {
+    "mode": "full_m_batched_ce_storage_single_v1",
+    "title": "Exploratory candidate: batched CE scheduling + direct final dZ",
+    "preflight": "solution.exploratory_preflight",
+    "preflight_status": "STRUCTURAL_CHECKS_COMPLETE_NUMERICAL_RESULTS_RECORDED",
+    "kernels": [
+      "soup_ce_exp_tile_max",
+      "soup_ce_exp_row_max",
+      "soup_ce_exp_tile_sum",
+      "soup_ce_exp_selected",
+      "soup_ce_metric_tiles",
+      "soup_ce_metric_merge",
+      "soup_nf4_dequantize",
+      "soup_rmsnorm_forward",
+      "soup_rmsnorm_backward"
+    ],
+    "routes": [
+      {
+        "prefix": "SOUP_STREAMED_CE ",
+        "event": "owned_consumer_guard",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_STREAMED_CE ",
+        "event": "backbone_once",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_STREAMED_CE ",
+        "event": "summary_loss_completed",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_STREAMED_CE ",
+        "event": "streaming_loss_return",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_STREAMED_CE ",
+        "event": "consumer_complete",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_COMPACT_MLP ",
+        "event": "owned_mlp_forward",
+        "positive_field": "count",
+        "match": {
+          "count": 1792,
+          "native_fallback": 0,
+          "starter_original_credit": 0
+        }
+      },
+      {
+        "prefix": "SOUP_FROZEN_STORAGE ",
+        "event": "owned_embedding_forward",
+        "positive_field": "count",
+        "match": {
+          "count": 64,
+          "installed": 1,
+          "head_fp16_calls": 0,
+          "head_native_operand_calls": 0,
+          "owners_intact": true,
+          "storage_original_credit": 0
+        }
+      },
+      {
+        "prefix": "SOUP_BATCH_CE ",
+        "event": "batched_ce_head",
+        "positive_field": "direct_dz_calls",
+        "match": {
+          "forward_calls": 64,
+          "backward_calls": 64,
+          "ce_groups": 64,
+          "single_group_calls": 64,
+          "direct_dz_calls": 64,
+          "assembled_dz_calls": 0
+        }
+      },
+      {
+        "prefix": "SOUP_BATCH_CE ",
+        "event": "batched_ce_head",
+        "positive_field": "above_128_rows_calls"
+      }
+    ],
+    "requires_original_kernels": true,
+    "zip_sha256": "7f9882870836adf2829da353997091f31ec21e9333534cf91ba5fa54f0040eaa",
+    "validation_policy": "EXPLICIT_FINITE_LORA_GRADIENT_UPDATE_WARNINGS_ONLY",
+    "starter_included": true,
+    "starter_original_credit": 0,
+    "compact_mlp_mechanism_already_in_user_package": true,
+    "embedding_storage_changed": true,
+    "excluded_kernels": [
+      "example_swiglu_fwd_kernel",
+      "example_swiglu_bwd_kernel"
+    ],
+    "embedding_original_credit": 0,
+    "native_embedding_lookup": true,
+    "storage_mechanism_precedent": true,
+    "new_numerical_kernel_credit": 0,
+    "ce_scheduling_changed": true,
+    "full_M_head_gemm_unchanged": true,
+    "frozen_storage_source_unchanged": true
+  }
+}

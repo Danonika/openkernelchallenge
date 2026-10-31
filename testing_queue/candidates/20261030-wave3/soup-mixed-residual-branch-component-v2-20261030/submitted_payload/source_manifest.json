@@ -1,0 +1,10 @@
+{
+  "solution/__init__.py": "5885b4a789103e14b8ffb2283ed5058eee05ec46b6bba1aff6b8be3de8b0eb11",
+  "solution/branch_capture.py": "35e36fe7a255e3e21726961c237ba60a1662175b082b5babaa641b4ef91fb3e9",
+  "solution/contracts.py": "728f06bf475fde4f8344507bb8f889105969d732742686d5004fe52faf06e700",
+  "solution/native_branch_fixture.py": "f29c31226c0abfb48bdedca0ba2f342ab35ceb56efe84236ba26ac4812423d51",
+  "solution/residual_norm.py": "bfabb808ba188b0ffa03e8825a90508e0d8b75d02c2b9388c28e7ce24d883abf",
+  "solution/web_preflight.py": "dfcd98c249b393342739679094c2150eacb235f633f41c62005126e77431fa78",
+  "old_solution/__init__.py": "94e10a1271fec2a429d69e28e4d8b3adfac59bdd323c3bf0d0fa3cf616534b0d",
+  "old_solution/rmsnorm.py": "95f22a8e09309d1d6be57d389d5dc8fc8feaa05ba4a8510192443a94009a9dde"
+}

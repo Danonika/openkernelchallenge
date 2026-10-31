@@ -1,0 +1,29 @@
+{
+  "head_shared_cast_v2": {
+    "mode": "head_shared_cast_v2",
+    "title": "N33 native shared head cast v2 \u2014 zero owned Triton, target untested",
+    "preflight": "solution.web_preflight",
+    "preflight_status": "PASS_NATIVE_SHARED_CAST_PREFLIGHT_ONLY",
+    "kernels": [],
+    "requires_original_kernels": false,
+    "routes": [
+      {
+        "prefix": "SOUP_HEAD_SHARED ",
+        "event": "shared_cast",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_HEAD_SHARED ",
+        "event": "owned_loss_return",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      }
+    ],
+    "zip_sha256": "e9e29dc9bf219ea35fccc4227dabaa87c3ca07cca8dca38a7215aedf157dc75e"
+  }
+}

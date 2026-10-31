@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "static/CPU packet verification, not target execution",
+  "notebook_code_cells_compiled": 3,
+  "notebook_outputs_cleared": true,
+  "notebook_schema": "nbformat unavailable; structural JSON/AST checks passed",
+  "source_files_compiled": 7,
+  "deterministic_zip_rebuild_identical": true,
+  "zip_sha256": "055183cdd11a254e3462f25b95b4c0ec87a556cc58cb9bcc08e77f5390548979",
+  "embedded_sources_and_runner_match_files": true,
+  "official_harness_task_tests_hashes_unchanged": true,
+  "source_manifest_matches_every_zip_file": true,
+  "gpu_executed": false,
+  "cpu_integration": {
+    "passed_groups": 6,
+    "failed_groups": 0
+  },
+  "new_version_telemetry": {
+    "passed_groups": 6,
+    "failed_groups": 0
+  },
+  "unchanged_soup_regressions": {
+    "passed": 79,
+    "scope": "CPU tests; production route safely declined non-target build"
+  },
+  "synthetic_report_fixtures": {
+    "passed": 5
+  },
+  "active_quarantine_fixtures": {
+    "passed": 5,
+    "includes_abrupt_sigkill": true
+  },
+  "cpu_process_cleanup_fixture": {
+    "passed": true,
+    "scope": "separate-session grandchild, pidfd cleanup and quarantine"
+  },
+  "target_status": "UNTESTED",
+  "score": null,
+  "admission": "UNKNOWN"
+}

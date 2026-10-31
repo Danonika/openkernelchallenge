@@ -1,0 +1,23 @@
+{
+  "candidate.ipynb": "a9072b0653bcba603d16e32208c4697e40e25fd580b543e817b7cbc04857f10f",
+  "candidate.zip": "b874e6a4f23b9912014ed3f39e30c44716fc3af5aece742d5c03d447643d3829",
+  "source_manifest.json": "f86cd383d1ccb49f4ef473cd672b3be9609f5007e7e7be07d2a477b396106672",
+  "submission.template.json": "2716d36362702cf6fc706140f89dfa13741880a92a0989fef0227e6333fb119c",
+  "README.md": "cf79e53f35ca97cc0d8766b33077a16457f58b3d1675895f3510ee8aa160ffda",
+  "validation.json": "f282ee936b42cd12114ab24ea3559ea2687df5dbebc04e0c951fe156212b8c52",
+  "run_prepared.py": "3ad54e3ae1eb9abc6edc429752b35698e1e5ecaf2f8a177f72734fd805056753",
+  "check_kaggle_environment.py": "0d3d40996a1823f22f0f487649cb39e72357262cf7b39dcb6ae4200acdf7d5a3",
+  "prepare_asset_manifest.py": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+  "requirements-kaggle.txt": "1159a601742f7d6e745b5e878a12e12c465dba414690e98bc70c4cb02ebbac2d",
+  "official_frozen_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+  "cpu_interpreter.log": "29bfc7f607d4d6e75055f5b1d4e70dd05f2253411763ce30bc069fdd5386c8f5",
+  "cpu_native.log": "3c9b11bddd90f395cf18de5dd2a83ec9ee28b3fc4280a61c60dff0ddad183ab5",
+  "official_cpu_regression.log": "13cea8c042b7cf36ff2bdd517c788fc66de31f92724ecfcfc69075216864ef8f",
+  "static_checks.log": "b01da6fb039253ca7a154880b893a9f1a74ab45c0b65c4a081e557eab9686a22",
+  "safe_runner_checks.json": "d64d77d28b3b38400c53103185dc53d7e5259158e2b4e5ac6b52a18f4a85b3dc",
+  "runner_cleanup.log": "be2f240a3d0ea7b77b0a4e98147c6303eb16bcc3f09c031a8781dbbd4cfa7878",
+  "test_runner_cleanup.py": "c8a63dcc24ff617f5b27cf01fb24ee4f98110f473ea9762f990475cfe966c342",
+  "validate_artifacts.py": "5fdf81aede897709f1683586b818e5ce7241a040ff9397afc260a3f28558c393",
+  "build_notebook.py": "062bec8269ada277e94c96a87a94d622189e92ace997c076f1bcfe5c5e9613c8",
+  "bundle.log": "82bd5c8eaa33111e87ae7e45b10941ddb1c7271fad42929550cc55cf59963a49"
+}

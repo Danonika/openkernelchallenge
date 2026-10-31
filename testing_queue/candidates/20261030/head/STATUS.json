@@ -1,0 +1,44 @@
+{
+  "candidate_id": "head-private-half-native-replay-20261030",
+  "status": "PREPARED_RESEARCH_CONTROL",
+  "t4_validation": "NOT_RUN",
+  "native_full_task_integration": "NOT_RUN",
+  "h0_output_suppression": "BLOCKED_UNPROVEN_CONSUMER_BRIDGE",
+  "formal_admission": "BLOCKED_NO_ORIGINAL_TRITON",
+  "own_triton_kernels": [],
+  "own_triton_share_structural": 0.0,
+  "score": null,
+  "cpu_checks": {
+    "passed": 24,
+    "failed": 0,
+    "scope": "Torch2.15.0+cpu; tiny actual Qwen only, no PEFT/NF4/TRL/Accelerate"
+  },
+  "static_checks": {
+    "passed": 11,
+    "failed": 0
+  },
+  "zip_sha256": "fbe133d4fdf46353312c3de495f3d33958db04ce80380a9829628bc44daf0026",
+  "notebook_sha256": "dfec7260a546cf18a35bce2c7f0902870a9fdfa9963320af94a7200916321564",
+  "queue_submission": "NOT_ATTEMPTED",
+  "baseline_id": "UNRESOLVED_REQUIRES_ACTUAL_GCP_COHORT",
+  "gpu_execution": "NOT_ATTEMPTED",
+  "files": [
+    "candidate.ipynb",
+    "candidate.zip",
+    "candidate-files.json",
+    "bundle-info.json",
+    "official-source-manifest.json",
+    "submission.template.json",
+    "README.md",
+    "run_candidate.py",
+    "solution/",
+    "validation/",
+    "process_guard.py",
+    "owned_process_tree.py"
+  ],
+  "process_guard_checks": {
+    "passed": 7,
+    "failed": 0,
+    "scope": "CPU nested-session children only; temporary locks and quarantine markers"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "hypothesis": "Selective binary weight storage, exact exceptions and reusable weight preparation",
+  "observed_cutoff_utc": "2026-10-31T10:46:48.665781+00:00",
+  "competitor_implementation": "UNVERIFIED; this is the user hypothesis",
+  "scope": "COMPONENT_AND_FIRST_BATCH_DIAGNOSTICS_ONLY",
+  "full_task": "NOT_RUN",
+  "public_eval": "NOT_RUN",
+  "hidden_eval": "NOT_RUN",
+  "official_admission": "UNKNOWN",
+  "target_45_s_1359_mib": "NOT_ESTABLISHED",
+  "useful_original_triton_credit": 0,
+  "codec_checks": 35,
+  "first_batch_native_loss": 2.0589325428009033,
+  "first_batch_variants": [
+    {
+      "name": "native_nf4",
+      "loss": 2.0589325428009033,
+      "relative_loss_gap": 0.0,
+      "within_1pct_diagnostic_threshold": true,
+      "quantized_weight_elements": 0
+    },
+    {
+      "name": "dense_native_nf4_control",
+      "loss": 2.0589325428009033,
+      "relative_loss_gap": 0.0,
+      "within_1pct_diagnostic_threshold": true,
+      "quantized_weight_elements": 0
+    },
+    {
+      "name": "one_q_projection_layer_0",
+      "loss": 2.097306489944458,
+      "relative_loss_gap": 0.018637787467943,
+      "within_1pct_diagnostic_threshold": false,
+      "quantized_weight_elements": 2359296
+    },
+    {
+      "name": "last_four_decoder_layers",
+      "loss": 16.153480529785156,
+      "relative_loss_gap": 6.845560839895463,
+      "within_1pct_diagnostic_threshold": false,
+      "quantized_weight_elements": 187170816
+    },
+    {
+      "name": "all_decoder_projections",
+      "loss": 16.368423461914062,
+      "relative_loss_gap": 6.949956164978093,
+      "within_1pct_diagnostic_threshold": false,
+      "quantized_weight_elements": 1310195712
+    },
+    {
+      "name": "native_nf4_repeat",
+      "loss": 2.0589325428009033,
+      "relative_loss_gap": 0.0,
+      "within_1pct_diagnostic_threshold": true,
+      "quantized_weight_elements": 0
+    }
+  ],
+  "dense_native_control_relative_loss_gap": 0.0,
+  "native_repeat_exact": true,
+  "nf4_codec_error_coordinate_space": "Unscaled NF4 codebook values sampled from actual tensors; not scale-weighted aggregate tensor L2",
+  "embedding_error_coordinate_space": "Original FP16 checkpoint values",
+  "precomputation_scope": "All preparation runs inside each diagnostic; no saved weight caches or precomputed outputs",
+  "first_batch_storage": "Binary numerical values expanded in FP16; not a packed implementation",
+  "v1_failure": "Test-code bias assumption; only native forward completed. Preserved independently.",
+  "v2_repair": "Preserves original biases in FP16 compute and adds dense native NF4 control; no quality thresholds relaxed."
+}

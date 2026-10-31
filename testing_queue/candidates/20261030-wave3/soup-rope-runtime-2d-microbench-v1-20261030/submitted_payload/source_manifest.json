@@ -1,0 +1,14 @@
+{
+  "solution/__init__.py": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1",
+  "solution/cpu_contract.py": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550",
+  "solution/gpu_preflight.py": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd",
+  "solution/rotary.py": "a07720f3106a94144b74a971950583574b789fa0188ce7300c4cbe30a1e83c07",
+  "solution/test_rotary.py": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062",
+  "solution/web_preflight.py": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491",
+  "old_solution/__init__.py": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1",
+  "old_solution/cpu_contract.py": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550",
+  "old_solution/gpu_preflight.py": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd",
+  "old_solution/rotary.py": "cbea5c7a64c70695fa009a7b98129889d9ec434993da4f9d123a87808ee766b0",
+  "old_solution/test_rotary.py": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062",
+  "old_solution/web_preflight.py": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+}

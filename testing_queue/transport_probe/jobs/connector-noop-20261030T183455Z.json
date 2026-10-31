@@ -1,0 +1,10 @@
+{
+  "schema": "transport_probe_v1",
+  "kind": "noop",
+  "execute": false,
+  "source": "user_requested_connector_probe",
+  "job_id": "connector-noop-20261030T183455Z",
+  "created_at_utc": "2026-10-30T18:34:55Z",
+  "expected_echo_nonce": "nonsecret-echo-20261030T183455Z-a91e",
+  "scope": "Producer write/read probe only. No code execution, GPU work, consumer acknowledgment or Actions dispatch requested."
+}

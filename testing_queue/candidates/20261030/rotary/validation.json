@@ -1,0 +1,68 @@
+{
+  "status": "PREPARED_GPU_UNTESTED",
+  "compiled_code_cells": 3,
+  "solution_source_files": 5,
+  "source_sha256": "b874e6a4f23b9912014ed3f39e30c44716fc3af5aece742d5c03d447643d3829",
+  "notebook_sha256": "a9072b0653bcba603d16e32208c4697e40e25fd580b543e817b7cbc04857f10f",
+  "notebook_embedded_bytes_match": true,
+  "deterministic_queue_bundle": true,
+  "queue_artifact_schema_pass": true,
+  "official_static_owned_kernel_names": [
+    "_signflip_f32",
+    "rotary_adjoint_f32",
+    "rotary_apply_f32"
+  ],
+  "example_copies": [],
+  "example_lookalikes": [],
+  "banned_imports": [],
+  "broken_source": [],
+  "gpu_executed": false,
+  "score": null,
+  "admission": "UNKNOWN",
+  "cpu_interpreter": {
+    "passed": 20,
+    "failed": 0,
+    "torch": "2.15.0+cpu",
+    "triton": "3.9.0",
+    "warning": "One intentional nonfinite NumPy multiply warning",
+    "log": "cpu_interpreter.log"
+  },
+  "cpu_native_smoke": {
+    "passed": true,
+    "triton_executed": false,
+    "log": "cpu_native.log"
+  },
+  "official_cpu_regression": {
+    "passed": 79,
+    "failed": 0,
+    "source": "Unchanged tests copied to temporary tree; solution.apply active; no full model/GPU",
+    "log": "official_cpu_regression.log"
+  },
+  "blockers": [
+    "No CUDA/T4 execution or Triton 3.6 compilation",
+    "Target GPU preflight, full-task quality/time/memory and useful own share >=5% remain unmeasured",
+    "No GCP baseline ID or final Kaggle admission"
+  ],
+  "submission_performed": false,
+  "remote_edits": false,
+  "notebook_executed": false,
+  "source_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "safe_runner_checks": {
+    "notebook_staging_execution": "PASS_NO_GPU",
+    "default_opt_in_guard": "PASS",
+    "runner_authorization_guard": "PASS",
+    "canonical_gpu_lock_contention": "PASS_NO_GPU",
+    "gpu_executed": false
+  },
+  "notebook_execution_scope": "Only config/staging cells plus expected default no-GPU guard; no GPU cell completed",
+  "runner_cleanup": {
+    "status": "PASS_CPU_ONLY",
+    "nested_session_timeout_cleanup": true,
+    "normal_exit_orphan_cleanup": true,
+    "sigterm_descendant_cleanup": true,
+    "pidfd_signals": true,
+    "outer_timeout_retains_quarantine": true,
+    "existing_quarantine_refused": true,
+    "gpu_executed": false
+  }
+}

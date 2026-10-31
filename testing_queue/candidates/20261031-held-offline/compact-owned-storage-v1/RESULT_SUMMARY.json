@@ -1,0 +1,15 @@
+{
+  "status": "UNRUN_HELD_SERVER_UPDATE",
+  "submitted": false,
+  "GPU_executed": false,
+  "scope": "Reviewed candidate-only 64-step screen; exact-value frozen tied embedding/head storage added to the completed compact-MLP route. Native lookup/head semantics retained. No original embedding or starter-kernel credit. Source/output/RNG/scaler/route contracts remain blocking; explicitly allowlisted finite comparison failures remain recorded warnings.",
+  "next_action": "After explicit server resume and recovery of existing accepted jobs, execute the exact frozen candidate-only screen with native public evaluation. No baseline or paired cell. Require storage installed once, embedding 64, head 64 and MLP 1792 with zero fallback before interpreting results.",
+  "notebook_sha256": "f04b57461cb67bae2afd3038319a18098d0b56cfd1e548aaed65eb42df606adb",
+  "source_zip_sha256": "4fb83e4984c6ea230cc26f07563315c71667a68dc431ad2cdda89459e088a905",
+  "independent_review_receipt_sha256": "9c6c34be6648855ef96b02e9e172d8b6ea08f32c57e1c79146707d46417ef42e",
+  "review_receipt_exported": false,
+  "performance": null,
+  "score": null,
+  "admission": "UNKNOWN",
+  "not_final_submission": true
+}

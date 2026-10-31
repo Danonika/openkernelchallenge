@@ -1,0 +1,161 @@
+{
+  "candidate": "soup-ce-rowmix-sync-v2-web80-20261030",
+  "notebook_sha256": "84920412a3f010bf4edb22f0d55afce94fe8b5a2205b0fda9d8e6f6aeb6b6841",
+  "embedded_payload_sha256": {
+    "evidence_reader.py": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "prepare_asset_manifest.py": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "web_runner.py": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c",
+    "candidate_profile.json": "cce72db15c8c6778187d7ab4af4cdf6cdfb993564684bb62cbfb7314d9c87de7",
+    "ce_rowmix_sync_v2.zip": "1b73887295373b95d29da626f539ffe3289432763fadf2f7469dc01f21927509",
+    "ce_rowmix_sync_v2_manifest.json": "9bee69229fabde126e567f3259dc3321c487dd533c7f24d2a3248c93ef9e119f",
+    "README.md": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d",
+    "runtime_api_reference.json": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+  },
+  "decoded_source_archives": [
+    {
+      "embedded_source_archive": "ce_rowmix_sync_v2.zip",
+      "sha256": "1b73887295373b95d29da626f539ffe3289432763fadf2f7469dc01f21927509",
+      "decoded_members": [
+        "solution/__init__.py",
+        "solution/adapter.py",
+        "solution/materialized_ce.py",
+        "solution/mixed_rows.py",
+        "solution/numerical_gates.py",
+        "solution/telemetry.py",
+        "solution/test_cpu_contract.py",
+        "solution/verify_integration.py",
+        "solution/verify_rowmix.py"
+      ],
+      "source_archive_bytes_exported_separately": false
+    }
+  ],
+  "exported_payload_files": {
+    "README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "candidate_profile.json": {
+      "bytes": 850,
+      "sha256": "cce72db15c8c6778187d7ab4af4cdf6cdfb993564684bb62cbfb7314d9c87de7"
+    },
+    "ce_rowmix_sync_v2_manifest.json": {
+      "bytes": 889,
+      "sha256": "9bee69229fabde126e567f3259dc3321c487dd533c7f24d2a3248c93ef9e119f"
+    },
+    "evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "solution/__init__.py": {
+      "bytes": 1401,
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    "solution/adapter.py": {
+      "bytes": 8840,
+      "sha256": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750"
+    },
+    "solution/materialized_ce.py": {
+      "bytes": 14066,
+      "sha256": "0064ed0506c73efbbd750457147ff22c33b9926b60633e930063fd9c32ac727a"
+    },
+    "solution/mixed_rows.py": {
+      "bytes": 7356,
+      "sha256": "f32a277c2d6d16c9ce9a731ef027a254785351ddea42160e4a77402dcb3f05b5"
+    },
+    "solution/numerical_gates.py": {
+      "bytes": 3425,
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    "solution/telemetry.py": {
+      "bytes": 5351,
+      "sha256": "c60d73a2ee932990ae32a8d2619fadc935803fd621c913f2ca390065cc7d201d"
+    },
+    "solution/test_cpu_contract.py": {
+      "bytes": 10559,
+      "sha256": "7df43cf9d3defcddfe93733af7680c749dcdd35578de287f0560ac3cdbcdc288"
+    },
+    "solution/verify_integration.py": {
+      "bytes": 10119,
+      "sha256": "54cc216efeebab9d5c5b80204fbba5744880f3f7a4a36b439fa482d89bfa6772"
+    },
+    "solution/verify_rowmix.py": {
+      "bytes": 6641,
+      "sha256": "10e9dbab399ddf63c08a8c394bd50cde914a86ca3ee5ed6db3aa0ee82934d916"
+    },
+    "web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    }
+  },
+  "validation_tests": {
+    "test_process_guard.py": {
+      "bytes": 4567,
+      "sha256": "9775742d759d8fefdaba9e67987ba6da4f34f9abb0e4db80f02b6865c798cc6f"
+    },
+    "test_v2_reader.py": {
+      "bytes": 1766,
+      "sha256": "89bd27f78bf06227f50b1da07c0b5870d2607df6a465464d95e08f6729c450f4"
+    },
+    "test_web_packet.py": {
+      "bytes": 10625,
+      "sha256": "8425e76c56a5374e071fbf5a84f58eb75670825ccf6a2a10741dc1cabdae8aff"
+    },
+    "tests/cpu_target_preflight_fixture.py": {
+      "bytes": 1155,
+      "sha256": "7e39e7510c092ddd82340ddc4c68bcf20e900fc951464d9b1c315b69ed6882e3"
+    },
+    "tests/offline_compile.py": {
+      "bytes": 1616,
+      "sha256": "9458648d4595eb97ed550612e5c0a2415ccebe2eb3f3fe204857f9a63c687986"
+    },
+    "tests/test_lazy_flags.py": {
+      "bytes": 2471,
+      "sha256": "a5872bdcf5492a7ebc86829dc5e333cb21d90978cf2ec457cda6cd38183b0fff"
+    },
+    "tests/test_quiet_telemetry.py": {
+      "bytes": 8604,
+      "sha256": "47a2da59c9bb7a8ea0bcf52d2a93ec3806f39a9b16cbd69294e76c6ccc68d751"
+    },
+    "tests/test_rowmix_discriminators.py": {
+      "bytes": 9315,
+      "sha256": "13b172047281037ac92460968d2e3fd8038bcb141111fa9ab3745a777e7fb309"
+    },
+    "tests/test_rowmix_dispatch.py": {
+      "bytes": 5800,
+      "sha256": "21fefd0f2de95b4231da3dd8ab19e7e75e2dbbac8b81f43144198e98b591a351"
+    },
+    "tests/test_sync_consolidation.py": {
+      "bytes": 7039,
+      "sha256": "f383554cbd958ebfb18d97f7870dd2b8d03d29d666d378e93b98adce4fbac0a6"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

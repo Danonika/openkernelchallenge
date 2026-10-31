@@ -1,0 +1,11 @@
+{
+  "status": "STATIC_AND_CPU_ORCHESTRATION_CHECKS_PASSED",
+  "gpu_tested": false,
+  "checks_count": 94,
+  "python_files_compiled": 12,
+  "candidate_sha256": "33497fee4dbc96070e1207ec2df6d2e4eef1cf196d50c4d6e9df73e7c0fb649f",
+  "notebook_sha256": "3bb4acc13beb182a97399335cbe1c8db3aef90e935af4af1b5a2844b47f17b42",
+  "official_source_files_checked": 15,
+  "admission": "UNKNOWN",
+  "score": null
+}

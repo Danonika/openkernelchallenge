@@ -1,0 +1,32 @@
+{
+  "candidate": "soup-nf4-tiled-reuse-microbench-v1-20261030",
+  "family": "NF4 MMA/diagnostics",
+  "status": "STOP_SLOW_TESTED_VERSION",
+  "conclusion": "64x64/4warp design passes12 frozen-MMA and12 actual-module cases;68/70registers,zero spills,eightMMA. Slower all6 warm medians1.33–7.56x with separated observed ranges. Stop register-only redesign; no full training.",
+  "notebook_sha256": "a5ca49f639a6831191b553cc255412042948ea9229dcdd2528a127070afd94a9",
+  "raw_output_archive_sha256": "3f5498bb40f6b7e7d81ec4a8e64e921f7c794781f65d8bdbfcf1bf0d5590c93f",
+  "source_bound_receipt_bindings": [
+    {
+      "receipt": "nf4_tiled_v1_microbench_attempt01_sourcebound_receipt.json",
+      "sha256": "63841ad9d17b74fb0ddb3d1bb5604aef0a5066a0e33540093a1689df67082c52",
+      "status": "COMPLETE_SOURCE_BOUND_MICROBENCH_ONLY",
+      "raw_output_archive_sha256": "3f5498bb40f6b7e7d81ec4a8e64e921f7c794781f65d8bdbfcf1bf0d5590c93f",
+      "receipt_exported": false
+    }
+  ],
+  "official_score": null,
+  "admission": "UNKNOWN",
+  "full_task_success_claim": false,
+  "cap_seconds": 80,
+  "scope_limits": [
+    "Components are not full-model measurements.",
+    "Incomplete or diagnostic commands are not validated pairs.",
+    "Source availability and local tests do not imply Kaggle admission.",
+    "Prior failures remain tied to exact tested versions, not whole idea families."
+  ],
+  "export_exclusions": [
+    "No API identity/status blobs.",
+    "No raw output archive or private Sheet snapshot.",
+    "No credentials,model/cache files,or separately supplied native-dab4 package."
+  ]
+}

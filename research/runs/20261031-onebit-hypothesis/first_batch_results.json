@@ -1,0 +1,499 @@
+{
+  "status": "FAILED_FIRST_BATCH_DIAGNOSTIC",
+  "scope": "FIRST_NATIVE_TRAIN_BATCH_FORWARD_DIAGNOSTIC_ONLY",
+  "optimizer_steps": 0,
+  "backward_calls": 0,
+  "completed_training_steps": 0,
+  "public_eval": "NOT_RUN",
+  "official_admission": "UNKNOWN",
+  "benchmark_eligible": false,
+  "variants": [
+    {
+      "name": "native_nf4",
+      "loss": 2.0589325428009033,
+      "relative_loss_gap": 0.0,
+      "within_1pct_diagnostic_threshold": true,
+      "binary_modules": [],
+      "quantized_weight_elements": 0,
+      "not_an_official_check_result": true
+    }
+  ],
+  "limitations": [
+    "No full 64-step run, gradient check or held-out evaluation",
+    "Weight binarization is lossy; admission is not established",
+    "Expanded binary tensors are slow numerical references, not a packed kernel",
+    "No speed or memory comparison; preparation occurs inside the diagnostic",
+    "Loss values are genuine; repeated forwards are diagnostics, not logged training steps"
+  ],
+  "fixed_task_file_sha256": "dd70c739fcd143e06aef3bb1efcc9386f682bf1de26f30e08409d86a97ff47ce",
+  "config_changes": [
+    "Resolve same public training-file path",
+    "Separate diagnostic output directory"
+  ],
+  "batch": {
+    "shape": [
+      4,
+      235
+    ],
+    "input_ids_sha256": "da6444e6fd9dedbc42f3f9fe108872d74608e5162d19206ddb7e5d75988affd0",
+    "labels_sha256": "02f3e8ac654954ea884b3e51830b641b7d219d1e1e508c11bed0766588b21e58",
+    "supervised_shifted_tokens": 392,
+    "trainer_class": "RewindSFTTrainer",
+    "model_training": true,
+    "native_compute_loss_sha256": "e05038c89369901e08f5fd46c9fa3dd312e2a0afc8c4eb3d54a3c79eb1fa716a"
+  },
+  "trainable_parameters": {
+    "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.1.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.1.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.1.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.1.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.2.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.2.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.2.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.2.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.3.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.3.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.3.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.3.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.4.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.4.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.4.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.4.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.5.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.5.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.5.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.5.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.6.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.6.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.6.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.6.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.7.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.7.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.7.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.7.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.8.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.8.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.8.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.8.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.9.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.9.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.9.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.9.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.10.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.10.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.10.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.10.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.11.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.11.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.11.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.11.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.12.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.12.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.12.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.12.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.13.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.13.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.13.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.13.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.14.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.14.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.14.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.14.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.15.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.15.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.15.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.15.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.16.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.16.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.16.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.17.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.17.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.17.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.17.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.18.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.18.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.18.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.18.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.19.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.19.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.19.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.19.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.20.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.20.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.20.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.21.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.21.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.21.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.21.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.22.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.22.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.22.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.22.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.23.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.23.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.23.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.23.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.24.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.24.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.24.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.24.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.25.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.25.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.25.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.25.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.26.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.26.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.26.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.26.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ],
+    "base_model.model.model.layers.27.self_attn.q_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.27.self_attn.q_proj.lora_B.default.weight": [
+      1536,
+      16
+    ],
+    "base_model.model.model.layers.27.self_attn.v_proj.lora_A.default.weight": [
+      16,
+      1536
+    ],
+    "base_model.model.model.layers.27.self_attn.v_proj.lora_B.default.weight": [
+      256,
+      16
+    ]
+  },
+  "binary_precomputation_s": 0.26541883800018695,
+  "error": "SystemExit(1)",
+  "traceback": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.13/site-packages/soup_cli/cli.py\", line 1033, in run\n    app()\n    ~~~^^\n  File \"/usr/local/lib/python3.13/site-packages/typer/main.py\", line 1154, in __call__\n    raise e\n  File \"/usr/local/lib/python3.13/site-packages/typer/main.py\", line 1137, in __call__\n    return get_command(self)(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/typer/_click/core.py\", line 802, in __call__\n    return self.main(*args, **kwargs)\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/typer/core.py\", line 1197, in main\n    return _main(\n        self,\n    ...<6 lines>...\n        **extra,\n    )\n  File \"/usr/local/lib/python3.13/site-packages/typer/core.py\", line 187, in _main\n    rv = self.invoke(ctx)\n  File \"/usr/local/lib/python3.13/site-packages/typer/core.py\", line 1119, in invoke\n    return _process_result(sub_ctx.command.invoke(sub_ctx))\n                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/typer/_click/core.py\", line 741, in invoke\n    return ctx.invoke(self.callback, **ctx.params)\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/typer/_click/core.py\", line 483, in invoke\n    return callback(*args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/typer/main.py\", line 1524, in wrapper\n    return callback(**use_params)\n  File \"/usr/local/lib/python3.13/site-packages/soup_cli/commands/train.py\", line 2051, in train\n    result = trainer_wrapper.train(\n        display=display, tracker=tracker, run_id=run_id,\n        resume_from_checkpoint=resume_from,\n    )\n  File \"/usr/local/lib/python3.13/site-packages/soup_cli/trainer/sft.py\", line 2528, in train\n    self.trainer.train(resume_from_checkpoint=resume_from_checkpoint)\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/soup_cli/trainer/rewind_hf.py\", line 296, in train\n    return super().train(resume_from_checkpoint, *args, **kwargs)\n           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/transformers/trainer.py\", line 1458, in train\n    return inner_training_loop(\n        args=args,\n    ...<2 lines>...\n        ignore_keys_for_eval=ignore_keys_for_eval,\n    )\n  File \"/usr/local/lib/python3.13/site-packages/transformers/trainer.py\", line 1540, in _inner_training_loop\n    self._run_epoch(\n    ~~~~~~~~~~~~~~~^\n        model=model,\n        ^^^^^^^^^^^^\n    ...<9 lines>...\n        steps_trained_in_current_epoch=steps_trained_in_current_epoch,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/usr/local/lib/python3.13/site-packages/transformers/trainer.py\", line 1768, in _run_epoch\n    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)\n  File \"/usr/local/lib/python3.13/site-packages/trl/trainer/sft_trainer.py\", line 1338, in training_step\n    return super().training_step(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/transformers/trainer.py\", line 1940, in training_step\n    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)\n  File \"/kaggle/working/onebit-first-loss-x5_ccuta/probe.py\", line 102, in measured_loss\n    evaluate('one_q_projection_layer_0',q0)\n    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/kaggle/working/onebit-first-loss-x5_ccuta/probe.py\", line 76, in evaluate\n    with torch.no_grad():value=native_loss(trainer,model,cloned,*args,**kwargs)\n                               ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/soup_cli/trainer/rewind_hf.py\", line 338, in compute_loss\n    loss, outputs = super().compute_loss(\n                    ~~~~~~~~~~~~~~~~~~~~^\n        model,\n        ^^^^^^\n    ...<2 lines>...\n        num_items_in_batch=num_items_in_batch,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/usr/local/lib/python3.13/site-packages/trl/trainer/sft_trainer.py\", line 1234, in compute_loss\n    (loss, outputs) = super().compute_loss(\n                      ~~~~~~~~~~~~~~~~~~~~^\n        model, inputs, return_outputs=True, num_items_in_batch=num_items_in_batch\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/usr/local/lib/python3.13/site-packages/transformers/trainer.py\", line 2014, in compute_loss\n    outputs = model(**inputs)\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/accelerate/utils/operations.py\", line 943, in forward\n    return model_forward(*args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/accelerate/utils/operations.py\", line 931, in __call__\n    return convert_to_fp32(self.model_forward(*args, **kwargs))\n                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/amp/autocast_mode.py\", line 44, in decorate_autocast\n    return func(*args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/peft/peft_model.py\", line 2101, in forward\n    return self.base_model(\n           ~~~~~~~~~~~~~~~^\n        input_ids=input_ids,\n        ^^^^^^^^^^^^^^^^^^^^\n    ...<6 lines>...\n        **kwargs,\n        ^^^^^^^^^\n    )\n    ^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/peft/tuners/tuners_utils.py\", line 333, in forward\n    return self.model.forward(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/transformers/utils/generic.py\", line 939, in wrapper\n    output = func(self, *args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/transformers/models/qwen2/modeling_qwen2.py\", line 452, in forward\n    outputs: BaseModelOutputWithPast = self.model(\n                                       ~~~~~~~~~~^\n        input_ids=input_ids,\n        ^^^^^^^^^^^^^^^^^^^^\n    ...<5 lines>...\n        **kwargs,\n        ^^^^^^^^^\n    )\n    ^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/transformers/utils/generic.py\", line 1068, in wrapper\n    output = func(self, *args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/transformers/utils/output_capturing.py\", line 262, in wrapper\n    outputs = func(self, *args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/transformers/models/qwen2/modeling_qwen2.py\", line 388, in forward\n    hidden_states = decoder_layer(\n        hidden_states,\n    ...<5 lines>...\n        **kwargs,\n    )\n  File \"/usr/local/lib/python3.13/site-packages/transformers/modeling_layers.py\", line 114, in __call__\n    return super().__call__(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/transformers/models/qwen2/modeling_qwen2.py\", line 282, in forward\n    hidden_states, _ = self.self_attn(\n                       ~~~~~~~~~~~~~~^\n        hidden_states=hidden_states,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<5 lines>...\n        **kwargs,\n        ^^^^^^^^^\n    )\n    ^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/transformers/models/qwen2/modeling_qwen2.py\", line 206, in forward\n    query_states = self.q_proj(hidden_states).view(hidden_shape).transpose(1, 2)\n                   ~~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/peft/tuners/lora/bnb.py\", line 527, in forward\n    result = self.base_layer(x, *args, **kwargs)\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/kaggle/working/onebit-first-loss-x5_ccuta/probe.py\", line 48, in linear\n    if module.bias is not None:raise RuntimeError('Unexpected bias in selected Qwen projection')\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Unexpected bias in selected Qwen projection\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/kaggle/working/onebit-first-loss-x5_ccuta/probe.py\", line 130, in <module>\n    try:run()\n        ~~~^^\n  File \"/usr/local/lib/python3.13/site-packages/soup_cli/cli.py\", line 1059, in run\n    sys.exit(1)\n    ~~~~~~~~^^^\nSystemExit: 1\n",
+  "diagnostic_wall_s": 16.794542815998284
+}

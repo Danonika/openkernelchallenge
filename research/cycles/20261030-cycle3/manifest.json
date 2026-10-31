@@ -1,0 +1,24 @@
+{
+  "scope": "Approved cycle3 research/CPU refinement only; no raw GPU training logs",
+  "cutoff_utc": "2026-10-30T11:46:59.368757+00:00",
+  "source_manifest_sha256": "403b8852a44198af948796169c809be117ea50ab3dd2544b8ab4ac2185ef35a0",
+  "reconstructed_rows_sha256": "4478e3dc1d92855c3ff0eb73ae62245de806c27bf687d2bfc4b12d156c31a6b2",
+  "files": {
+    "README.md": "abe23422795c581474da19787a2ad01cabf9a59255dc53882a6a69c619d1a3cb",
+    "approval.json": "7eb449065101dcff3e754ccda851074690d9ed96ce4bb8aea8475438b558deb4",
+    "cpu_cycle3_results.md": "882c7abb13c22650ef43951fa2c4543fd07d2aa23623e4855f035ca1e2fc0a2e",
+    "cpu_tests/cycle3/results.json": "08a828bd0926f6432809002e9988856414dc5d291414d3079549853fc3a25715",
+    "cpu_tests/cycle3/run_cycle3.py": "285ec2e2013d6b19b7f2955220aaf0ed9778dda7b7cd4f911d3146d457c7b1c9",
+    "cpu_tests/cycle3/summary.json": "2602f35d560c9c701617ecb06019f2280910d5edf4484c557c01390bd838efaa",
+    "jury_cycle3_canonical_rows.json": "fa38ad0965dc3f80dc39803a2eca18d03e2c58a7ab36a02255be81f046dd574f",
+    "jury_cycle3_compact_rows.json": "8c5d0476a2d48cf76fe0b48ffb40e64454db4f3b7a92da95cf72ee7b242d41f0",
+    "jury_cycle3_review.md": "d3b2d0e629e4ca450da63aeceab2d1eee2f258b07cdb623ef1c86d1a50472153",
+    "jury_cycle3_source_contracts.json": "63d8c0411b5b1bd401c86b1dd8cf336a67b645460582c66eacc9ab403a8e062b",
+    "research_norm_increment3.md": "49bcb270476c762e68f40986ea8132c6167592e7c53dbd31bf9150a7598d0dbb",
+    "research_rope_cycle3.md": "149cf31c681253186c258c60c0cc6b7971575e50826deee43e5d4e315373ea6e",
+    "rope_cycle3_route_probe.json": "d117e07003e57e20f259c33535e02dd3d809aabf8694f30441f4d0c95ea98d53",
+    "rope_cycle3_route_probe.py": "aa1c0dabda1311b010a520e8cf29d4a5701b802121cbd8e2acea633d72d87ec8",
+    "source_snapshot_manifest.json": "403b8852a44198af948796169c809be117ea50ab3dd2544b8ab4ac2185ef35a0",
+    "verify_snapshot.py": "f11dabf24f3ad706269837b21d727f6635125767d40b75858d32891289731b7e"
+  }
+}

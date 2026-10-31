@@ -1,0 +1,158 @@
+{
+  "status": "PASS_BOUNDED_CPU_CAST_EDGE_ONLY",
+  "checks_count": 18,
+  "checks": [
+    {
+      "name": "cast_edges",
+      "passed": true,
+      "shape": [
+        1,
+        1536
+      ],
+      "manual_cotangent_scale": 1.0,
+      "external_FP32_contribution": false
+    },
+    {
+      "name": "cast_edges",
+      "passed": true,
+      "shape": [
+        1,
+        1536
+      ],
+      "manual_cotangent_scale": 1.0,
+      "external_FP32_contribution": true
+    },
+    {
+      "name": "cast_edges",
+      "passed": true,
+      "shape": [
+        1,
+        1536
+      ],
+      "manual_cotangent_scale": 65536.0,
+      "external_FP32_contribution": false
+    },
+    {
+      "name": "cast_edges",
+      "passed": true,
+      "shape": [
+        1,
+        1536
+      ],
+      "manual_cotangent_scale": 65536.0,
+      "external_FP32_contribution": true
+    },
+    {
+      "name": "cast_edges",
+      "passed": true,
+      "shape": [
+        4,
+        3,
+        1536
+      ],
+      "manual_cotangent_scale": 1.0,
+      "external_FP32_contribution": false
+    },
+    {
+      "name": "cast_edges",
+      "passed": true,
+      "shape": [
+        4,
+        3,
+        1536
+      ],
+      "manual_cotangent_scale": 1.0,
+      "external_FP32_contribution": true
+    },
+    {
+      "name": "cast_edges",
+      "passed": true,
+      "shape": [
+        4,
+        3,
+        1536
+      ],
+      "manual_cotangent_scale": 65536.0,
+      "external_FP32_contribution": false
+    },
+    {
+      "name": "cast_edges",
+      "passed": true,
+      "shape": [
+        4,
+        3,
+        1536
+      ],
+      "manual_cotangent_scale": 65536.0,
+      "external_FP32_contribution": true
+    },
+    {
+      "name": "nonfinite_signedzero_edges",
+      "passed": true,
+      "external_FP32_contribution": false
+    },
+    {
+      "name": "nonfinite_signedzero_edges",
+      "passed": true,
+      "external_FP32_contribution": true
+    },
+    {
+      "name": "frozen_dense_three_projection_CPU_surrogate_only",
+      "passed": true,
+      "manual_cotangent_scale": 1.0
+    },
+    {
+      "name": "frozen_dense_three_projection_CPU_surrogate_only",
+      "passed": true,
+      "manual_cotangent_scale": 65536.0
+    },
+    {
+      "name": "target_helper_distinct_edges_reject_naive_half_fanin",
+      "passed": true,
+      "reference": 1.000244140625,
+      "naive": 1.0
+    },
+    {
+      "name": "guard_wrong_source_dtype",
+      "passed": true
+    },
+    {
+      "name": "guard_requires_grad_buffer",
+      "passed": true
+    },
+    {
+      "name": "guard_higher_order",
+      "passed": true
+    },
+    {
+      "name": "CPU_forward_cast_count_only",
+      "passed": true,
+      "counts": {
+        "False": 2,
+        "True": 1
+      }
+    },
+    {
+      "name": "source_identity_pins_and_unchanged_math_policy",
+      "passed": true,
+      "changed": [
+        "solution/__init__.py",
+        "solution/compact_mlp_install.py",
+        "solution/exploratory_preflight.py",
+        "solution/mlp_half/starter_half.py",
+        "solution/web_preflight.py"
+      ],
+      "inherited_count": 26,
+      "unchanged_OwnedStarterHalf_AST": true,
+      "warning_policy_unchanged_except_helper_SHA": true
+    }
+  ],
+  "torch": "2.11.0+cpu",
+  "cuda_available": false,
+  "native_BNB_AMP_GradScaler_target_integration": "UNRUN_BLOCKING_EMBEDDED_PREFLIGHT",
+  "candidate_submitted": false,
+  "performance": null,
+  "admission": "UNKNOWN",
+  "original_kernel_credit_delta": 0,
+  "script_sha256": "1726c396d4c1a1e163ce2edf6a3eadfeb4c7646be9bd90e8f199da8e9c25e3bc"
+}

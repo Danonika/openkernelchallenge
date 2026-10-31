@@ -1,0 +1,56 @@
+{
+  "candidate": "soup-ce-rowmix-v1-web80-20261030",
+  "complete_measurements": null,
+  "individual_command_observations_not_paired": [
+    {
+      "reported_external_peak_mib": 14345,
+      "reported_wall_s": 71.5,
+      "run": "base_1",
+      "scope": "harness log observation only; incomplete cohort; no ratio"
+    },
+    {
+      "reported_external_peak_mib": 13165,
+      "reported_wall_s": 76.76,
+      "run": "solution_1",
+      "scope": "harness log observation only; incomplete cohort; no ratio"
+    }
+  ],
+  "limits": [
+    "API state is not task correctness.",
+    "Internal 64 steps do not override a full-command timeout.",
+    "No ratio is formed from an incomplete cohort or another job.",
+    "Do not rerun unchanged failures automatically."
+  ],
+  "notebook_sha256": "6990a2daff21e672198c57fed5b6b5b5a96c38f8db10faafcd903e017ed40fda",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "c4c86b9cbf0d0d2dd83be3e673bb4931dfd2d41a5a24f254d9ed77f0ea41f2a0",
+  "paired_ratios": null,
+  "platform": "GCP development evidence, not Kaggle",
+  "preflight_statuses": [
+    "passed_gpu_integration_preflight"
+  ],
+  "public_eval_verified": false,
+  "raw_receipt_filename": "ce_rowmix_v1_attempt01_profilebound_receipt_v4_1.json",
+  "raw_receipt_sha256": "fa1c1bd8b3bcaabc5bb84bd112e921c8513ff1d47e62168ba9bc2803b585863b",
+  "raw_review_status": "INCOMPLETE_CENSORED_OR_UNBOUND",
+  "score": null,
+  "single_command_descriptive_timing": {
+    "below_5pct_in_this_observation": true,
+    "complete_cohort": false,
+    "descriptive_single_run_share_pct": 0.9113642354181573,
+    "official_rule_result": null,
+    "owned_kernel_total_ms": 484.062,
+    "post_two_warmup_timed_steps": 62,
+    "public_eval_verified": false,
+    "summary": "0.911% is below the 5% requirement, but the official check process never ran.",
+    "timed_loop_s": 53.114
+  },
+  "training_limit": {
+    "deadline_reached": true,
+    "elapsed_s": 80.00015458999951,
+    "limit_s": 80.0,
+    "reason": "training_run_exceeded_limit",
+    "reported_wall_s": 80.0,
+    "run_name": "solution_2"
+  }
+}

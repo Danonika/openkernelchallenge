@@ -1,0 +1,10 @@
+{
+  "notebook": "Soup_OneBit_Weight_Probe.ipynb",
+  "notebook_sha256": "2ff7cd282b2dd0f79ba2c05bab5094706c26a13473c275f174efd12d7cda58ec",
+  "source_sha256": {
+    "codec.py": "5f348a13aa9aa8c16c81d3382145807056a9d9030b075101e8cac1a41a2e78b4",
+    "gpu_weight_probe.py": "8ab71a3859ceca2844aec54a32faac0218a11c49ac2f20e01ca456a14ee7e5a2"
+  },
+  "scope": "COMPONENT_PROBE_NOT_BENCHMARK",
+  "status": "PREPARED_NOT_RUN"
+}

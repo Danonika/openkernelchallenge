@@ -1,0 +1,22 @@
+{
+  "solution/__init__.py": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1",
+  "solution/cpu_contract.py": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550",
+  "solution/gpu_preflight.py": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd",
+  "solution/rotary.py": "cbea5c7a64c70695fa009a7b98129889d9ec434993da4f9d123a87808ee766b0",
+  "solution/test_rotary.py": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062",
+  "solution/web_preflight.py": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491",
+  "old_solution/__init__.py": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1",
+  "old_solution/cpu_contract.py": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550",
+  "old_solution/gpu_preflight.py": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd",
+  "old_solution/rotary.py": "11af78e6d5ea9eca6604b18d565e8990167d14342fc3f0f4a23a93dcfddca4c7",
+  "old_solution/test_rotary.py": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062",
+  "old_solution/web_preflight.py": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491",
+  "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+  "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+  "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+  "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+  "reviewed_support.py": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c",
+  "worker.py": "c59a0f17abcd4c6658d008fc1f1d09180c8c1de379b6cca3e40bef82d65fcc5a",
+  "driver.py": "caeb011f9767809ea431333f5559391b4748831f91b80d63dbf0863af7ccf997",
+  "source_manifest.json": "8e7a1aa0f34b6ef1aef9162376ebd6c71ce9f1bbe6c72554a8abf9dae974769f"
+}

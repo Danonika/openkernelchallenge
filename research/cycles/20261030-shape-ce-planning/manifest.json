@@ -1,0 +1,28 @@
+{
+  "scope": "Jury-accepted data-minimized scientific summaries; code and raw arrays omitted",
+  "source_sha256": {
+    "research_nf4_shape_cycle8.md": "fa2ed6994c6ed78768495540f44c90201128463ae0d2c23ee26d72eaf05ac44d",
+    "research_nf4_shape_cycle8_updates.json": "43b681825c30c4967914dfb21b96340f62358031b6b5c71b492e02f7136822e8",
+    "research_materialized_ce_cycle7.md": "421bb49a6ecf7da7e3cfd57b885c9418914f1e1674c6019b1ef948eae97aa769",
+    "research_materialized_ce_cycle7_updates.json": "f3568323dfb38ca1f71e61e7250744878f49fb6f496acb5e609d88102da8e772",
+    "cpu_ce_materialized_contract.md": "6331ece460baebc81ac380637df79464b2e66d3afb5984b3391c9921b0bf3cea",
+    "cpu_tests/ce_materialized_contract/results.json": "d3606591407388bb7c98ecf92e5f8b488b083210afcd6170dd304339c6af8129"
+  },
+  "files": {
+    "README.md": "1df2d23b1caaed758565875882104d05f589ac806171e1ce057daf277898118a",
+    "nf4-shape-summary.md": "521bca92a97a485cfe4686a063e4f74b5255bd0bf92594f38f602b71cf62cdba",
+    "materialized-ce-summary.md": "45b0447810edb97a9864925e96dd45ac6ae762e050a8cfed718a12033248c3a8"
+  },
+  "existing_ids": [
+    "L1-TILELANG-03",
+    "gemm-09",
+    "SOUP-NEW-001",
+    "SOUP-NEW-002"
+  ],
+  "new_ids": [],
+  "priority_changes": false,
+  "new_gpu_result": false,
+  "trial004_paired_result_available": false,
+  "new_graph_points": false,
+  "cpu_scope": "Two CE proof groups retain 13 tested final-FP16 matches AND 3 FP32 discrepancies; NF4 one-ULP constructed witness is not contest disqualification"
+}

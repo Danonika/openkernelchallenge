@@ -1,0 +1,30 @@
+{
+  "cutoff_utc": "2026-10-30T13:15:28.736390+00:00",
+  "content_verdict": "approved narrow existing-ID evidence overlay",
+  "existing_ids": [
+    "SOUP-NEW-003",
+    "SOUP-NEW-002"
+  ],
+  "row_count": 121,
+  "priorities_verdicts_unchanged": true,
+  "evidence": [
+    {
+      "trial": "trial002",
+      "handoff_sha256": "01de28fa85a58286634cc14b44727046a2b62e53fb68c25bb97fd877acd54e1a",
+      "report_sha256": "70941c7695cba52ea59bca452e23883302de4212f2903c764cc8ab9b39f30f0f",
+      "reported_result_sha256": "20b63d9abad9f62ab97a6678f10d62bd66ad884911fb8b0e91d1ef2e7f924854",
+      "reported_result_hash_verified": false
+    },
+    {
+      "trial": "trial003",
+      "handoff_sha256": "c0b41b770130668f0e13471a30a8059f3ed81239714bfc9680c09f5e96ea4ba5",
+      "report_sha256": "9ad949e711a4796f261f71dd885aa6bf4ee52e57d7ef9b8fc0fbf512c59d4f20",
+      "reported_result_sha256": "cf506db650e0ecd76d4512b6a78985c98fb85e33f3d76e724454f79d1d0134bc",
+      "reported_result_hash_verified": false
+    }
+  ],
+  "raw_archive_complete": false,
+  "no_points": true,
+  "publication_authority": "Separate current parent/updater approval required; this content review grants none. Exclude private identifiers, auth, weights, quota, and unapproved raw logs.",
+  "display_authority": "No new graph point authorized by this review; parent separately controls genuine measured failed/unranked displays."
+}

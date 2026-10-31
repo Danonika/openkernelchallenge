@@ -1,0 +1,115 @@
+{
+  "scope": "DESCRIPTIVE_CROSS_JOB_COMPARISON_NOT_PAIRED_ADMISSION",
+  "baseline_archive_sha256": "3438128eaf4511e757382f280cd206d574144311ab0dce19de72b8a18bea0abd",
+  "official_checker_sha256": "879ab1861674f6e714eadd00aaf044235d98526dd75fab1035deec3401121ef5",
+  "baseline": {
+    "ok": true,
+    "runs": 1,
+    "wall_s": 71.85,
+    "gpu_peak_mib": 14345,
+    "train_loop_s": 54.1,
+    "eval_loss": 2.04968
+  },
+  "candidates": {
+    "historical_r11": {
+      "complete_64_steps_and_public_eval": true,
+      "whole_command_s": 63.19,
+      "peak_gpu_mib": 9099,
+      "eval_loss": 2.04968,
+      "first_loss_relative_gap_percent": 0.020936129866072458,
+      "mean_loss_relative_gap_percent": 0.010524182442872664,
+      "mean_entropy_relative_gap_percent": 0.019367166951469856,
+      "mean_accuracy_relative_gap_percent": 0.09687271088330246,
+      "eval_delta_percent": 0.0,
+      "output_contract_differences": [],
+      "public_quality_comparison_within_thresholds": true,
+      "source_screen": {
+        "starter_copies_excluded": [
+          "example_swiglu_fwd_kernel",
+          "example_swiglu_bwd_kernel"
+        ],
+        "lookalikes_for_manual_review": [
+          "soup_dropout_half_gradient_epilogue (0.91)"
+        ],
+        "banned_imports": [],
+        "broken_sources": []
+      },
+      "original_kernels_counted_descriptively": [
+        "soup_cached_head_finish",
+        "soup_dropout_half_gradient_epilogue",
+        "soup_head_partial_statistics",
+        "soup_lora_epilogue_backward",
+        "soup_lora_epilogue_forward",
+        "soup_mlp_gather_rows",
+        "soup_mlp_scatter_rows",
+        "soup_native_logp_ce_gradient",
+        "soup_nf4_dequantize",
+        "soup_rmsnorm_backward",
+        "soup_rmsnorm_forward",
+        "soup_rotary_backward",
+        "soup_rotary_forward",
+        "soup_varlen_gather_output_gradient",
+        "soup_varlen_pack_qkv",
+        "soup_varlen_scatter_output",
+        "soup_varlen_scatter_qkv"
+      ],
+      "original_kernel_ms_descriptive": 4211.768,
+      "original_share_percent_descriptive": 12.39156197593339,
+      "sampled_peak_agrees_with_reserved": true,
+      "paired": false,
+      "jury_admission": "UNKNOWN",
+      "score": null,
+      "target_achieved": false
+    },
+    "fast_v2": {
+      "complete_64_steps_and_public_eval": true,
+      "whole_command_s": 62.71,
+      "peak_gpu_mib": 7955,
+      "eval_loss": 2.04968,
+      "first_loss_relative_gap_percent": 0.020936129866072458,
+      "mean_loss_relative_gap_percent": 0.010938166847449707,
+      "mean_entropy_relative_gap_percent": 0.016705158380920827,
+      "mean_accuracy_relative_gap_percent": 0.11735750864231062,
+      "eval_delta_percent": 0.0,
+      "output_contract_differences": [],
+      "public_quality_comparison_within_thresholds": true,
+      "source_screen": {
+        "starter_copies_excluded": [
+          "example_swiglu_fwd_kernel",
+          "example_swiglu_bwd_kernel"
+        ],
+        "lookalikes_for_manual_review": [
+          "soup_dropout_half_gradient_epilogue (0.91)"
+        ],
+        "banned_imports": [],
+        "broken_sources": []
+      },
+      "original_kernels_counted_descriptively": [
+        "soup_cached_head_finish",
+        "soup_dropout_half_gradient_epilogue",
+        "soup_head_partial_statistics",
+        "soup_lora_epilogue_backward",
+        "soup_lora_epilogue_forward",
+        "soup_mlp_gather_rows",
+        "soup_mlp_scatter_rows",
+        "soup_native_logp_ce_gradient",
+        "soup_nf4_dequantize",
+        "soup_rmsnorm_backward",
+        "soup_rmsnorm_forward",
+        "soup_rotary_backward",
+        "soup_rotary_forward",
+        "soup_varlen_gather_output_gradient",
+        "soup_varlen_pack_qkv",
+        "soup_varlen_scatter_output",
+        "soup_varlen_scatter_qkv"
+      ],
+      "original_kernel_ms_descriptive": 5227.683,
+      "original_share_percent_descriptive": 15.041960637624445,
+      "sampled_peak_agrees_with_reserved": true,
+      "paired": false,
+      "jury_admission": "UNKNOWN",
+      "score": null,
+      "target_achieved": false
+    }
+  }
+}

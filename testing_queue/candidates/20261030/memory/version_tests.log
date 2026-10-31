@@ -1,0 +1,85 @@
+{
+  "scope": "new zero-storage-version and telemetry CPU fixtures",
+  "torch": "2.15.0+cpu",
+  "results": [
+    {
+      "name": "sentinel_storage_and_rng",
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "shape": [
+              0
+            ],
+            "witness_storage_bytes": 0
+          },
+          {
+            "shape": [
+              4
+            ],
+            "witness_storage_bytes": 0
+          },
+          {
+            "shape": [
+              2,
+              3
+            ],
+            "witness_storage_bytes": 0
+          }
+        ],
+        "runtime": {
+          "device": "cpu",
+          "wide_object_released": true,
+          "witness_storage_bytes": 0,
+          "detached_alias_mutation_detected": true
+        }
+      }
+    },
+    {
+      "name": "escaped_alias_after_python_release",
+      "status": "PASS",
+      "details": {
+        "wide_object_collected": true,
+        "mutation_detected_before_restore": true
+      }
+    },
+    {
+      "name": "payload_mutation_and_native_parity",
+      "status": "PASS",
+      "details": {
+        "payload_mutation_detected": true
+      }
+    },
+    {
+      "name": "sentinel_retains_no_wide_storage",
+      "status": "PASS",
+      "details": {
+        "old_wide_storage_python_wrapper_collected": true,
+        "zero_storage_witness": true,
+        "not_allocator_or_peak_evidence": true
+      }
+    },
+    {
+      "name": "unsupported_witness_refuses_slot",
+      "status": "PASS",
+      "details": {
+        "raw_slot_untouched_on_decline": true
+      }
+    },
+    {
+      "name": "timeout_progress_is_flushed",
+      "status": "PASS",
+      "details": {
+        "records": 3,
+        "flushes": 3,
+        "cumulative_lower_bounds": [
+          1,
+          2,
+          4
+        ]
+      }
+    }
+  ],
+  "passed": true,
+  "target_cuda_validated": false
+}

@@ -1,0 +1,7 @@
+{
+  "notebook_staging_execution": "PASS_NO_GPU",
+  "default_opt_in_guard": "PASS",
+  "runner_authorization_guard": "PASS",
+  "canonical_gpu_lock_contention": "PASS_NO_GPU",
+  "gpu_executed": false
+}

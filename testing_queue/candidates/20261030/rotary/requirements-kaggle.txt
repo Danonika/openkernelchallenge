@@ -1,0 +1,12 @@
+# Exact direct versions observed on the prepared Kaggle session. No silent substitutions.
+# Python MUST be exactly3.13.15 (not installed by pip). Transitive resolution is not a full Kaggle freeze.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0+cu128
+triton==3.6.0
+soup-cli[train]==0.77.0
+transformers==5.16.1
+peft==0.20.0
+trl==0.29.1
+bitsandbytes==0.50.2
+accelerate==1.14.0
+datasets==4.8.5

@@ -1,0 +1,51 @@
+{
+  "status": "OFFLINE_COMPILE_ONLY",
+  "gpu_executed": false,
+  "actual_triton": "3.9.0",
+  "target_triton": "3.6.0",
+  "target": "cuda_sm75",
+  "cases": [
+    {
+      "dtype": "fp16",
+      "packed_half": true,
+      "n": 13762560,
+      "shared_bytes": 0,
+      "separate_scale_f32_mul_add": true,
+      "contains_fma": false,
+      "ptx_store_b32_present": true,
+      "compiled": true
+    },
+    {
+      "dtype": "fp32",
+      "packed_half": false,
+      "n": 13762560,
+      "shared_bytes": 0,
+      "separate_scale_f32_mul_add": true,
+      "contains_fma": false,
+      "ptx_store_b32_present": true,
+      "compiled": true
+    },
+    {
+      "dtype": "fp16",
+      "packed_half": false,
+      "n": 65,
+      "shared_bytes": 0,
+      "separate_scale_f32_mul_add": true,
+      "contains_fma": false,
+      "ptx_store_b32_present": false,
+      "compiled": true
+    },
+    {
+      "dtype": "fp16",
+      "packed_half": true,
+      "n": 65,
+      "shared_bytes": 0,
+      "separate_scale_f32_mul_add": true,
+      "contains_fma": false,
+      "ptx_store_b32_present": true,
+      "compiled": true
+    }
+  ],
+  "binaries_shipped": false,
+  "limitations": "Triton3.9 offline compilation is not pinned3.6 compilation or T4 execution"
+}

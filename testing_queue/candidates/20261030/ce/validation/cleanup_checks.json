@@ -1,0 +1,62 @@
+{
+  "status": "PASS_CPU_PROCESS_LIFECYCLE_ONLY",
+  "fixtures": [
+    {
+      "mode": "timeout",
+      "passed": true,
+      "known_owned_count": 24,
+      "recorded_workload_pids": 24,
+      "before_signal_count": null,
+      "all_recorded_stopped": true,
+      "frozen_census_stable": true,
+      "quarantine_persisted": true,
+      "driver_result": {
+        "code": -9,
+        "wall": 0.5434686679946026
+      }
+    },
+    {
+      "mode": "SIGINT",
+      "passed": true,
+      "known_owned_count": 4,
+      "recorded_workload_pids": 3,
+      "before_signal_count": 3,
+      "all_recorded_stopped": true,
+      "frozen_census_stable": true,
+      "quarantine_persisted": true,
+      "driver_result": {
+        "interruption": "KeyboardInterrupt"
+      }
+    },
+    {
+      "mode": "SIGTERM",
+      "passed": true,
+      "known_owned_count": 3,
+      "recorded_workload_pids": 3,
+      "before_signal_count": 3,
+      "all_recorded_stopped": true,
+      "frozen_census_stable": true,
+      "quarantine_persisted": true,
+      "driver_result": {
+        "interruption": "KeyboardInterrupt"
+      }
+    },
+    {
+      "mode": "owner_and_foreign_marker_SIGKILL",
+      "passed": true,
+      "wrong_owner_rejected": true,
+      "foreign_marker_unchanged": true,
+      "own_normal_clear_verified": true,
+      "SIGKILL_guard_persisted": true
+    },
+    {
+      "mode": "normal_exit_with_known_orphan",
+      "passed": true,
+      "survivor_rejected_and_terminated": true,
+      "quarantine_persisted": true
+    }
+  ],
+  "gpu_executed": false,
+  "real_gpu_lock_or_marker_touched": false,
+  "limits": "SIGKILL fixture proves persistent guard, not descendant cleanup. Unobserved preexisting orphans remain outside these fixtures; interrupted/failed owner guard requires operator reconciliation."
+}

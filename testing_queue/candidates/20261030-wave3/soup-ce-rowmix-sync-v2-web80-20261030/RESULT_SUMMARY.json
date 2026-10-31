@@ -1,0 +1,39 @@
+{
+  "candidate": "soup-ce-rowmix-sync-v2-web80-20261030",
+  "family": "CE rowmix/metrics",
+  "status": "STOP_SLOW_TESTED_VERSION",
+  "conclusion": "First solution command77.56s/13165MiB; second exceeded80s despite reaching internal64. Descriptive original share0.9005% below5%; no eval/complete pair. Do not rerun unchanged minor-sync version.",
+  "notebook_sha256": "84920412a3f010bf4edb22f0d55afce94fe8b5a2205b0fda9d8e6f6aeb6b6841",
+  "raw_output_archive_sha256": "ca7192712d479c20a49e72ae3e0448520b94f86aec31ebfdcd15b0b9fd6a7219",
+  "source_bound_receipt_bindings": [
+    {
+      "receipt": "ce_rowmix_sync_v2_attempt02_receipt_v4_2.json",
+      "sha256": "71967961913310b8f3320e205c64f01933d243eaae44067460a7125a102b12f5",
+      "status": "INCOMPLETE_CENSORED_OR_UNBOUND",
+      "raw_output_archive_sha256": "ca7192712d479c20a49e72ae3e0448520b94f86aec31ebfdcd15b0b9fd6a7219",
+      "receipt_exported": false
+    },
+    {
+      "receipt": "ce_rowmix_sync_v2_single_command_timing_supplement.json",
+      "sha256": "f8148c612dbf80161d007b2779e6d4c44ab4cd5e468ada87757ac066ef985a59",
+      "status": null,
+      "raw_output_archive_sha256": "ca7192712d479c20a49e72ae3e0448520b94f86aec31ebfdcd15b0b9fd6a7219",
+      "receipt_exported": false
+    }
+  ],
+  "official_score": null,
+  "admission": "UNKNOWN",
+  "full_task_success_claim": false,
+  "cap_seconds": 80,
+  "scope_limits": [
+    "Components are not full-model measurements.",
+    "Incomplete or diagnostic commands are not validated pairs.",
+    "Source availability and local tests do not imply Kaggle admission.",
+    "Prior failures remain tied to exact tested versions, not whole idea families."
+  ],
+  "export_exclusions": [
+    "No API identity/status blobs.",
+    "No raw output archive or private Sheet snapshot.",
+    "No credentials,model/cache files,or separately supplied native-dab4 package."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "reviewer": "resume3_loss",
+  "review_count": 1,
+  "status": "CLEARED_FOR_BOUNDED_CANDIDATE_SCREEN_NOT_EXECUTION_AUTHORITY",
+  "review_scope": "Independent cast-edge helper, source-owned MLP integration and additive blocking native preflight only; reviewed parent CE/storage/guard/kernel implementation reused.",
+  "source_zip_sha256": "54f99d18d76ebaf83f8b205940e5a630825080065773e0b8a025c45e4b65297d",
+  "notebook_sha256": "1fa804db81e47f91cda047677b4eb24dff034637d39db79e8fdcdda7a8cc2643",
+  "concrete_source_blockers": [],
+  "verified": [
+    "ZIP, source manifest and candidate directory agree on all 33 files; syntax parses.",
+    "The first input cast keeps native autograd; second aliases detached half bytes but its distinct backward returns only its own half cotangent widened to FP32. No half fan-in, gradient premultiplication, GEMM change or retained source activation.",
+    "OwnedStarterHalf math/JIT and native source/geometry/hook/frozen-parameter guards retained; new helper functions/code/file hashes are integrated into the existing ownership checks.",
+    "18 CPU checks rerun independently, including nonfinite/signed-zero cases, external FP32 fan-in, a naive-sharing negative witness and actual helper guard rejection. Dense projection fixtures remain explicitly CPU surrogates.",
+    "Additional real-native MLP check is blocking, uses the already loaded source-pinned BNB module, compares independent reference casts and actual installed route at two scales, and checks exact output/input-gradient finite bits plus nonfinite classes.",
+    "Native check is before inherited route-count snapshots, performs no model reload or optimizer update, and verifies parameter identity/version/pointer and global RNG unchanged.",
+    "Inherited preflight assertions/thresholds unchanged; exploratory warning policy differs only in the exact strict-helper SHA and cannot waive new cast-preflight failures.",
+    "Final profile retains inherited CE/storage/MLP requirements and adds exactly 1792 cast forward/backward/shared-storage calls, with zero new original-kernel credit.",
+    "Notebook binding agrees with packaging receipt; all nine protected payloads and the execution cell unchanged."
+  ],
+  "limitations": [
+    "No CUDA/Triton/native HF/PEFT/BNB execution by reviewer; actual alias safety and target gradient parity remain a mandatory embedded preflight question.",
+    "Sharing half allocation does not establish whole-model peak reduction or speed; Python autograd-node overhead may erase the saved cast.",
+    "The additive local native check uses manual scaled cotangents, not a separate GradScaler proof; inherited real full-model GradScaler checks remain required.",
+    "No new numerical kernel or starter/storage original-kernel credit. No causal performance claim or jury admission."
+  ],
+  "required_runtime_evidence": [
+    "New native cast-edge gate must complete for scales 1 and 65536 without relaxed comparisons.",
+    "Every inherited blocking source/task/RNG/scaler/output/route check must remain satisfied; existing allowlisted failed observations stay passed:false.",
+    "Exactly one candidate-only 64-step screen with 80-second training cap; no extra baseline.",
+    "64 full-M direct-dZ batches, zero assembled dZ; 1792 MLP owned and cast forward/backward/shared calls; all other profile evidence and full native public evaluation complete.",
+    "Bind nested raw outcome to exact accepted source/notebook identity; preserve parent 70.872-second screen unchanged."
+  ],
+  "original_private_review_sha256": "4442712e427175b8d3b95d082039003651bad9b50d43d5c645b0fd4fe2081fb0",
+  "publication_note": "Selected review fields; exact original review retained privately. Review clearance is not execution/publication authority or target correctness.",
+  "changed_or_added_hashes": {
+    "solution/__init__.py": "bf4d09f2f3087913209ea52b7a5993ad400cf8267101f9cd98ffc76016529d1a",
+    "solution/cast_preflight.py": "fb45c77a5e1dbc6ebe69570a78a8c9448676708ff72e3c357e1dbb44c9f7e193",
+    "solution/compact_mlp_install.py": "7338f539cc2a0aac936c8826fe569cabadaf6188e11abb0f8827ea95e1734c0c",
+    "solution/exploratory_preflight.py": "f628471399a8be63017edb6a355e7f166cfdf9e7abea42283b28df3cc5777d4d",
+    "solution/mlp_half/independent_cast.py": "6643bf414ca9d2de023a8621f826d5047a97241a59beb9b36a06250ecab6b15a",
+    "solution/mlp_half/starter_half.py": "c6a1c8dc3664e7816e897378b097910b2b73f3a7c3cd179a930e4d5debecf647",
+    "solution/web_preflight.py": "6159dd11201aa412cdff8c7d562dfc1ce6c7f77ab07de23a9dd8099f8839e8c4"
+  },
+  "parent_source_zip_sha256": "7f9882870836adf2829da353997091f31ec21e9333534cf91ba5fa54f0040eaa",
+  "parent_completed_screen_unchanged": {
+    "wall_s": 70.872,
+    "gpu_peak_mib": 6503,
+    "public_loss": 2.04963
+  },
+  "source_files": 33,
+  "inherited_unchanged_files": 26,
+  "independent_cpu_checks": 18,
+  "independent_cpu_report_sha256": "8e20cde5cb87e46b185e9dc19b3d61ba4d4960432dd6e5129a9a0e712c84a64b"
+}

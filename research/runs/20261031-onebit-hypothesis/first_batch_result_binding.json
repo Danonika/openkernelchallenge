@@ -1,0 +1,12 @@
+{
+  "notebook_sha256": "be65afaf484dda86d3b1e2cfcd6a2775914ee3677fdacb9f6f2efbe718d81816",
+  "output_archive_sha256": "e248f956228e191d23a3276a6f1ee69d3c121d2b48ae6c3beb752d8c2b52a8ae",
+  "result_member": "results/onebit_first_batch.json",
+  "result_member_sha256": "80d4d6b52e7f7bf4b2a580a687d345e3b16647316b2619611647543a6791f5a2",
+  "executed_code_matches_submitted": true,
+  "service_state": "failed",
+  "result_status": "FAILED_FIRST_BATCH_DIAGNOSTIC",
+  "scope": "FIRST_NATIVE_TRAIN_BATCH_FORWARD_DIAGNOSTIC_ONLY",
+  "benchmark_eligible": false,
+  "official_admission": "UNKNOWN"
+}

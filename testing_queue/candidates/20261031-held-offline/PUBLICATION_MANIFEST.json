@@ -1,0 +1,343 @@
+{
+  "status": "PREPARED_NOT_PUBLISHED_REQUIRES_EXACT_PAYLOAD_APPROVAL",
+  "destination_repository": "BAITC-Hacks/hack-57faaa42-duo",
+  "destination_branch": "testing-queue",
+  "destination_prefix": "testing_queue/candidates/20261031-held-offline",
+  "observed_base_commit": "98e4b9948ccc68a2dfb35e117a7aa2e55ae0d0bc",
+  "observed_existing_blob_count": 1235,
+  "mutation": "additive only; preserve every current base leaf, re-read branch before writing and use compare-and-swap expected_sha",
+  "packet_count": 2,
+  "new_target_runs": 0,
+  "packets": [
+    {
+      "folder": "compact-owned-storage-v1",
+      "status": "UNRUN_HELD_SERVER_UPDATE",
+      "submitted": false,
+      "GPU_executed": false,
+      "scope": "Reviewed candidate-only 64-step screen; exact-value frozen tied embedding/head storage added to the completed compact-MLP route. Native lookup/head semantics retained. No original embedding or starter-kernel credit. Source/output/RNG/scaler/route contracts remain blocking; explicitly allowlisted finite comparison failures remain recorded warnings.",
+      "next_action": "After explicit server resume and recovery of existing accepted jobs, execute the exact frozen candidate-only screen with native public evaluation. No baseline or paired cell. Require storage installed once, embedding 64, head 64 and MLP 1792 with zero fallback before interpreting results.",
+      "notebook_sha256": "f04b57461cb67bae2afd3038319a18098d0b56cfd1e548aaed65eb42df606adb",
+      "source_zip_sha256": "4fb83e4984c6ea230cc26f07563315c71667a68dc431ad2cdda89459e088a905",
+      "independent_review_receipt_sha256": "9c6c34be6648855ef96b02e9e172d8b6ea08f32c57e1c79146707d46417ef42e",
+      "review_receipt_exported": false,
+      "performance": null,
+      "score": null,
+      "admission": "UNKNOWN",
+      "not_final_submission": true,
+      "expanded_payload_files": 41
+    },
+    {
+      "folder": "padding-mlp-shadow-real-step-v1",
+      "status": "UNRUN_HELD_SERVER_UPDATE",
+      "submitted": false,
+      "GPU_executed": false,
+      "scope": "Reviewed bounded shadow diagnostic on one fresh-model real-public-batch step; asks which of 84 frozen MLP dX GEMMs have finite exactly-zero padded adjoints. Dense starter-half forward and full-M native-return backward remain downstream; compact results are discarded. No optimizer, full training, finite-range certificate, performance or admission result.",
+      "next_action": "After explicit server resume and recovery of existing accepted jobs, execute the exact frozen diagnostic. Inspect source-bound eligibility and numerical observations before proposing any production padding-removal change.",
+      "notebook_sha256": "a01558a4e9d3c1bd94cf10663441c0c22eb825591d56b0393663d4830ecfeefd",
+      "source_zip_sha256": "9d8d043c14732b0d96e335b4c6a1659d2f4cf6f01fc3d275bf49b8513743b5b6",
+      "independent_review_receipt_sha256": "1be723320b69602b79fc9c7391bf10116e7a8203f8c73e1722b5af6d5cc6a2c1",
+      "review_receipt_exported": false,
+      "performance": null,
+      "score": null,
+      "admission": "UNKNOWN",
+      "not_final_submission": true,
+      "expanded_payload_files": 25
+    }
+  ],
+  "files": {
+    "testing_queue/candidates/20261031-held-offline/README.md": {
+      "sha256": "652c60cf02d9db1003c456a288a672d6fc1c2bf0d4a17e3e48b796b49552077a",
+      "bytes": 2193
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/RESULT_SUMMARY.json": {
+      "sha256": "7fc557c45cdd1bc3b4c30b7990fda13f06cf6eead9c4efbff0a5c3bbc4361885",
+      "bytes": 1185
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/SOURCE_MANIFEST.json": {
+      "sha256": "35d7629c2db2b91cb79ba1af084edb428470e35f668e79b8f9705e13d60a6545",
+      "bytes": 6334
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/candidate.ipynb": {
+      "sha256": "f04b57461cb67bae2afd3038319a18098d0b56cfd1e548aaed65eb42df606adb",
+      "bytes": 167542
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/README.md": {
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d",
+      "bytes": 4442
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/candidate_profile.json": {
+      "sha256": "6a71689859207cd78075703fb6717d358f53ddb502abb0d6c533cb796221eacf",
+      "bytes": 2740
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/evidence_reader.py": {
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c",
+      "bytes": 1702
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/full_m_compact_storage_single_v1_manifest.json": {
+      "sha256": "46794e01c4771c28014a204af5e07f2f659d8bff7a1054c42f333b45e8ddd7fc",
+      "bytes": 3045
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/official_manifest.json": {
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+      "bytes": 1415
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/owned_process_tree.py": {
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+      "bytes": 5956
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/prepare_asset_manifest.py": {
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+      "bytes": 2813
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/process_guard.py": {
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+      "bytes": 7506
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/runtime_api_reference.json": {
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881",
+      "bytes": 1023
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/runtime_probe.py": {
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+      "bytes": 2328
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/__init__.py": {
+      "sha256": "402658fe468cb8ba0b6298c885e3bcf324af7c640d8d09414444db1d9d18fb7d",
+      "bytes": 3642
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/ce_tile.py": {
+      "sha256": "2baea1f4b7c567379e3674b76204d39e9fb128eb6cfcda9a8d8edebbfd230e7b",
+      "bytes": 8481
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/chain.py": {
+      "sha256": "99f0b18cc98da0971fbbdede0b796b98bfe5472aa93e61c9de29b09eb529dc2e",
+      "bytes": 3701
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/common/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/common/bridge_state.py": {
+      "sha256": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9",
+      "bytes": 9674
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/common/consumer.py": {
+      "sha256": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc",
+      "bytes": 9632
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/compact_mlp_install.py": {
+      "sha256": "4c7960649daaf690c23beb747f85173ccd5b2458f069c1b3660f0c155c5473d4",
+      "bytes": 10607
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/contracts.py": {
+      "sha256": "36bb54c6cac40b7f3896b2ce3a52665f972942f5e5856e237946a1f80091fb4b",
+      "bytes": 1790
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/exploratory_preflight.py": {
+      "sha256": "7523a69b024267fc0cb457b4a472b2aa3f5670eeb755ac1a96dd01790e6d9e23",
+      "bytes": 7010
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/frozen_storage.py": {
+      "sha256": "a3edfdfe568595e183ce57d858db4032d2e0e0b6cfe5bac8468dda3b0c299338",
+      "bytes": 18845
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/mlp_half/__init__.py": {
+      "sha256": "c8e25c83da77649c7e76d7e2557dca8a3b9e975a81fa738713211a9a8f8d6ff0",
+      "bytes": 80
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/mlp_half/native_owner.py": {
+      "sha256": "7b69f2a354def25cb53d4ca78f3c19082497838c5f6ee133d94694e6113d540c",
+      "bytes": 7981
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/mlp_half/owned_half.py": {
+      "sha256": "8a714205c4f1de8ff7997f9430e47fb417b54e66879b64fa80144896c52a807b",
+      "bytes": 6175
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/mlp_half/starter_half.py": {
+      "sha256": "3759f3761b3b3d2a8e018b80a8571c9cc1456b8adc1ed40e47e1c919132e7dda",
+      "bytes": 3306
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/mlp_half/starter_swiglu.py": {
+      "sha256": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6",
+      "bytes": 3185
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/original/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/original/materialized_ce.py": {
+      "sha256": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1",
+      "bytes": 14846
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/original/metric_summary.py": {
+      "sha256": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4",
+      "bytes": 3256
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/original/mixed_rows.py": {
+      "sha256": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2",
+      "bytes": 7670
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/ownership.py": {
+      "sha256": "784c56dd5c0c8f6dca1311b38a71f07d7809824ab8ce33456579005b1e776f05",
+      "bytes": 6507
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/source_owners.py": {
+      "sha256": "c701bfd7063e289d91c8e5b856b62827f6a9f4f2579aa23bbed4a911a5d38e5b",
+      "bytes": 7989
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/streaming_boundary.py": {
+      "sha256": "75fe8bf958213a3782eafa023e4a3d1cd47cdca74835562bd81ad7827a9648aa",
+      "bytes": 10171
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/support/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/support/nf4.py": {
+      "sha256": "9e07a73d45f7b7119fc1f5d1d3422351e5d34e2fbd9612f7b90f56bc17ad697a",
+      "bytes": 10430
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/support/rmsnorm.py": {
+      "sha256": "aa55a21fd921d2f5478444b03a32694a329bb10bbbe4f3bf46e4e78f2804a93c",
+      "bytes": 5869
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/support_install.py": {
+      "sha256": "cc2b400597bb35246c353893185c37087394bb6c0e5e9a3a677f21dc2bf38984",
+      "bytes": 7536
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/telemetry.py": {
+      "sha256": "86fbf73df07c9179474a94f2c5349f04d8a36df16ed3e084ec9433cb3055662c",
+      "bytes": 906
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/token_chunk_head.py": {
+      "sha256": "bcc6417e4d376920668bcb341f5491afe32847d768a7d10df75503b1c9e244ac",
+      "bytes": 4621
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/verify_tile.py": {
+      "sha256": "f4f6251987b6199365b853d48979a136ec2dc2626bed68f374ae2940ee6047a1",
+      "bytes": 6201
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/solution/web_preflight.py": {
+      "sha256": "fb2ae9228b469ae6d4760923ab57f575f5dcdfaf383aa3e85ff8d3710d33c5e1",
+      "bytes": 24609
+    },
+    "testing_queue/candidates/20261031-held-offline/compact-owned-storage-v1/submitted_payload/web_runner.py": {
+      "sha256": "4b879032a2f8e55df581cae6420282e9534105726d969a9c21696dab665ac549",
+      "bytes": 17234
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/RESULT_SUMMARY.json": {
+      "sha256": "b7a5bc380d307745e5e328e485ff610a3efc94c7cf09e2b3099af47ee6055013",
+      "bytes": 1123
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/SOURCE_MANIFEST.json": {
+      "sha256": "77d1cd86efd9249625d5607c5bacbbcf228a7f432859316baf67dbd4e33531e6",
+      "bytes": 3942
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/candidate.ipynb": {
+      "sha256": "a01558a4e9d3c1bd94cf10663441c0c22eb825591d56b0393663d4830ecfeefd",
+      "bytes": 99545
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/batch_binding.json": {
+      "sha256": "065715c669f383195a9767ce0d8ee5e67c7ebf61cb6d916264296982ad24da7b",
+      "bytes": 1599
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/batch_hashes.json": {
+      "sha256": "e26d71f333d2f7b1eb6dbb75a7e229fe2b16426a1a2c234c145bb27f18765050",
+      "bytes": 1376
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/native_source_pins.json": {
+      "sha256": "914244d461e4fb74fab97bba20281239116fc97d98eeaf0903ce3ea446d870f5",
+      "bytes": 1947
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/official_manifest.json": {
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+      "bytes": 1415
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/owned_process_tree.py": {
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+      "bytes": 5956
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/prepare_asset_manifest.py": {
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+      "bytes": 2813
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/process_guard.py": {
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+      "bytes": 7506
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/profiler_helpers.py": {
+      "sha256": "0aebaf546e848eea3309906c29189922cc6db66a111457115c299901e9ee87e2",
+      "bytes": 5398
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/runtime_api_reference.json": {
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881",
+      "bytes": 1023
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/runtime_probe.py": {
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+      "bytes": 2328
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/__init__.py": {
+      "sha256": "c103cfabadd6ec97d27995f0d8527e38f0a2c2fa3ad4617dab3dea1787b0f571",
+      "bytes": 70
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/backward_phase.py": {
+      "sha256": "d6192be3e05daceb7756a352a4f436d354422a9b29e4b098ff42722d0378efd4",
+      "bytes": 5048
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/compact_mlp_install.py": {
+      "sha256": "7c20a8d26d89bdbf027c0373719b20c7911786506bd654928e17d3c16b07249a",
+      "bytes": 13265
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/forward_observer.py": {
+      "sha256": "cd2ca6b6d51c56bb4b3ac055a8e74b3be6d311d3fcfdd6e69f8049b0e2460e9c",
+      "bytes": 9888
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/mlp_half/__init__.py": {
+      "sha256": "c8e25c83da77649c7e76d7e2557dca8a3b9e975a81fa738713211a9a8f8d6ff0",
+      "bytes": 80
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/mlp_half/native_owner.py": {
+      "sha256": "7b69f2a354def25cb53d4ca78f3c19082497838c5f6ee133d94694e6113d540c",
+      "bytes": 7981
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/mlp_half/owned_half.py": {
+      "sha256": "8a714205c4f1de8ff7997f9430e47fb417b54e66879b64fa80144896c52a807b",
+      "bytes": 6175
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/mlp_half/starter_half.py": {
+      "sha256": "3759f3761b3b3d2a8e018b80a8571c9cc1456b8adc1ed40e47e1c919132e7dda",
+      "bytes": 3306
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/mlp_half/starter_swiglu.py": {
+      "sha256": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6",
+      "bytes": 3185
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/mlp_observation_session.py": {
+      "sha256": "4fcebccbb291dbe60c170f0503d4f26afc5fa77f49d0b83c5e982b18067383e4",
+      "bytes": 8095
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/row_adjoint.py": {
+      "sha256": "50814c6493e1d241c06c2d9cc786c176cd04153361b5cdb2d646caad461c0384",
+      "bytes": 11980
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/solution/trainer_shadow.py": {
+      "sha256": "addbeba762e3aa366f253bddd9cd9a9c8684f1c4b354adfb39664bfa839d4a44",
+      "bytes": 6580
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/web_runner.py": {
+      "sha256": "13d6cff08bca92fac48e4dd76813224f732e15c4eabe271dc566e2135c029b5d",
+      "bytes": 11004
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/worker.py": {
+      "sha256": "060576af8dbab893d84e8c01fccce139f063acec3a9cef4196a168b6fd5daf27",
+      "bytes": 15999
+    },
+    "testing_queue/candidates/20261031-held-offline/padding-mlp-shadow-real-step-v1/submitted_payload/worker_manifest.json": {
+      "sha256": "79e117968aa116b741686f442b72b279ac84a7f0ec14bb9a211006077810d524",
+      "bytes": 1834
+    }
+  },
+  "file_count_including_this_manifest": 74,
+  "publication_scope": "exact reviewed notebooks + expanded embedded source + status/source manifests; no private snapshots/raw receipts or outputs"
+}

@@ -1,0 +1,37 @@
+{
+  "candidate_id": "lora-fwd-half-scale-add-20261030",
+  "status": "PREPARED_T4_UNTESTED",
+  "official_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "zip_sha256": "7e8a9969ff1f8236d55ce152d93432157ce27bfd9d9a28ad285f41693a7d38cf",
+  "solution_files": {
+    "solution/__init__.py": "dcf225b5c2da76e6680cc66bcda674699ce6c33f35d3c655498dee39333d505a",
+    "solution/epilogue.py": "04e1a6dd75fa8dc9fba42123a6bd6dd224649791e782200927328eba8630a7ec",
+    "solution/patch.py": "3d5920504c3c46433e82c93be3b0ac305274ca982679b3c3f80757dfb57e6840"
+  },
+  "files": {
+    "README.md": "5ee1406194e2b5ac10f67247162fb3e007f82236e41f1749a89d0036a608f711",
+    "build_notebook.py": "3817608f6c5f53ba1c22359462d22c93dc02c015c2fa0e1b7b4e963dc0531d30",
+    "candidate-files.json": "d1012dfa235e55e357e2de68452fddc2704290e4591e0afd6d2241ea9e88372c",
+    "candidate.ipynb": "d1f00667dc12c28c29037f0ee0503d1cffcfaf1ae3e143485d30a1e2b40a114c",
+    "candidate.zip": "7e8a9969ff1f8236d55ce152d93432157ce27bfd9d9a28ad285f41693a7d38cf",
+    "cpu-tests.log": "6537016260a34ae9c17f68481c06b00a0e73f4f2a017020490b85c7b530af9de",
+    "environment-reference.json": "12c986193033dced546e61bd9bef3aba113a87c0e233e1806a00079b2b5d4923",
+    "process_guard.py": "f223349a54ab7bda32de1bf0f28aa86ff5c656d2939c74acec1ea49cd4aaa4ff",
+    "run_prepared.py": "7dafd5d5c4c709e2dcf0271888cc30332c23ce91990c17a0b744cf4eec803cbe",
+    "solution/__init__.py": "dcf225b5c2da76e6680cc66bcda674699ce6c33f35d3c655498dee39333d505a",
+    "solution/epilogue.py": "04e1a6dd75fa8dc9fba42123a6bd6dd224649791e782200927328eba8630a7ec",
+    "solution/patch.py": "3d5920504c3c46433e82c93be3b0ac305274ca982679b3c3f80757dfb57e6840",
+    "static-checks.log": "7594517ddd71c0bbf2fd18e6240ca038773328f40cecddb235b1353cb491771d",
+    "submission.template.json": "e54e999cff74b8cc33e96eab3bdc5a65e55fb585aec233ffb62a290dcbd11098",
+    "tests/test_cpu_contract.py": "54d8b18539270611144db466967c0e5abbc97c4887187a0246a8336fd9b729a3",
+    "tests/test_process_guard.py": "5f497162cf302ea8432ad20c6c8095fb6330fbf848e6c6eb4724942cb36ea4cc",
+    "tests/test_runner_gates.py": "5986eefad95767787e84f812340e2253fc3ab9f1942e20580a587d41c75dfe95",
+    "validate_static.py": "ea65837f5b801a190e4b0d13864b9feecfa3d8d0a3422ae90bf4886a99e0e3bb",
+    "validation.json": "7594517ddd71c0bbf2fd18e6240ca038773328f40cecddb235b1353cb491771d"
+  },
+  "baseline_id": null,
+  "queue_submitted": false,
+  "gpu_run": false,
+  "score": null,
+  "admission": "UNKNOWN"
+}

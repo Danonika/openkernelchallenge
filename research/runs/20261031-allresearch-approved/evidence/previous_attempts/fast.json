@@ -1,0 +1,28 @@
+{
+  "candidate": "allresearch-r12-eager-fast-1g-v1",
+  "state": "failed",
+  "notebook_sha256": "2ec9366cf43e24bf8e0b5f40abb38857e71dd5c4a2e220ba1cb72f533c7f8368",
+  "output_sha256": "42846fbef2684413eed0533beca831e0ed7d90a5ae5ce408229faea4ce498297",
+  "nested_training": null,
+  "official_admission": "UNKNOWN",
+  "paired": false,
+  "target": {
+    "command_s_below": 45,
+    "peak_mib_below": 1359,
+    "achieved": false
+  },
+  "preflight": {
+    "candidate_cuda": {
+      "passed": 450,
+      "skipped": 55,
+      "failure": 2,
+      "error": 0
+    },
+    "required_gpu_groups_failed": [
+      "test_physical_t4_full_fusion_training"
+    ],
+    "status": "candidate_cuda_tests_failed_or_skipped",
+    "official_regressions": null
+  },
+  "screening_status": null
+}

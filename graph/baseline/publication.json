@@ -1,0 +1,33 @@
+{
+  "status": "verified_private_deployment",
+  "url": "https://soup-baseline-graph.danonika.chatgpt.site",
+  "access": "owner-private",
+  "commit_sha": "ebc9d92876ac431eaa7886d6679d7c050720fa32",
+  "checks": [
+    "node --check passed",
+    "JSON Schema passed",
+    "baseline-only invariants passed",
+    "deployed graph JSON equals current sample",
+    "one baseline node; zero candidate nodes and edges",
+    "candidate creation controls absent",
+    "cloud-browser visual inspection and baseline bucket drilldown passed"
+  ],
+  "measurement_status": "no_T4_measurement",
+  "unknowns": [
+    "absolute time",
+    "peak memory",
+    "loss",
+    "admission",
+    "official score"
+  ],
+  "limits": [
+    "mobile viewport not browser-tested",
+    "No actual training or performance evidence"
+  ],
+  "supersedes": "Earlier prototype proposals and multi-tab plans are historical only.",
+  "repository_mirror_changes": [
+    "Replaced cloud absolute evidence/catalog paths with repository URLs only.",
+    "Retained original 118-row catalog reference metadata; current closed-cycle catalog has 121 rows."
+  ],
+  "live_site_mutated": false
+}

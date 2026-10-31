@@ -1,0 +1,18 @@
+{
+  "scope": "Report-only narrowed scientific publication; implementation and execution packets remain local, not published here",
+  "jury_cutoff_utc": "2026-10-30T13:15:28.736390+00:00",
+  "files": {
+    "README.md": "1b3d5f9b87e285ceb67cc375e1970986d856d0c83fcb5b7d35305877d39c292a",
+    "review/approval.json": "4ca668e0f8a9ed9d30c5a760cd35ee85a5c41ff12cb21d96ba806d2cd12750f3",
+    "review/canonical_rows.json": "92d97dfc10665991327126cfef92159f56ac3cbddec51c695b7e256f52016b1e",
+    "trial002/trial002_verified_handoff.json": "01de28fa85a58286634cc14b44727046a2b62e53fb68c25bb97fd877acd54e1a",
+    "trial002/trial002_verified_report.md": "70941c7695cba52ea59bca452e23883302de4212f2903c764cc8ab9b39f30f0f",
+    "trial003/trial003_verified_handoff.json": "c0b41b770130668f0e13471a30a8059f3ed81239714bfc9680c09f5e96ea4ba5",
+    "trial003/trial003_verified_report.md": "9ad949e711a4796f261f71dd885aa6bf4ee52e57d7ef9b8fc0fbf512c59d4f20"
+  },
+  "raw_result_checks_downloaded": false,
+  "reported_result_hashes_independently_byte_verified": false,
+  "full_archive_available": false,
+  "earned_points": null,
+  "excluded": "Denied builders/runners/implementation packets, raw monitor/control-plane logs, private account/infrastructure identifiers, credentials and weights"
+}

@@ -1,0 +1,52 @@
+{
+  "cycle": "2b",
+  "generated_utc": "2026-10-30T11:28:54.759917+00:00",
+  "scope": "Cloud-only original bounded CPU LoRA and saved-mask fixtures",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "threads": 2,
+    "interop_threads": 2
+  },
+  "script_sha256": "78d5e58daa2d843ca21089afa5f81b4cbf23db87e3293d1a824de8578c375425",
+  "summary": {
+    "passed": 3,
+    "failed": 0
+  },
+  "not_validated": [
+    "actual CUDA/PEFT dropout dispatch and routing",
+    "actual bnb base layer",
+    "fused GPU launches/T4 resources",
+    "peak memory or storage release",
+    "actual GradScaler/optimizer steps",
+    "full training/quality or challenge gates"
+  ],
+  "outcomes": [
+    {
+      "name": "lora_b_scale_add_custom_autograd_ownership",
+      "candidates": [
+        "SOUP-LORA-001"
+      ],
+      "status": "PASS",
+      "decision": "CPU supports B+scale+add ownership while retaining A/dropout and exact cast boundaries. This custom Function still runs ordinary Torch ops; no launch fusion or T4 feasibility measured."
+    },
+    {
+      "name": "per_saved_native_dropout_mask_hooks",
+      "candidates": [
+        "SOUP-LORA-002"
+      ],
+      "status": "PASS",
+      "decision": "Per-saved-mask hooks preserve tested outputs/RNG/retained backward and leave neighboring saved tensors untouched. Skip known pre-mutation conflicts; propagate all pack failures. Actual PEFT/CUDA routing and memory benefit remain unvalidated."
+    },
+    {
+      "name": "cpu_autocast_b_tail_contract",
+      "candidates": [
+        "SOUP-LORA-001"
+      ],
+      "status": "PASS",
+      "decision": "Installed CPU autocast F.linear agrees with explicit half-cast B-tail oracle in these fixtures; this does not prove CUDA autocast or actual PEFT dtype routing."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PREPARED_T4_UNTESTED",
+  "static_checks": "PASS",
+  "cpu_tests": "13 passed",
+  "python": "3.12.14",
+  "torch": "2.15.0+cpu",
+  "triton": "3.9.0",
+  "pinned_target_stack": false,
+  "gpu_used": false,
+  "cuda_or_sm75_compile": "NOT_RUN",
+  "actual_peft_integration": "NOT_RUN",
+  "full_soup_harness": "NOT_RUN",
+  "official_tests": "NOT_RUN",
+  "official_checks": "NOT_RUN",
+  "quality": "UNMEASURED",
+  "own_share": "UNMEASURED",
+  "performance": "UNMEASURED",
+  "admission": "UNKNOWN",
+  "score": null,
+  "source_python_files": 10,
+  "notebook_code_cells": 3,
+  "notebook_outputs_cleared": true,
+  "embedded_source_matches": true,
+  "deterministic_zip_rebuild_matches": true,
+  "zip_sha256": "7e8a9969ff1f8236d55ce152d93432157ce27bfd9d9a28ad285f41693a7d38cf",
+  "official_static_source_scan": {
+    "own_kernel_names": [
+      "lora_half_scale_add"
+    ],
+    "example_copies": [],
+    "example_lookalikes": [],
+    "banned_imports": [],
+    "broken": []
+  },
+  "cpu_test_log_sha256": "6537016260a34ae9c17f68481c06b00a0e73f4f2a017020490b85c7b530af9de",
+  "tests_scope": [
+    "CPU interpreter forward/VJP/tails/casts",
+    "nonfinite/signed-zero/overflow",
+    "native CPU fallback",
+    "second derivative",
+    "synthetic AST rejection/order",
+    "synthetic separate q/v dropout/RNG/gradients",
+    "synthetic complete-result no-score gate",
+    "nine synthetic partial/failure suppression cases",
+    "normal process cleanup",
+    "nested-session timeout cleanup",
+    "normally exiting orphan parent cleanup",
+    "SIGTERM cleanup retains quarantine",
+    "quarantine owner/foreign-token protection"
+  ]
+}

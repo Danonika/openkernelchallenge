@@ -1,0 +1,154 @@
+{
+  "candidate": "soup-token-chunk-ce-component-v1-20261030",
+  "notebook_sha256": "72dc8d56db6a770d829d7f33b6e787691df3750234bd79b299aa0e76c2475937",
+  "embedded_payload_sha256": {
+    "solution/__init__.py": "cfff518be5acf5f493ab8450002a0321740b4c87456795499e28898595266f94",
+    "solution/ce_tile.py": "2baea1f4b7c567379e3674b76204d39e9fb128eb6cfcda9a8d8edebbfd230e7b",
+    "solution/contracts.py": "561dd3f790f6744bff878be6680f957abd2918e1d350e7d3794c93fdbbe14c0c",
+    "solution/original/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/original/materialized_ce.py": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1",
+    "solution/original/metric_summary.py": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4",
+    "solution/original/mixed_rows.py": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2",
+    "solution/token_chunk_head.py": "58ecf5b9a83f91f128616d954f59a27f189969d62e44ad60ed2c67df2011fdb3",
+    "solution/verify_tile.py": "f4f6251987b6199365b853d48979a136ec2dc2626bed68f374ae2940ee6047a1",
+    "shared_consumer/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shared_consumer/bridge_state.py": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9",
+    "shared_consumer/consumer.py": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc",
+    "old_solution/__init__.py": "94794d4f4ab4ba76eb58f73383008ea605e3a6e25afb91f550723b5c801e03aa",
+    "old_solution/token_chunk_head.py": "c75d33b7adfa42e659c049ce9933a57501324bab7d7af8b3bbda0832bce73fb5",
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "reviewed_support.py": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c",
+    "worker.py": "70947337b2dc3b2b199d7394bd2d6530b69cc3e2b03336290b32f079fd074f72",
+    "native_source_manifest.json": "12de6991fd41f2dea6ca8930079f10ba2cd7c752f955836e3774f3997666a816",
+    "shared_consumer_manifest.json": "7c32833bfec7f8d17ec6771e9683b922109f2e1c09e7e47359a86c03ad0ff395",
+    "tile_source_manifest.json": "5e9b2767afa94a4e85bd18fc3bdf610bf5ff562d836af9f95db8ebad6ce6d894",
+    "driver.py": "e64a58475b458e81dc856c6774934f440c37af685a66652b9409c0841f9ef622",
+    "source_manifest.json": "f25662da56a6dda8943aa9ecbd45eadefd6fedc7213e96afd265811eb31e962e",
+    "payload_manifest.json": "d992f90cea406d987d2d643d1a512fe9d95cad8fdb8d99904ff69c5733320b4a"
+  },
+  "decoded_source_archives": [],
+  "exported_payload_files": {
+    "driver.py": {
+      "bytes": 7364,
+      "sha256": "e64a58475b458e81dc856c6774934f440c37af685a66652b9409c0841f9ef622"
+    },
+    "native_source_manifest.json": {
+      "bytes": 345,
+      "sha256": "12de6991fd41f2dea6ca8930079f10ba2cd7c752f955836e3774f3997666a816"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "old_solution/__init__.py": {
+      "bytes": 86,
+      "sha256": "94794d4f4ab4ba76eb58f73383008ea605e3a6e25afb91f550723b5c801e03aa"
+    },
+    "old_solution/token_chunk_head.py": {
+      "bytes": 6642,
+      "sha256": "c75d33b7adfa42e659c049ce9933a57501324bab7d7af8b3bbda0832bce73fb5"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "payload_manifest.json": {
+      "bytes": 2449,
+      "sha256": "d992f90cea406d987d2d643d1a512fe9d95cad8fdb8d99904ff69c5733320b4a"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "shared_consumer/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "shared_consumer/bridge_state.py": {
+      "bytes": 9674,
+      "sha256": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9"
+    },
+    "shared_consumer/consumer.py": {
+      "bytes": 9632,
+      "sha256": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc"
+    },
+    "shared_consumer_manifest.json": {
+      "bytes": 262,
+      "sha256": "7c32833bfec7f8d17ec6771e9683b922109f2e1c09e7e47359a86c03ad0ff395"
+    },
+    "solution/__init__.py": {
+      "bytes": 68,
+      "sha256": "cfff518be5acf5f493ab8450002a0321740b4c87456795499e28898595266f94"
+    },
+    "solution/ce_tile.py": {
+      "bytes": 8481,
+      "sha256": "2baea1f4b7c567379e3674b76204d39e9fb128eb6cfcda9a8d8edebbfd230e7b"
+    },
+    "solution/contracts.py": {
+      "bytes": 1671,
+      "sha256": "561dd3f790f6744bff878be6680f957abd2918e1d350e7d3794c93fdbbe14c0c"
+    },
+    "solution/original/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "solution/original/materialized_ce.py": {
+      "bytes": 14846,
+      "sha256": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1"
+    },
+    "solution/original/metric_summary.py": {
+      "bytes": 3256,
+      "sha256": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4"
+    },
+    "solution/original/mixed_rows.py": {
+      "bytes": 7670,
+      "sha256": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2"
+    },
+    "solution/token_chunk_head.py": {
+      "bytes": 4436,
+      "sha256": "58ecf5b9a83f91f128616d954f59a27f189969d62e44ad60ed2c67df2011fdb3"
+    },
+    "solution/verify_tile.py": {
+      "bytes": 6201,
+      "sha256": "f4f6251987b6199365b853d48979a136ec2dc2626bed68f374ae2940ee6047a1"
+    },
+    "source_manifest.json": {
+      "bytes": 1422,
+      "sha256": "f25662da56a6dda8943aa9ecbd45eadefd6fedc7213e96afd265811eb31e962e"
+    },
+    "tile_source_manifest.json": {
+      "bytes": 714,
+      "sha256": "5e9b2767afa94a4e85bd18fc3bdf610bf5ff562d836af9f95db8ebad6ce6d894"
+    },
+    "worker.py": {
+      "bytes": 16799,
+      "sha256": "70947337b2dc3b2b199d7394bd2d6530b69cc3e2b03336290b32f079fd074f72"
+    }
+  },
+  "validation_tests": {
+    "tests/cpu_tile_oracle.py": {
+      "bytes": 1399,
+      "sha256": "fc20010da15e4813007f30e5b0b26a7d967dc1051bd15384bb325d783bdda4c3"
+    },
+    "tests/test_head_owner.py": {
+      "bytes": 3728,
+      "sha256": "d1688e587e2311bea1aed5fe2882441b7a61cde17fa5082f378b3997f7c1dd6f"
+    },
+    "tests/test_packet.py": {
+      "bytes": 6140,
+      "sha256": "127a8f532268e05781e719c732cbec0c5e3dba2ae49541622ba68045e4de4a92"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

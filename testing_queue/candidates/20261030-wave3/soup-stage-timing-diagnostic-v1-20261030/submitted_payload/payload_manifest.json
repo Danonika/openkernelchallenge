@@ -1,0 +1,13 @@
+{
+  "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+  "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+  "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+  "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+  "prepare_asset_manifest.py": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+  "evidence_reader.py": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c",
+  "reviewed_support.py": "cc06088f35a870b4912b9a78c8938ff330c833ecd63b04816c50ee2b6e54d01c",
+  "driver.py": "18a112f341220532cdfd040107713e6f9a4f16954e4ddf88a5824adad12a3eea",
+  "stage_timing_diagnostic.zip": "71e17eeb3dd2ea6b064ac8d73b3773a6e42aa912dcae7b6b9fe98c6922cc22df",
+  "source_manifest.json": "82de71c57f4661a7cafe9a2fadd717c8f122980ca2558abc5cfb846ff027967d",
+  "candidate_registry.json": "08e520a1303fa12d52d9dbc0a9659f8dfd3839557c889d9c18e87b812002ca14"
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "mode": "reviewed_data_queue_with_explicit_opt_in_runner_adapter",
+  "gpu_contract_sha256": "d3c2fdceb3be93cbeac335ef34513417f3aadf59b96404038726597eab3cb3ec",
+  "entrypoints": [
+    "cpu_contract_v1",
+    "gpu_preflight_v1",
+    "soup_paired_v1",
+    "soup_screen_v1"
+  ],
+  "backends": [
+    "CPU",
+    "KAGGLE_T4",
+    "GCP"
+  ],
+  "agent_protocol": [
+    "stage_secret_free_source_data",
+    "submit",
+    "save_job_id_and_hash",
+    "poll_status_for_result"
+  ],
+  "review_protocol": [
+    "inspect_exact_source_packet_as_data",
+    "verify_user_authority_and_backend_baseline",
+    "approve_or_reject_hash_bound_job"
+  ],
+  "runner_protocol": [
+    "claim_reviewed_matching_job_atomically",
+    "validate_prepared_session_without_reset",
+    "verify_source_plus_explicit_pinned_support_allowlist",
+    "verify_authority_idle_exclusive_resource_and_unique_output",
+    "map_entrypoint_to_runner_owned_reviewed_code_not_artifact_commands",
+    "record_start_only_after_confirmation",
+    "heartbeat_and_append_hash_bound_observations",
+    "mark_uncertain_instead_of_retrying",
+    "inspect_native_and_nested_exits_and_raw_evidence",
+    "complete_idempotently_with_structured_result"
+  ],
+  "uncertainty": "Expired or uncertain attempts retain resource locks. Never auto-rerun. Only explicit evidenced and renewed-authority confirmed-not-started requeue is supported.",
+  "session_reuse": "Existing prepared public model/data/packages may be reused under runner policy. Do not reset session, alter active notebook, install/provision, reuse adapters or formal compiler caches based on queue input.",
+  "result_truth": "Queue validates structure/identity/censoring, not truth or official admission. Runner and jury verify raw evidence. Score remains null unless separately evidenced.",
+  "not_implemented": [
+    "production credentials",
+    "paid provisioning",
+    "hosted HTTP service/public deployment",
+    "push notifications",
+    "external publication",
+    "quota management",
+    "arbitrary notebook execution",
+    "official admission/scoring",
+    "live GPU/container acceptance"
+  ],
+  "local_http_interface": "HTTP_API.md; header-scoped auth, loopback only, no artifact execution",
+  "deployment_boundary": "DEPLOYMENT_ADAPTER.md; proposed same future VM, isolated storage/processes, explicit approval still required",
+  "runner_adapter": "RUNNER_ADAPTER.md"
+}

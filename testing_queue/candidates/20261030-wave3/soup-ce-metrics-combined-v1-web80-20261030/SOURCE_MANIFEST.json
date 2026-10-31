@@ -1,0 +1,184 @@
+{
+  "candidate": "soup-ce-metrics-combined-v1-web80-20261030",
+  "notebook_sha256": "43ff82d47ddd26d026796d4f25f2d8edb1ce767dc484105e0a6829e9d0b0746a",
+  "embedded_payload_sha256": {
+    "evidence_reader.py": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "prepare_asset_manifest.py": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "web_runner.py": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c",
+    "candidate_profile.json": "eeb23059c0cf652501f666f73445176993e9222218debc91c1f48e29cfb2b57f",
+    "ce_metrics_combined_v1.zip": "97acbb86f56d510f9cc9904720dc02cb3385faf8c11e93914a57c6634ea9dc2b",
+    "ce_metrics_combined_v1_manifest.json": "c41dc192de5a645e54d8c2ff529018126a603f799a98f73b03c892f35bd17be8",
+    "README.md": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d",
+    "runtime_api_reference.json": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+  },
+  "decoded_source_archives": [
+    {
+      "embedded_source_archive": "ce_metrics_combined_v1.zip",
+      "sha256": "97acbb86f56d510f9cc9904720dc02cb3385faf8c11e93914a57c6634ea9dc2b",
+      "decoded_members": [
+        "solution/__init__.py",
+        "solution/chain.py",
+        "solution/common/__init__.py",
+        "solution/common/bridge_state.py",
+        "solution/common/consumer.py",
+        "solution/install.py",
+        "solution/producer/__init__.py",
+        "solution/producer/adapter.py",
+        "solution/producer/materialized_ce.py",
+        "solution/producer/metric_summary.py",
+        "solution/producer/mixed_rows.py",
+        "solution/producer/numerical_gates.py",
+        "solution/producer/telemetry.py",
+        "solution/producer/test_cpu_contract.py",
+        "solution/producer/verify_integration.py",
+        "solution/producer/verify_metric_producer.py",
+        "solution/producer/verify_rowmix.py",
+        "solution/source_owners.py",
+        "solution/telemetry.py",
+        "solution/web_preflight.py"
+      ],
+      "source_archive_bytes_exported_separately": false
+    }
+  ],
+  "exported_payload_files": {
+    "README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "candidate_profile.json": {
+      "bytes": 1319,
+      "sha256": "eeb23059c0cf652501f666f73445176993e9222218debc91c1f48e29cfb2b57f"
+    },
+    "ce_metrics_combined_v1_manifest.json": {
+      "bytes": 2074,
+      "sha256": "c41dc192de5a645e54d8c2ff529018126a603f799a98f73b03c892f35bd17be8"
+    },
+    "evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "solution/__init__.py": {
+      "bytes": 920,
+      "sha256": "97e96dd1d186b2544a002a3eed74e3ec41dda273599479279c4a202230aa4b50"
+    },
+    "solution/chain.py": {
+      "bytes": 3701,
+      "sha256": "99f0b18cc98da0971fbbdede0b796b98bfe5472aa93e61c9de29b09eb529dc2e"
+    },
+    "solution/common/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "solution/common/bridge_state.py": {
+      "bytes": 9674,
+      "sha256": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9"
+    },
+    "solution/common/consumer.py": {
+      "bytes": 9632,
+      "sha256": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc"
+    },
+    "solution/install.py": {
+      "bytes": 9860,
+      "sha256": "607b202c8f16a337e3bda8065fb088d7f2f5fc255221547da3fff1b36fd333c9"
+    },
+    "solution/producer/__init__.py": {
+      "bytes": 1401,
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    "solution/producer/adapter.py": {
+      "bytes": 9523,
+      "sha256": "e51082e41f21e3e1e6b43ccc72074429cc9cd103b064db8b8e0b6912fd249f7b"
+    },
+    "solution/producer/materialized_ce.py": {
+      "bytes": 14846,
+      "sha256": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1"
+    },
+    "solution/producer/metric_summary.py": {
+      "bytes": 3256,
+      "sha256": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4"
+    },
+    "solution/producer/mixed_rows.py": {
+      "bytes": 7670,
+      "sha256": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2"
+    },
+    "solution/producer/numerical_gates.py": {
+      "bytes": 3425,
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    "solution/producer/telemetry.py": {
+      "bytes": 5351,
+      "sha256": "c60d73a2ee932990ae32a8d2619fadc935803fd621c913f2ca390065cc7d201d"
+    },
+    "solution/producer/test_cpu_contract.py": {
+      "bytes": 10559,
+      "sha256": "7df43cf9d3defcddfe93733af7680c749dcdd35578de287f0560ac3cdbcdc288"
+    },
+    "solution/producer/verify_integration.py": {
+      "bytes": 10119,
+      "sha256": "54cc216efeebab9d5c5b80204fbba5744880f3f7a4a36b439fa482d89bfa6772"
+    },
+    "solution/producer/verify_metric_producer.py": {
+      "bytes": 7165,
+      "sha256": "293d40ea9cb5622a845793bebdcfaf4e9f92f549330c58710eaadd3895c10d88"
+    },
+    "solution/producer/verify_rowmix.py": {
+      "bytes": 6641,
+      "sha256": "10e9dbab399ddf63c08a8c394bd50cde914a86ca3ee5ed6db3aa0ee82934d916"
+    },
+    "solution/source_owners.py": {
+      "bytes": 7989,
+      "sha256": "c701bfd7063e289d91c8e5b856b62827f6a9f4f2579aa23bbed4a911a5d38e5b"
+    },
+    "solution/telemetry.py": {
+      "bytes": 731,
+      "sha256": "9b2ba7aa90839766df556169472fdaa8252e145535ebf202f91f5952744efb1e"
+    },
+    "solution/web_preflight.py": {
+      "bytes": 12293,
+      "sha256": "160f547c27ee839539f5f767dc702e93eb71c1273b8cbeec76e0ce8a803f77f8"
+    },
+    "web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    }
+  },
+  "validation_tests": {
+    "test_packet.py": {
+      "bytes": 6022,
+      "sha256": "c0a7d5209b8a208abc8e499a38fb1aaca224550d5be8c010d0ddbf3aa0369771"
+    },
+    "tests/test_guard.py": {
+      "bytes": 5570,
+      "sha256": "ed6d155882f7e4f0277ac462d029fc7fa205ccfbc6723ba55bdf7fa58d41ecc4"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

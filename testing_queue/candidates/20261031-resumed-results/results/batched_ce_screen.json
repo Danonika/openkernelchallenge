@@ -1,0 +1,279 @@
+{
+  "artifact": "batched_ce_direct_dz_compact_storage_single_screen",
+  "status": "SOURCE_BOUND_SINGLE_SCREEN_COMPLETE",
+  "source_binding": {
+    "notebook_sha256": "23668968eb95204fde68a7a66c54dd81fb883457c868e6143999fcec9860aad6",
+    "source_zip_sha256": "7f9882870836adf2829da353997091f31ec21e9333534cf91ba5fa54f0040eaa",
+    "output_archive_sha256": "5e0269c0551ab43243005f5d8429e4d3532d865fc2d21eb0bcc939a954138949",
+    "executed_notebook_sha256": "4fbe79d29704efcd2d79d7d86add88c430795523c564753cfe1bdd55d90d695b",
+    "private_result_review_sha256": "77e3686b4b8516206ddada53fb95492c9c12a021931f603a3194b6a099172dbd",
+    "status": "EXACT_SOURCE_AND_COMPLETED_OUTPUT_BOUND"
+  },
+  "scope": "One completed composed candidate-only 64-step task plus public evaluation; not an isolated or paired causal measurement.",
+  "native_task": {
+    "only": "solution",
+    "repeats": 1,
+    "seed": 1,
+    "steps": 64,
+    "training_cap_seconds": 80
+  },
+  "measurement": {
+    "run": "solution_1",
+    "side": "solution",
+    "wall_s": 70.872,
+    "gpu_peak_mib": 6503,
+    "training_complete": true,
+    "partial": false,
+    "eval_loss": 2.04963
+  },
+  "public_evaluation": {
+    "exit_code": 0,
+    "mean_loss": 2.04963,
+    "rows": 256,
+    "skipped_rows": 0,
+    "tokens": 38109
+  },
+  "completion": {
+    "source_bound_complete_single_screen": true,
+    "all_source_binding_facts_verified": true,
+    "train_exit_code": 0,
+    "metrics_exit_code": 0,
+    "global_step": 64,
+    "same_adapter_evaluation_verified": true,
+    "executed_notebook_source_sha_matches": true,
+    "cleanup_confirmed": true
+  },
+  "original_kernel_timing": {
+    "eligible_kernel_ms": {
+      "soup_rmsnorm_forward": 292.557,
+      "soup_nf4_dequantize": 2975.101,
+      "soup_ce_exp_tile_max": 120.108,
+      "soup_ce_exp_row_max": 6.874,
+      "soup_ce_exp_tile_sum": 111.973,
+      "soup_ce_exp_selected": 1.267,
+      "soup_ce_metric_tiles": 128.991,
+      "soup_ce_metric_merge": 1.33,
+      "soup_ce_mixed_backward": 238.632,
+      "soup_rmsnorm_backward": 388.588
+    },
+    "excluded_starter_kernel_ms": {
+      "example_swiglu_fwd_kernel": 754.073,
+      "example_swiglu_bwd_kernel": 1102.248
+    },
+    "eligible_event_ms": 4265.421,
+    "timed_loop_s": 44.451,
+    "timed_steps": 62,
+    "fraction": 0.09595781872173854,
+    "scope": "One completed candidate run only; unchanged original source classification reused; not paired admission.",
+    "raw_launch_count_warning": "Whole-run launch counts can include untimed steps; do not divide timed milliseconds by them."
+  },
+  "triton_launches": {
+    "soup_rmsnorm_forward": 3648,
+    "soup_nf4_dequantize": 24896,
+    "example_swiglu_fwd_kernel": 1792,
+    "soup_ce_exp_tile_max": 64,
+    "soup_ce_exp_row_max": 64,
+    "soup_ce_exp_tile_sum": 64,
+    "soup_ce_exp_selected": 64,
+    "soup_ce_metric_tiles": 64,
+    "soup_ce_metric_merge": 64,
+    "soup_ce_mixed_backward": 64,
+    "soup_rmsnorm_backward": 3584,
+    "example_swiglu_bwd_kernel": 1792
+  },
+  "triton_files": {
+    "soup_rmsnorm_forward": "solution/support/rmsnorm.py",
+    "soup_nf4_dequantize": "solution/support/nf4.py",
+    "example_swiglu_fwd_kernel": "solution/mlp_half/starter_swiglu.py",
+    "soup_ce_exp_tile_max": "solution/original/materialized_ce.py",
+    "soup_ce_exp_row_max": "solution/original/materialized_ce.py",
+    "soup_ce_exp_tile_sum": "solution/original/materialized_ce.py",
+    "soup_ce_exp_selected": "solution/original/materialized_ce.py",
+    "soup_ce_metric_tiles": "solution/original/metric_summary.py",
+    "soup_ce_metric_merge": "solution/original/metric_summary.py",
+    "soup_ce_mixed_backward": "solution/original/mixed_rows.py",
+    "soup_rmsnorm_backward": "solution/support/rmsnorm.py",
+    "example_swiglu_bwd_kernel": "solution/mlp_half/starter_swiglu.py"
+  },
+  "final_route_records": {
+    "SOUP_BATCH_CE": [
+      {
+        "above_128_rows_calls": 64,
+        "assembled_dz_calls": 0,
+        "backward_calls": 64,
+        "ce_groups": 64,
+        "direct_dz_calls": 64,
+        "event": "batched_ce_head",
+        "forward_calls": 64,
+        "max_rows": 2048,
+        "single_group_calls": 64
+      }
+    ],
+    "SOUP_COMPACT_MLP": [
+      {
+        "count": 1792,
+        "event": "owned_mlp_forward",
+        "native_fallback": 0,
+        "starter_original_credit": 0
+      }
+    ],
+    "SOUP_FROZEN_STORAGE": [
+      {
+        "count": 64,
+        "event": "owned_embedding_forward",
+        "head_fp16_calls": 0,
+        "head_native_operand_calls": 0,
+        "installed": 1,
+        "owners_intact": true,
+        "storage_original_credit": 0
+      }
+    ],
+    "SOUP_STREAMED_CE": [
+      {
+        "compact_mlp": true,
+        "count": 1,
+        "event": "installed",
+        "frozen_storage": true,
+        "nf4": true,
+        "rmsnorm": true,
+        "starter_original_credit": 0,
+        "status": "UNVALIDATED_BATCHED_CE_DIRECT_DZ_COMPACT_STORAGE",
+        "storage_original_credit": 0
+      },
+      {
+        "count": 64,
+        "event": "owned_consumer_guard",
+        "reason": null
+      },
+      {
+        "count": 64,
+        "event": "backbone_once"
+      },
+      {
+        "count": 64,
+        "event": "summary_loss_completed"
+      },
+      {
+        "count": 64,
+        "event": "streaming_loss_return"
+      },
+      {
+        "count": 64,
+        "event": "consumer_complete",
+        "source_kind": "streaming"
+      }
+    ]
+  },
+  "preflight": {
+    "status": "STRUCTURAL_CHECKS_COMPLETE_NUMERICAL_RESULTS_RECORDED",
+    "error": null,
+    "engineering_numeric_failures": 4,
+    "original_thresholds_changed": false,
+    "engineering_observation_count": 24,
+    "gradient_observations": 16,
+    "gradient_failures": 0,
+    "failed_observations": [
+      {
+        "name": "update/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+        "classification": "finite_nominal_lora_parameter_update_numeric",
+        "passed": false,
+        "blocking": false,
+        "scale": 1.0,
+        "values": {
+          "max_abs": 0.00039778421341907233,
+          "reference_max_abs": 0.00019999986398033798,
+          "error_l2": 0.001194218939270712,
+          "reference_l2": 0.031351994387375605,
+          "relative_l2": 0.038090684902380045,
+          "violating_elements": 13,
+          "finite_elements": 24576
+        },
+        "original_tolerances": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+        }
+      },
+      {
+        "name": "update/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+        "classification": "finite_nominal_lora_parameter_update_numeric",
+        "passed": false,
+        "blocking": false,
+        "scale": 1.0,
+        "values": {
+          "max_abs": 2.0902371034026146e-06,
+          "reference_max_abs": 0.00019999999494757503,
+          "error_l2": 2.1091297795481544e-06,
+          "reference_l2": 0.012799894947633794,
+          "relative_l2": 0.00016477711638860374,
+          "violating_elements": 1,
+          "finite_elements": 4096
+        },
+        "original_tolerances": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+        }
+      },
+      {
+        "name": "update/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+        "classification": "finite_nominal_lora_parameter_update_numeric",
+        "passed": false,
+        "blocking": false,
+        "scale": 65536.0,
+        "values": {
+          "max_abs": 0.00039649287646170706,
+          "reference_max_abs": 0.00019999986398033798,
+          "error_l2": 0.0008837005179019023,
+          "reference_l2": 0.03135265460862112,
+          "relative_l2": 0.02818582760959925,
+          "violating_elements": 10,
+          "finite_elements": 24576
+        },
+        "original_tolerances": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+        }
+      },
+      {
+        "name": "update/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+        "classification": "finite_nominal_lora_parameter_update_numeric",
+        "passed": false,
+        "blocking": false,
+        "scale": 65536.0,
+        "values": {
+          "max_abs": 0.00039834296330809593,
+          "reference_max_abs": 0.00019999996584374458,
+          "error_l2": 0.00039834410896670504,
+          "reference_l2": 0.012799899455608325,
+          "relative_l2": 0.03112087796847256,
+          "violating_elements": 1,
+          "finite_elements": 4096
+        },
+        "original_tolerances": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+        }
+      }
+    ],
+    "note": "All four nominal-update failures remain passed:false with original thresholds; authorized finite allowlist makes them warning-only, not PASS."
+  },
+  "saved_public_quality_screen": {
+    "scope": "public_data_screen_only",
+    "baseline_loss": 2.04968,
+    "solution_loss": 2.04963,
+    "eval_loss_limit": 2.0599283999999995,
+    "eval_loss_check": "passed"
+  },
+  "device_allocator_observations": {
+    "torch_max_allocated_mib": 6239.7,
+    "torch_max_reserved_mib": 6360.0
+  },
+  "banned_modules_loaded": [],
+  "outcome": "KEEP_RESEARCH_COMPOSED_SINGLE_SCREEN",
+  "score": null,
+  "admission": "UNKNOWN",
+  "paired_official_checks": "NOT_RUN"
+}

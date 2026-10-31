@@ -1,0 +1,2026 @@
+{
+  "schema_version": 1,
+  "cycle": 3,
+  "generated_utc": "2026-10-30T11:40:46.012865+00:00",
+  "scope": "Original bounded cloud CPU norm/residual and RoPE semantic fixtures",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "threads": 2,
+    "interop_threads": 2
+  },
+  "script_sha256": "285ec2e2013d6b19b7f2955220aaf0ed9778dda7b7cd4f911d3146d457c7b1c9",
+  "summary": {
+    "passed": 6,
+    "failed": 0
+  },
+  "not_validated": [
+    "actual model dtype/stride routing",
+    "CUDA kernels/T4 timing",
+    "allocator peak memory or storage release",
+    "GPU accumulation/reduction order",
+    "signed-zero or NaN-payload bit identity",
+    "RoPE nonfinite inputs or gradients",
+    "FP16/mixed RoPE custom-kernel equivalence (reference fallback only)",
+    "full training quality or challenge numerical gates",
+    "performance graph points or own-kernel share"
+  ],
+  "rope_variant": "qwen2-fp32-half-split-apply-only",
+  "results": [
+    {
+      "name": "staged_norm_backward_and_saved_state",
+      "candidates": [
+        "cast-aware-norm"
+      ],
+      "status": "PASS",
+      "details": {
+        "trials": 144,
+        "staged_backward_exact_finite_and_nonfinite_classes": true,
+        "recomputed_inverse_rms_exact": true,
+        "compact_formula_different_cases": 46,
+        "compact_formula_nonfinite_mismatch_cases": 14,
+        "compact_formula_max_finite_abs": 2.305843009213694e+18,
+        "fp16_saved_x_gradient_comparison": {
+          "nonfinite_class_mismatch": 0,
+          "finite_max_abs": 0.1800537109375,
+          "exact_finite_and_classes": false,
+          "reference_nonfinite": 0
+        },
+        "normalized_then_divided_x_max_abs": 1.1641532182693481e-10,
+        "zero_weight_reconstruction_all_nan": true,
+        "zero_inverse_rms_reconstruction_all_nan": true,
+        "finite_x_3e38_witness": {
+          "staged_gradient": "NaN",
+          "compact_gradient": 0.0,
+          "forward_output": 0.0
+        },
+        "decision": "Frozen FP32 standalone norm needs the actual staged derivative for these exact CPU results. Reject universal compact-formula, FP16-saved-input, or reconstructed-input equivalence."
+      }
+    },
+    {
+      "name": "norm_unique_saved_storage_and_trainable_fallback",
+      "candidates": [
+        "cast-aware-norm"
+      ],
+      "status": "PASS",
+      "details": {
+        "reference": {
+          "saved_references": 5,
+          "unique_storages": 3,
+          "referenced_storage_bytes": 148,
+          "records": [
+            {
+              "shape": [
+                2,
+                7
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 112,
+              "role": "x"
+            },
+            {
+              "shape": [
+                2,
+                1
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 8,
+              "role": "derived"
+            },
+            {
+              "shape": [
+                2,
+                1
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 8,
+              "role": "derived"
+            },
+            {
+              "shape": [
+                2,
+                7
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 112,
+              "role": "x"
+            },
+            {
+              "shape": [
+                7
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 28,
+              "role": "w"
+            }
+          ]
+        },
+        "save_x_r_w": {
+          "saved_references": 3,
+          "unique_storages": 3,
+          "referenced_storage_bytes": 148,
+          "records": [
+            {
+              "shape": [
+                2,
+                7
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 112,
+              "role": "x"
+            },
+            {
+              "shape": [
+                2,
+                1
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 8,
+              "role": "derived"
+            },
+            {
+              "shape": [
+                7
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 28,
+              "role": "w"
+            }
+          ]
+        },
+        "recompute_r_from_x_w": {
+          "saved_references": 2,
+          "unique_storages": 2,
+          "referenced_storage_bytes": 140,
+          "records": [
+            {
+              "shape": [
+                2,
+                7
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 112,
+              "role": "x"
+            },
+            {
+              "shape": [
+                7
+              ],
+              "dtype": "torch.float32",
+              "storage_bytes": 28,
+              "role": "w"
+            }
+          ]
+        },
+        "trainable_weight_fallback_preserves_weight_gradient": true,
+        "no_grad_input_and_frozen_weight_controls": [
+          {
+            "implementation": "reference",
+            "output_requires_grad": false,
+            "saved_references": 0
+          },
+          {
+            "implementation": "save_x_r_w",
+            "output_requires_grad": false,
+            "saved_references": 0
+          },
+          {
+            "implementation": "recompute_r",
+            "output_requires_grad": false,
+            "saved_references": 0
+          }
+        ],
+        "not_peak_memory_measurement": true,
+        "decision": "Native frozen norm already saves only x/r/w storage. Deduplicating five references to three is not a storage saving; recomputing r removes only its tiny referenced storage in this toy inventory and adds unmeasured work."
+      }
+    },
+    {
+      "name": "residual_alias_outputs_and_branch_association",
+      "candidates": [
+        "cast-aware-norm",
+        "residual-norm"
+      ],
+      "status": "PASS",
+      "details": {
+        "ordinary_cases": [
+          {
+            "layout": "independent",
+            "use": "norm_only",
+            "root_gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "finite_max_abs": 0.0,
+              "exact_finite_and_classes": true,
+              "reference_nonfinite": 0
+            },
+            "inputs_unchanged": true,
+            "outputs_exact": true
+          },
+          {
+            "layout": "independent",
+            "use": "residual_only",
+            "root_gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "finite_max_abs": 0.0,
+              "exact_finite_and_classes": true,
+              "reference_nonfinite": 0
+            },
+            "inputs_unchanged": true,
+            "outputs_exact": true
+          },
+          {
+            "layout": "independent",
+            "use": "both_two_bypass_consumers",
+            "root_gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "finite_max_abs": 5.960464477539063e-08,
+              "exact_finite_and_classes": false,
+              "reference_nonfinite": 0
+            },
+            "inputs_unchanged": true,
+            "outputs_exact": true
+          },
+          {
+            "layout": "identical_inputs",
+            "use": "norm_only",
+            "root_gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "finite_max_abs": 0.0,
+              "exact_finite_and_classes": true,
+              "reference_nonfinite": 0
+            },
+            "inputs_unchanged": true,
+            "outputs_exact": true
+          },
+          {
+            "layout": "identical_inputs",
+            "use": "residual_only",
+            "root_gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "finite_max_abs": 0.0,
+              "exact_finite_and_classes": true,
+              "reference_nonfinite": 0
+            },
+            "inputs_unchanged": true,
+            "outputs_exact": true
+          },
+          {
+            "layout": "identical_inputs",
+            "use": "both_two_bypass_consumers",
+            "root_gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "finite_max_abs": 4.76837158203125e-07,
+              "exact_finite_and_classes": false,
+              "reference_nonfinite": 0
+            },
+            "inputs_unchanged": true,
+            "outputs_exact": true
+          },
+          {
+            "layout": "overlapping_views",
+            "use": "norm_only",
+            "root_gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "finite_max_abs": 0.0,
+              "exact_finite_and_classes": true,
+              "reference_nonfinite": 0
+            },
+            "inputs_unchanged": true,
+            "outputs_exact": true
+          },
+          {
+            "layout": "overlapping_views",
+            "use": "residual_only",
+            "root_gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "finite_max_abs": 0.0,
+              "exact_finite_and_classes": true,
+              "reference_nonfinite": 0
+            },
+            "inputs_unchanged": true,
+            "outputs_exact": true
+          },
+          {
+            "layout": "overlapping_views",
+            "use": "both_two_bypass_consumers",
+            "root_gradient_comparison": {
+              "nonfinite_class_mismatch": 0,
+              "finite_max_abs": 2.384185791015625e-07,
+              "exact_finite_and_classes": false,
+              "reference_nonfinite": 0
+            },
+            "inputs_unchanged": true,
+            "outputs_exact": true
+          }
+        ],
+        "exploratory_tolerance": {
+          "atol": 1e-06,
+          "rtol": 2e-05,
+          "challenge_gate": false
+        },
+        "cancellation_witness": {
+          "a": 512.0,
+          "b": 512.0,
+          "dy": 17179869184.0,
+          "bypass": 1.0,
+          "direct": 16777216.0,
+          "variance": -16777216.0,
+          "cases": [
+            {
+              "width": 1,
+              "native_gradient_all": 0.0,
+              "completed_norm_then_bypass_all": 1.0
+            },
+            {
+              "width": 1536,
+              "native_gradient_all": 0.0,
+              "completed_norm_then_bypass_all": 1.0
+            }
+          ]
+        },
+        "unused_norm_output_controls": [
+          {
+            "use": "residual_only_norm_unused",
+            "native_gradient": 1.0,
+            "explicit_none_gradient": 1.0,
+            "default_materialization_gradient": "NaN"
+          },
+          {
+            "use": "residual_and_connected_zero_norm",
+            "native_gradient": "NaN",
+            "explicit_none_gradient": "NaN",
+            "default_materialization_gradient": "NaN"
+          },
+          {
+            "use": "norm_only",
+            "native_gradient": "NaN",
+            "explicit_none_gradient": "NaN",
+            "default_materialization_gradient": "NaN"
+          }
+        ],
+        "saved_residual_mutation_rejected": [
+          true,
+          true
+        ],
+        "decision": "Standalone norm exactness does not establish residual-fusion exactness. Native graph branch accumulation can change 0 into 1 under regrouping; retain both outputs, alias handling, version checks and branch-order validation."
+      }
+    },
+    {
+      "name": "rope_fp32_layout_broadcast_and_adjoint",
+      "candidates": [
+        "attn-sgl-rounding-fusion"
+      ],
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "axis": 1,
+            "position_batches": 1,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "both",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 1,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 1,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              false
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 1,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              false,
+              true
+            ],
+            "used_outputs": "k_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 1,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "both",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 1,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 1,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              false
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 1,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              false,
+              true
+            ],
+            "used_outputs": "k_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 2,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "both",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 2,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 2,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              false
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 2,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              false,
+              true
+            ],
+            "used_outputs": "k_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 2,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "both",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 2,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 2,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              false
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 1,
+            "position_batches": 2,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              false,
+              true
+            ],
+            "used_outputs": "k_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              128,
+              1536,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              128,
+              256,
+              1
+            ],
+            "output_is_contiguous": false
+          },
+          {
+            "axis": 2,
+            "position_batches": 1,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "both",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 1,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 1,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              false
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 1,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              false,
+              true
+            ],
+            "used_outputs": "k_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 1,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "both",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 1,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 1,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              false
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 1,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              false,
+              true
+            ],
+            "used_outputs": "k_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 2,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "both",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 2,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 2,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              true,
+              false
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 2,
+            "coefficient_pattern": "duplicated_halves",
+            "requires_grad": [
+              false,
+              true
+            ],
+            "used_outputs": "k_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 2,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "both",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 2,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              true
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 2,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              true,
+              false
+            ],
+            "used_outputs": "q_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          },
+          {
+            "axis": 2,
+            "position_batches": 2,
+            "coefficient_pattern": "unequal_halves",
+            "requires_grad": [
+              false,
+              true
+            ],
+            "used_outputs": "k_only",
+            "exact": true,
+            "input_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "reference_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "input_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "reference_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "custom_output_q_stride": [
+              10752,
+              1536,
+              128,
+              1
+            ],
+            "custom_output_k_stride": [
+              1792,
+              256,
+              128,
+              1
+            ],
+            "output_is_contiguous": true
+          }
+        ],
+        "largest_q_shape": [
+          2,
+          12,
+          7,
+          128
+        ],
+        "all_gradients_and_unused_none_exact": true,
+        "decision": "Split-half pair adjoints match the tested FP32 strided/broadcast/unequal-head contracts. Preserve actual output strides and unused-gradient None semantics; this is not runtime Qwen dtype or CUDA evidence."
+      }
+    },
+    {
+      "name": "rope_saved_storage_and_dtype_fallback",
+      "candidates": [
+        "attn-sgl-rounding-fusion"
+      ],
+      "status": "PASS",
+      "details": {
+        "saved_storage_inventory": [
+          {
+            "custom": false,
+            "saved_references": 4,
+            "unique_storages": 2,
+            "unique_roles": [
+              "cos",
+              "sin"
+            ],
+            "referenced_storage_bytes": 7168
+          },
+          {
+            "custom": true,
+            "saved_references": 2,
+            "unique_storages": 2,
+            "unique_roles": [
+              "cos",
+              "sin"
+            ],
+            "referenced_storage_bytes": 7168
+          }
+        ],
+        "fallback_cases": [
+          {
+            "case": "all_fp16",
+            "routed_reference": true,
+            "output_dtype": "torch.float16",
+            "q_gradient_dtype": "torch.float16",
+            "coefficient_gradients_present": false
+          },
+          {
+            "case": "mixed_half_q_float_coeff",
+            "routed_reference": true,
+            "output_dtype": "torch.float32",
+            "q_gradient_dtype": "torch.float16",
+            "coefficient_gradients_present": false
+          },
+          {
+            "case": "trainable_coeff",
+            "routed_reference": true,
+            "output_dtype": "torch.float32",
+            "q_gradient_dtype": "torch.float32",
+            "coefficient_gradients_present": true
+          }
+        ],
+        "not_peak_memory_measurement": true,
+        "decision": "Native frozen-coefficient RoPE already saves cos/sin, not q/k. Four-to-two saved references is no unique-storage saving. Keep FP16/mixed/trainable-coefficient cases on reference until separately validated."
+      }
+    },
+    {
+      "name": "rope_wrong_layout_inverse_and_contraction",
+      "candidates": [
+        "attn-sgl-rounding-fusion"
+      ],
+      "status": "PASS",
+      "details": {
+        "split_half_result": [
+          -3.0,
+          -4.0,
+          1.0,
+          2.0
+        ],
+        "wrong_interleaved_result": [
+          -2.0,
+          1.0,
+          -4.0,
+          3.0
+        ],
+        "unequal_half_correct_adjoint": [
+          2.0,
+          4.199999809265137,
+          1.9999998807907104,
+          2.4000000953674316
+        ],
+        "wrong_inverse_style_adjoint": [
+          0.5,
+          2.200000047683716,
+          1.4999998807907104,
+          1.4000000953674316
+        ],
+        "fma_witness": {
+          "q_first": -3.098583459854126,
+          "q_second": -2.299267292022705,
+          "cos": 0.8253356218338013,
+          "sin": 0.5646424889564514,
+          "separate_fp32": -1.2591073513031006,
+          "single_contracted_product_add": -1.259107232093811,
+          "differing_elements": 1784,
+          "tested_elements": 4096,
+          "actual_gpu_fma": false
+        },
+        "decision": "Reject interleaved rotation and generic inverse-RoPE adjoint assumptions. FP32 contraction can change valid split-half/trig outputs; preserve multiply/add rounding unless separately accepted by actual gates."
+      }
+    }
+  ]
+}

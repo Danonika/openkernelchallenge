@@ -1,0 +1,157 @@
+{
+  "status": "PASS_BOUNDED_CPU_CHANGED_BOUNDARY_ONLY",
+  "torch": "2.11.0+cpu",
+  "checks": [
+    {
+      "name": "native_replay_finite",
+      "passed": true,
+      "rows": 275,
+      "scales": 5
+    },
+    {
+      "name": "native_replay_all_ignored",
+      "passed": true,
+      "rows": 275,
+      "scales": 5
+    },
+    {
+      "name": "native_replay_ignored_nan",
+      "passed": true,
+      "rows": 275,
+      "scales": 5
+    },
+    {
+      "name": "native_replay_supervised_inf",
+      "passed": true,
+      "rows": 275,
+      "scales": 5
+    },
+    {
+      "name": "disjoint_native_row_replacement",
+      "passed": true,
+      "native_rows": 255,
+      "scales": 3
+    },
+    {
+      "name": "native_full_vocabulary_frontier_bound",
+      "passed": true,
+      "observed_rows": [
+        128,
+        128,
+        19,
+        128,
+        128,
+        19,
+        128,
+        127,
+        128,
+        127
+      ],
+      "maximum": 128
+    },
+    {
+      "name": "full_M_head_native_tile_ordinary",
+      "passed": true,
+      "scales": 4,
+      "rows": 148,
+      "old_groups": 2,
+      "new_groups": 1,
+      "reference": "immutable_recovered_original_head"
+    },
+    {
+      "name": "full_M_head_native_tile_all_ignored",
+      "passed": true,
+      "scales": 4,
+      "rows": 148,
+      "old_groups": 2,
+      "new_groups": 1,
+      "reference": "immutable_recovered_original_head"
+    },
+    {
+      "name": "full_M_head_native_tile_explicit_zero_denominator",
+      "passed": true,
+      "scales": 4,
+      "rows": 148,
+      "old_groups": 2,
+      "new_groups": 1,
+      "reference": "immutable_recovered_original_head"
+    },
+    {
+      "name": "full_M_head_native_tile_nonfinite_hidden",
+      "passed": true,
+      "scales": 4,
+      "rows": 148,
+      "old_groups": 2,
+      "new_groups": 1,
+      "reference": "immutable_recovered_original_head"
+    },
+    {
+      "name": "full_M_one_group_schedule",
+      "passed": true,
+      "rows": 2048,
+      "forward_backward_groups": [
+        [
+          "f",
+          2048
+        ],
+        [
+          "b",
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "syntax_and_protected_implementation_identity",
+      "passed": true,
+      "unchanged": [
+        {
+          "path": "solution/original/materialized_ce.py",
+          "sha256": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1"
+        },
+        {
+          "path": "solution/original/mixed_rows.py",
+          "sha256": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2"
+        },
+        {
+          "path": "solution/original/metric_summary.py",
+          "sha256": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4"
+        },
+        {
+          "path": "solution/frozen_storage.py",
+          "sha256": "a3edfdfe568595e183ce57d858db4032d2e0e0b6cfe5bac8468dda3b0c299338"
+        },
+        {
+          "path": "solution/streaming_boundary.py",
+          "sha256": "75fe8bf958213a3782eafa023e4a3d1cd47cdca74835562bd81ad7827a9648aa"
+        },
+        {
+          "path": "solution/contracts.py",
+          "sha256": "36bb54c6cac40b7f3896b2ce3a52665f972942f5e5856e237946a1f80091fb4b"
+        },
+        {
+          "path": "solution/web_preflight.py",
+          "sha256": "fb2ae9228b469ae6d4760923ab57f575f5dcdfaf383aa3e85ff8d3710d33c5e1"
+        },
+        {
+          "path": "solution/exploratory_preflight.py",
+          "sha256": "7523a69b024267fc0cb457b4a472b2aa3f5670eeb755ac1a96dd01790e6d9e23"
+        }
+      ]
+    }
+  ],
+  "head_telemetry": {
+    "forward_calls": 17,
+    "backward_calls": 17,
+    "ce_groups": 17,
+    "max_rows": 2048,
+    "single_group_calls": 17,
+    "above_128_rows_calls": 17,
+    "direct_dz_calls": 17,
+    "assembled_dz_calls": 0
+  },
+  "gpu_executed": false,
+  "full_native_fixture": "UNRUN_missing_transformers_peft_bnb_trl_soup",
+  "triton_execution": "UNRUN",
+  "performance": null,
+  "admission": "UNKNOWN"
+}
