@@ -1,0 +1,463 @@
+{
+  "schema_version": 1,
+  "rule_version": "soup-c7c2fcd-v1",
+  "reviewed_utc": "2026-10-30T12:19:00Z",
+  "official_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "current_main_check": "Parent freshly verified main remains this commit; reviewer independently fetched main README blob30e53be10d339e68c19d3d55540725916cc76398.",
+  "pdf_source": {
+    "title": "Decentrathon6.0: Soup Kernel Challenge(1).pdf",
+    "pages": 22,
+    "language_sections": "Russian/Kazakh/English copies",
+    "key_pages": [
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "section7_must_haves": 5,
+    "section10_deliverable_categories": 4
+  },
+  "thresholds": {
+    "own_share_min": 0.05,
+    "quality_worsening_max": 0.005,
+    "time_growth_max": 1.1,
+    "memory_growth_max": 1.1,
+    "first_loss_gap_max": 0.01,
+    "curve_gap_max": 0.03,
+    "relative_floor": 1e-12,
+    "scoring_ratio_floor": 1.05,
+    "idle_start_max_mib": 1000,
+    "peak_reserved_min_ratio": 0.97,
+    "summary_ratio_relative_tolerance": 0.005,
+    "expected_steps": 64,
+    "expected_regression_tests": 79,
+    "expected_official_checks": 10,
+    "formal_repeats_each": 2,
+    "timed_first_step": 3,
+    "demo_max_seconds": 180,
+    "team_max_people": 4,
+    "team_max_submissions": 1
+  },
+  "units": {
+    "quality_worsening_max": "fraction0.005=0.5%, NEVER5%",
+    "own_share_min": "fraction0.05=5% of timed training-loop wall duration, not loss",
+    "scoring_ratio_floor": "ratio1.05; a separate5% gain noise floor",
+    "time_memory": "solution/base growth ratio; scored improvement ratio is base/solution"
+  },
+  "aggregation": {
+    "time_code": "median full-command wall_s per side, cold compilation included",
+    "memory_code": "maximum gpu_peak_mib across runs; each sampled externally every100ms and summed over physical GPUs",
+    "pdf": "section11 says average two runs per side",
+    "discrepancy": "For exactly2 repeats median time equals mean; max memory is NOT mean memory. Show both claims explicitly, use frozen code-native numbers, do not edit code or invent organizer clarification.",
+    "eval_code": "first successful adapter per side, not mean of repeated adapter evaluations",
+    "own_share": "intersection of eligible solution/ Triton names launched in every successful solution run; sum finite event milliseconds for those names / (1000*that run timed_loop_s); minimum across runs, timing fromstep3",
+    "metric_gap": "mean of abs(solution_i-base_i)/max(abs(base_i),relative_floor), finite equal-length nonempty series; not relative difference between means",
+    "run_order": [
+      "base",
+      "solution",
+      "solution",
+      "base"
+    ],
+    "launch_count_warning": "triton_launches can count warmup/untimed launches; do not divide timed own_kernel_ms by raw whole-run launch counts to infer measured kernel latency."
+  },
+  "fixed_task": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "quantization": "4bit NF4 double quant",
+    "compute_dtype": "fp16, notbf16",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "lora_targets": [
+      "q_proj",
+      "v_proj"
+    ],
+    "batch_size": 4,
+    "max_length": 512,
+    "epochs": 1,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 0.0002,
+    "optimizer": "adamw_torch",
+    "lr_schedule": "cosine",
+    "train_public_rows": "0\u2013255",
+    "eval_public_rows": "40000\u201340255",
+    "hidden": "organizer-selected other train/eval rows and different seed; never search/guess",
+    "allocator": "expandable_segments:True",
+    "visible_devices": "0",
+    "device_count": 1,
+    "logging_steps": 1
+  },
+  "prohibited_modules": [
+    "unsloth",
+    "unsloth_zoo",
+    "liger_kernel",
+    "xformers",
+    "flash_attn",
+    "flashinfer",
+    "apex",
+    "torchao",
+    "bitblas",
+    "gemlite",
+    "hqq",
+    "cut_cross_entropy",
+    "deepspeed",
+    "vllm",
+    "awq",
+    "auto_gptq",
+    "gptqmodel",
+    "exllamav2",
+    "marlin",
+    "quack",
+    "tilelang"
+  ],
+  "torchao_exception": "PEFT may incidentally load torchao at runtime; solution may not import it. Not blanket permission.",
+  "prohibited_mode_changes": [
+    "gradient_checkpointing",
+    "activation_offloading",
+    "fast_lora",
+    "use_cut_ce",
+    "packing",
+    "use_liger",
+    "backend:unsloth"
+  ],
+  "within_batch_padding": "Own exact within-batch pad removal allowed; no different batch composition/order, cross-batch mixing or dropout/RNG change.",
+  "scoring": {
+    "correct_points": 20,
+    "speed_points": 35,
+    "memory_points": 30,
+    "readme_points": 15,
+    "formula": "weight*ln(effective_ratio)/ln(best_admitted_effective_ratio); no points below zero; no numeric leaderboard score without best admitted results",
+    "tie_break": "better memory ratio",
+    "requires": "all official checks on same result bytes, own source review, all must-haves; final jury controls"
+  },
+  "deadline": {
+    "astana": "2026-10-31T23:59:00+05:00",
+    "utc": "2026-10-31T18:59:00Z"
+  },
+  "rules": [
+    {
+      "id": "run-all",
+      "group": "must-have-1",
+      "requirement": "Clean free Kaggle T4 Run All, no manual edits",
+      "fact": "clean_run_all",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L35-L72"
+    },
+    {
+      "id": "finished",
+      "group": "must-have-1",
+      "requirement": "Every expected base/solution train run and evaluation succeeded",
+      "fact": null,
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L279-L300"
+    },
+    {
+      "id": "paired",
+      "group": "measurement",
+      "requirement": "Two runs each in one session: base, solution, solution, base",
+      "fact": "same_session_order",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/run_task.py#L179-L199"
+    },
+    {
+      "id": "own-source",
+      "group": "must-have-2",
+      "requirement": "Original useful solution/ Triton; no example/copy/Inductor/unused-work credit",
+      "fact": "original_useful_source",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L77-L84"
+    },
+    {
+      "id": "own-share",
+      "group": "must-have-2",
+      "requirement": "Eligible common kernel names contribute enough time in EVERY run",
+      "fact": null,
+      "threshold": "own_share_min",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362"
+    },
+    {
+      "id": "dependencies",
+      "group": "hard-constraints",
+      "requirement": "No prohibited imports/runtime libraries or package changes during measured run",
+      "fact": "dependency_source_review",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28"
+    },
+    {
+      "id": "public-quality",
+      "group": "diagnostic",
+      "requirement": "Public evaluation quality self-check, not hidden admission",
+      "fact": null,
+      "threshold": "quality_worsening_max",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L399"
+    },
+    {
+      "id": "hidden-quality",
+      "group": "must-have-3",
+      "requirement": "Hidden-row adapter evaluation quality; public rows cannot clear it",
+      "fact": null,
+      "threshold": "quality_worsening_max",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L170"
+    },
+    {
+      "id": "time",
+      "group": "must-have-3",
+      "requirement": "Whole-command time growth within allowed margin",
+      "fact": null,
+      "threshold": "time_growth_max",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L401-L417"
+    },
+    {
+      "id": "memory",
+      "group": "must-have-3",
+      "requirement": "Maximum sampled GPU peak growth within allowed margin",
+      "fact": null,
+      "threshold": "memory_growth_max",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L401-L417"
+    },
+    {
+      "id": "task",
+      "group": "must-have-4",
+      "requirement": "Exact task/LoRA/dropout/optimizer/lr/batches/steps/output structure",
+      "fact": "fixed_task_review",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L170"
+    },
+    {
+      "id": "tokens",
+      "group": "must-have-4",
+      "requirement": "Exact same nonempty per-step token counts",
+      "fact": null,
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236"
+    },
+    {
+      "id": "first-loss",
+      "group": "must-have-4",
+      "requirement": "First-step training loss relative gap",
+      "fact": null,
+      "threshold": "first_loss_gap_max",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251"
+    },
+    {
+      "id": "loss-curve",
+      "group": "must-have-4",
+      "requirement": "Mean per-element relative training-loss gap",
+      "fact": null,
+      "threshold": "curve_gap_max",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L151-L164"
+    },
+    {
+      "id": "entropy",
+      "group": "must-have-4",
+      "requirement": "Mean per-element relative entropy gap",
+      "fact": null,
+      "threshold": "curve_gap_max",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236"
+    },
+    {
+      "id": "accuracy",
+      "group": "must-have-4",
+      "requirement": "Mean per-element relative token-accuracy gap",
+      "fact": null,
+      "threshold": "curve_gap_max",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236"
+    },
+    {
+      "id": "rewind",
+      "group": "must-have-4",
+      "requirement": "Exact row IDs/counts and relative per-row loss gap",
+      "fact": null,
+      "threshold": "curve_gap_max",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236"
+    },
+    {
+      "id": "clean-gpu",
+      "group": "must-have-4",
+      "requirement": "Single visible T4, idle start, correct allocator and sampled peaks",
+      "fact": null,
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L419-L440"
+    },
+    {
+      "id": "regressions",
+      "group": "must-have-4",
+      "requirement": "All79 unchanged Soup tests with patch; starter tests are not these tests",
+      "fact": "regressions_79",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251"
+    },
+    {
+      "id": "frozen-files",
+      "group": "hard-constraints",
+      "requirement": "Unmodified harness/,tests/,task/ and their settings",
+      "fact": "frozen_files",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L115-L127"
+    },
+    {
+      "id": "no-evasion",
+      "group": "hard-constraints",
+      "requirement": "No hidden-data search, external-file access in solution, special test behavior, background GPU work, adapter swap, precompiled caches or CUDA graphs",
+      "fact": "no_evasion_review",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L108-L113"
+    },
+    {
+      "id": "official-checks",
+      "group": "automatic-preliminary",
+      "requirement": "All10 unchanged official checks hash-bound to this exact result and solution",
+      "fact": null,
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L263-L277"
+    },
+    {
+      "id": "readme",
+      "group": "must-have-5",
+      "requirement": "README explains mechanism/sources, exact run, measured comparison, limitations, notebook/final commit",
+      "fact": "readme_complete",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/templates/SUBMISSION.md"
+    },
+    {
+      "id": "platform-repo",
+      "group": "submission",
+      "requirement": "Platform-created team repo accessible to jury; do not assume research repo qualifies",
+      "fact": "platform_repo",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L35-L48"
+    },
+    {
+      "id": "final-notebook",
+      "group": "submission",
+      "requirement": "Public saved template notebook with results, COMMIT=final commit, links in README/SUBMISSION",
+      "fact": "final_notebook",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/templates/SUBMISSION.md"
+    },
+    {
+      "id": "submission-form",
+      "group": "submission",
+      "requirement": "Root SUBMISSION.md completed with correct final artifacts",
+      "fact": "submission_complete",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/templates/SUBMISSION.md"
+    },
+    {
+      "id": "demo",
+      "group": "submission",
+      "requirement": "Demo video within duration limit",
+      "fact": "demo_within_limit",
+      "threshold": "demo_max_seconds",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/templates/SUBMISSION.md"
+    },
+    {
+      "id": "presentation",
+      "group": "submission",
+      "requirement": "Presentation covers operation, mechanism, measured results, limits/next steps",
+      "fact": "presentation_complete",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/templates/SUBMISSION.md"
+    },
+    {
+      "id": "team",
+      "group": "submission",
+      "requirement": "Team-size and one-result limit respected",
+      "fact": "team_limits",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L3-L6"
+    },
+    {
+      "id": "jury-review",
+      "group": "final-authority",
+      "requirement": "Official jury source review is final; preliminary checks are not its decision",
+      "fact": "official_jury_acceptance",
+      "threshold": null,
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L170"
+    },
+    {
+      "id": "noise-floor",
+      "group": "scoring",
+      "requirement": "Speed/memory ratio below1.05 is tied with baseline, not a loss tolerance",
+      "fact": null,
+      "threshold": "scoring_ratio_floor",
+      "source": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/score.py#L1-L47"
+    }
+  ],
+  "evidence_schema": {
+    "type": "object",
+    "required": [
+      "schema_version",
+      "quality_scope"
+    ],
+    "properties": {
+      "schema_version": {
+        "const": 1
+      },
+      "quality_scope": {
+        "enum": [
+          "public",
+          "hidden",
+          "synthetic"
+        ]
+      },
+      "result_path": {
+        "type": "string"
+      },
+      "checks_path": {
+        "type": "string"
+      },
+      "solution_sha256": {
+        "type": "string"
+      },
+      "eligible_kernel_names": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "facts": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "required": [
+            "value",
+            "evidence"
+          ],
+          "properties": {
+            "value": {
+              "type": "boolean"
+            },
+            "evidence": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "interpretation": "A checklist is evidence triage, not official admission or permission to execute/publish/submit. Missing or malformed evidence is UNKNOWN, not PASS. Explicit contradictions are FAIL. Human/source facts need artifact references, not unexplained true.",
+  "publication": "Project-local skills do not grant global permissions. Preserve task authorization. External writes/submission/public notebook/repository visibility require current explicit scope; omit secrets, weights, private account/notebook/quota identifiers and denied material. No re-packaging to evade denial.",
+  "excluded_kernel_name_prefixes": [
+    "example_",
+    "triton_poi_",
+    "triton_per_",
+    "triton_red_",
+    "triton_tem_",
+    "triton_for_",
+    "triton_spl_",
+    "triton_unk_"
+  ],
+  "project_execution_scope": {
+    "user_parallel_cap": 5,
+    "actual_account_limit": "must be independently verified; never assume five slots",
+    "per_session": "one bounded candidate per isolated Kaggle session/GPU",
+    "resources": "free quota only; no duplicate runs, shared GPU contention or measurement interference",
+    "not_a_contest_rule": "This is current user authorization scope, separate from official numerical/admission rules."
+  }
+}

@@ -1,0 +1,352 @@
+[
+  {
+    "id": "liger_castaware_norm",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P1",
+    "implementation_group": "FP32_Qwen2_RMSNorm",
+    "semantic_risk": "Expected fixed path: FP32 input/output and frozen FP32 affine; preserve true H=1536, epsilon, casts and actual needs_input_grad. Compact backward is not universally floating-point equivalent. Even an atomic standalone custom norm can regroup direct/variance/bypass accumulation in a residual-connected graph. Two-output fusion must distinguish unused None from connected-zero gradients and preserve rounded residual, aliases and version checks.",
+    "cpu_evidence": "Shared cycle3 norm evidence: 144 staged standalone cases match tested finite values/nonfinite classes; compact formula differs in 46, including 14 nonfinite-class cases. Native 5 saved refs and custom 3 refs both retain 3 x/r/w storages. Actual-width1536 cancellation yields expanded native0 versus regrouped1; unused norm branch zero-materialization can introduce NaN where baseline bypass gradient1. No signed-zero/payload/GPU/whole-training proof.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Prioritize guarded standalone staged FP32 norm; validate original residual-connected graph before residual fusion. Do not implement saved-state inversion or recompute-r on the strength of reference counts.",
+    "required_proof": [
+      "Observe actual prepared FP32 input/weight, frozen affine, epsilon, true width, strides and forward identity; unsupported/trainable/no-grad paths preserve reference and do not force state or gradients.",
+      "Use source-staged first-order backward as initial oracle: g=dy*w; direct=g*r; dr=sum(g*x); dv=(-.5*dr)*r^3; variance=(dv/H)*(2*x). Verify actual CUDA compiler/reduction behavior; CPU exact finite/class tests do not prove bit identity or full gate compliance.",
+      "Compare norm inside original residual-connected expanded graph, not just isolated module: custom backward granularity may change InputBuffer accumulation. H1536 native0/regrouped1 witness prevents universal lossless-fusion claims.",
+      "For two outputs preserve rounded FP32 residual and norm value, both alias edges, independent consumers, saved version checks and unused None versus connected-zero semantics. No in-place corruption or raw-ctx workaround.",
+      "Storage inventory must deduplicate storage and account for actual liveness: baseline already retains x/r/w, and no-grad input/frozen weight saves nothing. Reconstructing x from output or saving half x is not lossless by definition. Recompute-r variant stays P3 pending actual reduction parity and cost.",
+      "Original useful Triton normal launches plus full unchanged T4 loss/metrics/adapter/quality/time/memory/own-share gates; no performance coordinates from CPU."
+    ],
+    "source_urls": "https://github.com/linkedin/Liger-Kernel/blob/781a8aef64bf6105bdefb5f4c991e0d14c08e793/src/liger_kernel/ops/fused_add_rms_norm.py; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "sglang_norm_boundary",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P2 residual fusion",
+    "implementation_group": "FP32_Qwen2_add_RMSNorm",
+    "semantic_risk": "Expected fixed path: FP32 input/output and frozen FP32 affine; preserve true H=1536, epsilon, casts and actual needs_input_grad. Compact backward is not universally floating-point equivalent. Even an atomic standalone custom norm can regroup direct/variance/bypass accumulation in a residual-connected graph. Two-output fusion must distinguish unused None from connected-zero gradients and preserve rounded residual, aliases and version checks.",
+    "cpu_evidence": "Shared cycle3 norm evidence: 144 staged standalone cases match tested finite values/nonfinite classes; compact formula differs in 46, including 14 nonfinite-class cases. Native 5 saved refs and custom 3 refs both retain 3 x/r/w storages. Actual-width1536 cancellation yields expanded native0 versus regrouped1; unused norm branch zero-materialization can introduce NaN where baseline bypass gradient1. No signed-zero/payload/GPU/whole-training proof.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Prioritize guarded standalone staged FP32 norm; validate original residual-connected graph before residual fusion. Do not implement saved-state inversion or recompute-r on the strength of reference counts.",
+    "required_proof": [
+      "Observe actual prepared FP32 input/weight, frozen affine, epsilon, true width, strides and forward identity; unsupported/trainable/no-grad paths preserve reference and do not force state or gradients.",
+      "Use source-staged first-order backward as initial oracle: g=dy*w; direct=g*r; dr=sum(g*x); dv=(-.5*dr)*r^3; variance=(dv/H)*(2*x). Verify actual CUDA compiler/reduction behavior; CPU exact finite/class tests do not prove bit identity or full gate compliance.",
+      "Compare norm inside original residual-connected expanded graph, not just isolated module: custom backward granularity may change InputBuffer accumulation. H1536 native0/regrouped1 witness prevents universal lossless-fusion claims.",
+      "For two outputs preserve rounded FP32 residual and norm value, both alias edges, independent consumers, saved version checks and unused None versus connected-zero semantics. No in-place corruption or raw-ctx workaround.",
+      "Storage inventory must deduplicate storage and account for actual liveness: baseline already retains x/r/w, and no-grad input/frozen weight saves nothing. Reconstructing x from output or saving half x is not lossless by definition. Recompute-r variant stays P3 pending actual reduction parity and cost.",
+      "Original useful Triton normal launches plus full unchanged T4 loss/metrics/adapter/quality/time/memory/own-share gates; no performance coordinates from CPU."
+    ],
+    "source_urls": "https://github.com/sgl-project/sglang/blob/655059819cda56f4c0feb5e3f09056caa6907bc7/python/sglang/kernels/ops/layernorm/muse_spark_norm_residual.py; https://github.com/sgl-project/sglang/blob/655059819cda56f4c0feb5e3f09056caa6907bc7/python/sglang/kernels/ops/layernorm/muse_spark_norm_residual_jit.py; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "apex_rms_reduction",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P1",
+    "implementation_group": "FP32_Qwen2_RMSNorm",
+    "semantic_risk": "Expected fixed path: FP32 input/output and frozen FP32 affine; preserve true H=1536, epsilon, casts and actual needs_input_grad. Compact backward is not universally floating-point equivalent. Even an atomic standalone custom norm can regroup direct/variance/bypass accumulation in a residual-connected graph. Two-output fusion must distinguish unused None from connected-zero gradients and preserve rounded residual, aliases and version checks.",
+    "cpu_evidence": "Shared cycle3 norm evidence: 144 staged standalone cases match tested finite values/nonfinite classes; compact formula differs in 46, including 14 nonfinite-class cases. Native 5 saved refs and custom 3 refs both retain 3 x/r/w storages. Actual-width1536 cancellation yields expanded native0 versus regrouped1; unused norm branch zero-materialization can introduce NaN where baseline bypass gradient1. No signed-zero/payload/GPU/whole-training proof.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Prioritize guarded standalone staged FP32 norm; validate original residual-connected graph before residual fusion. Do not implement saved-state inversion or recompute-r on the strength of reference counts.",
+    "required_proof": [
+      "Observe actual prepared FP32 input/weight, frozen affine, epsilon, true width, strides and forward identity; unsupported/trainable/no-grad paths preserve reference and do not force state or gradients.",
+      "Use source-staged first-order backward as initial oracle: g=dy*w; direct=g*r; dr=sum(g*x); dv=(-.5*dr)*r^3; variance=(dv/H)*(2*x). Verify actual CUDA compiler/reduction behavior; CPU exact finite/class tests do not prove bit identity or full gate compliance.",
+      "Compare norm inside original residual-connected expanded graph, not just isolated module: custom backward granularity may change InputBuffer accumulation. H1536 native0/regrouped1 witness prevents universal lossless-fusion claims.",
+      "For two outputs preserve rounded FP32 residual and norm value, both alias edges, independent consumers, saved version checks and unused None versus connected-zero semantics. No in-place corruption or raw-ctx workaround.",
+      "Storage inventory must deduplicate storage and account for actual liveness: baseline already retains x/r/w, and no-grad input/frozen weight saves nothing. Reconstructing x from output or saving half x is not lossless by definition. Recompute-r variant stays P3 pending actual reduction parity and cost.",
+      "Original useful Triton normal launches plus full unchanged T4 loss/metrics/adapter/quality/time/memory/own-share gates; no performance coordinates from CPU."
+    ],
+    "source_urls": "https://github.com/NVIDIA/apex/blob/575968bc1f9127ccd61003a681472a83af4ff1a1/csrc/layer_norm_cuda_kernel.cu; https://github.com/NVIDIA/apex/blob/575968bc1f9127ccd61003a681472a83af4ff1a1/apex/normalization/fused_layer_norm.py; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "apex_shape_specialization",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P2 norm tiling",
+    "implementation_group": "FP32_Qwen2_RMSNorm",
+    "semantic_risk": "Expected fixed path: FP32 input/output and frozen FP32 affine; preserve true H=1536, epsilon, casts and actual needs_input_grad. Compact backward is not universally floating-point equivalent. Even an atomic standalone custom norm can regroup direct/variance/bypass accumulation in a residual-connected graph. Two-output fusion must distinguish unused None from connected-zero gradients and preserve rounded residual, aliases and version checks.",
+    "cpu_evidence": "Shared cycle3 norm evidence: 144 staged standalone cases match tested finite values/nonfinite classes; compact formula differs in 46, including 14 nonfinite-class cases. Native 5 saved refs and custom 3 refs both retain 3 x/r/w storages. Actual-width1536 cancellation yields expanded native0 versus regrouped1; unused norm branch zero-materialization can introduce NaN where baseline bypass gradient1. No signed-zero/payload/GPU/whole-training proof.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Prioritize guarded standalone staged FP32 norm; validate original residual-connected graph before residual fusion. Do not implement saved-state inversion or recompute-r on the strength of reference counts.",
+    "required_proof": [
+      "Observe actual prepared FP32 input/weight, frozen affine, epsilon, true width, strides and forward identity; unsupported/trainable/no-grad paths preserve reference and do not force state or gradients.",
+      "Use source-staged first-order backward as initial oracle: g=dy*w; direct=g*r; dr=sum(g*x); dv=(-.5*dr)*r^3; variance=(dv/H)*(2*x). Verify actual CUDA compiler/reduction behavior; CPU exact finite/class tests do not prove bit identity or full gate compliance.",
+      "Compare norm inside original residual-connected expanded graph, not just isolated module: custom backward granularity may change InputBuffer accumulation. H1536 native0/regrouped1 witness prevents universal lossless-fusion claims.",
+      "For two outputs preserve rounded FP32 residual and norm value, both alias edges, independent consumers, saved version checks and unused None versus connected-zero semantics. No in-place corruption or raw-ctx workaround.",
+      "Storage inventory must deduplicate storage and account for actual liveness: baseline already retains x/r/w, and no-grad input/frozen weight saves nothing. Reconstructing x from output or saving half x is not lossless by definition. Recompute-r variant stays P3 pending actual reduction parity and cost.",
+      "Original useful Triton normal launches plus full unchanged T4 loss/metrics/adapter/quality/time/memory/own-share gates; no performance coordinates from CPU."
+    ],
+    "source_urls": "https://github.com/NVIDIA/apex/blob/575968bc1f9127ccd61003a681472a83af4ff1a1/apex/contrib/csrc/layer_norm/ln_fwd_cuda_kernel.cu; https://github.com/NVIDIA/apex/blob/575968bc1f9127ccd61003a681472a83af4ff1a1/apex/contrib/csrc/layer_norm/ln_fwd_kernels.cuh; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "vllm_vector_norm",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P1 standalone / P2 residual",
+    "implementation_group": "FP32_Qwen2_RMSNorm",
+    "semantic_risk": "Expected fixed path: FP32 input/output and frozen FP32 affine; preserve true H=1536, epsilon, casts and actual needs_input_grad. Compact backward is not universally floating-point equivalent. Even an atomic standalone custom norm can regroup direct/variance/bypass accumulation in a residual-connected graph. Two-output fusion must distinguish unused None from connected-zero gradients and preserve rounded residual, aliases and version checks.",
+    "cpu_evidence": "Shared cycle3 norm evidence: 144 staged standalone cases match tested finite values/nonfinite classes; compact formula differs in 46, including 14 nonfinite-class cases. Native 5 saved refs and custom 3 refs both retain 3 x/r/w storages. Actual-width1536 cancellation yields expanded native0 versus regrouped1; unused norm branch zero-materialization can introduce NaN where baseline bypass gradient1. No signed-zero/payload/GPU/whole-training proof.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Prioritize guarded standalone staged FP32 norm; validate original residual-connected graph before residual fusion. Do not implement saved-state inversion or recompute-r on the strength of reference counts.",
+    "required_proof": [
+      "Observe actual prepared FP32 input/weight, frozen affine, epsilon, true width, strides and forward identity; unsupported/trainable/no-grad paths preserve reference and do not force state or gradients.",
+      "Use source-staged first-order backward as initial oracle: g=dy*w; direct=g*r; dr=sum(g*x); dv=(-.5*dr)*r^3; variance=(dv/H)*(2*x). Verify actual CUDA compiler/reduction behavior; CPU exact finite/class tests do not prove bit identity or full gate compliance.",
+      "Compare norm inside original residual-connected expanded graph, not just isolated module: custom backward granularity may change InputBuffer accumulation. H1536 native0/regrouped1 witness prevents universal lossless-fusion claims.",
+      "For two outputs preserve rounded FP32 residual and norm value, both alias edges, independent consumers, saved version checks and unused None versus connected-zero semantics. No in-place corruption or raw-ctx workaround.",
+      "Storage inventory must deduplicate storage and account for actual liveness: baseline already retains x/r/w, and no-grad input/frozen weight saves nothing. Reconstructing x from output or saving half x is not lossless by definition. Recompute-r variant stays P3 pending actual reduction parity and cost.",
+      "Original useful Triton normal launches plus full unchanged T4 loss/metrics/adapter/quality/time/memory/own-share gates; no performance coordinates from CPU."
+    ],
+    "source_urls": "https://github.com/vllm-project/vllm/blob/36f5ff3172eb75433e54e496d64c473e951f8ecc/csrc/layernorm_kernels.cu; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "xformers_rms_cachepolicy",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P2 residual fusion",
+    "implementation_group": "FP32_Qwen2_add_RMSNorm",
+    "semantic_risk": "Expected fixed path: FP32 input/output and frozen FP32 affine; preserve true H=1536, epsilon, casts and actual needs_input_grad. Compact backward is not universally floating-point equivalent. Even an atomic standalone custom norm can regroup direct/variance/bypass accumulation in a residual-connected graph. Two-output fusion must distinguish unused None from connected-zero gradients and preserve rounded residual, aliases and version checks.",
+    "cpu_evidence": "Shared cycle3 norm evidence: 144 staged standalone cases match tested finite values/nonfinite classes; compact formula differs in 46, including 14 nonfinite-class cases. Native 5 saved refs and custom 3 refs both retain 3 x/r/w storages. Actual-width1536 cancellation yields expanded native0 versus regrouped1; unused norm branch zero-materialization can introduce NaN where baseline bypass gradient1. No signed-zero/payload/GPU/whole-training proof.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Prioritize guarded standalone staged FP32 norm; validate original residual-connected graph before residual fusion. Do not implement saved-state inversion or recompute-r on the strength of reference counts.",
+    "required_proof": [
+      "Observe actual prepared FP32 input/weight, frozen affine, epsilon, true width, strides and forward identity; unsupported/trainable/no-grad paths preserve reference and do not force state or gradients.",
+      "Use source-staged first-order backward as initial oracle: g=dy*w; direct=g*r; dr=sum(g*x); dv=(-.5*dr)*r^3; variance=(dv/H)*(2*x). Verify actual CUDA compiler/reduction behavior; CPU exact finite/class tests do not prove bit identity or full gate compliance.",
+      "Compare norm inside original residual-connected expanded graph, not just isolated module: custom backward granularity may change InputBuffer accumulation. H1536 native0/regrouped1 witness prevents universal lossless-fusion claims.",
+      "For two outputs preserve rounded FP32 residual and norm value, both alias edges, independent consumers, saved version checks and unused None versus connected-zero semantics. No in-place corruption or raw-ctx workaround.",
+      "Storage inventory must deduplicate storage and account for actual liveness: baseline already retains x/r/w, and no-grad input/frozen weight saves nothing. Reconstructing x from output or saving half x is not lossless by definition. Recompute-r variant stays P3 pending actual reduction parity and cost.",
+      "Original useful Triton normal launches plus full unchanged T4 loss/metrics/adapter/quality/time/memory/own-share gates; no performance coordinates from CPU."
+    ],
+    "source_urls": "https://github.com/facebookresearch/xformers/blob/4f701fad69a6308e6b9f0c3f7863c40c881b30a7/xformers/ops/_triton/rmsnorm_kernels.py; https://github.com/facebookresearch/xformers/blob/4f701fad69a6308e6b9f0c3f7863c40c881b30a7/xformers/ops/rmsnorm.py; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "trt_rms_shmem",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P1",
+    "implementation_group": "FP32_Qwen2_RMSNorm",
+    "semantic_risk": "Expected fixed path: FP32 input/output and frozen FP32 affine; preserve true H=1536, epsilon, casts and actual needs_input_grad. Compact backward is not universally floating-point equivalent. Even an atomic standalone custom norm can regroup direct/variance/bypass accumulation in a residual-connected graph. Two-output fusion must distinguish unused None from connected-zero gradients and preserve rounded residual, aliases and version checks.",
+    "cpu_evidence": "Shared cycle3 norm evidence: 144 staged standalone cases match tested finite values/nonfinite classes; compact formula differs in 46, including 14 nonfinite-class cases. Native 5 saved refs and custom 3 refs both retain 3 x/r/w storages. Actual-width1536 cancellation yields expanded native0 versus regrouped1; unused norm branch zero-materialization can introduce NaN where baseline bypass gradient1. No signed-zero/payload/GPU/whole-training proof.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Prioritize guarded standalone staged FP32 norm; validate original residual-connected graph before residual fusion. Do not implement saved-state inversion or recompute-r on the strength of reference counts.",
+    "required_proof": [
+      "Observe actual prepared FP32 input/weight, frozen affine, epsilon, true width, strides and forward identity; unsupported/trainable/no-grad paths preserve reference and do not force state or gradients.",
+      "Use source-staged first-order backward as initial oracle: g=dy*w; direct=g*r; dr=sum(g*x); dv=(-.5*dr)*r^3; variance=(dv/H)*(2*x). Verify actual CUDA compiler/reduction behavior; CPU exact finite/class tests do not prove bit identity or full gate compliance.",
+      "Compare norm inside original residual-connected expanded graph, not just isolated module: custom backward granularity may change InputBuffer accumulation. H1536 native0/regrouped1 witness prevents universal lossless-fusion claims.",
+      "For two outputs preserve rounded FP32 residual and norm value, both alias edges, independent consumers, saved version checks and unused None versus connected-zero semantics. No in-place corruption or raw-ctx workaround.",
+      "Storage inventory must deduplicate storage and account for actual liveness: baseline already retains x/r/w, and no-grad input/frozen weight saves nothing. Reconstructing x from output or saving half x is not lossless by definition. Recompute-r variant stays P3 pending actual reduction parity and cost.",
+      "Original useful Triton normal launches plus full unchanged T4 loss/metrics/adapter/quality/time/memory/own-share gates; no performance coordinates from CPU."
+    ],
+    "source_urls": "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/cpp/tensorrt_llm/kernels/rmsnormKernels.cu; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "attn-sgl-rounding-fusion",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P2 research",
+    "implementation_group": "FP32_Qwen2_half_split_RoPE_apply_only",
+    "semantic_risk": "Transfer layout/rounding only: Qwen2 has no QK norm or FP8 KV route. Narrow target FP32 q/k application, half-split D128, Hq12/Hk2, original no-grad cos/sin broadcast and source output stride. Preserve separate rounded products/add, cross-half sine adjoints, independent q/k gradients and unused None outputs. No early half cast, changed coefficient generation, cache semantics or SDPA routing.",
+    "cpu_evidence": "Shared cycle3 RoPE evidence: 32 finite FP32 q/k cases match tested values/gradients/strides across 12/2 heads, D128, broadcasts, independent gradient/unused routes. Native4 versus custom2 saves retain same2 cos/sin storages. Interleaving/generic inverse adjoint fail; FP32 contraction simulation changes1784/4096 outputs. RoPE nonfinite/signed-zero/payload cases remain untested. Tiny CPU attention routes module-global patch once; source blob matches pinned Qwen2, optional kernels package absent; not Kaggle routing proof.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "After baseline runtime boundary observation, implement only guarded independent FP32 half-split apply-only kernel and test compiled adversarial behavior.",
+    "required_proof": [
+      "Observe actual fixed-task CUDA q/k/cos/sin dtypes, projection-transposed strides and reference output stride, requires_grad, cache mode and decorator/SDPA routing. Source-expected FP32 is not a measured runtime boundary.",
+      "Own out-of-place half-split application only, no QK norm/interleaved pairs/FP8/early-half substitution. Preserve original cos/sin generation shared once per model forward; no copied/imported hub kernels.",
+      "Forward separate multiply/add rounding; adjoint cross-half terms dx1=g1*c1+g2*s2, dx2=g2*c2-g1*s1 with source order. Compile and inspect actual SM75 no-contraction behavior; a compiler flag alone is not proof.",
+      "Preserve observed output layout or separately prove downstream routing/cost invariance. Handle independent q/k gradient needs and unused None; trainable coefficients, unsupported/mixed dtypes/layouts/axes/configurations use baseline. Higher-order/signed-zero/nonfinite behavior is not covered by current finite CPU tests.",
+      "Save coefficient references with version checks, not q/k clones. Baseline already saves two unique coefficient storages; reference count reduction is not peak-memory saving and coefficient payload must not be multiplied by28 layers.",
+      "Measure total forward+backward, allocations/layout/SDPA costs, separate versus combined q/k variants and cold compilation, then unchanged full T4 gates and collective own-share. No candidate coordinates until genuine measured evidence."
+    ],
+    "source_urls": "https://github.com/sgl-project/sglang/blob/655059819cda56f4c0feb5e3f09056caa6907bc7/python/sglang/kernels/ops/attention/muse_spark_qk_norm_rope_store.py; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L51-L135; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L180-L233; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L355-L397; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/integrations/sdpa_attention.py",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L66-L67",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L108-L113",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "trt_qknorm_rope_fusion",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P2 research",
+    "implementation_group": "FP32_Qwen2_half_split_RoPE_apply_only",
+    "semantic_risk": "Transfer layout/rounding only: Qwen2 has no QK norm or FP8 KV route. Narrow target FP32 q/k application, half-split D128, Hq12/Hk2, original no-grad cos/sin broadcast and source output stride. Preserve separate rounded products/add, cross-half sine adjoints, independent q/k gradients and unused None outputs. No early half cast, changed coefficient generation, cache semantics or SDPA routing.",
+    "cpu_evidence": "Shared cycle3 RoPE evidence: 32 finite FP32 q/k cases match tested values/gradients/strides across 12/2 heads, D128, broadcasts, independent gradient/unused routes. Native4 versus custom2 saves retain same2 cos/sin storages. Interleaving/generic inverse adjoint fail; FP32 contraction simulation changes1784/4096 outputs. RoPE nonfinite/signed-zero/payload cases remain untested. Evidence shared with primary row; no second kernel validation.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Reuse primary RoPE contract as source transfer constraint; do not implement source QK-norm/FP8 recipe or count a separate candidate.",
+    "required_proof": [
+      "Observe actual fixed-task CUDA q/k/cos/sin dtypes, projection-transposed strides and reference output stride, requires_grad, cache mode and decorator/SDPA routing. Source-expected FP32 is not a measured runtime boundary.",
+      "Own out-of-place half-split application only, no QK norm/interleaved pairs/FP8/early-half substitution. Preserve original cos/sin generation shared once per model forward; no copied/imported hub kernels.",
+      "Forward separate multiply/add rounding; adjoint cross-half terms dx1=g1*c1+g2*s2, dx2=g2*c2-g1*s1 with source order. Compile and inspect actual SM75 no-contraction behavior; a compiler flag alone is not proof.",
+      "Preserve observed output layout or separately prove downstream routing/cost invariance. Handle independent q/k gradient needs and unused None; trainable coefficients, unsupported/mixed dtypes/layouts/axes/configurations use baseline. Higher-order/signed-zero/nonfinite behavior is not covered by current finite CPU tests.",
+      "Save coefficient references with version checks, not q/k clones. Baseline already saves two unique coefficient storages; reference count reduction is not peak-memory saving and coefficient payload must not be multiplied by28 layers.",
+      "Measure total forward+backward, allocations/layout/SDPA costs, separate versus combined q/k variants and cold compilation, then unchanged full T4 gates and collective own-share. No candidate coordinates until genuine measured evidence."
+    ],
+    "source_urls": "https://github.com/NVIDIA/TensorRT-LLM/blob/0746a233382b84d2946ada2e6205529ee7b10187/cpp/tensorrt_llm/kernels/fusedQKNormRopeKernel.cu; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L51-L135; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L180-L233; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L355-L397; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/integrations/sdpa_attention.py",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L66-L67",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L108-L113",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28"
+    ],
+    "measured_soup_t4_gain": null
+  },
+  {
+    "id": "attn-vllm-vector-prep",
+    "category": "RMSNorm / activations",
+    "verdict": "conditional",
+    "priority": "P2 research",
+    "implementation_group": "FP32_Qwen2_half_split_RoPE_apply_only",
+    "semantic_risk": "Transfer layout/rounding only: Qwen2 has no QK norm or FP8 KV route. Narrow target FP32 q/k application, half-split D128, Hq12/Hk2, original no-grad cos/sin broadcast and source output stride. Preserve separate rounded products/add, cross-half sine adjoints, independent q/k gradients and unused None outputs. No early half cast, changed coefficient generation, cache semantics or SDPA routing.",
+    "cpu_evidence": "Shared cycle3 RoPE evidence: 32 finite FP32 q/k cases match tested values/gradients/strides across 12/2 heads, D128, broadcasts, independent gradient/unused routes. Native4 versus custom2 saves retain same2 cos/sin storages. Interleaving/generic inverse adjoint fail; FP32 contraction simulation changes1784/4096 outputs. RoPE nonfinite/signed-zero/payload cases remain untested. Evidence shared with primary row; no second kernel validation.",
+    "gpu_unknown": [
+      "actual SM75 compiler/resource behavior",
+      "full cold-command time and sampled peak memory",
+      "all numerical/structural/adapter gates",
+      "eligible collective own-kernel share in every run"
+    ],
+    "next_action": "Reuse primary RoPE contract as source transfer constraint; do not implement source QK-norm/FP8 recipe or count a separate candidate.",
+    "required_proof": [
+      "Observe actual fixed-task CUDA q/k/cos/sin dtypes, projection-transposed strides and reference output stride, requires_grad, cache mode and decorator/SDPA routing. Source-expected FP32 is not a measured runtime boundary.",
+      "Own out-of-place half-split application only, no QK norm/interleaved pairs/FP8/early-half substitution. Preserve original cos/sin generation shared once per model forward; no copied/imported hub kernels.",
+      "Forward separate multiply/add rounding; adjoint cross-half terms dx1=g1*c1+g2*s2, dx2=g2*c2-g1*s1 with source order. Compile and inspect actual SM75 no-contraction behavior; a compiler flag alone is not proof.",
+      "Preserve observed output layout or separately prove downstream routing/cost invariance. Handle independent q/k gradient needs and unused None; trainable coefficients, unsupported/mixed dtypes/layouts/axes/configurations use baseline. Higher-order/signed-zero/nonfinite behavior is not covered by current finite CPU tests.",
+      "Save coefficient references with version checks, not q/k clones. Baseline already saves two unique coefficient storages; reference count reduction is not peak-memory saving and coefficient payload must not be multiplied by28 layers.",
+      "Measure total forward+backward, allocations/layout/SDPA costs, separate versus combined q/k variants and cold compilation, then unchanged full T4 gates and collective own-share. No candidate coordinates until genuine measured evidence."
+    ],
+    "source_urls": "https://github.com/vllm-project/vllm/blob/36f5ff3172eb75433e54e496d64c473e951f8ecc/csrc/fused_muse_spark_qknorm_rope_kv_insert_kernel.cu; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L51-L135; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L180-L233; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L355-L397; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/integrations/sdpa_attention.py",
+    "rule_citations": [
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L66-L67",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L108-L113",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+      "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28"
+    ],
+    "measured_soup_t4_gain": null
+  }
+]

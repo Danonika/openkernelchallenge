@@ -1,0 +1,56 @@
+{
+  "trial": "trial004",
+  "catalog_id": "SOUP-NEW-003",
+  "variant": "original forward-only nested NF4 decode; native GEMM/backward retained",
+  "result_sha256": "357ad807adfa279d122e08b878f5d54a3dd333788952354c43ed3ddfcf5065c4",
+  "raw_checks_sha256": "ea011a55223fc82ddb68787f109bbb96640ab6a2a3f82364a317ceeaaf73cd5d",
+  "evidence": "Exact downloaded result/checks bytes independently hashed locally; this is a derived summary, not the raw artifacts.",
+  "checks_passed": 9,
+  "checks_total": 10,
+  "checks": [
+    {
+      "check": "1. every base and solution run finished",
+      "pass": true
+    },
+    {
+      "check": "2. no ready-made kernel libraries",
+      "pass": true
+    },
+    {
+      "check": "3. own @triton.jit kernels in solution/ run in training",
+      "pass": true
+    },
+    {
+      "check": "4. own kernels together take >= 5% of the training time",
+      "pass": false
+    },
+    {
+      "check": "5. same task and Soup outputs (steps, adapter, settings, tokens, metrics, rewind)",
+      "pass": true
+    },
+    {
+      "check": "6. loss curve follows the base",
+      "pass": true
+    },
+    {
+      "check": "7. quality: eval loss at most 0.5% above the base",
+      "pass": true
+    },
+    {
+      "check": "8. not worse than the base on time or memory (10% margin)",
+      "pass": true
+    },
+    {
+      "check": "9. clean measurement (a T4, idle GPUs, one GPU, harness allocator, peaks agree)",
+      "pass": true
+    },
+    {
+      "check": "10. Soup regression tests with your patches",
+      "pass": true
+    }
+  ],
+  "minimum_own_share_pct": 2.7448338809784594,
+  "admission": "FAIL standalone own-share below5%; hidden quality untested; no official acceptance",
+  "earned_score": null,
+  "raw_arrays_published": false
+}

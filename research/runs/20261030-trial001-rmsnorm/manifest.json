@@ -1,0 +1,37 @@
+{
+  "scope": "Original scientific trial001 evidence; failed standalone admission retained; no earned points",
+  "verified_at": "2026-10-30T12:31:21Z",
+  "result_sha256": "129cc56516073b205375d9bbd93d94b0e2732b4a4e3e6f3f57a4090b7e9334fa",
+  "files": {
+    "README.md": "2180e41cc2b684e02cb1a646bdef2ad9866b14a09d602cb472eafd0d083afcec",
+    "build_runner.py": "af9370b9ecf14a80484e41f7674a752acd9606a893674dd7ef743d090df53259",
+    "kaggle_runner.py": "7513feac23ab039070c31be7c4229fed2ed1df6f090e73cd65c653cad548cc79",
+    "review/jury_trial001_contract.md": "6c2aa0217f9b3981e479986b77df4fae72b71d01cda941eb32d39115d3e87d3a",
+    "review/preflight_console_summary.json": "ed1cd420df0029e0ea50b4e23482583d6c80fa0498f0158e6f635797f708860b",
+    "review/source_scan.json": "a4c75ce6a911a99e78046b27efc27d624a6fc0cfa8c207ff271c3c7bae5f9cd5",
+    "runs_trial001/base_1/metrics.json": "ec5b817c39efadd70a9dd8d42430ebce30f1fa8c96a915beb8a27d763c387047",
+    "runs_trial001/base_2/metrics.json": "8d60603dfdd8359c30c385f97ffdc0571aa7a903811a2b2b98474e8ad60024f7",
+    "runs_trial001/checks.json": "7c2f0d858f79293213dd89fb3da923298281655866e54af7780e848be8fd51f1",
+    "runs_trial001/eval_base.json": "4d65c9a0efb2b6ca429ccfd54318daccec022167164c086df616ceaa955faf15",
+    "runs_trial001/eval_solution.json": "5ed50de02a7cdb24293d53029ec39a01e3b944a29af6d454628200d6d8099d7c",
+    "runs_trial001/result.json": "129cc56516073b205375d9bbd93d94b0e2732b4a4e3e6f3f57a4090b7e9334fa",
+    "solution/__init__.py": "3a1708902b2a38bdf6a0fb1423f4668b09e137fafaa8873397c47fe0b74d5719",
+    "solution/rmsnorm.py": "95f22a8e09309d1d6be57d389d5dc8fc8feaa05ba4a8510192443a94009a9dde",
+    "solution/verify_trial001.py": "eb9bcc865b255bb3b63dce567714080f01a604004ae4b8a0577901add7290e9e",
+    "source_manifest.json": "a11889d6a342fdc4f3d4797b6f453dd044ab1fc1a3407311f459520520fe2a10",
+    "trial001_verified_handoff.json": "e95c358bcb5a8b96b2351cc12a8f429f8d1614d56bac615750a0ac092de7a634",
+    "trial001_verified_report.md": "8b29c43299c56456ca34a5447e9cd98651fd13e47b2e68222ff96c09ffd3cb01",
+    "verify_publication.py": "bc3c51b4aaf92d4b5031f7116fbe390e83e2f1ebc4b730fc80d5022ff1d029d7",
+    "review/jury_trial001_canonical_row.json": "db87c028dfe8d33dbd3ce1d63f91592172ab8bae131c0ed68d3a256b78041c75"
+  },
+  "source_review_redaction": "Private absolute workspace prefix removed; relative references substituted; scientific values and exact execution-source hashes unchanged",
+  "omissions": [
+    "private account/notebook/launch/quota metadata",
+    "full control-plane/console logs",
+    "credentials and signed URLs",
+    "model and adapter weights",
+    "caches",
+    "private infrastructure/native-library provenance"
+  ],
+  "artifact_archive_complete": false
+}

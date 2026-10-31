@@ -1,0 +1,739 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-30T11:18:13.943908+00:00",
+  "scope": "Cloud-only original toy-tensor numerical/semantic tests",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "device": "cpu",
+    "threads": 2,
+    "interop_threads": 2,
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "script_sha256": "5a41b837a2fe89a505eb43c6ca15f39eb1cd1903f4243eaddd4a7445ec0707a1",
+  "summary": {
+    "passed": 8,
+    "failed": 0
+  },
+  "not_validated": [
+    "actual GPU kernels",
+    "T4 performance",
+    "actual bnb QuantState or dispatch",
+    "CUDA GradScaler overflow/optimizer/scheduler behavior",
+    "CUDA/Kaggle dropout dispatch and RNG equivalence",
+    "full model training/quality",
+    "competition kernel-share or scoring"
+  ],
+  "results": [
+    {
+      "name": "head_causal_masks_global_denominator_metrics",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "evidence": "CPU behavioral fixture",
+      "status": "PASS",
+      "details": {
+        "trials": 24,
+        "max_abs_error": 4.76837158203125e-07,
+        "exact_counts_and_row_mapping": true,
+        "first_argmax_index": 0,
+        "full_attention_entropy": 1.2100937366485596,
+        "wrong_supervised_only_entropy": 0.012061339803040028,
+        "correct_global_denominator_loss": 0.00019156004418618977,
+        "wrong_local_denominator_loss": 0.0013409203384071589,
+        "all_ignored_mean": "NaN preserved",
+        "all_ignored_sum": 0,
+        "largest_logits_shape": [
+          3,
+          129,
+          19
+        ]
+      }
+    },
+    {
+      "name": "centered_reductions_reject_single_lse",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "evidence": "CPU numerical counterexample",
+      "status": "PASS",
+      "details": {
+        "counterexample_established": true,
+        "examples": [
+          {
+            "logits": [
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0,
+              65504.0
+            ],
+            "baseline_ce": 2.944438934326172,
+            "single_lse_ce": 2.9453125,
+            "centered_ce": 2.944438934326172,
+            "baseline_entropy": 2.94443941116333,
+            "single_lse_entropy": 2.953125,
+            "centered_entropy": 2.944438934326172,
+            "single_lse_probability_sum": 0.9991269707679749,
+            "centered_probability_sum": 1.0000001192092896
+          },
+          {
+            "logits": [
+              32768.0,
+              32752.0
+            ],
+            "baseline_ce": 1.1920928244535389e-07,
+            "single_lse_ce": 0.0,
+            "centered_ce": 1.1920928244535389e-07,
+            "baseline_entropy": 1.9197721030650428e-06,
+            "single_lse_entropy": 0.0,
+            "centered_entropy": 1.9197718756913673e-06,
+            "single_lse_probability_sum": 1.0000001192092896,
+            "centered_probability_sum": 1.0
+          },
+          {
+            "logits": [
+              0.0,
+              -16.0
+            ],
+            "baseline_ce": 1.1920928244535389e-07,
+            "single_lse_ce": 1.1920928244535389e-07,
+            "centered_ce": 1.1920928244535389e-07,
+            "baseline_entropy": 1.9197721030650428e-06,
+            "single_lse_entropy": 1.9197718756913673e-06,
+            "centered_entropy": 1.9197718756913673e-06,
+            "single_lse_probability_sum": 1.0,
+            "centered_probability_sum": 1.0
+          },
+          {
+            "logits": [
+              4.0,
+              3.0,
+              -9.0
+            ],
+            "baseline_ce": 0.31326329708099365,
+            "single_lse_ce": 0.3132634162902832,
+            "centered_ce": 0.31326329708099365,
+            "baseline_entropy": 0.5822257995605469,
+            "single_lse_entropy": 0.5822255611419678,
+            "centered_entropy": 0.5822257995605469,
+            "single_lse_probability_sum": 0.9999998807907104,
+            "centered_probability_sum": 1.0
+          }
+        ],
+        "decision": "Reject single-LSE-only state for high-offset logits; retain max plus centered logsum state."
+      }
+    },
+    {
+      "name": "scaled_gradient_rounding_boundary",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "evidence": "CPU numerical counterexample, not CUDA GradScaler",
+      "status": "PASS",
+      "details": {
+        "counterexample_established": true,
+        "cases": [
+          {
+            "incoming_scale": 0.25,
+            "autograd_hidden_grad": 0.0,
+            "scale_before_cast": 0.0,
+            "scale_after_cast": 0.0
+          },
+          {
+            "incoming_scale": 1.0,
+            "autograd_hidden_grad": 0.0,
+            "scale_before_cast": 0.0,
+            "scale_after_cast": 0.0
+          },
+          {
+            "incoming_scale": 3.0,
+            "autograd_hidden_grad": 0.0,
+            "scale_before_cast": 0.0,
+            "scale_after_cast": 0.0
+          },
+          {
+            "incoming_scale": 128.0,
+            "autograd_hidden_grad": -4.76837158203125e-06,
+            "scale_before_cast": -4.76837158203125e-06,
+            "scale_after_cast": 0.0
+          },
+          {
+            "incoming_scale": 65536.0,
+            "autograd_hidden_grad": -0.0027008056640625,
+            "scale_before_cast": -0.0027008056640625,
+            "scale_after_cast": 0.0
+          }
+        ],
+        "actual_cuda_gradscaler_executed": false,
+        "decision": "Incoming gradient must scale FP32 dlogits before the FP16 cast."
+      }
+    },
+    {
+      "name": "supervised_only_head_backward",
+      "candidates": [
+        "SOUP-TRAIN-001"
+      ],
+      "evidence": "CPU compact/scatter autograd fixture",
+      "status": "PASS",
+      "details": {
+        "trials": [
+          {
+            "mask": "mixed",
+            "scale": 0.25,
+            "selected_rows": 6,
+            "total_rows": 14,
+            "denominator": 11,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "mixed",
+            "scale": 1.0,
+            "selected_rows": 6,
+            "total_rows": 14,
+            "denominator": 11,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "mixed",
+            "scale": 3.0,
+            "selected_rows": 6,
+            "total_rows": 14,
+            "denominator": 11,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "mixed",
+            "scale": 128.0,
+            "selected_rows": 6,
+            "total_rows": 14,
+            "denominator": 11,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "mixed",
+            "scale": 65536.0,
+            "selected_rows": 6,
+            "total_rows": 14,
+            "denominator": 11,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_supervised",
+            "scale": 0.25,
+            "selected_rows": 12,
+            "total_rows": 14,
+            "denominator": 17,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_supervised",
+            "scale": 1.0,
+            "selected_rows": 12,
+            "total_rows": 14,
+            "denominator": 17,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_supervised",
+            "scale": 3.0,
+            "selected_rows": 12,
+            "total_rows": 14,
+            "denominator": 17,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_supervised",
+            "scale": 128.0,
+            "selected_rows": 12,
+            "total_rows": 14,
+            "denominator": 17,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_supervised",
+            "scale": 65536.0,
+            "selected_rows": 12,
+            "total_rows": 14,
+            "denominator": 17,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_ignored",
+            "scale": 0.25,
+            "selected_rows": 0,
+            "total_rows": 14,
+            "denominator": 6,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_ignored",
+            "scale": 1.0,
+            "selected_rows": 0,
+            "total_rows": 14,
+            "denominator": 6,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_ignored",
+            "scale": 3.0,
+            "selected_rows": 0,
+            "total_rows": 14,
+            "denominator": 6,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_ignored",
+            "scale": 128.0,
+            "selected_rows": 0,
+            "total_rows": 14,
+            "denominator": 6,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mask": "all_ignored",
+            "scale": 65536.0,
+            "selected_rows": 0,
+            "total_rows": 14,
+            "denominator": 6,
+            "gradient_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          }
+        ],
+        "exact_match_all_trials": true,
+        "prompt_final_hidden_grad": [
+          0.0,
+          0.0
+        ],
+        "earlier_prompt_activation_grad": [
+          -0.6157809495925903,
+          -0.09236714243888855
+        ],
+        "decision": "Only compact head backward; retain all-token metric forward and complete transformer backprop."
+      }
+    },
+    {
+      "name": "cast_aware_norm_and_residual_bypass",
+      "candidates": [
+        "cast-aware-norm"
+      ],
+      "evidence": "CPU analytic vs autograd fixture",
+      "status": "PASS",
+      "details": {
+        "fp32_trials": [
+          {
+            "width": 1,
+            "input_magnitude": 1e-08,
+            "input_stride": [
+              2,
+              2
+            ],
+            "error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "width": 1,
+            "input_magnitude": 1.0,
+            "input_stride": [
+              2,
+              2
+            ],
+            "error": {
+              "max_abs": 5.960464477539063e-08,
+              "relative_l2": 0.0005707747622974875
+            }
+          },
+          {
+            "width": 1,
+            "input_magnitude": 100000000.0,
+            "input_stride": [
+              2,
+              2
+            ],
+            "error": {
+              "max_abs": 4.336808689942018e-19,
+              "relative_l2": 1.0
+            }
+          },
+          {
+            "width": 7,
+            "input_magnitude": 1e-08,
+            "input_stride": [
+              14,
+              2
+            ],
+            "error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "width": 7,
+            "input_magnitude": 1.0,
+            "input_stride": [
+              14,
+              2
+            ],
+            "error": {
+              "max_abs": 4.76837158203125e-07,
+              "relative_l2": 7.618263761158368e-08
+            }
+          },
+          {
+            "width": 7,
+            "input_magnitude": 100000000.0,
+            "input_stride": [
+              14,
+              2
+            ],
+            "error": {
+              "max_abs": 8.881784197001252e-16,
+              "relative_l2": 2.1044173845273764e-08
+            }
+          },
+          {
+            "width": 13,
+            "input_magnitude": 1e-08,
+            "input_stride": [
+              26,
+              2
+            ],
+            "error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "width": 13,
+            "input_magnitude": 1.0,
+            "input_stride": [
+              26,
+              2
+            ],
+            "error": {
+              "max_abs": 5.960464477539063e-08,
+              "relative_l2": 1.9400344933203504e-08
+            }
+          },
+          {
+            "width": 13,
+            "input_magnitude": 100000000.0,
+            "input_stride": [
+              26,
+              2
+            ],
+            "error": {
+              "max_abs": 8.881784197001252e-16,
+              "relative_l2": 2.179781091821288e-08
+            }
+          },
+          {
+            "width": 1536,
+            "input_magnitude": 1e-08,
+            "input_stride": [
+              3072,
+              2
+            ],
+            "error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "width": 1536,
+            "input_magnitude": 1.0,
+            "input_stride": [
+              3072,
+              2
+            ],
+            "error": {
+              "max_abs": 1.1920928955078125e-07,
+              "relative_l2": 6.0059206965102496e-09
+            }
+          },
+          {
+            "width": 1536,
+            "input_magnitude": 100000000.0,
+            "input_stride": [
+              3072,
+              2
+            ],
+            "error": {
+              "max_abs": 1.7763568394002505e-15,
+              "relative_l2": 3.520602662050912e-09
+            }
+          }
+        ],
+        "residual_bypass_error": {
+          "max_abs": 2.384185791015625e-07,
+          "relative_l2": 5.5348215084431476e-08
+        },
+        "fp16_backward_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "wrong_cast_order_forward_error": {
+          "max_abs": 0.0013968944549560547,
+          "relative_l2": 0.000292620033093063
+        },
+        "premature_fp16_output_error": {
+          "max_abs": 0.0009734630584716797,
+          "relative_l2": 0.00020615061187426474
+        },
+        "decision": "Keep FP32 output for FP32 input; preserve cast-before-affine and both residual branches."
+      }
+    },
+    {
+      "name": "nf4_separate_scale_offset_and_packing",
+      "candidates": [
+        "SOUP-NEW-003",
+        "SOUP-NEW-007"
+      ],
+      "evidence": "Synthetic CPU data-transform witness, not bnb validation",
+      "status": "PASS",
+      "details": {
+        "counterexample_established": true,
+        "synthetic_nested_code": -0.5001220703125,
+        "second_scale": 2.00048828125,
+        "offset": 1.501220703125,
+        "separate_fp32_scale": 0.500732421875,
+        "single_round_fp32_scale": 0.5007323622703552,
+        "separate_fp16_weight": 0.5009765625,
+        "single_round_fp16_weight": 0.50048828125,
+        "tested_elements": 16451,
+        "all_16_nibbles": true,
+        "all_256_synthetic_scale_codes": true,
+        "boundaries": [
+          63,
+          64,
+          16383,
+          16384
+        ],
+        "odd_tail": true,
+        "nibble_decode_exact": true,
+        "actual_bnb_compatibility_validated": false,
+        "decision": "Do not contract nested scale multiplication plus offset into FMA without real-state validation."
+      }
+    },
+    {
+      "name": "lora_b_adjoint_cast_boundaries",
+      "candidates": [
+        "SOUP-LORA-001",
+        "LoRA-scale-add"
+      ],
+      "evidence": "CPU deterministic no-dropout autograd fixture",
+      "status": "PASS",
+      "details": {
+        "shape": {
+          "M": 17,
+          "N": 23,
+          "rank": 16
+        },
+        "alpha_over_rank": 2.0,
+        "dropout": "not invoked; deterministic no-dropout boundary fixture only",
+        "cases": [
+          {
+            "mode": "normal",
+            "oracle_adjoint_exact": true,
+            "base_gradient_exact": true,
+            "d16_nonfinite": 0,
+            "grad_b_nonfinite": 0,
+            "wrong_precast_scale_diff_count": 0,
+            "wrong_unrounded_fp32_grad_b_diff_count": 368,
+            "grad_b_error": {
+              "max_abs": 0.0001176297664642334,
+              "relative_l2": 0.00021791536240915504
+            }
+          },
+          {
+            "mode": "subnormal",
+            "oracle_adjoint_exact": true,
+            "base_gradient_exact": true,
+            "d16_nonfinite": 0,
+            "grad_b_nonfinite": 0,
+            "wrong_precast_scale_diff_count": 391,
+            "wrong_unrounded_fp32_grad_b_diff_count": 0,
+            "grad_b_error": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0
+            }
+          },
+          {
+            "mode": "overflow",
+            "oracle_adjoint_exact": true,
+            "base_gradient_exact": true,
+            "d16_nonfinite": 391,
+            "grad_b_nonfinite": 368,
+            "wrong_precast_scale_diff_count": 0,
+            "wrong_unrounded_fp32_grad_b_diff_count": 368,
+            "grad_b_error": null
+          }
+        ],
+        "decision": "A shared D16 adjoint tile must preserve G32\u2192G16\u2192scale\u2192D16 and FP16 parameter-gradient rounding."
+      }
+    },
+    {
+      "name": "native_dropout_lossless_saved_bool_mask",
+      "candidates": [
+        "SOUP-LORA-002"
+      ],
+      "evidence": "CPU explicit native_dropout saved-tensor fixture",
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "length": 1,
+            "training": true,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 2,
+            "packed_mask_payload_bytes": 2
+          },
+          {
+            "length": 1,
+            "training": false,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 2,
+            "packed_mask_payload_bytes": 2
+          },
+          {
+            "length": 7,
+            "training": true,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 14,
+            "packed_mask_payload_bytes": 2
+          },
+          {
+            "length": 7,
+            "training": false,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 14,
+            "packed_mask_payload_bytes": 2
+          },
+          {
+            "length": 8,
+            "training": true,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 16,
+            "packed_mask_payload_bytes": 2
+          },
+          {
+            "length": 8,
+            "training": false,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 16,
+            "packed_mask_payload_bytes": 2
+          },
+          {
+            "length": 9,
+            "training": true,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 18,
+            "packed_mask_payload_bytes": 4
+          },
+          {
+            "length": 9,
+            "training": false,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 18,
+            "packed_mask_payload_bytes": 4
+          },
+          {
+            "length": 257,
+            "training": true,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 514,
+            "packed_mask_payload_bytes": 66
+          },
+          {
+            "length": 257,
+            "training": false,
+            "outputs_gradients_rng_exact": true,
+            "saved_bool_masks": 2,
+            "raw_mask_payload_bytes": 514,
+            "packed_mask_payload_bytes": 66
+          }
+        ],
+        "strided_roundtrip_exact": true,
+        "dispatch": "Explicit torch.ops.aten.native_dropout on CPU only",
+        "memory_measurement": false,
+        "debug_mask_clones_retained": true,
+        "actual_kaggle_nn_dropout_dispatch_validated": false,
+        "decision": "Lossless bool-mask representation verified only; inspect real CUDA dropout dispatch and measure pack/unpack cost before promotion."
+      }
+    }
+  ]
+}

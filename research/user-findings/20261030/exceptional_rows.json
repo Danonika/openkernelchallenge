@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "started_utc": "2026-10-30T13:29:56.335012+00:00",
+  "finished_utc": "2026-10-30T13:30:13.120571+00:00",
+  "audit_wall_seconds": 16.785563674000514,
+  "scope": "CPU native PyTorch reference and Triton interpreter arithmetic only; no physical CUDA, PTX execution, performance measurement, or official training run.",
+  "physical_gpu_execution": false,
+  "device": "cpu",
+  "versions": {
+    "python": "3.12.14",
+    "torch": "2.11.0+cpu",
+    "torch_git": "70d99e998b4955e0049d13a98d77ae1b14db1f45",
+    "triton": "3.6.0"
+  },
+  "environment": {
+    "TRITON_INTERPRET": "1",
+    "OMP_NUM_THREADS": "1",
+    "torch_num_threads": 1
+  },
+  "source_hashes_before": {
+    "solution/streamed_head.py": "519d3c101b54d35d9f688b5876f75b2340fc589b66f64e8b9f3ded31c805fa60",
+    "tools/check_exceptional_rows.py": "f371fb4e3ac35f8bbb890da2f6a05eb703d0b6129e9719cf9983bce9143545f2"
+  },
+  "source_hashes_after": {
+    "solution/streamed_head.py": "519d3c101b54d35d9f688b5876f75b2340fc589b66f64e8b9f3ded31c805fa60",
+    "tools/check_exceptional_rows.py": "f371fb4e3ac35f8bbb890da2f6a05eb703d0b6129e9719cf9983bce9143545f2"
+  },
+  "source_changes_during_run": [],
+  "scenario_axes": {
+    "kind": [
+      "finite",
+      "hidden_nan",
+      "hidden_posinf",
+      "hidden_neginf",
+      "weight_nan",
+      "weight_posinf",
+      "weight_neginf",
+      "negative_inf_only"
+    ],
+    "all_ignored": [
+      false,
+      true
+    ],
+    "upstream": [
+      "0",
+      "1",
+      "65536",
+      "+inf",
+      "-inf",
+      "nan"
+    ],
+    "denominator": [
+      null,
+      3,
+      0
+    ],
+    "sparse": [
+      false,
+      true
+    ]
+  },
+  "fixture": {
+    "hidden": [
+      [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          -2.0,
+          1.0
+        ],
+        [
+          -3.0,
+          1.0
+        ]
+      ]
+    ],
+    "weight": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "mixed_labels": [
+      [
+        -100,
+        1,
+        -100
+      ]
+    ],
+    "chunk_size": 2,
+    "projection": "torch",
+    "note": "negative_inf_only intentionally repeats the weight_posinf fixture from the original audit: negative hidden values yield one -Inf logit and finite alternatives, while zero ignored dlogits times Inf can make dH NaN. The 576 count is an execution count, not 576 unique input fixtures."
+  },
+  "checks": {
+    "comparison": "torch.allclose",
+    "fields": [
+      "loss",
+      "token_loss",
+      "entropy",
+      "predictions",
+      "gradient"
+    ],
+    "tolerances_for_every_field": {
+      "rtol": 0.005,
+      "atol": 0.02,
+      "equal_nan": true
+    },
+    "nonfinite_values_in_failure_arrays": "nan, +inf and -inf strings"
+  },
+  "tested_counts": {
+    "planned_cases": 576,
+    "attempted_cases": 576,
+    "completed_cases": 576,
+    "field_comparisons": 2880,
+    "failed_cases": 0,
+    "failed_fields_or_exceptions": 0
+  },
+  "failures": []
+}

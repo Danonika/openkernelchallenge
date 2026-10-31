@@ -1,0 +1,11 @@
+{
+  "own_kernels": {
+    "soup_rms32_forward": "solution/rmsnorm.py",
+    "soup_rms32_backward": "solution/rmsnorm.py"
+  },
+  "example_copies": [],
+  "example_lookalikes": [],
+  "banned_imports": [],
+  "broken_source": [],
+  "note": "Static frozen harness source scan only; not GPU execution or admission"
+}

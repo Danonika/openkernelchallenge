@@ -1,0 +1,242 @@
+{
+  "created_at": "2026-10-30T13:42:32.707083+00:00",
+  "status": "centered_head_repaired_and_optional_pointwise_kernels_added_no_physical_gpu_measurement",
+  "base_repository": "https://github.com/MakazhanAlpamys/soup-kernel-challenge",
+  "base_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "solution_sha256_after_overlay_on_starter": "ba9f39ccb7ca1e6fb1e3f3392435a158e7c508b0fb18fec3af7f99d44c6b62ac",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "packages": {
+    "torch": "2.11.0+cpu",
+    "triton": "3.6.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "trl": "0.29.1",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.14.0",
+    "soup-cli": "0.77.0",
+    "numpy": "2.5.4",
+    "pytest": "9.2.0"
+  },
+  "gpu_available": false,
+  "selected_candidate": {
+    "CHUNK_TOKENS": 256,
+    "SPARSE_BACKWARD": true,
+    "HEAD_PROJECTION": "torch",
+    "FUSED_NF4": true,
+    "FROZEN_STORAGE": false,
+    "COMPACT_MLP_ACTIVATIONS": false,
+    "FUSED_ROTARY": false,
+    "FUSED_LORA_EPILOGUE": false
+  },
+  "validation": {
+    "cpu_interpreter": {
+      "command": [
+        "../.venv/bin/python",
+        "-m",
+        "pytest",
+        "solution",
+        "-q"
+      ],
+      "environment_overrides": {
+        "TRITON_INTERPRET": "1",
+        "OMP_NUM_THREADS": "1"
+      },
+      "exit_code": 0,
+      "duration_seconds": 20.893,
+      "scope": "Local CPU checks or offline code generation only, no physical GPU execution.",
+      "status": "passed",
+      "counts": {
+        "passed": 186,
+        "skipped": 57
+      },
+      "log": "validation/cpu_interpreter.txt"
+    },
+    "official_regressions": {
+      "command": [
+        "../.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "environment_overrides": {
+        "SOUP_APPLY_SOLUTION": "1",
+        "OMP_NUM_THREADS": "1"
+      },
+      "exit_code": 0,
+      "duration_seconds": 9.446,
+      "scope": "Local CPU checks or offline code generation only, no physical GPU execution.",
+      "status": "passed",
+      "counts": {
+        "passed": 79
+      },
+      "log": "validation/official_regressions.txt"
+    }
+  },
+  "offline_compilation": {
+    "status": "passed",
+    "configurations": 34,
+    "target": "sm75",
+    "report": "validation/codegen.json",
+    "gpu_execution": false,
+    "credited_starter_specializations": 3,
+    "resource_report": "validation/fused_resources.json"
+  },
+  "static_source_screening": {
+    "status": "passed",
+    "own_candidates": {
+      "soup_frozen_embedding_forward": "solution/frozen_storage.py",
+      "soup_head_t4_fused_statistics": "solution/head_fused_t4.py",
+      "soup_head_t4_fused_logit_gradient": "solution/head_fused_t4.py",
+      "soup_head_t4_merge_statistics": "solution/head_fused_t4.py",
+      "soup_head_projection": "solution/head_matmul.py",
+      "soup_head_t4_projection": "solution/head_matmul_t4.py",
+      "soup_lora_epilogue_forward": "solution/lora_epilogue.py",
+      "soup_lora_epilogue_backward": "solution/lora_epilogue.py",
+      "soup_nf4_dequantize": "solution/nf4.py",
+      "soup_rmsnorm_forward": "solution/rmsnorm.py",
+      "soup_rmsnorm_backward": "solution/rmsnorm.py",
+      "_negate_fp32": "solution/rotary.py",
+      "_rotary_forward_block": "solution/rotary.py",
+      "soup_rotary_forward": "solution/rotary.py",
+      "_rotary_backward_block": "solution/rotary.py",
+      "soup_rotary_backward": "solution/rotary.py",
+      "soup_head_partial_statistics": "solution/streamed_head.py",
+      "soup_head_merge_statistics": "solution/streamed_head.py",
+      "soup_head_logit_gradient": "solution/streamed_head.py"
+    },
+    "excluded_starter_kernels": [
+      "example_swiglu_fwd_kernel",
+      "example_swiglu_bwd_kernel"
+    ],
+    "example_lookalikes": [],
+    "banned_imports": [],
+    "parse_errors": [],
+    "protected_tracked_changes": [],
+    "protected_untracked_additions": [],
+    "launchable_original_kernel_count": 16,
+    "original_jit_helper_count": 3
+  },
+  "competition_measurements": {
+    "status": "not_run",
+    "whole_command_speedup": null,
+    "gpu_peak_memory_ratio": null,
+    "hidden_eval_loss_delta_percent": null,
+    "minimum_original_kernel_share": null,
+    "all_official_admission_checks_passed": null,
+    "leaderboard_rank": null
+  },
+  "scope_notes": [
+    "CPU interpreter checks arithmetic; it does not execute generated CUDA code.",
+    "The t4_fused mode is integrated but disabled. Test-only CPU API substitutes verify orchestration, not PTX execution.",
+    "Tiny real Qwen2/PEFT/Accelerate checks override device capability guards only inside tests. They do not reproduce physical NF4 T4 training.",
+    "Inline PTX fragment models and offline compilation do not prove device memory safety, race freedom, performance, quality or admission.",
+    "Direct-half compact MLP tests preserve exact arithmetic/cast boundaries on CPU; its three actual CUDA checks remain unexecuted.",
+    "Expanded NF4 device tests cover native fused forward and fallback with two source dtypes; no physical execution is claimed.",
+    "Frozen storage and compact MLP storage remain disabled. The conservative head projection remains torch.",
+    "Compact MLP storage uses unchanged starter kernels. All three compiled starter specializations remain excluded from original eligible time.",
+    "Symbolic dtype-flow bytes sum requested array accesses. They are not measured DRAM traffic, capacity reductions or throughput.",
+    "The experiment runner reports synthetic operation timing, not official whole-command or externally sampled peak memory.",
+    "The portable Kaggle notebook is local, unexecuted, and has unfilled team repository/commit inputs. No public notebook was saved.",
+    "No admission result, measured GPU time, peak memory, trained adapter or ranking was fabricated.",
+    "Apply the overlay to the inspected starter before reproducing its source hash. Unchanged starter content is not duplicated in the overlay.",
+    "Head loss and backward now use separately centered maximum/log-normalizer state; guarded rows recompute native CE including ignored nonfinite rows.",
+    "The numerical guard adds one forward synchronization plus bounded native work; its training frequency and GPU cost are unmeasured.",
+    "LoRA epilogue and rotary options remain disabled. Their exact boundary CPU tests do not establish full-model bitwise parity or T4 speed.",
+    "The nineteen static original JIT functions include three rotary helpers; static counts do not establish executed useful kernel time.",
+    "The 576-case audit is a separate reproducible CPU experiment, not 576 additional pytest tests or physical GPU checks."
+  ],
+  "source_files": {
+    "solution/__init__.py": "d6556e8e878ffc7cf63680459cde21aee05cef071953b9ffadce21ba15c63435",
+    "solution/activation_storage.py": "95f66325e0361ced6e0c56ad06a027c66ac8d371969dc44a5840f746dfd21ca8",
+    "solution/frozen_storage.py": "c27dc833f9b7ceb15b3f7e96169c5a6572060abead71c093aac8625636aa0fe0",
+    "solution/head_fused_t4.py": "ac75f93ce5b46eeb564afd8c74409cbbeda36804c0399d639c159bf8779b14ce",
+    "solution/head_matmul.py": "c834bc001e3c6f9449ef4f5cd60d34aa961262e27c81e98e9a47186af5ec7e39",
+    "solution/head_matmul_t4.py": "b29ed64e0d1537f6682d2b75d5a979c8269030a306aa8f1dee263bb9e3be3134",
+    "solution/integration.py": "0338757972c02e04db2bc752e1d245d59573cc4a1eafedf7fc1ffb1acf7ff46a",
+    "solution/lora_epilogue.py": "124f3ff31c7f1328bfa2a0e7760fd6bd7b48d9daa654d1addef154760767964e",
+    "solution/nf4.py": "9e07a73d45f7b7119fc1f5d1d3422351e5d34e2fbd9612f7b90f56bc17ad697a",
+    "solution/rmsnorm.py": "aa55a21fd921d2f5478444b03a32694a329bb10bbbe4f3bf46e4e78f2804a93c",
+    "solution/rotary.py": "8e8ef322d70eba6ac898a040a14d74b9dc8e276b3f93bd033414eeaf927b5429",
+    "solution/settings.py": "cec07c0bbefabfdd00ab43b3f8d216a1b7720fa81195df8535750d079f94463c",
+    "solution/streamed_head.py": "519d3c101b54d35d9f688b5876f75b2340fc589b66f64e8b9f3ded31c805fa60",
+    "solution/swiglu.py": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6",
+    "solution/test_activation_storage.py": "4a4b8b9819c26745fb10ef8228119981fec75012b140844c43552f0ac42291cf",
+    "solution/test_frozen_storage.py": "87c98888cdb260d6e0e3e2c639ab5e9107a26da1708b8b005a2a4aa1d61ef07d",
+    "solution/test_head_fused_t4.py": "335d684aa6fdc063d478265209e6ee05fcdf32fa7babe8d3e6c24644679d512d",
+    "solution/test_head_matmul.py": "1ae409f55282fbd96d3c78845ab22cded87bf453149fbecbbfe7e3f62ec4c9bd",
+    "solution/test_head_matmul_t4.py": "75931a45b9623e2ceb458904166218d31ffc68ccb08f129da5691cbdc961467d",
+    "solution/test_integration.py": "1dfc51089bb2f9a297dda4cbdb25fc374a1346f1a674c82d28a7ba8e6f768c5b",
+    "solution/test_kernels.py": "a45b842a4f22c1aefe404baeff1ac26511253452ecb0f633c985fbc9df8b252a",
+    "solution/test_lora_epilogue.py": "c7394c871558fe12ab684aca5e5872ecd18763467e2ace460ff9016c7efd6421",
+    "solution/test_nf4.py": "2ee2f46a3011ab76c61675bef3b3e1ce40e0964d1737c92c36b71e8fd05c9a4f",
+    "solution/test_rmsnorm.py": "a0ef2638f9d7704c5da4154dcf9eac2b87069952fd3ff743da63ea84ddbdfded",
+    "solution/test_rotary.py": "a8659bbb8455c6f20868672a7a41e4c96c67b5a066cd443addd0067acf4faf37",
+    "solution/test_streamed_head.py": "48c451e73e0623de7a161c37d7e342481f2a12246686b1dd043f02acf77ef436"
+  },
+  "benchmark_script_sha256": "b31100ef6344705376eded0baa448f6687112f2bfe440f3f54393fd84d35b237",
+  "cost_model": "validation/cost_model.json",
+  "benchmark_readiness": {
+    "status": "blocked_no_cuda",
+    "exit_code": 2,
+    "measured_results": 0,
+    "report": "validation/benchmark_readiness.json",
+    "plan_scope": "head with torch,t4_fused",
+    "planned_cases": 20,
+    "default_all_suites_cases": 40,
+    "fused_forward_rows": [
+      256,
+      2048
+    ]
+  },
+  "workflow_tools": {
+    "tools/benchmark_candidates.py": "b31100ef6344705376eded0baa448f6687112f2bfe440f3f54393fd84d35b237",
+    "tools/check_codegen.py": "421fff1889a693abbb8cb3d28e96765b0e9f44389ff0591be0b4880ad535bcb4",
+    "tools/check_exceptional_rows.py": "f371fb4e3ac35f8bbb890da2f6a05eb703d0b6129e9719cf9983bce9143545f2",
+    "tools/kaggle_candidate.ipynb": "aa330c1895f2ab6b831dc07d4838309efd2cc894b14a72d0a921cb08a798ca60",
+    "tools/run_t4_readiness.py": "81756f605262eb6c15896e815e76c96906cac514b76e9643e2acb60dc66ea36a"
+  },
+  "dtype_flow_arithmetic": "validation/dtype_flow.json",
+  "notebook_validation": {
+    "status": "structure_and_code_syntax_checked",
+    "cells": 7,
+    "code_cells": 5,
+    "saved_execution_outputs": 0,
+    "nbformat_library_validation": false,
+    "kaggle_execution": false,
+    "public_saved_notebook": false
+  },
+  "cuda_readiness_workflow": {
+    "status": "blocked_preflight",
+    "exit_code": 2,
+    "physical_cuda_tests_executed": false,
+    "official_training_executed": false,
+    "report": "validation/t4_readiness/readiness.json",
+    "reason": [
+      "requires exactly one visible Tesla T4 (GPU 0), SM75, with real CUDA"
+    ],
+    "protected_files_match": true,
+    "runner_sha256": "81756f605262eb6c15896e815e76c96906cac514b76e9643e2acb60dc66ea36a"
+  },
+  "pointwise_benchmark_readiness": {
+    "status": "blocked_no_cuda",
+    "exit_code": 2,
+    "planned_cases": 12,
+    "measured_results": 0,
+    "report": "validation/pointwise_readiness.json"
+  },
+  "head_numerical_repair": {
+    "exact_large_offset_examples": 6,
+    "all_exact_to_native_cpu": true,
+    "report": "validation/numerical_stability.json",
+    "exceptional_row_scenarios": 576,
+    "field_comparisons": 2880,
+    "exceptional_row_failures": 0,
+    "audit_report": "validation/exceptional_rows.json",
+    "audit_tool": "tools/check_exceptional_rows.py",
+    "forward_size_synchronizations_added": 1,
+    "fixed_log_normalizer_threshold": 0.01,
+    "selection_frequency_in_training": "unmeasured"
+  },
+  "pointwise_models": "validation/pointwise_model.json"
+}

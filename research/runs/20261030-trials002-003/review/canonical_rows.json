@@ -1,0 +1,300 @@
+{
+  "cutoff_utc": "2026-10-30T13:15:28.736390+00:00",
+  "new_ids": [],
+  "row_count": 121,
+  "changed_rows": [
+    {
+      "id": "SOUP-NEW-003",
+      "original104": false,
+      "title": "Fuse nested absmax dequantization + offset + NF4 decoding into one output pass (B; C1)",
+      "verdict": "conditional",
+      "abstract_legality": "permitted_idea_subject_to_same_task",
+      "runtime_dependency": "allowed baseline only; cited competitor/nanochat code not reusable",
+      "code_reuse": "No imported/copied third-party kernel; source attribution permits ideas, not implementation copying.",
+      "hardware_fit": "Executed guarded original backward-functional nested NF4 decoder only, preserving native forward and ordinary consumer matmul on Tesla T4, Torch 2.11.0+cu128/Triton 3.6.0. Sealed solution hashes match execution console. Narrow GPU preflight reports PASS; broader catalog variants are not validated.",
+      "semantic_risk_level": "high",
+      "semantic_risk": "Use actual QuantState and supplied FP32 state2.code dynamic256 table; outer code metadata does not replace canonical NF4 lookup. Flat block indexing, separate FP32 scale multiply then offset add, high-even nibble/tails and BC layout are mandatory. CUDA forward fallback decodes directly to A.dtype; backward first dequantizes to state.dtype then casts to grad.dtype. CPU native misaligned-row result is not a universal oracle.",
+      "cpu_evidence_status": "CPU_real_QuantState_oracle_with_retained_native_backend_FAIL_no_CUDA_validation",
+      "cpu_evidence": "Cycle4 NF4: three passing groups and one genuine native CPU parity FAIL. Independent scalar/vector/publicAPI decode covers all16 NF4 x all256 supplied nested indices, real default and synthetic tables, FP16/FP32, tails/layouts and six tiny quantizer-returned states. Primary odd-K exhaustive fixtures use generic4bit fallback; aligned-native controls are distinguished in results. Native shape[3,80],block64 differs in48/240 values,maxabs1; same payload/scales flat[1,240] is exact. This is CPU oracle limitation, not Qwen/CUDA/candidate failure. Dtype-shortcut negatives retained.",
+      "cpu_artifacts": [
+        {
+          "path": "cpu_tests/results.json",
+          "sha256": "87f48c098af876f0987cd90b1a3ea3cdec9ce928484a9b41029e14fb6fc31243",
+          "groups": [
+            "nf4_separate_scale_offset_and_packing"
+          ],
+          "torch": "2.15.0+cpu",
+          "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+          "script_sha256": "5a41b837a2fe89a505eb43c6ca15f39eb1cd1903f4243eaddd4a7445ec0707a1"
+        },
+        {
+          "path": "cpu_tests/cycle4/nf4_results.json",
+          "sha256": "5b37e2f9939331add1ec74088a53161515c034602e2a558eb0edf54b96709dc6",
+          "groups": [
+            "nf4_exhaustive_independent_metadata_and_cpu_decode",
+            "actual_nested_quantstate_and_public_layouts",
+            "forward_backward_dtype_and_inner_block_contracts",
+            "actual_cpu_row_alignment_parity_probe"
+          ],
+          "torch": "2.15.0+cpu",
+          "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+          "script_sha256": "805207075500efa445289a3b6a2fd080d6eaa27c57a4f394d4166f85d65577f9"
+        }
+      ],
+      "gpu_unknown": [
+        "Exact result/checks bytes and standalone metrics archive are unavailable; announced result SHA is not independently verified against downloaded bytes. Exact minimum share is unknown beyond the printed rounded percentage.",
+        "Hidden rows/seed and official jury source/admission review remain unknown.",
+        "No robust command-time or sampled-peak improvement established; compatible combinations require actual new authorized measurements, not arithmetic addition of shares.",
+        "Two isolated sessions passed clean checks, but exact train-window overlap and zero concurrency slowdown were not established by these candidate runs.",
+        "Forward nested decode fusion, custom NF4 GEMM and states outside the narrow guarded backward route remain untested; retained native CPU misaligned-row failure is not a CUDA failure."
+      ],
+      "priority": "P1",
+      "implementation_group": "nested_NF4_decode",
+      "own_share_eligible": "Actual useful original kernel launches confirmed by official check 3, but this standalone minimum is log-rounded 2.5% and fails 5%; exact fraction unavailable without raw result bytes.",
+      "verdict_reason": "trial002 standalone fails useful own-share: log-rounded 2.5% < 5%; other 9/10 official checks and 79 Soup regressions pass. Public eval passes; hidden quality unknown. Paired command base/solution ratio approximately 0.9908; no robust or credited gain, no earned points. Keep conditional as a potentially useful component.",
+      "required_proof": [
+        "Interpret this as narrow backward-functional nested NF4 decoder only, preserving native forward and ordinary consumer matmul; do not generalize to all mechanisms under the catalog ID.",
+        "Keep immutable source and recovered-console evidence; if raw artifacts are later available through an authorized route, hash-bind result/checks and recompute exact per-run share without erasing this historical evidence level.",
+        "Public numerical/task/resource checks passed for this trial; preserve all earlier CPU negative witnesses and engineering tolerance limitations. Hidden quality and final official jury remain separate.",
+        "A combination must prove useful common original kernel names and >=5% event-ms/timed-loop share in every actual solution run, with frozen task/harness, unchanged regressions and all remaining gates. No redundant work or padding.",
+        "Broader/uncovered design proof retained: Real installed CPU package/source identity is established only for tested states; confirm actual CUDA route, state metadata and compiled rounding on T4. Preserve existing small-M fused bnb paths unless separately justified.",
+        "Broader/uncovered design proof retained: Guard NF4 uint8 storage, actual shape/block64, nested block256/FP32 tables and scalar offset, compatible device/layout/dtype; unsupported routes use original reference. Byte reinterpretation is not numeric conversion; one-byte BC shim is a recorded corner.",
+        "Broader/uncovered design proof retained: Forward and backward use distinct output-cast contracts; compare actual input/LoRA gradients and original ordinary matmul/bias behavior, not just weight decoder outputs.",
+        "Broader/uncovered design proof retained: Retain native CPU[3,80] parity FAIL and flat/aligned controls; do not modify an independent flat-format oracle to match that backend limitation, infer CUDA failure or infer failure on actual aligned Qwen dimensions.",
+        "Broader/uncovered design proof retained: Bit/rounding oracle covers all 16 NF4 and 256 scale codes; FP32 scale multiply THEN offset add, then NF4 multiply/cast. Do not contract into FMA.",
+        "Broader/uncovered design proof retained: QuantState block sizes, orientation, bias, dtype, nested state, storage views and odd tails come from real objects.",
+        "Broader/uncovered design proof retained: Instrument actual forward CUDA-backend fallback and separate functional backward dispatch; prove replaced paths, no measurement-specific behavior.",
+        "Broader/uncovered design proof retained: Dense decode scratch survives consumer GEMM and is released; no all-layer dense cache.",
+        "Broader/uncovered design proof retained: Compare input and LoRA gradients under real scaler, not only decoded weights."
+      ],
+      "next_action": "Preserve measured standalone failure; retain this useful component for a genuinely compatible measured combination or a distinct useful operation. Do not rerun to chase noise, sum standalone shares as a pass, add redundant work, or slow kernels to reach 5%.",
+      "stopping_condition": "Standalone admission fails own-share. Keep conditional component verdict and existing priority; no correctness/performance points or robust gain. Any failed/unranked visualization needs parent authorization and actual reviewed coordinates.",
+      "rule_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417"
+      ],
+      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L418-L607; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py#L927-L1077; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py#L199-L342; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cpu/ops.py#L94-L240; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py#L904-L981; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py#L294-L498; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py#L609-L637; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/utils.py#L15-L34; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/cpu_ops.cpp#L355-L434",
+      "measured_soup_t4_gain": null,
+      "gpu_evidence": {
+        "trial": "trial002",
+        "scope": "backward-functional nested NF4 decoder only, preserving native forward and ordinary consumer matmul",
+        "evidence_level": "terminal execution console verified; exact raw result/checks unavailable",
+        "reported_result_sha256": "20b63d9abad9f62ab97a6678f10d62bd66ad884911fb8b0e91d1ef2e7f924854",
+        "result_bytes_independently_verified": false,
+        "source_sha256": {
+          "solution/__init__.py": "dc0e60d1b9b5980e14ce47148175648bf74816830c52bcce86444a0a74002570",
+          "solution/nf4_decode.py": "b8ae9ba1a3d1e86517bea7b94b61462c5132efd19079ca32cc09e5f7d3f151f8",
+          "solution/verify_trial002.py": "941b17ffff650197fd838fc9f3c7f580c18d4e33c81ccf948817b856ee918218"
+        },
+        "runner_sha256": "7bbfe3f4797f44b98420211256b6abe4687011d1673fdb1a6285adbe91a97b6c",
+        "official_pass_count": 9,
+        "official_check_count": 10,
+        "failed_checks": [
+          4
+        ],
+        "own_share_percent_log_rounded": 2.5,
+        "own_share_exact_fraction": null,
+        "hidden_quality": "UNKNOWN",
+        "preflight": {
+          "status": "passed",
+          "elapsed_s": 9.754441679000024,
+          "case_group_counts": {
+            "actual_states": 16,
+            "full_table": 4,
+            "nonfinite_metadata": 3,
+            "native_gradient_cases": 8,
+            "fallback_cases": 4
+          }
+        },
+        "raw_repeats_from_log": [
+          {
+            "run": "base_1",
+            "side": "base",
+            "wall_s": 86.7,
+            "gpu_peak_mib": 14345
+          },
+          {
+            "run": "solution_1",
+            "side": "solution",
+            "wall_s": 85.28,
+            "gpu_peak_mib": 14345
+          },
+          {
+            "run": "solution_2",
+            "side": "solution",
+            "wall_s": 85.19,
+            "gpu_peak_mib": 14345
+          },
+          {
+            "run": "base_2",
+            "side": "base",
+            "wall_s": 82.21,
+            "gpu_peak_mib": 14345
+          }
+        ],
+        "public_eval_loss": {
+          "base": 2.04967,
+          "solution": 2.04968
+        },
+        "standalone_admission": false,
+        "earned_points": null
+      }
+    },
+    {
+      "id": "SOUP-NEW-002",
+      "original104": false,
+      "title": "One vocabulary reduction produces stable logsumexp, weighted exponential sum for entropy, target logit and first-wins argmax; reuses reads (T, S; C1/C2)",
+      "verdict": "conditional",
+      "abstract_legality": "permitted_idea_subject_to_same_task",
+      "runtime_dependency": "allowed baseline only; cited competitor/nanochat code not reusable",
+      "code_reuse": "No imported/copied third-party kernel; source attribution permits ideas, not implementation copying.",
+      "hardware_fit": "Executed guarded original entropy-only TRL helper reduction on materialized logits, preserving native CE/backward, accuracy and rewind on Tesla T4, Torch 2.11.0+cu128/Triton 3.6.0. Sealed solution hashes match execution console. Narrow GPU preflight reports PASS; broader catalog variants are not validated.",
+      "semantic_risk_level": "high",
+      "semantic_risk": "Distinct main CE full-B*T, entropy all-row-then-mask and accuracy/rewind T-1 contracts; preserve global denominator, cast/GradScaler order, first-index ties, full decoder gradients and detached per-call metrics. Naive ignored-row pruning and exceptional sanitization are disproved; finite guarded compact CPU oracle does not establish CUDA rounding or analytic-gradient equivalence.",
+      "cpu_evidence_status": "CPU_dense_head_guard_and_metrics_oracle_not_optimized_kernel_validation",
+      "cpu_evidence": "Cycle4 four head evidence groups: 25 finite dense/guarded-compact native-autograd cases and 18 original-full-geometry exceptional fallbacks match tested finite values/nonfinite positions; metric and synthetic packet-lifecycle discriminators retained. Full CE final ignored rows can contribute NaN gradients; masked entropy multiplies rather than selects. Actual tested strides are contiguous. Shared dense forward/native metric helper is an oracle, not optimized-metric/streaming proof. Prior single-LSE and ~5.785% near-certain relative-CE witnesses remain.",
+      "cpu_artifacts": [
+        {
+          "path": "cpu_tests/results.json",
+          "sha256": "87f48c098af876f0987cd90b1a3ea3cdec9ce928484a9b41029e14fb6fc31243",
+          "groups": [
+            "head_causal_masks_global_denominator_metrics",
+            "centered_reductions_reject_single_lse",
+            "scaled_gradient_rounding_boundary"
+          ],
+          "torch": "2.15.0+cpu",
+          "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+          "script_sha256": "5a41b837a2fe89a505eb43c6ca15f39eb1cd1903f4243eaddd4a7445ec0707a1"
+        },
+        {
+          "path": "cpu_tests/cycle2/results.json",
+          "sha256": "d90e708c51a1b6313f2abf6ac31ef4fb6677a9e81d6603c1bf7f79e2d45fcbd5",
+          "groups": [
+            "finite_centered_vocabulary_tile_merge",
+            "padding_empty_tile_and_global_argmax",
+            "nonfinite_incoming_gradient_and_denominator"
+          ],
+          "torch": "2.15.0+cpu",
+          "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+          "script_sha256": "c99335ce9f4267aaeeb2383c24f239496f5b73da727e935085b60b1b2b32d813"
+        },
+        {
+          "path": "cpu_tests/cycle4/head_results.json",
+          "sha256": "1f758a534a3328664768a3e2bb4a696880ce83aca8f73f6b69cda10ceb2bb762",
+          "groups": [
+            "combined_finite_head_metrics_and_guarded_backward",
+            "full_geometry_exceptional_guard_dispatch",
+            "metric_nonfinite_and_final_position_discriminators",
+            "synthetic_metric_packet_lifecycle"
+          ],
+          "torch": "2.15.0+cpu",
+          "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+          "script_sha256": "4a5ad5e41f56be6eaf61b5b9ba5360be02debfeb26d88300c773a11c3d403513"
+        }
+      ],
+      "gpu_unknown": [
+        "Exact result/checks bytes and standalone metrics archive are unavailable; announced result SHA is not independently verified against downloaded bytes. Exact minimum share is unknown beyond the printed rounded percentage.",
+        "Hidden rows/seed and official jury source/admission review remain unknown.",
+        "No robust command-time or sampled-peak improvement established; compatible combinations require actual new authorized measurements, not arithmetic addition of shares.",
+        "Two isolated sessions passed clean checks, but exact train-window overlap and zero concurrency slowdown were not established by these candidate runs.",
+        "Generic preflight summary prints passed but omits elapsed/group detail; individual per-case arrays were not recovered. No inferred numeric maxima or fabricated case counts.",
+        "Full-metric single-pass fusion, target logit/argmax, logits-free head and compact/analytic backward remain untested by this entropy-only result."
+      ],
+      "priority": "P0/P1",
+      "implementation_group": "complete_head_pipeline",
+      "own_share_eligible": "Actual useful original kernel launches confirmed by official check 3, but this standalone minimum is log-rounded 1.2% and fails 5%; exact fraction unavailable without raw result bytes.",
+      "verdict_reason": "trial003 standalone fails useful own-share: log-rounded 1.2% < 5%; other 9/10 official checks and 79 Soup regressions pass. Public eval passes; hidden quality unknown. Paired command base/solution ratio approximately 1.0198; no robust or credited gain, no earned points. Keep conditional as a potentially useful component.",
+      "required_proof": [
+        "Interpret this as narrow entropy-only TRL helper reduction on materialized logits, preserving native CE/backward, accuracy and rewind; do not generalize to all mechanisms under the catalog ID.",
+        "Keep immutable source and recovered-console evidence; if raw artifacts are later available through an authorized route, hash-bind result/checks and recompute exact per-run share without erasing this historical evidence level.",
+        "Public numerical/task/resource checks passed for this trial; preserve all earlier CPU negative witnesses and engineering tolerance limitations. Hidden quality and final official jury remain separate.",
+        "A combination must prove useful common original kernel names and >=5% event-ms/timed-loop share in every actual solution run, with frozen task/harness, unchanged regressions and all remaining gates. No redundant work or padding.",
+        "Broader/uncovered design proof retained: Main causal CE consumes full B*T logits with final ignored labels; entropy computes all B*T rows then multiplies attention mask, including 0*NaN contamination. Accuracy/rewind use T-1. No selected-only entropy or sanitizing exp(logp)*logp at negative infinity.",
+        "Broader/uncovered design proof retained: Finite compact route requires effective FP16 W, every actual rounded FP16 logit, incoming scalar and normalized upstream finite, plus positive finite denominator/count. Retain full unmodified hidden state until backward-only guards settle; exceptional fallback restores original full geometry and native operation order.",
+        "Broader/uncovered design proof retained: Native summed CE then division normalizes incoming scalar before NLL/log-softmax; neither ((p-onehot)/D)*g nor (p-onehot)*(g/D) is proved equivalent to native target subtraction. Preserve scaled dlogits cast boundary; no scaler/optimizer intervention.",
+        "Broader/uncovered design proof retained: Per-call detached metric packet must preserve original row identities, supervised versus attention token counts, exact train/eval association and once-only consumption. Actual HF/TRL/Soup integration remains untested; no dummy logits or stale packet.",
+        "Broader/uncovered design proof retained: CPU oracle intentionally shares dense forward/native metrics and native-autograd backward. It does not validate streamed reductions, analytic gradients, strided layouts, full-vocabulary151936, gathered CUDA GEMM rounding, CUDA scaler, allocations, own-share or complete cold-command gates.",
+        "Broader/uncovered design proof retained: Centered tile merges still need near-zero RELATIVE CE/rewind tests, not only absolute allclose: sequential singleton merge CPU witness is ~5.785% relative CE error. Empty states must be explicit identities; ties use minimum GLOBAL index. Balanced/reverse improvement in a single witness is not universal proof.",
+        "Broader/uncovered design proof retained: For a simple finite-domain analytic/compact backward: check effective FP16 head weights, actual rounded FP16 logits, incoming gradient and effective normalized upstream are finite with positive finite denominator; retain full hidden/exceptional data for exact reference-ordered fallback. Finite loss or finite source operands alone are insufficient; include guard synchronization/fallback costs. No nan_to_num, clamping, manufactured gradients or scaler intervention.",
+        "Broader/uncovered design proof retained: Do not use single rounded LSE=m+log(s) as a generic oracle: preserve max and centered log-normalizer separately, or recompute a baseline-style centered form. CPU finite-FP16 counterexample loses tiny CE; centered entropy still needs real GPU reduction-order testing.",
+        "Broader/uncovered design proof retained: CE and accuracy use causal-shifted supervised labels; entropy uses all attention-mask positions including prompt and last token.",
+        "Broader/uncovered design proof retained: Global num_items_in_batch denominator, row rewind identities/counts and first-index argmax ties.",
+        "Broader/uncovered design proof retained: Baseline receives FP32 upcasts of rounded FP16 head logits; compare stable entropy identity against actual log_softmax/exp baseline, especially near-zero entropy.",
+        "Broader/uncovered design proof retained: Use baseline materialized logits first; missing tail/empty/finite cases must not be hidden by padding or chunk averaging."
+      ],
+      "next_action": "Preserve measured standalone failure; retain this useful component for a genuinely compatible measured combination or a distinct useful operation. Do not rerun to chase noise, sum standalone shares as a pass, add redundant work, or slow kernels to reach 5%.",
+      "stopping_condition": "Standalone admission fails own-share. Keep conditional component verdict and existing priority; no correctness/performance points or robust gain. Any failed/unranked visualization needs parent authorization and actual reviewed coordinates.",
+      "rule_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L151-L164",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251"
+      ],
+      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/loss/loss_utils.py#L35-L73; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py#L1238-L1320; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py#L572-L609; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py#L168-L229; https://github.com/pytorch/pytorch/blob/70d99e998b4955e0049d13a98d77ae1b14db1f45/aten/src/ATen/native/cuda/SoftMax.cu#L52-L62",
+      "measured_soup_t4_gain": null,
+      "gpu_evidence": {
+        "trial": "trial003",
+        "scope": "entropy-only TRL helper reduction on materialized logits, preserving native CE/backward, accuracy and rewind",
+        "evidence_level": "terminal execution console verified; exact raw result/checks unavailable",
+        "reported_result_sha256": "cf506db650e0ecd76d4512b6a78985c98fb85e33f3d76e724454f79d1d0134bc",
+        "result_bytes_independently_verified": false,
+        "source_sha256": {
+          "solution/__init__.py": "a48132f8355ba7b3c7afe44bd0378e629ba3561303a4efc7adbda0e6a18e9189",
+          "solution/entropy.py": "67cb4ebbea7d3cada991aaa8432484fee71ce7d74b0b340207cf4ab7bce5faca",
+          "solution/verify_trial003.py": "06b39308ebd7259c2e08e79f772d3da1d06e5edbdb36c20349b2ec97eba6bf5d"
+        },
+        "runner_sha256": "8dbbdf000c52caa360ae7c29688e6b78e4e3dffb1c8b18565e1a0b2f8a2ceba7",
+        "official_pass_count": 9,
+        "official_check_count": 10,
+        "failed_checks": [
+          4
+        ],
+        "own_share_percent_log_rounded": 1.2,
+        "own_share_exact_fraction": null,
+        "hidden_quality": "UNKNOWN",
+        "preflight": {
+          "status": "passed",
+          "elapsed_s": null,
+          "case_group_counts": {}
+        },
+        "raw_repeats_from_log": [
+          {
+            "run": "base_1",
+            "side": "base",
+            "wall_s": 88.24,
+            "gpu_peak_mib": 14345
+          },
+          {
+            "run": "solution_1",
+            "side": "solution",
+            "wall_s": 83.44,
+            "gpu_peak_mib": 14345
+          },
+          {
+            "run": "solution_2",
+            "side": "solution",
+            "wall_s": 85.35,
+            "gpu_peak_mib": 14345
+          },
+          {
+            "run": "base_2",
+            "side": "base",
+            "wall_s": 83.89,
+            "gpu_peak_mib": 14345
+          }
+        ],
+        "public_eval_loss": {
+          "base": 2.04963,
+          "solution": 2.04965
+        },
+        "standalone_admission": false,
+        "earned_points": null
+      }
+    }
+  ]
+}

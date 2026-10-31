@@ -1,0 +1,8 @@
+{
+  "files": {
+    "solution/__init__.py": "3a1708902b2a38bdf6a0fb1423f4668b09e137fafaa8873397c47fe0b74d5719",
+    "solution/rmsnorm.py": "95f22a8e09309d1d6be57d389d5dc8fc8feaa05ba4a8510192443a94009a9dde",
+    "solution/verify_trial001.py": "eb9bcc865b255bb3b63dce567714080f01a604004ae4b8a0577901add7290e9e"
+  },
+  "runner_sha256": "7513feac23ab039070c31be7c4229fed2ed1df6f090e73cd65c653cad548cc79"
+}

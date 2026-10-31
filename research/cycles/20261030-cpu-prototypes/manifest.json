@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "scope": "scientific summaries only; source/raw data remain local and are not published",
+  "jury_acceptance_utc": "2026-10-30T14:31:51Z",
+  "existing_ids": [
+    "SOUP-NEW-001",
+    "SOUP-NEW-002",
+    "L1-TILELANG-03",
+    "gemm-09"
+  ],
+  "new_ids": 0,
+  "priority_changes": false,
+  "gpu_measurements_added": 0,
+  "official_points": null,
+  "reviewed_local_artifact_sha256": {
+    "ce_cpu_prototype/comparison_report.md": "1638224547234e00d97fce67e1a49e72ab4c51bd6222684415fd11cced78fe1c",
+    "ce_cpu_prototype/comparison_results.json": "c60248175068c9d1a4ca63822cbfbfd26803eb287939b4efadb7d44c3cebeb6c",
+    "ce_cpu_prototype/engineering_gates.json": "5da1c6d54fd1066eafcb9c017a23e610e6356b0260d1306205aaee18b0ca117c",
+    "nf4_matmul_cycle9/README.md": "f87e6683548bf3c7c4dd15bb929afb24e4678f98254af2d107e5a1dba16969a1",
+    "nf4_matmul_cycle9/results.json": "09344185cad8b7c382d34e8cffd104801edee2203b27503aca27702790078f32",
+    "nf4_matmul_cycle9/manifest.json": "d41658359c504c8168161197676aa613d08bc037812efe0e50c6d03858cfc5be"
+  },
+  "published_files": {
+    "README.md": "9d108e5eb8c3d24d0576ebe41e55190e3aacc388243dbc59caf80bb1cf6a2d9d",
+    "ce-prototype-summary.md": "de79f750ea08900189ff37775b4c7075cbbec3b520523a4bcdd18f577ed60009",
+    "nf4-reference-summary.md": "7b48690c251451c4f636bd1cd10999f9780e73459f1812e075c66bfb3ef9712c"
+  },
+  "omitted": [
+    "implementation and test source",
+    "executable commands",
+    "raw numerical arrays",
+    "runtime and infrastructure data",
+    "private account or deployment identifiers",
+    "trial004 runtime narrative",
+    "weights"
+  ]
+}
