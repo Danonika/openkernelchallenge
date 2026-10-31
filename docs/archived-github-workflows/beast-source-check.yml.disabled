@@ -1,0 +1,41 @@
+name: Beast fusion source validation
+
+on:
+  pull_request:
+    paths:
+      - "solution/**"
+      - "BEAST_FUSION.md"
+      - ".github/workflows/beast-source-check.yml"
+  push:
+    branches:
+      - "soup/beast-external-contributor-fusion-20261031"
+
+jobs:
+  syntax-and-entrypoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Compile Python source without importing GPU dependencies
+        run: python -m compileall -q solution
+      - name: Check fixed zero-argument apply() and required original files
+        run: |
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+
+          tree = ast.parse(Path("solution/__init__.py").read_text())
+          entry = [n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "apply"]
+          assert len(entry) == 1 and not entry[0].args.args and not entry[0].args.kwonlyargs
+          assert entry[0].args.vararg is None and entry[0].args.kwarg is None
+          needed = [
+              "nf4.py", "frozen_storage.py", "rmsnorm.py", "rotary.py",
+              "integration.py", "hero3_vocab.py", "hero3_pack.py",
+              "hero3_qkv.py", "test_beast_fusion.py",
+          ]
+          assert all((Path("solution") / f).is_file() for f in needed)
+          print("Source-level entrypoint and import tree PASS")
+          PY
