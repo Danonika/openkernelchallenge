@@ -1,0 +1,12 @@
+data/
+runs/
+runs_*/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local credentials and environments are never submitted.
+.env
+.env.*
+.venv/
