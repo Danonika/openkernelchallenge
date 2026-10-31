@@ -1,14 +1,18 @@
 # Submission: Duo
 
-Ветка поставки готового комплекта — **main**. Воспроизводимый вычислительный COMMIT — `156d8f9f944a928e31defaaf322d6130a9032afa`; последующие документационные и merge-коммиты сохраняют измеренные 38 core-файлов.
+Ветка поставки — **main**. Подтверждённые результаты **47,73 с / 2263 MiB, 10/10 и 79/79 PASS** относятся к успешной сохранённой **Kaggle v1**, source COMMIT `156d8f9f944a928e31defaaf322d6130a9032afa`.
 
-Финальная публичная Kaggle-версия завершила B–S–S–B, **10/10 автоматических проверок и 79/79 регрессий**. Измеренные solution/protected-файлы соответствуют source commit ниже. Окончательное решение жюри и отправка на платформу не подменяются этим отчётом.
+Текущий [минимальный notebook в main](https://example.invalid/redacted) закреплён на достижимом из **main** source COMMIT `9937c8534d96855a6d713e38256c2f1aae34023f`. Bootstrap содержит проверенный снимок исходников; дополнительных веток и GitHub-токена не требует. Все 38 core-файлов и canonical solution SHA `2855411877ff29f8cc9f6d54dafca376c3ca805c0e264b8e39211cf428035f56` сохранены. Новые результаты минимальной версии здесь не заявляются.
+
+The current minimal notebook embeds the verified source snapshot pinned to main-reachable commit `9937c8534d96855a6d713e38256c2f1aae34023f`; it has no secondary-branch dependency. Core source is unchanged. The successful v1 measurements remain the evidence reported below; no new minimal-version run result is claimed.
+
+Успешная публичная Kaggle-версия v1 завершила B–S–S–B, **10/10 автоматических проверок и 79/79 регрессий**. Измеренные solution/protected-файлы соответствуют source commit ниже. Окончательное решение жюри и отправка на платформу не подменяются этим отчётом.
 
 ## Ссылки
 
 - Репозиторий команды: https://example.invalid/redacted
-- Финальный вычислительный commit: https://example.invalid/redacted
-- Публичная сохранённая Kaggle-версия, COMMIT равен указанному SHA: https://example.invalid/redacted
+- Вычислительный commit успешной v1: https://example.invalid/redacted
+- Публичная сохранённая Kaggle-версия v1, COMMIT равен указанному SHA: https://example.invalid/redacted
 - Демо-видео, **168 секунд**: https://example.invalid/redacted
 - Презентация: https://example.invalid/redacted
 - [PPTX](presentation/Soup-Duo-38123-Presentation-v1.pptx), [сценарий](presentation/Demo-Script-RU.md), [субтитры](presentation/Soup-Duo-Demo-v1.srt).
@@ -35,7 +39,7 @@
 
 Командная история реализации: [Eeoneget, ce62d67432ad8e530abff12bb36d3ab15668502a](https://github.com/Eeoneget/hackathon-decentrathon-6/tree/ce62d67432ad8e530abff12bb36d3ab15668502a), плюс input-only MLP replay при N>448 и workspace головы 4096 при N>=1024. Идеи, источники и лицензии — в README и [PROVENANCE](docs/PROVENANCE.md). Готовые kernel-библиотеки не используются.
 
-## Результат финального Run All
+## Результат успешного сохранённого Run All v1
 
 | Итог B–S–S–B, Kaggle T4 | База Soup | Duo | Отношение |
 |---|---:|---:|---:|
@@ -55,7 +59,7 @@
 
 Числа 38,123 с / 2261 MiB из таблицы и 46,78 с / 2263 MiB из прежней сессии v32 — исторические, не итог финального commit. Официальные отношения выше получены в одной новой сессии с двумя запусками каждой стороны.
 
-## Проверка комплекта
+## Проверка комплекта по успешной v1
 
 - [x] B–S–S–B завершён на одной T4 в одной сессии, без изменения задачи.
 - [x] Все десять официальных проверок PASS, включая 79 регрессий без пропуска.

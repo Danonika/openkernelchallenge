@@ -1,12 +1,16 @@
 # Duo — Soup Kernel Challenge
 
-Ветка поставки готового комплекта — **main**. Воспроизводимый вычислительный COMMIT — `156d8f9f944a928e31defaaf322d6130a9032afa`; последующие документационные и merge-коммиты сохраняют измеренные 38 core-файлов.
+Ветка поставки — **main**. Подтверждённые результаты **47,73 с / 2263 MiB, 10/10 и 79/79 PASS** относятся к успешной сохранённой **Kaggle v1**, source COMMIT `156d8f9f944a928e31defaaf322d6130a9032afa`.
+
+Текущий [минимальный notebook в main](https://example.invalid/redacted) закреплён на достижимом из **main** source COMMIT `9937c8534d96855a6d713e38256c2f1aae34023f`. Bootstrap содержит проверенный снимок исходников; дополнительных веток и GitHub-токена не требует. Все 38 core-файлов и canonical solution SHA `2855411877ff29f8cc9f6d54dafca376c3ca805c0e264b8e39211cf428035f56` сохранены. Новые результаты минимальной версии здесь не заявляются.
+
+The current minimal notebook embeds the verified source snapshot pinned to main-reachable commit `9937c8534d96855a6d713e38256c2f1aae34023f`; it has no secondary-branch dependency. Core source is unchanged. The successful v1 measurements remain the evidence reported below; no new minimal-version run result is claimed.
 
 **На одной Kaggle T4: 47,73 с вместо 86,39 с, 2263 MiB вместо 14345 MiB, eval loss +0,009%. Все 10 автоматических проверок пройдены.**
 
 Решение ускоряет фиксированное LoRA-обучение Soup 0.77.0, сокращая временные буферы, сохранённые активации и число запусков операций. Данные, настройки, адаптер и выходы Soup сохраняются.
 
-- [Публичный Kaggle notebook с сохранённым результатом](https://example.invalid/redacted)
+- [Публичный Kaggle notebook v1 с сохранённым результатом](https://example.invalid/redacted)
 - [Измеренный исходный commit `156d8f9f944a`](https://example.invalid/redacted)
 - [Презентация](https://example.invalid/redacted) · [Демо-видео, 2 мин 48 с](https://example.invalid/redacted)
 
@@ -25,7 +29,7 @@
 
 Компиляция в потоке того же процесса входит в измеряемую команду. Готовых и межзапусковых compiled caches нет. Полное время включает загрузку, компиляцию, сохранение адаптера и завершение процесса.
 
-## Результаты финального запуска
+## Результаты успешного сохранённого запуска v1
 
 | Итог B–S–S–B, Kaggle T4 | База Soup | Duo | Отношение |
 |---|---:|---:|---:|
@@ -46,11 +50,13 @@
 
 ## Как воспроизвести
 
-Открыть [сохранённый notebook](https://example.invalid/redacted), выбрать Copy & Edit, GPU T4 x2, Internet on и Run All. COMMIT закреплён на `156d8f9f944a928e31defaaf322d6130a9032afa`. Самостоятельный файл: [notebooks/Soup-Duo-Final-Submission-v1.ipynb](notebooks/Soup-Duo-Final-Submission-v1.ipynb).
+Для воспроизведения успешной v1 открыть [сохранённую Kaggle-версию 0](https://example.invalid/redacted), выбрать Copy & Edit, GPU T4 x2, Internet on и Run All; её COMMIT — `156d8f9f944a928e31defaaf322d6130a9032afa`.
+
+Текущая минимальная поставка: [notebook в main](https://example.invalid/redacted), source COMMIT `9937c8534d96855a6d713e38256c2f1aae34023f`. Она материализует тот же core-код из встроенного проверенного snapshot и вызывает официальный `run_task.py`. Удаление остальных веток на её воспроизведение не влияет.
 
 Bootstrap адаптирован из официального шаблона: материализует точный plaintext-снимок реального командного commit и проверяет Git blob SHA и SHA-256 до исполнения. Доступ к private GitHub и GITHUB_TOKEN при запуске не требуются. В snapshot нет данных, адаптеров, весов или compiled caches. [Исходный официальный шаблон](templates/kaggle_notebook.ipynb) сохранён; `harness/`, `tests/`, `task/` не изменены. В каждом измеряемом запуске компиляционные кеши свежие.
 
-В подготовленной Kaggle-среде эквивалентные команды:
+Полный проверочный протокол успешной v1 в подготовленной Kaggle-среде:
 
 ```bash
 python -m pip install -r requirements.txt
