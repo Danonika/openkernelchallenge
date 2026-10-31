@@ -1,0 +1,40 @@
+{
+  "scope": "Offline SM75 compilation only; no launch or performance measurement",
+  "triton": "3.6.0",
+  "cases": [
+    {
+      "name": "cached_finish",
+      "function": "soup_cached_head_finish",
+      "target": "sm_75",
+      "compiled": true,
+      "registers": 24,
+      "stack_spill_bytes": [
+        0,
+        0,
+        0
+      ],
+      "launch_shared_bytes": 8,
+      "ptx_sha256": "3c7582f9308e6e3f73c7f813175e8181a08888a944ddc6c44f0029bca48a1219",
+      "physical_gpu_execution": false
+    },
+    {
+      "name": "cached_partial",
+      "function": "soup_head_partial_statistics",
+      "target": "sm_75",
+      "compiled": true,
+      "registers": 118,
+      "stack_spill_bytes": [
+        0,
+        0,
+        0
+      ],
+      "launch_shared_bytes": 16,
+      "ptx_sha256": "e68535220d6462fc31248ebf638be9b27e4ae70ba412984d2885b791ccd447eb",
+      "physical_gpu_execution": false
+    }
+  ],
+  "source_sha256": {
+    "candidate/solution/cached_head.py": "8517f37d7d879b35b8b4255460f9a6bf39fe57c05375a69cd5c8d0e800c14de6",
+    "candidate/solution/integration.py": "fd2db3fc3f367751f9eb439fa5901dbf16a06934e4d6ae56fd61063b4363cb5b"
+  }
+}
