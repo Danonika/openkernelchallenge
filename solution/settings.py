@@ -8,7 +8,7 @@ HEAD_MODE = "cached"
 # Keep the native full-shape lm_head GEMM and reconstruct native CE backward
 # in bounded row chunks. The streamed alternative trades recomputation for
 # less live half-logit storage and must be compared with the official harness.
-CACHED_CE_CHUNK_TOKENS = 128
+CACHED_CE_CHUNK_TOKENS = 256
 CHUNK_TOKENS = 256
 SPARSE_BACKWARD = True
 # Keep the vendor GEMM until a T4 run validates the explicit MMA alternative.
