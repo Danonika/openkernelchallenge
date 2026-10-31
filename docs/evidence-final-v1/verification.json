@@ -1,0 +1,159 @@
+{
+  "kind": "COLLECTED_TEAM_38123_COMMITTED_OFFICIAL_PAIRED_RESULT",
+  "execution": "0",
+  "kaggle_url": "https://example.invalid/redacted",
+  "notebook_sha256": "bda44ecf3e6b44493533c5018b7a22f4e7b0a0673cdb7f1a65ff7619cf085bf3",
+  "source_archive_sha256": "537d6332f8cdcda1c51966b267fd1641cff2f83fab38f12aaccdf3abf1086249",
+  "result_sha256": "91483e6e55038dcb7f81be5ae410e6811fe5c9a1fdb33501e6e5f88677c8c0b0",
+  "checks_sha256": "4e3bc3236c6be3a394740028817ce23e6d0717d7a0b6d089e87dc31a3783e868",
+  "evidence_sha256": "f3aa709b5d6e10ab533691984c01140c97af578cc82d01ccdacfab26e89bdd1c",
+  "summary": {
+    "base": {
+      "ok": true,
+      "runs": 2,
+      "wall_s": 86.39,
+      "gpu_peak_mib": 14345,
+      "train_loop_s": 62.95,
+      "eval_loss": 2.04966
+    },
+    "solution": {
+      "ok": true,
+      "runs": 2,
+      "wall_s": 47.73,
+      "gpu_peak_mib": 2263,
+      "train_loop_s": 33.63,
+      "eval_loss": 2.04984
+    },
+    "ratios": {
+      "speedup": 1.81,
+      "memory_ratio": 6.3389,
+      "quality_delta_pct": 0.009
+    }
+  },
+  "official_checks": [
+    {
+      "check": "1. every base and solution run finished",
+      "ok": true,
+      "detail": "2 base and 2 solution runs of 2 each"
+    },
+    {
+      "check": "2. no ready-made kernel libraries",
+      "ok": true,
+      "detail": "loaded: none; imported in solution/: none; packages changed during the run: none"
+    },
+    {
+      "check": "3. own @triton.jit kernels in solution/ run in training",
+      "ok": true,
+      "detail": "fused_head_vocab_kernel (solution/fused_head.py), nf4_group_dequant_kernel (solution/qgroup.py), rmsnorm_kernel (solution/rmsnorm.py), rope_kernel (solution/rope.py); not launched in every solution run: fused_head_rows_kernel, nf4_dequant_dq_kernel, nf4_dequant_pairs_kernel; the example's kernels do not count, under any name: example_swiglu_fwd_kernel, example_swiglu_bwd_kernel"
+    },
+    {
+      "check": "4. own kernels together take >= 5% of the training time",
+      "ok": true,
+      "detail": "9.0% of the training time (lowest of 2 runs, steps 3+)"
+    },
+    {
+      "check": "5. same task and Soup outputs (steps, adapter, settings, tokens, metrics, rewind)",
+      "ok": true,
+      "detail": "identical within tolerance"
+    },
+    {
+      "check": "6. loss curve follows the base",
+      "ok": true,
+      "detail": "base_2: first step 0.00%, mean of all steps 0.01%; solution_1: first step 0.02%, mean of all steps 0.05%; solution_2: first step 0.02%, mean of all steps 0.05% (max 1% and 3%)"
+    },
+    {
+      "check": "7. quality: eval loss at most 0.5% above the base",
+      "ok": true,
+      "detail": "+0.009%"
+    },
+    {
+      "check": "8. not worse than the base on time or memory (10% margin)",
+      "ok": true,
+      "detail": "time x0.553, memory x0.158 of the base"
+    },
+    {
+      "check": "9. clean measurement (a T4, idle GPUs, one GPU, harness allocator, peaks agree)",
+      "ok": true,
+      "detail": "clean"
+    },
+    {
+      "check": "10. Soup regression tests with your patches",
+      "ok": true,
+      "detail": "79 passed in 0.46s"
+    }
+  ],
+  "automatic_checks_passed": true,
+  "evidence_integrity_passed": true,
+  "useful_kernel_shares": [
+    {
+      "run": "solution_1",
+      "fraction": 0.09045567828682195,
+      "measured_team_kernels": [
+        "fused_head_vocab_kernel",
+        "nf4_group_dequant_kernel",
+        "rmsnorm_kernel",
+        "rope_kernel"
+      ],
+      "useful_common_kernels": [
+        "fused_head_vocab_kernel",
+        "nf4_group_dequant_kernel",
+        "rmsnorm_kernel",
+        "rope_kernel"
+      ]
+    },
+    {
+      "run": "solution_2",
+      "fraction": 0.09341004373886279,
+      "measured_team_kernels": [
+        "fused_head_vocab_kernel",
+        "nf4_group_dequant_kernel",
+        "rmsnorm_kernel",
+        "rope_kernel"
+      ],
+      "useful_common_kernels": [
+        "fused_head_vocab_kernel",
+        "nf4_group_dequant_kernel",
+        "rmsnorm_kernel",
+        "rope_kernel"
+      ]
+    }
+  ],
+  "ownership": {
+    "status": "TEAM_CODE_USER_CONFIRMED",
+    "confirmation_date": "2026-10-31",
+    "basis": "The human user confirmed that the 38.123 s code belongs to teammates and team agents.",
+    "public_source_attribution": "Eeoneget, ce62d67432ad8e530abff12bb36d3ab15668502a; Danonika/public published notebook",
+    "source_comments_retained": true,
+    "derived_research_only_ownership_annotations_superseded": true,
+    "manual_jury_review": "PENDING"
+  },
+  "adapter_artifacts": [
+    {
+      "run": "base_1",
+      "file": "base_1-adapter.zip",
+      "size": 36499788,
+      "sha256": "12365f4cea6154ee214d7a4bceb70302818d7afae065fc513f1a419845ae2ebe"
+    },
+    {
+      "run": "solution_1",
+      "file": "solution_1-adapter.zip",
+      "size": 36499149,
+      "sha256": "651a2b8112890aa2c966005b27a8ac94ac00b255b370da82e6cab40e8fa000d6"
+    },
+    {
+      "run": "solution_2",
+      "file": "solution_2-adapter.zip",
+      "size": 36499419,
+      "sha256": "f30c0252abd853f7a34507487ee749b727f81bb6814dbc87741caabb11598b51"
+    },
+    {
+      "run": "base_2",
+      "file": "base_2-adapter.zip",
+      "size": 36499768,
+      "sha256": "9445c80ce0da4d98150e163714d541aa6a9da9db3cff8bae2f9a30a217eb6c36"
+    }
+  ],
+  "manual_jury_review": "PENDING",
+  "final_git_commit": "156d8f9f944a928e31defaaf322d6130a9032afa",
+  "git_tree_sha": "6a0c96a4dd32f98dd54ccffc54eb9a84668e421d"
+}

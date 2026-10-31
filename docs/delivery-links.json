@@ -1,0 +1,32 @@
+{
+  "kaggle": "https://example.invalid/redacted",
+  "presentation": "https://example.invalid/redacted",
+  "video": "https://example.invalid/redacted",
+  "verified_kaggle_public": true,
+  "verified_deck_anyone_reader": true,
+  "verified_video_anyone_reader": true,
+  "source_commit": "156d8f9f944a928e31defaaf322d6130a9032afa",
+  "source_tree": "6a0c96a4dd32f98dd54ccffc54eb9a84668e421d",
+  "source_solution_sha256": "2855411877ff29f8cc9f6d54dafca376c3ca805c0e264b8e39211cf428035f56",
+  "video_duration_seconds": 168,
+  "video_bytes": 3736517,
+  "video_sha256": "d36db73613adf12076b936594f2fc44679078519d73bf3b65fb26342f9adbc53",
+  "team": [
+    {
+      "name": "Kolpenova Amina",
+      "role": "Капитан",
+      "github": "",
+      "kaggle": "https://example.invalid/redacted",
+      "captain_contact": "https://example.invalid/redacted"
+    },
+    {
+      "name": "Danonika",
+      "role": "",
+      "github": "",
+      "kaggle": "https://example.invalid/redacted",
+      "captain_contact": ""
+    }
+  ],
+  "platform_submission_status": "NOT_CLAIMED",
+  "manual_jury_review": "PENDING"
+}
