@@ -44,7 +44,7 @@ sys.path.insert(0,'/redacted/local/soup_cloud_env/source/harness')
 import check_rules
 own,copies,lookalikes,banned,broken=check_rules.source_kernels(root/'solution')
 assert set(own)=={'lora_half_scale_add'} and not copies and not banned and not broken
-# Access metadata only, not device APIs; no CUDA initialization.
+
 import importlib.metadata as md
 log=(root/'cpu-tests.log').read_text()
 assert '13 passed' in log

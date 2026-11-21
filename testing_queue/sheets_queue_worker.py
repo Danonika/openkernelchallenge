@@ -80,7 +80,7 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def download(url, limit):
-    # No credentials, cookies, or inherited proxy credentials are sent externally.
+
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), DownloadRedirect())
     try:
         with opener.open(url, timeout=20) as response:
@@ -100,7 +100,7 @@ def sheet_url(value):
             and set(query) in ({'format', 'gid'}, {'format', 'gid', 'range'})
             and ('range' not in query or query['range'] == ['A1:H1000']),
             'Expected the configured Google Sheet CSV export URL with input range A1:H1000')
-    # Result columns may contain large JSON reports. Always export inputs only.
+
     return urllib.parse.urlunsplit((url.scheme, url.netloc, url.path,
         urllib.parse.urlencode({'format': 'csv', 'gid': query['gid'][0], 'range': 'A1:H1000'}), ''))
 
@@ -256,7 +256,7 @@ class Worker:
                     'request_id': rid, 'original_source_sha256': old['source_sha'], 'job_id': old['job_id'], 'row': number})
             return False
         if self.db.execute("SELECT count(*) FROM entries WHERE state NOT IN ('completed','failed','timed_out','interrupted','cancelled','rejected')").fetchone()[0] >= 32:
-            return False  # Leave excess ready rows on the Sheet until space opens.
+            return False
         raw = validate_notebook(spec['inline'].encode() if spec['inline'] is not None else self.fetch(spec['url'], MAX_NOTEBOOK))
         target = self.root / 'inputs' / (rid + '.ipynb')
         temporary = target.with_suffix('.tmp')
@@ -266,8 +266,8 @@ class Worker:
             handle.flush()
             os.fsync(handle.fileno())
         os.replace(temporary, target)
-        # Durable snapshot and ledger precede POST. A lost response retries the
-        # identical sheet-<id> request, which the API handles idempotently.
+
+
         with self.db:
             self.db.execute('INSERT INTO entries VALUES (?,?,?,?,?,?,?,?)',
                 (rid, fingerprint, encoded(spec).decode(), digest(raw), 'pending', None, None, None))
@@ -300,8 +300,8 @@ class Worker:
             self.write('publisher-status.json', {'state': 'synchronized'})
             return 'synchronized'
         except Exception:
-            # Credential/API trouble cannot stop GPU intake or lose results.
-            # Exception text may contain Google request/credential details.
+
+
             self.write('publisher-status.json', {'state': 'retrying',
                 'error': 'Google Sheets result write failed; stored results will retry automatically'})
             return 'retrying'
@@ -339,21 +339,21 @@ class Worker:
                         (row['state'] if transient else 'rejected', str(exc) if isinstance(exc, (RemoteError, InvalidInput)) else 'Snapshot unavailable', row['id']))
                 self.receipt(row['id'])
                 if submit and transient:
-                    break  # Queue capacity/network failure applies to subsequent submissions too.
+                    break
         return count
 
     def tick(self):
         counts = {'rows': 0, 'accepted': 0, 'submitted': 0, 'errors': 0}
-        self.advance()  # Existing jobs progress even if the Sheet is unavailable.
+        self.advance()
         try:
             rows = parse_sheet(self.fetch(self.url, MAX_CSV))
             ready = [(n, r) for n, r in rows if (r.get('Ready') or '').strip().lower() == 'true']
             ids = [(r.get('Request ID') or '').strip() for _, r in ready]
             duplicates = {rid for rid in ids if ids.count(rid) > 1}
             counts['rows'] = len(rows)
-            # Notices describe the current input rows. Once an input is fixed or
-            # removed, an old rejection must not contradict its accepted job.
-            # The audit table retains history; immutable job receipts stay intact.
+
+
+
             for notice in (self.root / 'outbox').glob('*.json'):
                 if notice.name.endswith(('.rejected.json', '.conflict.json')) or notice.name.startswith('invalid-row-'):
                     notice.unlink()

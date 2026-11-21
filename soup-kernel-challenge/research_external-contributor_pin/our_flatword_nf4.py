@@ -14,7 +14,7 @@ def soup_original_nf4_wordflat(
     packed, codes8, nested_lut, nested_abs, nested_offset, values16, out_word,
     BLOCKS: tl.constexpr, QSIZE: tl.constexpr, Q2SIZE: tl.constexpr
 ):
-    # Flat per-byte coordinates, not a 2D block×byte tile.
+
     lane = tl.program_id(0) * (BLOCKS * (QSIZE // 2)) + tl.arange(
         0, BLOCKS * (QSIZE // 2))
     scale_row = lane // (QSIZE // 2)

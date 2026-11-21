@@ -52,7 +52,7 @@ class QueueTests(unittest.TestCase):
  def test_stale_claim_quarantined_never_blind_rerun(self):
   j=self.job();self.approve(j);a=self.claim(lease=10);self.clock.now+=11
   self.assertIsNone(self.claim(runner='second')['claim']);status=self.q.status(j['job_id']);self.assertEqual(status['state'],'needs_reconciliation');self.assertEqual(len(status['attempts']),1)
-  # Restarting the coordinator preserves uncertainty and the lock.
+
   q2=Queue(self.root,self.clock);self.assertEqual(q2.status(j['job_id'])['state'],'needs_reconciliation')
   with self.assertRaises(QueueError):self.q.heartbeat(j['job_id'],a['claim']['attempt_id'],'runner1')
   with self.assertRaises(QueueError):self.q.reconcile(j['job_id'],a['claim']['attempt_id'],reviewer='jury',evidence_sha256='',decision='requeue_confirmed_not_started',authorization_ref='parent-reconfirmed-not-started')
@@ -150,7 +150,7 @@ class QueueTests(unittest.TestCase):
   with self.assertRaises(QueueError):self.complete(a,r)
   r['provenance'].update(own_share_scope='preflight',own_share_evidence_sha256='8'*64,own_kernel_names=['original_math_kernel'])
   with self.assertRaises(QueueError):self.complete(a,r)
-  # Task timing maps can establish share even when optional custom route counters are absent.
+
   r['provenance']['own_share_scope']='task';self.complete(a,r);self.assertIsNone(self.q.status(j['job_id'])['result']['provenance']['actual_route_counts'])
  def test_zero_expected_steps_cannot_fake_complete_task(self):
   j=self.job(backend='KAGGLE_T4');self.approve(j);a=self.claim(backend='KAGGLE_T4');r=self.result(a);r['execution'].update(verified_global_step=0,expected_steps=0)

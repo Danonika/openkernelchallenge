@@ -75,7 +75,7 @@ for failure in ('native_timeout','partial_steps','missing_adapter','missing_metr
  if failure=='packages_unrecorded':d.pop('packages_changed')
  out=w.normalize(d,'nf4_runtime_n',p,l)
  check(failure+'_fails_closed',not out['complete_fixed_task'] and out['complete_measurements'] is None and out['score'] is None and out['admission']=='UNKNOWN')
-# Accepted V2 permits anchored ANSI+ordinary JSON whitespace wrapping, not spoofed evidence.
+
 wrapped={k:'\n'.join('\x1b[2K'+line.replace(', ', ',\n') for line in v.splitlines()) for k,v in logs.items()}
 check('V2_wrapped_metadata_recovers_only_evidence',w.normalize(data,'nf4_runtime_n',process,wrapped)['complete_fixed_task'])
 for label,transform in [('duplicate_key',lambda x:x.replace('"calls": 1','"calls": 1, "calls": 2')),

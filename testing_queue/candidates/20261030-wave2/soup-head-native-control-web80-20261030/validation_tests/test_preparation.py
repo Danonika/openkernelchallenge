@@ -67,7 +67,7 @@ for name, data in payload.items():
 assert (ADAPTER / "head.zip").read_bytes() == (ROOT / "candidate.zip").read_bytes()
 passed("cleared_valid_notebook_exact_embedded_payload", bytes=nb_path.stat().st_size)
 
-# Specialized runner changes only profile lookup, mode selection and route gate.
+
 base_ast = ast.parse((SHARED / "support/web_runner.py").read_text())
 local_ast = ast.parse((ADAPTER / "web_runner.py").read_text())
 base_funcs = {n.name: n for n in base_ast.body if isinstance(n, (ast.FunctionDef, ast.ClassDef))}
@@ -119,7 +119,7 @@ passed("gitless_official_hashes_solution_only_overlay_backup")
 
 
 def fixture():
-    # Values are entirely synthetic; never publish as benchmark observations.
+
     data = {"task": {"seed": 1, "repeats": 2, "only": None}, "packages_changed": [],
             "runs": {}, "evals": {}, "summary": {"synthetic_fixture_only": True}}
     logs = {}
@@ -186,8 +186,8 @@ for case in negative_cases:
     assert rejected["score"] is None and rejected["admission"] == "UNKNOWN"
 passed("synthetic_incomplete_output_and_route_negatives", cases=list(negative_cases))
 
-# Exercise the real main orchestration with subprocess/GPU/ownership functions
-# stubbed out. This checks failed official rules cannot retain a full comparison.
+
+
 with tempfile.TemporaryDirectory() as td:
     td = Path(td)
     repo, results, working = td / "repo", td / "results", td / "working"

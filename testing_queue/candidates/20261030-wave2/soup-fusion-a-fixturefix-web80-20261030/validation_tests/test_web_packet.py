@@ -9,7 +9,7 @@ def record(name,details=None):checks.append({'name':name,'passed':True,'details'
 receipt=json.loads((R/'web_build_receipt.json').read_text())
 assert sha(R/'reference/accepted_web_runner.py')==receipt['adapter_base_sha256']=='8b924fce880a3caa8c4768e1bdefde479049e7e74dfaa49cbb42c24decac3c18'
 assert sha(R/'web_adapter/web_runner.py')==receipt['generated_runner_sha256']
-# Compare all non-profile/control behavior against the accepted shared source.
+
 class RemoveCoverage(ast.NodeTransformer):
  def visit_Assign(self,node):
   if any(isinstance(t,ast.Name) and t.id=='FUSIONS' for t in node.targets):return None
@@ -21,7 +21,7 @@ class RemoveCoverage(ast.NodeTransformer):
   if node.name=='normalize':
    for sub in ast.walk(node):
     if isinstance(sub,ast.If) and ast.unparse(sub.test)=="side == 'solution'":
-     # Retain common log/own assignments and timed-window gate; remove only the
+
      # candidate-specific coverage selection block specialized by the builder.
      assert len(sub.body)>=3 and isinstance(sub.body[0],ast.Assign) and isinstance(sub.body[1],ast.Assign)
      assert isinstance(sub.body[2],ast.If) and 'timed_steps' in ast.unparse(sub.body[2])

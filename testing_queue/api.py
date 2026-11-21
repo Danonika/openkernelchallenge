@@ -35,14 +35,14 @@ class LocalServer(ThreadingHTTPServer):
 class Handler(BaseHTTPRequestHandler):
  server_version='SoupQueueLocal/1';sys_version=''
  def setup(self):super().setup();self.connection.settimeout(10)
- def log_message(self,*args):pass  # Never log URLs, bodies, Authorization or credentials.
+ def log_message(self,*args):pass
  def _send(self,status,body,content_type='application/json',extra=None):
   data=body if isinstance(body,bytes) else json.dumps(body,allow_nan=False).encode()
   self.send_response(status);self.send_header('Content-Type',content_type);self.send_header('Content-Length',str(len(data)));self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff');self.send_header('Referrer-Policy','no-referrer');self.send_header('X-Frame-Options','DENY');self.send_header('Content-Security-Policy',"default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'")
   for k,v in (extra or {}).items():self.send_header(k,v)
   self.end_headers();self.wfile.write(data)
  def _route(self):
-  # No URL/query passwords, callbacks, redirects, CORS or alternate bind policy.
+
   require(self.headers.get('Host') in self.server.allowed_hosts,'Unexpected Host; local prototype only')
   parsed=urlsplit(self.path);require(not parsed.query and not parsed.fragment and not parsed.scheme and not parsed.netloc,'Query strings/URL credentials are forbidden; use Authorization header')
   origin=self.headers.get('Origin');require(origin is None or origin in self.server.allowed_origins,'Cross-origin access rejected')

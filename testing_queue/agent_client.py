@@ -26,7 +26,7 @@ class Client:
     if len(raw)>MAX_RESPONSE:raise ClientError('Response exceeds client bound')
     return raw,dict(response.headers)
   except urllib.error.HTTPError as e:
-   # Do not print request/header objects or arbitrary proxy error bodies.
+
    raise ClientError('Queue HTTP '+str(e.code)+'; no automatic retry') from None
   except urllib.error.URLError:raise ClientError('Queue unavailable/connection uncertain; inspect status before retrying actions') from None
  def request(self,method,path,body=None):

@@ -105,7 +105,7 @@ def checked_config(value):
     return c
 
 def child_env(run,c):
-    # Do not inherit worker bearer token, cloud credentials, PYTHONPATH, HOME, HF_TOKEN or proxy settings.
+
     home=run/'home'; tmp=run/'tmp'; home.mkdir(); tmp.mkdir()
     env={'PATH':str(Path(c['python']).parent)+':/usr/bin:/bin','HOME':str(home),'TMPDIR':str(tmp),'LANG':'C.UTF-8','LC_ALL':'C.UTF-8','PYTHONUNBUFFERED':'1','PYTHONDONTWRITEBYTECODE':'1','PYTHONNOUSERSITE':'1','OMP_NUM_THREADS':str(len(c['cpu_affinity'])),'MKL_NUM_THREADS':str(len(c['cpu_affinity'])),'OPENBLAS_NUM_THREADS':str(len(c['cpu_affinity'])),'HF_HOME':str(home/'hf'),'HF_HUB_OFFLINE':'1','HF_DATASETS_OFFLINE':'1','TRANSFORMERS_OFFLINE':'1','TOKENIZERS_PARALLELISM':'false'}
     if c['backend']!='CPU':
@@ -144,7 +144,7 @@ def supervised_process(argv,cwd,env,timeout_s,log_path,heartbeat=None,poll_s=0.2
                 except Exception as exc:
                     heartbeat_error=type(exc).__name__; break
             time.sleep(poll_s)
-        # Include remembered descendants even if native harness used new sessions.
+
         table=process_table(); killed=[]
         for pid,ticks in reversed(list(tracked.items())):
             if pid in table and table[pid][1]==ticks and table[pid][2]!='Z':
@@ -259,7 +259,7 @@ def container_argv(c,run,name,mode,*,side='solution',timeout_s=900):
 
 def container_process(c,run,mode,timeout,heartbeat=None,side='solution',native_timeout=900):
     binary,image=docker_spec(c);name='soupq-'+uuid.uuid4().hex
-    # Inspect only; never pull/build/install through the worker.
+
     inspected=subprocess.run([binary,'image','inspect',image],capture_output=True,text=True,timeout=20)
     require(inspected.returncode==0,'Pinned local image missing; no automatic pull')
     argv=container_argv(c,run,name,mode,side=side,timeout_s=native_timeout)
@@ -306,7 +306,7 @@ def validate_boundary_record(c):
 
 def guard_gpu(c,run,env=None,heartbeat=None):
     validate_boundary_record(c);manifest=verify_cache(c)
-    # Hardlink only reviewed public bytes into a dedicated cache view. No unrelated cache files are mounted.
+
     cache=Path(c['hf_hub_cache']).resolve();view=run/'public_cache'
     for name in manifest['files']:
         target=view/name;target.parent.mkdir(parents=True,exist_ok=True)
@@ -358,7 +358,7 @@ def normalize_screen(spec,reference,record,manifest_sha,allowlist_sha,expected_s
     e.update(command_exit_code=native_exit,wrapper_exit_code=proc['exit_code'],nested_metrics_exit_code=nested.get('exit_code'),verified_global_step=step,expected_steps=expected_steps,adapter_saved=adapter if native else None,wrapper_elapsed_s=proc['elapsed_s'])
     e['visible_step']=record.get('visible_step')
     complete=native_exit==0 and proc['exit_code']==0 and not proc['timed_out'] and not proc['heartbeat_error'] and not proc['surviving_owned_pids'] and nested.get('exit_code') in (None,0) and step==expected_steps and adapter and not raw.get('packages_changed')
-    # The unmodified official logger records TIMEOUT explicitly; -9 without that marker is only a signal.
+
     reason='completed' if complete else 'timeout' if proc['timed_out'] or record.get('native_timeout') is True else 'unknown' if proc['heartbeat_error'] else 'signal' if (native_exit is not None and native_exit<0) or (proc['exit_code'] is not None and proc['exit_code']<0) else 'command_error' if native_exit not in (None,0) or proc['exit_code']!=0 else 'task_incomplete'
     r['outcome']='completed' if complete else 'aborted' if reason in ('timeout','signal','unknown') else 'failed'; e.update(termination_reason=reason,task_completion_status='VERIFIED_COMPLETE' if complete else 'INCOMPLETE' if native else 'UNKNOWN')
     if type(wall) in (int,float) and math.isfinite(wall) and wall>=0:
@@ -368,11 +368,11 @@ def normalize_screen(spec,reference,record,manifest_sha,allowlist_sha,expected_s
         m.update(peak_memory_mib=peak,peak_kind='complete' if complete else 'partial',memory_scope='gpu_physical_sum');p['peak_json_pointer']='/harness_result/runs/solution/0/gpu_peak_mib'
     evaluation=raw.get('evals',{}).get('solution',{})
     if complete and evaluation.get('exit_code')==0 and type(evaluation.get('mean_loss')) in (int,float) and math.isfinite(evaluation['mean_loss']) and evaluation['mean_loss']>=0:m['eval_loss']=evaluation['mean_loss']
-    # Preserve raw per-kernel maps in record. Automatic share/admission require separate review and remain unknown.
+
     return r
 
 def validate_result(r,spec):
-    # The validator is pure; do not open/create a second queue database.
+
     Queue._validate_result(None,r,spec)
 
 def same_host_baseline(c,guard):
@@ -383,7 +383,7 @@ def same_host_baseline(c,guard):
     require(b.get('status')=='measured_base_complete' and b.get('host_fingerprint')==guard['host_fingerprint'],'A completed baseline on this host is required')
     require(b.get('backend')==c['backend'] and b.get('baseline_id')==c['baseline_id'] and b.get('container_image')==c['container_image'],'Baseline cohort/image mismatch')
     for k in ('task_fingerprint','environment_fingerprint','harness_commit','data_files','model_cache_manifest_sha256','cpu_affinity','baseline_timeout_s','baseline_outer_timeout_s'):require(b.get(k)==c[k],'Baseline binding differs: '+k)
-    # GPU inventory/driver and direct package pins must match the measured baseline, not merely a caller fingerprint.
+
     for k in ('python','packages','nvidia_smi_inventory','visible_device_names','cpu_affinity'):require(b['environment'].get(k)==guard['environment'].get(k),'Baseline runtime differs: '+k)
     expected=path.parent/'container_output/runs/result.json';require(b.get('raw_result_path')==str(expected),'Baseline raw path must be its own output')
     rawbytes=output_bytes(path.parent/'container_output','runs/result.json');require(digest(rawbytes)==b['raw_result_sha256'],'Baseline raw evidence hash mismatch');raw=json.loads(rawbytes);base=raw.get('runs',{}).get('base',[])
@@ -425,7 +425,7 @@ def execute_claim(claim,c,artifact,run,heartbeat=None):
         progress=[int(x) for x in re.findall(r'(\d+)/64\b',log)]
         record={'process':process,'harness_result':native,'guard':guard,'official_source_manifest':official,'adapter_saved_on_disk':output_present(out,'runs/solution_1/adapter/adapter_model.safetensors'),'native_timeout':bool(re.search(r'^TIMEOUT after \d+ s$',log,re.M)),'visible_step':max(progress) if progress else None,'train_log_sha256':digest(logbytes) if logbytes is not None else None}
         r=normalize_screen(spec,reference,record,manifest_sha,allowlist_sha,profile['expected_steps'])
-    # Hash exact durable canonical raw evidence bytes, not candidate-generated JSON admission claims.
+
     rawbytes=canonical(record).encode();(run/'runner_raw.json').write_bytes(rawbytes);r['provenance']['raw_result_sha256']=digest(rawbytes)
     validate_result(r,spec);write_json(run/'normalized_result.json',r);return r
 
@@ -443,7 +443,7 @@ def consume_once(client,trusted_config):
     started=False
     try:
         artifact=run/'source.zip';client.download(claim['job_id'],artifact,claim['spec']['source_sha256'])
-        # Fail closed before start when queue authority and local allowlist disagree.
+
         require(claim['spec']['source_sha256'] in c['profiles'],'No local reviewed profile for this exact ZIP hash')
         client.request('POST',endpoint+'/start',{'run_reference':run.name});started=True
         with host_gpu_lock() if c['backend']!='CPU' else contextlib.nullcontext():
@@ -453,7 +453,7 @@ def consume_once(client,trusted_config):
     except Exception as exc:
         evidence={'status':'worker_error','error_type':type(exc).__name__,'message':str(exc),'start_record_sent':started,'no_automatic_retry':True}
         h=write_json(run/'worker_error.json',evidence)
-        # Never rerun after an uncertain network/launch outcome. Keep the resource locked for review.
+
         try:client.request('POST',endpoint+'/uncertain',{'reason':'runner_crash_report','evidence_sha256':h})
         except Exception:pass
         raise

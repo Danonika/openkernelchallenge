@@ -223,7 +223,7 @@ class TableAndEvidenceTests(unittest.TestCase):
         table = projection.project_tables([original])['VM Results']
         result = dict(zip(table[0], table[1]))
         self.assertEqual(result['Error message'], original['result']['error']['message'])
-        # Transport must use RAW or stringValue. Projection never evaluates it.
+
 
     def test_worker_receipt_interface_keeps_status_conflicts_and_deduplicates_jobs(self):
         original = job()

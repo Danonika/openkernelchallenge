@@ -55,7 +55,7 @@ with tempfile.TemporaryDirectory() as d:
  except RuntimeError:pass
  else:raise AssertionError('extra protected source accepted')
 done('gitless_hash_guard_and_solution_only_overlay')
-# Reuse only the data-construction function, not the shared test side effects.
+
 node=next(n for n in ast.parse((BASE/'test_preparation.py').read_text()).body if isinstance(n,ast.FunctionDef) and n.name=='fixture')
 ns={'w':w};exec(compile(ast.Module(body=[node],type_ignores=[]),'fixture','exec'),ns)
 def fixture():
@@ -91,7 +91,7 @@ for failure in ('native_timeout','missing_eval','partial_steps','wrapper_timeout
  assert not out['complete_fixed_task'] and out['complete_measurements'] is None and out['score'] is None,(failure,out)
  done('normalize_rejects_'+failure)
 done('positive_normalization_only_with_complete_fixed_task_and_structured_routes')
-# Fake the original entrypoint only: no Torch import, CUDA, Triton, or model.
+
 sys.path.insert(0,str(ROOT));from solution import web_preflight as adapter
 from solution import gpu_preflight as original
 assert 'torch' not in sys.modules

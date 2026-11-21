@@ -47,8 +47,8 @@ class _SaveUpSwiGLU(torch.autograd.Function):
         if grad_out is None:
             return None, None, None, None
         up_half, gate_input_half = ctx.saved_tensors
-        # Same Linear4bit autograd dispatch as original forward. This isolated
-        # temporary graph is discarded; we need only gate's FP16 value.
+
+
         with torch.enable_grad():
             fresh_input = gate_input_half.detach().requires_grad_(True)
             gate_rebuilt = ctx.gate_proj(fresh_input)
@@ -62,8 +62,8 @@ class _SaveUpSwiGLU(torch.autograd.Function):
         example_swiglu_bwd_kernel[(triton.cdiv(ctx.n, BLOCK),)](
             grad, gate_rebuilt, up_half, dgate, dup, ctx.n, BLOCK=BLOCK
         )
-        # The original gate/up projection graphs supply dX. No additional
-        # input gradient is applied to x_fp32 by this custom SwiGLU node.
+
+
         return dgate, dup, None, None
 
 
@@ -84,7 +84,7 @@ def patch_save_up_mlp():
     def forward(self, x):
         if not _eligible_mlp(self, x, linear_cls, linear_forward):
             return previous(self, x)
-        # Keep casts separate so gate/up dX branches round individually.
+
         gate_input_half = x.to(torch.float16)
         gate = self.gate_proj(gate_input_half)
         up = self.up_proj(x.to(torch.float16))

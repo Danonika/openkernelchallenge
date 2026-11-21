@@ -31,13 +31,13 @@ def test_all_half_bit_patterns_survive_packed_load_without_arithmetic():
     words=bits.view(np.uint32)
     low=(words&65535).astype(np.uint16);high=(words>>16).astype(np.uint16)
     assert np.array_equal(low,bits[::2]) and np.array_equal(high,bits[1::2])
-    # Includes signed zeros, subnormals, infinities and every NaN payload.
+
     assert words.size==32768
 
 
 def test_warp_A_B_fragment_reuse_and_mma_operand_coverage():
-    # Integers are exact half data, so each public instruction fragment is
-    # reconstructed independently and checked against its mathematical tile.
+
+
     A=np.arange(64*8,dtype=np.uint16).reshape(64,8)
     B=(np.arange(64*8,dtype=np.uint16).reshape(64,8)+512)
     Awords=A.reshape(-1).view(np.uint32)

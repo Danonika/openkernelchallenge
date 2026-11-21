@@ -129,7 +129,7 @@ def test_pre_forward_fallbacks(case):
         elif case=='nested':
             token=_ACTIVE.set(object());cleanup.append(lambda:_ACTIVE.reset(token))
         reason,_=h.guard(t,m,inputs,kwargs.get('return_outputs',False));assert reason is not None
-        # The guard itself must never install a hook or run the model.
+
         assert stats.counts['shared_cast']==0
     finally:
         for f in reversed(cleanup):f()
@@ -213,7 +213,7 @@ def test_web_preflight_snapshot_survives_asymmetric_native_output_probe():
         for row in [3,8]:t._soup_rewind_state.on_index(row)
         t.compute_loss(m,inputs,return_outputs=True,num_items_in_batch=5)
         assert len(shallow['entropy'])==len(shallow['mean_token_accuracy'])==2
-        assert shallow['num_tokens']==frozen['metrics']['num_tokens']  # native replaces this list
+        assert shallow['num_tokens']==frozen['metrics']['num_tokens']
         assert all(len(v)==1 for v in frozen['metrics'].values())
         assert len(sink.rows)==2 and len(frozen['rewind'])==1
         assert frozen==expected

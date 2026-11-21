@@ -48,7 +48,7 @@ def run_case(shape, scale=1.0, shift=0.0, ties=False):
     x = (torch.randn(shape) * scale + shift).half()
     if ties:
         x[:, 0] = x[:, 0] + 35
-        x[:, 11] = x[:, 0]   # exact first-index tie
+        x[:, 11] = x[:, 0]
     y = torch.randint(0, shape[1], (shape[0],), dtype=torch.long)
     y[::7] = -100
     got = online_reference(x.numpy(), y.numpy())

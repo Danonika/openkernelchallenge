@@ -22,7 +22,7 @@ for name in ('00_baseline.ipynb','01_fusion_a.ipynb','02_fusion_b.ipynb'):
   assert base64.b64decode(b64,validate=True)==location.read_bytes()
  results.append({'test':'self_contained_notebook','file':name,'bytes':len(raw),'pass':True})
 for p in (ROOT/'support').glob('*.py'):compile(p.read_bytes(),str(p),'exec')
-# Prepared source works without .git; exact hash and added-file negatives fail.
+
 manifest=json.loads((ROOT/'support/official_manifest.json').read_text())
 with tempfile.TemporaryDirectory() as d:
  repo=Path(d)
@@ -38,7 +38,7 @@ with tempfile.TemporaryDirectory() as d:
  except RuntimeError:pass
  else:raise AssertionError('Hash drift accepted')
 results.append({'test':'gitless_prepared_hash_gate_and_negatives','pass':True})
-# Exact bundle staging changes only solution and retains previous source.
+
 for mode in ('fusion_a','fusion_b'):
  with tempfile.TemporaryDirectory() as d:
   repo=Path(d)/'repo';repo.mkdir();(repo/'solution').mkdir();(repo/'solution/old.py').write_text('old')
@@ -46,8 +46,8 @@ for mode in ('fusion_a','fusion_b'):
   w.install_bundle(repo,ROOT/'payloads'/(mode+'.zip'),json.loads((ROOT/'payloads'/(mode+'_manifest.json')).read_text()),Path(d)/'backup')
   assert (repo/'protected').read_text()=='unchanged' and (Path(d)/'backup/old.py').read_text()=='old'
  results.append({'test':'exact_bundle_staging','mode':mode,'pass':True})
-# Normalizer never assigns full comparison to native timeout, wrapper success,
-# missing eval, missing steps, routes, or owned timing.
+
+
 def fixture(mode):
  data={'task':{'seed':1,'repeats':1 if mode=='baseline' else 2,'only':'base' if mode=='baseline' else None},'packages_changed':[],'runs':{},'evals':{},'summary':{'fixture_only':True}}
  logs={};sides=['base'] if mode=='baseline' else ['base','solution']

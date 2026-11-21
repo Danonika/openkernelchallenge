@@ -53,7 +53,7 @@ def test_direct_fd_geometric_metadata_receipts_bypass_stdout_proxy():
 def test_old_receipt_under_rich_live_is_wrapped():
  from rich.console import Console
  from rich.live import Live
- # Execute only the old Python telemetry function, not its module or any tensors.
+
  tree=ast.parse((OLD/'solution/routes.py').read_text());fn=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='_activated')
  scope={'json':json,'_COUNTS':{'forward':0,'functional':0}};exec(compile(ast.Module(body=[fn],type_ignores=[]),'old_telemetry','exec'),scope)
  capture=io.StringIO();console=Console(file=capture,force_terminal=True,width=80)

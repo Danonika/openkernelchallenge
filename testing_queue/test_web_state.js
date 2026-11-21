@@ -1,5 +1,5 @@
 'use strict';
-// Executes the shipped JavaScript with a minimal fake DOM; not browser rendering.
+
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
@@ -27,14 +27,14 @@ async function connect() {
 (async () => {
   await connect();assert.equal(elements.submit.disabled, false);assert.equal(elements.jobs.children.length,1);
   assert.equal(elements.jobs.children[0].children[0].textContent, '<script>not html</script>\nq_fake');
-  // Clear cannot be undone by a late jobs response.
+
   const refresh = elements.refresh.handlers.click();elements.clear.handlers.click();reply({jobs: [job]});await refresh;await tick();
   assert.equal(elements.jobs.children.length,0);assert.equal(elements.submit.disabled,true);assert.equal(elements.token.value,'');
-  // Clear cannot be undone by a late connect response.
+
   elements.token.value = 'TEST_ONLY_LATE_CONNECT_xxxxxxxxxxxxxxxxxxx';
   const late = elements.connect.handlers.click();elements.clear.handlers.click();reply(session);await late;
   assert.equal(elements.submit.disabled,true);assert.match(elements.identity.textContent,/Disconnected/);assert.equal(pending.length,0);
-  // Editing a token invalidates an existing identity and pending response.
+
   await connect();const edited = elements.refresh.handlers.click();elements.token.value='different';elements.token.handlers.input();reply({jobs:[job]});await edited;await tick();
   assert.equal(elements.jobs.children.length,0);assert.equal(elements.submit.disabled,true);
   console.log('PASS: 4 shipped-JavaScript state checks (fake DOM, not rendering)');

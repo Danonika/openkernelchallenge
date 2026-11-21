@@ -51,12 +51,12 @@ import torch
 from .engaged import FELL_BACK, ON, RAN
 from .state import DISABLED, fallback
 
-_metric_queue = []  # [(trainer, mode, entropy, tokens or None, accuracy, labelled)] GPU scalars
-_rewind_queue = collections.deque()  # [(state, step, micro, rows, LazyRows, LazyRows)]
-_fused_token_loss = [None]  # token_loss of the last fused step (the only one made lazy)
+_metric_queue = []
+_rewind_queue = collections.deque()
+_fused_token_loss = [None]
 
 
-# --- metrics fetched when they are first read (2) -------------------------------------------
+
 
 def queue_trl_metrics(trainer, mode, entropy, tokens, accuracy, labelled):
     """`entropy` (fp32), `tokens` (int64, train only, else None), `accuracy` = correct/labelled
@@ -160,7 +160,7 @@ def _patch_rewind():
         lazy = isinstance(row_loss, LazyRows) and isinstance(row_tokens, LazyRows)
         if not lazy or not all(hasattr(self, name) for name in
                                ("_pending", "_last_step", "_micro", "_sink", "dropped")):
-            flush_rewind()  # keep the records in order
+            flush_rewind()
             return original_micro(self, step=step, row_loss=row_loss, row_tokens=row_tokens)
         n = len(row_loss)
         if len(self._pending) < n:
@@ -202,8 +202,8 @@ def flush_rewind():
 def flush_all():
     resolve_metrics()
     flush_rewind()
-    # Soup's rewind recorder read this step's token losses before the log: the reference is not
-    # needed any more and would otherwise keep the last step's tensor alive after the run.
+
+
     _fused_token_loss[0] = None
 
 
@@ -239,19 +239,19 @@ def defer_metrics():
             try:
                 result = train(self, *args, **kwargs)
             except BaseException:
-                try:  # what was recorded before the failure still reaches its files
+                try:
                     flush_all()
                 except Exception:  # noqa: BLE001 - the training error is the one to report
                     pass
                 raise
-            _flush_guarded()  # normally empty: the final log of the run has fetched everything
+            _flush_guarded()
             return result
 
         trainer_train._solution_flush = True
         transformers.Trainer.train = trainer_train
 
 
-# --- trainer bookkeeping (1) ------------------------------------------------------------------
+
 
 def install_model_fastpaths(model):
     """Instance-level `train` and `zero_grad` on the trainer's model, and the flat parameter
@@ -265,9 +265,9 @@ def install_model_fastpaths(model):
     def train(self, mode=True):
         if mode is True and all(m.training for m in modules):
             RAN["bookkeeping"] += 1
-            return self  # every module is in training mode already: nothing would change
+            return self
         if mode is True:
-            FELL_BACK["bookkeeping"] += 1  # a module was in eval mode: the full recursion
+            FELL_BACK["bookkeeping"] += 1
         return cls.train(self, mode)
 
     def zero_grad(self, set_to_none=True):

@@ -175,7 +175,7 @@ from .state import DISABLED, fallback
 _state = {"tokenizer_reducer": None}
 
 
-# 1. Shared package mapping ----------------------------------------------------------------------
+
 
 @contextlib.contextmanager
 def shared_package_mapping():
@@ -213,9 +213,9 @@ def import_trl():
     return shared
 
 
-# 2. Tokenizer digest for dataset fingerprints ---------------------------------------------------
 
-_BIG = 4096  # containers smaller than this are pickled as datasets does
+
+_BIG = 4096
 
 
 def _content_digest(value):
@@ -255,7 +255,7 @@ def patch_tokenizer_fingerprint():
                        for key, value in big.items()}
         except Exception:  # noqa: BLE001 - unpicklable content: pickle it as before
             return original(pickler, obj)
-        # datasets' reducer pickles a copy of `obj.__dict__`: put the digests in for that copy.
+
         state.update(digests)
         try:
             return original(pickler, obj)
@@ -269,13 +269,13 @@ def patch_tokenizer_fingerprint():
     save_tokenizer._solution_patched = True
     _dill._save_transformersPreTrainedTokenizerBase = save_tokenizer
     for key, value in list(_dill.Pickler.dispatch.items()):
-        if value is original:  # tokenizer classes registered before the patch
+        if value is original:
             _dill.Pickler.dispatch[key] = save_tokenizer
     _state["tokenizer_reducer"] = (original, save_tokenizer)
     return True
 
 
-# 3. Deferred torch.compile in bitsandbytes ------------------------------------------------------
+
 
 @contextlib.contextmanager
 def deferred_torch_compile():
@@ -288,7 +288,7 @@ def deferred_torch_compile():
         return
 
     def compile(model=None, **kwargs):  # noqa: A001 - stands in for torch.compile
-        if model is None:  # @torch.compile(...) used as a decorator factory
+        if model is None:
             return lambda fn: compile(fn, **kwargs)
         if isinstance(model, torch.nn.Module) or not callable(model):
             return real(model, **kwargs)
@@ -323,7 +323,7 @@ def import_bitsandbytes():
     return True
 
 
-# 4. scikit-learn deferred -----------------------------------------------------------------------
+
 
 def _lazy_callable(module_name, attr):
     """A function that imports `module_name` on its first call and calls its `attr`."""
@@ -338,12 +338,12 @@ def _lazy_callable(module_name, attr):
     return call
 
 
-# Modules that import scikit-learn (and SciPy) at import time when scikit-learn is installed,
-# with the names they import under that check; training calls none of them.
+
+
 SKLEARN_IMPORTERS = {
-    # assisted generation: confidence threshold of speculative decoding
+
     "transformers.generation.candidate_generator": {"roc_curve": "sklearn.metrics"},
-    # deprecated GLUE/XNLI metrics, imported with `transformers.data` (DataCollator, by TRL)
+
     "transformers.data.metrics": {"pearsonr": "scipy.stats", "spearmanr": "scipy.stats",
                                   "f1_score": "sklearn.metrics",
                                   "matthews_corrcoef": "sklearn.metrics"},
@@ -364,7 +364,7 @@ def _import_with_check_off(name, lazy_names, check):
 
         real = getattr(utils, check)
         if not real():
-            return False  # the module skips those imports by itself
+            return False
     except Exception:  # noqa: BLE001 - another transformers layout: leave it alone
         return False
 
@@ -378,11 +378,11 @@ def _import_with_check_off(name, lazy_names, check):
         return False
     finally:
         setattr(utils, check, real)
-        # Every module imported meanwhile that kept a reference to the stand-in (normally only
-        # `module`) gets the real check back, so its run-time checks see the real answer.
+
+
         for loaded in list(sys.modules.values()):
             try:
-                namespace = getattr(loaded, "__dict__", None)  # no module __getattr__: no imports
+                namespace = getattr(loaded, "__dict__", None)
                 if isinstance(namespace, dict) and namespace.get(check) is unavailable:
                     namespace[check] = real
             except Exception:  # noqa: BLE001 - an exotic sys.modules entry: not ours
@@ -403,11 +403,11 @@ def import_without_sklearn():
     return sum(_import_without_sklearn(name, names) for name, names in SKLEARN_IMPORTERS.items())
 
 
-# 6. SciPy deferred in the object-detection losses -----------------------------------------------
 
-# transformers' DETR-family losses, imported with every model (transformers.modeling_utils ->
-# transformers.loss.loss_utils), import SciPy's Hungarian matcher when SciPy is installed. In the
-# order they import each other (the first is imported by the others).
+
+
+
+
 SCIPY_IMPORTERS = {
     f"transformers.loss.{name}": {"linear_sum_assignment": "scipy.optimize"}
     for name in ("loss_for_object_detection", "loss_rt_detr", "loss_deformable_detr",
@@ -422,7 +422,7 @@ def import_losses_without_scipy():
                for name, names in SCIPY_IMPORTERS.items())
 
 
-# 7. boto3 deferred in accelerate ----------------------------------------------------------------
+
 
 class _LazyModule:
     """Stands for module `name` in one module's namespace: the first attribute read imports the
@@ -450,10 +450,10 @@ def import_accelerate_without_boto3():
         return False
     try:
         if importlib.util.find_spec("boto3") is None:
-            return False  # not installed: accelerate skips the import by itself
+            return False
     except (ImportError, ValueError):
         return False
-    sys.modules["boto3"] = None  # find_spec("boto3") answers None while accelerate is imported
+    sys.modules["boto3"] = None
     try:
         import accelerate  # noqa: F401
     except Exception:  # noqa: BLE001 - let the normal import path raise it later
@@ -467,7 +467,7 @@ def import_accelerate_without_boto3():
     return True
 
 
-# 8. Import-time objects out of the cyclic garbage collector's scans -----------------------------
+
 
 def freeze_gc():
     """`gc.freeze()`: every object the collector tracks now moves to its permanent generation,
@@ -481,7 +481,7 @@ def freeze_gc():
     return gc.get_freeze_count()
 
 
-# 9. One nvidia-smi query per process in accelerate ----------------------------------------------
+
 
 def share_gpu_query():
     """accelerate's `get_gpu_info()` (an `nvidia-smi` subprocess listing the machine's GPUs)
@@ -499,7 +499,7 @@ def share_gpu_query():
 
     @functools.wraps(original)
     def get_gpu_info():
-        if not answer:  # a failing first call raises as before and is not remembered
+        if not answer:
             names, count = original()
             answer.append((list(names), count))
         names, count = answer[0]
@@ -511,7 +511,7 @@ def share_gpu_query():
     return True
 
 
-# 10. One NF4 code table per device in bitsandbytes ----------------------------------------------
+
 
 def share_4bit_code():
     """bitsandbytes' `get_4bit_type(name, device)`: the 16-value code table of a 4-bit type is
@@ -538,7 +538,7 @@ def share_4bit_code():
         except (TypeError, RuntimeError):
             return original(typename, device, blocksize)
         table = tables.get(key)
-        if table is None:  # unknown names raise as before and are not remembered
+        if table is None:
             table = tables[key] = original(typename, device, blocksize)
             return table.clone()
         return table.clone()
@@ -550,9 +550,9 @@ def share_4bit_code():
     return True
 
 
-# 11. One render per conversation in Soup's assistant-only labels ---------------------------------
 
-# A `{% generation %}` block of a chat template (with any whitespace control), as Jinja parses it.
+
+
 _GENERATION_TAG = r"\{%[-+]?\s*generation\b"
 _render_state = {"active": None, "seen": set()}
 
@@ -609,7 +609,7 @@ def share_chat_renders():
     import re
 
     try:
-        from soup_cli.data import loss_mask  # standard library imports only
+        from soup_cli.data import loss_mask
     except Exception:  # noqa: BLE001 - no Soup here
         return False
     build = getattr(loss_mask, "build_assistant_only_labels", None)
@@ -638,9 +638,9 @@ def share_chat_renders():
                 and any(isinstance(m, dict) and m.get("role") == "assistant" for m in messages)
                 and (id(tokenizer), template) in state["seen"])
         if skip:
-            # Without a generation block the template's assistant mask is all zeros, and an
-            # all-zero mask for a conversation with an assistant turn returns None (the
-            # incremental fallback runs); the first such call of this run was made for real.
+
+
+
             return None
         out = with_mask(tokenizer, messages)
         if (out is None and state["active"] is not None and isinstance(template, str)
@@ -650,7 +650,7 @@ def share_chat_renders():
 
     def build_assistant_only_labels(*args, **kwargs):
         outer = state["active"]
-        state["active"] = {}  # renders of this row only
+        state["active"] = {}
         try:
             return build(*args, **kwargs)
         finally:
@@ -664,8 +664,8 @@ def share_chat_renders():
     loss_mask._tokenize_only = _tokenize_only
     loss_mask._apply_template_with_mask = _apply_template_with_mask
     loss_mask.build_assistant_only_labels = build_assistant_only_labels
-    # Soup's row formatter imports the name from loss_mask when it is first imported (after
-    # apply() in a run, so it gets this one); rebind it if it was imported already.
+
+
     sft_format = sys.modules.get("soup_cli.data.sft_format")
     if getattr(sft_format, "build_assistant_only_labels", None) is build:
         sft_format.build_assistant_only_labels = build_assistant_only_labels
@@ -673,7 +673,7 @@ def share_chat_renders():
     return True
 
 
-# 5. Checkpoint conversion on the GPU ------------------------------------------------------------
+
 
 def patch_load_conversion():
     """transformers' loader: copy each checkpoint tensor to the GPU in its stored dtype and
@@ -694,7 +694,7 @@ def patch_load_conversion():
         if device is None or dtype is None or "startup.patch_load_conversion" in DISABLED:
             return original(tensor, device, dtype)
         try:
-            data = tensor[...]  # reads the tensor from the safetensors slice, as the original
+            data = tensor[...]
             try:
                 target = torch.device(device)
             except (TypeError, RuntimeError):

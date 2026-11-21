@@ -100,7 +100,7 @@ def test_normalized_q_once_both_paths_disjoint_half_gradient_and_rng():
         assert torch.isclose(actual,reference,atol=1e-6,rtol=1e-4)
         assert diag.events[0]['native_supervised_rows']==3 and diag.events[0]['safe_supervised_rows']==4 and diag.events[0]['ignored_rows']==1
         assert diag.events[-1]['phase']=='enqueued_not_completion'
-        # A second division would produce a clearly different nonzero safe-row adjoint.
+
         if upstream==65536.:assert not torch.equal(a.grad[0],b.grad[0]/13)
 
 
@@ -147,7 +147,7 @@ def test_global_nonfinite_prepass_and_original_five_kernel_ASTs_unchanged():
     z,y=inputs();z[4,0]=float('nan');z[6,3]=float('inf')
     partial=torch.empty(8,1);bad=torch.empty(8,1,dtype=torch.int32)
     ce.soup_ce_exp_tile_max[(8,1)](z,y,partial,bad,V=17,NT=1,BLOCK=2048,num_warps=4,enable_fp_fusion=False)
-    assert bad[4,0]>0 and bad[6,0]>0  # Includes ignored row4: no fakezero masking.
+    assert bad[4,0]>0 and bad[6,0]>0
     old=Path('/redacted/local/soup_web_wave2_20261030/ce_quiet_v4/solution/materialized_ce.py')
     def kernels(p):return {n.name:ast.dump(n,include_attributes=False) for n in ast.walk(ast.parse(p.read_text())) if isinstance(n,ast.FunctionDef) and any(ast.unparse(d)=='triton.jit' for d in n.decorator_list)}
     assert kernels(old)==kernels(ROOT/'solution/materialized_ce.py')

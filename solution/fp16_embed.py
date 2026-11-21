@@ -59,9 +59,9 @@ import torch
 from .engaged import FELL_BACK, ON, RAN
 from .state import DISABLED, fallback
 
-# (weak reference to the embedding module, hook handle, MiB saved) for every embedding this module
-# stored in fp16. Weak: a strong reference would keep the module and its fp16 weight (445 MiB
-# here) alive after the model is gone (the handle itself holds only weak references).
+
+
+
 _applied = []
 
 
@@ -128,13 +128,13 @@ def store_fp16(model, expected=None, clear_cache=True):
     if not bitwise_equal(w16, weight.data):
         return 0
     saved = weight.numel() * 2 / 2**20
-    # the hook first (a no-op while the weight is fp32): an error between the two steps cannot
-    # leave an fp16 weight whose lookups return fp16
+
+
     handle = emb.register_forward_hook(_fp32_output)
-    weight.data = w16  # the same Parameter object: still tied to the output head
+    weight.data = w16
     _applied.append((weakref.ref(emb), handle, saved))
     if clear_cache:
-        torch.cuda.empty_cache()  # the freed fp32 weight, as PEFT does after its own casts
+        torch.cuda.empty_cache()
     return saved
 
 
@@ -155,8 +155,8 @@ def patch_prepare_model_for_kbit_training():
 
     @functools.wraps(original)
     def prepare_model_for_kbit_training(model, *args, **kwargs):
-        # (graceful degradation, state.py: an unexpected error in our steps before and after
-        # PEFT's own function leaves the weight as PEFT leaves it; PEFT's call is not ours)
+
+
         loaded = None
         try:
             found = tied_embedding(model)
@@ -167,7 +167,7 @@ def patch_prepare_model_for_kbit_training():
         result = original(model, *args, **kwargs)
         saved = 0
         if loaded is not None and "fp16_embed" not in DISABLED:
-            # PEFT's upcast of a weight loaded in fp16: back to fp16
+
             try:
                 clear = kwargs.get("auto_clear_cache", args[2] if len(args) > 2 else True)
                 saved = store_fp16(result, expected=loaded, clear_cache=bool(clear))
@@ -178,7 +178,7 @@ def patch_prepare_model_for_kbit_training():
 
             _mark("tied embedding/lm_head kept in fp16 after PEFT's upcast: "
                   + (f"-{saved:.0f} MiB" if saved else "not applicable"))
-        if saved:  # engaged.py's counters (not stored: no fp16 tied weight, or not exact)
+        if saved:
             RAN["fp16_embed"] += 1
         else:
             FELL_BACK["fp16_embed"] += 1

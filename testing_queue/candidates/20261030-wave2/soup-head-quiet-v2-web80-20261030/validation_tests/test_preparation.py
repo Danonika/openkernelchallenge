@@ -94,8 +94,8 @@ assert sum(r['event'] in hot for r in records) == 28
 assert len(reference) == 264 and len(records) == 36
 passed('all_counters_and_failure_records_preserved_geometric_hotpath', hot_writes_before=256, hot_writes_after=28)
 
-# Direct metadata writes do not alter the native stdout object or intercept its
-# ordinary output. The mock sees fd1 writes while native print remains untouched.
+
+
 native = io.StringIO()
 with contextlib.redirect_stdout(native):
     owner = sys.stdout
@@ -185,7 +185,7 @@ assert (ROOT / 'web_adapter/evidence_reader.py').read_bytes()==Path('/redacted/l
 for name in ['process_guard.py', 'owned_process_tree.py', 'runtime_probe.py', 'official_manifest.json', 'prepare_asset_manifest.py']:
     assert (ROOT / 'web_adapter' / name).read_bytes() == (BASE / 'web_adapter' / name).read_bytes()
 assert w.NATIVE_TIMEOUT == 80 and w.FUSIONS['head_telemetry_v2']['requires_original_kernels'] is False
-# Reuse only the earlier stdlib fixture constructor, not its runnable tests.
+
 fixture_tree = ast.parse((BASE / 'test_preparation.py').read_text())
 fixture_node = next(n for n in fixture_tree.body if isinstance(n, ast.FunctionDef) and n.name == 'fixture')
 scope = {'json': json}
@@ -214,8 +214,8 @@ assert max(r['count'] for r in head_events if r['event'] == 'native_sum_backward
 bad = w.normalize(data, 'head_telemetry_v2', proc,
                   {'solution_1': actual, 'solution_2': actual})
 assert not bad['complete_fixed_task'] and bad['complete_measurements'] is None
-# Actual count53 cannot become a complete count64 run even when the remaining
-# fixture fields deliberately describe synthetic complete training.
+
+
 for event in hot:
     wrapped = '\x1b[2K\x1b[1ASOUP_HEAD_NATIVE {"event":\n"' + event + '","count":64}\n'
     assert list(events(wrapped, 'SOUP_HEAD_NATIVE ')) == [{'event': event, 'count': 64}]

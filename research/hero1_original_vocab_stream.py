@@ -65,8 +65,8 @@ def hero1_slice_stats_inplace(
     if belongs:
         tl.store(TARGET_VAL + row, label_value)
     tl.store(SCALE_OLD + row, old_factor)
-    # Reuse this exact FP16 buffer for an actual weighted-gradient GEMM;
-    # never allocate the full N x vocabulary probabilities.
+
+
     tl.store(SCORES + row * SLICE_COLS + j, expval.to(tl.float16), used)
 
 

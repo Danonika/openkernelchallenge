@@ -41,7 +41,7 @@ def clean_notebook(raw):
             require(all(isinstance(x, str) for x in source), 'Cell source must contain text')
             source = ''.join(source)
         require(isinstance(source, str), 'Cell source must be text')
-        # Never inherit saved outputs, skip/raises-exception tags, kernelspecs or widgets.
+
         item = {'cell_type': cell['cell_type'], 'source': source, 'metadata': {}, 'id': uuid.uuid4().hex[:12]}
         if cell['cell_type'] == 'code':
             item.update(outputs=[], execution_count=None)
@@ -192,7 +192,7 @@ class NotebookQueue:
         with self.db() as db:
             db.execute('BEGIN IMMEDIATE')
             if db.execute("SELECT 1 FROM jobs WHERE state='running'").fetchone():
-                return None  # No expired-lease retry: recovery first proves container shutdown.
+                return None
             row = db.execute("SELECT id FROM jobs WHERE state='queued' ORDER BY created LIMIT 1").fetchone()
             if row is None:
                 return None

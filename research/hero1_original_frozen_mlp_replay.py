@@ -37,9 +37,9 @@ class _Hero1Replay(torch.autograd.Function):
         ctx.amp_dtype = torch.get_autocast_dtype(x.device.type)
         ctx.param_stamps = tuple((id(p), p._version) for p in module.parameters())
         ctx.save_for_backward(x)
-        # Some valid frozen-MLP patches select their exact native implementation
-        # only when grad mode is enabled. Replay must execute the same branch
-        # as ordinary training, without retaining that transient inner graph.
+
+
+
         with torch.enable_grad(), torch.autocast(
             device_type=x.device.type,
             enabled=ctx.use_amp,

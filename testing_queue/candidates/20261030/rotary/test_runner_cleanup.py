@@ -18,7 +18,7 @@ else:raise AssertionError('Expected timeout')
 pids=json.loads((work/'pids.json').read_text())
 assert all(runner._proc_record(pid) is None for pid in pids.values()),pids
 assert not runner._owned_descendants()
-# Also reject and clean an orphan after its direct parent exits normally.
+
 code2=code.replace('time.sleep(60)\n','time.sleep(0.2)\n')
 try:runner.command([sys.executable,'-c',code2,str(work/'pids2.json')],work,dict(os.environ),work/'test2.log',2)
 except RuntimeError as exc:assert 'leaving descendants' in str(exc)
@@ -26,7 +26,7 @@ else:raise AssertionError('Expected orphan rejection')
 pids2=json.loads((work/'pids2.json').read_text())
 assert all(runner._proc_record(pid) is None for pid in pids2.values()),pids2
 assert not runner._owned_descendants()
-# A runner-directed SIGTERM must execute cleanup, not leave detached descendants.
+
 script=work/'signal_runner.py'
 script.write_text('''import importlib.util,signal,subprocess,sys,os
 from pathlib import Path
@@ -44,7 +44,7 @@ else:raise AssertionError('Signal test did not launch')
 proc.send_signal(__import__('signal').SIGTERM);assert proc.wait(timeout=10)!=0
 signalpids=json.loads((work/'signal-pids.json').read_text())
 assert all(runner._proc_record(pid) is None for pid in signalpids.values()),signalpids
-# Isolate marker protocol fixtures from other agents' real canonical marker.
+
 fixture=work/'quarantine';fixture.mkdir()
 (fixture/'run_prepared.py').write_text((root/'run_prepared.py').read_text().replace('/tmp/soup-gpu0.lock',str(fixture/'gpu.lock')))
 (fixture/'official_frozen_manifest.json').write_bytes((root/'official_frozen_manifest.json').read_bytes())
@@ -59,7 +59,7 @@ p=subprocess.run(args,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,ti
 assert p.returncode==1,p.stderr
 marker=fixture/'gpu.lock.blocked';assert marker.is_file()
 assert '"operator_reconciliation_required": true' in p.stdout
-# Another invocation must refuse that unresolved quarantine before any GPU call.
+
 p2=subprocess.run(args,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,timeout=10)
 assert p2.returncode and 'quarantined' in p2.stderr
 assert marker.is_file()

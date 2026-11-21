@@ -30,7 +30,7 @@ for index, cell in enumerate(notebook["cells"]):
         compile("".join(cell["source"]), "notebook_cell_" + str(index), "exec")
 checks["notebook_json_cleared_and_code_syntax"] = True
 
-# The payload cell consists solely of literals. Never execute notebook code.
+
 payload = ast.parse("".join(notebook["cells"][3]["source"]))
 for node in payload.body:
     if isinstance(node, ast.Assign) and len(node.targets) == 1 and isinstance(node.targets[0], ast.Name):

@@ -83,7 +83,7 @@ class RunnerTests(unittest.TestCase):
         spec,record=self.mock_screen();record['harness_result']=None;record['process'].update(exit_code=-9,timed_out=True)
         r=R.normalize_screen(spec,'run_test',record,'d'*64,'e'*64);R.validate_result(r,spec);self.assertEqual(r['metrics']['runtime_kind'],'unavailable');self.assertEqual(r['execution']['wrapper_elapsed_s'],110);self.assertIsNone(r['metrics']['observed_runtime_s'])
     def test_owned_detached_descendant_cleanup(self):
-        # Own child creates a separate session, as native harness does. No GPU/network.
+
         run=self.root/'owned';run.mkdir();env=R.child_env(run,self.config)
         code='import subprocess,sys,time; p=subprocess.Popen([sys.executable,"-c","import time; time.sleep(30)"],start_new_session=True); print(p.pid,flush=True); time.sleep(30)'
         result=R.supervised_process([sys.executable,'-c',code],str(run),env,0.6,run/'log')

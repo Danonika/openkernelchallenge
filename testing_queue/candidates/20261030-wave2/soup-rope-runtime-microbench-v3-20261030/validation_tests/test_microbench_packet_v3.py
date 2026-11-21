@@ -135,7 +135,7 @@ def test_v2_real_collision_is_reproduced_without_child_execution(tmp_path,monkey
     assert status['error']=="RuntimeError('Process receipt already exists; refuse to overwrite')"
     assert status['processes']['native']['exit_code']==0
     assert status['processes']['old']['exit_code']==0
-    # The original probe survives under 'runtime'; no benchmark report overwrote it.
+
     probe=json.loads(next((tmp_path/'work').glob('*/runtime.json')).read_text())
     assert probe=={'passed':True}
 

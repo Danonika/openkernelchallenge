@@ -40,7 +40,7 @@ def patch_dual_qv_projection_compaction():
         scale=self.scaling[adapter]
         requires_conversion=not torch.is_autocast_enabled()
         dropout_x=self._cast_input_dtype(x,lora_A.weight.dtype) if requires_conversion else x
-        # Do not generate dropout on compact x: the full-mask RNG sequence is required.
+
         dropout_full=dropout(dropout_x)
         dropout_live=dropout_full.reshape(-1,dim).index_select(0,active)
         lora_delta=lora_B(lora_A(dropout_live))*scale

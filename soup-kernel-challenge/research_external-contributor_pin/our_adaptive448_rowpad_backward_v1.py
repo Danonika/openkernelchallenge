@@ -36,7 +36,7 @@ class _PadBackwardOnly(_RecomputeBoth):
         if rows <= 448 or extra == 0:
             raise RuntimeError("Row-padding branch used on a noneligible shape")
         xpad = F.pad(x.reshape(rows, xshape[-1]), (0, 0, 0, extra))
-        # Keep original separate FP16 GEMMs and two independent FP16-roundings.
+
         wg = group.weight("bwd", _GATE)
         wu = group.weight("bwd", _UP)
         g = F.linear(xpad, wg, group.biases[_GATE])

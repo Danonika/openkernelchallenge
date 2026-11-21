@@ -40,7 +40,7 @@ import torch
 
 DISABLED = {}
 
-# What each name covers, and what runs instead once it is off.
+
 COMPONENTS = {
     "fused_head": "fused causal-LM forward and TRL compute_loss (patches.py, fused_head.py) -> "
                   "transformers' forward and TRL's compute_loss (full logits)",

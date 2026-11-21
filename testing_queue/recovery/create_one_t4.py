@@ -118,7 +118,7 @@ class State:
 
 @contextlib.contextmanager
 def local_lock(path):
-    import fcntl  # Cloud Shell/Linux; intentionally no weak Windows fallback.
+    import fcntl
     with path.open("a") as f:
         try:
             fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -208,8 +208,8 @@ def capacity_only(operation):
 
 
 def require_no_disk(api, zone, name):
-    # Failed inserts can leave a billable boot disk. Do not accumulate disks or
-    # implicitly attach a disk left by another attempt.
+
+
     try:
         api.call("GET", f"zones/{zone}/disks/{name}")
     except ApiError as exc:
@@ -225,7 +225,7 @@ def finish_intent(api, state, sleep=time.sleep):
     zone = intent["zone"]
     operation = intent.get("operation")
     if not operation:
-        # Fail closed rather than replay a very old request whose dedupe may expire.
+
         if time.time() - intent["created_at"] > 3600:
             raise Halt("Unresolved request is over one hour old. Inspect Compute operations before proceeding; automatic replay disabled.")
         path = f"zones/{zone}/instances?requestId={intent['request_id']}"
@@ -235,7 +235,7 @@ def finish_intent(api, state, sleep=time.sleep):
                 break
             except (TransportError, ApiError) as exc:
                 if isinstance(exc, ApiError) and exc.status < 500:
-                    raise  # Includes quota, IAM, billing, invalid config, 409 and 429.
+                    raise
                 if attempt == 2:
                     raise Halt("Create outcome remains uncertain. Resume the SAME command/state to reconcile; do not run another creator.") from exc
                 log("Uncertain create response; retrying the SAME request ID only.")
@@ -255,7 +255,7 @@ def finish_intent(api, state, sleep=time.sleep):
     if operation.get("error"):
         if not capacity_only(operation):
             raise Halt("Create failed; no other zone attempted: " + json.dumps(operation["error"]))
-        # A definitive capacity failure AND complete empty inventory are both needed.
+
         if remember_existing(api, state):
             return True
         require_no_disk(api, zone, intent["body"]["name"])
@@ -265,7 +265,7 @@ def finish_intent(api, state, sleep=time.sleep):
         state.save()
         return False
     for _ in range(12):
-        # Direct GET avoids relying on aggregated-list visibility after success.
+
         vm = api.call("GET", f"zones/{zone}/instances/{intent['body']['name']}")
         if vm.get("status") == "RUNNING":
             state.data["winner"] = {"name": vm["name"], "zone": zone}
@@ -282,7 +282,7 @@ def run(api, state, interval, max_minutes):
     if remember_existing(api, state):
         return
     config = state.data["config"]
-    # Finish saved work before any validation, new requests, or new deadlines.
+
     if state.data["intent"] and finish_intent(api, state):
         return
     api.call("GET", "global/networks/default")
@@ -301,7 +301,7 @@ def run(api, state, interval, max_minutes):
         require_no_disk(api, zone, PREFIX + "-" + zone)
         state.data["intent"] = {"zone": zone, "request_id": str(uuid.uuid4()),
             "created_at": time.time(), "body": make_body(config, zone, image)}
-        state.save()  # Persist BEFORE the potentially ambiguous network request.
+        state.save()
         log(f"Requesting one {config['model']} n1-standard-8 + T4 in {zone}.")
         if finish_intent(api, state):
             return

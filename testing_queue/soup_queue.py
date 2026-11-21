@@ -38,7 +38,7 @@ def notebook(raw):
    if not isinstance(node,ast.Call):continue
    name=ast.unparse(node.func)
    require(name not in {'eval','exec','compile','__import__','os.system','os.popen','subprocess.run','subprocess.call','subprocess.Popen','subprocess.check_call','subprocess.check_output','get_ipython'},'Obvious executable shell/dynamic notebook instruction rejected: '+name)
- # Static rejection is deliberately NOT a Python sandbox or an approval.
+
  return {'notebook_cells':len(n['cells']),'review_required':True}
 
 def validate_artifact(raw,kind):
@@ -127,8 +127,8 @@ CREATE TABLE IF NOT EXISTS events(seq INTEGER PRIMARY KEY AUTOINCREMENT,job TEXT
   require((spec['backend']=='CPU')==(spec['entrypoint']=='cpu_contract_v1'),'CPU contracts and GPU lanes must remain separate')
   require(type(spec['priority']) is int and 0<=spec['priority']<=100 and spec['contains_secrets'] is False,'Priority0..100 and no-secrets attestation required')
   raw=self._read_staged(spec['artifact']);inspection=validate_artifact(raw,spec['artifact_kind']);h=digest(raw);name=h+('.ipynb' if spec['artifact_kind']=='notebook' else '.zip');blob=self.root/'artifacts'/name
-  # Publish a fully fsynced content-addressed file atomically; simultaneous
-  # submits must never observe another writer's partially written artifact.
+
+
   fd,tmp=tempfile.mkstemp(prefix='.pending-',dir=self.root/'artifacts')
   try:
    with os.fdopen(fd,'wb') as f:f.write(raw);f.flush();os.fsync(f.fileno());os.fchmod(f.fileno(),0o444)

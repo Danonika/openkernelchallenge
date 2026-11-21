@@ -25,7 +25,7 @@ class BrowserTests(unittest.TestCase):
      page.locator('#jobs tr').click();expect(page.locator('#detail')).to_contain_text('source_sha256')
      page.locator('#submit').click();expect(page.locator('#message')).to_contain_text('Existing identical job returned');expect(page.locator('#jobs tr')).to_have_count(1)
      self.assertEqual(page.evaluate('Object.keys(localStorage).length + Object.keys(sessionStorage).length'),0)
-     # Hold an actual authenticated jobs response, then clear before its delivery.
+
      held=[]
      def intercept(route):held.append((route,route.fetch()))
      page.route('**/v1/jobs',intercept);page.locator('#refresh').click()
@@ -36,7 +36,7 @@ class BrowserTests(unittest.TestCase):
      page.locator('#clear').click();held[0][0].fulfill(response=held[0][1]);page.wait_for_timeout(100)
      expect(page.locator('#jobs tr')).to_have_count(0);expect(page.locator('#token')).to_have_value('');expect(page.locator('#submit')).to_be_disabled();expect(page.locator('#identity')).to_contain_text('Disconnected')
      page.unroute('**/v1/jobs',intercept)
-     # Clear also invalidates a delayed connect response.
+
      held=[];page.route('**/v1/session',intercept);page.locator('#token').fill(TOKENS['submitter']);page.locator('#connect').click()
      deadline=time.monotonic()+10
      while not held:

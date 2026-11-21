@@ -66,8 +66,8 @@ def patch_original_qwen_unpad():
             return real_sdpa(query, key, value, attn_mask=attn_mask,
                              dropout_p=dropout_p, is_causal=is_causal,
                              scale=scale, enable_gqa=enable_gqa)
-        # Never allow a silent fallthrough to globally causal packed attention:
-        # it would let a token see another batch item's keys.
+
+
         if (query.ndim != 4 or query.shape[0] != 1 or
             query.shape[-2] != plan.tokens or key.shape[-2] != plan.tokens or
             not query.is_cuda or query.device != key.device or
@@ -89,9 +89,9 @@ def patch_original_qwen_unpad():
         if (args or kwargs or not self.training or not isinstance(x,torch.Tensor)
             or not x.is_cuda or x.ndim != 3 or x.shape[:2] != (1,plan.tokens)):
             raise RuntimeError("Unsupported q/v packed LoRA; cannot change dropout RNG")
-        # The original PEFT dropout samples B*T masks for q and v separately.
-        # Running the exact original PEFT call on a freshly padded original-
-        # geometry tensor preserves BOTH masks, RNG advancement and A/B grads.
+
+
+
         flat = torch.zeros((plan.total, x.shape[-1]), dtype=x.dtype,device=x.device)
         flat.index_copy_(0,plan.active,x.reshape(plan.tokens,-1))
         dense = flat.view(plan.batch,plan.width,x.shape[-1])
@@ -114,7 +114,7 @@ def patch_original_qwen_unpad():
 
     @wraps(real_model_forward)
     def packed_model(self, *args, **kwargs):
-        # Only the single, standard, right-padded Qwen training shape is safe.
+
         if (args or not self.training or not torch.is_grad_enabled() or
             not torch.is_autocast_enabled("cuda") or
             torch.get_autocast_dtype("cuda") != torch.float16):
@@ -143,7 +143,7 @@ def patch_original_qwen_unpad():
                   < torch.tensor(lengths,device=mask.device)[:,None])
         if not torch.equal(mask!=0,expected):
             return real_model_forward(self,*args,**kwargs)
-        # Preserve the original dense position_id values at the active rows.
+
         base_pos=kwargs.get("position_ids")
         if base_pos is not None and (not isinstance(base_pos,torch.Tensor) or
             base_pos.ndim!=2 or base_pos.shape[1]!=t or
@@ -169,7 +169,7 @@ def patch_original_qwen_unpad():
                    ("input_ids","attention_mask","inputs_embeds","position_ids",
                     "past_key_values","use_cache")},
             )
-            # One independent row-isolated attention per Qwen decoder layer.
+
             if _NATIVE_COUNT["varlen_calls"]-start != len(self.layers):
                 raise RuntimeError("Packed Qwen2 attention did not invoke row-isolated SDPA for every layer")
         finally:

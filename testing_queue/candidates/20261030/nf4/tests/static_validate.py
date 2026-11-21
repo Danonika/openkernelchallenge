@@ -55,7 +55,7 @@ for p in (ROOT/'solution').glob('*.py'):
                 check('native_backward_not_replaced_'+p.name, not (isinstance(target,ast.Attribute) and target.attr=='backward'))
 check('no_copied_old_decoder', (ROOT/'solution/packed_nf4.py').read_bytes() != Path('/redacted/local/soup_gpu_trials/trial002/solution/nf4_decode.py').read_bytes())
 check('submission_baseline_unresolved',json.loads((ROOT/'submission.template.json').read_text())['baseline_id']=='REPLACE_WITH_MEASURED_GCP_BASELINE_ID')
-# Authorization fails before environment access/GPU/lock acquisition.
+
 spec=importlib.util.spec_from_file_location('nf4_driver',ROOT/'notebook_driver.py')
 mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
 try:
@@ -63,7 +63,7 @@ try:
     raise AssertionError('authorization gate failed')
 except RuntimeError as e:
     check('default_authorization_gate', 'authorization' in str(e))
-# CPU-only process-tree timeout fixture, including detached child process group.
+
 with tempfile.TemporaryDirectory(prefix='nf4-timeout-fixture-') as tmp:
     tmp=Path(tmp)
     mod.QUARANTINE_PATH=tmp/'quarantine.json'
@@ -77,11 +77,11 @@ with tempfile.TemporaryDirectory(prefix='nf4-timeout-fixture-') as tmp:
     pid=int(child_pid.read_text())
     check('detached_child_targeted',pid in receipt['timeout_owned_pids_signalled'])
     stat=Path('/proc')/str(pid)/'stat'
-    # Killed child may remain a zombie briefly; it cannot execute GPU or CPU work.
+
     state=stat.read_text().rsplit(')',1)[1].split()[0] if stat.exists() else 'absent'
     check('detached_child_no_longer_running',state in ('Z','absent'))
-# Real KeyboardInterrupt while a detached child is alive: receipt persists and
-# both owned PID identities terminate before the lock-owning caller unwinds.
+
+
 import os
 import signal
 import threading
@@ -110,7 +110,7 @@ with tempfile.TemporaryDirectory(prefix='nf4-interrupt-fixture-') as tmp:
     check('keyboard_interrupt_detached_child_targeted',pid in receipt['timeout_owned_pids_signalled'])
     record=mod.process_record(pid)
     check('keyboard_interrupt_child_not_running',record is None or record['state']=='Z')
-# Stale identity cannot signal a new process; already-exited root is harmless.
+
 p=subprocess.Popen([sys.executable,'-c','import time;time.sleep(10)'])
 identity=mod.process_record(p.pid)
 mod.signal_owned(p.pid,identity['birth']+1,signal.SIGKILL)
@@ -118,7 +118,7 @@ check('pid_birth_identity_guard',p.poll() is None)
 p.terminate();p.wait()
 _, confirmed=mod.terminate_owned_tree(p,{p.pid:identity['birth']})
 check('already_exited_root_cleanup_race',confirmed)
-# Constructor-interruption uncertainty is quarantined even without a PID handle.
+
 with tempfile.TemporaryDirectory(prefix='nf4-constructor-fixture-') as tmp:
     tmp=Path(tmp);mod.QUARANTINE_PATH=tmp/'quarantine.json'
     original_popen=mod.subprocess.Popen
@@ -136,8 +136,8 @@ with tempfile.TemporaryDirectory(prefix='nf4-constructor-fixture-') as tmp:
     receipt=json.loads((tmp/'run.log.receipt.json').read_text())
     check('constructor_interruption_unknown',receipt['exit_code'] is None and receipt['cleanup_confirmed'] is None)
     check('constructor_interruption_quarantined',mod.QUARANTINE_PATH.is_file())
-# Full-run lock wrapper writes its crash marker before work and clears only a
-# normal verified return. No GPU/prepared-asset function is called in this fixture.
+
+
 with tempfile.TemporaryDirectory(prefix='nf4-crash-marker-fixture-') as tmp:
     tmp=Path(tmp);mod.QUARANTINE_PATH=tmp/'quarantine.json';mod.GPU_LOCK_PATH=tmp/'gpu.lock'
     original_run=mod._run_locked
@@ -163,7 +163,7 @@ with tempfile.TemporaryDirectory(prefix='nf4-crash-marker-fixture-') as tmp:
     else:
         raise AssertionError('abandoned marker was ignored')
     mod._run_locked=original_run
-# Abrupt SIGKILL cannot invoke finally; the pre-created marker must survive it.
+
 with tempfile.TemporaryDirectory(prefix='nf4-sigkill-fixture-') as tmp:
     tmp=Path(tmp);marker=tmp/'quarantine.json';ready=tmp/'ready'
     source=("import importlib.util,pathlib,time; "

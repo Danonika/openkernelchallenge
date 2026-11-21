@@ -30,7 +30,7 @@ def main():
         raw = f.read(16385)
     credentials = ShortLivedSheetsCredentials(path)
     credentials.refresh()
-    # Verify the intended spreadsheet is accessible before installing anything.
+
     import requests
     session = requests.Session()
     session.trust_env = False
@@ -45,8 +45,8 @@ def main():
         os.fsync(f.fileno())
     os.replace(temporary, target)
     path.unlink()
-    # Unit configuration is prepared in advance. No daemon reload, GPU worker
-    # restart, VM stop, service-account attachment or cloud permission changes.
+
+
     subprocess.run(["systemctl", "restart", "soup-sheets-queue.service"], check=True)
     print("Short-lived Sheets credential installed; only the Sheet poller restarted.")
 

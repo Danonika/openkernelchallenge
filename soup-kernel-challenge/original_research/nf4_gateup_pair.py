@@ -58,7 +58,7 @@ def soup_nf4_paired_gate_up(
     outer_code = tl.load(code_ptr + code_index)
     outer_scale = tl.load(nested_ptr + nested_index, mask, 0)
     outer_offset = tl.load(zero_ptr)
-    # FMA must be disabled at launch to match bitsandbytes' separate arithmetic.
+
     final_scale = outer_code * outer_scale + outer_offset
     hi = tl.load(levels + (nibble_pair >> 4)) * final_scale
     lo = tl.load(levels + (nibble_pair & 15)) * final_scale

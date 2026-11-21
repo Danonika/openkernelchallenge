@@ -27,7 +27,7 @@ _INPUT = 1536
 _GATE = 4
 _STOP = 6
 _TILE = 512
-_VJP_ROW_CAP = 768  # fixed shape-only scratch bound; no runtime allocation monitoring
+_VJP_ROW_CAP = 768
 
 
 @triton.jit
@@ -60,8 +60,8 @@ def soup_packed_gated_input_vjp(
     up = tl.load(PREACT + offset + WIDTH, keep, other=0).to(tl.float32)
     grad = tl.load(DACT + linear, keep, other=0).to(tl.float32)
     sig = tl.sigmoid(gate)
-    # Same mathematical SiLU/GLU derivative as the native op. This node
-    # writes both halves in-place, directly matching the stacked weight GEMM.
+
+
     dg = ((grad * up) * sig) * (1.0 + gate * (1.0 - sig))
     du = (grad * gate) * sig
     tl.store(PREACT + offset, dg, keep)
@@ -74,8 +74,8 @@ class _SingleGemmReplay(torch.autograd.Function):
         in_width = x.shape[-1]
         if in_width != _INPUT or x.dtype != torch.float16:
             raise ValueError("Unsupported packed grouped MLP input")
-        # Preserve the exact already-measured forward's separate gate/up
-        # GEMM and starter SwiGLU, and optimize only the input VJP GEMM.
+
+
         from .swiglu import BLOCK, example_swiglu_fwd_kernel
         wg = group.weight("fwd", _GATE)
         gate = torch.nn.functional.linear(x, wg, group.biases[_GATE]).contiguous()
@@ -99,8 +99,8 @@ class _SingleGemmReplay(torch.autograd.Function):
             return None, None
         (x,) = ctx.saved_tensors
         group = ctx.group
-        # Fetch the two adjacent frozen weights once per backward pass;
-        # qgroup owns their lifetime, unchanged from the measured parent.
+
+
         weights = group.span("bwd", _GATE, _STOP)
         if weights is None or tuple(weights.shape) != (2 * _DIM, _INPUT):
             raise RuntimeError("Grouped backward span unavailable")
@@ -111,9 +111,9 @@ class _SingleGemmReplay(torch.autograd.Function):
         xflat = x.reshape(rows, _INPUT)
         gradflat = dact.reshape(rows, _DIM)
         dx = torch.empty((rows, _INPUT), device=x.device, dtype=x.dtype)
-        # Explicit bounded buffer lifetime: no persistent/reusable cache,
-        # no hidden-row or memory-monitor branch. Only actual tensor shape.
-        # For ordinary shorter batches the existing single GEMM remains.
+
+
+
         for left in range(0, rows, _VJP_ROW_CAP):
             right = min(left + _VJP_ROW_CAP, rows)
             with torch.autocast(device_type="cuda", enabled=False):
@@ -160,8 +160,8 @@ def install_packed_mlp_replay():
                 or tuple(group.shapes[_GATE]) != (_DIM, _INPUT)
                 or tuple(group.shapes[_GATE + 1]) != (_DIM, _INPUT)):
             return old(self, x)
-        # The installed parent input-only path uses exactly two additional
-        # grouped backward accesses for the gate/up projections.
+
+
         hidden = _SingleGemmReplay.apply(x, group)
         group.expected_bwd += 2
         return self.down_proj(hidden)

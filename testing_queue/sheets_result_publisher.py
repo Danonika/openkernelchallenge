@@ -102,8 +102,8 @@ class GoogleSheetsAPI:
     @classmethod
     def from_service_account_file(cls, path: str | Path,
                                   spreadsheet_id: str = SPREADSHEET_ID) -> "GoogleSheetsAPI":
-        # A credential file is trusted operator configuration, but pin its token
-        # endpoint so accidentally supplied JSON cannot send a signed JWT elsewhere.
+
+
         try:
             info = json.loads(Path(path).read_text(encoding="utf-8"))
             if (not isinstance(info, dict) or info.get("type") != "service_account"
@@ -132,7 +132,7 @@ class GoogleSheetsAPI:
 
     def _request(self, method: str, suffix: str = "", **kwargs: Any) -> dict[str, Any]:
         url = self.base_url + suffix
-        # Construct every destination internally; callers cannot supply URLs.
+
         for attempt in range(2):
             try:
                 headers = {"Accept": "application/json"}
@@ -147,7 +147,7 @@ class GoogleSheetsAPI:
                     continue
                 if status < 200 or status >= 300:
                     response.close()
-                    # Google response bodies may contain user input.  Do not log them.
+
                     raise PublishError("Google Sheets HTTP " + str(status))
                 try:
                     value = response.json()
@@ -211,7 +211,7 @@ def cell(value: Any) -> dict[str, Any]:
     if isinstance(value, (int, float)):
         if not math.isfinite(value):
             raise PublishError("Non-finite result number")
-        # Google stores numbers as doubles; preserve large integral identifiers.
+
         if isinstance(value, int) and abs(value) > 9007199254740991:
             return {"userEnteredValue": {"stringValue": str(value)}}
         return {"userEnteredValue": {"numberValue": value}}
@@ -251,7 +251,7 @@ class SheetsResultPublisher:
                     and saved.get("spreadsheet_id") == self.spreadsheet_id):
                 self.last_digest = saved.get("digest", "")
         except (OSError, ValueError, TypeError, AttributeError):
-            pass  # A missing/corrupt checkpoint safely republishes the snapshot.
+            pass
 
     def _body(self, tables: Mapping[str, list[list[Any]]]) -> dict[str, Any]:
         if set(tables) != set(TAB_NAMES):
@@ -286,9 +286,9 @@ class SheetsResultPublisher:
                     "properties": {"sheetId": sheet_id, "gridProperties": {
                         "rowCount": height, "columnCount": width}},
                     "fields": "gridProperties.rowCount,gridProperties.columnCount"}})
-            # updateCells with a range clears specified fields not covered by the
-            # supplied rows.  Including the full existing grid removes stale
-            # values from shortened snapshots while preserving formatting/notes.
+
+
+
             requests.append({"updateCells": {
                 "range": {"sheetId": sheet_id, "startRowIndex": 0,
                           "endRowIndex": height, "startColumnIndex": 0,
@@ -324,7 +324,7 @@ class SheetsResultPublisher:
         except PublishError as exc:
             return {"state": "retry", "updated": False, "error": str(exc)}
         except Exception:
-            # Includes invalid projections, I/O and injected transport failures.
-            # Raw exceptions may contain tokens, private notebook text or URLs.
+
+
             return {"state": "retry", "updated": False,
                     "error": "Google Sheets result publication failed"}

@@ -23,7 +23,7 @@ records=[]
 for n,k in [(9,64),(17,128),(129,128)]:
     state=fixture(n,k)
     weights=np.array(decode_materialized(state),dtype=np.float16).reshape(n,k)
-    # Independent scalar staged decoder from packed arrays, matching each B fragment.
+
     packed=np.frombuffer(state.packed,dtype=np.uint8)
     qabs=np.frombuffer(state.scale_indices,dtype=np.uint8)
     code=np.array(state.code2,dtype=np.float32);abs2=np.array(state.abs2,dtype=np.float32)
@@ -49,7 +49,7 @@ for n,k in [(9,64),(17,128),(129,128)]:
         assert np.array_equal(reconstructed[:,:valid].view(np.uint16),weights[n_tile*8:n_tile*8+valid,block*64+chunk*8:block*64+chunk*8+8].T.copy().view(np.uint16))
     records.append({'N':n,'K':k,'decoded_operand_fragments_finite_bits_exact':True,'nested_superblock_boundary_covered':n*k>16384})
 
-# A fragments and C fragment coordinates independently cover their full rectangles.
+
 A=np.arange(16*8,dtype=np.float16).reshape(16,8)/8
 fragment_A=np.empty_like(A); seen_A=set();seen_C=set()
 for lane in range(32):
@@ -70,7 +70,7 @@ for m,n in [(1,1),(17,9),(33,17)]:
      if row<m and col<n:writes.append((row,col))
  assert len(writes)==m*n and len(set(writes))==m*n
 
-# Required non-equivalence witness: a half matmul result cannot be narrowed before bias.
+
 a=torch.zeros(1,64,dtype=torch.float16);a[0,0]=1.;a[0,1]=.0004
 w=torch.ones(1,64,dtype=torch.float16);bias=torch.tensor([.0002],dtype=torch.float16)
 native=torch.nn.functional.linear(a,w,bias)

@@ -44,7 +44,7 @@ OUTCOMES = {'beats_baseline': 'Beat baseline', 'faster_more_memory': 'Faster · 
     'less_memory': 'Less VRAM · no speed gain', 'no_gain': 'No measured gain',
     'checks_failed': 'Checks failed', 'incomplete': 'Incomplete comparison',
     'no_metrics': 'No training report', 'run_failed': 'Run failed', 'pending': 'In progress'}
-JSON_CHUNK_SIZE = 12000  # Escaping/surrogates still stay below Sheets' 50k cell limit.
+JSON_CHUNK_SIZE = 12000
 
 
 def mapping(value):
@@ -97,8 +97,8 @@ def checks_for(job):
 
 
 def raw_details(value, key, kind, rid='', job_id=''):
-    # The API already emits standard finite JSON; fail explicitly rather than
-    # silently dropping unsupported data or truncating a large metrics report.
+
+
     raw = json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':'), allow_nan=False)
     sha = hashlib.sha256(raw.encode()).hexdigest()
     chunks = [raw[i:i + JSON_CHUNK_SIZE] for i in range(0, len(raw), JSON_CHUNK_SIZE)]

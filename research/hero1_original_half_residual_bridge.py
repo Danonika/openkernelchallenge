@@ -26,8 +26,8 @@ import torch.nn.functional as F
 
 
 def _half_embedding_forward(module, input_ids):
-    # Same frozen embedding table and torch autograd hooks; only output dtype
-    # differs from the prior FP32 materialization.
+
+
     if module.weight.requires_grad or module.weight.dtype != torch.float16:
         raise RuntimeError("Hero1 half residual requires verified frozen FP16 tied embedding")
     return F.embedding(
@@ -44,8 +44,8 @@ def patch_half_residual_bridge():
     if getattr(previous_prepare, "_hero1_half_residual", False):
         return True
 
-    # Our own existing fused RMSNorm remains the numerical producer; its
-    # native FP32 output is rounded once at a separately tagged training node.
+
+
     previous_norm_forward = Qwen2RMSNorm.forward
 
     @wraps(previous_norm_forward)
@@ -68,8 +68,8 @@ def patch_half_residual_bridge():
     @wraps(previous_prepare)
     def prepared_with_half_residual(model, *args, **kwargs):
         prepared = previous_prepare(model, *args, **kwargs)
-        # Prevent changes on generic PEFT regressions, AMP/bf16 variants,
-        # alternate model classes or unsupported training configs.
+
+
         if (type(prepared) is not Qwen2ForCausalLM
                 or not getattr(prepared, "is_loaded_in_4bit", False)
                 or not getattr(prepared, "_candidate_frozen_storage", False)
@@ -97,10 +97,10 @@ def patch_half_residual_bridge():
                for m in norms):
             return prepared
         if "forward" not in embedding.__dict__:
-            # The earlier verified frozen-storage patch must own this method.
+
             return prepared
 
-        # Commit only after checking the entire model/parameter contract.
+
         embedding.forward = MethodType(_half_embedding_forward, embedding)
         for m in norms:
             m._hero1_half_norm = True

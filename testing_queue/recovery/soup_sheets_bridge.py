@@ -152,6 +152,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         raise SystemExit("Bridge stopped. Writing pauses after token expiry; GPU jobs continue.")
     except Exception as exc:
-        # Do not print subprocess output or token response bodies.
+
         reason = str(exc) if isinstance(exc, RuntimeError) else type(exc).__name__
         raise SystemExit("Bridge stopped: " + reason + ". No credentials were printed.") from None

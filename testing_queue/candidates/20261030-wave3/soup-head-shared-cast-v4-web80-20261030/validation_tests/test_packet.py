@@ -29,7 +29,7 @@ base_nodes={n.name:n for n in base.body if isinstance(n,(ast.ClassDef,ast.Functi
 assert set(base_nodes)==set(cur_nodes)
 for n in base_nodes:
  if n not in ['normalize','main']:assert ast.dump(base_nodes[n])==ast.dump(cur_nodes[n]),n
-# The generated main must equal the previously accepted V2 head main exactly.
+
 accepted=ast.parse(Path('/redacted/local/soup_web_wave3_20261030/head_telemetry_v2/web_adapter/web_runner.py').read_text())
 accepted_main=next(n for n in accepted.body if isinstance(n,ast.FunctionDef) and n.name=='main')
 assert ast.dump(cur_nodes['main'])==ast.dump(accepted_main)

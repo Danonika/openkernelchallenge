@@ -36,7 +36,7 @@ ASSETS=[
  'reference/kaggle_environment.json','reference/kaggle_environment.md',
 ]
 def allowed_files():
- # Do not recursively package directories: newly created files need explicit disclosure review.
+
  files=sorted(set(CORE+ASSETS))
  for name in files:
   path=ROOT/name

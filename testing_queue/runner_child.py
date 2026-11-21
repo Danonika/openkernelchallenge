@@ -25,7 +25,7 @@ def main():
         value=module.queue_smoke()
         if not isinstance(value,dict) or value.get('passed') is not True:
             raise ValueError('Reviewed queue_smoke() must return a dictionary with passed=True')
-        # Evidence is untrusted candidate data. The parent independently sets scope and NEVER adopts score/admission.
+
         json.dumps(value,allow_nan=False)
         result.update(status='passed',candidate_report=value,module_file=str(Path(module.__file__).resolve()))
     except BaseException as exc:

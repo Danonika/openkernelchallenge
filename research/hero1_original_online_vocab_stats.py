@@ -30,8 +30,8 @@ def hero1_online_vocab_stats(
     centered = tl.full((), 0.0, tl.float32)
     winner = tl.full((), 2147483647, tl.int32)
 
-    # One CTA owns one complete row. The scan itself performs useful
-    # statistics on all logits, including ignored targets needed for entropy.
+
+
     for tile in range(tl.cdiv(VOCAB, BLOCK)):
         idx = tile * BLOCK + lane
         inside = idx < VOCAB

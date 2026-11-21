@@ -129,7 +129,7 @@ def test_pre_forward_fallbacks(case):
         elif case=='nested':
             token=_ACTIVE.set(object());cleanup.append(lambda:_ACTIVE.reset(token))
         reason,_=h.guard(t,m,inputs,kwargs.get('return_outputs',False));assert reason is not None
-        # The guard itself must never install a hook or run the model.
+
         assert stats.counts['shared_cast']==0
     finally:
         for f in reversed(cleanup):f()

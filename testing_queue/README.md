@@ -2,7 +2,7 @@
 
 For automatic intake from Google Sheets, use [To Run](https://example.invalid/redacted): add a notebook, set a unique Request ID, and check Ready. The VM mirrors the site's result metrics, individual training runs and full job JSON directly to **VM Results**, **VM Runs**, **VM Details** and **VM Queue** in the same spreadsheet. [SHEETS_QUEUE.md](SHEETS_QUEUE.md) covers submission, result retrieval and the one-time Google writer authorization required for automatic updates.
 
-The deployed service accepts authenticated notebook submissions at [https://35.200.1.242/](https://35.200.1.242/) and [https://35-200-1-242.sslip.io/](https://35-200-1-242.sslip.io/) and runs them automatically on the VM's Tesla T4. Both addresses serve the same queue and accept the same credentials without redirecting between addresses. Start with [NOTEBOOK_RUNNER.md](NOTEBOOK_RUNNER.md) for the current notebook workflow, API, limits and results.
+This directory archives the authenticated notebook runner for a Tesla T4 VM. Historical deployment addresses are intentionally omitted. See [HTTP API notes](HTTP_API.md) and the [deployment adapter](DEPLOYMENT_ADAPTER.md).
 
 This repository also retains the older reviewed solution-bundle lane. Its approval and source-allowlist requirements apply to bundle jobs, not to automatic notebook jobs.
 
@@ -17,8 +17,8 @@ Both lanes share the host GPU lock. The API has no GPU or Docker privileges. Not
 
 ## Notebook workflow
 
-1. Open the dashboard and connect with a submitter token, or download [notebook_client.py](https://35-200-1-242.sslip.io/notebook_client.py).
-2. Start with the [training template](https://35-200-1-242.sslip.io/notebook-training-template.ipynb) or [GPU smoke notebook](https://35-200-1-242.sslip.io/notebook-gpu-smoke.ipynb). Put candidate changes in the copied repository's `solution/` directory.
+1. Open the dashboard and connect with a submitter token, or download [notebook_client.py](notebook_client.py).
+2. Start with the [training template](../service/notebook-training-template.ipynb) or GPU smoke notebook. Put candidate changes in the copied repository's `solution/` directory.
 3. Submit, inspect the online experiment table, and download the output ZIP. The default training template runs only the solution and uses a compatible saved public baseline.
 4. Use **Re-run** on a finished job to create a new job from its saved notebook and timeout settings. The original job remains available.
 
@@ -34,7 +34,7 @@ python notebook_client.py cancel n_JOB_ID
 The client defaults to the IP address. To use the hostname, put `--url` before the subcommand:
 
 ```bash
-python notebook_client.py --url https://35-200-1-242.sslip.io submit candidate.ipynb --candidate experiment-001 --wait --out results.zip
+python notebook_client.py --url https://your-runner.example submit candidate.ipynb --candidate experiment-001 --wait --out results.zip
 ```
 
 Keep HTTPS certificate verification enabled. Each address has its own certificate. The hostname resolves directly to the same VM; it is not a proxy and cannot guarantee access from an execution environment that blocks outbound connections to the VM.
@@ -47,7 +47,7 @@ The fixed compute profile is one Tesla T4 on GPU 0, four usable logical CPUs, a 
 
 Speedup is baseline training seconds divided by solution training seconds. The selected public baseline is **71.85 s / 14,345 MiB / 2.04968 eval loss**, reused only when its runtime, harness, task and data bindings match. Paired runs remain supported. Failures retain available partial measurements; unfinished evaluation is shown as **Not evaluated**. A partial run cannot count as beating the baseline.
 
-Storage and shared memory have separate limits from GPU memory, RAM and exported results. [NOTEBOOK_RUNNER.md](NOTEBOOK_RUNNER.md#storage-and-shared-memory) documents the v8 profile and how to verify activation. Its [storage capability probe](https://35-200-1-242.sslip.io/notebook-storage-probe.ipynb) is a diagnostic, not a training benchmark. The 80-second training cap remains unchanged.
+Storage and shared memory have separate limits from GPU memory, RAM and exported results. [NOTEBOOK_RUNNER.md](NOTEBOOK_RUNNER.md#storage-and-shared-memory) documents the v8 profile and how to verify activation. Its [storage capability probe](examples/notebook-storage-probe.ipynb) is a diagnostic, not a training benchmark. The 80-second training cap remains unchanged.
 
 These are development checks on public data. Completion is not official admission; admission stays `UNKNOWN` and score stays `null`. The jury's [pinned official rules](https://example.invalid/redacted-github), hidden-data checks and original-kernel participation requirement still apply.
 

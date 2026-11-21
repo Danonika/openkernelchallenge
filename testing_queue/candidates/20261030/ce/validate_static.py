@@ -64,7 +64,7 @@ kernels={n:sha_bytes(ast.dump(node,include_attributes=False).encode()) for n,nod
 assert kernels==contract['kernel_ast_sha256'] and len(kernels)==5
 assert sha_bytes(ast.dump(functions['native_causal_loss'],include_attributes=False).encode())==contract['native_causal_loss_ast_sha256']
 assert sha(ROOT/'solution/numerical_gates.py')==contract['numerical_gates_sha256']
-# Guard order still falls back outside no_grad; no inadvertent detached native result.
+
 fn=functions['materialized_causal_loss'];topifs={ast.unparse(n.test):n for n in fn.body if isinstance(n,ast.If)}
 assert all(isinstance(topifs[key].body[0],ast.Return) for key in ('invalid','near_certain'))
 assert '_denominator_metadata' not in (ROOT/'solution/adapter.py').read_text()
@@ -82,12 +82,12 @@ record('official_source_manifest',{'files':len(official_manifest),'matches_local
 runner=load_module('ce_prepared_runner',ROOT/'notebook_runner.py')
 assert runner.validate_zip(raw,actual)
 assert runner.completed_result({})[0] is False
-# Synthetic completion fixtures only. They never become measured baselines.
+
 run={'exit_code':0,'metrics':{'exit_code':0,'steps':64},'global_step':64,'adapter_config':{'fixture':True},'adapter_tensors':{'fixture':[]},'wall_s':1,'gpu_peak_mib':1}
 fixture={'task':{'repeats':2,'seed':1,'only':None},'runs':{'base':[run.copy(),run.copy()],'solution':[run.copy(),run.copy()]},'evals':{'base':{'exit_code':0,'mean_loss':2.},'solution':{'exit_code':0,'mean_loss':2.}},'packages_changed':[]}
 assert runner.completed_result(fixture)[0]
 fixture['runs']['solution'][0]['exit_code']=-9
-assert not runner.completed_result(fixture)[0]  # nested metrics exit0/64 must not rescue timeout
+assert not runner.completed_result(fixture)[0]
 fixture['runs']['solution'][0]['exit_code']=0;fixture['evals']['solution']['mean_loss']=float('nan')
 assert not runner.completed_result(fixture)[0]
 record('completion_fail_closed_fixtures',{'empty_rejected':True,'native_timeout_with_nested_64_rejected':True,'nonfinite_quality_rejected':True})
@@ -97,7 +97,7 @@ with tempfile.TemporaryDirectory(prefix='ce-cpu-validation-') as temp:
     parsed=runner.parse_routes(log)
     assert len(parsed['records'])==1 and parsed['partial_lines']==1
     assert runner.parse_routes(tmp/'missing')['status']=='UNKNOWN'
-    # Test outer cleanup across a separate process session, without GPUs.
+
     pidfile=tmp/'descendant.pid'
     code="import subprocess,sys,time,pathlib; p=subprocess.Popen([sys.executable,'-c','import time; time.sleep(20)'],start_new_session=True); pathlib.Path(sys.argv[1]).write_text(str(p.pid)); time.sleep(20)"
     status,wall=runner.execute([sys.executable,'-c',code,str(pidfile)],cwd=tmp,env=None,logfile=tmp/'outer.log',timeout=0.5,quarantine_path=tmp/'blocked')

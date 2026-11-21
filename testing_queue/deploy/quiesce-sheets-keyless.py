@@ -26,7 +26,7 @@ def quiesce(run, busy, check_only=False):
         if busy():
             raise RuntimeError('A request arrived during preflight. Services restored; retry after it finishes.')
         run(['systemctl', 'stop', SERVICES[2]], check=True)
-        # If Cloud Shell disconnects before stopping the VM, restore service.
+
         run(['systemd-run', '--unit=soup-keyless-recover-' + str(os.getpid()),
              '--on-active=5m', '/bin/systemctl', 'start', *SERVICES], check=True)
     except Exception:

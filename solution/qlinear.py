@@ -26,7 +26,7 @@ import triton.language as tl
 from .engaged import FELL_BACK, ON, RAN
 from .state import DISABLED, fallback
 
-BLOCK = 2048    # packed bytes per program = 4096 output elements
+BLOCK = 2048
 NUM_WARPS = 4
 
 

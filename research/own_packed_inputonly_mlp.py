@@ -56,8 +56,8 @@ def soup_packed_gated_input_vjp(
     up = tl.load(PREACT + offset + WIDTH, keep, other=0).to(tl.float32)
     grad = tl.load(DACT + linear, keep, other=0).to(tl.float32)
     sig = tl.sigmoid(gate)
-    # Same mathematical SiLU/GLU derivative as the native op. This node
-    # writes both halves in-place, directly matching the stacked weight GEMM.
+
+
     dg = ((grad * up) * sig) * (1.0 + gate * (1.0 - sig))
     du = (grad * gate) * sig
     tl.store(PREACT + offset, dg, keep)
@@ -70,8 +70,8 @@ class _SingleGemmReplay(torch.autograd.Function):
         in_width = x.shape[-1]
         if in_width != _INPUT or x.dtype != torch.float16:
             raise ValueError("Unsupported packed grouped MLP input")
-        # span(..., last) counts BOTH frozen projections in the
-        # already-tracked forward pass. A separate copy of weights is avoided.
+
+
         weights = group.span("fwd", _GATE, _STOP)
         if weights is None or tuple(weights.shape) != (2 * _DIM, _INPUT):
             raise RuntimeError("Grouped forward span unavailable")
@@ -106,7 +106,7 @@ class _SingleGemmReplay(torch.autograd.Function):
             preact, dact, TOTAL=dact.numel(), WIDTH=_DIM, BLOCK=_TILE,
             num_warps=4, enable_fp_fusion=False,
         )
-        # One hidden-gradient GEMM instead of two separate half GEMMs.
+
         with torch.autocast(device_type="cuda", enabled=False):
             dx = torch.mm(preact, weights)
         return dx.reshape(ctx.input_shape).to(x.dtype), None
@@ -140,8 +140,8 @@ def install_packed_mlp_replay():
                 or tuple(group.shapes[_GATE]) != (_DIM, _INPUT)
                 or tuple(group.shapes[_GATE + 1]) != (_DIM, _INPUT)):
             return old(self, x)
-        # The installed parent input-only path uses exactly two additional
-        # grouped backward accesses for the gate/up projections.
+
+
         hidden = _SingleGemmReplay.apply(x, group)
         group.expected_bwd += 2
         return self.down_proj(hidden)
