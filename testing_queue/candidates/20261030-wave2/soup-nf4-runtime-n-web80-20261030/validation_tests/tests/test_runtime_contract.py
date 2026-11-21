@@ -3,7 +3,7 @@ import ast,contextlib,importlib.util,io,json,os,re,sys,tempfile
 from pathlib import Path
 from unittest.mock import patch
 os.environ['CUDA_VISIBLE_DEVICES']='';os.environ['TRITON_INTERPRET']='1';sys.dont_write_bytecode=True
-ROOT=Path(__file__).resolve().parents[1];OLD=Path('/workspace/shared/soup_web_wave2_20261030/nf4')
+ROOT=Path(__file__).resolve().parents[1];OLD=Path('/redacted/local/soup_web_wave2_20261030/nf4')
 sys.path.insert(0,str(ROOT))
 import torch
 from solution import routes

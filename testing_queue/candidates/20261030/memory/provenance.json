@@ -5,12 +5,12 @@
   "requested_tied_storage_status": "BLOCKED_NO_TARGET_MUTATION",
   "official_starter_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
   "prior_original_source": {
-    "/workspace/shared/soup_gpu_trials/trial005_mem001/solution/__init__.py": "7f8d730c50da920601b77a0fde1b74f5118ddf8891c7214023f48348a4b342c8",
-    "/workspace/shared/soup_gpu_trials/trial005_mem001/solution/adapter.py": "03c20db24562dd057bf65906a63bf95aa20a29359e359f3b9a2938c154c8b9bb",
-    "/workspace/shared/soup_gpu_trials/trial005_mem001/solution/fixture_common.py": "3681aeaa6020ab722110ca23c952657d2e8103340b874dee00d90c1d4bad317e",
-    "/workspace/shared/soup_gpu_trials/trial005_mem001/solution/restore.py": "ef7d677ef08e01123b360f7c503e80873a245d8901c9374b08fdd7ab090b1b87",
-    "/workspace/shared/soup_gpu_trials/trial005_mem001/solution/restore_kernel.py": "64811560821f78f1bfeadf2b0eeda55d8258fa4d8daed866e0ec727c9ea617ef",
-    "/workspace/shared/soup_gpu_trials/trial005_mem001/solution/verify_trial005.py": "ef17f342a5d2eac794d7c8d52904d03f3c626b2e12a9e79c56c9f72290d30769"
+    "/redacted/local/soup_gpu_trials/trial005_mem001/solution/__init__.py": "7f8d730c50da920601b77a0fde1b74f5118ddf8891c7214023f48348a4b342c8",
+    "/redacted/local/soup_gpu_trials/trial005_mem001/solution/adapter.py": "03c20db24562dd057bf65906a63bf95aa20a29359e359f3b9a2938c154c8b9bb",
+    "/redacted/local/soup_gpu_trials/trial005_mem001/solution/fixture_common.py": "3681aeaa6020ab722110ca23c952657d2e8103340b874dee00d90c1d4bad317e",
+    "/redacted/local/soup_gpu_trials/trial005_mem001/solution/restore.py": "ef7d677ef08e01123b360f7c503e80873a245d8901c9374b08fdd7ab090b1b87",
+    "/redacted/local/soup_gpu_trials/trial005_mem001/solution/restore_kernel.py": "64811560821f78f1bfeadf2b0eeda55d8258fa4d8daed866e0ec727c9ea617ef",
+    "/redacted/local/soup_gpu_trials/trial005_mem001/solution/verify_trial005.py": "ef17f342a5d2eac794d7c8d52904d03f3c626b2e12a9e79c56c9f72290d30769"
   },
   "new_original_files": [
     "solution/version_sentinel.py",

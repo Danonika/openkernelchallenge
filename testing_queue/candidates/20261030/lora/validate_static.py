@@ -10,7 +10,7 @@ import py_compile
 import sys
 import zipfile
 root=Path(__file__).resolve().parent
-sys.path.insert(0,'/workspace/shared/soup_cycle/test_queue')
+sys.path.insert(0,'/redacted/local/soup_cycle/test_queue')
 from bundle_candidate import bundle
 python_files=sorted(root.rglob('*.py'))
 for p in python_files:
@@ -40,7 +40,7 @@ spec=json.loads((root/'submission.template.json').read_text())
 assert set(spec)=={'candidate_id','backend','baseline_id','entrypoint','artifact_kind','priority','contains_secrets'}
 assert spec['baseline_id']=='REPLACE_WITH_MEASURED_GCP_BASELINE_ID'
 assert spec['entrypoint']=='soup_screen_v1' and spec['artifact_kind']=='solution_bundle' and spec['contains_secrets'] is False
-sys.path.insert(0,'/workspace/shared/soup_cloud_env/source/harness')
+sys.path.insert(0,'/redacted/local/soup_cloud_env/source/harness')
 import check_rules
 own,copies,lookalikes,banned,broken=check_rules.source_kernels(root/'solution')
 assert set(own)=={'lora_half_scale_add'} and not copies and not banned and not broken

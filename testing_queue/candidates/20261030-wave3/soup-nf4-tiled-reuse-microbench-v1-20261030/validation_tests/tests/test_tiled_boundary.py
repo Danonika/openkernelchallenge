@@ -24,7 +24,7 @@ def test_contiguous_misaligned_half_view_falls_back_with_original_inputs():
 
 
 def test_only_declared_guard_changes_from_passed_v4():
-    frozen=Path('/workspace/shared/soup_nf4_fused_forward_2308_v4/solution')
+    frozen=Path('/redacted/local/soup_nf4_fused_forward_2308_v4/solution')
     old=(frozen/'guarded_forward.py').read_text()
     expected=old.replace('soup_nf4_mma_laneprobe','soup_nf4_mma_tiled_reuse')
     expected=expected.replace('    blocks=n*k//64','    if A.data_ptr()%4:\n        return "activation_half2_alignment"\n    blocks=n*k//64')

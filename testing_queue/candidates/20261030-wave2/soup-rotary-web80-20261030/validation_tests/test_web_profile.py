@@ -2,7 +2,7 @@
 import ast,base64,copy,hashlib,importlib.util,json,sys,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
-BASE=Path('/workspace/shared/soup_web_ready_20261030')
+BASE=Path('/redacted/local/soup_web_ready_20261030')
 sys.path.insert(0,str(ROOT/'web_adapter'))
 import web_runner as w
 checks=[]
@@ -44,7 +44,7 @@ done('only_profile_normalization_specialization_shared_execution_contract_exact'
 with tempfile.TemporaryDirectory() as d:
  root=Path(d);repo=root/'repo';repo.mkdir();protected=json.loads((ROOT/'web_adapter/official_manifest.json').read_text())
  for name in protected:
-  target=repo/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((Path('/workspace/shared/soup_cloud_env/source')/name).read_bytes())
+  target=repo/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((Path('/redacted/local/soup_cloud_env/source')/name).read_bytes())
  assert not (repo/'.git').exists();w.verify_official(repo,protected)
  (repo/'solution').mkdir();(repo/'solution/previous.py').write_text('old')
  w.install_bundle(repo,ROOT/'web_adapter/rotary.zip',manifest,root/'backup')

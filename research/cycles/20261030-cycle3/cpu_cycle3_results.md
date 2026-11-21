@@ -37,7 +37,7 @@ No actual model snapshot, runtime dtype routing, CUDA compiler/codegen, T4 speed
 ## Reproduce and inspect
 
 ```bash
-bash /workspace/shared/soup_cycle/cpu_tests/cycle3/run.sh
+bash /redacted/local/soup_cycle/cpu_tests/cycle3/run.sh
 ```
 
 Files under `cpu_tests/cycle3/`:

@@ -9,7 +9,7 @@ from triton.backends.compiler import GPUTarget
 ROOT=Path(__file__).resolve().parents[1]
 def module(name,path):
  spec=importlib.util.spec_from_file_location(name,path);obj=importlib.util.module_from_spec(spec);spec.loader.exec_module(obj);return obj
-old=module('old_nf4_packed',Path('/workspace/shared/soup_web_wave2_20261030/nf4/solution/packed_nf4.py')).soup_nf4_blockpair_decode
+old=module('old_nf4_packed',Path('/redacted/local/soup_web_wave2_20261030/nf4/solution/packed_nf4.py')).soup_nf4_blockpair_decode
 new=module('new_nf4_packed',ROOT/'solution/packed_nf4.py').soup_nf4_blockpair_runtime_n
 assert 'N' in new.do_not_specialize
 assert [p.name for p in new.params if p.is_constexpr]==['SCALES','PACK_HALF']

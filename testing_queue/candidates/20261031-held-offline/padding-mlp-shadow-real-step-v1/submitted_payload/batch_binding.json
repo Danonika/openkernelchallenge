@@ -28,7 +28,7 @@
   "selection": "PREDECLARED lower-median actual padded width 375, actual ledger batch 29; fresh weights not actual trained step-29 state",
   "ledger_sha256": "d52f29a14df99ae740f076261161a2e598be264373e240870fed2d365692946c",
   "order_evidence": {
-    "job": "n_2e0cc5304b014bbea382b19f185ceb47",
+    "job": "redacted-job",
     "raw_zip_sha256": "1c6a939967234ee3c6d9dae1f2fe86d1b3073cee181740393ea1da4f6d3acf61",
     "actual_result_sha256": "e5a56cfefb995309f76a318fe744f7c167cd48bdd0c3bbe9e6f0f3e4dac6fb75",
     "all256_actual_Rewind_supervised_counts_match": true,

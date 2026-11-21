@@ -33,8 +33,8 @@ Rufus ablations show standalone within-batch packing reduced time by 16.51% yet 
 
 **Implementation created this round (no copied competitor kernels):**
 
-- [Original source, publicly inspectable](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/research_original_full_decoder_pack.py)
-- [Complete queued notebook](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_original_fullpack_lowmem_v1.ipynb)
+- [Original source, publicly inspectable](project-repository/blob/master/soup-kernel-challenge/research_original_full_decoder_pack.py)
+- [Complete queued notebook](project-repository/blob/master/soup-kernel-challenge/queue_20261031_original_fullpack_lowmem_v1.ipynb)
 - Google Sheets `To Run`, row 36: `chatgpt-competitor-original-fullpack-20261031-v1`.
 
 The algorithm:

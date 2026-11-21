@@ -41,7 +41,7 @@ def test_lazy_metadata_rejected():
 
 
 def test_numeric_kernel_ast_unchanged():
-    original=Path('/workspace/shared/soup_six_release_20261030T2026Z/soup-six-candidates/nf4/solution/packed_nf4.py')
+    original=Path('/redacted/local/soup_six_release_20261030T2026Z/soup-six-candidates/nf4/solution/packed_nf4.py')
     current=ROOT/'solution/packed_nf4.py'
     def kernels(path):
         return {node.name:ast.dump(node,include_attributes=False) for node in ast.walk(ast.parse(path.read_text()))

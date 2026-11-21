@@ -39,17 +39,17 @@ def test_revised_gate_remains_nonvacuous_and_failclosed(failure):
 
 
 def test_kernel_and_predeclared_tolerances_unchanged_from_frozen_v3():
-    frozen=Path('/workspace/shared/soup_nf4_fused_forward_2202_v3/solution')
+    frozen=Path('/redacted/local/soup_nf4_fused_forward_2202_v3/solution')
     for name in ('kernel.py','fixtures.py','nf4_format.py','operand_probe.py','native_source_manifest.json'):
         assert (ROOT/'solution'/name).read_bytes()==(frozen/name).read_bytes()
-    original_normalization=Path('/workspace/shared/soup_nf4_parameter_bias_research_v1/solution')
+    original_normalization=Path('/redacted/local/soup_nf4_parameter_bias_research_v1/solution')
     for name in ('parameter_bias.py','guarded_forward.py'):
         assert (ROOT/'solution'/name).read_bytes()==(original_normalization/name).read_bytes()
 
 
 def test_revised_gate_provenance_is_bound_to_actual_target_not_cpu_predictions():
     provenance=json.loads((ROOT/'solution/bias_gate_provenance.json').read_text())
-    p=Path('/workspace/shared/soup_server_jobs_20261030')/(provenance['job_id']+'-outputs.zip')
+    p=Path('/redacted/local/soup_server_jobs_20261030')/(provenance['job_id']+'-outputs.zip')
     assert hashlib.sha256(p.read_bytes()).hexdigest()==provenance['output_zip_sha256']
     with zipfile.ZipFile(p) as z:
         raw=z.read(next(n for n in z.namelist() if n.endswith('/raw/preflight.json')))

@@ -5,7 +5,7 @@ This NEW directory supports new candidate revisions; it does not replace or muta
 ## Interface
 
 ```sh
-python /workspace/shared/soup_web_ready_20261030_v2/build_profile_notebook.py \
+python /redacted/local/soup_web_ready_20261030_v2/build_profile_notebook.py \
   --lane-dir /path/to/NEW_LANE --profile /path/to/profile.json \
   --notebook-name candidate.ipynb
 ```

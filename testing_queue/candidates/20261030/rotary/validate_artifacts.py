@@ -24,7 +24,7 @@ assert payload
 for n,b64 in payload.items():assert base64.b64decode(b64,validate=True)==(root/n).read_bytes()
 for p in root.rglob('*.py'):compile(p.read_bytes(),str(p),'exec')
 # Re-run exactly the queue packer's bundle() logic in memory to check determinism.
-sys.path.insert(0,'/workspace/shared/soup_cycle/test_queue')
+sys.path.insert(0,'/redacted/local/soup_cycle/test_queue')
 from bundle_candidate import bundle
 raw,expected=bundle(root/'solution')
 assert raw==(root/'candidate.zip').read_bytes() and expected==manifest
@@ -34,7 +34,7 @@ template=json.loads((root/'submission.template.json').read_text())
 assert template['baseline_id']=='REPLACE_WITH_MEASURED_GCP_BASELINE_ID'
 assert template['entrypoint']=='soup_screen_v1' and template['backend']=='GCP'
 # Own source parsed by unchanged official rule checker; not an admission run.
-sys.path.insert(0,'/workspace/shared/soup_cloud_env/source/harness')
+sys.path.insert(0,'/redacted/local/soup_cloud_env/source/harness')
 from check_rules import source_kernels
 own,copies,lookalikes,banned,broken=source_kernels(root/'solution')
 assert not copies and not banned and not broken

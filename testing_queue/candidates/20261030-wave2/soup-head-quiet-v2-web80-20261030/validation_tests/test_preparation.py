@@ -12,7 +12,7 @@ from types import SimpleNamespace
 import zipfile
 
 ROOT = Path(__file__).resolve().parent
-BASE = Path('/workspace/shared/soup_web_wave2_20261030/head')
+BASE = Path('/redacted/local/soup_web_wave2_20261030/head')
 checks = []
 
 
@@ -180,7 +180,7 @@ base_nodes={n.name:n for n in base_tree.body if isinstance(n,(ast.FunctionDef,as
 assert set(local_nodes)==set(base_nodes)
 for name in local_nodes:
     if name!='normalize':assert ast.dump(local_nodes[name])==ast.dump(base_nodes[name]),name
-assert (ROOT / 'web_adapter/evidence_reader.py').read_bytes()==Path('/workspace/shared/soup_web_ready_20261030_v2/support/evidence_reader.py').read_bytes()
+assert (ROOT / 'web_adapter/evidence_reader.py').read_bytes()==Path('/redacted/local/soup_web_ready_20261030_v2/support/evidence_reader.py').read_bytes()
 
 for name in ['process_guard.py', 'owned_process_tree.py', 'runtime_probe.py', 'official_manifest.json', 'prepare_asset_manifest.py']:
     assert (ROOT / 'web_adapter' / name).read_bytes() == (BASE / 'web_adapter' / name).read_bytes()
@@ -204,7 +204,7 @@ assert 'PAIRED_COMPLETE_RULES_FAILED' in base_runner.decode()
 passed('same_accepted_runner_cap80_count64_route_and_negative_controls')
 
 from evidence_reader import events
-actual_path = Path('/workspace/shared/soup_head_research_20261030/evidence/fusion_b_solution_1.log')
+actual_path = Path('/redacted/local/soup_head_research_20261030/evidence/fusion_b_solution_1.log')
 actual_bytes = actual_path.read_bytes()
 assert hashlib.sha256(actual_bytes).hexdigest() == '9ea6cae9ba02b55f58bbd806bb8b217bd10a6bc6d5f734bd996618f857654fb3'
 actual = actual_bytes.decode(errors='replace')

@@ -1,7 +1,7 @@
 Traceback (most recent call last):
-  File "/workspace/shared/soup_notebooks_20261030/nf4/tests/static_validate.py", line 108, in <module>
+  File "/redacted/local/soup_notebooks_20261030/nf4/tests/static_validate.py", line 108, in <module>
     check('keyboard_interrupt_cleanup_confirmed',receipt['cleanup_confirmed'] is True)
-  File "/workspace/shared/soup_notebooks_20261030/nf4/tests/static_validate.py", line 19, in check
+  File "/redacted/local/soup_notebooks_20261030/nf4/tests/static_validate.py", line 19, in check
     assert value, name
            ^^^^^
 AssertionError: keyboard_interrupt_cleanup_confirmed

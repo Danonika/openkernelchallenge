@@ -1,6 +1,6 @@
 {
   "status": "PROPOSED_NOT_PUBLISHED_REQUIRES_NEW_EXACT_PAYLOAD_APPROVAL",
-  "destination_repository": "BAITC-Hacks/hack-57faaa42-duo",
+  "destination_repository": "project-repository",
   "destination_visibility": "private",
   "destination_branch": "testing-queue",
   "destination_prefix": "testing_queue/candidates/20261031-resumed-results",

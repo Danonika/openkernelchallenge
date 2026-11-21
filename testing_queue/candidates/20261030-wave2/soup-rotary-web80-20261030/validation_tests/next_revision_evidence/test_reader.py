@@ -20,7 +20,7 @@ cases=[
 ]
 for name,text,wanted in cases:assert list(events(text,'EVENT '))==wanted,name
 assert list(events('EVENT '+json.dumps({'value':'x'*100}),'EVENT ',max_event_chars=32))==[]
-log=Path('/workspace/shared/soup_head_research_20261030/evidence/fusion_b_solution_1.log')
+log=Path('/redacted/local/soup_head_research_20261030/evidence/fusion_b_solution_1.log')
 binding=json.loads(log.with_name('fusion_b_binding.json').read_text())
 assert hashlib.sha256(log.read_bytes()).hexdigest()==binding['member_sha256']
 text=log.read_text();counts={}

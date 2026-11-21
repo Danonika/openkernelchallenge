@@ -32,4 +32,4 @@ Independent CPU FP16-replay numerical oracle on four shapes, vocab 4,096 and 151
 - Soup actual Rewind and streamed loss requirements: https://github.com/MakazhanAlpamys/Soup/blob/main/src/soup_cli/trainer/rewind_hf.py and https://github.com/MakazhanAlpamys/Soup/blob/main/src/soup_cli/utils/stream_loss_chunk.py.
 - Public competitor idea reviews (NO code copied): https://github.com/ainiddin/Soup-Kernel-Challenge ; https://github.com/FRIKT333/soup-kernel-challenge.
 - Own implementation: https://example.invalid/redacted
-- Own GPU notebook: https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_hero1_nocache_ownshare_v1.ipynb.
+- Own GPU notebook: project-repository/blob/master/soup-kernel-challenge/queue_20261031_hero1_nocache_ownshare_v1.ipynb.

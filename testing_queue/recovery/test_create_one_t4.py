@@ -86,12 +86,12 @@ class RecoveryTests(unittest.TestCase):
         for payload in ({"unreachables": ["zone"]}, {"items": {"zone": {"warning": {"code": "UNREACHABLE"}}}}):
             with self.assertRaises(m.Halt):
                 m.inventory(FakeApi([("GET", "aggregated/instances", payload)]))
-        vms = [{"name": "soup-t4-recovery-a"}, {"name": "soup-t4-recovery-b"}]
+        vms = [{"name": "redacted-machine"}, {"name": "redacted-machine"}]
         with self.assertRaisesRegex(m.Halt, "Multiple"):
             m.remember_existing(FakeApi([("GET", "aggregated/instances", {"items": {"x": {"instances": vms}}})]), self.state)
 
     def test_existing_running_vm_stops_creation(self):
-        vm = {"name": "soup-t4-recovery-asia-northeast1-c", "zone": "zones/asia-northeast1-c",
+        vm = {"name": "redacted-machine", "zone": "zones/asia-northeast1-c",
               "status": "RUNNING", "labels": {"recovery-tool": "create-one-t4-v1"}}
         api = FakeApi([("GET", "aggregated/instances", {"items": {"z": {"instances": [vm]}}})])
         m.run(api, self.state, 30, 1)

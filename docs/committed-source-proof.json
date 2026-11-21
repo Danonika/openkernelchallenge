@@ -1,5 +1,6 @@
 {
-  "repository": "BAITC-Hacks/hack-57faaa42-duo",
+  "scope_note": "Historical snapshot records. The public copy removes personal and operational identifiers; original benchmark metrics and rule checks were not changed or rerun.",
+  "repository": "project-repository",
   "commit_sha": "156d8f9f944a928e31defaaf322d6130a9032afa",
   "tree_sha": "6a0c96a4dd32f98dd54ccffc54eb9a84668e421d",
   "branch": "submission/soup-team-38123-20261031",

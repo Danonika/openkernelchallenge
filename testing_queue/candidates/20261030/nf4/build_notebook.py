@@ -3,7 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
-OFFICIAL = Path('/workspace/shared/soup_cloud_env/source')
+OFFICIAL = Path('/redacted/local/soup_cloud_env/source')
 payload = {str(p.relative_to(ROOT)): p.read_text() for folder in ('solution', 'support')
            for p in sorted((ROOT/folder).rglob('*.py'))}
 frozen = {str(p.relative_to(OFFICIAL)): hashlib.sha256(p.read_bytes()).hexdigest()

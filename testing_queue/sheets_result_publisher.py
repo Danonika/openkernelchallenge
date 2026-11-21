@@ -28,7 +28,7 @@ TAB_NAMES = ("VM Results", "VM Runs", "VM Details", "VM Queue")
 SHEET_IDS = {"VM Results": 420103060, "VM Runs": 420103061,
              "VM Details": 420103062, "VM Queue": 420103063}
 TOKEN_URI = "https://oauth2.googleapis.com/token"
-WRITER_EMAIL = "contributor@users.noreply.github.com"
+WRITER_EMAIL = "redacted@example.invalid"
 METADATA_BASE = "http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/"
 
 

@@ -22,9 +22,9 @@ Another independent original NF4 watched branch completed 68.52s/6503MiB with 8.
 - Existing independent full decoder packed half-RMS/RoPE source from our team (To Run row493): native padded-size LoRA dropout bridged to packed active tokens, row-segmented causal SDPA, original NF4/MLP Triton.
 
 ## Batched GPU notebooks — ready, unmeasured
-**Hero3-019 (safer):** https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_hero2_ee_vocab_fullpack_batch_v1.ipynb ; To Run **row488**.
+**Hero3-019 (safer):** project-repository/blob/master/soup-kernel-challenge/queue_20261031_hero2_ee_vocab_fullpack_batch_v1.ipynb ; To Run **row488**.
 Combines full-decoder within-batch packed tokens; segmented SDPA; original padded LoRA RNG; FP16 T4 RMSNorm+RoPE; own NF4+MLP scatter; new vocabulary-sliced head with supervised gradient; unchanged native optimizer and 64 steps.
-**Hero3-020 (aggressive):** https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_hero2_ee_beast_fullpack_vocab_qkv_v2.ipynb ; To Run **row489**.
+**Hero3-020 (aggressive):** project-repository/blob/master/soup-kernel-challenge/queue_20261031_hero2_ee_beast_fullpack_vocab_qkv_v2.ipynb ; To Run **row489**.
 Adds grouped frozen Q/K/V GEMM to all Hero3-019 components. No q-only compaction overlay or copied competitor kernel. Uses synthetic physical-T4 qkv/head numerical oracles only AFTER measured training; keeps real 64-step solution-only harness/export, original-source 5% attribution check and all 79 Soup regressions.
 
 ## Important compatibility and admission risks

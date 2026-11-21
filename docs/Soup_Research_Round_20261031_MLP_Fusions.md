@@ -21,21 +21,21 @@ The MLP-padding candidate yields a **1.098× time ratio** and **60.50% lower pea
 
 The observed 65.43-second notebook inserts a Qwen2 model/MLP wrapper. It derives valid active token rows from the **existing two-dimensional attention mask** once per decoder forward. Each MLP uses only those rows for its frozen 4-bit gate/up/down operations, then reconstructs the dense output with zeros on ignored padding positions. Q/V LoRA and attention remain dense and unchanged; the batch and row order are preserved. This can eliminate expensive MLP work without changing the supervised tokens.
 
-Source notebook: https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_storage_mlp_padding_v1.ipynb
+Source notebook: project-repository/blob/master/soup-kernel-challenge/queue_20261031_storage_mlp_padding_v1.ipynb
 
 **Caveat:** `torch.nonzero` on CUDA can synchronize to discover the active-row tensor length. Performance depends on the valid-token ratio and extra indexing/scattering overhead, so we must test different seeds and hidden-row length patterns.
 
 ## New A/B experiment 1 — fused padding scatter
 
 **Request ID:** `chatgpt-mlp-padding-fused-scatter-20261031-v2`  
-**Notebook:** https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_storage_mlp_scatter_v2.ipynb
+**Notebook:** project-repository/blob/master/soup-kernel-challenge/queue_20261031_storage_mlp_scatter_v2.ipynb
 
 The original Triton `soup_mlp_scatter_dense` kernel maps every padded-row output back to its compact MLP row using a prefix index computed once per model forward. Unlike `torch.zeros_like + index_copy_`, it writes the correct dense output in a single pass. Its custom autograd backward selects precisely the active rows from the upstream gradient. A CPU reference check covered exact forward and gradient equality at widths 7 and 1536 and up to 2,048 rows. **Physical T4 and end-to-end quality tests are pending.**
 
 ## New A/B experiment 2 — fused MLP residual
 
 **Request ID:** `chatgpt-mlp-fused-residual-20261031-v3`  
-**Notebook:** https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_storage_mlp_residual_v3.ipynb
+**Notebook:** project-repository/blob/master/soup-kernel-challenge/queue_20261031_storage_mlp_residual_v3.ipynb
 
 The original Triton `soup_mlp_residual_scatter` kernel writes the residual plus compact MLP contribution directly. The layer wrapper retains the pinned Qwen2 attention call, Q/V LoRA dropout, both layer norms, the first residual, frozen MLP projection semantics, and all position/attention arguments. Autograd returns the unchanged upstream residual gradient and gathers only valid rows for the MLP gradient.
 

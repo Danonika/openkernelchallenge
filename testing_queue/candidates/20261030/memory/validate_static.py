@@ -30,7 +30,7 @@ def main():
     for name,source in sources.items():
         compile(source,name,'exec');assert sha(source.encode())==manifest[name]
     for p in ROOT.glob('*.py'): compile(p.read_text(),p.name,'exec')
-    sys.path.insert(0,'/workspace/shared/soup_cycle/test_queue')
+    sys.path.insert(0,'/redacted/local/soup_cycle/test_queue')
     from bundle_candidate import bundle
     regenerated,files=bundle(ROOT/'solution')
     assert regenerated==(ROOT/'candidate.zip').read_bytes() and files==manifest
@@ -39,7 +39,7 @@ def main():
     with zipfile.ZipFile(ROOT/'candidate.zip') as z:
         assert sorted(z.namelist())==sorted(manifest)
         assert all(sha(z.read(name))==digest for name,digest in manifest.items())
-    original=Path('/workspace/shared/soup_cloud_env/source')
+    original=Path('/redacted/local/soup_cloud_env/source')
     for name,digest in constants['PROTECTED_HASHES'].items():assert sha((original/name).read_bytes())==digest
     try:
         import nbformat

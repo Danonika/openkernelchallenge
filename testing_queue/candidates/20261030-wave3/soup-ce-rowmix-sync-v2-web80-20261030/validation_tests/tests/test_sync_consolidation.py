@@ -12,7 +12,7 @@ from solution import mixed_rows as new
 from solution import materialized_ce as ce
 
 ROOT=Path(__file__).resolve().parents[1]
-OLD=Path('/workspace/shared/soup_next_wave_20261030/ce_rowmix_v1')
+OLD=Path('/redacted/local/soup_next_wave_20261030/ce_rowmix_v1')
 spec=importlib.util.spec_from_file_location('old_ce_mixed_reference',OLD/'solution/mixed_rows.py')
 old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old)
 

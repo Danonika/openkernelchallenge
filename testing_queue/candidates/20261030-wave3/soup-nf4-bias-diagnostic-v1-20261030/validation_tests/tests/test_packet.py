@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 ROOT=Path(__file__).resolve().parents[1]
 PACKET=ROOT/'microbench_packet_v1'
-KIT=Path('/workspace/shared/soup_web_ready_20261030_v2/support')
+KIT=Path('/redacted/local/soup_web_ready_20261030_v2/support')
 
 def ast_named(path):
     return {n.name:ast.dump(n,include_attributes=False) for n in ast.parse(path.read_text()).body
@@ -54,7 +54,7 @@ def test_diagnostic_has_no_timing_or_training_child():
         if isinstance(node,ast.Call):
             for kw in node.keywords:
                 if kw.arg=='timeout':assert isinstance(kw.value,ast.Constant) and 0<kw.value.value<=80
-    original=Path('/workspace/shared/soup_nf4_fused_forward_2202_v3/solution')
+    original=Path('/redacted/local/soup_nf4_fused_forward_2202_v3/solution')
     for p in original.glob('*'):
         if p.is_file():assert p.read_bytes()==(PACKET/'solution'/p.name).read_bytes()
 
@@ -69,7 +69,7 @@ def test_orchestration_fail_closed_without_any_gpu_child(tmp_path,monkeypatch,fa
     work=tmp_path/'work';work.mkdir();results=tmp_path/'results';results.mkdir()
     monkeypatch.setattr(module,'Path',lambda p:work if str(p)=='/kaggle/working' else realpath(p))
     monkeypatch.setattr(module,'LOCK',tmp_path/'lock');monkeypatch.setattr(module,'MARKER',tmp_path/'marker')
-    monkeypatch.setenv('SOUP_REPO','/workspace/shared/soup_cloud_env/source')
+    monkeypatch.setenv('SOUP_REPO','/redacted/local/soup_cloud_env/source')
     monkeypatch.setenv('SOUP_RESULTS',str(results))
     calls=[];cleanup=[];artifacts=[]
     monkeypatch.setattr(module.tree,'prepare',lambda:cleanup.append('prepare'))

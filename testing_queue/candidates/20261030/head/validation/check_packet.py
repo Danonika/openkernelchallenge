@@ -55,7 +55,7 @@ with zipfile.ZipFile(ROOT / "candidate.zip") as archive:
         assert raw == (ROOT / name).read_bytes()
 checks["zip_source_hash_manifest_match"] = True
 
-sys.path.insert(0, "/workspace/shared/soup_cycle/test_queue")
+sys.path.insert(0, "/redacted/local/soup_cycle/test_queue")
 from bundle_candidate import bundle
 raw1, manifest1 = bundle(ROOT / "solution")
 raw2, manifest2 = bundle(ROOT / "solution")
@@ -63,14 +63,14 @@ assert raw1 == raw2 == (ROOT / "candidate.zip").read_bytes()
 assert manifest1 == manifest2 == manifest
 checks["official_packager_deterministic"] = True
 
-source = Path("/workspace/shared/soup_cloud_env/source")
+source = Path("/redacted/local/soup_cloud_env/source")
 official = json.loads((ROOT / "official-source-manifest.json").read_text())
 runner.source_preflight(source, official)
 assert not any(name.startswith("solution/") for name in official)
 checks["unchanged_official_commit_and_file_hashes"] = True
 
 spec = json.loads((ROOT / "submission.template.json").read_text())
-example = json.loads(Path("/workspace/shared/soup_cycle/test_queue/examples/http_submission.json").read_text())
+example = json.loads(Path("/redacted/local/soup_cycle/test_queue/examples/http_submission.json").read_text())
 assert set(spec) == set(example)
 assert spec["baseline_id"] == "REPLACE_WITH_MEASURED_GCP_BASELINE_ID"
 assert spec["artifact_kind"] == "solution_bundle" and spec["entrypoint"] == "soup_screen_v1"

@@ -1593,7 +1593,7 @@
     }
   ],
   "prior_release_preserved": "c5161178d91330c537af5f89ecc57659a402ec06",
-  "repository": "BAITC-Hacks/hack-57faaa42-duo",
+  "repository": "project-repository",
   "schema_version": 1,
   "scope": "16 submitted notebooks and original source, audit tests, minimized results; no external write"
 }

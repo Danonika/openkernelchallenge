@@ -34,7 +34,7 @@ All five Triton kernel ASTs, native standalone loss expression and numerical-gat
 - Earlier strict CPU algebra found three signed-zero differences at zero upstream. That historical failure is not erased by the unchanged engineering gates or these new native-fallback tests. No exact optimized signed-zero claim is made.
 - The present v3 is a new source packet. Previous preflight success does not establish new v3 GPU integration or performance.
 
-Relevant retained sources: `/workspace/shared/soup_gpu_trials/trial008_ce/verified_screen_report.md`, `trial009_ce_v2/verified_screen_report.md`, the original project CE CPU/Triton prototypes, and the current 140-item catalog pointer. Preparation read the local official checkout at commit `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`; no remote repository or Sheet was edited.
+Relevant retained sources: `/redacted/local/soup_gpu_trials/trial008_ce/verified_screen_report.md`, `trial009_ce_v2/verified_screen_report.md`, the original project CE CPU/Triton prototypes, and the current 140-item catalog pointer. Preparation read the local official checkout at commit `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`; no remote repository or Sheet was edited.
 
 ## Run later — authorized cloud T4 only
 

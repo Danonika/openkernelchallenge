@@ -1,4 +1,4 @@
-/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/triton/runtime/interpreter.py:599: RuntimeWarning: invalid value encountered in multiply
+/redacted/local/soup_cloud_env/venv/lib/python3.12/site-packages/triton/runtime/interpreter.py:599: RuntimeWarning: invalid value encountered in multiply
   output = op(lhs.data, rhs.data)
 {
   "status": "CPU_INTERPRETER_FIXTURES_PASSED",

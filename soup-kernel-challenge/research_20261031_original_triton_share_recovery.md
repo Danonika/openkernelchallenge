@@ -11,7 +11,7 @@ The Qwen2.5-1.5B-Instruct configuration has 28 layers / H=1536 / intermediate=89
 Sources:
 - [Official pinned jury checker](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py)
 - [Official Qwen2.5-1.5B-Instruct configuration](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/main/config.json)
-- [Original NF4 source used by all candidates](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_native_dab4c473.ipynb)
+- [Original NF4 source used by all candidates](project-repository/blob/master/soup-kernel-challenge/queue_20261031_native_dab4c473.ipynb)
 
 ## Measured public Pareto variants
 

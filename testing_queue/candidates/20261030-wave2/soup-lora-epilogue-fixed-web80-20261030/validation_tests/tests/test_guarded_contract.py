@@ -40,7 +40,7 @@ def test_plain_metadata_control_and_noncontiguous_native():
 
 
 def test_numeric_and_source_ownership_bodies_unchanged():
-    frozen=Path('/workspace/shared/soup_six_release_20261030T2026Z/soup-six-candidates/lora/solution')
+    frozen=Path('/redacted/local/soup_six_release_20261030T2026Z/soup-six-candidates/lora/solution')
     def functions(path):
         return {n.name:ast.dump(n,include_attributes=False) for n in ast.walk(ast.parse(path.read_text())) if isinstance(n,(ast.FunctionDef,ast.ClassDef))}
     old=functions(frozen/'epilogue.py');new=functions(ROOT/'solution/epilogue.py')

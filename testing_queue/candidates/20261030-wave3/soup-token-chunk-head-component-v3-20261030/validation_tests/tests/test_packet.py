@@ -1,7 +1,7 @@
 import ast,base64,hashlib,json,unittest,zipfile
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];PACKET=ROOT/'microbench_packet_v3';KIT=Path('/workspace/shared/soup_web_ready_20261030_v2/support')
-COMMON=Path('/workspace/shared/soup_head_metric_bridge_v2/solution')
+ROOT=Path(__file__).resolve().parents[1];PACKET=ROOT/'microbench_packet_v3';KIT=Path('/redacted/local/soup_web_ready_20261030_v2/support')
+COMMON=Path('/redacted/local/soup_head_metric_bridge_v2/solution')
 class Tests(unittest.TestCase):
  def test_protected_helpers(self):
   for n in ('process_guard.py','owned_process_tree.py','runtime_probe.py','official_manifest.json'):self.assertEqual((PACKET/n).read_bytes(),(KIT/n).read_bytes())

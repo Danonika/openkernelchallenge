@@ -18,13 +18,13 @@
 ## Reproduce
 
 ```bash
-bash /workspace/shared/soup_cycle/cpu_tests/run.sh
+bash /redacted/local/soup_cycle/cpu_tests/run.sh
 ```
 
 - Script: `cpu_tests/run_cpu_semantics.py` — independently written toy tensor formulas; no source-kernel implementation copied.
 - Complete evidence: `cpu_tests/results.json`; concise machine-readable outcomes: `cpu_tests/summary.json`.
 - Text logs: `cpu_tests/run.log`, `cpu_tests/console_final.log`. First seven-group result/log retained as `results_initial7.json` / `run_initial7.log`.
-- Existing isolated interpreter: `/workspace/shared/soup_cloud_env/venv/bin/python`; Torch **2.15.0+cpu**, Python **3.12.14**, CPU compute/inter-op threads **2/2**. Installed Torch git version is **`d0f2af8b66b20da4baa50644c0cd3f887a2eae2e`**, different from research's source-tag commit `31a77fc...`; do not infer exact source/build equivalence from the version label. Script SHA-256 is in JSON.
+- Existing isolated interpreter: `/redacted/local/soup_cloud_env/venv/bin/python`; Torch **2.15.0+cpu**, Python **3.12.14**, CPU compute/inter-op threads **2/2**. Installed Torch git version is **`d0f2af8b66b20da4baa50644c0cd3f887a2eae2e`**, different from research's source-tag commit `31a77fc...`; do not infer exact source/build equivalence from the version label. Script SHA-256 is in JSON.
 - No installation, pretrained model, dataset, full training, CUDA kernel, GPU/Kaggle operation, authentication, remote write or user's-PC execution occurred.
 - Official source remained at `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`; post-run git status was clean and tracked diff size zero. Existing 79+79 regression passes / 4 CUDA skips were read from the handoff, **not rerun or counted as this cycle's results**.
 

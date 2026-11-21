@@ -5,11 +5,11 @@
 ## Source/attribution boundary
 
 Read and synthesized the **algorithmic ideas only** from:
-- https://github.com/external-contributor/hackathon-decentrathon-6 — self-reported paired Kaggle T4 85.0→37.7 s and 14,345→3,461 MiB, 10/10 checks, original kernel share 12.4%, code commit `ce62d67`. **Not reproduced independently.**
+- https://github.com/external-contributor/hackathon-decentrathon-6 — self-reported paired Kaggle T4 85.0→37.7 s and 14,345→3,461 MiB, 10/10 checks, original kernel share 12.4%, code commit `redacted-revision`. **Not reproduced independently.**
 - https://github.com/external-contributor/soup-kernel-challenge — approximate claims ~48 s / ~2,850 MiB in README; SUBMISSION.md still has placeholders. **Not independently validated.**
 - User-supplied research notes, `Вставленный текст(2).txt`, grouping vocabulary-major loss, FP16 normalization, fused rotary, one-per-layer NF4 decode, compact LoRA autograd, full decoder unpadding, deferred host synchronization, startup, and testing.
 
-**No rival kernel source was copied into the implemented candidates.** All candidates begin from our own, previously submitted and publicly documented `Danonika/public` development notebooks, and add our independently written PyTorch 2.11 native attention wrapper. Review the exact GitHub revisions linked below.
+**No rival kernel source was copied into the implemented candidates.** All candidates begin from our own, previously submitted and publicly documented `project-repository` development notebooks, and add our independently written PyTorch 2.11 native attention wrapper. Review the exact GitHub revisions linked below.
 
 ## Prior completed public development evidence — not official paired admission
 
@@ -38,9 +38,9 @@ Source: `soup_r19/varlen_decoder.py` (SHA256 `9525a3eff33f6c2f0f9e29ff84c6e28e20
 
 | Candidate | Our own existing modules + clean-room additions | Published notebook | Google Sheets |
 | --- | --- | --- | --- |
-| **R19 (speed control)** | Existing measured full frozen NF4 cache, compact MLP, q_proj padded-token optimization; new whole-decoder native-varlen attention | [R19](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_r19_fastbase_varlen_cleanroom_v1.ipynb) | [To Run row 39](https://example.invalid/redacted) |
-| **R20 (head fusion)** | R19 family + our own padded attention `o_proj` compaction and original vocab-sliced/cuBLAS Triton online CE/entropy/accuracy/Rewind head | [R20](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_r20_fullfusion_vocab_varlen_v1.ipynb) | [row 43](https://example.invalid/redacted) |
-| **R21 (maximal compatible fusion)** | R20 + our independently written FP16 output boundary for frozen RMSNorm, one-sync TRL metric values, and a one-shot package-distribution mapping reuse with pre-model `gc.freeze()` | [R21](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_r21_maxfusion_original_v1.ipynb) | [row 44](https://example.invalid/redacted) |
+| **R19 (speed control)** | Existing measured full frozen NF4 cache, compact MLP, q_proj padded-token optimization; new whole-decoder native-varlen attention | [R19](project-repository/blob/master/soup-kernel-challenge/queue_20261031_r19_fastbase_varlen_cleanroom_v1.ipynb) | [To Run row 39](https://example.invalid/redacted) |
+| **R20 (head fusion)** | R19 family + our own padded attention `o_proj` compaction and original vocab-sliced/cuBLAS Triton online CE/entropy/accuracy/Rewind head | [R20](project-repository/blob/master/soup-kernel-challenge/queue_20261031_r20_fullfusion_vocab_varlen_v1.ipynb) | [row 43](https://example.invalid/redacted) |
+| **R21 (maximal compatible fusion)** | R20 + our independently written FP16 output boundary for frozen RMSNorm, one-sync TRL metric values, and a one-shot package-distribution mapping reuse with pre-model `gc.freeze()` | [R21](project-repository/blob/master/soup-kernel-challenge/queue_20261031_r21_maxfusion_original_v1.ipynb) | [row 44](https://example.invalid/redacted) |
 
 Each notebook preserves its original `--only solution` harness and final small-report export cell byte-for-byte. Every solution module is installed into `SOUP_REPO/solution/`, with a zero-argument `apply()` call before native model/trainer construction. The new gate code runs in a distinct process before measured training, with no usable persisted compiled cache. No Soup config switches, task files, harness files or protected tests are changed. New rows were written in `To Run!A:H`, and `Ready` was set **TRUE last** after readback. No secrets are embedded.
 
@@ -77,6 +77,6 @@ For each request read `To Run!I:U`, `X:Z`, `BS` and the matching `VM Runs` / `VM
 
 **R22** uses the team's **lower-memory** existing frozen storage + compact MLP path (no persistent full NF4 decoded cache) with the same independent R19 whole-Qwen native variable-length attention. It preserves the old `--only solution` harness and export cells and runs the same physical T4/q-v LoRA numerical gate first. It therefore isolates whether true whole-decoder unpadding helps the memory frontier, rather than assuming an NF4 cache optimized for speed is also memory optimal.
 
-- Source: [original R22 low-memory varlen notebook](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_r22_lowmem_varlen_original_v1.ipynb).
+- Source: [original R22 low-memory varlen notebook](project-repository/blob/master/soup-kernel-challenge/queue_20261031_r22_lowmem_varlen_original_v1.ipynb).
 - [Google Sheets row 45](https://example.invalid/redacted), request `chatlora-r22-lowmem-varlen-20261031`, `Ready=TRUE` set last and verified. At last poll: **Ready — awaiting intake**, not a measured result.
 - R22 is the **memory-first** branch; R19/R20/R21 are **speed/broad fusion** branches. No score can be transferred between them, and no measured joint result exists yet.

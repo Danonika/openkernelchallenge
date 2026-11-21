@@ -6,7 +6,7 @@ project=project-ceb435db-d81b-4fa9-b28
 zone=asia-northeast1-c
 region=asia-northeast1
 old=instance-20261030-172714
-new=soup-t4-recovery-asia-northeast1-c
+new=redacted-machine
 address=35.200.1.242
 
 [[ "$(gcloud compute instances describe "$old" --project="$project" --zone="$zone" --format='value(status)')" == TERMINATED ]]

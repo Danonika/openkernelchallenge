@@ -3,7 +3,7 @@ import importlib.util,sys,weakref
 from pathlib import Path
 from types import SimpleNamespace
 import pytest,torch
-sys.path.insert(0,'/workspace/shared/soup_head_shared_cast_v4/tests')
+sys.path.insert(0,'/redacted/local/soup_head_shared_cast_v4/tests')
 from test_scoped_head import setup
 root=Path(__file__).resolve().parents[1]/'solution'
 spec=importlib.util.spec_from_file_location('combined',root/'__init__.py',submodule_search_locations=[str(root)])

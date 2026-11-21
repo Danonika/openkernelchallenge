@@ -33,7 +33,7 @@ def test_native_materialization_owner_gate_rejects_foreign():
 
 
 def test_frozen_fused_control_and_parameter_math_unchanged():
-    frozen=Path('/workspace/shared/soup_nf4_tiled_reuse_2320_v1/solution')
+    frozen=Path('/redacted/local/soup_nf4_tiled_reuse_2320_v1/solution')
     assert (ROOT/'solution/fused_kernel.py').read_bytes()==(frozen/'kernel.py').read_bytes()
     assert (ROOT/'solution/fused_guard.py').read_text()==(frozen/'guarded_forward.py').read_text().replace('from .kernel import','from .fused_kernel import')
     for name in ('parameter_bias.py','module_preflight.py','fixtures.py','bias_stage_gate.py','bias_gate_provenance.json','nf4_format.py'):

@@ -8,47 +8,47 @@
   "t4_tested": false,
   "inputs": {
     "brief": {
-      "path": "/workspace/shared/soup_notebooks_20261030/BRIEF.md",
+      "path": "/redacted/local/soup_notebooks_20261030/BRIEF.md",
       "sha256": "d40eb28eeb9e41292183f93d0f0c02199e6e8becae98c7cbee1081349ebb95a9"
     },
     "prior_backward": {
-      "path": "/workspace/shared/soup_gpu_trials/trial002/solution/nf4_decode.py",
+      "path": "/redacted/local/soup_gpu_trials/trial002/solution/nf4_decode.py",
       "sha256": "b8ae9ba1a3d1e86517bea7b94b61462c5132efd19079ca32cc09e5f7d3f151f8"
     },
     "prior_forward": {
-      "path": "/workspace/shared/soup_gpu_trials/trial004/solution/forward_nf4.py",
+      "path": "/redacted/local/soup_gpu_trials/trial004/solution/forward_nf4.py",
       "sha256": "4489516323683ac4e34c1ebebf263cd3a8689347863276530ddeede393c287ab"
     },
     "prior_backward_report": {
-      "path": "/workspace/shared/soup_gpu_trials/trial002/trial002_verified_report.md",
+      "path": "/redacted/local/soup_gpu_trials/trial002/trial002_verified_report.md",
       "sha256": "70941c7695cba52ea59bca452e23883302de4212f2903c764cc8ab9b39f30f0f"
     },
     "prior_forward_report": {
-      "path": "/workspace/shared/soup_gpu_trials/trial004/verified_report.md",
+      "path": "/redacted/local/soup_gpu_trials/trial004/verified_report.md",
       "sha256": "371b2c093b1dcff766b19e64cf5d13829814dfa5b859d572a58184d46dec2c77"
     },
     "audit_handoff": {
-      "path": "/workspace/shared/soup_audit_1919/handoff.json",
+      "path": "/redacted/local/soup_audit_1919/handoff.json",
       "sha256": "01e9a9bcb5d739b1ddb6bd42b925f637464da89aa4638d8b5583b06b551b6555"
     },
     "supplied_packed_store_research": {
-      "path": "/workspace/shared/soup_user_findings_20261030/batch3/Research_Update(2).md",
+      "path": "/redacted/local/soup_user_findings_20261030/batch3/Research_Update(2).md",
       "sha256": "78e1f32bd028393ff54cd4c60db11d9bcb38811567b3a2748ea509ca8af8eb5b"
     },
     "native_functional": {
-      "path": "/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/bitsandbytes/functional.py",
+      "path": "/redacted/local/soup_cloud_env/venv/lib/python3.12/site-packages/bitsandbytes/functional.py",
       "sha256": "520a9e9d3afba11124734df60e48a27e38b6389305df888834405b435e285817"
     },
     "native_cuda_ops": {
-      "path": "/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/bitsandbytes/backends/cuda/ops.py",
+      "path": "/redacted/local/soup_cloud_env/venv/lib/python3.12/site-packages/bitsandbytes/backends/cuda/ops.py",
       "sha256": "d58fa0a0c053d5a0ecd1e93d847531d5e0226a0bd8048472ee0ca632464cc20f"
     },
     "native_autograd": {
-      "path": "/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/bitsandbytes/autograd/_functions.py",
+      "path": "/redacted/local/soup_cloud_env/venv/lib/python3.12/site-packages/bitsandbytes/autograd/_functions.py",
       "sha256": "77ca54c87b69ad470ac73e5d7dde94948f20de9de8b8764957728bc29831f37f"
     },
     "bundler": {
-      "path": "/workspace/shared/soup_cycle/test_queue/bundle_candidate.py",
+      "path": "/redacted/local/soup_cycle/test_queue/bundle_candidate.py",
       "sha256": "4adb3ba137c76f076a3af02a225d4c46147616e80ac3c27dffa06c8990e9c188"
     }
   }

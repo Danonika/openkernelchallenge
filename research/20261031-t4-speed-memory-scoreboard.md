@@ -8,23 +8,23 @@ Source: [Google Sheets `To Run`](https://example.invalid/redacted), with per-job
 
 | Development variant | Queue row | Job ID | Full command time | Peak MiB | Public eval loss | Speed vs saved base | Status |
 |---|---:|---|---:|---:|---:|---:|---|
-| Compact storage only | 7 | `n_f40881069f274b878f1350f0cb1523a8` | 72.51s | 5963 | 2.04963 | 0.99x | Complete; no speed gain |
-| Cache decoded frozen NF4 weights (3 GiB cap), compact storage | 12 | `n_cdac319345854e4c85084c2fc7d20394` | 69.34s | 8529 | 2.04965 | 1.036x | Complete; faster but speed gain under 5% |
-| **MLP-only padding compaction**, compact storage | **40** | `n_1fa572dc82d943dca448a3a7b6722922` | **65.43s** | **5667** | **2.04967** | **1.098x** | Complete; fastest low-VRAM Pareto point |
-| **NF4 cache + MLP-only padding compaction** | **41** | `n_55dd01b438414b4aa35a18c16f09697b` | **61.74s** | **8227** | **2.04968** | **1.164x** | Complete; fastest verified service result |
-| Exact FP16-logit reuse + storage | 11 | `n_1658b594d79545c597da09d0239401a8` | 71.97s | 6563 | 2.04965 | 0.998x | Complete; independent ablation |
-| LoRA epilogue fusion + storage | 16 | `n_dc2483d956da4f1d87f156c8bde97b07` | 72.73s | 5963 | 2.04966 | 0.988x | Complete; no gain |
-| RoPE fusion + storage | 14 | `n_6976a401ce904c3ab75c664dfad98b83` | 73.54s | 5981 | 2.04965 | 0.977x | Complete; no gain |
+| Compact storage only | 7 | `redacted-job` | 72.51s | 5963 | 2.04963 | 0.99x | Complete; no speed gain |
+| Cache decoded frozen NF4 weights (3 GiB cap), compact storage | 12 | `redacted-job` | 69.34s | 8529 | 2.04965 | 1.036x | Complete; faster but speed gain under 5% |
+| **MLP-only padding compaction**, compact storage | **40** | `redacted-job` | **65.43s** | **5667** | **2.04967** | **1.098x** | Complete; fastest low-VRAM Pareto point |
+| **NF4 cache + MLP-only padding compaction** | **41** | `redacted-job` | **61.74s** | **8227** | **2.04968** | **1.164x** | Complete; fastest verified service result |
+| Exact FP16-logit reuse + storage | 11 | `redacted-job` | 71.97s | 6563 | 2.04965 | 0.998x | Complete; independent ablation |
+| LoRA epilogue fusion + storage | 16 | `redacted-job` | 72.73s | 5963 | 2.04966 | 0.988x | Complete; no gain |
+| RoPE fusion + storage | 14 | `redacted-job` | 73.54s | 5981 | 2.04965 | 0.977x | Complete; no gain |
 
 All listed completed rows reported the development service's **time, memory, and eval-loss** checks passing. They do **not** prove all of the original starter's 10 official checks or jury admission.
 
 ## Published experimental notebooks / work in progress
 
-- **Row 29:** [Full cache + MLP padding + retained FP16 logits](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_fullcache_mlppad_retain_v1.ipynb). This new triple combination is unmeasured as of the latest poll; 3 constituent paths have independent GPU evidence.
-- **Row 42:** [Reconstructed R9 fusion](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/Fusion_R9_Reconstructed_Queue.ipynb), source lineage not an independently verified old 61.61-second run. Test pending.
+- **Row 29:** [Full cache + MLP padding + retained FP16 logits](project-repository/blob/master/soup-kernel-challenge/queue_20261031_fullcache_mlppad_retain_v1.ipynb). This new triple combination is unmeasured as of the latest poll; 3 constituent paths have independent GPU evidence.
+- **Row 42:** [Reconstructed R9 fusion](project-repository/blob/master/soup-kernel-challenge/Fusion_R9_Reconstructed_Queue.ipynb), source lineage not an independently verified old 61.61-second run. Test pending.
 - **Rows 21–23:** independent original Triton scatter/residual fusions around MLP padding and its cache combination; test pending.
-- **Row 71:** [Fast 61.74s candidate + *postrun* original Triton share / 79-test audit](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_fast6174_rules_attribution_audit_v1.ipynb). Its train and export cells remain unchanged; the added cell executes pinned `harness/check_rules.py` after training and exports the original check details. Since the queue uses `--only solution`, local `result.json` has no baseline run; checks requiring a paired baseline will predictably fail and must **not** be interpreted as jury disqualification. Original-kernel share and regression test checks remain independently useful.
-- **Row 72:** [Partial 1 GiB decoded-NF4 cache + MLP padding](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_nf4cache_1g_mlppad_v1.ipynb), tests the memory/speed Pareto curve; only the cache cap differs from row 41.
+- **Row 71:** [Fast 61.74s candidate + *postrun* original Triton share / 79-test audit](project-repository/blob/master/soup-kernel-challenge/queue_20261031_fast6174_rules_attribution_audit_v1.ipynb). Its train and export cells remain unchanged; the added cell executes pinned `harness/check_rules.py` after training and exports the original check details. Since the queue uses `--only solution`, local `result.json` has no baseline run; checks requiring a paired baseline will predictably fail and must **not** be interpreted as jury disqualification. Original-kernel share and regression test checks remain independently useful.
+- **Row 72:** [Partial 1 GiB decoded-NF4 cache + MLP padding](project-repository/blob/master/soup-kernel-challenge/queue_20261031_nf4cache_1g_mlppad_v1.ipynb), tests the memory/speed Pareto curve; only the cache cap differs from row 41.
 
 Each queue request uses **Notebook URL in C, Notebook JSON empty in D, Ready written last in E**; source and task hashes are checked by the source installer. Never overwrite accepted queue rows or output I:BS.
 
@@ -64,13 +64,13 @@ New complete 64-step development jobs (the service confirmed time/memory/eval ch
 
 | Source candidate | Queue row | Job / identity | Wall time | T4 peak | Eval loss | Speedup |
 |---|---:|---|---:|---:|---:|---:|
-| Full NF4 cache + MLP padding + FP16 forward-logit reuse | 29 | `n_ba9b400d38af4dc796441e37cd9296f3` | **60.24s** | 8827 MiB | 2.04969 | **1.193x** |
-| Full NF4 cache + fused compact-MLP residual + valid-row RMSNorm | 25 | `n_e0b9d76bbe5d4acc8dcf1216ab7959ce` | **60.52s** | 8111 MiB | 2.04965 | 1.187x |
-| Full NF4 cache + fused compact-MLP residual | 23 | `n_a1993517087144a0b9d10a50f34b4da7` | 60.60s | 8071 MiB | 2.04966 | 1.186x |
-| Original Triton compact-MLP residual scatter, no decoded cache | 22 | `n_ae7dea4433d64509a1530490bea2d088` | **64.03s** | **5405 MiB** | **2.04960** | 1.122x |
-| Original Triton compact-MLP scatter, no decoded cache | 21 | `n_37ce7731ec6849028cc556bb67fa3a6c` | 64.83s | **5345 MiB** | 2.04965 | 1.108x |
-| 1 GiB decoded NF4 cache + original plain MLP padding | 72 | `n_dd72b4b1139345109fc7962a87c76cea` | 62.90s | 6721 MiB | 2.04968 | 1.142x |
-| Reconstructed R9 fusion (not identical old source) | 42 | `n_6e87570e1f2245e1b9413d6aba6c5794` | 61.77s | 8623 MiB | 2.04963 | 1.163x |
+| Full NF4 cache + MLP padding + FP16 forward-logit reuse | 29 | `redacted-job` | **60.24s** | 8827 MiB | 2.04969 | **1.193x** |
+| Full NF4 cache + fused compact-MLP residual + valid-row RMSNorm | 25 | `redacted-job` | **60.52s** | 8111 MiB | 2.04965 | 1.187x |
+| Full NF4 cache + fused compact-MLP residual | 23 | `redacted-job` | 60.60s | 8071 MiB | 2.04966 | 1.186x |
+| Original Triton compact-MLP residual scatter, no decoded cache | 22 | `redacted-job` | **64.03s** | **5405 MiB** | **2.04960** | 1.122x |
+| Original Triton compact-MLP scatter, no decoded cache | 21 | `redacted-job` | 64.83s | **5345 MiB** | 2.04965 | 1.108x |
+| 1 GiB decoded NF4 cache + original plain MLP padding | 72 | `redacted-job` | 62.90s | 6721 MiB | 2.04968 | 1.142x |
+| Reconstructed R9 fusion (not identical old source) | 42 | `redacted-job` | 61.77s | 8623 MiB | 2.04963 | 1.163x |
 | CPU activation offload with MLP padding | 27 | see To Run | **TIME_LIMIT_EXCEEDED at 80.0s** | 3607 MiB (partial run) | not evaluated | **FAILED, not admissible** |
 
 **Claimed competitor target of 45s / 1375 MiB is not supported by a completed result in this queue.** Do not claim it as achieved. The offload example illustrates that a lower reported partial-run peak can come at the cost of exceeding the 80s training cutoff.
@@ -79,13 +79,13 @@ New complete 64-step development jobs (the service confirmed time/memory/eval ch
 
 Two post-training test notebooks `chatgpt-speedwinner-79regressions-20261031-v1` and `chatgpt-guarded-mlppad-regressions-20261031-v1` **failed after training**, with generic `RuntimeError('Official Soup regressions failed')`; their complete `pytest` log was exported to GPU workspace but is not included in the Sheets job error message. This means the cause is **not yet identified**: do not say which source feature failed, and do not assume the source is cleared. `harness/check_rules.py` runs `SOUP_APPLY_SOLUTION=1 python -m pytest tests -q -p no:cacheprovider` (with the harness environment) and requires exactly **79 passing tests**. GCP service's three pass flags are insufficient for the original **10 checks** (including timed original `@triton.jit` kernel share >=5%, training loss curves, entropy, accuracy, and rewind/output metadata).
 
-Existing concurrent [row 180](https://example.invalid/redacted) `chatgpt-6052-regression-preflight-20261031-v1` is an **error-diagnostic test** for the 60.52s source. It runs a first-failure regression preflight and should surface the traceback, rather than a generic error. A separately published [backup debug notebook](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_official79_firstfailure_debug_v1.ipynb) is **not submitted** to avoid competing duplicate GPU work.
+Existing concurrent [row 180](https://example.invalid/redacted) `chatgpt-6052-regression-preflight-20261031-v1` is an **error-diagnostic test** for the 60.52s source. It runs a first-failure regression preflight and should surface the traceback, rather than a generic error. A separately published [backup debug notebook](project-repository/blob/master/soup-kernel-challenge/queue_20261031_official79_firstfailure_debug_v1.ipynb) is **not submitted** to avoid competing duplicate GPU work.
 
 ### New independent A/B candidates (submitted after this wave)
 
-- **Row 188:** [60.52s full-cache valid-row RMSNorm / residual + retained native FP16 logits](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_fullcache_validnorm_residual_retain_v1.ipynb), source-guarded, pending training.
-- **Row 194:** [1GiB cache cap + valid-row RMSNorm + fused residual](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_nf4cache1g_validnorm_residual_v1.ipynb), source-guarded; isolated reduction of the 3GiB cache budget; pending training.
-- **Row 202:** [No-NF4-cache MLP fused residual + q_proj active-token compaction](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_fusedresidual_qproj_padding_v1.ipynb). Patches only q_proj plan tuple parsing to handle the fused-residual's extra mask/prefix fields; retains full dropout sampling geometry and unmodified task/harness. Pending combined GPU correctness and performance.
+- **Row 188:** [60.52s full-cache valid-row RMSNorm / residual + retained native FP16 logits](project-repository/blob/master/soup-kernel-challenge/queue_20261031_fullcache_validnorm_residual_retain_v1.ipynb), source-guarded, pending training.
+- **Row 194:** [1GiB cache cap + valid-row RMSNorm + fused residual](project-repository/blob/master/soup-kernel-challenge/queue_20261031_nf4cache1g_validnorm_residual_v1.ipynb), source-guarded; isolated reduction of the 3GiB cache budget; pending training.
+- **Row 202:** [No-NF4-cache MLP fused residual + q_proj active-token compaction](project-repository/blob/master/soup-kernel-challenge/queue_20261031_fusedresidual_qproj_padding_v1.ipynb). Patches only q_proj plan tuple parsing to handle the fused-residual's extra mask/prefix fields; retains full dropout sampling geometry and unmodified task/harness. Pending combined GPU correctness and performance.
 
 ### Score-focused selection (conditional, not official points)
 
@@ -124,7 +124,7 @@ A source-only diagnostic notebook `queue_20261031_official79_firstfailure_debug_
 - **Row 194:** `chatgpt-cache1g-validnorm-residual-20261031-v1` — only reduce fullcache cap 3 GiB to 1 GiB on measured 60.52s/8111MiB source; last known queued.
 - **Row 202:** `chatgpt-fusedresid-qproj-pad-20261031-v1` — measured lowmem 64.03s/5405MiB fused MLP residual + q_proj active-token compaction. Four-element compact MLP plan made compatible with q_proj's two-field ABI, preserving full original dropout geometry; last known queued.
 
-All are public `.ipynb` files in [Danonika/public/soup-kernel-challenge](https://github.com/Danonika/public/tree/master/soup-kernel-challenge) and were added only in A:H, with Ready set last. No completion has been claimed for these three.
+All are public `.ipynb` files in [project-repository/soup-kernel-challenge](project-repository/tree/master/soup-kernel-challenge) and were added only in A:H, with Ready set last. No completion has been claimed for these three.
 
 ### Feasibility note: 1,375 MiB target
 

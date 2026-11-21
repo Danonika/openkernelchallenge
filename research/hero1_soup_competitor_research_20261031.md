@@ -32,7 +32,7 @@ Different origins, single public screens and/or worker checks are **not** offici
 ## New source-hashed test fusion
 - `SOUP-FUSION-HERO1-011`, To Run row481: combine source-preserved q/o+head+full NF4 cache with our previously GPU-tested valid-row post-attention RMSNorm and Triton fused MLP residual scatter.
 - `SOUP-FUSION-HERO1-012`, To Run row482: exact same fusion; change only NF4 frozen decoded-weight cache limit from 3 GiB to 1 GiB. This preserves FP16 math while exploring peak-memory/time Pareto.
-- Both published under `Danonika/public/soup-kernel-challenge/` as reviewable notebooks and cloned into our testing-queue research branch. Their full training measurements are **pending**.
+- Both published under `project-repository/soup-kernel-challenge/` as reviewable notebooks and cloned into our testing-queue research branch. Their full training measurements are **pending**.
 
 ## Physical-memory feasibility
 Research estimates `~644.78 MiB` for all28 compressed NF4 weights and metadata. A resident FP32 tied embedding table at `151936 × 1536 × 4 bytes` is `890.25 MiB`. Their approximate sum is `1535.03 MiB`, already above the stretch target `1359 MiB` before activations and CUDA runtime. This is an *accounting hypothesis*, not an observed peak or a proof the target is impossible in an offload regime. Achieving 1359 MiB likely requires honest residency scheduling or exact lossless frozen storage reduction, not just additional pointwise fusion. Soup's original output/quality checks must still hold.

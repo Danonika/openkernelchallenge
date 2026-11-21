@@ -237,7 +237,7 @@ class MetadataAuthTests(unittest.TestCase):
             self.assertFalse(call.kwargs['allow_redirects'])
 
     def test_wrong_identity_or_missing_scope_refuses_token(self):
-        for kwargs, count in [({'email': 'contributor@users.noreply.github.com'}, 1), ({'scopes': 'other-scope'}, 2)]:
+        for kwargs, count in [({'email': 'redacted@example.invalid'}, 1), ({'scopes': 'other-scope'}, 2)]:
             credentials, session = self.credentials(**kwargs)
             with self.assertRaises(PublishError): credentials.refresh()
             self.assertEqual(session.get.call_count, count)

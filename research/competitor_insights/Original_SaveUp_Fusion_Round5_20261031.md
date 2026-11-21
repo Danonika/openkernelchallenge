@@ -12,11 +12,11 @@ Independent torch-only CPU reference: **20/20 forward and input-gradient parity 
 
 ## Published source and notebooks
 
-- [Original enhanced module v2](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/original_save_up_mlp_v2.py)
+- [Original enhanced module v2](project-repository/blob/master/soup-kernel-challenge/original_save_up_mlp_v2.py)
 - [Team's original source v2](research/competitor_insights/original_save_up_mlp_v2.py)
-- [Save-up v1 alone (79 test + own kernel gate)](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_original_saveup_mlp_lowmem_v1.ipynb)
-- [Save-up + independently written segmented Qwen packing](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_original_fullpack_saveup_fusion_v1.ipynb)
-- [Improved FP16-input save-up + segmented full decoder](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_fullpack_saveup_fp16input_v2.ipynb)
+- [Save-up v1 alone (79 test + own kernel gate)](project-repository/blob/master/soup-kernel-challenge/queue_20261031_original_saveup_mlp_lowmem_v1.ipynb)
+- [Save-up + independently written segmented Qwen packing](project-repository/blob/master/soup-kernel-challenge/queue_20261031_original_fullpack_saveup_fusion_v1.ipynb)
+- [Improved FP16-input save-up + segmented full decoder](project-repository/blob/master/soup-kernel-challenge/queue_20261031_fullpack_saveup_fp16input_v2.ipynb)
 
 All three queued notebooks preserve the exact original `--only solution` 64-step command and the result-export cell. Their source is installed only in `solution/` before the measured subprocess starts. Physical GPU tiny Qwen/PEFT/dropout and own useful original-kernel share checks execute after the task in source-linked child processes; first notebook also runs all 79 Soup regressions.
 

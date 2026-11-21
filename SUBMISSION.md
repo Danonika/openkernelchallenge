@@ -10,21 +10,7 @@ The current minimal notebook embeds the verified source snapshot pinned to main-
 
 ## Ссылки
 
-- Репозиторий команды: https://example.invalid/redacted
-- Вычислительный commit успешной v1: https://example.invalid/redacted
-- Публичная сохранённая Kaggle-версия v1, COMMIT равен указанному SHA: https://example.invalid/redacted
-- Демо-видео, **168 секунд**: https://example.invalid/redacted
-- Презентация: https://example.invalid/redacted
 - [PPTX](presentation/Soup-Duo-38123-Presentation-v1.pptx), [сценарий](presentation/Demo-Script-RU.md), [субтитры](presentation/Soup-Duo-Demo-v1.srt).
-
-## Команда — два участника
-
-| Участник | Роль | GitHub | Kaggle | Контакт капитана |
-|---|---|---|---|---|
-| Kolpenova Amina | Капитан | — | [aminakolpenova](https://example.invalid/redacted) | [Публичный Kaggle-профиль](https://example.invalid/redacted) |
-| Danonika | — | — | [daniyarkuttymbek](https://example.invalid/redacted) | — |
-
-Публичный Kaggle-профиль указан как контакт капитана. Неизвестные GitHub-аккаунты и технические роли не предполагаются.
 
 ## Собственные ядра
 
@@ -37,7 +23,7 @@ The current minimal notebook embeds the verified source snapshot pinned to main-
 
 Полезная доля solution_1: **9,0456%**, solution_2: **9,3410%**; минимум **9,0456%**, требование >=5% с третьего шага. Стартер `example_swiglu_fwd_kernel` / `example_swiglu_bwd_kernel`, native GEMM и Python replay не включены в собственное JIT-время. Три запасных JIT перечислены в README и не включены в общее полезное время всех запусков.
 
-Командная история реализации: [Eeoneget, ce62d67432ad8e530abff12bb36d3ab15668502a](https://github.com/Eeoneget/hackathon-decentrathon-6/tree/ce62d67432ad8e530abff12bb36d3ab15668502a), плюс input-only MLP replay при N>448 и workspace головы 4096 при N>=1024. Идеи, источники и лицензии — в README и [PROVENANCE](docs/PROVENANCE.md). Готовые kernel-библиотеки не используются.
+Командная история реализации: [contributor, redacted-revision](https://github.com/contributor/hackathon-decentrathon-6/tree/redacted-revision), плюс input-only MLP replay при N>448 и workspace головы 4096 при N>=1024. Идеи, источники и лицензии — в README и [PROVENANCE](docs/PROVENANCE.md). Готовые kernel-библиотеки не используются.
 
 ## Результат успешного сохранённого Run All v1
 

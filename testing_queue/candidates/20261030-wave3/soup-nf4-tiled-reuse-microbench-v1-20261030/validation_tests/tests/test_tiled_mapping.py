@@ -63,7 +63,7 @@ def test_warp_A_B_fragment_reuse_and_mma_operand_coverage():
 
 
 def test_original_staged_decoder_matches_reused_B_coordinates():
-    sys.path.insert(0,'/workspace/shared/soup_cycle/nf4_matmul_cycle9')
+    sys.path.insert(0,'/redacted/local/soup_cycle/nf4_matmul_cycle9')
     from nf4_reference import NF4,PackedNF4,pack_indices,decode_materialized,f32
     n,k=129,128;blocks=n*k//64
     state=PackedNF4(n,k,pack_indices([(i*7+3)%16 for i in range(n*k)]),

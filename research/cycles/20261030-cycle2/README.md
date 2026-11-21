@@ -3,7 +3,7 @@
 **Cutoff: 2026-10-30 11:31 UTC.** The source is immutable `cycle2_closed_20261030T1131Z`, not the concurrently evolving working files. This snapshot contains **121 unique idea IDs**: the original 104, 14 earlier additions, and 3 cycle additions. Every original ID and source citation is retained. No GPU training, benchmark, quality, kernel-share or official-score result is claimed.
 
 - [Current research table — Soup Ideas](https://example.invalid/redacted): 121 catalog rows; Fusion Ideas is blank; Soup Runs has headers only. These are the three visible tabs. Historical Muse tabs remain hidden.
-- [Baseline graph, outside the table](https://soup-baseline-graph.danonika.chatgpt.site): owner-private deployment; one baseline configuration bucket / subgraph represented by one point. No candidate nodes, edges or measured runs. Admission and earned points are unknown, not 20.
+- [Baseline graph, outside the table](https://soup-baseline-graph.contributor.chatgpt.site): owner-private deployment; one baseline configuration bucket / subgraph represented by one point. No candidate nodes, edges or measured runs. Admission and earned points are unknown, not 20.
 - [Baseline graph source](../../../graph/baseline/) and [initial 118-row research / attached ТЗ](../../soup-20261030/) are separate from this closed cycle.
 
 ## What is preserved

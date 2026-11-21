@@ -4,7 +4,7 @@ This computes the SAME mathematical SiLU(gate) * up as the starter example
 in forward. Backward replays both native FP16 gate/up GEMMs using the frozen
 group's existing backward dequant buffer, never saving the two wide activations.
 Original team research implementation. Related runtime source retains
-attribution to Eeoneget commit ce62d67432ad8e530abff12bb36d3ab15668502a.
+attribution to contributor commit redacted-revision.
 Team ownership was confirmed by the user on 31 October 2026;
 see docs/PROVENANCE.md. No computation is changed by this clarification.
 """

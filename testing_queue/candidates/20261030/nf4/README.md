@@ -105,7 +105,7 @@ The queue executes ZIPs, not notebooks; nothing is submitted by this packet.
 
 ## Source evidence inspected
 
-- Local clean official checkout: `/workspace/shared/soup_cloud_env/source` at pinned commit above.
+- Local clean official checkout: `/redacted/local/soup_cloud_env/source` at pinned commit above.
 - bitsandbytes0.50.2: `functional.dequantize_4bit`, CUDA `_dequant_linear_fallback`, `MatMul4Bit.backward`.
 - `soup_gpu_trials/trial002/solution/nf4_decode.py` and verified report.
 - `soup_gpu_trials/trial004/solution/forward_nf4.py` and verified report.

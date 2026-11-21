@@ -16,7 +16,7 @@ We do **not** copy competitor kernels. We also reject their unguarded model-wide
 
 ## Our independently authored fusion
 Own module: `research/hero1_original_frozen_mlp_replay.py`.
-Beast v2 notebook: https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_hero1_external-contributor_replay4_nocache_share_v2.ipynb
+Beast v2 notebook: project-repository/blob/master/soup-kernel-challenge/queue_20261031_hero1_external-contributor_replay4_nocache_share_v2.ipynb
 Queue ID `hero1-external-contributor-original-replay4-20261031-v2`, To Run row **485**, graph `SOUP-FUSION-HERO1-015`.
 
 Architecture: original NF4 Triton decoding **without** large full decoded-weight cache (aim to retain >=5% real original-kernel share); active-row q/o projections with **native full padded LoRA dropout RNG**; own valid-row post-attention RMSNorm + Triton fused residual/MLP scatter; preserved native half-logit CE head and Soup Rewind outputs. In exactly four frozen MLP layers (20,22,24,26), forward runs the same grad-enabled native path but discards its inner graph, retaining only input; backward replays the same operations under captured autocast with unchanged upstream scale. No task switch, parameter, adapter, optimizer, data, label, step or test changes.

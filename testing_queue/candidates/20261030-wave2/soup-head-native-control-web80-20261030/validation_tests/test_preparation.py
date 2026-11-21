@@ -14,7 +14,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parent
 ADAPTER = ROOT / "web_adapter"
-SHARED = Path("/workspace/shared/soup_web_ready_20261030")
+SHARED = Path("/redacted/local/soup_web_ready_20261030")
 sys.path.insert(0, str(ADAPTER))
 import web_runner as w
 import prepare_asset_manifest
@@ -100,7 +100,7 @@ def prepare_repo(repo):
     for name in official:
         dst = repo / name
         dst.parent.mkdir(parents=True, exist_ok=True)
-        dst.write_bytes((Path("/workspace/shared/soup_cloud_env/source") / name).read_bytes())
+        dst.write_bytes((Path("/redacted/local/soup_cloud_env/source") / name).read_bytes())
 
 
 with tempfile.TemporaryDirectory() as td:

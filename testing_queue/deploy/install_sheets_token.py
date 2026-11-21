@@ -24,7 +24,7 @@ def main():
     fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
     with os.fdopen(fd, "r") as f:
         info = os.fstat(f.fileno())
-        if (not stat.S_ISREG(info.st_mode) or info.st_uid != pwd.getpwnam("daniyar_kuttymbek").pw_uid
+        if (not stat.S_ISREG(info.st_mode) or info.st_uid != pwd.getpwnam("project-contributor").pw_uid
                 or stat.S_IMODE(info.st_mode) & 0o077 or info.st_size > 16384):
             raise SystemExit("Staged credential permissions are invalid")
         raw = f.read(16385)

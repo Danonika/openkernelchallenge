@@ -63,7 +63,7 @@ No queue submission, remote mutation, GPU job, package installation, Sheet/GitHu
 
 Original solution and tests written for this preparation. Research contracts read:
 
-- `/workspace/shared/soup_audit_1919/lora.json` (fresh LoRA audit).
+- `/redacted/local/soup_audit_1919/lora.json` (fresh LoRA audit).
 - Recovered Round 7 `round7_l1e/README.md` and `batch2/LORA_RESEARCH_ROUND_7.md` (native separate dropout, casts, AMP boundary, negative evidence; no code carried over).
 - [PEFT 0.20.0 NF4 LoRA wrapper](https://github.com/huggingface/peft/blob/v0.20.0/src/peft/tuners/lora/bnb.py) (pinned source dispatch/order).
 - Local original starter `harness/`, `task/`, `tests/` and queue bundler/runner reference. None modified.

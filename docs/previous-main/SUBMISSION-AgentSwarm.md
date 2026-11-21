@@ -28,7 +28,7 @@ Fill in the actual human team members (maximum 4). AI agents are tools, not addi
 | Peak GPU memory | 2261 MiB | 2261 MiB |
 | Eval loss | 2.04979 | 2.04968 |
 
-Queue To Run row 878; VM job n_a755cc946d544ae5ab94502096245ff4. One unpaired complete 64-step research run; not official Kaggle validation and not final jury-admitted result.
+Queue To Run row 878; VM job redacted-job. One unpaired complete 64-step research run; not official Kaggle validation and not final jury-admitted result.
 
 ## Final submission result
 | Metric | Base Soup | Submitted implementation |

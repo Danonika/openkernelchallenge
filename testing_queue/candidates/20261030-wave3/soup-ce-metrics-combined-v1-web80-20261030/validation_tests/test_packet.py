@@ -1,7 +1,7 @@
 """Data-only source/ZIP/notebook/accepted-runner negative fixtures."""
 import ast,base64,copy,hashlib,json,sys,zipfile
 from pathlib import Path
-ROOT=Path(__file__).resolve().parent;KIT=Path('/workspace/shared/soup_web_ready_20261030_v2/support')
+ROOT=Path(__file__).resolve().parent;KIT=Path('/redacted/local/soup_web_ready_20261030_v2/support')
 MODE='ce_metrics_combined_v1';checks=[]
 def good(name):checks.append(name)
 manifest=json.loads((ROOT/'source_manifest.json').read_text())
@@ -30,13 +30,13 @@ assert set(base_nodes)==set(cur_nodes)
 for n in base_nodes:
  if n not in ['normalize','main']:assert ast.dump(base_nodes[n])==ast.dump(cur_nodes[n]),n
 # The generated main must equal the previously accepted V2 head main exactly.
-accepted=ast.parse(Path('/workspace/shared/soup_web_wave3_20261030/head_telemetry_v2/web_adapter/web_runner.py').read_text())
+accepted=ast.parse(Path('/redacted/local/soup_web_wave3_20261030/head_telemetry_v2/web_adapter/web_runner.py').read_text())
 accepted_main=next(n for n in accepted.body if isinstance(n,ast.FunctionDef) and n.name=='main')
 assert ast.dump(cur_nodes['main'])==ast.dump(accepted_main)
 good('protected_source_runtime_process_cap_export_workflow_unchanged')
 sys.path.insert(0,str(ROOT/'web_adapter'));import web_runner as w
 assert w.NATIVE_TIMEOUT==80 and len(w.FUSIONS[MODE]['kernels'])==6 and w.FUSIONS[MODE]['requires_original_kernels']
-fixture_tree=ast.parse(Path('/workspace/shared/soup_web_wave2_20261030/head/test_preparation.py').read_text())
+fixture_tree=ast.parse(Path('/redacted/local/soup_web_wave2_20261030/head/test_preparation.py').read_text())
 fixture=next(n for n in fixture_tree.body if isinstance(n,ast.FunctionDef) and n.name=='fixture');scope={'json':json}
 exec(compile(ast.Module(body=[fixture],type_ignores=[]),'synthetic_complete_fixture','exec'),scope)
 data,logs=scope['fixture']();proc={'exit_code':0,'timed_out':False,'interrupted':False,'cleanup_confirmed':True}
@@ -60,8 +60,8 @@ for kernel in w.FUSIONS[MODE]['kernels']:
   if value is None:del bad['runs']['solution'][0]['metrics']['own_kernel_ms'][kernel]
   else:bad['runs']['solution'][0]['metrics']['own_kernel_ms'][kernel]=value
   assert not w.normalize(bad,MODE,proc,logs)['complete_fixed_task'];negative+=1
-producer=Path('/workspace/shared/soup_next_wave_20261030/ce_metric_adapter_injection_v1/solution')
-common=Path('/workspace/shared/soup_head_metric_bridge_v2/solution')
+producer=Path('/redacted/local/soup_next_wave_20261030/ce_metric_adapter_injection_v1/solution')
+common=Path('/redacted/local/soup_head_metric_bridge_v2/solution')
 for path in producer.glob('*.py'):assert path.read_bytes()==(ROOT/'solution/producer'/path.name).read_bytes()
 for path in common.glob('*.py'):assert path.read_bytes()==(ROOT/'solution/common'/path.name).read_bytes()
 good('frozen_producer_and_common_consumer_bytes_exact')

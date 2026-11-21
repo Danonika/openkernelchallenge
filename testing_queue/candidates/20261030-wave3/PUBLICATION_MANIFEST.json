@@ -3,7 +3,7 @@
   "prepared_at": "2026-10-30T23:43:00Z",
   "cutoff_utc": "2026-10-30T23:43:00Z",
   "state": "LOCAL_ONLY_PENDING_EXACT_PAYLOAD_APPROVAL",
-  "repo": "BAITC-Hacks/hack-57faaa42-duo",
+  "repo": "project-repository",
   "branch": "testing-queue",
   "destination": "testing_queue/candidates/20261030-wave3",
   "prior_published_wave2_commit": "1594adf4b0326f9819392b0feb61b593a2a34910",

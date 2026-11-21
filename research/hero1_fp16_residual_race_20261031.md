@@ -6,8 +6,8 @@ Our fastest completed T4 public screen is 58.78s / 9325MiB / eval 2.04966. A sep
 external contributor publicly claims about 48s and 2850MiB. Its submission document still contains placeholders, so this is a research target, not yet an independently verified race result.
 
 ## New original experiments
-- Hero1-016: training-only half-precision residual activations, with exact FP16 tied embedding and unchanged FP32 frozen RMSNorm weights. Qwen original data, LoRA, optimizer, steps and Soup metrics preserved. https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_hero1_half_residual_nocache_v1.ipynb
-- Hero1-017: same half residual with four selected frozen MLP input-only rematerialized layers. https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_hero1_halfresidual_replay4_v1.ipynb
+- Hero1-016: training-only half-precision residual activations, with exact FP16 tied embedding and unchanged FP32 frozen RMSNorm weights. Qwen original data, LoRA, optimizer, steps and Soup metrics preserved. project-repository/blob/master/soup-kernel-challenge/queue_20261031_hero1_half_residual_nocache_v1.ipynb
+- Hero1-017: same half residual with four selected frozen MLP input-only rematerialized layers. project-repository/blob/master/soup-kernel-challenge/queue_20261031_hero1_halfresidual_replay4_v1.ipynb
 - Source: https://example.invalid/redacted
 
 ## Stop/go

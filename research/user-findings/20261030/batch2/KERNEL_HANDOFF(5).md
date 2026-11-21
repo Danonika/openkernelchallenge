@@ -85,7 +85,7 @@ Combined 4 microbatches/4 updates: all adapter gradients and model parameter sna
 
 New ZIP layout: `round7_l1e`, `round7_attention`, `round7_loss_integration`, `round7_composition`, plus unchanged `round6_integration` and `round5_loss` dependencies. Component READMEs contain exact commands/source links. Four original kernels invoked by combined test: `dropout_half_gradient_epilogue`, `aligned_additive_mask`, `token_block_partials`, `token_finish_summary`. H0/native backward contributes no original Triton time itself.
 
-Recorded CPU environment: Torch2.11.0+cpu, Triton3.6.0, TF5.16.1, PEFT0.20.0, TRL0.29.1, Accel1.14.0, Soup0.77.0, datasets4.8.4, fsspec2026.2.0. Scratch cwd `/workspace/scratch/fc71c5cbd20c`; components under `tmp/`, outputs under `output/`. Packages isolated under `/tmp/kernel_r6_integration_deps:/tmp/kernel_r5_h0_deps:/tmp/kernel_r4_torch_deps:/tmp/kernel_r5_triton_deps` in that PYTHONPATH order. They may disappear; use bundle requirements in a fresh environment.
+Recorded CPU environment: Torch2.11.0+cpu, Triton3.6.0, TF5.16.1, PEFT0.20.0, TRL0.29.1, Accel1.14.0, Soup0.77.0, datasets4.8.4, fsspec2026.2.0. Scratch cwd `<scratch-root>`; components under `tmp/`, outputs under `output/`. Packages isolated under `/tmp/kernel_r6_integration_deps:/tmp/kernel_r5_h0_deps:/tmp/kernel_r4_torch_deps:/tmp/kernel_r5_triton_deps` in that PYTHONPATH order. They may disappear; use bundle requirements in a fresh environment.
 
 ```bash
 TRITON_INTERPRET=1 python3 round7_composition/composition_checks.py --output combined.json

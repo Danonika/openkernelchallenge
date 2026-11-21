@@ -1,6 +1,6 @@
 {
   "status": "PREPARED_NOT_PUBLISHED_REQUIRES_EXACT_PAYLOAD_APPROVAL",
-  "destination_repository": "BAITC-Hacks/hack-57faaa42-duo",
+  "destination_repository": "project-repository",
   "destination_branch": "testing-queue",
   "destination_prefix": "testing_queue/candidates/20261031-held-offline",
   "observed_base_commit": "98e4b9948ccc68a2dfb35e117a7aa2e55ae0d0bc",

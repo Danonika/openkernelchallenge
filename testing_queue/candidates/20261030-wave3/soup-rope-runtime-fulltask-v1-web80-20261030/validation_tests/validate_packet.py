@@ -2,7 +2,7 @@
 import ast,base64,copy,hashlib,importlib.util,json,sys,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
-KIT=Path('/workspace/shared/soup_web_ready_20261030_v2');BASE=KIT.with_name('soup_web_ready_20261030')
+KIT=Path('/redacted/local/soup_web_ready_20261030_v2');BASE=KIT.with_name('soup_web_ready_20261030')
 checks=[]
 def done(name):checks.append({'name':name,'passed':True})
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -46,7 +46,7 @@ for n,raw in values['PAYLOAD'].items():
 done('notebook_launch_workflow_and_exact_encoded_payload')
 sys.path.insert(0,str(ROOT/'web_adapter'))
 spec=importlib.util.spec_from_file_location('full_rope_runner',ROOT/'web_adapter/web_runner.py');w=importlib.util.module_from_spec(spec);spec.loader.exec_module(w)
-w.verify_official(Path('/workspace/shared/soup_cloud_env/source'),json.loads((KIT/'support/official_manifest.json').read_text()))
+w.verify_official(Path('/redacted/local/soup_cloud_env/source'),json.loads((KIT/'support/official_manifest.json').read_text()))
 assert w.NATIVE_TIMEOUT==80 and "'--timeout','80'" in generated and "'--repeats','1' if a.mode=='baseline' else '2'" in generated
 done('official_task_bytes_unchanged_and_paired_80s_cap_preserved')
 fixture=next(n for n in ast.parse((BASE/'test_preparation.py').read_text()).body if isinstance(n,ast.FunctionDef) and n.name=='fixture')

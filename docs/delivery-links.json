@@ -11,22 +11,6 @@
   "video_duration_seconds": 168,
   "video_bytes": 3736517,
   "video_sha256": "d36db73613adf12076b936594f2fc44679078519d73bf3b65fb26342f9adbc53",
-  "team": [
-    {
-      "name": "Kolpenova Amina",
-      "role": "Капитан",
-      "github": "",
-      "kaggle": "https://example.invalid/redacted",
-      "captain_contact": "https://example.invalid/redacted"
-    },
-    {
-      "name": "Danonika",
-      "role": "",
-      "github": "",
-      "kaggle": "https://example.invalid/redacted",
-      "captain_contact": ""
-    }
-  ],
   "platform_submission_status": "NOT_CLAIMED",
   "manual_jury_review": "PENDING"
 }

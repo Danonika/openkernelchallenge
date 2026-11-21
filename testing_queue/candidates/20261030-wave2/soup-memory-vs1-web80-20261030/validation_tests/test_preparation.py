@@ -29,12 +29,12 @@ assert manifest==json.loads((ROOT/'payloads/memory_manifest.json').read_text())
 with zipfile.ZipFile(ROOT/'candidate.zip') as z:
  assert set(z.namelist())==set(manifest)
  for name,h in manifest.items():assert sha(z.read(name))==h and z.read(name)==(ROOT/name).read_bytes()
-sys.path.insert(0,'/workspace/shared/soup_cycle/test_queue')
+sys.path.insert(0,'/redacted/local/soup_cycle/test_queue')
 from bundle_candidate import bundle
 new,files=bundle(ROOT/'solution');assert new==(ROOT/'candidate.zip').read_bytes() and files==manifest
 assert sha(new)=='055183cdd11a254e3462f25b95b4c0ec87a556cc58cb9bcc08e77f5390548979'
 results.append({'test':'exact_reviewed_source_and_deterministic_zip','pass':True})
-original=Path('/workspace/shared/soup_web_ready_20261030/support')
+original=Path('/redacted/local/soup_web_ready_20261030/support')
 for name in ('runtime_probe.py','process_guard.py','owned_process_tree.py','prepare_asset_manifest.py','official_manifest.json'):
  assert (ROOT/'support'/name).read_bytes()==(original/name).read_bytes()
 results.append({'test':'accepted_runtime_asset_guardian_helpers_unchanged','pass':True})
@@ -42,7 +42,7 @@ protected=json.loads((ROOT/'support/official_manifest.json').read_text())
 with tempfile.TemporaryDirectory() as d:
  repo=Path(d)
  for name in protected:
-  target=repo/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((Path('/workspace/shared/soup_cloud_env/source')/name).read_bytes())
+  target=repo/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((Path('/redacted/local/soup_cloud_env/source')/name).read_bytes())
  assert not (repo/'.git').exists();w.verify_official(repo,protected)
  bad=repo/'harness/extra.py';bad.write_text('pass')
  try:w.verify_official(repo,protected)

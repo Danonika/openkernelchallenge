@@ -41,8 +41,8 @@ Research inputs inspected locally: `soup_cycle/research_rope_cycle3.md`, its nat
 
 ```bash
 CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=2 TRITON_INTERPRET=1 \
-  /workspace/shared/soup_cloud_env/venv/bin/python -m pytest solution/test_rotary.py -q
-CUDA_VISIBLE_DEVICES='' /workspace/shared/soup_cloud_env/venv/bin/python -m solution.cpu_contract
+  /redacted/local/soup_cloud_env/venv/bin/python -m pytest solution/test_rotary.py -q
+CUDA_VISIBLE_DEVICES='' /redacted/local/soup_cloud_env/venv/bin/python -m solution.cpu_contract
 python validate_artifacts.py
 ```
 

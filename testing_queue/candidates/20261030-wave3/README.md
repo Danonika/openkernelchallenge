@@ -10,4 +10,4 @@ No notebook here is labeled an officially admitted winner. Positive component ti
 
 ## Excluded
 
-Credentials, private Sheet snapshots, API identity/status blobs, model/cache files, raw output ZIPs, unsubmitted successors and the user's separately prepared native-dab4 package. Source-bound result receipts are referenced by SHA-256, not exported wholesale. Existing GitHub files and the user deployment commit are not modified by this local preparation. Destination, if separately approved: private BAITC-Hacks/hack-57faaa42-duo, testing-queue, testing_queue/candidates/20261030-wave3.
+Credentials, private Sheet snapshots, API identity/status blobs, model/cache files, raw output ZIPs, unsubmitted successors and the user's separately prepared native-dab4 package. Source-bound result receipts are referenced by SHA-256, not exported wholesale. Existing GitHub files and the user deployment commit are not modified by this local preparation. Destination, if separately approved: private project-repository, testing-queue, testing_queue/candidates/20261030-wave3.

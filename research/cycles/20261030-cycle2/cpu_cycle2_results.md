@@ -23,7 +23,7 @@ These findings keep SOUP-TRAIN-001 **conditional**, not rejected wholesale: its 
 ## Artifacts and reproduction
 
 ```bash
-bash /workspace/shared/soup_cycle/cpu_tests/cycle2/run.sh
+bash /redacted/local/soup_cycle/cpu_tests/cycle2/run.sh
 ```
 
 `cpu_tests/cycle2/` contains independently written `run_cycle2.py`, detailed `results.json`, concise `summary.json`, logs, original-cycle hash manifest and `verification.txt`. Nonfinite comparisons record **finite / NaN / +Inf / −Inf classes and mismatching positions**, not blanket `equal_nan` comparisons. Initial six-group results/logs are retained separately.

@@ -1,11 +1,11 @@
 .............                                                            [100%]
 =============================== warnings summary ===============================
 shared/soup_notebooks_20261030/lora/tests/test_cpu_contract.py::test_nonfinite_signed_zero_and_half_overflow
-  /workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/triton/runtime/interpreter.py:565: RuntimeWarning: overflow encountered in cast
+  /redacted/local/soup_cloud_env/venv/lib/python3.12/site-packages/triton/runtime/interpreter.py:565: RuntimeWarning: overflow encountered in cast
     return TensorHandle(src.data.astype(_get_np_dtype(dst_type)), dst_type.scalar)
 
 shared/soup_notebooks_20261030/lora/tests/test_cpu_contract.py::test_nonfinite_signed_zero_and_half_overflow
-  /workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/triton/runtime/interpreter.py:599: RuntimeWarning: invalid value encountered in add
+  /redacted/local/soup_cloud_env/venv/lib/python3.12/site-packages/triton/runtime/interpreter.py:599: RuntimeWarning: invalid value encountered in add
     output = op(lhs.data, rhs.data)
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

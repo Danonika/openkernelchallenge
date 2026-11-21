@@ -20,7 +20,7 @@ Do not copy competitor kernel code. Implement independent algorithms and test al
 ## Two already-submitted *independent* proof paths
 
 - [Row 36](https://example.invalid/redacted): another research branch's own packed Qwen decoder with **dense block-diagonal masked attention**, tiny Qwen+PEFT gate and memory-first parent; no competitor kernel copied.
-- [Row 37](https://example.invalid/redacted): independently authored **native per-row SDPA** compact-decoder implementation; full padded dropout generation and a tiny GPU q/v gradient/RNG safety gate before the 64-step harness, on our full NF4 cache + head reuse parent. [Own notebook](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_original_rowwise_preflight_v2.ipynb). Source publication and queue acceptance are not correctness/performance passes.
+- [Row 37](https://example.invalid/redacted): independently authored **native per-row SDPA** compact-decoder implementation; full padded dropout generation and a tiny GPU q/v gradient/RNG safety gate before the 64-step harness, on our full NF4 cache + head reuse parent. [Own notebook](project-repository/blob/master/soup-kernel-challenge/queue_20261031_original_rowwise_preflight_v2.ipynb). Source publication and queue acceptance are not correctness/performance passes.
 
 ## Experimental decision rules
 

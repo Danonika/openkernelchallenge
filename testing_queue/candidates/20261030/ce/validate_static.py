@@ -16,8 +16,8 @@ import time
 import zipfile
 
 ROOT=Path(__file__).resolve().parent
-QUEUE=Path('/workspace/shared/soup_cycle/test_queue')
-OFFICIAL=Path('/workspace/shared/soup_cloud_env/source')
+QUEUE=Path('/redacted/local/soup_cycle/test_queue')
+OFFICIAL=Path('/redacted/local/soup_cloud_env/source')
 checks=[]
 def sha_bytes(raw): return hashlib.sha256(raw).hexdigest()
 def sha(p): return sha_bytes(Path(p).read_bytes())

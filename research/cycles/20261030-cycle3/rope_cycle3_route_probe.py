@@ -29,5 +29,5 @@ finally:
  qmod.apply_rotary_pos_emb=orig
 assert len(calls)==1
 r=dict(scope='Tiny CPU Qwen2Attention only; eager attention, no hub runtime/full model/pretrained download',torch=torch.__version__,torch_git=torch.version.git_version,transformers=transformers.__version__,installed_qwen2_git_blob_sha=blob,expected_source_blob_sha='b4fed98fafae8e4ee39be3b8cd766b1c85b079cd',source_blob_matches=blob=='b4fed98fafae8e4ee39be3b8cd766b1c85b079cd',kernels_package_present=kernels_present,module_global_patch_called=len(calls),calls=calls,output_shape=list(y.shape),finite_input_grad=bool(torch.isfinite(x.grad).all()),gpu=False,performance_measured=False)
-Path('/workspace/shared/soup_cycle/rope_cycle3_route_probe.json').write_text(json.dumps(r,indent=2)+'\n')
+Path('/redacted/local/soup_cycle/rope_cycle3_route_probe.json').write_text(json.dumps(r,indent=2)+'\n')
 print(json.dumps(r,indent=2))

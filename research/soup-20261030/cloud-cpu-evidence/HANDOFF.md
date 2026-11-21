@@ -1,6 +1,6 @@
 # Soup cloud CPU testing environment
 
-Cloud-only path: `/workspace/shared/soup_cloud_env`. No user-PC execution, global installs, drivers, paid compute, model downloads, dataset downloads, training, pushes, or Kaggle submission.
+Cloud-only path: `/redacted/local/soup_cloud_env`. No user-PC execution, global installs, drivers, paid compute, model downloads, dataset downloads, training, pushes, or Kaggle submission.
 
 ## Scope
 
@@ -13,7 +13,7 @@ This container has Python 3.12.14 and no exposed NVIDIA GPU/device or nvidia-smi
 ## Repeat offline checks
 
 ```bash
-cd /workspace/shared/soup_cloud_env
+cd /redacted/local/soup_cloud_env
 ./run_cpu_checks.sh
 ```
 

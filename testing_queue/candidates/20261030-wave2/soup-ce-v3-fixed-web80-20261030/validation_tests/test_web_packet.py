@@ -39,7 +39,7 @@ assert (R/'web_adapter/ce.zip').read_bytes()==raw
 assert json.loads((R/'web_adapter/ce_manifest.json').read_text())==manifest
 actual={'solution/'+str(p.relative_to(R/'solution')):sha(p) for p in (R/'solution').rglob('*') if p.is_file() and '__pycache__' not in p.parts}
 assert actual==manifest
-sys.path.insert(0,'/workspace/shared/soup_cycle/test_queue');import bundle_candidate
+sys.path.insert(0,'/redacted/local/soup_cycle/test_queue');import bundle_candidate
 assert bundle_candidate.bundle(R/'solution')==(raw,manifest)
 record('exact_source_zip_manifest_and_determinism',{'source_sha256':sha(R/'candidate.zip'),'files':len(manifest)})
 nb=json.loads((R/'candidate.ipynb').read_text());literal={}
@@ -64,7 +64,7 @@ record('all_python_syntax')
 with tempfile.TemporaryDirectory(prefix='ce-web-gitless-') as directory:
  repo=Path(directory)/'repo';repo.mkdir();official=json.loads((R/'web_adapter/official_manifest.json').read_text())
  for name in official:
-  dest=repo/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((Path('/workspace/shared/soup_cloud_env/source')/name).read_bytes())
+  dest=repo/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((Path('/redacted/local/soup_cloud_env/source')/name).read_bytes())
  assert not (repo/'.git').exists();w.verify_official(repo,official)
  (repo/'solution').mkdir();(repo/'solution/old.py').write_text('retained previous source')
  w.install_bundle(repo,R/'web_adapter/ce.zip',manifest,Path(directory)/'backup')

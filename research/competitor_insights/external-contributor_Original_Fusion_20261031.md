@@ -21,9 +21,9 @@ These are not GPU/QLoRA training evidence, and the original solution is not yet 
 
 | Row | Request ID | Notebook | Last observed status |
 |---:|---|---|---|
-|490|chatgpt-external-contributor-own-segpack-20261031-v2|[segmented decoder source](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_original_fullpack_segmented_v2.ipynb)|Ready; no VM job |
-|491|chatgpt-original-fp16-rmsnorm-lowmem-20261031-v1|[FP16 RMSNorm A/B](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_lowmem_rmsnorm_fp16_v1.ipynb)|Ready; no VM job |
-|492|chatgpt-external-contributor-fusion-20261031-v3|[full fusion](https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_combined_fp16rms_fullpack_segmented_v3.ipynb)|Ready; no VM job |
+|490|chatgpt-external-contributor-own-segpack-20261031-v2|[segmented decoder source](project-repository/blob/master/soup-kernel-challenge/queue_20261031_original_fullpack_segmented_v2.ipynb)|Ready; no VM job |
+|491|chatgpt-original-fp16-rmsnorm-lowmem-20261031-v1|[FP16 RMSNorm A/B](project-repository/blob/master/soup-kernel-challenge/queue_20261031_lowmem_rmsnorm_fp16_v1.ipynb)|Ready; no VM job |
+|492|chatgpt-external-contributor-fusion-20261031-v3|[full fusion](project-repository/blob/master/soup-kernel-challenge/queue_20261031_combined_fp16rms_fullpack_segmented_v3.ipynb)|Ready; no VM job |
 
 Sheets worker's latest visible status heartbeat remains 2026-10-31 10:27 UTC. Do not treat Ready as accepted/completed or duplicate the requests blindly.
 

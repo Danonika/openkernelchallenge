@@ -1,4 +1,5 @@
 {
+  "scope_note": "Historical snapshot records. The public copy removes personal and operational identifiers; original benchmark metrics and rule checks were not changed or rerun.",
   "kind": "TEAM_REPOSITORY_PREPARATION_NOT_PUBLISHED",
   "team": "Duo",
   "team_ownership_evidence": "Direct user confirmation in the chat on 31 October 2026; names not inferred.",
@@ -6,10 +7,10 @@
   "official_starter_current_commit_checked": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
   "team_final_git_commit": "156d8f9f944a928e31defaaf322d6130a9032afa",
   "source_history": {
-    "repository": "Eeoneget/hackathon-decentrathon-6",
-    "commit": "ce62d67432ad8e530abff12bb36d3ab15668502a"
+    "repository": "contributor/hackathon-decentrathon-6",
+    "commit": "redacted-revision"
   },
-  "selected_table_job": "n_a755cc946d544ae5ab94502096245ff4",
+  "selected_table_job": "redacted-job",
   "selected_reference_notebook_sha256": "6fd39c99f79ebfbdd00d039d390350c35757a4ca065e1f3fa41dc54a3d3e7a33",
   "final_repository_solution_sha256": "2855411877ff29f8cc9f6d54dafca376c3ca805c0e264b8e39211cf428035f56",
   "final_repository_still_needs_pinned_commit_kaggle_run": false,
@@ -624,7 +625,7 @@
       "status": "TEAM_CODE_USER_CONFIRMED",
       "confirmation_date": "2026-10-31",
       "basis": "The human user confirmed that the 38.123 s code belongs to teammates and team agents.",
-      "public_source_attribution": "Eeoneget, ce62d67432ad8e530abff12bb36d3ab15668502a; Danonika/public published notebook",
+      "public_source_attribution": "contributor, redacted-revision; project-repository published notebook",
       "source_comments_retained": true,
       "derived_research_only_ownership_annotations_superseded": true,
       "manual_jury_review": "PENDING"

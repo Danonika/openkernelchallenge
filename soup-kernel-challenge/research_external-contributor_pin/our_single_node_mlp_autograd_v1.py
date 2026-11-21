@@ -1,6 +1,6 @@
 """Original one-node, input-only frozen MLP experiment.
 
-Research-only overlay on ATTRIBUTED external contributor ce62d67 control and independent
+Research-only overlay on ATTRIBUTED external contributor redacted-revision control and independent
 input-only replay. Never credit competitor/starter kernels as our own.
 """
 from __future__ import annotations

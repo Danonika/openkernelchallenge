@@ -4,7 +4,7 @@ import json,hashlib,sys,ast
 import numpy as np
 import torch
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,'/workspace/shared/soup_cycle/nf4_matmul_cycle9')
+sys.path.insert(0,'/redacted/local/soup_cycle/nf4_matmul_cycle9')
 from nf4_reference import NF4,PackedNF4,pack_indices,decode_materialized,f32
 
 torch.set_num_threads(2)

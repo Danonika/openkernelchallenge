@@ -21,7 +21,7 @@ import uuid
 
 PROJECT = "project-ceb435db-d81b-4fa9-b28"
 ZONE = "asia-northeast1-c"
-VM = "daniyar_kuttymbek@soup-t4-recovery-asia-northeast1-c"
+VM = "redacted-machine"
 WRITER = "soup-sheets-writer@" + PROJECT + ".iam.gserviceaccount.com"
 SCOPE = "https://www.googleapis.com/auth/spreadsheets"
 REMOTE = "/redacted/local/.soup-sheets-auth-stage"

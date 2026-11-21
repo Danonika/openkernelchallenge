@@ -33,13 +33,13 @@ The Qwen2.5-1.5B published architecture includes 28 layers, 1.31 billion nonembe
 
 The full decoded-NF4 cache improves speed but holds many large frozen FP16 weight copies. The fixed 1 GiB limit variant changes only `solution/nf4.py` cache budget, preserving source/algorithm and the normal 64-step harness. Its **62.77 s / 6,721 MiB** result is a point between the 60.24 s speed extreme and 5,345 MiB memory extreme. This is an end-to-end observed trade-off, not an assumed theoretical gain.
 
-Public source notebook: https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_nf4_cache_1g_mlp_padding_v2.ipynb
+Public source notebook: project-repository/blob/master/soup-kernel-challenge/queue_20261031_nf4_cache_1g_mlp_padding_v2.ipynb
 
 ### 2. Custom saved-activation CPU offload: experimentally rejected at this setting
 
 A narrow `torch.autograd.graph.saved_tensors_hooks` wrapper around Qwen2 decoder forward moved only non-leaf CUDA FP16/FP32 saved activations >=8 MiB to CPU, restoring their exact data on backward. A deterministic CPU toy compared outputs, gradients, dropout RNG across an autograd hook and found bit-exact agreement. In the actual GPU queue it hit the server's **80 s hard cutoff**; no eval loss was produced. The sampled **3,607 MiB** does not validate the method as a finished contest candidate. A more restricted selected-layer/threshold variant could be studied, but any time saving is unproven. It is distinct from turning on the forbidden Soup `activation_offloading` switch.
 
-Source notebook: https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_storage_mlp_pad_cpu_saved_offload_v1.ipynb
+Source notebook: project-repository/blob/master/soup-kernel-challenge/queue_20261031_storage_mlp_pad_cpu_saved_offload_v1.ipynb
 
 ### 3. Output-head masked-row compaction: queued for T4
 
@@ -47,7 +47,7 @@ The ordinary streamed head still performs vocabulary projection on all padded po
 
 Current accepted queue Request ID: **`chatgpt-finite-padded-head-20261031-v2`** (a previous row was overwritten before intake; the immutable notebook was requeued at a distant row).
 
-Source notebook: https://github.com/Danonika/public/blob/master/soup-kernel-challenge/queue_20261031_finite_padded_head_v1.ipynb
+Source notebook: project-repository/blob/master/soup-kernel-challenge/queue_20261031_finite_padded_head_v1.ipynb
 
 ### 4. Whole-model variable-length padding removal: CPU attention proof only
 

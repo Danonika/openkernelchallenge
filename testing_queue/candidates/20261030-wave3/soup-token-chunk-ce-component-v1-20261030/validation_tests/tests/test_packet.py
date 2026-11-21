@@ -1,7 +1,7 @@
 import ast,base64,hashlib,json,unittest,zipfile
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];PACKET=ROOT/'microbench_packet_v1';KIT=Path('/workspace/shared/soup_web_ready_20261030_v2/support')
-COMMON=Path('/workspace/shared/soup_head_metric_bridge_v2/solution')
+ROOT=Path(__file__).resolve().parents[1];PACKET=ROOT/'microbench_packet_v1';KIT=Path('/redacted/local/soup_web_ready_20261030_v2/support')
+COMMON=Path('/redacted/local/soup_head_metric_bridge_v2/solution')
 class Tests(unittest.TestCase):
  def test_protected_helpers(self):
   for n in ('process_guard.py','owned_process_tree.py','runtime_probe.py','official_manifest.json'):self.assertEqual((PACKET/n).read_bytes(),(KIT/n).read_bytes())
@@ -19,7 +19,7 @@ class Tests(unittest.TestCase):
   for n,h in manifest.items():
    self.assertEqual((PACKET/'shared_consumer'/n).read_bytes(),(COMMON/n).read_bytes());self.assertEqual(hashlib.sha256((COMMON/n).read_bytes()).hexdigest(),h)
  def test_native_sources_bound_to_recovered_manifest(self):
-  expected=json.loads((Path('/workspace/shared/soup_streaming_head_research_20261030/source_bindings.json')).read_text());target=json.loads((PACKET/'native_source_manifest.json').read_text())
+  expected=json.loads((Path('/redacted/local/soup_streaming_head_research_20261030/source_bindings.json')).read_text());target=json.loads((PACKET/'native_source_manifest.json').read_text())
   for key in ('native_loss','trl_entropy','soup_rewind','accelerate_operations'):
    p=Path(expected[key]['path']);self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),expected[key]['sha256']);self.assertEqual(target[p.name],expected[key]['sha256'])
  def test_source_zip_binding(self):
@@ -43,7 +43,7 @@ class Tests(unittest.TestCase):
   nb=json.loads((ROOT/'token_chunk_ce_COMPONENT_ONLY_v1.ipynb').read_text());s=''.join(nb['cells'][0]['source'])
   for expected in ('not full model/training memory','29s/3GB evidence','No duplicate consumer','No production integration is bundled'):self.assertIn(expected,s)
  def test_frozen_prior_head_and_original_eight_kernel_modules(self):
-  old=Path('/workspace/shared/soup_streaming_head_research_20261030/target_component_v2/solution')
+  old=Path('/redacted/local/soup_streaming_head_research_20261030/target_component_v2/solution')
   for n in ('__init__.py','token_chunk_head.py'):self.assertEqual((ROOT/'old_solution'/n).read_bytes(),(old/n).read_bytes())
   manifest=json.loads((ROOT/'tile_source_manifest.json').read_text())
   for n,h in manifest.items():

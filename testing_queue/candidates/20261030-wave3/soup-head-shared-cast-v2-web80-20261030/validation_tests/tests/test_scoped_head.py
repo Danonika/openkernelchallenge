@@ -9,7 +9,7 @@ from types import MethodType,SimpleNamespace
 import pytest
 import torch
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT));sys.path.insert(0,'/workspace/shared/soup_cycle/accuracy_no_shift_copy_control/trl_target')
+sys.path.insert(0,str(ROOT));sys.path.insert(0,'/redacted/local/soup_cycle/accuracy_no_shift_copy_control/trl_target')
 from accelerate.utils.operations import convert_outputs_to_fp32,convert_to_fp32,ConvertOutputsToFp32,recursively_apply
 from torch.amp.autocast_mode import autocast_decorator
 from transformers.models.qwen2.modeling_qwen2 import Qwen2ForCausalLM,Qwen2Config
@@ -27,8 +27,8 @@ def native_body(path,clsname,newname,base):
     scope={'BASE':base,'torch':torch,'nn':torch.nn,'Any':object,'entropy_from_logits':entropy_from_logits,'warnings':warnings}
     exec(compile(tree,str(path),'exec'),scope)
     return scope[newname]
-HF=native_body('/workspace/shared/soup_cloud_env/venv/lib/python3.12/site-packages/transformers/trainer.py','Trainer','HF',object)
-SFT=native_body('/workspace/shared/soup_cycle/accuracy_no_shift_copy_control/trl_target/trl/trainer/sft_trainer.py','SFTTrainer','SFT',HF)
+HF=native_body('/redacted/local/soup_cloud_env/venv/lib/python3.12/site-packages/transformers/trainer.py','Trainer','HF',object)
+SFT=native_body('/redacted/local/soup_cycle/accuracy_no_shift_copy_control/trl_target/trl/trainer/sft_trainer.py','SFTTrainer','SFT',HF)
 Rewind=make_rewind_trainer_class(SFT)
 class Tuner(torch.nn.Module):
     def __init__(self,model):super().__init__();self.model=model

@@ -24,7 +24,7 @@
 ## Reproduce and inspect
 
 ```bash
-bash /workspace/shared/soup_cycle/cpu_tests/cycle2b/run.sh
+bash /redacted/local/soup_cycle/cpu_tests/cycle2b/run.sh
 ```
 
 Artifacts in `cpu_tests/cycle2b/`:

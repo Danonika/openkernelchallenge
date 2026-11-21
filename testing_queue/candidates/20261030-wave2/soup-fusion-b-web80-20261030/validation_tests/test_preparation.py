@@ -27,7 +27,7 @@ manifest=json.loads((ROOT/'support/official_manifest.json').read_text())
 with tempfile.TemporaryDirectory() as d:
  repo=Path(d)
  for name in manifest:
-  target=repo/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((Path('/workspace/shared/soup_cloud_env/source')/name).read_bytes())
+  target=repo/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((Path('/redacted/local/soup_cloud_env/source')/name).read_bytes())
  assert not (repo/'.git').exists();w.verify_official(repo,manifest)
  bad=repo/'harness/extra.py';bad.write_text('pass')
  try:w.verify_official(repo,manifest)

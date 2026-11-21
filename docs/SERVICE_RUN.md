@@ -10,7 +10,7 @@ All three cells from the service template are preserved exactly. The added cells
 
 The template and client were recovered through the connected GitHub repository, because the current execution environment could not verify HTTPS to the GPU IP. They are exact sources from:
 
-- Repository: `BAITC-Hacks/hack-57faaa42-duo`.
+- Repository: `project-repository`.
 - Service source commit: `3a4953f76288969bb91956f114eda5b7e541f104`.
 - Template: `testing_queue/examples/notebook-training-template.ipynb`.
 - Client: `testing_queue/notebook_client.py`.

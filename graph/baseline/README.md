@@ -1,6 +1,6 @@
 # Baseline graph — sanitized static source
 
-[Owner-private live graph](https://soup-baseline-graph.danonika.chatgpt.site). Original deployed source commit: `ebc9d92876ac431eaa7886d6679d7c050720fa32`. This directory is a repository mirror, **not a new deployment**.
+[Owner-private live graph](https://soup-baseline-graph.contributor.chatgpt.site). Original deployed source commit: `ebc9d92876ac431eaa7886d6679d7c050720fa32`. This directory is a repository mirror, **not a new deployment**.
 
 Open `index.html` with its adjacent static files, or serve this directory with an ordinary local static server. No build step, dependency installation, network API, credentials or runtime state is required. `graph.json` is also the baseline-only sample for `schema.json`; `data.js` embeds the same graph so the viewer does not require a fetch.
 

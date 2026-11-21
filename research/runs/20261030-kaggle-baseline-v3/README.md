@@ -5,7 +5,7 @@ Verified at **2026-10-30 11:45:01 UTC**. The unchanged official public **base-on
 **Internal check: Pass for baseline/reference verification only — not candidate admission.** Competition score, speed points, memory points, admission / 20, README points and total points remain unknown. No candidate, relative speedup, relative memory gain or own-kernel share was measured. One repeat is provisional, not a stable performance distribution or full competition protocol. Four starter GPU tests are not the 79 Soup regression tests.
 
 - [Current table: Soup Runs](https://example.invalid/redacted)
-- [Owner-private baseline graph](https://soup-baseline-graph.danonika.chatgpt.site) — the same baseline node, never a candidate node.
+- [Owner-private baseline graph](https://soup-baseline-graph.contributor.chatgpt.site) — the same baseline node, never a candidate node.
 
 ## Reproducible evidence
 

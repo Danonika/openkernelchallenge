@@ -9,7 +9,7 @@ import tempfile
 import time
 import zipfile
 ROOT = Path(__file__).resolve().parents[1]
-Q = Path('/workspace/shared/soup_cycle/test_queue')
+Q = Path('/redacted/local/soup_cycle/test_queue')
 sys.path.insert(0,str(Q))
 from bundle_candidate import bundle
 checks = []
@@ -43,7 +43,7 @@ with zipfile.ZipFile(ROOT/'candidate.zip') as z:
     check('zip_exact_source_set',sorted(z.namelist())==sorted(files))
     for name in z.namelist():
         check('zip_hash_'+name,hashlib.sha256(z.read(name)).hexdigest()==files[name])
-official=Path('/workspace/shared/soup_cloud_env/source')
+official=Path('/redacted/local/soup_cloud_env/source')
 frozen=json.loads((ROOT/'official_manifest.json').read_text())
 check('official_commit',subprocess.check_output(['git','-C',str(official),'rev-parse','HEAD'],text=True).strip()=='c7c2fcd15972ce8b898d8d3ff732ee192c817ceb')
 check('official_source_unchanged',all(hashlib.sha256((official/p).read_bytes()).hexdigest()==h for p,h in frozen.items()))
@@ -53,7 +53,7 @@ for p in (ROOT/'solution').glob('*.py'):
         if isinstance(node,ast.Assign):
             for target in node.targets:
                 check('native_backward_not_replaced_'+p.name, not (isinstance(target,ast.Attribute) and target.attr=='backward'))
-check('no_copied_old_decoder', (ROOT/'solution/packed_nf4.py').read_bytes() != Path('/workspace/shared/soup_gpu_trials/trial002/solution/nf4_decode.py').read_bytes())
+check('no_copied_old_decoder', (ROOT/'solution/packed_nf4.py').read_bytes() != Path('/redacted/local/soup_gpu_trials/trial002/solution/nf4_decode.py').read_bytes())
 check('submission_baseline_unresolved',json.loads((ROOT/'submission.template.json').read_text())['baseline_id']=='REPLACE_WITH_MEASURED_GCP_BASELINE_ID')
 # Authorization fails before environment access/GPU/lock acquisition.
 spec=importlib.util.spec_from_file_location('nf4_driver',ROOT/'notebook_driver.py')

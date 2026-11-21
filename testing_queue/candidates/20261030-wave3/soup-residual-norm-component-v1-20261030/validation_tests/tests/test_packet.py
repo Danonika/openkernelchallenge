@@ -1,6 +1,6 @@
 import ast,base64,hashlib,json,unittest,zipfile
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];PACKET=ROOT/'microbench_packet_v1';KIT=Path('/workspace/shared/soup_web_ready_20261030_v2/support')
+ROOT=Path(__file__).resolve().parents[1];PACKET=ROOT/'microbench_packet_v1';KIT=Path('/redacted/local/soup_web_ready_20261030_v2/support')
 class Tests(unittest.TestCase):
  def test_protected_helpers(self):
   for n in ('process_guard.py','owned_process_tree.py','runtime_probe.py','official_manifest.json'):self.assertEqual((PACKET/n).read_bytes(),(KIT/n).read_bytes())
@@ -12,7 +12,7 @@ class Tests(unittest.TestCase):
   self.assertEqual(set(values['PAYLOAD']),set(values['PAYLOAD_SHA256']))
   for n,b in values['PAYLOAD'].items():
    raw=base64.b64decode(b,validate=True);self.assertEqual(raw,(PACKET/n).read_bytes());self.assertEqual(hashlib.sha256(raw).hexdigest(),values['PAYLOAD_SHA256'][n])
- def test_old_original_comparator_immutable(self):self.assertEqual((ROOT/'old_solution/rmsnorm.py').read_bytes(),Path('/workspace/shared/soup_gpu_trials/trial001/solution/rmsnorm.py').read_bytes())
+ def test_old_original_comparator_immutable(self):self.assertEqual((ROOT/'old_solution/rmsnorm.py').read_bytes(),Path('/redacted/local/soup_gpu_trials/trial001/solution/rmsnorm.py').read_bytes())
  def test_source_zip_binding(self):
   manifest=json.loads((ROOT/'source_manifest.json').read_text())
   with zipfile.ZipFile(ROOT/'candidate.zip') as z:

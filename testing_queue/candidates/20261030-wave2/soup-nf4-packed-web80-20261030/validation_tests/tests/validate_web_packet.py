@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.dont_write_bytecode=True;sys.path.insert(0,str(ROOT/'web_adapter'))
 import web_runner as w
-sys.path.insert(0,'/workspace/shared/soup_cycle/test_queue')
+sys.path.insert(0,'/redacted/local/soup_cycle/test_queue')
 from bundle_candidate import bundle
 rows=[]
 def check(name,yes):

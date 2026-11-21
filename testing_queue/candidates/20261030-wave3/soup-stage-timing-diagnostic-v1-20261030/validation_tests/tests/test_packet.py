@@ -1,5 +1,5 @@
 import ast,base64,copy,hashlib,importlib.util,json, pathlib,sys,unittest,zipfile
-ROOT=pathlib.Path(__file__).resolve().parents[1];PACKET=ROOT/'packet';KIT=pathlib.Path('/workspace/shared/soup_web_ready_20261030_v2/support')
+ROOT=pathlib.Path(__file__).resolve().parents[1];PACKET=ROOT/'packet';KIT=pathlib.Path('/redacted/local/soup_web_ready_20261030_v2/support')
 sys.path.insert(0,str(PACKET));import driver
 class Tests(unittest.TestCase):
  def test_protected_helpers_byte_exact(self):
@@ -23,7 +23,7 @@ class Tests(unittest.TestCase):
     self.assertNotIn(name,('os._exit','sys.exit','torch.cuda.synchronize','torch.compile','subprocess.run','open','eval','exec'))
   self.assertNotIn('setprofile',text);self.assertNotIn('add_callback',text);self.assertNotIn('manual_seed',text)
  def sample(self):
-  j=pathlib.Path('/workspace/shared/soup_server_jobs_20261030/n_19884ef35317410590c935f1d4a49a3b-outputs.zip')
+  j=pathlib.Path('/redacted/local/soup_server_jobs_20261030/redacted-job-outputs.zip')
   with zipfile.ZipFile(j) as z:
    n=next(n for n in z.namelist() if n.endswith('/result.json'));raw=json.loads(z.read(n))
   row=raw['runs']['base'][0];row.update(run='solution_1',side='solution');row['metrics']['solution']=True;row['metrics']['own_kernel_ms']={}

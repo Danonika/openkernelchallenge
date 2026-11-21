@@ -54,7 +54,7 @@ def no_gpu(*args,**kwargs):raise subprocess.TimeoutExpired('CPU fixture: no GPU 
 r.command=no_gpu
 r.main()
 ''')
-args=[sys.executable,str(launch),'--prepared-repo','/workspace/shared/soup_cloud_env/source','--hub-cache','/nonexistent','--run-root',str(fixture/'runs'),'--backend','GCP','--confirm-cloud-gpu-run']
+args=[sys.executable,str(launch),'--prepared-repo','/redacted/local/soup_cloud_env/source','--hub-cache','/nonexistent','--run-root',str(fixture/'runs'),'--backend','GCP','--confirm-cloud-gpu-run']
 p=subprocess.run(args,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,timeout=10)
 assert p.returncode==1,p.stderr
 marker=fixture/'gpu.lock.blocked';assert marker.is_file()
