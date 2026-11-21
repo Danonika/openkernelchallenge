@@ -4,8 +4,6 @@
 
 An optimization project for LoRA fine-tuning on a single NVIDIA Tesla T4. This repository contains the final solution and paired benchmark evidence, the earlier experiments that led to it, and the tools built to run, check, and explain those experiments.
 
-**Second contributor:** `Ami-nur`.
-
 ## Final result
 
 The saved Kaggle v1 session used the fixed Soup workload and ran **baseline → solution → solution → baseline** on one T4. It passed **10/10 automated checks** and **79/79 regression tests** in that session.
@@ -29,17 +27,31 @@ These are historical measurements, not a fresh test of the public cleanup. The a
 - **Normalization and positional operations:** optimize RMSNorm and RoPE, reduce intermediate buffers and casts, and avoid unnecessary work on padding rows in supported paths.
 - **Integration and validation:** install the patches via `solution.apply()`, use the supplied workload and regression suite, and record wall time, GPU memory, output parity, evaluation loss and original-kernel activity. The saved LoRA adapter remains in the standard format.
 
-## Research and engineering archive
+## Research ledger and evidence
 
-| Workstream | What the archive contains |
+The project kept three different kinds of records: **ideas and source reviews**, **candidate submissions and queue attempts**, and **measured runs**. A catalog row or submitted notebook is not a benchmark. Retries, rejected ideas, incomplete runs, and results under different baselines are kept separate rather than added to the final benchmark.
+
+| Ledger section | Recorded coverage |
 |---|---|
-| [CPU prototypes](research/cycles/20261030-cpu-prototypes/) and [early T4 trials](research/README.md) | Centered cross-entropy and NF4 reference tests, four early paired T4 trials that did not meet the original-kernel activity gate, and a separate quality screen. |
-| [Development T4 scoreboard](research/20261031-t4-speed-memory-scoreboard.md) and [GPU research rounds](research/runs/20261031-allresearch-approved/) | Ablations for decoded-weight cache budgets, compact MLP, FP16 logits, LoRA epilogues, RoPE and activation offload. The archive includes completed, failed and time-limited runs alongside candidate checks. |
-| [Fusion prototypes](research/integrated_fusion/) and [experiment notebooks](soup-kernel-challenge/) | Head/MLP/QKV combinations, runtime-shape and packed backward variants, diagnostic notebooks, and earlier attempts kept for comparison. |
-| [Notebook runner](testing_queue/) and [service tooling](service/) | Candidate packaging, queued execution, result collection, smoke tests and deployment adapters. This repository does not provide a live endpoint. |
-| [Research graph](graph/baseline/) and [demo script](presentation/Demo-Script-RU.md) | A static graph for the baseline and idea catalog, plus presentation materials describing the project. |
+| Soup Ideas | **147 entries:** 131 deferred, eight duplicates, five rejected, three undecided. These are catalog decisions, not run outcomes. |
+| Fusion Ideas | **67 distinct ideas; nine completed solo screens.** A completed screen is not a paired benchmark. |
+| Soup Runs | **133 records:** 90 need evidence, 39 failed and four passed. The four passing records are baseline references, not winning candidates. |
+| Execution queue | **261 unique candidate/request IDs:** 88 completed, 172 failed and one was rejected. Among the 88 completed, 83 failed checks, three lack a complete comparison, one showed no gain and one beat its saved optimized comparator. |
 
-The [fast-v2 screen](research/runs/20261031-allresearch-approved/) recorded 62.71 s / 7,955 MiB, but was not paired with a fresh baseline. A separate low-memory attempt stopped at 46 of 64 steps; its observed peak is not a complete result. See the individual run records before comparing numbers.
+These are aggregate counts from the research ledger, not four disjoint sets. The ledger also preserves abandoned approaches and retries rather than counting them as new verified results.
+
+| Research stage | What we investigated | Public evidence |
+|---|---|---|
+| Source catalog and shortlist | Reviewed hardware and workload fit, legality of transferring an idea, and the proof needed before implementation. The first snapshot has **118 unmeasured ideas**; a closed snapshot has **121** (68 for memory/data movement/compilation, 25 for NF4/GEMM, 13 for normalization/activations, eight for head/loss/metrics, and seven for LoRA). A later research index records **131 ranked ideas**. These are successive snapshots, not additive counts. | [118-row catalog](research/soup-20261030/MASTER.md) · [Shortlist](research/soup-20261030/SHORTLIST.md) · [121-row snapshot](research/cycles/20261030-cycle2/README.md) · [131-row index](research/README.md) |
+| Correctness and counterexamples | Checked centered cross-entropy, entropy/accuracy/rewind, compact head backward, RMSNorm and residual cast order, RoPE, LoRA gradient boundaries, and NF4 decode/dequantization. The closed CPU series retained **30 passing fixture groups and one native CPU NF4 parity failure**. A separate materialized CE prototype passed its engineering checks but was not bit-exact. None of this establishes GPU speed or admission. | [CPU prototypes](research/cycles/20261030-cpu-prototypes/README.md) · [Norm and RoPE](research/cycles/20261030-cycle3/README.md) · [Head and NF4](research/cycles/20261030-cycle4/README.md) |
+| Early paired Kaggle T4 runs | Four candidates tested original RMSNorm, backward-capable NF4, entropy-only reduction and forward-only NF4. All four fell below the useful original-kernel activity gate; only two had full saved raw results and checks in that snapshot. A separate **77.55 s** accuracy-only run met its engineering screen but used no original Triton path and had no paired baseline. | [RMSNorm](research/runs/20261030-trial001-rmsnorm/README.md) · [NF4 backward and entropy](research/runs/20261030-trials002-003/README.md) · [NF4 forward](research/runs/20261030-trial004-nf4-forward/README.md) · [Accuracy-only](research/runs/20261030-trial006-accuracy-screen/README.md) |
+| Full-step T4 development and profiling | Tested compact and padding-aware MLP, frozen-weight and NF4-scale cache budgets, FP16-logit reuse, LoRA epilogues, fused residual/RMSNorm, grouped QKV, RoPE and activation offload. Two examples from the development queue: **58.78 s / 9,325 MiB** (speed-focused) and **66.33 s / 5,005 MiB** (memory-focused). These completed development runs used different evidence and checks from the final paired Kaggle result. | [Speed/memory scoreboard](research/20261031-t4-speed-memory-scoreboard.md) · [Pareto results and source recovery](research/20261031-best-5878-and-scale-cache-handoff.md) |
+| Integration and negative results | Explored grouped and packed backward paths, runtime-shape dispatch, exact frozen-weight reuse, fused output-head/MLP/QKV variants and source-bound fusion controls. Saved failed admission checks, out-of-memory or time-limited attempts, and a one-bit storage hypothesis: for the tested codec, corrections erased the storage benefit on sampled decoder blocks and the first-batch quality screen failed. | [Fusion prototypes](research/integrated_fusion/) · [Separate optimized-control experiments](research/soup-20261031/lowmemory_bestbaseline_fusion_r30_r31.md) · [One-bit diagnostics](research/runs/20261031-onebit-hypothesis/README.md) · [Notebook archive](soup-kernel-challenge/) |
+| Runner, queue and records | Built candidate packaging, queued execution, result collection, checks and smoke tests; kept provenance manifests and a static baseline graph. No live endpoint is offered by this repository. | [Queue tooling](testing_queue/) · [Service code](service/) · [Baseline graph](graph/baseline/) · [Demo script](presentation/Demo-Script-RU.md) |
+
+One queue experiment combined packed T448 replay with a 4,096-wide vocabulary-head chunk at N=1,024. It recorded **38.12 s for the training command, 25.65 s in the loop, 94.09 s for the full job, and 2,261 MiB peak memory**. It beat a **saved optimized comparator** of 38.49 s at 2,261 MiB on internal time, loss and memory checks. This was not a fresh paired comparison and does not replace or outrank the final 47.73 s paired submission.
+
+The [fast-v2 screen](research/runs/20261031-allresearch-approved/) recorded **62.71 s / 7,955 MiB** without a fresh paired baseline. The lower-memory attempt in the same archive stopped at **46 of 64 steps**; its observed peak cannot be used as a full-run result.
 
 ## Reproduce the benchmark
 
