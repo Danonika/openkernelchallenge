@@ -37644,7 +37644,7 @@
     "round7_composition": {
       "pinned_installed_sources": [
         {
-          "url": "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/sft.py",
+          "url": "https://example.invalid/redacted-github",
           "installed_path": "/tmp/kernel_r6_integration_deps/soup_cli/trainer/sft.py",
           "bytes": 119450,
           "sha256": "c9215642984edf94f3fd7b5368753a973b37da7d96b01e93257bc600b0615073",
@@ -37652,7 +37652,7 @@
           "full_content_match": true
         },
         {
-          "url": "https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/mixed_precision.py",
+          "url": "https://example.invalid/redacted-github",
           "installed_path": "/tmp/kernel_r6_integration_deps/soup_cli/utils/mixed_precision.py",
           "bytes": 9696,
           "sha256": "80934a7f10387c114174801b41d45de3cbc53f85cd74f321bab9335cd3714d6f",

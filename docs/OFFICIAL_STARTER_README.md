@@ -1,7 +1,7 @@
 # Soup Kernel Challenge
 
 Make `soup train` faster and lighter on a free Kaggle T4 with your own Triton kernels.
-Case of [Soup](https://github.com/MakazhanAlpamys/Soup) at Decentrathon 6.0,
+Case of [Soup](https://example.invalid/redacted-github) at Decentrathon 6.0,
 October 30 12:00 – October 31 23:59 (Astana time, UTC+5; the deadline is October 31 18:59 UTC).
 Teams of up to 4, one result per team. AI agents are allowed.
 
@@ -36,7 +36,7 @@ LoRA on all seven projections).
 
    ```bash
    git clone <your platform repository> && cd <its folder>
-   git fetch https://github.com/MakazhanAlpamys/soup-kernel-challenge.git main
+   git fetch https://example.invalid/redacted-github main
    git checkout FETCH_HEAD -- .
    git commit -m "Soup Kernel Challenge starter kit"
    git push origin HEAD

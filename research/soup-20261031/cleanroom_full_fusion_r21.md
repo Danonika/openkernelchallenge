@@ -5,8 +5,8 @@
 ## Source/attribution boundary
 
 Read and synthesized the **algorithmic ideas only** from:
-- https://github.com/external-contributor/hackathon-decentrathon-6 — self-reported paired Kaggle T4 85.0→37.7 s and 14,345→3,461 MiB, 10/10 checks, original kernel share 12.4%, code commit `redacted-revision`. **Not reproduced independently.**
-- https://github.com/external-contributor/soup-kernel-challenge — approximate claims ~48 s / ~2,850 MiB in README; SUBMISSION.md still has placeholders. **Not independently validated.**
+- https://example.invalid/redacted-github — self-reported paired Kaggle T4 85.0→37.7 s and 14,345→3,461 MiB, 10/10 checks, original kernel share 12.4%, code commit `redacted-revision`. **Not reproduced independently.**
+- https://example.invalid/redacted-github — approximate claims ~48 s / ~2,850 MiB in README; SUBMISSION.md still has placeholders. **Not independently validated.**
 - User-supplied research notes, `Вставленный текст(2).txt`, grouping vocabulary-major loss, FP16 normalization, fused rotary, one-per-layer NF4 decode, compact LoRA autograd, full decoder unpadding, deferred host synchronization, startup, and testing.
 
 **No rival kernel source was copied into the implemented candidates.** All candidates begin from our own, previously submitted and publicly documented `project-repository` development notebooks, and add our independently written PyTorch 2.11 native attention wrapper. Review the exact GitHub revisions linked below.

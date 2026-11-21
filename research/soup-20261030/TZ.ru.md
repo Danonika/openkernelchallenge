@@ -13,7 +13,7 @@
 | **Тип задачи**            | ML-инженерия, GPU-программирование (Triton), оптимизация производительности                                                                                |
 | **Формат**                | команды до 4 человек, один результат на команду                                                                                                            |
 | **Сроки**                 | 30 октября 12:00 – 31 октября 23:59 по времени Астаны (36 часов)                                                                                           |
-| **Стартовый репозиторий** | [github.com/MakazhanAlpamys/soup-kernel-challenge](https://github.com/MakazhanAlpamys/soup-kernel-challenge) (сейчас закрыт, откроется 30 октября в 12:00) |
+| **Стартовый репозиторий** | [github.com/archived-source/soup-kernel-challenge](https://example.invalid/redacted-github) (сейчас закрыт, откроется 30 октября в 12:00) |
 
 # 2. Описание проблемы
 
@@ -49,7 +49,7 @@
 
 # 5. Вход и выход
 
-**Вход.** Soup 0.77.0 (pip install soup-cli[train]==0.77.0) и стартовый репозиторий [soup-kernel-challenge](https://github.com/MakazhanAlpamys/soup-kernel-challenge) с конфигом задачи task.yaml:
+**Вход.** Soup 0.77.0 (pip install soup-cli[train]==0.77.0) и стартовый репозиторий [soup-kernel-challenge](https://example.invalid/redacted-github) с конфигом задачи task.yaml:
 
 - модель Qwen2.5-1.5B-Instruct, 4-битные веса (NF4), LoRA r=16, alpha=32 на q_proj и v_proj;
 - batch 4, длина до 512 токенов, 256 строк казахских инструкций, одна эпоха (64 шага);
@@ -57,7 +57,7 @@
 
 При итоговой проверке обучение и оценка идут на скрытых строках того же набора и с другим seed; остальные настройки те же.
 
-**Выход.** Репозиторий команды, созданный платформой хакатона, с содержимым шаблона [soup-kernel-challenge](https://github.com/MakazhanAlpamys/soup-kernel-challenge) (ссылка на коммит): пакет solution/ с вашими Triton-кернелами и функцией apply(), которая подключает их к Soup. Он запускается в Kaggle-ноутбуке из шаблона командой «выполнить всё» без правок. Мы измеряем полное время команды soup train (от запуска до сохранённого адаптера), пиковую память GPU и качество полученного адаптера.
+**Выход.** Репозиторий команды, созданный платформой хакатона, с содержимым шаблона [soup-kernel-challenge](https://example.invalid/redacted-github) (ссылка на коммит): пакет solution/ с вашими Triton-кернелами и функцией apply(), которая подключает их к Soup. Он запускается в Kaggle-ноутбуке из шаблона командой «выполнить всё» без правок. Мы измеряем полное время команды soup train (от запуска до сохранённого адаптера), пиковую память GPU и качество полученного адаптера.
 
 Пример итога, который печатает run_task.py (числа условные): speedup 1.300x   memory base/solution 1.800x   eval loss vs base 0.1 %. Те же числа и подробности по каждому запуску сохраняются в runs/result.json.
 
@@ -134,7 +134,7 @@
 
 Кнопка «Use this template» создаёт новый репозиторий и не копирует шаблон в уже созданный. Если репозиторий от платформы пустой или в нём только README, склонируйте его (git clone) и в его папке выполните:
 
-git fetch https\://github.com/MakazhanAlpamys/soup-kernel-challenge.git main
+git fetch https\://github.com/archived-source/soup-kernel-challenge.git main
 
 git checkout FETCH_HEAD -- .
 

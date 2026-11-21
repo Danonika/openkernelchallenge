@@ -20,7 +20,7 @@
 
 **Next evidence needed:** inspect the starter example and harness; establish a baseline on the target T4; obtain a detailed breakdown of the reported 44% elementwise/casting category. Do not invent runtime, memory, speedup, eligibility or leaderboard results.
 
-**Source of truth:** the supplied [challenge brief][S1] and, once accessible, its official [starter repository](https://github.com/MakazhanAlpamys/soup-kernel-challenge). Published benchmarks below remain attributed to their original hardware and baselines.
+**Source of truth:** the supplied [challenge brief][S1] and, once accessible, its official [starter repository](https://example.invalid/redacted-github). Published benchmarks below remain attributed to their original hardware and baselines.
 
 ## 1. Recommendation and rationale
 

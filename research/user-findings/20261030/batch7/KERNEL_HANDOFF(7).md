@@ -86,9 +86,9 @@ Frozen W still contributes to input gradients. Training A requires Xd or enough 
 
 - [Detailed research PDF](https://chatgpt.com/library?file_id=libfile_65267149175c81919ab85d9819d7d8dc&account_id=personal)
 - [Challenge brief](https://chatgpt.com/library?file_id=libfile_37b0abe044f88191b002d808e4d00570&account_id=personal)
-- [Starter task](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/task/task.yaml); starter commit `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`.
-- [Soup schema](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/config/schema.py); inspected Soup publication commit `846888a045b31084452fa08a684a7a38c02f5f87`.
-- [Official rule checks](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py)
+- [Starter task](https://example.invalid/redacted-github); starter commit `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`.
+- [Soup schema](https://example.invalid/redacted-github); inspected Soup publication commit `846888a045b31084452fa08a684a7a38c02f5f87`.
+- [Official rule checks](https://example.invalid/redacted-github)
 - [Official Qwen dimensions](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/main/config.json)
 - [PEFT Linear4bit](https://github.com/huggingface/peft/blob/main/src/peft/tuners/lora/bnb.py) - inspected upstream main, not an installed-version pin.
 - [LoRAFusion paper](https://arxiv.org/html/2510.00206v1) and [repository](https://github.com/CentML/lorafusion)

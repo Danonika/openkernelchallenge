@@ -19595,11 +19595,11 @@
         }
       ],
       "sources": {
-        "timing": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/_train.py",
-        "checks": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py",
-        "whole_command": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/run_task.py",
-        "scoring": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/score.py",
-        "organizer_reference_and_rules": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md",
+        "timing": "https://example.invalid/redacted-github",
+        "checks": "https://example.invalid/redacted-github",
+        "whole_command": "https://example.invalid/redacted-github",
+        "scoring": "https://example.invalid/redacted-github",
+        "organizer_reference_and_rules": "https://example.invalid/redacted-github",
         "T4_product_brief": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/T4%20Product%20Brief.pdf",
         "T4_datasheet": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet.pdf",
         "cuda_events": "https://docs.pytorch.org/docs/2.11/generated/torch.cuda.Event.html",

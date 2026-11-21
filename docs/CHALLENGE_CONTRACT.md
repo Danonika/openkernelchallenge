@@ -53,10 +53,10 @@ Observed here: `nvidia-smi` absent, no `/dev/nvidia0` or `/dev/nvidiactl`; defau
 
 ## Primary sources
 
-- [Official starter README](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md)
-- [Fixed task](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/task/task.yaml)
-- [Run harness](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/run_task.py)
-- [Measurement instrumentation](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/_train.py)
-- [Rule checks](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py)
-- [Shared environment](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py)
-- [Notebook and dependency pins](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/templates/kaggle_notebook.ipynb)
+- [Official starter README](https://example.invalid/redacted-github)
+- [Fixed task](https://example.invalid/redacted-github)
+- [Run harness](https://example.invalid/redacted-github)
+- [Measurement instrumentation](https://example.invalid/redacted-github)
+- [Rule checks](https://example.invalid/redacted-github)
+- [Shared environment](https://example.invalid/redacted-github)
+- [Notebook and dependency pins](https://example.invalid/redacted-github)

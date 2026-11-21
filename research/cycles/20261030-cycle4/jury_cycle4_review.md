@@ -43,7 +43,7 @@ No norm GPU result exists at this review cutoff. Actual patched routing, compile
 
 ## Source and legality boundaries
 
-All concepts require independently written allowed Triton/autograd code; source attribution does not authorize copied kernels or prohibited libraries. Baseline dependency invocation as an oracle earns no own share. Rules: [unchanged task and prohibited routes](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L170), [numerical/resource constants](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L29-L44), [structure and curves](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L151-L236).
+All concepts require independently written allowed Triton/autograd code; source attribution does not authorize copied kernels or prohibited libraries. Baseline dependency invocation as an oracle earns no own share. Rules: [unchanged task and prohibited routes](https://example.invalid/redacted-github), [numerical/resource constants](https://example.invalid/redacted-github), [structure and curves](https://example.invalid/redacted-github).
 
 Pinned mechanism citations and distinct legality/hardware/semantic/CPU/GPU fields are retained in all six canonical replacement rows. Source reports: `research_head_cycle4.md`, `research_nf4_cycle4.md`; CPU files: `cpu_tests/cycle4/head_results.json`, `nf4_results.json`. CPU evidence totals become31 groups: prior23 unchanged plus8new, of which7pass and1explicit native-backend parity FAIL. These are evidence groups, not official challenge checks.
 

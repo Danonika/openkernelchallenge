@@ -1,7 +1,7 @@
 {
   "created_at": "2026-10-30T13:42:32.707083+00:00",
   "status": "centered_head_repaired_and_optional_pointwise_kernels_added_no_physical_gpu_measurement",
-  "base_repository": "https://github.com/MakazhanAlpamys/soup-kernel-challenge",
+  "base_repository": "https://example.invalid/redacted-github",
   "base_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
   "solution_sha256_after_overlay_on_starter": "ba9f39ccb7ca1e6fb1e3f3392435a158e7c508b0fb18fec3af7f99d44c6b62ac",
   "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",

@@ -1,7 +1,7 @@
 # Hero1 × external contributor — independent fusion research (31 Oct 2026)
 
 ## Verified source facts
-Public competitor: https://github.com/external-contributor/soup-kernel-challenge
+Public competitor: https://example.invalid/redacted-github
 Latest inspected commit: `REDACTED` (31 Oct 2026).
 Repository reports ~48 s, ~2850 MiB, and ~11.5% own Triton in README. However SUBMISSION.md still has placeholders instead of `runs/result.json`, Kaggle saved-version output, a score report, or complete paired measurements. **These numbers are unverified self-reports, not directly comparable to our public 71.85 s / 14345 MiB / eval 2.04968 T4 baseline.**
 

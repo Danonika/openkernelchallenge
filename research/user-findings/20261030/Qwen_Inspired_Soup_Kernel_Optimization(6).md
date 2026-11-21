@@ -562,22 +562,22 @@ Primary sources checked for the research; hyperlinks are clickable
 [Open the supplied challenge brief](https://chatgpt.com/library?file_id=libfile_2f89bbb621c081918a68369a0fe4df4b&account_id=personal)
 
 **[3]** Soup Kernel Challenge README. Starter behavior, allowed modifications, originality exclusion and submission.
-[github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd.../README.md](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md)
+[github.com/archived-source/soup-kernel-challenge/blob/c7c2fcd.../README.md](https://example.invalid/redacted-github)
 
 **[4]** Fixed task configuration. Model, training parameters and batch/sequence settings.
-[github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd.../task/task.yaml](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/task/task.yaml)
+[github.com/archived-source/soup-kernel-challenge/blob/c7c2fcd.../task/task.yaml](https://example.invalid/redacted-github)
 
 **[5]** Measurement harness. Cold caches, warm-up, run timing and summary aggregation.
-[github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd.../harness/run_task.py](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/run_task.py)
+[github.com/archived-source/soup-kernel-challenge/blob/c7c2fcd.../harness/run_task.py](https://example.invalid/redacted-github)
 
 **[6]** Admission checks. Quality, trajectory, outputs, original-kernel share and regression limits.
-[github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd.../harness/check_rules.py](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py)
+[github.com/archived-source/soup-kernel-challenge/blob/c7c2fcd.../harness/check_rules.py](https://example.invalid/redacted-github)
 
 **[7]** Training instrumentation. Per-launch CUDA events and step-time measurement.
-[github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd.../harness/_train.py](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/_train.py)
+[github.com/archived-source/soup-kernel-challenge/blob/c7c2fcd.../harness/_train.py](https://example.invalid/redacted-github)
 
 **[8]** Scoring implementation. Ratios, improvement terms and noise threshold.
-[github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd.../harness/score.py](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/score.py)
+[github.com/archived-source/soup-kernel-challenge/blob/c7c2fcd.../harness/score.py](https://example.invalid/redacted-github)
 
 **[9]** Qwen2.5-1.5B-Instruct model configuration. Vocabulary, dimensions and tied embeddings.
 [huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/main/config.json](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/main/config.json)
@@ -592,7 +592,7 @@ Primary sources checked for the research; hyperlinks are clickable
 [triton-lang.org/main/getting-started/tutorials/02-fused-softmax.html](https://triton-lang.org/main/getting-started/tutorials/02-fused-softmax.html)
 
 **[13]** Actual Kaggle notebook installation cell, at the inspected challenge commit. Explicit dependency pins and the absence of explicit Torch/Triton pins.
-[templates/kaggle_notebook.ipynb](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/templates/kaggle_notebook.ipynb)
+[templates/kaggle_notebook.ipynb](https://example.invalid/redacted-github)
 
 **[14]** PyTorch 2.11 autocast source. `cached_cast` requires `requires_grad()` for the FP32 weight-cast cache; outermost autocast exit clears its cache.
 [aten/src/ATen/autocast_mode.cpp](https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/autocast_mode.cpp) · [torch/amp/autocast_mode.py](https://github.com/pytorch/pytorch/blob/v2.11.0/torch/amp/autocast_mode.py)
@@ -637,7 +637,7 @@ Primary sources checked for the research; hyperlinks are clickable
 [ActivationSiluKernel.cu](https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/native/cuda/ActivationSiluKernel.cu)
 
 **[28]** The exact supplied SwiGLU example: saved gate/up state, its formula, and its explicit exclusion from original-kernel credit.
-[solution/swiglu.py](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/solution/swiglu.py)
+[solution/swiglu.py](https://example.invalid/redacted-github)
 
 **[29]** Transformers 5.16.1 SDPA integration and causal-mask construction, release revision `93c8b7b485963a10800c91f55304db6be211c2bd`. GQA predicate, explicit K/V repetition, and mask-omission conditions.
 [integrations/sdpa_attention.py](https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/integrations/sdpa_attention.py) · [masking_utils.py](https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/masking_utils.py)

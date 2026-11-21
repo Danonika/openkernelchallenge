@@ -46,4 +46,4 @@ Both queue rows were written A:H with Ready=TRUE last and have no accepted VM jo
 - For fast cache variants, full caching eliminates the useful NF4 kernel's recurring work. Experiment with partial caching / fused true NF4→FP16 MMA work rather than padding no-op GPU kernels to inflate share.
 - Before <45/1359 claims, complete physical T4 and paired jury-style runs. Today is Oct31, 2026; Decentrathon's stated deadline is **23:59 Kazakhstan time**.
 
-References: https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/main/harness/check_rules.py ; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/main/harness/score.py ; https://docs.nvidia.com/cuda/archive/11.2.0/parallel-thread-execution/index.html ; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/main/bitsandbytes/functional.py ; https://example.invalid/redacted .
+References: https://example.invalid/redacted-github ; https://example.invalid/redacted-github ; https://docs.nvidia.com/cuda/archive/11.2.0/parallel-thread-execution/index.html ; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/main/bitsandbytes/functional.py ; https://example.invalid/redacted .

@@ -3,7 +3,7 @@
 Static inspection only by this research agent; installs/tests belong to the separate cloud environment agent. No use of the user's PC. No GPU/training result is claimed here.
 
 ## Source and dependencies
-Official starter commit: `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb` at [MakazhanAlpamys/soup-kernel-challenge](https://github.com/MakazhanAlpamys/soup-kernel-challenge/tree/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb).
+Official starter commit: `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb` at [archived-source/soup-kernel-challenge](https://example.invalid/redacted-github).
 
 Notebook/README explicitly pin:
 ```
@@ -25,7 +25,7 @@ This is a **partial manifest, not a lockfile**. Python, torch, Triton, datasets,
 5. **Authorized full run:** prepare public data, unchanged run_task, unchanged check_rules, score. No full training is performed by this research agent; the parent coordinates a separately authorized free-tier Kaggle baseline check, initially private.
 
 ## Notebook flow inspected
-[Official notebook](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/templates/kaggle_notebook.ipynb):
+[Official notebook](https://example.invalid/redacted-github):
 - REPO_URL and COMMIT identify team repo/final exact commit; empty COMMIT follows default branch, so do not use empty for reproducible research-branch checks.
 - Verifies `nvidia-smi` reports T4; choose Kaggle GPU T4 x2 + Internet; harness exposes GPU0 only.
 - Installs pinned manifest, freshly clones into /kaggle/working/repo, optionally uses existing read-only GITHUB_TOKEN secret for private repo. Never embed token in URL/output/files.

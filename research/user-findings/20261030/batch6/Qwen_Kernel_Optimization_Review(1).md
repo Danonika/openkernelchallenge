@@ -646,7 +646,7 @@ Sources were checked on 30 October 2026. Preserve the version, hardware and work
 [S8]: https://qwen.ai/blog?id=qwen3.7&locale=en "Qwen3.7 blog"
 [S9]: https://huggingface.co/docs/kernels/builder/agents-guide "Develop kernels with agents"
 [S10]: https://files.pythonhosted.org/packages/e8/ba/30337aeb7d1d565789699caa1164c2dd62dde104715caf6f2a317c56ca45/soup_cli-0.77.0-py3-none-any.whl "Verified Soup 0.77.0 wheel"
-[S11]: https://github.com/MakazhanAlpamys/Soup/releases/tag/v0.77.0 "Soup v0.77.0 release"
+[S11]: https://example.invalid/redacted-github "Soup v0.77.0 release"
 [S12]: https://github.com/huggingface/peft/blob/main/src/peft/tuners/lora/bnb.py "PEFT bitsandbytes LoRA implementation"
 [S13]: https://huggingface.co/docs/peft/developer_guides/troubleshooting "PEFT dtype troubleshooting"
 [S14]: https://docs.axolotl.ai/docs/api/kernels.lora.html "Axolotl LoRA API"

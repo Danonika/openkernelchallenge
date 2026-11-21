@@ -17,8 +17,8 @@
 - Original standalone memory patch: [r25](project-repository/blob/master/soup-kernel-challenge/queue_20261031_r25_fullfusion_tied_frozen_fp16.ipynb), source module embedded, guarded PEFT prep wrapper preserves tied Parameter identity and exact float32 embedding output.
 
 ## Sources of IDEAS (NOT code)
-- [external contributor](https://github.com/external-contributor/hackathon-decentrathon-6) — genuine varlen padding removal, online vocab-sliced loss, layer-scoped NF4 dequantization, tied compact FP16 weights, startup amortization; self-reported 37.7 s /3,461 MiB at commit `redacted-revision`.
-- [external contributor](https://github.com/external-contributor/soup-kernel-challenge) — compact frozen MLP, frozen Linear4bit backward activation avoidance, online CE/entropy/accuracy; approximate, unverified ~48 s /2,850 MiB.
+- [external contributor](https://example.invalid/redacted-github) — genuine varlen padding removal, online vocab-sliced loss, layer-scoped NF4 dequantization, tied compact FP16 weights, startup amortization; self-reported 37.7 s /3,461 MiB at commit `redacted-revision`.
+- [external contributor](https://example.invalid/redacted-github) — compact frozen MLP, frozen Linear4bit backward activation avoidance, online CE/entropy/accuracy; approximate, unverified ~48 s /2,850 MiB.
 
 ## Promotion checklist
 Queue state `completed` is insufficient. Require 64 steps, original-kernel useful share >=5% steps3+, preserved PEFT q/v LoRA rank16/alpha32/dropout0.05, GradScaler, 79 regressions, loss +0.5% max, curve/token/entropy/accuracy/Rewind outputs and paired repeat. New attempts always use unique Request IDs in new rows, `Ready=TRUE` last.

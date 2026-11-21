@@ -164,7 +164,7 @@ The first operation's synchronized wall time includes its compilation. Warm CUDA
 
 Those screens omit decoder training, optimizer, adapter evaluation and Rewind. Their allocator peaks are not externally sampled device peaks. They cannot establish the competition's performance, quality or original-kernel share. On this CPU-only workspace the runner correctly reports `blocked_no_cuda` with no measured results.
 
-There is also a protocol correction worth preserving: the official harness summarizes time by **median**, which equals mean with two repeats, but memory by the **maximum sampled peak** across each side's runs. It evaluates the first successful adapter per side. Source: [the unchanged official harness](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/run_task.py).
+There is also a protocol correction worth preserving: the official harness summarizes time by **median**, which equals mean with two repeats, but memory by the **maximum sampled peak** across each side's runs. It evaluates the first successful adapter per side. Source: [the unchanged official harness](https://example.invalid/redacted-github).
 
 ## 6. The next measured candidates
 

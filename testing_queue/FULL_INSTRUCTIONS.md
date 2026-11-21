@@ -148,7 +148,7 @@ The script refuses existing venv paths, installs only the specified environment,
 Obtain the **unchanged** official source:
 
 ```bash
-git clone https://github.com/MakazhanAlpamys/soup-kernel-challenge.git /absolute/new/path/to/soup-official
+git clone https://example.invalid/redacted-github /absolute/new/path/to/soup-official
 cd /absolute/new/path/to/soup-official
 git checkout --detach c7c2fcd15972ce8b898d8d3ff732ee192c817ceb
 ```

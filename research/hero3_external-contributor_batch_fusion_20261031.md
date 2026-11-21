@@ -1,10 +1,10 @@
 # Hero3 batch fusion research — 2026-10-31
 
 ## Source evidence (verified by reading linked repositories)
-external contributor: https://github.com/external-contributor/hackathon-decentrathon-6
+external contributor: https://example.invalid/redacted-github
 - README and current docs/final_numbers.json report Kaggle T4 at code commit `REDACTED`: median train wall **85.0 -> 37.7s**, NVML peak **14345 -> 3461MiB**, eval-loss delta **+0.007%**, original useful Triton share **12.4%**, official checks **10/10**, **432** stated tests. The saved Kaggle notebook is linked there; we have **not independently repeated** that run. 
 - Source-described ideas: vocabulary-axis chunked CE/entropy/argmax and dH without full logits; exact FP16 tied head storage; original fused RMSNorm+residual, Q/K RoPE, layer-bounded grouped frozen NF4; padded-token removal with causal row-segment SDPA, preserving q/v LoRA native dropout randomness; fused q|k|v frozen base projection; cast minimization and host sync reduction. Their full MLP recomputation option is **OFF by default**, as it was measured to add about 25% training-loop time for ~1.2 GiB savings.
-external contributor: https://github.com/external-contributor/soup-kernel-challenge
+external contributor: https://example.invalid/redacted-github
 - Source at commit `REDACTED` develops compact frozen MLP saved activations, shared scratch, supervised-token-only head gradients, and per-row attention unpadding. README claims ~48s /2850MiB; the visible SUBMISSION.md has placeholder measurement fields, so **not established as a verified jury result**.
 
 ## Our measured context

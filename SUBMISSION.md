@@ -23,7 +23,7 @@ The current minimal notebook embeds the verified source snapshot pinned to main-
 
 Полезная доля solution_1: **9,0456%**, solution_2: **9,3410%**; минимум **9,0456%**, требование >=5% с третьего шага. Стартер `example_swiglu_fwd_kernel` / `example_swiglu_bwd_kernel`, native GEMM и Python replay не включены в собственное JIT-время. Три запасных JIT перечислены в README и не включены в общее полезное время всех запусков.
 
-Командная история реализации: [contributor, redacted-revision](https://github.com/contributor/hackathon-decentrathon-6/tree/redacted-revision), плюс input-only MLP replay при N>448 и workspace головы 4096 при N>=1024. Идеи, источники и лицензии — в README и [PROVENANCE](docs/PROVENANCE.md). Готовые kernel-библиотеки не используются.
+Командная история реализации: [contributor, redacted-revision](https://example.invalid/redacted-github), плюс input-only MLP replay при N>448 и workspace головы 4096 при N>=1024. Идеи, источники и лицензии — в README и [PROVENANCE](docs/PROVENANCE.md). Готовые kernel-библиотеки не используются.
 
 ## Результат успешного сохранённого Run All v1
 

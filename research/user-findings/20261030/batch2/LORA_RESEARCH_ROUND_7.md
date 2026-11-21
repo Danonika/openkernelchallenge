@@ -212,11 +212,11 @@ For a new session, start with **`KERNEL_HANDOFF.md`**, then use this report for 
 [sdpa-hf]: https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/integrations/sdpa_attention.py
 [attention]: https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/native/transformers/attention.cpp
 [sdp-cuda]: https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/native/transformers/cuda/sdp_utils.cpp
-[apply]: https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/solution/__init__.py
-[soup-sft]: https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/sft.py
+[apply]: https://example.invalid/redacted-github
+[soup-sft]: https://example.invalid/redacted-github
 [trainer]: https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/trainer.py
 [accelerator]: https://github.com/huggingface/accelerate/blob/v1.14.0/src/accelerate/accelerator.py
-[dtype]: https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/mixed_precision.py
-[rules]: https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md
+[dtype]: https://example.invalid/redacted-github
+[rules]: https://example.invalid/redacted-github
 
 All new implementation is original research code or a specialization/carry-forward of our own earlier kernels. Native installed libraries are references and integration components; no third-party GPU kernel implementation is copied into the deliverable.

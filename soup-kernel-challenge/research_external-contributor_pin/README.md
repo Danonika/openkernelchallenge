@@ -2,7 +2,7 @@
 
 **This is an attributed research benchmark, NOT a competition submission claiming original kernels.**
 
-The reference is the independently published Apache-2.0 solution from [external-contributor/hackathon-decentrathon-6](https://github.com/external-contributor/hackathon-decentrathon-6), pinned to commit [`redacted-revision`](https://github.com/external-contributor/hackathon-decentrathon-6/commit/redacted-revision). The source bytes are archived as `part1.json`, `part2.json`, `part3.json` (22 runtime modules, Git blob SHA validation at installation). [Upstream license](LICENSE-external-contributor.txt) and [upstream notice](NOTICE-external-contributor.txt) are retained here.
+The reference is the independently published Apache-2.0 solution from [external-contributor/hackathon-decentrathon-6](https://example.invalid/redacted-github), pinned to commit [`redacted-revision`](https://example.invalid/redacted-github). The source bytes are archived as `part1.json`, `part2.json`, `part3.json` (22 runtime modules, Git blob SHA validation at installation). [Upstream license](LICENSE-external-contributor.txt) and [upstream notice](NOTICE-external-contributor.txt) are retained here.
 
 ## Actual same-VM public development comparison
 

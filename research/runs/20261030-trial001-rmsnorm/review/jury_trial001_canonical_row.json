@@ -64,13 +64,13 @@
       "next_action": "Preserve failed standalone trial001; do not rerun to chase noise. Test distinct useful backward-functional NF4 decode and entropy-only reductions under authorized isolated sessions, then consider a measured compatible combination. No own-share padding.",
       "stopping_condition": "Standalone admission fails useful-share gate. Keep candidate conditional as a component; do not award20 correctness points or speed/memory points. A failed/unranked tested visualization is permitted only with actual verified coordinates and parent instruction.",
       "rule_citations": [
-        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
-        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
-        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
-        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
-        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
-        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
-        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github"
       ],
       "source_urls": "https://github.com/linkedin/Liger-Kernel/blob/781a8aef64bf6105bdefb5f4c991e0d14c08e793/src/liger_kernel/ops/fused_add_rms_norm.py; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
       "measured_soup_t4_gain": null

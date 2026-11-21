@@ -243,12 +243,12 @@ The useful outcome of this round is a narrower implementation choice with runnab
 8. [Transformers Trainer](https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/trainer.py) and [causal loss/denominator](https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/loss/loss_utils.py).
 9. [Accelerate output conversion](https://github.com/huggingface/accelerate/blob/v1.14.0/src/accelerate/utils/operations.py).
 10. [TRL entropy helper](https://github.com/huggingface/trl/blob/v0.29.1/trl/trainer/utils.py) and [SFT metrics](https://github.com/huggingface/trl/blob/v0.29.1/trl/trainer/sft_trainer.py).
-11. [Soup pinned Rewind integration](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py).
+11. [Soup pinned Rewind integration](https://example.invalid/redacted-github).
 12. [Milakov and Gimelshein, Online normalizer calculation for softmax](https://arxiv.org/abs/1805.02867v2).
 13. [PyTorch 2.11 GreaterOrNan comparator](https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/native/SharedReduceOps.h).
-14. [Pinned harness launch timing and step callback](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/_train.py).
-15. [Pinned eligibility checker](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py).
-16. [Pinned score calculation](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/score.py).
-17. [Pinned run lifecycle and aggregation](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/run_task.py) and [organizer reference measurements](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md).
+14. [Pinned harness launch timing and step callback](https://example.invalid/redacted-github).
+15. [Pinned eligibility checker](https://example.invalid/redacted-github).
+16. [Pinned score calculation](https://example.invalid/redacted-github).
+17. [Pinned run lifecycle and aggregation](https://example.invalid/redacted-github) and [organizer reference measurements](https://example.invalid/redacted-github).
 
 All reported experiment outcomes are original observations recorded in `ROUND_5_EVIDENCE.json` and the component result files. Published hardware and organizer figures are labeled separately. External ideas are attributed; no external GPU kernel was imported or copied into the original prototypes.

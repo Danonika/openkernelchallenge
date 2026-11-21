@@ -134,5 +134,5 @@ Guard fake-module setup paths and ordinary fallbacks. At session end update this
 - Prior workload evidence: LORA_RESEARCH_ROUND_3.md; PUBLIC_WORKLOAD_AUDIT.json; PUBLIC_WORKLOAD_AUDIT_REPRO.zip.
 - [Round2 source/metric detail](https://chatgpt.com/library?file_id=libfile_87aa9af594748191be975dfe0559bdd8&account_id=personal)
 - [Challenge brief](https://chatgpt.com/library?file_id=libfile_37b0abe044f88191b002d808e4d00570&account_id=personal)
-- [Pinned starter and rules](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md)
-- [Pinned task](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/task/task.yaml)
+- [Pinned starter and rules](https://example.invalid/redacted-github)
+- [Pinned task](https://example.invalid/redacted-github)

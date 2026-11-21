@@ -4,7 +4,8 @@ if(graph.configurations.length!==1||graph.configurations[0].kind!=='baseline'||g
 const node=graph.configurations[0];
 if(graph.reference_anchor.z!==null||graph.reference_anchor.measured!==false)throw Error('Baseline admission and measurements must remain unknown.');
 document.getElementById('ideasLink').href=graph.catalog.sheet_url;
-document.getElementById('sourceLink').href='https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/'+graph.protocol.harness_commit+'/harness/run_task.py';
+document.getElementById('sourceLink').removeAttribute('href');
+document.getElementById('sourceLink').setAttribute('aria-disabled', 'true');
 document.getElementById('hash').textContent='Configuration SHA-256: '+node.content_sha256;
 const toggle=document.getElementById('detailsToggle'),details=document.getElementById('details');
 toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));details.hidden=open;toggle.textContent=open?'Show fixed task & evidence':'Hide fixed task & evidence';});

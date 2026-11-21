@@ -6,7 +6,7 @@
 
 The source overlay contains the new/modified implementation, its tests, README, submission-status file, reproducible code-generation script, and validation records. Apply it to the official starter **inside the team repository created by the hackathon platform**. The actual team repository URL and Kaggle notebook link were not supplied in this session.
 
-The unchanged starter is [MakazhanAlpamys/soup-kernel-challenge](https://github.com/MakazhanAlpamys/soup-kernel-challenge), inspected at commit `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`. Its original `harness/`, `task/`, `tests/`, notebook, and SwiGLU example are not duplicated in the overlay. They are required to run it.
+The unchanged starter is [archived-source/soup-kernel-challenge](https://example.invalid/redacted-github), inspected at commit `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`. Its original `harness/`, `task/`, `tests/`, notebook, and SwiGLU example are not duplicated in the overlay. They are required to run it.
 
 Source hash after applying the overlay to that starter, using the official harness's `solution_sha256` function:
 

@@ -12,7 +12,7 @@ Three RoPE-specific CPU fixture groups passed, including 32 FP32 paired Q/K case
 
 ### Source identity and shape
 
-- Official challenge: [`c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`](https://github.com/MakazhanAlpamys/soup-kernel-challenge/tree/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb).
+- Official challenge: [`c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`](https://example.invalid/redacted-github).
 - Transformers 5.16.1: [`93c8b7b485963a10800c91f55304db6be211c2bd`, Qwen2 model](https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py). Git blob `b4fed98fafae8e4ee39be3b8cd766b1c85b079cd`, matching the locally installed source bytes in the routing probe.
 - The [Qwen2.5-1.5B-Instruct model config](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/raw/main/config.json) gives hidden width 1536, 12 query heads, 2 KV heads, 28 layers, and theta 1,000,000; head dimension is 128. This model-config URL is an unpinned upstream reference, not a claimed immutable snapshot. The fixed-task geometry is independently recorded in the existing Soup audit.
 - Fixed task B=4, dynamic padded T<=512, M=B*T<=2048. Q is `[B,12,T,128]`, K is `[B,2,T,128]`; projection outputs are viewed as BTHD then transposed. These are generally **not contiguous BHTD**. [Projection/application/cache order, lines 180–233](https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L180-L233).
@@ -85,7 +85,7 @@ Qwen2 uses `use_kernel_forward_from_hub` / `use_kernelized_func` decorators. The
 
 ## 4. Activation-fusion negative result
 
-The actual [Qwen2 MLP, lines 35–48](https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L35-L48), computes independent gate/up projections, `act_fn(gate) * up`, then down projection. In the task the activation is SiLU. Plain forward/backward SiLU×up fusion is **already the official example** and is represented by existing packed-SwiGLU ideas; rewriting or renaming the example does not earn own-kernel share. [Official solution entry](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/solution/__init__.py#L1-L20), [explicit example exclusion](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L454-L457).
+The actual [Qwen2 MLP, lines 35–48](https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L35-L48), computes independent gate/up projections, `act_fn(gate) * up`, then down projection. In the task the activation is SiLU. Plain forward/backward SiLU×up fusion is **already the official example** and is represented by existing packed-SwiGLU ideas; rewriting or renaming the example does not earn own-kernel share. [Official solution entry](https://example.invalid/redacted-github), [explicit example exclusion](https://example.invalid/redacted-github).
 
 Thus no new activation row, copied example, packed-gate/up weight transformation, or unmeasured ownership claim is proposed. Any later distinct MLP fusion needs a mechanism beyond that example plus preservation of frozen NF4 projection semantics and backward; existing `vllm_packed_swiglu`, `xformers_packed_swiglu`, and `liger_scalar_promotion` remain the relevant catalog entries.
 

@@ -2924,9 +2924,9 @@
     {
       "idea_id": "gemm-07",
       "title": "Vector lookup decoding for the fixed E2M1 codebook",
-      "repository": "HanGuo97/flute",
+      "repository": "archived-source/flute",
       "repo_urls": [
-        "https://github.com/HanGuo97/flute"
+        "https://example.invalid/redacted-github"
       ],
       "lane": 3,
       "goal_tags": [
@@ -2940,21 +2940,21 @@
       "hardware_compatibility": "H200: README lists H100 source-build support as unoptimized. H200 same SM90 is a plausible port, not verified support or performance. | Ada: RTX4090 is explicitly supported; both are SM89, but shape/GPU-specialized configurations mean 4060 Ti remains unverified.",
       "test_hypothesis": "Compare scalar fixed-codebook decoding with paired/duplicated lookup variants, keeping scales and MMA identical. Test every code and edge scale; require net latency improvement after map-staging cost.",
       "source_urls": [
-        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel.hpp#L543-L609",
-        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel_example.cu#L134-L144"
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github"
       ],
       "source_pin": "9eb83a12d56949bbe7fe9c836ba97a67bd1e3761",
       "source_blob_sha": null,
       "license_evidence": "Apache-2.0",
       "license_urls": [
-        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/LICENSE"
+        "https://example.invalid/redacted-github"
       ],
       "status": "Source-inspired, untested; no speedup assigned",
       "tested": false,
       "verified_at": "2026-10-27",
       "raw_source": {
         "id": "gemm-07",
-        "repo_url": "https://github.com/HanGuo97/flute",
+        "repo_url": "https://example.invalid/redacted-github",
         "title": "Vector lookup decoding for the fixed E2M1 codebook",
         "mechanism": "FLUTE stages quantization maps and supports vectorized paired lookups plus duplicated shared-memory maps. Adapt only the lookup mechanism to the exact fixed E2M1 codebook, not a learned or NF4 codebook.",
         "goal_tags": [
@@ -2979,8 +2979,8 @@
           "No NFL/HIGGS requantization"
         ],
         "source_urls": [
-          "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel.hpp#L543-L609",
-          "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel_example.cu#L134-L144"
+          "https://example.invalid/redacted-github",
+          "https://example.invalid/redacted-github"
         ],
         "status": "source_inspired_untested",
         "test_hypothesis": "Compare scalar fixed-codebook decoding with paired/duplicated lookup variants, keeping scales and MMA identical. Test every code and edge scale; require net latency improvement after map-staging cost."
@@ -2989,9 +2989,9 @@
     {
       "idea_id": "gemm-08",
       "title": "Stream-K versus Split-K with high-precision partials",
-      "repository": "HanGuo97/flute",
+      "repository": "archived-source/flute",
       "repo_urls": [
-        "https://github.com/HanGuo97/flute"
+        "https://example.invalid/redacted-github"
       ],
       "lane": 3,
       "goal_tags": [
@@ -3006,23 +3006,23 @@
       "hardware_compatibility": "H200: README lists H100 source-build support as unoptimized. H200 same SM90 is a plausible port, not verified support or performance. | Ada: RTX4090 is explicitly supported; both are SM89, but shape/GPU-specialized configurations mean 4060 Ti remains unverified.",
       "test_hypothesis": "Compare modes at fixed shapes with High precision and identical conversion. Measure total graph latency, workspace bytes, reduction traffic and repeated-replay correctness; refute when reductions exceed load-balance savings.",
       "source_urls": [
-        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/config.hpp#L62-L67",
-        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/config.hpp#L111-L119",
-        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel_example.cu#L116-L118",
-        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/tile_scheduler_utils.hpp"
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github"
       ],
       "source_pin": "9eb83a12d56949bbe7fe9c836ba97a67bd1e3761",
       "source_blob_sha": null,
       "license_evidence": "Apache-2.0",
       "license_urls": [
-        "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/LICENSE"
+        "https://example.invalid/redacted-github"
       ],
       "status": "Source-inspired, untested; no speedup assigned",
       "tested": false,
       "verified_at": "2026-10-27",
       "raw_source": {
         "id": "gemm-08",
-        "repo_url": "https://github.com/HanGuo97/flute",
+        "repo_url": "https://example.invalid/redacted-github",
         "title": "Stream-K versus Split-K with high-precision partials",
         "mechanism": "FLUTE exposes both decomposition modes and separate accumulation/reduction types. Study work balancing independently from arithmetic by holding High mode: FP32 accumulation and FP32 reduction.",
         "goal_tags": [
@@ -3047,10 +3047,10 @@
           "Workspace initialization/reset must be inside the required timed path, not hidden prepare work"
         ],
         "source_urls": [
-          "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/config.hpp#L62-L67",
-          "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/config.hpp#L111-L119",
-          "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel_example.cu#L116-L118",
-          "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/tile_scheduler_utils.hpp"
+          "https://example.invalid/redacted-github",
+          "https://example.invalid/redacted-github",
+          "https://example.invalid/redacted-github",
+          "https://example.invalid/redacted-github"
         ],
         "status": "source_inspired_untested",
         "test_hypothesis": "Compare modes at fixed shapes with High precision and identical conversion. Measure total graph latency, workspace bytes, reduction traffic and repeated-replay correctness; refute when reductions exceed load-balance savings."
@@ -3867,11 +3867,11 @@
       }
     },
     {
-      "idea_id": "L4-NEETHANWU-AUTORESEARCH-01",
+      "idea_id": "L4-ARCHIVED-SOURCE-AUTORESEARCH-01",
       "title": "Use append-only results, immutable hashed configuration and resume reconstruction for durable experiments.",
-      "repository": "neethanwu/autoresearch",
+      "repository": "archived-source/autoresearch",
       "repo_urls": [
-        "https://github.com/neethanwu/autoresearch"
+        "https://example.invalid/redacted-github"
       ],
       "lane": 4,
       "goal_tags": [
@@ -3881,27 +3881,27 @@
       ],
       "mechanism": "Use append-only results, immutable hashed configuration and resume reconstruction for durable experiments.",
       "key_parameters": "SKILL defaults: per-experiment timeout300 s, runs_per_experiment1, max_experiments200 (null permits indefinite); README's 'never stops' wording omits default cap.; Validation command optional; multiple repeats use median. Secondary METRIC signals are informational unless a composite metric_command uses them.; Keep only strict scalar improvement; confidence uses MAD of recent kept values but does not affect decisions.; Discard/crash uses scoped checkout; results.tsv stores '-' instead of candidate commit, run.log overwritten. Rejected source branches are not preserved.",
-      "prerequisites_conflicts": "Scalar greedy acceptance and noisy single-run defaults can overfit; reported confidence over changing kept candidates is not a repeated-measurement confidence interval.; Optional validation and editable metric-producing code can invite reward hacking unless ownership is separated.; Generic instruction loop should not be misrepresented as karpathy/autoresearch's train.py or as a ready GPU-kernel optimizer.",
+      "prerequisites_conflicts": "Scalar greedy acceptance and noisy single-run defaults can overfit; reported confidence over changing kept candidates is not a repeated-measurement confidence interval.; Optional validation and editable metric-producing code can invite reward hacking unless ownership is separated.; Generic instruction loop should not be misrepresented as archived-source/autoresearch's train.py or as a ready GPU-kernel optimizer.",
       "hardware_compatibility": "H200: Any coding agent, git repository and experiment command; no intrinsic GPU requirement. Kernel use requires a separately designed device-aware correctness and timing harness. | Ada: Any coding agent, git repository and experiment command; no intrinsic GPU requirement. Kernel use requires a separately designed device-aware correctness and timing harness.",
       "test_hypothesis": "Proposed validation: Add candidate source hash, parent, evaluator version and full immutable logs before revert.",
       "source_urls": [
-        "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/SKILL.md"
+        "https://example.invalid/redacted-github"
       ],
       "source_pin": "00e01aa029ddc21a7dea11316f2c909cd6bc6aca",
       "source_blob_sha": null,
       "license_evidence": "MIT",
       "license_urls": [
-        "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/LICENSE"
+        "https://example.invalid/redacted-github"
       ],
       "status": "Source-inspired, untested; no speedup assigned",
       "tested": false,
       "verified_at": "2026-10-27T23:55:31Z",
       "raw_source": {
         "idea": "Use append-only results, immutable hashed configuration and resume reconstruction for durable experiments.",
-        "evidence": "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/SKILL.md",
+        "evidence": "https://example.invalid/redacted-github",
         "adaptation": "Add candidate source hash, parent, evaluator version and full immutable logs before revert.",
-        "idea_id": "L4-NEETHANWU-AUTORESEARCH-01",
-        "repo_url": "https://github.com/neethanwu/autoresearch",
+        "idea_id": "L4-ARCHIVED-SOURCE-AUTORESEARCH-01",
+        "repo_url": "https://example.invalid/redacted-github",
         "title": "Use append-only results, immutable hashed configuration and resume reconstruction for durable experiments.",
         "mechanism": "Use append-only results, immutable hashed configuration and resume reconstruction for durable experiments.",
         "goal_tags": [
@@ -3913,11 +3913,11 @@
       }
     },
     {
-      "idea_id": "L4-NEETHANWU-AUTORESEARCH-02",
+      "idea_id": "L4-ARCHIVED-SOURCE-AUTORESEARCH-02",
       "title": "Separate hard correctness/resource gates from a primary optimization metric and log secondary signals.",
-      "repository": "neethanwu/autoresearch",
+      "repository": "archived-source/autoresearch",
       "repo_urls": [
-        "https://github.com/neethanwu/autoresearch"
+        "https://example.invalid/redacted-github"
       ],
       "lane": 4,
       "goal_tags": [
@@ -3927,27 +3927,27 @@
       ],
       "mechanism": "Separate hard correctness/resource gates from a primary optimization metric and log secondary signals.",
       "key_parameters": "SKILL defaults: per-experiment timeout300 s, runs_per_experiment1, max_experiments200 (null permits indefinite); README's 'never stops' wording omits default cap.; Validation command optional; multiple repeats use median. Secondary METRIC signals are informational unless a composite metric_command uses them.; Keep only strict scalar improvement; confidence uses MAD of recent kept values but does not affect decisions.; Discard/crash uses scoped checkout; results.tsv stores '-' instead of candidate commit, run.log overwritten. Rejected source branches are not preserved.",
-      "prerequisites_conflicts": "Scalar greedy acceptance and noisy single-run defaults can overfit; reported confidence over changing kept candidates is not a repeated-measurement confidence interval.; Optional validation and editable metric-producing code can invite reward hacking unless ownership is separated.; Generic instruction loop should not be misrepresented as karpathy/autoresearch's train.py or as a ready GPU-kernel optimizer.",
+      "prerequisites_conflicts": "Scalar greedy acceptance and noisy single-run defaults can overfit; reported confidence over changing kept candidates is not a repeated-measurement confidence interval.; Optional validation and editable metric-producing code can invite reward hacking unless ownership is separated.; Generic instruction loop should not be misrepresented as archived-source/autoresearch's train.py or as a ready GPU-kernel optimizer.",
       "hardware_compatibility": "H200: Any coding agent, git repository and experiment command; no intrinsic GPU requirement. Kernel use requires a separately designed device-aware correctness and timing harness. | Ada: Any coding agent, git repository and experiment command; no intrinsic GPU requirement. Kernel use requires a separately designed device-aware correctness and timing harness.",
       "test_hypothesis": "Proposed validation: Use an evaluator-owned gate; retain a Pareto archive instead of collapsing every trade-off to weighted scalar score.",
       "source_urls": [
-        "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/references/scoring/gated_scorer.py"
+        "https://example.invalid/redacted-github"
       ],
       "source_pin": "00e01aa029ddc21a7dea11316f2c909cd6bc6aca",
       "source_blob_sha": null,
       "license_evidence": "MIT",
       "license_urls": [
-        "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/LICENSE"
+        "https://example.invalid/redacted-github"
       ],
       "status": "Source-inspired, untested; no speedup assigned",
       "tested": false,
       "verified_at": "2026-10-27T23:55:31Z",
       "raw_source": {
         "idea": "Separate hard correctness/resource gates from a primary optimization metric and log secondary signals.",
-        "evidence": "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/references/scoring/gated_scorer.py",
+        "evidence": "https://example.invalid/redacted-github",
         "adaptation": "Use an evaluator-owned gate; retain a Pareto archive instead of collapsing every trade-off to weighted scalar score.",
-        "idea_id": "L4-NEETHANWU-AUTORESEARCH-02",
-        "repo_url": "https://github.com/neethanwu/autoresearch",
+        "idea_id": "L4-ARCHIVED-SOURCE-AUTORESEARCH-02",
+        "repo_url": "https://example.invalid/redacted-github",
         "title": "Separate hard correctness/resource gates from a primary optimization metric and log secondary signals.",
         "mechanism": "Separate hard correctness/resource gates from a primary optimization metric and log secondary signals.",
         "goal_tags": [
@@ -3959,11 +3959,11 @@
       }
     },
     {
-      "idea_id": "L4-NEETHANWU-AUTORESEARCH-03",
+      "idea_id": "L4-ARCHIVED-SOURCE-AUTORESEARCH-03",
       "title": "Maintain explicit hypotheses, dead ends and an ideas backlog across context resets.",
-      "repository": "neethanwu/autoresearch",
+      "repository": "archived-source/autoresearch",
       "repo_urls": [
-        "https://github.com/neethanwu/autoresearch"
+        "https://example.invalid/redacted-github"
       ],
       "lane": 4,
       "goal_tags": [
@@ -3973,27 +3973,27 @@
       ],
       "mechanism": "Maintain explicit hypotheses, dead ends and an ideas backlog across context resets.",
       "key_parameters": "SKILL defaults: per-experiment timeout300 s, runs_per_experiment1, max_experiments200 (null permits indefinite); README's 'never stops' wording omits default cap.; Validation command optional; multiple repeats use median. Secondary METRIC signals are informational unless a composite metric_command uses them.; Keep only strict scalar improvement; confidence uses MAD of recent kept values but does not affect decisions.; Discard/crash uses scoped checkout; results.tsv stores '-' instead of candidate commit, run.log overwritten. Rejected source branches are not preserved.",
-      "prerequisites_conflicts": "Scalar greedy acceptance and noisy single-run defaults can overfit; reported confidence over changing kept candidates is not a repeated-measurement confidence interval.; Optional validation and editable metric-producing code can invite reward hacking unless ownership is separated.; Generic instruction loop should not be misrepresented as karpathy/autoresearch's train.py or as a ready GPU-kernel optimizer.",
+      "prerequisites_conflicts": "Scalar greedy acceptance and noisy single-run defaults can overfit; reported confidence over changing kept candidates is not a repeated-measurement confidence interval.; Optional validation and editable metric-producing code can invite reward hacking unless ownership is separated.; Generic instruction loop should not be misrepresented as archived-source/autoresearch's train.py or as a ready GPU-kernel optimizer.",
       "hardware_compatibility": "H200: Any coding agent, git repository and experiment command; no intrinsic GPU requirement. Kernel use requires a separately designed device-aware correctness and timing harness. | Ada: Any coding agent, git repository and experiment command; no intrinsic GPU requirement. Kernel use requires a separately designed device-aware correctness and timing harness.",
       "test_hypothesis": "Proposed validation: Promote negative branches to first-class experimental evidence rather than only textual summaries.",
       "source_urls": [
-        "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/README.md"
+        "https://example.invalid/redacted-github"
       ],
       "source_pin": "00e01aa029ddc21a7dea11316f2c909cd6bc6aca",
       "source_blob_sha": null,
       "license_evidence": "MIT",
       "license_urls": [
-        "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/LICENSE"
+        "https://example.invalid/redacted-github"
       ],
       "status": "Source-inspired, untested; no speedup assigned",
       "tested": false,
       "verified_at": "2026-10-27T23:55:31Z",
       "raw_source": {
         "idea": "Maintain explicit hypotheses, dead ends and an ideas backlog across context resets.",
-        "evidence": "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/README.md",
+        "evidence": "https://example.invalid/redacted-github",
         "adaptation": "Promote negative branches to first-class experimental evidence rather than only textual summaries.",
-        "idea_id": "L4-NEETHANWU-AUTORESEARCH-03",
-        "repo_url": "https://github.com/neethanwu/autoresearch",
+        "idea_id": "L4-ARCHIVED-SOURCE-AUTORESEARCH-03",
+        "repo_url": "https://example.invalid/redacted-github",
         "title": "Maintain explicit hypotheses, dead ends and an ideas backlog across context resets.",
         "mechanism": "Maintain explicit hypotheses, dead ends and an ideas backlog across context resets.",
         "goal_tags": [
@@ -6325,9 +6325,9 @@
     {
       "idea_id": "L6-13",
       "title": "Make tiny adversarial indexing and tail tests before tuning",
-      "repository": "srush/GPU-Puzzles",
+      "repository": "archived-source/GPU-Puzzles",
       "repo_urls": [
-        "https://github.com/srush/GPU-Puzzles"
+        "https://example.invalid/redacted-github"
       ],
       "lane": 6,
       "goal_tags": [
@@ -6343,21 +6343,21 @@
       "hardware_compatibility": "H200: SM90: basic patterns apply, but retune; generic examples do not automatically exploit TMA/WGMMA. No measured result. | Ada: SM89: basic CUDA/block/warp patterns apply; old examples/toolchains may need adaptation. No measured result.",
       "test_hypothesis": "In an isolated test copy, a deliberate tail/off-by-one bug must fail the adversarial suite even when aligned tests pass. If it does not, strengthen tests before trusting tuned variants.",
       "source_urls": [
-        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/GPU_puzzlers.py",
-        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/lib.py"
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github"
       ],
       "source_pin": "b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb",
       "source_blob_sha": null,
       "license_evidence": "MIT",
       "license_urls": [
-        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/LICENSE"
+        "https://example.invalid/redacted-github"
       ],
       "status": "Source-inspired, untested; no speedup assigned",
       "tested": false,
       "verified_at": "2026-10-28T00:01:00Z",
       "raw_source": {
         "id": "L6-13",
-        "repo_url": "https://github.com/srush/GPU-Puzzles",
+        "repo_url": "https://example.invalid/redacted-github",
         "title": "Make tiny adversarial indexing and tail tests before tuning",
         "mechanism": "Guard, multidimensional/block and shared-memory puzzles make indexing explicit and compare against NumPy specifications; visualization exposes which lanes read/write which elements.",
         "goal_tags": [
@@ -6382,8 +6382,8 @@
         ],
         "test_hypothesis": "In an isolated test copy, a deliberate tail/off-by-one bug must fail the adversarial suite even when aligned tests pass. If it does not, strengthen tests before trusting tuned variants.",
         "source_urls": [
-          "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/GPU_puzzlers.py",
-          "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/lib.py"
+          "https://example.invalid/redacted-github",
+          "https://example.invalid/redacted-github"
         ],
         "status": "source_inspired_untested"
       }
@@ -6391,9 +6391,9 @@
     {
       "idea_id": "L6-14",
       "title": "Use explicit traffic/reuse models, then test real hardware",
-      "repository": "srush/GPU-Puzzles",
+      "repository": "archived-source/GPU-Puzzles",
       "repo_urls": [
-        "https://github.com/srush/GPU-Puzzles"
+        "https://example.invalid/redacted-github"
       ],
       "lane": 6,
       "goal_tags": [
@@ -6408,21 +6408,21 @@
       "hardware_compatibility": "H200: SM90: basic patterns apply, but retune; generic examples do not automatically exploit TMA/WGMMA. No measured result. | Ada: SM89: basic CUDA/block/warp patterns apply; old examples/toolchains may need adaptation. No measured result.",
       "test_hypothesis": "Derive expected bytes for naive versus shared reuse in one legal segment, then compare real bytes and full-function latency. Reject reuse if only logical reads fall while actual traffic or latency worsens.",
       "source_urls": [
-        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/GPU_puzzlers.py",
-        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/lib.py"
+        "https://example.invalid/redacted-github",
+        "https://example.invalid/redacted-github"
       ],
       "source_pin": "b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb",
       "source_blob_sha": null,
       "license_evidence": "MIT",
       "license_urls": [
-        "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/LICENSE"
+        "https://example.invalid/redacted-github"
       ],
       "status": "Source-inspired, untested; no speedup assigned",
       "tested": false,
       "verified_at": "2026-10-28T00:01:00Z",
       "raw_source": {
         "id": "L6-14",
-        "repo_url": "https://github.com/srush/GPU-Puzzles",
+        "repo_url": "https://example.invalid/redacted-github",
         "title": "Use explicit traffic/reuse models, then test real hardware",
         "mechanism": "Pooling/dot-product/shared-matmul exercises constrain logical global reads and demonstrate data reuse; block-sum examples distinguish local aggregation from global completion. Use these to reason, not to predict speed.",
         "goal_tags": [
@@ -6447,8 +6447,8 @@
         ],
         "test_hypothesis": "Derive expected bytes for naive versus shared reuse in one legal segment, then compare real bytes and full-function latency. Reject reuse if only logical reads fall while actual traffic or latency worsens.",
         "source_urls": [
-          "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/GPU_puzzlers.py",
-          "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/lib.py"
+          "https://example.invalid/redacted-github",
+          "https://example.invalid/redacted-github"
         ],
         "status": "source_inspired_untested"
       }

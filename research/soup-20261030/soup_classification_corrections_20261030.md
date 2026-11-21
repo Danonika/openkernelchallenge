@@ -1,7 +1,7 @@
 # Soup classification audit: corrections before publication
 Audit time: 2026-10-30 10:53 UTC. One read of the target research branch returned **No commit found for ref research**; no repeated polling. Audited original104 catalog, first-pass additions and focused notes against exact official harness instead. No remote writes.
 
-Authority: [README rules](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md), [common.py](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py), [check_rules.py](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py), [_train.py](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/_train.py), [run_task.py](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/run_task.py), all at official commit c7c2fcd (2026-10-28).
+Authority: [README rules](https://example.invalid/redacted-github), [common.py](https://example.invalid/redacted-github), [check_rules.py](https://example.invalid/redacted-github), [_train.py](https://example.invalid/redacted-github), [run_task.py](https://example.invalid/redacted-github), all at official commit c7c2fcd (2026-10-28).
 
 ## Concrete changes to classifications
 | Severity | Affected rows / claim | Correct replacement |

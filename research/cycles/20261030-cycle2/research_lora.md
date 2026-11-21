@@ -15,7 +15,7 @@ No proposal has established a Soup/T4 speedup, memory-peak improvement, or >=5% 
 
 | Key | Primary source and pin | What it establishes |
 |---|---|---|
-| R | [Official README](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md), commit `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb` | Fixed task, independent Triton/autograd/patch permission, normal launches, full timing and task gates. |
+| R | [Official README](https://example.invalid/redacted-github), commit `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb` | Fixed task, independent Triton/autograd/patch permission, normal launches, full timing and task gates. |
 | P | [PEFT 0.20.0 4-bit LoRA forward, lines 513–565](https://github.com/huggingface/peft/blob/a5526d27a9d47d1e8264d5e1b1f96c0fdc79464e/src/peft/tuners/lora/bnb.py#L513-L565) | Native base call, defensive clone, dropout→A→B→scale→add; no permission to erase cast boundaries or clone safety. |
 | LF | [LoRAFusion §5.1, arXiv 2510.00206v1](https://arxiv.org/html/2510.00206v1#S5.SS1), submitted 2025-09-30 | Split at rank-r state; sibling dS/dB fusion reuses upstream gradients. Paper evidence is H100/L40S, not Soup/T4. |
 | LF-pin | [LoRAFusion artifact README](https://github.com/CentML/lorafusion/blob/c48d7fdb1b5458e9df00963a63df00436f89a059/benchmarks_paper/README.md), commit `c48d7fdb1b5458e9df00963a63df00436f89a059`, 2025-09-17 | Source repository/version context; tuned devices listed there do not include T4. No source kernel was copied or used. |

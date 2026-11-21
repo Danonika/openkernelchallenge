@@ -40,4 +40,4 @@ Previous public-development Pareto: 66.33s/5,005MiB memory candidate (not 5% ver
 4. Paired Kaggle and jury hidden-row validation before calling it a win.
 5. Avoid combining with our FP16-output RMSNorm branch by default: it changes the MLP input dtype; this save-up guard deliberately accepts FP32 MLP input only.
 
-Idea sources: user's shared comparison, [external contributor](https://github.com/external-contributor/hackathon-decentrathon-6), [external contributor](https://github.com/external-contributor/soup-kernel-challenge). **No competitor kernel source copied.**
+Idea sources: user's shared comparison, [external contributor](https://example.invalid/redacted-github), [external contributor](https://example.invalid/redacted-github). **No competitor kernel source copied.**

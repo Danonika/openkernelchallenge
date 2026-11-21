@@ -28,4 +28,4 @@ A solution-only run compared with prior baseline v3 is useful diagnostic measure
 
 Reviewed `solution/rmsnorm.py` and `solution/__init__.py` at the timestamp above. No source-level blocker to the stated conditional trial found. GPU compilation/execution and immutable final source hash remain pending.
 
-Rules: [pinned README](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L77-L170); [numeric and resource checks](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L29-L44). Source/CPU constraints: `research_norm_increment3.md`, `cpu_cycle3_results.md`, approved `jury_cycle3_review.md`.
+Rules: [pinned README](https://example.invalid/redacted-github); [numeric and resource checks](https://example.invalid/redacted-github). Source/CPU constraints: `research_norm_increment3.md`, `cpu_cycle3_results.md`, approved `jury_cycle3_review.md`.

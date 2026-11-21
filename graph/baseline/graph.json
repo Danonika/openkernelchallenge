@@ -92,7 +92,7 @@
     {
       "id": "evidence:harness",
       "kind": "official_source",
-      "uri": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/run_task.py",
+      "uri": "https://example.invalid/redacted-github",
       "sha256": "d935a8959f348977313f2eef36870ff2699b9ba013a7978918ff35e148968a79",
       "source_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
       "scope": [
@@ -104,7 +104,7 @@
     {
       "id": "evidence:score",
       "kind": "official_source",
-      "uri": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/score.py",
+      "uri": "https://example.invalid/redacted-github",
       "sha256": "731c9b644dcc4069b0b069616f438064d1f7f376a202feb15201fd910ec688c5",
       "source_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
       "scope": [

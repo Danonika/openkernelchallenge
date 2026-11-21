@@ -3,8 +3,8 @@
 **Scope:** Research of two user-named public repositories and independent implementation in our own project; **no competitor source code was imported into our solution**. The benchmark results cited for other teams are *their published claims*, not raw outputs independently checked in this ChatGPT environment.
 
 Competitor sources:
-- [external-contributor/hackathon-decentrathon-6](https://github.com/external-contributor/hackathon-decentrathon-6) — [SUBMISSION.md](https://github.com/external-contributor/hackathon-decentrathon-6/blob/main/SUBMISSION.md), [commit REDACTED](https://github.com/external-contributor/hackathon-decentrathon-6/commit/REDACTED), [final_numbers.json](https://github.com/external-contributor/hackathon-decentrathon-6/blob/main/docs/final_numbers.json), [Kaggle notebook (external, not directly inspected)](https://example.invalid/redacted).
-- [external-contributor/soup-kernel-challenge](https://github.com/external-contributor/soup-kernel-challenge) — [README](https://github.com/external-contributor/soup-kernel-challenge/blob/main/README.md), [SUBMISSION.md](https://github.com/external-contributor/soup-kernel-challenge/blob/main/SUBMISSION.md).
+- [external-contributor/hackathon-decentrathon-6](https://example.invalid/redacted-github) — [SUBMISSION.md](https://example.invalid/redacted-github), [commit REDACTED](https://example.invalid/redacted-github), [final_numbers.json](https://example.invalid/redacted-github), [Kaggle notebook (external, not directly inspected)](https://example.invalid/redacted).
+- [external-contributor/soup-kernel-challenge](https://example.invalid/redacted-github) — [README](https://example.invalid/redacted-github), [SUBMISSION.md](https://example.invalid/redacted-github).
 
 ## Verified source facts versus unverified claimed GPU scores
 

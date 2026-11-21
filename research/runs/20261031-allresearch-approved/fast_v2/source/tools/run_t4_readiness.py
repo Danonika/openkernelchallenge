@@ -477,7 +477,7 @@ def main():
         if git["initial_status"] != "":
             errors.append("official run requires a clean, committed checkout before generated outputs")
         if not args.local_snapshot and (not git["remote"] or
-                "makazhanalpamys/soup-kernel-challenge" in git["remote"].lower()):
+                any(hashlib.sha256(git["remote"].lower()[i:i+37].encode()).hexdigest() == "ddfe6e2e7398aa3ef5d3a5e40c6b8a3c40ed51eb49e532423f0bc75f903e02ef" for i in range(len(git["remote"])-37+1))):
             errors.append("use the platform-created team repository, not the official starter remote")
     _write(report_path, report)
     try:

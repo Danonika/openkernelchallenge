@@ -29,7 +29,7 @@ Independent original `research/hero1_original_online_vocab_stats.py` uses numeri
 Independent CPU FP16-replay numerical oracle on four shapes, vocab 4,096 and 151,936 with shifted logits and forced argmax ties, matched PyTorch reference: max CE abs diff about 3.03e-6; max entropy abs diff about 2.61e-5; zero argmax mismatches. This is **NOT Triton GPU compilation or kernel correctness proof**.
 
 ## Sources and idea attribution
-- Soup actual Rewind and streamed loss requirements: https://github.com/MakazhanAlpamys/Soup/blob/main/src/soup_cli/trainer/rewind_hf.py and https://github.com/MakazhanAlpamys/Soup/blob/main/src/soup_cli/utils/stream_loss_chunk.py.
-- Public competitor idea reviews (NO code copied): https://github.com/ainiddin/Soup-Kernel-Challenge ; https://github.com/FRIKT333/soup-kernel-challenge.
+- Soup actual Rewind and streamed loss requirements: https://example.invalid/redacted-github and https://example.invalid/redacted-github
+- Public competitor idea reviews (NO code copied): https://example.invalid/redacted-github ; https://example.invalid/redacted-github
 - Own implementation: https://example.invalid/redacted
 - Own GPU notebook: project-repository/blob/master/soup-kernel-challenge/queue_20261031_hero1_nocache_ownshare_v1.ipynb.

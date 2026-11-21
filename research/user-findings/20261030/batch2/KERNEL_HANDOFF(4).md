@@ -118,5 +118,5 @@ After target access, record checkout/commit, versions, row order, correctness, c
 - Latest report/evidence/bundle named at top; component READMEs contain pinned sources/reproduction commands.
 - Prior: Round5 report/evidence/repro; Round4 dtype/numerics detail; Round3 public workload report/audit.
 - [Challenge brief](https://chatgpt.com/library?file_id=libfile_37b0abe044f88191b002d808e4d00570&account_id=personal).
-- [Pinned starter/rules](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md).
+- [Pinned starter/rules](https://example.invalid/redacted-github).
 - [Triton3.6 SM75 lowering](https://github.com/triton-lang/triton/blob/v3.6.0/lib/Dialect/TritonGPU/Transforms/AccelerateMatmul.cpp).

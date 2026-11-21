@@ -4672,14 +4672,14 @@
       "files": [
         {
           "module": "soup_rewind",
-          "source_url": "https://api.github.com/repos/MakazhanAlpamys/Soup/contents/src/soup_cli/trainer/rewind_hf.py?ref=846888a045b31084452fa08a684a7a38c02f5f87",
+          "source_url": "https://example.invalid/redacted-github",
           "complete_installed_source_matches_pinned_remote": true,
           "sha256": "1fe9542e1ab634d1e6f3ce9dc50f28872d0096cd0f7fdd2be344cce10afd5604",
           "bytes": 16623
         },
         {
           "module": "soup_rewind_log",
-          "source_url": "https://api.github.com/repos/MakazhanAlpamys/Soup/contents/src/soup_cli/monitoring/rewind_log.py?ref=846888a045b31084452fa08a684a7a38c02f5f87",
+          "source_url": "https://example.invalid/redacted-github",
           "complete_installed_source_matches_pinned_remote": true,
           "sha256": "d4b645a32064fa607423181f7d09d1183e4811e17809f5e74be47a242414485d",
           "bytes": 13571

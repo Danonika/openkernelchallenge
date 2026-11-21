@@ -13,12 +13,12 @@ No kernel was copied, imported, installed or executed by this research lane. No 
 
 ## Source authority and fresh pins
 
-- **R — unchanged challenge authority:** [rules and permitted recomputation](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#rules). Own Triton/autograd/patches and independently written recomputation are allowed methods; fixed task, precision boundaries, metrics, rewind, batches, steps and dropout remain obligations. Named-source ideas do not authorize copying or importing their implementations.
+- **R — unchanged challenge authority:** [rules and permitted recomputation](https://example.invalid/redacted-github). Own Triton/autograd/patches and independently written recomputation are allowed methods; fixed task, precision boundaries, metrics, rewind, batches, steps and dropout remain obligations. Named-source ideas do not authorize copying or importing their implementations.
 - **T — actual pinned trainer behavior:** [TRL 0.29.1 entropy and accuracy paths, lines 1238–1320](https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py#L1238-L1320), [entropy utility, lines 572 onward](https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py#L572-L609).
 - **L — actual pinned loss:** [Transformers 5.16.1 causal shift, ignore index and normalization](https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/loss/loss_utils.py#L35-L73).
 - **P — numerical reference implementation, not a Kaggle version claim:** [PyTorch log-softmax epilogue](https://github.com/pytorch/pytorch/blob/e9a0032ac4a867ce57c079de379ece80e230be5d/aten/src/ATen/native/cuda/SoftMax.cu#L39-L49), current upstream commit dated 2026-10-30 10:55:22Z. It subtracts the row maximum before the log of the centered exponential sum. Actual Kaggle Torch is unpinned by the notebook and must be inventoried.
 - **H — fresh inspected kernel collection:** [HF kernels-community commit 4498ed972091eb7d087fdb3853417f706193df28](https://github.com/huggingface/kernels-community/commit/4498ed972091eb7d087fdb3853417f706193df28), dated 2026-10-29 14:47:57Z. This is a provenance pin, not proof that every contained kernel changed yesterday.
-- **N — freshly rechecked but unchanged nanochat:** [gpt.py head, July 3 pin](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py#L506-L527).
+- **N — freshly rechecked but unchanged nanochat:** [gpt.py head, July 3 pin](https://example.invalid/redacted-github).
 - **C — compiler API evidence:** [Triton 3.8 Config controls](https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/runtime/autotuner.py#L324-L377). This does not establish the installed Kaggle version.
 
 ## New candidate: SOUP-TRAIN-001

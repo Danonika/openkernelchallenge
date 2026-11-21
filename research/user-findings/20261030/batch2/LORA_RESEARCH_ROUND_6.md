@@ -243,8 +243,8 @@ The result of this round is a stronger implementation starting point: real consu
 2. [TRL0.29.1 SFT trainer](https://github.com/huggingface/trl/blob/v0.29.1/trl/trainer/sft_trainer.py).
 3. [PEFT0.20 causal wrapper](https://github.com/huggingface/peft/blob/v0.20.0/src/peft/peft_model.py) and [LoRA layer](https://github.com/huggingface/peft/blob/v0.20.0/src/peft/tuners/lora/layer.py).
 4. [Transformers5.16.1 Trainer](https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/trainer.py).
-5. [Pinned Soup Rewind trainer/FIFO](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py).
-6. [Pinned Soup Rewind writer/reader](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/monitoring/rewind_log.py).
+5. [Pinned Soup Rewind trainer/FIFO](https://example.invalid/redacted-github).
+6. [Pinned Soup Rewind writer/reader](https://example.invalid/redacted-github).
 7. [Accelerate1.14 output conversion](https://github.com/huggingface/accelerate/blob/v1.14.0/src/accelerate/utils/operations.py).
 8. [PyTorch2.11 CPU softmax backward](https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/native/cpu/SoftMaxKernel.cpp).
 9. [PyTorch AVX512 float vector exponential](https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/cpu/vec/vec512/vec512_float.h).

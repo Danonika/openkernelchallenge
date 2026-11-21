@@ -8,7 +8,7 @@ Research date: 2026-10-30. Official sources only in this pass. No execution, ins
 - First implement ordinary fp16 head matmul + independent Triton reductions, not a bespoke huge GEMM. Recomputed-head backward costs another head GEMM: measure total command, not just memory reduction.
 
 ## Source/version authority
-The [official notebook](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/templates/kaggle_notebook.ipynb) **explicitly pins**, not merely suggests: soup-cli 0.77.0, transformers 5.16.1, peft 0.20.0, trl 0.29.1, bitsandbytes 0.50.2, accelerate 1.14.0. Torch, Triton, datasets and pytest are not exact-version pinned there. Soup's [package requirements](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/pyproject.toml) are broader and do not override notebook pins.
+The [official notebook](https://example.invalid/redacted-github) **explicitly pins**, not merely suggests: soup-cli 0.77.0, transformers 5.16.1, peft 0.20.0, trl 0.29.1, bitsandbytes 0.50.2, accelerate 1.14.0. Torch, Triton, datasets and pytest are not exact-version pinned there. Soup's [package requirements](https://example.invalid/redacted-github) are broader and do not override notebook pins.
 
 Read actual run version metadata before promoting any implementation. Torch/Triton/compiler/CUDA build, model snapshot and actual autocast wrapper installation remain runtime facts. No claim of a fully locked environment.
 
@@ -18,7 +18,7 @@ Pinned primary sources:
 - **P** [PEFT preparation](https://github.com/huggingface/peft/blob/a5526d27a9d47d1e8264d5e1b1f96c0fdc79464e/src/peft/utils/other.py), [LoRA 4-bit forward](https://github.com/huggingface/peft/blob/a5526d27a9d47d1e8264d5e1b1f96c0fdc79464e/src/peft/tuners/lora/bnb.py). Commit 2026-07-28.
 - **B** [bitsandbytes Linear4bit](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py). Commit 2026-08-27.
 - **T** [TRL trainer](https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py), [entropy utility](https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py). Commit 2026-03-20.
-- **S** [Soup SFT](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/sft.py), [schema defaults](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/config/schema.py), [mixed precision](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/mixed_precision.py), [chunk protocol](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py), [rewind](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py). Commit 2026-10-26.
+- **S** [Soup SFT](https://example.invalid/redacted-github), [schema defaults](https://example.invalid/redacted-github), [mixed precision](https://example.invalid/redacted-github), [chunk protocol](https://example.invalid/redacted-github), [rewind](https://example.invalid/redacted-github). Commit 2026-10-26.
 - **C** [official model configuration](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/raw/main/config.json), read 2026-10-30; mutable main, record downloaded revision at runtime.
 
 ## Baseline dataflow and shapes
@@ -64,7 +64,7 @@ Stage 2: fuse residual addition into following norm only if both the rounded FP3
 Do not emit FP16 merely because next GEMM uses fp16: LoRA dropout executes before its A GEMM, and Linear4bit uses original input dtype for return. Also final/head and q/v consumers differ. Any later producer-consumer fusion needs a separate precision proof per call site.
 
 ## Validation fixtures and stopping gates
-[Soup official chunk tests](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/tests/test_stream_loss_chunk.py) provide *behavioral* fixture ideas (shift, denominator, ignore labels, rewind, no-grad, frozen head, cleanup), but their principal unit dtype coverage is FP32/BF16, not evidence of fp16 GradScaler correctness. Write original tests in solution/; don't edit supplied tests.
+[Soup official chunk tests](https://example.invalid/redacted-github) provide *behavioral* fixture ideas (shift, denominator, ignore labels, rewind, no-grad, frozen head, cleanup), but their principal unit dtype coverage is FP32/BF16, not evidence of fp16 GradScaler correctness. Write original tests in solution/; don't edit supplied tests.
 
 | Fixture | Required comparison |
 |---|---|

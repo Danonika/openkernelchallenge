@@ -11,14 +11,14 @@ Pinned task: Soup 0.77.0, Qwen2.5-1.5B-Instruct, NF4, LoRA r16 alpha32 on q/v pr
 - Soup's `src/soup_cli/trainer/sft.py` builds the SFT trainer, saves adapters, checks finite metrics. Version-guard all patch boundaries; avoid touching harness/task/tests.
 
 Upstream references:
-- https://github.com/MakazhanAlpamys/Soup/blob/main/src/soup_cli/trainer/rewind_hf.py
-- https://github.com/MakazhanAlpamys/Soup/blob/main/src/soup_cli/utils/stream_loss_chunk.py
-- https://github.com/MakazhanAlpamys/Soup/blob/main/src/soup_cli/trainer/sft.py
+- https://example.invalid/redacted-github
+- https://example.invalid/redacted-github
+- https://example.invalid/redacted-github
 
 ## Public competitors, independently screened
-- https://github.com/ainiddin/Soup-Kernel-Challenge — README reports fused independently-written SwiGLU, CE, RMSNorm; self-reported own-original-Triton 9.7%, memory 1.217x, speed approximately tied. Opportunity: prove actual original-kernel timing, not just loss parity.
-- https://github.com/FRIKT333/soup-kernel-challenge — README reports per-row/tiled stable CE, entropy/argmax simultaneously, original RMSNorm and full metrics; self-reported 1.21x speed /1.49x memory on *their* roughly 142.5-s baseline. These numbers are **not cross-run comparable** with our saved 71.85-s public T4 baseline.
-- https://github.com/Khasan-012/soup-kernel-work — architecture inventory explains FP32 tied embedding/head, Q/V LoRA dropout, TRL entropy and Rewind row loss; only an example and a chunked head are installed in its visible `apply()` snapshot.
+- https://example.invalid/redacted-github — README reports fused independently-written SwiGLU, CE, RMSNorm; self-reported own-original-Triton 9.7%, memory 1.217x, speed approximately tied. Opportunity: prove actual original-kernel timing, not just loss parity.
+- https://example.invalid/redacted-github — README reports per-row/tiled stable CE, entropy/argmax simultaneously, original RMSNorm and full metrics; self-reported 1.21x speed /1.49x memory on *their* roughly 142.5-s baseline. These numbers are **not cross-run comparable** with our saved 71.85-s public T4 baseline.
+- https://example.invalid/redacted-github — architecture inventory explains FP32 tied embedding/head, Q/V LoRA dropout, TRL entropy and Rewind row loss; only an example and a chunked head are installed in its visible `apply()` snapshot.
 
 **No competitor Triton source code has been copied into Hero1.** The independent original kernel `soup_mlp_residual_scatter` came from our previously measured 60.52-s fusion lineage, with the own-code q/o, frozen NF4 and exact saved-head paths from our 58.78-s branch.
 

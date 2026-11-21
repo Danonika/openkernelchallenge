@@ -30,7 +30,7 @@ Each queue request uses **Notebook URL in C, Notebook JSON empty in D, Ready wri
 
 ## The admission gap (critical)
 
-The pinned [`harness/check_rules.py`](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py) requires **all 10 checks**, including:
+The pinned [`harness/check_rules.py`](https://example.invalid/redacted-github) requires **all 10 checks**, including:
 - At least one original `@triton.jit` kernel running; originals consume **>=5%** of training time from step 3 onward (starter-derived kernels excluded).
 - Same task and Soup outputs (including adapter, tokens, rewind/metrics); close loss curve (first step <=1% relative; mean <=3% relative).
 - Correct eval loss (<=0.5% above base), at most +10% time/VRAM, clean one-T4 measurement, and the **79 regression tests**.
@@ -56,7 +56,7 @@ Official scoring weights are **35 speed / 30 memory / 20 correctness / 15 docume
 4. Extract the winning notebook's embedded 28-file `solution/` bundle into the platform-created repo, verify SHA/source contents and zero-argument `apply()`, then publish Kaggle notebook and SUBMISSION.md/video/presentation before deadline.
 5. Do not transplant external ready-made kernel libraries: challenge forbids them. Research such as sm75 attention or fused dequant is inspiration only, with original implementation and numerical parity required.
 
-Cross-reference source-only research: [Turing FA development benchmark](https://github.com/BhoumikPatidar/flash_attn_turing) and [NF4 standalone dequant experiments](https://github.com/Griffith-7/nf4-triton-kernel). They are not tests of this challenge.
+Cross-reference source-only research: [Turing FA development benchmark](https://example.invalid/redacted-github) and [NF4 standalone dequant experiments](https://example.invalid/redacted-github). They are not tests of this challenge.
 
 ## Later 2026-10-31 measured wave — verified GCP T4 queue, not jury admission
 

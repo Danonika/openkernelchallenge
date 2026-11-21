@@ -6,7 +6,7 @@
 
 Apply `Soup_Kernel_Candidate_Overlay.zip` to the official starter **inside the platform-created team repository**. The actual team repository URL and Kaggle notebook access were not supplied. No code has been pushed or submitted.
 
-Starter: [MakazhanAlpamys/soup-kernel-challenge](https://github.com/MakazhanAlpamys/soup-kernel-challenge), inspected at `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`. The overlay omits unchanged `harness/`, `task/`, `tests/`, `templates/`, `solution/swiglu.py`, `solution/test_kernels.py`, `LICENSE` and `NOTICE`. They must remain present from the starter. No compiled cache or binary is included.
+Starter: [archived-source/soup-kernel-challenge](https://example.invalid/redacted-github), inspected at `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb`. The overlay omits unchanged `harness/`, `task/`, `tests/`, `templates/`, `solution/swiglu.py`, `solution/test_kernels.py`, `LICENSE` and `NOTICE`. They must remain present from the starter. No compiled cache or binary is included.
 
 Current solution hash, using the official harness's `solution_sha256` after applying the overlay:
 

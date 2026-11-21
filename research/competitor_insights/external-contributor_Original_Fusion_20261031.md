@@ -29,6 +29,6 @@ Sheets worker's latest visible status heartbeat remains 2026-10-31 10:27 UTC. Do
 
 All notebooks preserve original 64-step solution-only harness and exports; physical CUDA Qwen2/PEFT/dropout checks run in separate processes **after** training, plus a postrun original-kernel-time gate. We must still establish full 79 Soup regressions, 5% original useful-kernel time, native exceptional numeric rows, paired time/memory and hidden quality. Starter SwiGLU is excluded from own-kernel credit.
 
-Sources: [external contributor](https://github.com/external-contributor/hackathon-decentrathon-6), [external contributor](https://github.com/external-contributor/soup-kernel-challenge), [official harness](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/main/harness/check_rules.py).
+Sources: [external contributor](https://example.invalid/redacted-github), [external contributor](https://example.invalid/redacted-github), [official harness](https://example.invalid/redacted-github).
 
 Full detailed report and executable CPU oracle tests are available as a downloadable research archive in the conversation.

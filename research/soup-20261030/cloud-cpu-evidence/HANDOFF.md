@@ -4,7 +4,7 @@ Cloud-only path: `/redacted/local/soup_cloud_env`. No user-PC execution, global 
 
 ## Scope
 
-Official upstream: https://github.com/MakazhanAlpamys/soup-kernel-challenge
+Official upstream: https://example.invalid/redacted-github
 Pinned source commit: `c7c2fcd15972ce8b898d8d3ff732ee192c817ceb` (detached HEAD).
 Source, solution, harness, task, tests and official notebook remain unchanged.
 

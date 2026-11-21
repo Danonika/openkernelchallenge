@@ -45,8 +45,8 @@ The pinned parameter floor is 624.750MiB packed decoder NF4 + 445.125MiB tied FP
 At 58.78s full train command, the observed training-loop portion was 41.07s (non-loop17.71s). If overhead stays fixed, <45s needs <27.29s training loop (about 33.6% faster). Setup improvements and training compute optimizations can both contribute, but any cost shifted outside measurement or hidden work is prohibited.
 
 ### Primary evidence and references
-- [Official competition correctness / kernel share](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/main/harness/check_rules.py).
-- [Official scoring and 5% tie threshold](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/main/harness/score.py).
+- [Official competition correctness / kernel share](https://example.invalid/redacted-github).
+- [Official scoring and 5% tie threshold](https://example.invalid/redacted-github).
 - [NVIDIA PTX SM75 FP16 MMA](https://docs.nvidia.com/cuda/archive/11.2.0/parallel-thread-execution/index.html).
 - [NVIDIA T4 PCIe3x16 / FP16 Tensor Core specs](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet.pdf).
 - [bitsandbytes public NF4 lookup representation](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/main/bitsandbytes/functional.py).

@@ -9,7 +9,7 @@ The 58.784 s / 9,325 MiB / eval 2.04966 full decoded-NF4-cache candidate is **no
 The Qwen2.5-1.5B-Instruct configuration has 28 layers / H=1536 / intermediate=8960 / Q heads12 / KV heads2. All seven transformer projection weights decode to about **2.4404 GiB FP16**, so a 3-GiB decoded-weight cache can hold the whole transformer. Estimated uncovered *weight capacity*, not measured kernel share: 1-GiB cache leaves ~59%, 512-MiB leaves ~80%. Restore **genuine training-consumed** Triton decoding: no dummy kernels, no skipped gradients, no changed batch/RNG.
 
 Sources:
-- [Official pinned jury checker](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py)
+- [Official pinned jury checker](https://example.invalid/redacted-github)
 - [Official Qwen2.5-1.5B-Instruct configuration](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/main/config.json)
 - [Original NF4 source used by all candidates](project-repository/blob/master/soup-kernel-challenge/queue_20261031_native_dab4c473.ipynb)
 

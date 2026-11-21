@@ -10,14 +10,14 @@
 
 ## Evidence pins
 All read on 2026-10-30. Dates below are commit dates, not measured-result dates.
-- **R** [official rules](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md), [actual banned list](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py), commit 2026-10-28.
-- **N** [nanochat optim.py](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py), [gpt.py](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py), [attention adapter](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py), commit 2026-07-03.
+- **R** [official rules](https://example.invalid/redacted-github), [actual banned list](https://example.invalid/redacted-github), commit 2026-10-28.
+- **N** [nanochat optim.py](https://example.invalid/redacted-github), [gpt.py](https://example.invalid/redacted-github), [attention adapter](https://example.invalid/redacted-github), commit 2026-07-03.
 - **T** [TRL 0.29.1 trainer](https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py), [entropy utility](https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py), commit 2026-03-20.
-- **S** [Soup v0.77.0 chunked-head/metric contract](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py), [rewind contract](https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py), commit 2026-10-26.
+- **S** [Soup v0.77.0 chunked-head/metric contract](https://example.invalid/redacted-github), [rewind contract](https://example.invalid/redacted-github), commit 2026-10-26.
 - **B** [bitsandbytes 0.50.2 nested dequantization](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py), commit 2026-08-27.
-- **C1** [same-challenge design README](https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md), commit 2026-10-30 08:53 UTC.
-- **C2** [same-challenge design README](https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md), commit 2026-10-30 09:08 UTC.
-- **D** [existing 104-idea catalog](https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json). All titles and mechanisms inspected for deduplication.
+- **C1** [same-challenge design README](https://example.invalid/redacted-github), commit 2026-10-30 08:53 UTC.
+- **C2** [same-challenge design README](https://example.invalid/redacted-github), commit 2026-10-30 09:08 UTC.
+- **D** [existing 104-idea catalog](https://example.invalid/redacted-github). All titles and mechanisms inspected for deduplication.
 
 ## New additions and rejected transfers
 All candidates below are **unmeasured on our Soup T4 run**. Allowed means the abstract method is expressly permitted; conditional means implementing it without violating semantics needs proof. Source projects' implementations must not be copied.

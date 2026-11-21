@@ -49,7 +49,7 @@ Speedup is baseline training seconds divided by solution training seconds. The s
 
 Storage and shared memory have separate limits from GPU memory, RAM and exported results. [NOTEBOOK_RUNNER.md](NOTEBOOK_RUNNER.md#storage-and-shared-memory) documents the v8 profile and how to verify activation. Its [storage capability probe](https://35-200-1-242.sslip.io/notebook-storage-probe.ipynb) is a diagnostic, not a training benchmark. The 80-second training cap remains unchanged.
 
-These are development checks on public data. Completion is not official admission; admission stays `UNKNOWN` and score stays `null`. The jury's [pinned official rules](https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#rules), hidden-data checks and original-kernel participation requirement still apply.
+These are development checks on public data. Completion is not official admission; admission stays `UNKNOWN` and score stays `null`. The jury's [pinned official rules](https://example.invalid/redacted-github), hidden-data checks and original-kernel participation requirement still apply.
 
 ## Source and verification
 

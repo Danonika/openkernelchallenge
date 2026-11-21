@@ -535,7 +535,7 @@
       "priority": "P2",
       "own_share_eligible": "conditional: useful own solution Triton in every run",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel.hpp#L543-L609; https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel_example.cu#L134-L144"
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github"
     },
     {
       "id": "gemm-08",
@@ -548,7 +548,7 @@
       "priority": "P2",
       "own_share_eligible": "conditional: useful own solution Triton in every run",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/config.hpp#L62-L67; https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/config.hpp#L111-L119; https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/qgemm_kernel_example.cu#L116-L118; https://github.com/HanGuo97/flute/blob/9eb83a12d56949bbe7fe9c836ba97a67bd1e3761/flute/csrc/tile_scheduler_utils.hpp"
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github"
     },
     {
       "id": "gemm-09",
@@ -759,7 +759,7 @@
       "source_urls": "https://github.com/meta-pytorch/KernelAgent/blob/e0647170da36ef9b059ac0bd3d60103aa4ed378b/examples/configs/beam_search_diverse.yaml"
     },
     {
-      "id": "L4-NEETHANWU-AUTORESEARCH-01",
+      "id": "L4-ARCHIVED-SOURCE-AUTORESEARCH-01",
       "title": "Use append-only results, immutable hashed configuration and resume reconstruction for durable experiments.",
       "mechanism": "Use append-only results, immutable hashed configuration and resume reconstruction for durable experiments.",
       "idea_transfer": "allowed method",
@@ -769,10 +769,10 @@
       "priority": "P1",
       "own_share_eligible": "no: research/setup/Inductor alone",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/SKILL.md"
+      "source_urls": "https://example.invalid/redacted-github"
     },
     {
-      "id": "L4-NEETHANWU-AUTORESEARCH-02",
+      "id": "L4-ARCHIVED-SOURCE-AUTORESEARCH-02",
       "title": "Separate hard correctness/resource gates from a primary optimization metric and log secondary signals.",
       "mechanism": "Separate hard correctness/resource gates from a primary optimization metric and log secondary signals.",
       "idea_transfer": "allowed method",
@@ -782,10 +782,10 @@
       "priority": "P1",
       "own_share_eligible": "no: research/setup/Inductor alone",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/references/scoring/gated_scorer.py"
+      "source_urls": "https://example.invalid/redacted-github"
     },
     {
-      "id": "L4-NEETHANWU-AUTORESEARCH-03",
+      "id": "L4-ARCHIVED-SOURCE-AUTORESEARCH-03",
       "title": "Maintain explicit hypotheses, dead ends and an ideas backlog across context resets.",
       "mechanism": "Maintain explicit hypotheses, dead ends and an ideas backlog across context resets.",
       "idea_transfer": "allowed method",
@@ -795,7 +795,7 @@
       "priority": "P1",
       "own_share_eligible": "no: research/setup/Inductor alone",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/neethanwu/autoresearch/blob/00e01aa029ddc21a7dea11316f2c909cd6bc6aca/README.md"
+      "source_urls": "https://example.invalid/redacted-github"
     },
     {
       "id": "L4-NVLABS-KDA-01",
@@ -1315,7 +1315,7 @@
       "priority": "P1",
       "own_share_eligible": "no: research/setup/Inductor alone",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/GPU_puzzlers.py; https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/lib.py"
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github"
     },
     {
       "id": "L6-14",
@@ -1328,7 +1328,7 @@
       "priority": "P1",
       "own_share_eligible": "no: research/setup/Inductor alone",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/GPU_puzzlers.py; https://github.com/srush/GPU-Puzzles/blob/b3c4b237d7f0dc6d82055b753c8ea6e0cbb845eb/lib.py"
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github"
     },
     {
       "id": "L6-15",
@@ -1367,7 +1367,7 @@
       "priority": "P0/P1",
       "own_share_eligible": "conditional: useful own solution Triton every run",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "New training-loss/rewind contract; generic online-softmax entries do not cover it."
     },
     {
@@ -1381,7 +1381,7 @@
       "priority": "P0/P1",
       "own_share_eligible": "conditional: useful own solution Triton every run",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "New multi-output training reduction; related only to attn-fi-state-merge / L6-04."
     },
     {
@@ -1395,7 +1395,7 @@
       "priority": "P1/P2",
       "own_share_eligible": "conditional: useful own solution Triton every run",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "Specializes generic gemm-07/gemm-10 and L1-CUTLASS-02 to double-quant NF4; do not label generic lookup as new."
     },
     {
@@ -1409,7 +1409,7 @@
       "priority": "P1/P2",
       "own_share_eligible": "conditional: useful own solution Triton every run",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "New frozen training-head lifetime specialization; related generic gemm-12 but not identical."
     },
     {
@@ -1423,7 +1423,7 @@
       "priority": "P1/P2",
       "own_share_eligible": "conditional: useful own solution Triton every run",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "New exact-representability guard; not generic mixed precision."
     },
     {
@@ -1437,7 +1437,7 @@
       "priority": "P1/P2",
       "own_share_eligible": "conditional: useful own solution Triton every run",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "New training-specific RNG-preserving compaction; L6-05 is only generic scan/compaction."
     },
     {
@@ -1451,7 +1451,7 @@
       "priority": "P1/P2",
       "own_share_eligible": "conditional: useful own solution Triton every run",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "New optimizer-specific application; overlaps L6-10 at generic fusion level."
     },
     {
@@ -1465,7 +1465,7 @@
       "priority": "P1/P2",
       "own_share_eligible": "no",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "Refinement of L1-CUDAPY-01 / L6-03, not an independent kernel claim."
     },
     {
@@ -1479,7 +1479,7 @@
       "priority": "hold/exclude",
       "own_share_eligible": "no",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "New explicit exclusion, not candidate."
     },
     {
@@ -1493,7 +1493,7 @@
       "priority": "hold/exclude",
       "own_share_eligible": "no",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "Related old architecture-specific attention ideas; reject direct reuse."
     },
     {
@@ -1507,7 +1507,7 @@
       "priority": "hold/exclude",
       "own_share_eligible": "no",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md; https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py; https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/flash_attention.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/stream_loss_chunk.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/aldikbobr/soup-kernel-challenge/blob/5840c5d99b54fe70f49373edf88442f3eb889041/README.md; https://github.com/Night011/soup-kernel-challenge-fork/blob/6a9a8e3cdcafa19eae0575e740e64718f82814c6/README.md; https://github.com/AgentSlop-Si/auto-research/blob/136bf180895653f6dc107049f3567313c74712e1/research/kernel-ideas-catalog-20261027/key-ideas.json",
+      "source_urls": "https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/sft_trainer.py; https://github.com/huggingface/trl/blob/617406a4e69551c115c145114497999618d24f3c/trl/trainer/utils.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://example.invalid/redacted-github; https://example.invalid/redacted-github; https://example.invalid/redacted-github",
       "dedup": "Not promoted."
     },
     {
@@ -1521,7 +1521,7 @@
       "priority": "P2",
       "own_share_eligible": "conditional; initialization/compile control alone does not count",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/bitsandbytes-foundation/bitsandbytes/commit/08a9956b939857ae2c4fbd56753960cc370fa7cf; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/kernels.cu; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/gemm_4bit.cu; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py; https://github.com/huggingface/peft/blob/a5526d27a9d47d1e8264d5e1b1f96c0fdc79464e/src/peft/tuners/lora/bnb.py; https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/utils/quant_menu.py; https://docs.nvidia.com/cuda/pdf/Turing_Tuning_Guide.pdf; https://github.com/bitsandbytes-foundation/bitsandbytes/releases/tag/0.50.0"
+      "source_urls": "https://github.com/bitsandbytes-foundation/bitsandbytes/commit/08a9956b939857ae2c4fbd56753960cc370fa7cf; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/functional.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/autograd/_functions.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/cuda/ops.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/default/ops.py; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/kernels.cu; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/csrc/gemm_4bit.cu; https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/nn/modules.py; https://github.com/huggingface/peft/blob/a5526d27a9d47d1e8264d5e1b1f96c0fdc79464e/src/peft/tuners/lora/bnb.py; https://example.invalid/redacted-github; https://docs.nvidia.com/cuda/pdf/Turing_Tuning_Guide.pdf; https://github.com/bitsandbytes-foundation/bitsandbytes/releases/tag/0.50.0"
     },
     {
       "id": "SOUP-COMP-001",
@@ -1534,7 +1534,7 @@
       "priority": "P2",
       "own_share_eligible": "conditional; initialization/compile control alone does not count",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/runtime/jit.py; https://triton-lang.org/main/python-api/generated/triton.jit.html; https://github.com/vllm-project/vllm/issues/52413; https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/language/core.py; https://triton-lang.org/main/python-api/generated/triton.language.range.html; https://github.com/triton-lang/triton/issues/12525; https://github.com/dh8116/triton-kernels/blob/c03502565dde5c1fcb664692f23f10898334b5d2/README.md; https://github.com/0sec-labs/noeris/blob/2c0d64c64771624076096972c5c32118177688b8/README.md; https://arxiv.org/abs/2606.22932; https://arxiv.org/abs/2609.37241; https://github.com/triton-lang/triton/issues/10140; https://arxiv.org/abs/2607.23089"
+      "source_urls": "https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/runtime/jit.py; https://triton-lang.org/main/python-api/generated/triton.jit.html; https://github.com/vllm-project/vllm/issues/52413; https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/language/core.py; https://triton-lang.org/main/python-api/generated/triton.language.range.html; https://github.com/triton-lang/triton/issues/12525; https://example.invalid/redacted-github; https://github.com/0sec-labs/noeris/blob/2c0d64c64771624076096972c5c32118177688b8/README.md; https://arxiv.org/abs/2606.22932; https://arxiv.org/abs/2609.37241; https://github.com/triton-lang/triton/issues/10140; https://arxiv.org/abs/2607.23089"
     },
     {
       "id": "SOUP-COMP-002",
@@ -1547,7 +1547,7 @@
       "priority": "P2",
       "own_share_eligible": "conditional; initialization/compile control alone does not count",
       "evidence": "source-inspired; unmeasured on Soup T4",
-      "source_urls": "https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/runtime/jit.py; https://triton-lang.org/main/python-api/generated/triton.jit.html; https://github.com/vllm-project/vllm/issues/52413; https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/language/core.py; https://triton-lang.org/main/python-api/generated/triton.language.range.html; https://github.com/triton-lang/triton/issues/12525; https://github.com/dh8116/triton-kernels/blob/c03502565dde5c1fcb664692f23f10898334b5d2/README.md; https://github.com/0sec-labs/noeris/blob/2c0d64c64771624076096972c5c32118177688b8/README.md; https://arxiv.org/abs/2606.22932; https://arxiv.org/abs/2609.37241; https://github.com/triton-lang/triton/issues/10140; https://arxiv.org/abs/2607.23089"
+      "source_urls": "https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/runtime/jit.py; https://triton-lang.org/main/python-api/generated/triton.jit.html; https://github.com/vllm-project/vllm/issues/52413; https://github.com/triton-lang/triton/blob/c01b6774b1865984607d89d89d3a10833de92037/python/triton/language/core.py; https://triton-lang.org/main/python-api/generated/triton.language.range.html; https://github.com/triton-lang/triton/issues/12525; https://example.invalid/redacted-github; https://github.com/0sec-labs/noeris/blob/2c0d64c64771624076096972c5c32118177688b8/README.md; https://arxiv.org/abs/2606.22932; https://arxiv.org/abs/2609.37241; https://github.com/triton-lang/triton/issues/10140; https://arxiv.org/abs/2607.23089"
     }
   ]
 }

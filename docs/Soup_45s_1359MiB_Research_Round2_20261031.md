@@ -72,7 +72,7 @@ The Google Sheets VM uses a **saved public baseline**; all numbers above are sin
 ## References
 
 - Live queue: https://example.invalid/redacted
-- Official Soup rules: https://github.com/MakazhanAlpamys/soup-kernel-challenge
+- Official Soup rules: https://example.invalid/redacted-github
 - Qwen 1.5B parameters: https://qwen.ai/blog?id=qwen2.5-llm
 - Qwen configuration: https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/main/config.json
 - NF4 codebook source: https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.50.2/bitsandbytes/functional.py

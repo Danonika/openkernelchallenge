@@ -359,19 +359,19 @@ Pending: the actual team checkout and T4 execution environment, full runtime ver
 - [S24] — modded-nanogpt README
 - [S25] — Fixed challenge rules and execution contract
 
-[S01]: https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/config/schema.py
-[S02]: https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/data/sft_format.py
-[S03]: https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/sft.py
+[S01]: https://example.invalid/redacted-github
+[S02]: https://example.invalid/redacted-github
+[S03]: https://example.invalid/redacted-github
 [S04]: https://github.com/huggingface/trl/blob/v0.29.1/trl/trainer/sft_trainer.py
-[S05]: https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/data/loss_mask.py
+[S05]: https://example.invalid/redacted-github
 [S06]: https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json
-[S07]: https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/task/prepare_data.py
+[S07]: https://example.invalid/redacted-github
 [S08]: https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/loss/loss_utils.py
 [S09]: https://docs.pytorch.org/docs/2.11/notes/amp_examples.html
 [S10]: https://docs.pytorch.org/docs/2.11/notes/extending.html
 [S11]: https://github.com/huggingface/accelerate/blob/v1.14.0/src/accelerate/utils/operations.py
 [S12]: https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/autocast_mode.cpp
-[S13]: https://github.com/MakazhanAlpamys/Soup/blob/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli/trainer/rewind_hf.py
+[S13]: https://example.invalid/redacted-github
 [S14]: https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/main/config.json
 [S15]: https://github.com/huggingface/peft/blob/v0.20.0/src/peft/tuners/lora/bnb.py
 [S16]: https://github.com/pytorch/pytorch/blob/v2.11.0/tools/autograd/derivatives.yaml
@@ -381,7 +381,7 @@ Pending: the actual team checkout and T4 execution environment, full runtime ver
 [S20]: https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/modeling_utils.py
 [S21]: https://github.com/pytorch/pytorch/blob/v2.11.0/aten/src/ATen/native/transformers/cuda/sdp_utils.cpp
 [S22]: https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/integrations/sdpa_attention.py
-[S23]: https://github.com/karpathy/nanochat/blob/master/README.md
-[S24]: https://github.com/KellerJordan/modded-nanogpt/blob/master/README.md
-[S25]: https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md
+[S23]: https://example.invalid/redacted-github
+[S24]: https://example.invalid/redacted-github
+[S25]: https://example.invalid/redacted-github
 

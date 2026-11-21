@@ -71,6 +71,6 @@ compare it with paired public and hidden jury runs.
   `solution/test_kernels.py` must remain untouched in the GPU VM.
 
 Repository references (ideas only):
-https://github.com/external-contributor/hackathon-decentrathon-6
-https://github.com/external-contributor/soup-kernel-challenge
-Original rules: https://github.com/MakazhanAlpamys/soup-kernel-challenge
+https://example.invalid/redacted-github
+https://example.invalid/redacted-github
+Original rules: https://example.invalid/redacted-github

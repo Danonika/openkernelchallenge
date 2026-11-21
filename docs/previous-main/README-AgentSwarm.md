@@ -1,6 +1,6 @@
 # Soup Kernel Challenge — Team Duo
 
-Official hackathon starter kit restored from [MakazhanAlpamys/soup-kernel-challenge](https://github.com/MakazhanAlpamys/soup-kernel-challenge).
+Official hackathon starter kit restored from [archived-source/soup-kernel-challenge](https://example.invalid/redacted-github).
 
 ## Submission status
 **NOT READY — original competition solution and Kaggle verification are outstanding.**

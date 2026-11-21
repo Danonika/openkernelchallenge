@@ -23,7 +23,7 @@ Status: primary-source research, exact Soup 0.77.0 wheel inspection, and CPU mat
 
 An n-gram is a short sequence of n tokens. A bigram uses two, and a trigram uses three. In the relevant learned-memory approach, those token sequences select trainable vectors that augment a Transformer.
 
-The likely direct reference is [nanochat PR #854](https://github.com/karpathy/nanochat/pull/854). It hashes bigrams/trigrams into a host-memory table and injects retrieved features into attention values. The author reports 91.74 minutes against a 99-minute reference on 8 H100s. The PR was open when checked; these are submitted results, not an independently verified Soup result. Its approximately 72 GiB table is omitted from the saved checkpoint, which therefore cannot run alone. [S1]
+The likely direct reference is [nanochat PR #854](https://example.invalid/redacted-github). It hashes bigrams/trigrams into a host-memory table and injects retrieved features into attention values. The author reports 91.74 minutes against a 99-minute reference on 8 H100s. The PR was open when checked; these are submitted results, not an independently verified Soup result. Its approximately 72 GiB table is omitted from the saved checkpoint, which therefore cannot run alone. [S1]
 
 This mechanism changes the learned model. It does not prove that an unchanged Qwen training step executes faster. The official Engram project also describes conditional memory as an augmentation of a model backbone. [S2]
 
@@ -35,7 +35,7 @@ Nanochat measures time to exceed a GPT-2 capability target. Its leaderboard docu
 
 Modded-nanogpt is a separate FineWeb loss speedrun. Its rules permit architecture and batch/sequence changes that Soup forbids. Its history includes both architectural changes such as bigram embeddings and systems changes such as kernel fusion. [S4]
 
-A port of the host n-gram idea, [modded-nanogpt PR #366](https://github.com/KellerJordan/modded-nanogpt/pull/366), explicitly compares 1,140 candidate steps against 1,285 baseline steps. That is a concrete example of a result involving fewer optimization steps. Soup fixes 64 steps. [S5, D0 §5]
+A port of the host n-gram idea, [modded-nanogpt PR #366](https://example.invalid/redacted-github), explicitly compares 1,140 candidate steps against 1,285 baseline steps. That is a concrete example of a result involving fewer optimization steps. Soup fixes 64 steps. [S5, D0 §5]
 
 ## 2. The rule boundary for our submission
 
@@ -561,26 +561,26 @@ CPU experiments used NumPy, seeded as described in §11. Their purpose was to ch
 All web sources below are primary repositories or official documentation, checked on 30 October 2026. Repository branches and open-PR status may change.
 
 - **D0 — Supplied challenge brief:** [Decentrathon 6.0: Soup Kernel Challenge](https://chatgpt.com/library?file_id=libfile_4b498c83e8088191b29adbaa7996dbda&account_id=personal). Uploaded filename: Decentrathon 6.0_ Soup Kernel Challenge(4).pdf. Russian pp.1–7; task §5 p.2; admission §7 p.3; restrictions §8 p.4; directions §9 pp.4–5; timing/scoring §11 pp.5–7.
-- **S1 — Nanochat n-gram submission:** https://github.com/karpathy/nanochat/pull/854
+- **S1 — Nanochat n-gram submission:** https://example.invalid/redacted-github
 - **S2 — Official Engram project:** https://github.com/deepseek-ai/Engram
-- **S3 — Nanochat leaderboard measurement:** https://github.com/karpathy/nanochat/blob/master/dev/LEADERBOARD.md
-- **S4 — Modded-nanogpt rules and record history:** https://github.com/KellerJordan/modded-nanogpt
-- **S5 — Port of host n-gram memory:** https://github.com/KellerJordan/modded-nanogpt/pull/366
-- **S6 — Fused cross-entropy source idea:** https://github.com/KellerJordan/modded-nanogpt/pull/199
-- **S7 — Current nanochat model source:** https://github.com/karpathy/nanochat/blob/master/nanochat/gpt.py
+- **S3 — Nanochat leaderboard measurement:** https://example.invalid/redacted-github
+- **S4 — Modded-nanogpt rules and record history:** https://example.invalid/redacted-github
+- **S5 — Port of host n-gram memory:** https://example.invalid/redacted-github
+- **S6 — Fused cross-entropy source idea:** https://example.invalid/redacted-github
+- **S7 — Current nanochat model source:** https://example.invalid/redacted-github
 - **S8 — Official Qwen2.5-1.5B-Instruct dimensions:** https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/main/config.json
-- **S9 — Linear and activation fusion source idea:** https://github.com/KellerJordan/modded-nanogpt/pull/197
+- **S9 — Linear and activation fusion source idea:** https://example.invalid/redacted-github
 - **S10 — Official Qwen2 architectural implementation:** https://github.com/huggingface/transformers/blob/v4.57.1/src/transformers/models/qwen2/modeling_qwen2.py
-- **S11 — Multiplication-order source idea:** https://github.com/KellerJordan/modded-nanogpt/pull/166
+- **S11 — Multiplication-order source idea:** https://example.invalid/redacted-github
 - **S12 — NVIDIA Turing tuning guide:** https://docs.nvidia.com/cuda/turing-tuning-guide/
 - **R1 — Exact Triton 3.6.0 matmul lowering source:** https://github.com/triton-lang/triton/blob/v3.6.0/lib/Dialect/TritonGPU/Transforms/AccelerateMatmul.cpp ; raw source: https://raw.githubusercontent.com/triton-lang/triton/v3.6.0/lib/Dialect/TritonGPU/Transforms/AccelerateMatmul.cpp
 - **R2 — Triton deprecation of older MMA lowering:** https://github.com/triton-lang/triton/pull/5066
 - **R3 — Closed restoration proposal:** https://github.com/triton-lang/triton/pull/9970
 - **R4 — PEFT four-bit LoRA implementation, upstream main as inspected:** https://github.com/huggingface/peft/blob/main/src/peft/tuners/lora/bnb.py
-- **R5 — Soup activation and shared-input discussions:** https://github.com/MakazhanAlpamys/Soup/issues/792 ; https://github.com/MakazhanAlpamys/Soup/issues/838
+- **R5 — Soup activation and shared-input discussions:** https://example.invalid/redacted-github ; https://example.invalid/redacted-github
 - **R6 — bitsandbytes fused four-bit GEMM dispatch discussion:** https://github.com/bitsandbytes-foundation/bitsandbytes/pull/1949
 - **R7 — bitsandbytes autograd implementation, upstream main as inspected:** https://github.com/bitsandbytes-foundation/bitsandbytes/blob/main/bitsandbytes/autograd/_functions.py
-- **R8 — Exact Soup 0.77.0 distribution and provenance:** https://pypi.org/project/soup-cli/0.77.0/ ; source at publishing commit: https://github.com/MakazhanAlpamys/Soup/tree/846888a045b31084452fa08a684a7a38c02f5f87/src/soup_cli ; functions inspected: `trainer/rewind_hf.py::row_losses`, `row_losses_from_token_losses`, and `trainer/sft.py::_assert_finite_training_state`.
-- **R9 — Nanochat optimizer implementation:** https://github.com/karpathy/nanochat/blob/master/nanochat/optim.py
+- **R8 — Exact Soup 0.77.0 distribution and provenance:** https://pypi.org/project/soup-cli/0.77.0/ ; source at publishing commit: https://example.invalid/redacted-github ; functions inspected: `trainer/rewind_hf.py::row_losses`, `row_losses_from_token_losses`, and `trainer/sft.py::_assert_finite_training_state`.
+- **R9 — Nanochat optimizer implementation:** https://example.invalid/redacted-github
 - **R10 — PyTorch 2.11 AdamW behavior:** https://docs.pytorch.org/docs/2.11/generated/torch.optim.AdamW.html
 
