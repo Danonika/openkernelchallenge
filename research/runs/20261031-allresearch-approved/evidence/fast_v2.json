@@ -1,0 +1,54 @@
+{
+  "candidate": "allresearch-r12-eager-fast-1g-v2",
+  "state": "completed",
+  "notebook_sha256": "14151cda0d325bf25a88a9b02cdf38186ce4b8e6614eaae251d7e27723e43359",
+  "output_sha256": "f4caed6cbf49ef861ce34fe0f025817f71b248d986b6ca86f4da7fa978aa9f7c",
+  "nested_training": [
+    {
+      "member": "results/result.json",
+      "complete": true,
+      "steps": 64,
+      "whole_command_s": 62.71,
+      "external_peak_mib": 7955,
+      "train_loop_s": 44.54,
+      "eval_loss": 2.04968,
+      "original_share_descriptive_percent": 15.041960637624447,
+      "starter_excluded": [
+        "example_swiglu_fwd_kernel",
+        "example_swiglu_bwd_kernel"
+      ],
+      "manual_originality_certification": "UNKNOWN"
+    }
+  ],
+  "incomplete_training": null,
+  "official_admission": "UNKNOWN",
+  "paired": false,
+  "target": {
+    "command_s_below": 45,
+    "peak_mib_below": 1359,
+    "achieved": false
+  },
+  "preflight": {
+    "candidate_cuda": {
+      "passed": 452,
+      "skipped": 55,
+      "failure": 0,
+      "error": 0
+    },
+    "required_gpu_groups_failed": [],
+    "status": "cuda_readiness_passed_official_training_not_run",
+    "official_regressions": {
+      "ok": true,
+      "counts": {
+        "passed": 79,
+        "skipped": 0,
+        "failure": 0,
+        "error": 0
+      },
+      "required_gpu_groups": [],
+      "skipped_tests": [],
+      "test_evidence": []
+    }
+  },
+  "screening_status": null
+}

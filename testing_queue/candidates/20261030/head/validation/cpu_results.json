@@ -1,0 +1,533 @@
+{
+  "scope": "CPU fixtures only; T4 UNTESTED",
+  "torch": "2.15.0+cpu",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "records": [
+    {
+      "name": "finite_integer_D",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "scalar_tensor_D",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "tensor(11)",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "large_incoming_scale",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "65536.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "full_vocab_short_T",
+      "status": "PASS",
+      "shape": [
+        4,
+        3,
+        151936
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "T512_small_vocab",
+      "status": "PASS",
+      "shape": [
+        4,
+        512,
+        19
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "all_ignored",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "T1_all_final_ignored",
+      "status": "PASS",
+      "shape": [
+        4,
+        1,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "ignored_final_nan",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "ignored_final_posinf",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "ignored_final_neginf",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "connected_zero_nan",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "0.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "incoming_inf",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "inf",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "incoming_nan",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "nan",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "zero_D",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "tensor(0)",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "negative_D",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "-11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "native_mean_fallback",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "None",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_fallback": 1
+        },
+        "reasons": {
+          "denominator_contract": 1
+        },
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "float_D_fallback",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "11.0",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_fallback": 1
+        },
+        "reasons": {
+          "denominator_contract": 1
+        },
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "fp32_fallback",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_fallback": 1
+        },
+        "reasons": {
+          "dtype_layout_or_device": 1
+        },
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "standard_output_controls",
+      "status": "PASS",
+      "shape": [
+        2,
+        3,
+        23
+      ],
+      "scale": "3.0",
+      "denominator": "11",
+      "finite_exact_nonfinite_classes_and_signed_zero": true,
+      "rng_unchanged": true,
+      "telemetry": {
+        "counts": {
+          "native_sum_forward_enter": 1,
+          "native_sum_forward_return": 1,
+          "native_sum_backward_enter": 1,
+          "native_sum_backward_return": 1
+        },
+        "reasons": {},
+        "original_triton_kernels": [],
+        "own_triton_share": 0.0
+      }
+    },
+    {
+      "name": "fallback_identity",
+      "status": "PASS",
+      "same_already_produced_logits_labels_extra_kwargs": true
+    },
+    {
+      "name": "invalid_labels",
+      "status": "PASS",
+      "native_error_types": [
+        "IndexError",
+        "IndexError"
+      ]
+    },
+    {
+      "name": "saved_storage_inventory",
+      "status": "PASS",
+      "inventory": {
+        "native": {
+          "unique_saved_bytes": 604,
+          "saved_metadata": [
+            {
+              "bytes": 552,
+              "dtype": "torch.float32"
+            },
+            {
+              "bytes": 48,
+              "dtype": "torch.int64"
+            },
+            {
+              "bytes": 4,
+              "dtype": "torch.float32"
+            }
+          ]
+        },
+        "candidate": {
+          "unique_saved_bytes": 324,
+          "saved_metadata": [
+            {
+              "bytes": 276,
+              "dtype": "torch.float16"
+            },
+            {
+              "bytes": 48,
+              "dtype": "torch.int64"
+            }
+          ]
+        }
+      },
+      "scope": "Retained graph state only, NOT allocator/process peak"
+    },
+    {
+      "name": "denominator_version_checks",
+      "status": "PASS",
+      "native_and_candidate_denominator_mutation_rejected": true
+    },
+    {
+      "name": "tiny_actual_qwen_cpu_integration",
+      "status": "PASS",
+      "tiny_real_qwen_forward_loss_gradient_output_mapping_rng_exact": true,
+      "one_head_forward_each": [
+        1,
+        2
+      ],
+      "eval_fallback_and_restore": true,
+      "scope": "CPU FP16 tiny Qwen only; no Accelerate/PEFT/NF4/TRL/Rewind or T4"
+    }
+  ],
+  "pass": 24,
+  "fail": 0,
+  "source_sha256": {
+    "solution/__init__.py": "a37ec810fecee820867439ddb5282c5b68c0822e371cb74ece8b8ec0f344c1db",
+    "solution/install.py": "a4de59c63316d10756e7bd0ee7499d2e8c7e6028b5a5fb954179670b1741f9f1",
+    "solution/native_head.py": "a292565b3286174cf474107206df3db492d9cddc8ee7047fbf228e2bd9a20442"
+  }
+}

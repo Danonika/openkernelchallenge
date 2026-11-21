@@ -1,0 +1,10 @@
+{
+  "status": "PASS_CPU_ONLY",
+  "nested_session_timeout_cleanup": true,
+  "normal_exit_orphan_cleanup": true,
+  "sigterm_descendant_cleanup": true,
+  "pidfd_signals": true,
+  "outer_timeout_retains_quarantine": true,
+  "existing_quarantine_refused": true,
+  "gpu_executed": false
+}

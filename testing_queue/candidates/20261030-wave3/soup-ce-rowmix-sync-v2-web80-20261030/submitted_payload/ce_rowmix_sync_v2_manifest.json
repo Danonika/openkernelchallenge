@@ -1,0 +1,11 @@
+{
+  "solution/__init__.py": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6",
+  "solution/adapter.py": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750",
+  "solution/materialized_ce.py": "0064ed0506c73efbbd750457147ff22c33b9926b60633e930063fd9c32ac727a",
+  "solution/mixed_rows.py": "f32a277c2d6d16c9ce9a731ef027a254785351ddea42160e4a77402dcb3f05b5",
+  "solution/numerical_gates.py": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990",
+  "solution/telemetry.py": "c60d73a2ee932990ae32a8d2619fadc935803fd621c913f2ca390065cc7d201d",
+  "solution/test_cpu_contract.py": "7df43cf9d3defcddfe93733af7680c749dcdd35578de287f0560ac3cdbcdc288",
+  "solution/verify_integration.py": "54cc216efeebab9d5c5b80204fbba5744880f3f7a4a36b439fa482d89bfa6772",
+  "solution/verify_rowmix.py": "10e9dbab399ddf63c08a8c394bd50cde914a86ca3ee5ed6db3aa0ee82934d916"
+}

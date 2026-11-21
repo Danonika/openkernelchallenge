@@ -1,0 +1,14 @@
+{
+  "notebook_sha256": "269b43b953b39a7ef093b3df60b122b731d0b6bad0867cf6844ab82bfdd6c333",
+  "source_zip_sha256": "02bb42c86563009b0e7ede9286a6b7edfcab43ae30c1682158ecaf14427c6ac9",
+  "source_pin": "523115d50c78f82f5256cc0aa9cba43732f8f6b92bef4831382a07c570c2b076",
+  "source_reference": "https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/models/qwen2/modeling_qwen2.py",
+  "complete_native_source_equals_previous_plus_one_decorator": true,
+  "changed_source_files": [
+    "solution/activation_offload.py"
+  ],
+  "candidate_math_and_thresholds_unchanged": true,
+  "payload_entries": 12,
+  "source_files": 36,
+  "status": "PREPARED_NOT_RUN"
+}

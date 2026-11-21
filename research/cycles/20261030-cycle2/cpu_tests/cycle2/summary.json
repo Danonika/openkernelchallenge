@@ -1,0 +1,79 @@
+{
+  "cycle": 2,
+  "generated_utc": "2026-10-30T11:23:49.726780+00:00",
+  "scope": "Cloud-only original bounded CPU numerical/semantic fixtures",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "threads": 2,
+    "interop_threads": 2
+  },
+  "script_sha256": "c99335ce9f4267aaeeb2383c24f239496f5b73da727e935085b60b1b2b32d813",
+  "summary": {
+    "passed": 6,
+    "failed": 0
+  },
+  "not_validated": [
+    "CUDA kernels or T4 timing",
+    "actual CUDA GradScaler/optimizer overflow skips",
+    "full model quality",
+    "actual integration or legal routing",
+    "GPU reduction/GEMM rounding",
+    "challenge gates or owned-kernel share"
+  ],
+  "outcomes": [
+    {
+      "name": "finite_centered_vocabulary_tile_merge",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "status": "PASS",
+      "decision": "Centered merge is CPU-supported for finite rounded logits, with explicit empty-tile handling and global-index ties; no bitwise/GPU/performance claim."
+    },
+    {
+      "name": "padding_empty_tile_and_global_argmax",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "status": "PASS",
+      "decision": "Reject unguarded empty-tile moment merges and traversal-order tie selection."
+    },
+    {
+      "name": "ignored_nonfinite_logits_and_nll_boundary",
+      "candidates": [
+        "SOUP-TRAIN-001"
+      ],
+      "status": "PASS",
+      "decision": "Unconditional scatter-zero changes baseline nonfinite propagation. Preserve finite-path opportunity but guard all actual rounded logits or use an exact reference fallback."
+    },
+    {
+      "name": "nonfinite_incoming_gradient_and_denominator",
+      "candidates": [
+        "SOUP-TRAIN-001",
+        "SOUP-NEW-002"
+      ],
+      "status": "PASS",
+      "decision": "Compaction with reference autograd preserves this finite-logit fixture; naive softmax-minus-onehot loses target-NaN parity for infinite effective upstream gradients. Guard or preserve reference operation order."
+    },
+    {
+      "name": "nonfinite_effective_head_weights",
+      "candidates": [
+        "SOUP-TRAIN-001"
+      ],
+      "status": "PASS",
+      "decision": "Zero dlogits @ nonfinite W is not zero. Validate effective FP16 head weights, not only FP32 source weights, before zero-row elision."
+    },
+    {
+      "name": "finite_operands_fp16_logit_overflow",
+      "candidates": [
+        "SOUP-TRAIN-001"
+      ],
+      "status": "PASS",
+      "decision": "Finite inputs/weights alone do not guard FP16 GEMM-output overflow. Check actual rounded logits already produced by metric forward, otherwise exact fallback."
+    }
+  ]
+}

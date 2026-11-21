@@ -1,0 +1,83 @@
+{
+  "candidate": "soup-ce-rowmix-v1-web80-20261030",
+  "no_model_data_or_credentials_included": true,
+  "notebook": "candidate.ipynb",
+  "notebook_sha256": "6990a2daff21e672198c57fed5b6b5b5a96c38f8db10faafcd903e017ed40fda",
+  "source_files": [
+    {
+      "path": "solution/__init__.py",
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    {
+      "path": "solution/adapter.py",
+      "sha256": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750"
+    },
+    {
+      "path": "solution/materialized_ce.py",
+      "sha256": "28ee8bfc7376867155fc776820ca82ed1b4dcc4d9e6ad9fcc85ca2689ef81d0e"
+    },
+    {
+      "path": "solution/mixed_rows.py",
+      "sha256": "e19f150314f8b53627c51902fdeadc5d515d46417803d9ab5d0abcfed8a4f031"
+    },
+    {
+      "path": "solution/numerical_gates.py",
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    {
+      "path": "solution/telemetry.py",
+      "sha256": "c60d73a2ee932990ae32a8d2619fadc935803fd621c913f2ca390065cc7d201d"
+    },
+    {
+      "path": "solution/test_cpu_contract.py",
+      "sha256": "7df43cf9d3defcddfe93733af7680c749dcdd35578de287f0560ac3cdbcdc288"
+    },
+    {
+      "path": "solution/verify_integration.py",
+      "sha256": "54cc216efeebab9d5c5b80204fbba5744880f3f7a4a36b439fa482d89bfa6772"
+    },
+    {
+      "path": "solution/verify_rowmix.py",
+      "sha256": "10e9dbab399ddf63c08a8c394bd50cde914a86ca3ee5ed6db3aa0ee82934d916"
+    }
+  ],
+  "validation_scope": "Copied historical validation sources for audit; not executed from this relocated export. Submitted notebook bytes are unchanged and self-contained.",
+  "validation_tests": [
+    {
+      "path": "validation_tests/test_process_guard.py",
+      "sha256": "9775742d759d8fefdaba9e67987ba6da4f34f9abb0e4db80f02b6865c798cc6f"
+    },
+    {
+      "path": "validation_tests/test_v2_reader.py",
+      "sha256": "db17bd5d9a0b015140ad57a497c86430b1160614a88bb61c62e697d3e9e91573"
+    },
+    {
+      "path": "validation_tests/test_web_packet.py",
+      "sha256": "2375963d77e1849c64b82e60535ac84c0706c155dc13e72a09d8d4fa1f02d2a1"
+    },
+    {
+      "path": "validation_tests/tests/test_rowmix_discriminators.py",
+      "sha256": "4ccee7880c7a900be3b8480996e75bffe00ec2b57e17718038c8861ffb50a8c1"
+    },
+    {
+      "path": "validation_tests/tests/cpu_target_preflight_fixture.py",
+      "sha256": "7e39e7510c092ddd82340ddc4c68bcf20e900fc951464d9b1c315b69ed6882e3"
+    },
+    {
+      "path": "validation_tests/tests/test_quiet_telemetry.py",
+      "sha256": "47a2da59c9bb7a8ea0bcf52d2a93ec3806f39a9b16cbd69294e76c6ccc68d751"
+    },
+    {
+      "path": "validation_tests/tests/offline_compile.py",
+      "sha256": "9458648d4595eb97ed550612e5c0a2415ccebe2eb3f3fe204857f9a63c687986"
+    },
+    {
+      "path": "validation_tests/tests/test_rowmix_dispatch.py",
+      "sha256": "a9fce99c1785e5d696054c9a0782e876a69efe6f006e575a69682ae07d583b11"
+    },
+    {
+      "path": "validation_tests/tests/test_lazy_flags.py",
+      "sha256": "a5872bdcf5492a7ebc86829dc5e333cb21d90978cf2ec457cda6cd38183b0fff"
+    }
+  ]
+}

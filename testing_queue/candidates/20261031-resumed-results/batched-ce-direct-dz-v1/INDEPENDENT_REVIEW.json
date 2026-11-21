@@ -1,0 +1,49 @@
+{
+  "reviewer": "resume3_gemm",
+  "review_count": 1,
+  "status": "CLEARED_FOR_HELD_BOUNDED_CANDIDATE_SCREEN_NOT_EXECUTION_AUTHORITY",
+  "review_scope": "Changed four-file CE scheduling/direct-dZ/native replay boundary; protected helpers and existing reviewed integration reused",
+  "source_zip_sha256": "7f9882870836adf2829da353997091f31ec21e9333534cf91ba5fa54f0040eaa",
+  "notebook_sha256": "23668968eb95204fde68a7a66c54dd81fb883457c868e6143999fcec9860aad6",
+  "manifest_sha256": "e5f1395952d0d5444b022431744f904905133dad807671321cf7a9e54d98edf1",
+  "changed_files": [
+    "solution/__init__.py",
+    "solution/ce_native_replay.py",
+    "solution/ce_tile.py",
+    "solution/token_chunk_head.py"
+  ],
+  "changed_source_hashes": {
+    "solution/__init__.py": "0ee1b5d8b4b0c7dd94fa5b6b57f049048517ed4e1ed34933ae769ff1e44f52a4",
+    "solution/ce_native_replay.py": "fd103dea98814294e4bd3191712f0e7183109ff8a835863c4d4b55c0f6ea949c",
+    "solution/ce_tile.py": "fda19cb3249ecd1f0f1a74b0fe6cee3422585e97b5ebc0674500ad5a0e0066c0",
+    "solution/token_chunk_head.py": "3716889bad025b9b00e0f6fb5906baba844a8297f2688c009e17a1565bc57dd1"
+  },
+  "independent_cpu_rerun_sha256": "5e59922a7c50801726654ffa4c56464832a0ebbae37987d43b8711354094902c",
+  "independent_cpu_rerun_checks": 12,
+  "concrete_source_blockers": [],
+  "verified": [
+    "Source ZIP exactly equals all31manifested candidate files; syntax parses; only stated4files changed from restored accepted source",
+    "Global native ordered NLL reduction, divisor and full-M native forward/dH GEMMs unchanged",
+    "One-group final half-dZ used directly; generic multi-group compatibility preserved; no raw-logit mutation introduced",
+    "Native exceptional/mixed replay consumes unchanged actual normalized upstream; no half-gradient premultiplication or subset loss summation",
+    "Each native CE helper invocation limited to128rows; row scatter preserves custom rows",
+    "Original numerical Triton source, frozen storage and fixed preflight policy are byte-identical",
+    "Independently reran all12bounded CPU checks, using immutable recovered original head for old path",
+    "Exact draft notebook bound; existing packaging receipt states all9protected payloads and executioncell unchanged"
+  ],
+  "limitations": [
+    "No CUDA/Triton execution or native HF/PEFT/bnb/TRL/Soup construction in this executor",
+    "Broader full-batch route classification changes which finite rows use custom metrics versus native metrics; existing numerical kernels are unchanged but this execution composition remains target-unverified",
+    "128rows per native CE call is a logical invocation ceiling, not a measured GPU peak or no-overlap guarantee",
+    "Full-vocabulary M2048 and runtime source-route counts await the bound native preflight and candidate screen",
+    "No speed, whole-task memory, own-share, quality or admission validation"
+  ],
+  "required_runtime_evidence": [
+    "Exact bound native exploratory preflight must pass every blocking structural/output/source/RNG/scaler/nonfinite check; unchanged allowlisted numeric failures retained as failures/warnings",
+    "Candidate-only64step solution command, cap80seconds; no appended full baseline",
+    "Profile requires64single-group forward/backward/direct-dZ calls and zero assembled-dZ calls; existing head/MLP/storage activation counts retained",
+    "Read nested training/evaluation completion and raw source-bound artifacts before any outcome claim"
+  ],
+  "original_private_review_sha256": "3d637ccbe9c12eac99e9cd9d896acc46a0bef26dbbc8c4ff70a652150f45930e",
+  "publication_note": "Selected review fields; exact original review retained privately. Review clearance is not execution/publication authority or target correctness."
+}

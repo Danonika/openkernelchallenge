@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "scope": "CPU_METADATA_AND_NATIVE_ADJOINT_ONLY",
+  "gpu_executed": false,
+  "triton_executed": false,
+  "score": null,
+  "admission": "UNKNOWN",
+  "torch": "2.15.0+cpu"
+}

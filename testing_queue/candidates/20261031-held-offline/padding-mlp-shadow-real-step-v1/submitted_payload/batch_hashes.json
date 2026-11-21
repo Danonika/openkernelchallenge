@@ -1,0 +1,50 @@
+{
+  "source": "Exact pinned native collator and pad AST definitions executed without unrelated TRL imports, no source transformation",
+  "rows": [
+    52,
+    96,
+    250,
+    93
+  ],
+  "batch": {
+    "input_ids": {
+      "shape": [
+        4,
+        375
+      ],
+      "dtype": "torch.int64",
+      "raw_bytes": 12000,
+      "raw_sha256": "a0685f75638f41c796b005467ddb91892477a92dad9f198e67d47e42188130d2"
+    },
+    "labels": {
+      "shape": [
+        4,
+        375
+      ],
+      "dtype": "torch.int64",
+      "raw_bytes": 12000,
+      "raw_sha256": "410e189ed307651fdc9229acfaa12afc1d07af7bdccfbd528253fbc51fde92f5"
+    },
+    "attention_mask": {
+      "shape": [
+        4,
+        375
+      ],
+      "dtype": "torch.int64",
+      "raw_bytes": 12000,
+      "raw_sha256": "223bc7309cbe484de8d5fcf045c123fce6326867bc451f21ffd7fcac1ef7237f"
+    }
+  },
+  "tokenizer_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "source_sha256": {
+    "/workspace/shared/soup_cycle/accuracy_no_shift_copy_control/trl_target/trl/trainer/utils.py": "e1a6acd42c169f731056bb02b14f0096008c6def977822f325c1a7bf1f645d1f",
+    "/workspace/shared/soup_cycle/accuracy_no_shift_copy_control/trl_target/trl/trainer/sft_trainer.py": "0c3a1a67e479a2b7037010844882b3170af3e8df856fe37ec1b9942e4e3c6544"
+  },
+  "live_tokens": 811,
+  "supervised_tokens": [
+    22,
+    327,
+    83,
+    172
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "solution/__init__.py": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41",
+  "solution/bias_gate_provenance.json": "2ab66935361271946f6b947ffe8360be6b2b8f8a093deda6d4b3cd4e9c81637a",
+  "solution/bias_stage_gate.py": "efbac4b8f37250eea9115e41707762fb03c9d83592b70bc64bf746ffc3d7bdc0",
+  "solution/fixtures.py": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50",
+  "solution/fused_guard.py": "ff783cb6167279ae62251d62903e621f2f8a2008813b1beefd09a94efad6317b",
+  "solution/fused_kernel.py": "3fc771917904a05d9d4a9adeff83f0794aa4f5d7da10f70826bfb874bf04c3cf",
+  "solution/guarded_forward.py": "a580813e15dfd9a6f850131d77f16e7130f1d4e610965b01e92c6a5cdc5eede6",
+  "solution/kernel.py": "259cdcef0b4cb155e4cc8e21ee44d54cb573df45fe80a8eaeacf30fcaf494a2f",
+  "solution/materialize.py": "1d425614cb2d381c9fec41b13094c8ef96e3e31dc060df220eb8b593ceda3a79",
+  "solution/module_preflight.py": "8d531d82e195042cecc71e623dcf9d329b39aac38419ffd87ca2a9e0c0743573",
+  "solution/native_source_manifest.json": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7",
+  "solution/nf4_format.py": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4",
+  "solution/operand_probe.py": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528",
+  "solution/parameter_bias.py": "e5ac4022012487632734392d382499919302f3438f232bdc58169f992f0cddc7",
+  "solution/reference_forward.py": "e3c300e875ae7133fdb4e58cbd886cff5826a548408a8dde3226861836d78c80",
+  "solution/reference_kernel.py": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8",
+  "solution/web_preflight.py": "5e44a0cce13e8613090198a954f8176f11167c44a1885e06db5eaec128db2118"
+}

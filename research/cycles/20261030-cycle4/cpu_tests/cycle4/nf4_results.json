@@ -1,0 +1,923 @@
+{
+  "cycle": 4,
+  "lane": "nf4",
+  "generated_utc": "2026-10-30T12:03:21.484564+00:00",
+  "torch": "2.15.0+cpu",
+  "bitsandbytes": "0.50.2",
+  "threads": [
+    2,
+    2
+  ],
+  "eager_policy": "1",
+  "nf4_format_source": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/08a9956b939857ae2c4fbd56753960cc370fa7cf/bitsandbytes/backends/utils.py#L15-L34",
+  "script_sha256": "805207075500efa445289a3b6a2fd080d6eaa27c57a4f394d4166f85d65577f9",
+  "summary": {
+    "passed": 3,
+    "failed": 1
+  },
+  "candidates": [
+    "SOUP-NEW-003",
+    "SOUP-NEW-007"
+  ],
+  "not_validated": [
+    "CUDA decode/quantizer/GEMM parity",
+    "real model QuantState",
+    "optional CPU GEMM path",
+    "frozen-scale cache invalidation",
+    "actual GPU FMA behavior",
+    "training/performance or graph points"
+  ],
+  "results": [
+    {
+      "name": "nf4_exhaustive_independent_metadata_and_cpu_decode",
+      "status": "PASS",
+      "details": {
+        "cases": [
+          {
+            "codebook": "actual_default_dynamic",
+            "dtype": "torch.float16",
+            "shape": [
+              3,
+              5483
+            ],
+            "scalar_vector_exact": true,
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 16449,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "codebook": "actual_default_dynamic",
+            "dtype": "torch.float32",
+            "shape": [
+              3,
+              5483
+            ],
+            "scalar_vector_exact": true,
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 16449,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "codebook": "declared_synthetic_cubic",
+            "dtype": "torch.float16",
+            "shape": [
+              3,
+              5483
+            ],
+            "scalar_vector_exact": true,
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 16449,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "codebook": "declared_synthetic_cubic",
+            "dtype": "torch.float32",
+            "shape": [
+              3,
+              5483
+            ],
+            "scalar_vector_exact": true,
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 16449,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "codebook": "actual_default_dynamic",
+            "dtype": "torch.float16",
+            "shape": [
+              128,
+              128
+            ],
+            "aligned_native_decode_eligible": true,
+            "scalar_vector_exact": true,
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 16384,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          }
+        ],
+        "all_16_nf4_by_all_256_scale_indices": true,
+        "largest_elements": 16449,
+        "flattened_boundaries": [
+          63,
+          64,
+          16383,
+          16384
+        ],
+        "odd_tail_spare_nibble_ignored": true,
+        "actual_default_table_sha256": "e732639a65f497b4ad684bb166a4467708255edd5207757de8b8f0c7e1fda89c",
+        "outer_code_field_not_nf4_selector": true,
+        "actual_cpu_parity_failures": 0,
+        "decision": "Independent decoders agree and exhaustive manually constructed QuantStates compare to installed CPU decode. Actual-table data and synthetic tables are distinguished; no CUDA or real-model state claim."
+      }
+    },
+    {
+      "name": "actual_nested_quantstate_and_public_layouts",
+      "status": "PASS",
+      "details": {
+        "actual_state_cases": [
+          {
+            "shape": [
+              2,
+              64
+            ],
+            "dtype": "torch.float16",
+            "actual_quantizer_returned_state": true,
+            "nested": true,
+            "state2_blocksize": 256,
+            "state2_dtype": "torch.float32",
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 128,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "shape": [
+              2,
+              64
+            ],
+            "dtype": "torch.float32",
+            "actual_quantizer_returned_state": true,
+            "nested": true,
+            "state2_blocksize": 256,
+            "state2_dtype": "torch.float32",
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 128,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "shape": [
+              3,
+              65
+            ],
+            "dtype": "torch.float16",
+            "actual_quantizer_returned_state": true,
+            "nested": true,
+            "state2_blocksize": 256,
+            "state2_dtype": "torch.float32",
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 195,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "shape": [
+              3,
+              65
+            ],
+            "dtype": "torch.float32",
+            "actual_quantizer_returned_state": true,
+            "nested": true,
+            "state2_blocksize": 256,
+            "state2_dtype": "torch.float32",
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 195,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "shape": [
+              3,
+              66
+            ],
+            "dtype": "torch.float16",
+            "actual_quantizer_returned_state": true,
+            "nested": true,
+            "state2_blocksize": 256,
+            "state2_dtype": "torch.float32",
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 198,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "shape": [
+              3,
+              66
+            ],
+            "dtype": "torch.float32",
+            "actual_quantizer_returned_state": true,
+            "nested": true,
+            "state2_blocksize": 256,
+            "state2_dtype": "torch.float32",
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 198,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          }
+        ],
+        "layout_cases": [
+          {
+            "layout": "canonical_column",
+            "packed_shape": [
+              8,
+              1
+            ],
+            "packed_dtype": "torch.uint8",
+            "output_shape": [
+              3,
+              5
+            ],
+            "output_stride": [
+              5,
+              1
+            ],
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 15,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "layout": "packed_row_bc",
+            "packed_shape": [
+              1,
+              8
+            ],
+            "packed_dtype": "torch.uint8",
+            "output_shape": [
+              5,
+              3
+            ],
+            "output_stride": [
+              1,
+              5
+            ],
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 15,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          },
+          {
+            "layout": "byte_reinterpreted_float_storage",
+            "packed_shape": [
+              2,
+              1
+            ],
+            "packed_dtype": "torch.float32",
+            "output_shape": [
+              3,
+              5
+            ],
+            "output_stride": [
+              5,
+              1
+            ],
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 15,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            }
+          }
+        ],
+        "single_byte_canonical_bc_ambiguity": {
+          "packed_shape": [
+            1,
+            1
+          ],
+          "state_shape": [
+            1,
+            2
+          ],
+          "actual_output_shape": [
+            2,
+            1
+          ]
+        },
+        "actual_cpu_parity_failures": 0,
+        "decision": "Tiny actual nested CPU quantizer states and public decode layouts are checked. Byte reinterpretation is not numeric casting; single-byte canonical storage also triggers the API transpose quirk."
+      }
+    },
+    {
+      "name": "forward_backward_dtype_and_inner_block_contracts",
+      "status": "PASS",
+      "details": {
+        "backward_state_half_then_grad_float_vs_illegal_direct_float": {
+          "different_elements": 10,
+          "total_elements": 10,
+          "max_abs": 7.721781730651855e-05,
+          "mismatch_indices": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        "forward_requested_float_vs_illegal_state_half": {
+          "different_elements": 6,
+          "total_elements": 6,
+          "max_abs": 9.548664093017578e-05,
+          "mismatch_indices": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "generic_inner_block64_cpu_parity": {
+          "different_elements": 0,
+          "total_elements": 195,
+          "max_abs": 0.0,
+          "mismatch_indices": []
+        },
+        "matmul_forward_inner_block256_requirement_not_executed": true,
+        "actual_cpu_parity_failures": 0,
+        "decision": "Forward requested dtype and backward QuantState-dtype-then-grad-dtype are distinct contracts. Generic dequant inner-block metadata is not MatMul4Bit forward eligibility; no optional CPU GEMM package installed."
+      }
+    },
+    {
+      "name": "actual_cpu_row_alignment_parity_probe",
+      "status": "FAIL",
+      "details": {
+        "cases": [
+          {
+            "shape": [
+              3,
+              64
+            ],
+            "all_nf4_codes_are_positive_one": true,
+            "blocksize": 64,
+            "scales": [
+              1.0,
+              2.0,
+              3.0
+            ],
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 192,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            },
+            "case_status": "PASS"
+          },
+          {
+            "shape": [
+              3,
+              65
+            ],
+            "all_nf4_codes_are_positive_one": true,
+            "blocksize": 64,
+            "scales": [
+              1.0,
+              2.0,
+              3.0,
+              4.0
+            ],
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 195,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            },
+            "case_status": "PASS"
+          },
+          {
+            "shape": [
+              3,
+              66
+            ],
+            "all_nf4_codes_are_positive_one": true,
+            "blocksize": 64,
+            "scales": [
+              1.0,
+              2.0,
+              3.0,
+              4.0
+            ],
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 198,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            },
+            "case_status": "PASS"
+          },
+          {
+            "shape": [
+              3,
+              80
+            ],
+            "all_nf4_codes_are_positive_one": true,
+            "blocksize": 64,
+            "scales": [
+              1.0,
+              2.0,
+              3.0,
+              4.0
+            ],
+            "actual_cpu_parity": {
+              "different_elements": 48,
+              "total_elements": 240,
+              "max_abs": 1.0,
+              "mismatch_indices": [
+                [
+                  1,
+                  48
+                ],
+                [
+                  1,
+                  49
+                ],
+                [
+                  1,
+                  50
+                ],
+                [
+                  1,
+                  51
+                ],
+                [
+                  1,
+                  52
+                ],
+                [
+                  1,
+                  53
+                ],
+                [
+                  1,
+                  54
+                ],
+                [
+                  1,
+                  55
+                ],
+                [
+                  1,
+                  56
+                ],
+                [
+                  1,
+                  57
+                ],
+                [
+                  1,
+                  58
+                ],
+                [
+                  1,
+                  59
+                ],
+                [
+                  1,
+                  60
+                ],
+                [
+                  1,
+                  61
+                ],
+                [
+                  1,
+                  62
+                ],
+                [
+                  1,
+                  63
+                ],
+                [
+                  2,
+                  32
+                ],
+                [
+                  2,
+                  33
+                ],
+                [
+                  2,
+                  34
+                ],
+                [
+                  2,
+                  35
+                ],
+                [
+                  2,
+                  36
+                ],
+                [
+                  2,
+                  37
+                ],
+                [
+                  2,
+                  38
+                ],
+                [
+                  2,
+                  39
+                ],
+                [
+                  2,
+                  40
+                ],
+                [
+                  2,
+                  41
+                ],
+                [
+                  2,
+                  42
+                ],
+                [
+                  2,
+                  43
+                ],
+                [
+                  2,
+                  44
+                ],
+                [
+                  2,
+                  45
+                ],
+                [
+                  2,
+                  46
+                ],
+                [
+                  2,
+                  47
+                ],
+                [
+                  2,
+                  48
+                ],
+                [
+                  2,
+                  49
+                ],
+                [
+                  2,
+                  50
+                ],
+                [
+                  2,
+                  51
+                ],
+                [
+                  2,
+                  52
+                ],
+                [
+                  2,
+                  53
+                ],
+                [
+                  2,
+                  54
+                ],
+                [
+                  2,
+                  55
+                ],
+                [
+                  2,
+                  56
+                ],
+                [
+                  2,
+                  57
+                ],
+                [
+                  2,
+                  58
+                ],
+                [
+                  2,
+                  59
+                ],
+                [
+                  2,
+                  60
+                ],
+                [
+                  2,
+                  61
+                ],
+                [
+                  2,
+                  62
+                ],
+                [
+                  2,
+                  63
+                ]
+              ]
+            },
+            "case_status": "FAIL"
+          },
+          {
+            "shape": [
+              1,
+              240
+            ],
+            "all_nf4_codes_are_positive_one": true,
+            "blocksize": 64,
+            "scales": [
+              1.0,
+              2.0,
+              3.0,
+              4.0
+            ],
+            "actual_cpu_parity": {
+              "different_elements": 0,
+              "total_elements": 240,
+              "max_abs": 0.0,
+              "mismatch_indices": []
+            },
+            "case_status": "PASS"
+          }
+        ],
+        "same_bytes_shape_only_contrast": {
+          "different_elements": 48,
+          "total_elements": 240,
+          "max_abs": 1.0,
+          "mismatch_indices": [
+            [
+              1,
+              48
+            ],
+            [
+              1,
+              49
+            ],
+            [
+              1,
+              50
+            ],
+            [
+              1,
+              51
+            ],
+            [
+              1,
+              52
+            ],
+            [
+              1,
+              53
+            ],
+            [
+              1,
+              54
+            ],
+            [
+              1,
+              55
+            ],
+            [
+              1,
+              56
+            ],
+            [
+              1,
+              57
+            ],
+            [
+              1,
+              58
+            ],
+            [
+              1,
+              59
+            ],
+            [
+              1,
+              60
+            ],
+            [
+              1,
+              61
+            ],
+            [
+              1,
+              62
+            ],
+            [
+              1,
+              63
+            ],
+            [
+              2,
+              32
+            ],
+            [
+              2,
+              33
+            ],
+            [
+              2,
+              34
+            ],
+            [
+              2,
+              35
+            ],
+            [
+              2,
+              36
+            ],
+            [
+              2,
+              37
+            ],
+            [
+              2,
+              38
+            ],
+            [
+              2,
+              39
+            ],
+            [
+              2,
+              40
+            ],
+            [
+              2,
+              41
+            ],
+            [
+              2,
+              42
+            ],
+            [
+              2,
+              43
+            ],
+            [
+              2,
+              44
+            ],
+            [
+              2,
+              45
+            ],
+            [
+              2,
+              46
+            ],
+            [
+              2,
+              47
+            ],
+            [
+              2,
+              48
+            ],
+            [
+              2,
+              49
+            ],
+            [
+              2,
+              50
+            ],
+            [
+              2,
+              51
+            ],
+            [
+              2,
+              52
+            ],
+            [
+              2,
+              53
+            ],
+            [
+              2,
+              54
+            ],
+            [
+              2,
+              55
+            ],
+            [
+              2,
+              56
+            ],
+            [
+              2,
+              57
+            ],
+            [
+              2,
+              58
+            ],
+            [
+              2,
+              59
+            ],
+            [
+              2,
+              60
+            ],
+            [
+              2,
+              61
+            ],
+            [
+              2,
+              62
+            ],
+            [
+              2,
+              63
+            ]
+          ]
+        },
+        "actual_cpu_parity_failures": 1,
+        "expected_cpu_alignment_hazard": "Pinned CPU AVX512 row scale indexing lacks dim1%blocksize guard; actual dispatch observed via public CPU operator only, no instruction-level profiling.",
+        "decision": "Retain any [3,80] parity failure as a CPU-backend oracle limitation. Do not redefine the flat-format oracle to match it, infer CUDA failure, or install/fix unrelated kernels."
+      }
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "artifact": "compact_mlp_frozen_storage_single_screen",
+  "status": "VERIFIED_SINGLE_SCREEN_COMPLETE",
+  "source_binding": {
+    "notebook_sha256": "f04b57461cb67bae2afd3038319a18098d0b56cfd1e548aaed65eb42df606adb",
+    "source_zip_sha256": "4fb83e4984c6ea230cc26f07563315c71667a68dc431ad2cdda89459e088a905",
+    "output_archive_sha256": "f54723a5fca819f030313d841ed3e4dcdda1c956c2b05261e9b1d558377acfd8",
+    "executed_notebook_sha256": "e097856a4453015613adeb24dd82687420d2c16870185301c2c6144100caf25c",
+    "private_result_review_sha256": "9d9aa1a6f0723fc8ce4280797f88c12fea2f7816f8fe8c16798006af9ee91c26",
+    "status": "EXACT_SOURCE_AND_COMPLETED_OUTPUT_BOUND"
+  },
+  "scope": "One completed candidate-only 64-step task plus public evaluation; no new baseline, paired comparison, or jury admission.",
+  "native_task": {
+    "only": "solution",
+    "repeats": 1,
+    "seed": 1,
+    "steps": 64,
+    "training_cap_seconds": 80
+  },
+  "measurement": {
+    "run": "solution_1",
+    "side": "solution",
+    "wall_s": 73.692,
+    "gpu_peak_mib": 6703,
+    "training_complete": true,
+    "partial": false,
+    "eval_loss": 2.04961
+  },
+  "public_evaluation": {
+    "exit_code": 0,
+    "mean_loss": 2.04961,
+    "rows": 256,
+    "skipped_rows": 0,
+    "tokens": 38109
+  },
+  "completion": {
+    "train_exit_code": 0,
+    "inner_exit_code": 0,
+    "global_step": 64,
+    "source_manifest_exact": true,
+    "source_file_count": 30,
+    "executed_cell_sources_unchanged": true,
+    "cleanup_confirmed": true
+  },
+  "original_kernel_timing": {
+    "eligible_kernel_ms": {
+      "soup_ce_exp_tile_max": 132.075,
+      "soup_ce_exp_row_max": 35.657,
+      "soup_ce_exp_tile_sum": 88.205,
+      "soup_ce_exp_selected": 5.027,
+      "soup_ce_metric_tiles": 104.859,
+      "soup_ce_metric_merge": 4.769,
+      "soup_nf4_dequantize": 2987.057,
+      "soup_rmsnorm_forward": 293.845,
+      "soup_rmsnorm_backward": 390.237,
+      "soup_ce_exp_backward": 22.045,
+      "soup_ce_mixed_backward": 136.476
+    },
+    "eligible_total_ms": 4200.2519999999995,
+    "timed_loop_s": 47.138,
+    "timed_steps": 62,
+    "percent": 8.91054351054351,
+    "excluded_starter_kernel_ms": {
+      "example_swiglu_fwd_kernel": 754.32,
+      "example_swiglu_bwd_kernel": 1102.187
+    },
+    "scope": "Descriptive source-classified single-screen timing; not official paired admission."
+  },
+  "final_route_records": {
+    "SOUP_COMPACT_MLP": [
+      {
+        "count": 1792,
+        "event": "owned_mlp_forward",
+        "native_fallback": 0,
+        "starter_original_credit": 0
+      }
+    ],
+    "SOUP_FROZEN_STORAGE": [
+      {
+        "count": 64,
+        "event": "owned_embedding_forward",
+        "head_fp16_calls": 0,
+        "head_native_operand_calls": 0,
+        "installed": 1,
+        "owners_intact": true,
+        "storage_original_credit": 0
+      }
+    ],
+    "SOUP_STREAMED_CE": [
+      {
+        "compact_mlp": true,
+        "count": 1,
+        "event": "installed",
+        "frozen_storage": true,
+        "nf4": true,
+        "rmsnorm": true,
+        "starter_original_credit": 0,
+        "status": "UNVALIDATED_FULL_M_COMPACT_MLP_FROZEN_STORAGE",
+        "storage_original_credit": 0
+      },
+      {
+        "count": 64,
+        "event": "owned_consumer_guard",
+        "reason": null
+      },
+      {
+        "count": 64,
+        "event": "backbone_once"
+      },
+      {
+        "count": 64,
+        "event": "summary_loss_completed"
+      },
+      {
+        "count": 64,
+        "event": "streaming_loss_return"
+      },
+      {
+        "count": 64,
+        "event": "consumer_complete",
+        "source_kind": "streaming"
+      }
+    ]
+  },
+  "preflight": {
+    "status": "STRUCTURAL_CHECKS_COMPLETE_NUMERICAL_RESULTS_RECORDED",
+    "error": null,
+    "engineering_numeric_failures": 4,
+    "failed_observations": [
+      {
+        "name": "update/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+        "classification": "finite_nominal_lora_parameter_update_numeric",
+        "passed": false,
+        "blocking": false,
+        "scale": 1.0,
+        "values": {
+          "max_abs": 0.00039778421341907233,
+          "reference_max_abs": 0.00019999986398033798,
+          "error_l2": 0.001194218939270712,
+          "reference_l2": 0.031351994387375605,
+          "relative_l2": 0.038090684902380045,
+          "violating_elements": 13,
+          "finite_elements": 24576
+        },
+        "original_tolerances": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+        }
+      },
+      {
+        "name": "update/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+        "classification": "finite_nominal_lora_parameter_update_numeric",
+        "passed": false,
+        "blocking": false,
+        "scale": 1.0,
+        "values": {
+          "max_abs": 2.0902371034026146e-06,
+          "reference_max_abs": 0.00019999999494757503,
+          "error_l2": 2.1091297795481544e-06,
+          "reference_l2": 0.012799894947633794,
+          "relative_l2": 0.00016477711638860374,
+          "violating_elements": 1,
+          "finite_elements": 4096
+        },
+        "original_tolerances": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+        }
+      },
+      {
+        "name": "update/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+        "classification": "finite_nominal_lora_parameter_update_numeric",
+        "passed": false,
+        "blocking": false,
+        "scale": 65536.0,
+        "values": {
+          "max_abs": 0.00039649287646170706,
+          "reference_max_abs": 0.00019999986398033798,
+          "error_l2": 0.0008837005179019023,
+          "reference_l2": 0.03135265460862112,
+          "relative_l2": 0.02818582760959925,
+          "violating_elements": 10,
+          "finite_elements": 24576
+        },
+        "original_tolerances": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+        }
+      },
+      {
+        "name": "update/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+        "classification": "finite_nominal_lora_parameter_update_numeric",
+        "passed": false,
+        "blocking": false,
+        "scale": 65536.0,
+        "values": {
+          "max_abs": 0.00039834296330809593,
+          "reference_max_abs": 0.00019999996584374458,
+          "error_l2": 0.00039834410896670504,
+          "reference_l2": 0.012799899455608325,
+          "relative_l2": 0.03112087796847256,
+          "violating_elements": 1,
+          "finite_elements": 4096
+        },
+        "original_tolerances": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+        }
+      }
+    ],
+    "note": "All four nominal-update failures remain passed:false with original thresholds; authorized finite allowlist makes them warning-only, not PASS."
+  },
+  "saved_public_reference_comparison": {
+    "baseline_source": "saved",
+    "paired": false,
+    "speedup": 0.9750305333152395,
+    "memory_saved_pct": 53.2729173928198,
+    "loss_delta_pct": -0.0034151672456239623,
+    "loss_limit": 2.0599283999999995,
+    "checks": {
+      "loss": "passed",
+      "time": "passed",
+      "memory": "passed",
+      "environment": "unchanged"
+    },
+    "comparison": "less_memory",
+    "new_baseline_executed": false,
+    "causal_or_official_paired_result": false
+  },
+  "decision": "KEEP_MEMORY_COMPONENT_RESEARCH_SPEED_NO_UNCHANGED_RERUN",
+  "score": null,
+  "admission": "UNKNOWN",
+  "paired_official_checks": "NOT_RUN"
+}

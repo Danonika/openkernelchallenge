@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scope": "CPU process lifecycle only",
+  "details": {
+    "separate_session_grandchild_tracked": true,
+    "interrupt_rejected": true,
+    "all_owned_children_terminal": true,
+    "pidfd_signals_used": true,
+    "block_marker_retained": true,
+    "gpu_execution": false,
+    "exit_code": -2
+  }
+}

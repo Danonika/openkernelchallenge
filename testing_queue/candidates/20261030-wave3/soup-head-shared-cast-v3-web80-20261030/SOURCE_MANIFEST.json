@@ -1,0 +1,109 @@
+{
+  "candidate": "soup-head-shared-cast-v3-web80-20261030",
+  "notebook_sha256": "e81b0ed314c2fc37e320a363a7dc2633d005462fa7d8c1d722ee9c5154caf3e4",
+  "embedded_payload_sha256": {
+    "evidence_reader.py": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "prepare_asset_manifest.py": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "web_runner.py": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c",
+    "candidate_profile.json": "c83850703498878970c254258a79b9d4818c6cdca3fe1617ada0b9cdb7282f81",
+    "head_shared_cast_v3.zip": "c46c381bdf7f4ecd40b65d1c6c6ef87f50494e58c9daf2628c920cb37e51eca9",
+    "head_shared_cast_v3_manifest.json": "626e6ba074316a5eb932fa99ddefa6f99b9328c3b84367ed1b61ebddf9f4e922",
+    "README.md": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d",
+    "runtime_api_reference.json": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+  },
+  "decoded_source_archives": [
+    {
+      "embedded_source_archive": "head_shared_cast_v3.zip",
+      "sha256": "c46c381bdf7f4ecd40b65d1c6c6ef87f50494e58c9daf2628c920cb37e51eca9",
+      "decoded_members": [
+        "solution/__init__.py",
+        "solution/install.py",
+        "solution/scoped_head.py",
+        "solution/telemetry.py",
+        "solution/web_preflight.py"
+      ],
+      "source_archive_bytes_exported_separately": false
+    }
+  ],
+  "exported_payload_files": {
+    "README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "candidate_profile.json": {
+      "bytes": 797,
+      "sha256": "c83850703498878970c254258a79b9d4818c6cdca3fe1617ada0b9cdb7282f81"
+    },
+    "evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "head_shared_cast_v3_manifest.json": {
+      "bytes": 481,
+      "sha256": "626e6ba074316a5eb932fa99ddefa6f99b9328c3b84367ed1b61ebddf9f4e922"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "solution/__init__.py": {
+      "bytes": 775,
+      "sha256": "5110ab39b0ae226d3f3c282f0a603715a4e2eb6d3ed882fd4126b2a3aa607ebc"
+    },
+    "solution/install.py": {
+      "bytes": 5293,
+      "sha256": "6b8b6e5f22cffd175e965c295528f8f32d6550004e98587bd1c90ac027c62fcc"
+    },
+    "solution/scoped_head.py": {
+      "bytes": 12867,
+      "sha256": "22ec74f59297840de667e0ff4efa7408f90c71f0cc562a29c99f4a1952e183ae"
+    },
+    "solution/telemetry.py": {
+      "bytes": 889,
+      "sha256": "816e50a874e20f5aff179ac4ce183b7d73153d118d9a91016146d44cfeb16839"
+    },
+    "solution/web_preflight.py": {
+      "bytes": 8117,
+      "sha256": "c5fd8a84b34baac23d4f38e134ea194aeeb429461a805884a1baa89e78444323"
+    },
+    "web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    }
+  },
+  "validation_tests": {
+    "test_packet.py": {
+      "bytes": 4884,
+      "sha256": "9c0950daec7b156512515dbae5a7398b1ca513ffd26de4e432d7e6972653a80b"
+    },
+    "tests/test_scoped_head.py": {
+      "bytes": 13803,
+      "sha256": "7afdc9bafe11435012034c442f974696cbd7ff7cb99b67f0fa9607674fd452f7"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

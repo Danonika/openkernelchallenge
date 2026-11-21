@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "compiled_at_utc": "2026-10-30T18:24Z",
+  "status": "HISTORICAL_SPECS_NOT_LIVE_REFRESH",
+  "live_inspection": {
+    "kernel_probe_executed": false,
+    "current_kernel_state": "UNKNOWN",
+    "new_session_started": false,
+    "workload_or_download_started": false,
+    "note": "Retained historical evidence only; no current live kernel probe established."
+  },
+  "hardware": {
+    "evidence_kind": "historical actual-session observation",
+    "observed_at_utc": "2026-10-30T16:40Z",
+    "gpu": {
+      "name": "Tesla T4",
+      "exposed_count": 2,
+      "task_used_count": 1,
+      "task_visible_devices": "0",
+      "vram_mib_per_gpu": 15360,
+      "compute_capability": [
+        7,
+        5
+      ],
+      "compute_capability_source": "actual T4 preflight"
+    },
+    "cpu": {
+      "model_names": [
+        "Intel(R) Xeon(R) CPU @ 2.00GHz"
+      ],
+      "os_logical_count": 4,
+      "affinity_logical_count": 4,
+      "reported_physical_core_count": 2,
+      "cgroup_cpu_max": "400000 100000",
+      "usable_cpu_quota": 4,
+      "model_sku_beyond_reported_name": null
+    },
+    "ram": {
+      "cgroup_limit_bytes": 32212254720,
+      "cgroup_limit_gib": 30,
+      "host_visible_total_bytes": 33658159104,
+      "host_visible_total_gib": 31.346603393554688
+    }
+  },
+  "software": {
+    "evidence_kind": "historical actual runs and GPU preflight",
+    "last_confirmed_at_utc": "2026-10-30T16:45Z",
+    "nvidia_driver_version": "580.178.04",
+    "nvidia_smi_advertised_cuda_max": null,
+    "nvidia_smi_cuda_cap_status": "not captured in retained artifacts; current live probe blocked",
+    "torch_compiled_cuda": "12.8",
+    "torch_git_version": "70d99e998b4955e0049d13a98d77ae1b14db1f45",
+    "nvcc_toolkit_version": null,
+    "python": "3.13.15",
+    "packages": {
+      "soup-cli": "0.77.0",
+      "torch": "2.11.0+cu128",
+      "triton": "3.6.0",
+      "transformers": "5.16.1",
+      "peft": "0.20.0",
+      "trl": "0.29.1",
+      "bitsandbytes": "0.50.2",
+      "accelerate": "1.14.0",
+      "datasets": "4.8.5"
+    },
+    "os_distribution": null,
+    "os_version": null,
+    "kernel_release": null,
+    "architecture": null,
+    "os_fields_status": "not captured in retained artifacts; do not guess Ubuntu/kernel version",
+    "pytest_version": null,
+    "full_pip_freeze": null,
+    "transitive_package_identity": "UNKNOWN; direct runtime pins only were captured"
+  },
+  "task_runtime": {
+    "official_starter_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+    "CUDA_VISIBLE_DEVICES": "0",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+    "source": "hash-bound benchmark runners and successful run metrics"
+  },
+  "cuda_distinction": {
+    "driver_report": "nvidia-smi CUDA Version is the latest CUDA version supported by the driver, not the installed Torch build version",
+    "observed_torch_build": "12.8, from torch.version.cuda; Torch wheel2.11.0+cu128",
+    "driver_cap_observed": false,
+    "reference": "https://docs.nvidia.com/deploy/nvidia-smi/"
+  },
+  "provenance": {
+    "historical_training_result_sha256": "404c5c3aa6b72949896fa08d8e0762b0537272b660d41bd79323f5fab147f6e1",
+    "historical_environment_sha256": "eba3700f73e4cace590d145cd65025b98bccd91a7b093dd15bef067d6aec6430",
+    "historical_hardware_sha256": "2d5849015e2949adafc1cf36879c01bb5dd166a001d556a712b5dcead6bb1e37",
+    "historical_gpu_preflight_sha256": "fcc41a4925a4ef830f86851a451e5796e29f3cb9893de46d06fe5f67b20a9676"
+  },
+  "portability_limits": [
+    "This is not a current live kernel probe.",
+    "OS/kernel/nvcc/nvidia-smi CUDA-cap fields are genuinely missing.",
+    "Matching package pins and T4 does not guarantee identical scheduling or benchmark timing.",
+    "Two GPUs were exposed but official measurements restricted CUDA to GPU0.",
+    "No paid provisioning, credentials or private account identifiers are included."
+  ]
+}

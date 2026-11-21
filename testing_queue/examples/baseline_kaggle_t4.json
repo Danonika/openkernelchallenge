@@ -1,0 +1,8 @@
+{
+  "baseline_id": "base_KAGGLE_T4",
+  "backend": "KAGGLE_T4",
+  "environment_fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "task_fingerprint": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "harness_commit": "cccccccccccccccccccccccccccccccccccccccc",
+  "evidence_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+}

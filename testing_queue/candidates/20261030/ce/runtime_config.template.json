@@ -1,0 +1,8 @@
+{
+  "execute_gpu": false,
+  "backend": "GCP",
+  "official_repo": "/prepared/soup-kernel-challenge",
+  "data_dir": "/prepared/public-data",
+  "hf_hub_cache": "/prepared/hf_hub",
+  "work_root": "/output/ce-v3-research"
+}

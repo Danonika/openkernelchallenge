@@ -1,0 +1,7 @@
+{
+  "notebook": "Soup_OneBit_First_Batch_Probe.ipynb",
+  "notebook_sha256": "be65afaf484dda86d3b1e2cfcd6a2775914ee3677fdacb9f6f2efbe718d81816",
+  "source_sha256": "092c4c782b66c672cb121c8822c8dc1e9425c65333e2de4384bc37e035820ffc",
+  "scope": "FIRST_BATCH_FORWARD_DIAGNOSTIC_NOT_BENCHMARK",
+  "status": "PREPARED_NOT_RUN"
+}

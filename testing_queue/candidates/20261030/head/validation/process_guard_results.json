@@ -1,0 +1,119 @@
+{
+  "scope": "CPU sleeping children only; no GPU or canonical marker touched",
+  "passed": 7,
+  "failed": 0,
+  "records": [
+    {
+      "name": "nested_session_timeout",
+      "pass": true,
+      "guardian_receipt": {
+        "exit_code": 124,
+        "root_exit_code": -9,
+        "timed_out": true,
+        "interrupted": false,
+        "cleanup_confirmed": true,
+        "reason": "outer_timeout",
+        "guardian_pid": 7,
+        "outer_wall_s": 0.6047372190005262
+      },
+      "nested_session_child_gone": true,
+      "quarantine_preserved": true,
+      "lock_available_after_cleanup": true,
+      "parent_exit": 0
+    },
+    {
+      "name": "parent_SIGINT",
+      "pass": true,
+      "guardian_receipt": {
+        "exit_code": 130,
+        "root_exit_code": -9,
+        "timed_out": false,
+        "interrupted": true,
+        "cleanup_confirmed": true,
+        "reason": "parent_liveness_pipe_closed",
+        "guardian_pid": 12,
+        "outer_wall_s": 0.04057632700278191
+      },
+      "nested_session_child_gone": true,
+      "quarantine_preserved": true,
+      "lock_available_after_cleanup": true,
+      "parent_exit": 0
+    },
+    {
+      "name": "parent_SIGTERM",
+      "pass": true,
+      "guardian_receipt": {
+        "exit_code": 130,
+        "root_exit_code": -9,
+        "timed_out": false,
+        "interrupted": true,
+        "cleanup_confirmed": true,
+        "reason": "parent_liveness_pipe_closed",
+        "guardian_pid": 17,
+        "outer_wall_s": 0.06636457900458481
+      },
+      "nested_session_child_gone": true,
+      "quarantine_preserved": true,
+      "lock_available_after_cleanup": true,
+      "parent_exit": 0
+    },
+    {
+      "name": "parent_BaseException",
+      "pass": true,
+      "guardian_receipt": {
+        "exit_code": 130,
+        "root_exit_code": -9,
+        "timed_out": false,
+        "interrupted": true,
+        "cleanup_confirmed": true,
+        "reason": "parent_liveness_pipe_closed",
+        "guardian_pid": 22,
+        "outer_wall_s": 0.06591497800400248
+      },
+      "nested_session_child_gone": true,
+      "quarantine_preserved": true,
+      "lock_available_after_cleanup": true,
+      "parent_exit": 0
+    },
+    {
+      "name": "abrupt_parent_SIGKILL",
+      "pass": true,
+      "guardian_receipt": {
+        "exit_code": 130,
+        "root_exit_code": -9,
+        "timed_out": false,
+        "interrupted": true,
+        "cleanup_confirmed": true,
+        "reason": "parent_liveness_pipe_closed",
+        "guardian_pid": 27,
+        "outer_wall_s": 0.07057255100517068
+      },
+      "nested_session_child_gone": true,
+      "quarantine_preserved": true,
+      "lock_available_after_cleanup": true,
+      "parent_exit": -9
+    },
+    {
+      "name": "root_exit_orphan_reparenting",
+      "pass": true,
+      "guardian_receipt": {
+        "exit_code": 125,
+        "root_exit_code": 0,
+        "timed_out": false,
+        "interrupted": false,
+        "cleanup_confirmed": true,
+        "reason": "root_exited_with_owned_descendants",
+        "guardian_pid": 32,
+        "outer_wall_s": 0.3041473280027276
+      },
+      "nested_session_child_gone": true,
+      "quarantine_preserved": true,
+      "lock_available_after_cleanup": true,
+      "parent_exit": 0
+    },
+    {
+      "name": "normal_completion_no_quarantine",
+      "pass": true
+    }
+  ]
+}

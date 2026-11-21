@@ -1,0 +1,25 @@
+{
+  "candidate": "soup-fusion-a-web80-20261030",
+  "complete_measurements": null,
+  "individual_command_observations_not_paired": [],
+  "limits": [
+    "API state is not task correctness.",
+    "Internal 64 steps do not override a full-command timeout.",
+    "No ratio is formed from an incomplete cohort or another job.",
+    "Do not rerun unchanged failures automatically."
+  ],
+  "notebook_sha256": "266e9289ed14bb477363f5678cf96adc96c7c617d8c1ab78cde038390e12afcc",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "2f6bc30404a5df53005eefe7e112f316f74c26c06a907d228c9363e37dd57794",
+  "paired_ratios": null,
+  "platform": "GCP development evidence, not Kaggle",
+  "preflight_statuses": [
+    "failed"
+  ],
+  "public_eval_verified": false,
+  "raw_receipt_filename": "fusion_a_attempt01_receipt_v3.json",
+  "raw_receipt_sha256": "fd5d723b48745bb8a281b96c42f5180f1865b4dd05022e07721cfe43a38aab29",
+  "raw_review_status": "INCOMPLETE_CENSORED_OR_UNBOUND",
+  "score": null,
+  "training_limit": null
+}

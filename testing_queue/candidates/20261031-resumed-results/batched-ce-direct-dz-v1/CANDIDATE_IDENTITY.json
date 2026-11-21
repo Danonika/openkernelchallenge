@@ -1,0 +1,11 @@
+{
+  "mode": "full_m_batched_ce_storage_single_v1",
+  "notebook_sha256": "23668968eb95204fde68a7a66c54dd81fb883457c868e6143999fcec9860aad6",
+  "source_zip_sha256": "7f9882870836adf2829da353997091f31ec21e9333534cf91ba5fa54f0040eaa",
+  "source_manifest_sha256": "e5f1395952d0d5444b022431744f904905133dad807671321cf7a9e54d98edf1",
+  "source_files": 31,
+  "review_sha256": "3d637ccbe9c12eac99e9cd9d896acc46a0bef26dbbc8c4ff70a652150f45930e",
+  "cpu_evidence_sha256": "5e59922a7c50801726654ffa4c56464832a0ebbae37987d43b8711354094902c",
+  "scope": "Exact frozen source notebook and expanded payload, including reviewed pinned runtime/reference specifications; no executed notebook, raw logs, authenticated job/status/environment dumps or weights.",
+  "publication_status": "PROPOSED_REQUIRES_NEW_EXACT_PAYLOAD_APPROVAL"
+}

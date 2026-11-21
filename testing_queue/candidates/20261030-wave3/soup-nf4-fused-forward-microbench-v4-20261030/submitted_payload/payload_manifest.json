@@ -1,0 +1,22 @@
+{
+  "solution/__init__.py": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41",
+  "solution/bias_gate_provenance.json": "2ab66935361271946f6b947ffe8360be6b2b8f8a093deda6d4b3cd4e9c81637a",
+  "solution/bias_stage_gate.py": "efbac4b8f37250eea9115e41707762fb03c9d83592b70bc64bf746ffc3d7bdc0",
+  "solution/fixtures.py": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50",
+  "solution/guarded_forward.py": "d52db811ea255cc2a4577ba7355546fe73797a9179e6fb70c427939c7c039aae",
+  "solution/kernel.py": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8",
+  "solution/module_preflight.py": "8d531d82e195042cecc71e623dcf9d329b39aac38419ffd87ca2a9e0c0743573",
+  "solution/native_source_manifest.json": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7",
+  "solution/nf4_format.py": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4",
+  "solution/operand_probe.py": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528",
+  "solution/parameter_bias.py": "e5ac4022012487632734392d382499919302f3438f232bdc58169f992f0cddc7",
+  "solution/web_preflight.py": "a2928ca2d69d65e7d5749d1a33b9a18d3bb961ddc040d1ea6098883c8b78d7a5",
+  "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+  "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+  "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+  "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+  "reviewed_support.py": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c",
+  "worker.py": "c27b164216f6ceb71d0145faf965a72879768e39c8afc3e0dd6f12d62bee1ba7",
+  "driver.py": "a26549a9d265184ff096e09dc97c37407435f2b800c41759ddc1f5c10ec32ddb",
+  "source_manifest.json": "fb0cde8fd858ec426dab4bb4f5d2a504a81b588b5efe1582099d1346996cc001"
+}

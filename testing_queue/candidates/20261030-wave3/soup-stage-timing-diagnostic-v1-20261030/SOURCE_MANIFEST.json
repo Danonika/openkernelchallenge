@@ -1,0 +1,99 @@
+{
+  "candidate": "soup-stage-timing-diagnostic-v1-20261030",
+  "notebook_sha256": "b710f8d72b309d71812ce716db8f7cbb7c132b120fcc60c091e1e63ffceb7bad",
+  "embedded_payload_sha256": {
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "prepare_asset_manifest.py": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+    "evidence_reader.py": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c",
+    "reviewed_support.py": "cc06088f35a870b4912b9a78c8938ff330c833ecd63b04816c50ee2b6e54d01c",
+    "driver.py": "18a112f341220532cdfd040107713e6f9a4f16954e4ddf88a5824adad12a3eea",
+    "stage_timing_diagnostic.zip": "71e17eeb3dd2ea6b064ac8d73b3773a6e42aa912dcae7b6b9fe98c6922cc22df",
+    "source_manifest.json": "82de71c57f4661a7cafe9a2fadd717c8f122980ca2558abc5cfb846ff027967d",
+    "candidate_registry.json": "08e520a1303fa12d52d9dbc0a9659f8dfd3839557c889d9c18e87b812002ca14",
+    "payload_manifest.json": "403017d6bb8d1bb1ca5d215ca46691813fd9c700e7208b18b5e8b49b710834a5"
+  },
+  "decoded_source_archives": [
+    {
+      "embedded_source_archive": "stage_timing_diagnostic.zip",
+      "sha256": "71e17eeb3dd2ea6b064ac8d73b3773a6e42aa912dcae7b6b9fe98c6922cc22df",
+      "decoded_members": [
+        "solution/__init__.py",
+        "solution/preflight.py",
+        "solution/stage_probe.py"
+      ],
+      "source_archive_bytes_exported_separately": false
+    }
+  ],
+  "exported_payload_files": {
+    "candidate_registry.json": {
+      "bytes": 124,
+      "sha256": "08e520a1303fa12d52d9dbc0a9659f8dfd3839557c889d9c18e87b812002ca14"
+    },
+    "driver.py": {
+      "bytes": 8548,
+      "sha256": "18a112f341220532cdfd040107713e6f9a4f16954e4ddf88a5824adad12a3eea"
+    },
+    "evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "payload_manifest.json": {
+      "bytes": 1033,
+      "sha256": "403017d6bb8d1bb1ca5d215ca46691813fd9c700e7208b18b5e8b49b710834a5"
+    },
+    "prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "reviewed_support.py": {
+      "bytes": 17265,
+      "sha256": "cc06088f35a870b4912b9a78c8938ff330c833ecd63b04816c50ee2b6e54d01c"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "solution/__init__.py": {
+      "bytes": 156,
+      "sha256": "f1fe3c41752b20873ae3ef60a600843eb87a09141e2dd3d2826b8cd4eeb58ff3"
+    },
+    "solution/preflight.py": {
+      "bytes": 1520,
+      "sha256": "4dd8ee83ac8018407bf4af44db54cbda48c87c8948e8c0c65e231ab1fd051194"
+    },
+    "solution/stage_probe.py": {
+      "bytes": 3128,
+      "sha256": "ef48831500908c4620d8ca8b93e2f416b009f9c7c05df0fccfcf5e9bb786398c"
+    },
+    "source_manifest.json": {
+      "bytes": 289,
+      "sha256": "82de71c57f4661a7cafe9a2fadd717c8f122980ca2558abc5cfb846ff027967d"
+    }
+  },
+  "validation_tests": {
+    "tests/test_packet.py": {
+      "bytes": 4195,
+      "sha256": "8443ab77c3346f4b74d397600b2b84b6f8168b2ef4d54cf83f4435fa26ea0bb2"
+    },
+    "tests/test_stage_probe.py": {
+      "bytes": 2920,
+      "sha256": "61966a5b4db659d2df53b434f7375d8ddf2b92d843b1e734d5d34a3af90baffd"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

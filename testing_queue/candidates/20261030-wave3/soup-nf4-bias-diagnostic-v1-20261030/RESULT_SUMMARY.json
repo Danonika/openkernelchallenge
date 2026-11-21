@@ -1,0 +1,32 @@
+{
+  "candidate": "soup-nf4-bias-diagnostic-v1-20261030",
+  "family": "NF4 MMA/diagnostics",
+  "status": "DIAGNOSTIC_ASSUMPTION_CORRECTED",
+  "conclusion": "Native/F.linear1.0 versus candidate1.0009765625: exact mismatch retained; predeclared native engineering tolerance passes. Plain-Tensor diagnostic only, not actual-module/timing/full-task validation.",
+  "notebook_sha256": "fc88a1a2ec80ab8c48b9336ac22522195a30a1984900d519fdcee9496a4b37c3",
+  "raw_output_archive_sha256": "5f0e6821754f89a292fc136d3df38404b1ce9777231298bee3c046507b4a51f3",
+  "source_bound_receipt_bindings": [
+    {
+      "receipt": "nf4_bias_diagnostic_attempt01_sourcebound_receipt_v2.json",
+      "sha256": "7dc29d0921ec39a53ac7582f32473c948f6b280fb4a38c08ccfd6fe1074b4b65",
+      "status": "COMPLETE_SOURCE_BOUND_DIAGNOSTIC_ONLY",
+      "raw_output_archive_sha256": "5f0e6821754f89a292fc136d3df38404b1ce9777231298bee3c046507b4a51f3",
+      "receipt_exported": false
+    }
+  ],
+  "official_score": null,
+  "admission": "UNKNOWN",
+  "full_task_success_claim": false,
+  "cap_seconds": 80,
+  "scope_limits": [
+    "Components are not full-model measurements.",
+    "Incomplete or diagnostic commands are not validated pairs.",
+    "Source availability and local tests do not imply Kaggle admission.",
+    "Prior failures remain tied to exact tested versions, not whole idea families."
+  ],
+  "export_exclusions": [
+    "No API identity/status blobs.",
+    "No raw output archive or private Sheet snapshot.",
+    "No credentials,model/cache files,or separately supplied native-dab4 package."
+  ]
+}

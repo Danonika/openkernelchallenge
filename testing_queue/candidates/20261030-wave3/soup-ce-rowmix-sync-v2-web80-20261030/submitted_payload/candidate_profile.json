@@ -1,0 +1,29 @@
+{
+  "ce_rowmix_sync_v2": {
+    "mode": "ce_rowmix_sync_v2",
+    "title": "Guarded row-mixed CE: consolidated classification host read",
+    "preflight": "solution.verify_integration",
+    "preflight_status": "passed_gpu_integration_preflight",
+    "kernels": [
+      "soup_ce_exp_tile_max",
+      "soup_ce_exp_row_max",
+      "soup_ce_exp_tile_sum",
+      "soup_ce_exp_selected",
+      "soup_ce_mixed_backward"
+    ],
+    "routes": [
+      {
+        "prefix": "SOUP_CE_V3_EVENT ",
+        "event": "triton_forward",
+        "positive_field": "own_forward_routes"
+      },
+      {
+        "prefix": "SOUP_CE_V3_EVENT ",
+        "event": "triton_backward",
+        "positive_field": "own_backward_enqueues"
+      }
+    ],
+    "requires_original_kernels": true,
+    "zip_sha256": "1b73887295373b95d29da626f539ffe3289432763fadf2f7469dc01f21927509"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "solution/__init__.py": "5885b4a789103e14b8ffb2283ed5058eee05ec46b6bba1aff6b8be3de8b0eb11",
+  "solution/contracts.py": "ac54cd1da59ecf38c9b5f22b387b1173f31c4f1959d1d5bf3caa35ad9b2c455f",
+  "solution/residual_norm.py": "80203f2557b0c314c8c525f5d8ce0e4cf989bf0f2ec85b034cd5b71e5347050a",
+  "solution/web_preflight.py": "b55f150cdd3da10912e12755781a367ea79c6dad0b39112d02ed0433064d9bb9",
+  "old_solution/__init__.py": "94e10a1271fec2a429d69e28e4d8b3adfac59bdd323c3bf0d0fa3cf616534b0d",
+  "old_solution/rmsnorm.py": "95f22a8e09309d1d6be57d389d5dc8fc8feaa05ba4a8510192443a94009a9dde"
+}

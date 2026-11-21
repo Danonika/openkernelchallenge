@@ -1,0 +1,110 @@
+{
+  "candidate": "soup-rope-runtime-fulltask-v1-web80-20261030",
+  "notebook_sha256": "f9eddd814b5cfb824781b631fe60f97d1fd2c8f619582352490057aa6940e394",
+  "embedded_payload_sha256": {
+    "evidence_reader.py": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "prepare_asset_manifest.py": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "web_runner.py": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c",
+    "candidate_profile.json": "cb8ac6aff5641454572fe79438cf958fa7a8587dfcf4a3a210b2374ff5638430",
+    "rotary_runtime_dims.zip": "0d02a6c69c63351f63d12ef706cf5a2f9572dd4ad6d2cc28578e80f81ef1955e",
+    "rotary_runtime_dims_manifest.json": "e88885a5fe92b8d537962470fd990042e753b8a7af1e14166aefe15ae85eabe6",
+    "README.md": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d",
+    "runtime_api_reference.json": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+  },
+  "decoded_source_archives": [
+    {
+      "embedded_source_archive": "rotary_runtime_dims.zip",
+      "sha256": "0d02a6c69c63351f63d12ef706cf5a2f9572dd4ad6d2cc28578e80f81ef1955e",
+      "decoded_members": [
+        "solution/__init__.py",
+        "solution/cpu_contract.py",
+        "solution/gpu_preflight.py",
+        "solution/rotary.py",
+        "solution/test_rotary.py",
+        "solution/web_preflight.py"
+      ],
+      "source_archive_bytes_exported_separately": false
+    }
+  ],
+  "exported_payload_files": {
+    "README.md": {
+      "bytes": 4442,
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d"
+    },
+    "candidate_profile.json": {
+      "bytes": 1009,
+      "sha256": "cb8ac6aff5641454572fe79438cf958fa7a8587dfcf4a3a210b2374ff5638430"
+    },
+    "evidence_reader.py": {
+      "bytes": 1702,
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "prepare_asset_manifest.py": {
+      "bytes": 2813,
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "rotary_runtime_dims_manifest.json": {
+      "bytes": 582,
+      "sha256": "e88885a5fe92b8d537962470fd990042e753b8a7af1e14166aefe15ae85eabe6"
+    },
+    "runtime_api_reference.json": {
+      "bytes": 1023,
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "solution/__init__.py": {
+      "bytes": 333,
+      "sha256": "40b264614eaf6a0738b9f25f0ff9151c2e1032e84043a0ddfb618fc405c4b8a1"
+    },
+    "solution/cpu_contract.py": {
+      "bytes": 1913,
+      "sha256": "635c7ce7171634ee18ff6100e48f9016cc76734c6b33eb926b45db382fba1550"
+    },
+    "solution/gpu_preflight.py": {
+      "bytes": 8253,
+      "sha256": "3cb62dee5b897fd689d91bfa7fde5de279eb72927bb1a3a9def6d82f86f967fd"
+    },
+    "solution/rotary.py": {
+      "bytes": 9344,
+      "sha256": "cbea5c7a64c70695fa009a7b98129889d9ec434993da4f9d123a87808ee766b0"
+    },
+    "solution/test_rotary.py": {
+      "bytes": 8248,
+      "sha256": "05dfe09a8a2f2a9baa872d795838c1ce2f58baad8b2b3187aaa42e6469a38062"
+    },
+    "solution/web_preflight.py": {
+      "bytes": 2289,
+      "sha256": "1d970ea0e8488fd1222358b1ebffd7797264fd5ffbabe2523f66d203d312f491"
+    },
+    "web_runner.py": {
+      "bytes": 16777,
+      "sha256": "6b19d04fd28247de890effe41c7c7ac23834480ba1ee5988ad86133b3914794c"
+    }
+  },
+  "validation_tests": {
+    "validate_packet.py": {
+      "bytes": 6620,
+      "sha256": "149c6125df7fae1400244db55ffe24e593d0d9012bee17b58c16001699ba7c88"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

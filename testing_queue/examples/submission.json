@@ -1,0 +1,11 @@
+{
+  "candidate_id": "SOUP-NEW-001",
+  "backend": "KAGGLE_T4",
+  "baseline_id": "base_KAGGLE_T4",
+  "entrypoint": "soup_screen_v1",
+  "artifact": "candidate.zip",
+  "artifact_kind": "solution_bundle",
+  "priority": 50,
+  "submitted_by": "agentA",
+  "contains_secrets": false
+}

@@ -1,0 +1,107 @@
+{
+  "scope": "Cloud-only original toy-tensor numerical/semantic tests",
+  "generated_utc": "2026-10-30T11:18:13.943908+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "device": "cpu",
+    "threads": 2,
+    "interop_threads": 2,
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "script_sha256": "5a41b837a2fe89a505eb43c6ca15f39eb1cd1903f4243eaddd4a7445ec0707a1",
+  "summary": {
+    "passed": 8,
+    "failed": 0
+  },
+  "not_validated": [
+    "actual GPU kernels",
+    "T4 performance",
+    "actual bnb QuantState or dispatch",
+    "CUDA GradScaler overflow/optimizer/scheduler behavior",
+    "CUDA/Kaggle dropout dispatch and RNG equivalence",
+    "full model training/quality",
+    "competition kernel-share or scoring"
+  ],
+  "outcomes": [
+    {
+      "name": "head_causal_masks_global_denominator_metrics",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "status": "PASS",
+      "evidence": "CPU behavioral fixture",
+      "decision": "Preserve causal masks, global normalization, row association and full-attention metrics."
+    },
+    {
+      "name": "centered_reductions_reject_single_lse",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "status": "PASS",
+      "evidence": "CPU numerical counterexample",
+      "decision": "Reject single-LSE-only state for high-offset logits; retain max plus centered logsum state."
+    },
+    {
+      "name": "scaled_gradient_rounding_boundary",
+      "candidates": [
+        "SOUP-NEW-001",
+        "SOUP-NEW-002"
+      ],
+      "status": "PASS",
+      "evidence": "CPU numerical counterexample, not CUDA GradScaler",
+      "decision": "Incoming gradient must scale FP32 dlogits before the FP16 cast."
+    },
+    {
+      "name": "supervised_only_head_backward",
+      "candidates": [
+        "SOUP-TRAIN-001"
+      ],
+      "status": "PASS",
+      "evidence": "CPU compact/scatter autograd fixture",
+      "decision": "Only compact head backward; retain all-token metric forward and complete transformer backprop."
+    },
+    {
+      "name": "cast_aware_norm_and_residual_bypass",
+      "candidates": [
+        "cast-aware-norm"
+      ],
+      "status": "PASS",
+      "evidence": "CPU analytic vs autograd fixture",
+      "decision": "Keep FP32 output for FP32 input; preserve cast-before-affine and both residual branches."
+    },
+    {
+      "name": "nf4_separate_scale_offset_and_packing",
+      "candidates": [
+        "SOUP-NEW-003",
+        "SOUP-NEW-007"
+      ],
+      "status": "PASS",
+      "evidence": "Synthetic CPU data-transform witness, not bnb validation",
+      "decision": "Do not contract nested scale multiplication plus offset into FMA without real-state validation."
+    },
+    {
+      "name": "lora_b_adjoint_cast_boundaries",
+      "candidates": [
+        "SOUP-LORA-001",
+        "LoRA-scale-add"
+      ],
+      "status": "PASS",
+      "evidence": "CPU deterministic no-dropout autograd fixture",
+      "decision": "A shared D16 adjoint tile must preserve G32\u2192G16\u2192scale\u2192D16 and FP16 parameter-gradient rounding."
+    },
+    {
+      "name": "native_dropout_lossless_saved_bool_mask",
+      "candidates": [
+        "SOUP-LORA-002"
+      ],
+      "status": "PASS",
+      "evidence": "CPU explicit native_dropout saved-tensor fixture",
+      "decision": "Lossless bool-mask representation verified only; inspect real CUDA dropout dispatch and measure pack/unpack cost before promotion."
+    }
+  ]
+}

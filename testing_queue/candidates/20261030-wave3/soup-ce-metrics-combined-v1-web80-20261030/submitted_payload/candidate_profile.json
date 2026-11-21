@@ -1,0 +1,49 @@
+{
+  "ce_metrics_combined_v1": {
+    "mode": "ce_metrics_combined_v1",
+    "title": "Original CE summaries + native metric consumers \u2014 structural full-task candidate",
+    "preflight": "solution.web_preflight",
+    "preflight_status": "PASS_COMBINED_CE_METRIC_PREFLIGHT_ONLY",
+    "kernels": [
+      "soup_ce_exp_tile_max",
+      "soup_ce_exp_row_max",
+      "soup_ce_exp_tile_sum",
+      "soup_ce_exp_selected",
+      "soup_ce_metric_tiles",
+      "soup_ce_metric_merge"
+    ],
+    "routes": [
+      {
+        "prefix": "SOUP_CE_METRIC ",
+        "event": "owned_consumer_guard",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_CE_METRIC ",
+        "event": "summary_loss_completed",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_CE_METRIC ",
+        "event": "consumer_complete",
+        "positive_field": "count",
+        "match": {
+          "count": 64
+        }
+      },
+      {
+        "prefix": "SOUP_CE_V3_EVENT ",
+        "event": "triton_backward",
+        "positive_field": "own_backward_enqueues"
+      }
+    ],
+    "requires_original_kernels": true,
+    "zip_sha256": "97acbb86f56d510f9cc9904720dc02cb3385faf8c11e93914a57c6634ea9dc2b"
+  }
+}

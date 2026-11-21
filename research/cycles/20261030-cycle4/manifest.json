@@ -1,0 +1,29 @@
+{
+  "scope": "Approved detailed source/CPU research only; genuine failed parity test retained",
+  "cutoff_utc": "2026-10-30T12:09:08.191581+00:00",
+  "reconstructed_rows_sha256": "53bf0b6fdc3083467c419e33ca07ffcf4d27209be689d2b17fab1f1366fb4247",
+  "files": {
+    "README.md": "54fcc1a29189cab3662b711111bcb68c7624d9d60066e7576802e49ea9958505",
+    "approval.json": "670a3c06007d0a7261dab60fda16206c6ee071e283af247f49540008f76bbb95",
+    "cpu_cycle4_results.md": "046a867f8591fd612d81f0627403b311bec1f0cb3df7dc2b972ee5e37e4b0909",
+    "cpu_tests/cycle4/actual_dynamic_codebook_bits.json": "ecee4cc98a2308b78207ece8f19a4f71a7c2777b02d3625c70938c39a6d50927",
+    "cpu_tests/cycle4/head_oracle.py": "4a5ad5e41f56be6eaf61b5b9ba5360be02debfeb26d88300c773a11c3d403513",
+    "cpu_tests/cycle4/head_results.json": "1f758a534a3328664768a3e2bb4a696880ce83aca8f73f6b69cda10ceb2bb762",
+    "cpu_tests/cycle4/nf4_oracle.py": "805207075500efa445289a3b6a2fd080d6eaa27c57a4f394d4166f85d65577f9",
+    "cpu_tests/cycle4/nf4_results.json": "5b37e2f9939331add1ec74088a53161515c034602e2a558eb0edf54b96709dc6",
+    "cpu_tests/cycle4/summary.json": "33ec4ed0f41e1abf04237bfcf2c652d05e217d75c012c454e4fd2ee7201239c5",
+    "jury_cycle4_canonical_rows.json": "791ad7384914b09a59dea03126cfc8f4c1510c7a6083cde0647bcb48c131aeea",
+    "jury_cycle4_compact_rows.json": "61ccf02344457e6fb1e756530481269af15f234f3bfeb84ec41c523bf21cd715",
+    "jury_cycle4_review.md": "5e1f01c06ef1de054e19f729d283bf893a26319e349bb8553e6ed4b822e90307",
+    "jury_trial001_contract.md": "f01badc63344db5591733c63086c9e3cecb35b0c46c19ea6a23cefade52df42f",
+    "nf4_cycle4/source_manifest.json": "14e963b0231a6f27edf1b35edf5aca20a647de214d2ba6325fcb720049c8a98f",
+    "research_head_cycle4.md": "e92450818e75648aad0741accd4ba4c255f9bbada414ef0448626eeac9f6f5a8",
+    "research_nf4_cycle4.md": "77a041b09a25a409c405cfef83248a22e2ba7e8b898694af9f6c7a0c547bcca4",
+    "source_snapshot_manifest.json": "7cab0b9097d160daf3b72469932671e4f646617b72382fa6499d632096701371",
+    "verify_snapshot.py": "39af00de22e0db3f23dc39c44e4a33338642680dd0a04fb1486f587fd0034b82"
+  },
+  "publication_omissions": [
+    "cpu_tests/cycle4/bitsandbytes-environment.json",
+    "nf4_cycle4/installed_source_identity.json"
+  ]
+}

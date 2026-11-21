@@ -1,0 +1,39 @@
+{
+  "candidate": "soup-head-shared-cast-v3-web80-20261030",
+  "family": "Native-head controls",
+  "status": "PREFLIGHT_FIXTURE_FAILURE",
+  "conclusion": "Shallow aliased metric-list snapshot caused preflight comparison failure. Successor deep-copies fixture only; no training result for this version.",
+  "notebook_sha256": "e81b0ed314c2fc37e320a363a7dc2633d005462fa7d8c1d722ee9c5154caf3e4",
+  "raw_output_archive_sha256": "f28d8188b5c85a7b90f0ee17c789b8fc5d59be8fdecfb17d7836b69793223a6f",
+  "source_bound_receipt_bindings": [
+    {
+      "receipt": "head_shared_cast_v3_attempt02_profilebound_receipt_v4_2.json",
+      "sha256": "50a90fee0926b438a256353f6ef79f7a57d6ececa19374d9b6b0a85162679cf2",
+      "status": "INCOMPLETE_CENSORED_OR_UNBOUND",
+      "raw_output_archive_sha256": "f28d8188b5c85a7b90f0ee17c789b8fc5d59be8fdecfb17d7836b69793223a6f",
+      "receipt_exported": false
+    },
+    {
+      "receipt": "head_shared_cast_v3_fixture_alias_supplement.json",
+      "sha256": "8d63537d9438000c57f43a9f30684808d8ca36d591c6e3016346f3ca0d9a10c3",
+      "status": null,
+      "raw_output_archive_sha256": null,
+      "receipt_exported": false
+    }
+  ],
+  "official_score": null,
+  "admission": "UNKNOWN",
+  "full_task_success_claim": false,
+  "cap_seconds": 80,
+  "scope_limits": [
+    "Components are not full-model measurements.",
+    "Incomplete or diagnostic commands are not validated pairs.",
+    "Source availability and local tests do not imply Kaggle admission.",
+    "Prior failures remain tied to exact tested versions, not whole idea families."
+  ],
+  "export_exclusions": [
+    "No API identity/status blobs.",
+    "No raw output archive or private Sheet snapshot.",
+    "No credentials,model/cache files,or separately supplied native-dab4 package."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "candidate": "soup-ce-v3-fixed-web80-20261030",
+  "no_model_data_or_credentials_included": true,
+  "notebook": "candidate.ipynb",
+  "notebook_sha256": "5a64e08c8e11d6fc7b72edcd15ce21b04da1a36e154b41d36a9de60742a1be34",
+  "source_files": [
+    {
+      "path": "solution/__init__.py",
+      "sha256": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6"
+    },
+    {
+      "path": "solution/adapter.py",
+      "sha256": "78f61cafc15c69fabc8573d5f5b51a929f311766c896838ecbe3c38b77723750"
+    },
+    {
+      "path": "solution/materialized_ce.py",
+      "sha256": "d7bed700a826f4e681289a3157ed412cf7f299a3022b4b5401105fb1ae713e98"
+    },
+    {
+      "path": "solution/numerical_gates.py",
+      "sha256": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990"
+    },
+    {
+      "path": "solution/telemetry.py",
+      "sha256": "f98a5212f85368fdad47efa2f4a800511269bae800460f09847318bb799d0fb2"
+    },
+    {
+      "path": "solution/test_cpu_contract.py",
+      "sha256": "2b177aeca4b6e0afc6cb5fcb264f53221391edbed67fada7b5252ee179b5e18f"
+    },
+    {
+      "path": "solution/verify_integration.py",
+      "sha256": "bcc16afce2587811b8f4614b07128bff89a84b143c6e17b1d417f44437e93129"
+    }
+  ],
+  "validation_scope": "Copied historical validation sources for audit; not executed from this relocated export. Submitted notebook bytes are unchanged and self-contained.",
+  "validation_tests": [
+    {
+      "path": "validation_tests/test_process_guard.py",
+      "sha256": "9775742d759d8fefdaba9e67987ba6da4f34f9abb0e4db80f02b6865c798cc6f"
+    },
+    {
+      "path": "validation_tests/test_web_packet.py",
+      "sha256": "779a24ece3228475707e026905020d71450f24ba18b0bb22cc1635f8c8704fb0"
+    },
+    {
+      "path": "validation_tests/tests/test_lazy_flags.py",
+      "sha256": "a5872bdcf5492a7ebc86829dc5e333cb21d90978cf2ec457cda6cd38183b0fff"
+    }
+  ]
+}

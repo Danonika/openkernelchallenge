@@ -1,0 +1,26 @@
+{
+  "scope": "DESCRIPTIVE_SEPARATE_SINGLE_SCREENS_NOT_PAIRED_CAUSAL_OR_OFFICIAL",
+  "old_source_zip_sha256": "4fb83e4984c6ea230cc26f07563315c71667a68dc431ad2cdda89459e088a905",
+  "new_source_zip_sha256": "7f9882870836adf2829da353997091f31ec21e9333534cf91ba5fa54f0040eaa",
+  "training_wall_s": {
+    "storage": 73.692,
+    "batched_ce": 70.872,
+    "difference_new_minus_old": -2.819999999999993,
+    "relative_change_pct": -3.8267383162351343
+  },
+  "sampled_peak_mib": {
+    "storage": 6703,
+    "batched_ce": 6503,
+    "difference_new_minus_old": -200,
+    "relative_change_pct": -2.9837386244964903
+  },
+  "public_eval_loss": {
+    "storage": 2.04961,
+    "batched_ce": 2.04963,
+    "difference_new_minus_old": 2.0000000000131024e-05
+  },
+  "interpretation": "The CE derivative completed faster and with lower sampled peak in these separate screens. Neither stability, causal attribution, formal paired improvement, hidden quality, nor jury admission is established.",
+  "new_baseline_executed": false,
+  "score": null,
+  "admission": "UNKNOWN"
+}

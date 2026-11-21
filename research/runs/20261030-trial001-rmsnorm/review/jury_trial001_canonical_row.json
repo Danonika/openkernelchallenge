@@ -1,0 +1,92 @@
+{
+  "cutoff_utc": "2026-10-30T12:39:36.412454+00:00",
+  "new_ids": [],
+  "row_count": 121,
+  "changed_existing_ids": [
+    "liger_castaware_norm"
+  ],
+  "changed_rows": [
+    {
+      "id": "liger_castaware_norm",
+      "original104": true,
+      "title": "Make norm fusion's cast boundaries explicit rather than assuming all RMSNorms match",
+      "verdict": "conditional",
+      "abstract_legality": "permitted_idea_subject_to_same_task",
+      "runtime_dependency": "prohibited library; ideas only, no imports/copies",
+      "code_reuse": "No imported/copied third-party kernel; source attribution permits ideas, not implementation copying.",
+      "hardware_fit": "Executed guarded FP32/frozen-affine H1536 standalone norm on TeslaT4, Torch2.11.0+cu128/Triton3.6.0 in paired2-repeat trial001. Actual common original forward/backward kernels launched; source-defined unsupported paths fall back. No universal numerical or performance generalization.",
+      "semantic_risk_level": "medium",
+      "semantic_risk": "Expected fixed path: FP32 input/output and frozen FP32 affine; preserve true H=1536, epsilon, casts and actual needs_input_grad. Compact backward is not universally floating-point equivalent. Even an atomic standalone custom norm can regroup direct/variance/bypass accumulation in a residual-connected graph. Two-output fusion must distinguish unused None from connected-zero gradients and preserve rounded residual, aliases and version checks.",
+      "cpu_evidence_status": "CPU_staged_norm_and_residual_counterexamples_not_GPU_validation",
+      "cpu_evidence": "Shared cycle3 norm evidence: 144 staged standalone cases match tested finite values/nonfinite classes; compact formula differs in 46, including 14 nonfinite-class cases. Native 5 saved refs and custom 3 refs both retain 3 x/r/w storages. Actual-width1536 cancellation yields expanded native0 versus regrouped1; unused norm branch zero-materialization can introduce NaN where baseline bypass gradient1. No signed-zero/payload/GPU/whole-training proof.",
+      "cpu_artifacts": [
+        {
+          "path": "cpu_tests/results.json",
+          "sha256": "87f48c098af876f0987cd90b1a3ea3cdec9ce928484a9b41029e14fb6fc31243",
+          "groups": [
+            "cast_aware_norm_and_residual_bypass"
+          ],
+          "torch": "2.15.0+cpu",
+          "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+          "script_sha256": "5a41b837a2fe89a505eb43c6ca15f39eb1cd1903f4243eaddd4a7445ec0707a1"
+        },
+        {
+          "path": "cpu_tests/cycle3/results.json",
+          "sha256": "08a828bd0926f6432809002e9988856414dc5d291414d3079549853fc3a25715",
+          "groups": [
+            "staged_norm_backward_and_saved_state",
+            "norm_unique_saved_storage_and_trainable_fallback",
+            "residual_alias_outputs_and_branch_association"
+          ],
+          "torch": "2.15.0+cpu",
+          "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+          "script_sha256": "285ec2e2013d6b19b7f2955220aaf0ed9778dda7b7cd4f911d3146d457c7b1c9"
+        }
+      ],
+      "gpu_unknown": [
+        "Final hidden rows/seed and official jury review remain untested.",
+        "No robust command-time or memory improvement established by this short paired result; both ratios are scoring ties.",
+        "Combination with other useful original candidates requires a new authorized isolated frozen-harness measurement; shares cannot be arithmetically assumed.",
+        "Standalone preflight/environment/session JSON and solution metrics files were not all downloadable; embedded metrics/recovered logs support declared outcomes, not unobserved per-case arrays."
+      ],
+      "priority": "P1",
+      "implementation_group": "FP32_Qwen2_RMSNorm",
+      "own_share_eligible": "Original useful kernels confirmed in both runs, but minimum collective share for this norm-only solution is1.205248976% and fails5%. Never add redundant work or slow a kernel to pass.",
+      "verdict_reason": "Trial001 standalone NOT ADMITTED:9/10 automatic checks pass; only useful own-share fails at1.205248976% versus5%. Public numerical/structure/quality and79regressions pass. Observed command ratio1.0256 and memory1.0001 are below1.05 scoring floor; no robust gain or earned score. Keep as potentially useful component, not an admitted standalone solution.",
+      "required_proof": [
+        "Trial001 raw result/checks are mutually hash-bound; source folder reconstruction matches exact checks. Keep those immutable and disclose missing standalone archive members instead of implying complete downloads.",
+        "Ordinary T4 preflight and unchanged public numerical/structure/quality/resource checks passed; actual extreme H1536 cancellation native0/trial1 remains, so no universal bitwise-equivalence claim.",
+        "Useful own share is insufficient alone. For a later combination, verify common original names, normal launches and minimum event-ms/timed-loop fraction in every actual solution run without redundant work.",
+        "Hidden-row/seed quality and official source review remain organizer gates; public eval cannot clear them. No search for hidden data.",
+        "All future variants preserve frozen affine, true H/epsilon/FP32 boundaries, actual requires-grad, unsupported fallback, saved version checks and no mutation; residual fusion and reconstructed saved state are not validated by this standalone result.",
+        "No robust gain established: preserve whole-command median, max sampled peak, public eval and raw repeats; compare only a genuine subsequent isolated paired run. No inferred leaderboard score or private-artifact publication authority."
+      ],
+      "next_action": "Preserve failed standalone trial001; do not rerun to chase noise. Test distinct useful backward-functional NF4 decode and entropy-only reductions under authorized isolated sessions, then consider a measured compatible combination. No own-share padding.",
+      "stopping_condition": "Standalone admission fails useful-share gate. Keep candidate conditional as a component; do not award20 correctness points or speed/memory points. A failed/unranked tested visualization is permitted only with actual verified coordinates and parent instruction.",
+      "rule_citations": [
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L147-L159",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/common.py#L17-L28",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L186-L236",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L322-L362",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L388-L417",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/harness/check_rules.py#L239-L251",
+        "https://github.com/MakazhanAlpamys/soup-kernel-challenge/blob/c7c2fcd15972ce8b898d8d3ff732ee192c817ceb/README.md#L160-L170"
+      ],
+      "source_urls": "https://github.com/linkedin/Liger-Kernel/blob/781a8aef64bf6105bdefb5f4c991e0d14c08e793/src/liger_kernel/ops/fused_add_rms_norm.py; https://github.com/huggingface/transformers/blob/93c8b7b485963a10800c91f55304db6be211c2bd/src/transformers/models/qwen2/modeling_qwen2.py#L236-L297; https://github.com/pytorch/pytorch/blob/d0f2af8b66b20da4baa50644c0cd3f887a2eae2e/torch/csrc/autograd/input_buffer.cpp#L133-L171",
+      "measured_soup_t4_gain": null
+    }
+  ],
+  "result_sha256": "129cc56516073b205375d9bbd93d94b0e2732b4a4e3e6f3f57a4090b7e9334fa",
+  "checks_sha256": "7c2f0d858f79293213dd89fb3da923298281655866e54af7780e848be8fd51f1",
+  "solution_folder_sha256": "3f123406fad48c7a421a930906e62e50f59fa373423f5fbe59d2232066867ca4",
+  "verified_handoff_sha256": "e95c358bcb5a8b96b2351cc12a8f429f8d1614d56bac615750a0ac092de7a634",
+  "minimum_own_share_fraction": 0.012052489760724294,
+  "standalone_admission": false,
+  "public_automatic_checks_passed": 9,
+  "official_check_count": 10,
+  "hidden_quality": "UNKNOWN",
+  "credited_gain": null,
+  "earned_points": null,
+  "display_failed_unranked_point_authorized_by_parent": true,
+  "publication_authority": "separate explicit scope; no private identifiers or denied artifacts"
+}

@@ -1,0 +1,17 @@
+{
+  "rows": 121,
+  "original104_preserved": 104,
+  "category_mapping_existing": 118,
+  "category_mapping_incoming": 3,
+  "all_t4_gain_null": true,
+  "all_cpu_artifact_hashes_valid": true,
+  "cpu_fixture_groups": 17,
+  "source_commit": "c7c2fcd15972ce8b898d8d3ff732ee192c817ceb",
+  "files": {
+    "jury_review.md": "e5e85322ea738647ed165f92564563b4b8b50ce4f38caf1246caace1a2a1cd89",
+    "jury_verdicts.json": "295e6d5f995c2110e532339f4682a75756e062464f6f0dcdb1f79df75ed2ef52",
+    "jury_verdicts.csv": "dada812808e8576d1a3a4e9ff51e5320cdab36d6cf6c5f4de8cdf0b801b8dc6f",
+    "category_mapping.json": "46ff295c2787655e47c129188c197587a39520211e5b3aba69b95957184d8a9b",
+    "category_mapping_incoming.json": "5f6ad310563c4fa92d4830fa0d5a0f80944b25566284708ef2e22bae5fc2f452"
+  }
+}

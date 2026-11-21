@@ -1,0 +1,104 @@
+{
+  "candidate": "soup-token-chunk-head-component-v3-20261030",
+  "notebook_sha256": "e042e14b1dc75889dcdae4d15ba4c8f44855f41a27a9bab18facb9b94f50190b",
+  "embedded_payload_sha256": {
+    "solution/__init__.py": "94794d4f4ab4ba76eb58f73383008ea605e3a6e25afb91f550723b5c801e03aa",
+    "solution/token_chunk_head.py": "c75d33b7adfa42e659c049ce9933a57501324bab7d7af8b3bbda0832bce73fb5",
+    "shared_consumer/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shared_consumer/bridge_state.py": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9",
+    "shared_consumer/consumer.py": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc",
+    "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+    "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+    "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+    "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+    "reviewed_support.py": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c",
+    "worker.py": "435759a34108ac0d73ba51fbc6cf9251a7b18ab98296ae695532af8ce3d49d7d",
+    "native_source_manifest.json": "12de6991fd41f2dea6ca8930079f10ba2cd7c752f955836e3774f3997666a816",
+    "shared_consumer_manifest.json": "7c32833bfec7f8d17ec6771e9683b922109f2e1c09e7e47359a86c03ad0ff395",
+    "driver.py": "abfd8d9a226767ed274d2e4a4e0ed7359e29d5fbcbcfe4371b8d9c34fc71072a",
+    "source_manifest.json": "7a305c5ca9ba0b37ecb5789bf93e8c12640307dd5f6c73e110d2439eefcbac8a",
+    "payload_manifest.json": "79600b5ccfabf12c0bdc7c9a969f9bff93a8b7dd033c293ebd34f10bd4bb114a"
+  },
+  "decoded_source_archives": [],
+  "exported_payload_files": {
+    "driver.py": {
+      "bytes": 7242,
+      "sha256": "abfd8d9a226767ed274d2e4a4e0ed7359e29d5fbcbcfe4371b8d9c34fc71072a"
+    },
+    "native_source_manifest.json": {
+      "bytes": 345,
+      "sha256": "12de6991fd41f2dea6ca8930079f10ba2cd7c752f955836e3774f3997666a816"
+    },
+    "official_manifest.json": {
+      "bytes": 1415,
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8"
+    },
+    "owned_process_tree.py": {
+      "bytes": 5956,
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69"
+    },
+    "payload_manifest.json": {
+      "bytes": 1434,
+      "sha256": "79600b5ccfabf12c0bdc7c9a969f9bff93a8b7dd033c293ebd34f10bd4bb114a"
+    },
+    "process_guard.py": {
+      "bytes": 7506,
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff"
+    },
+    "reviewed_support.py": {
+      "bytes": 3420,
+      "sha256": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c"
+    },
+    "runtime_probe.py": {
+      "bytes": 2328,
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480"
+    },
+    "shared_consumer/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "shared_consumer/bridge_state.py": {
+      "bytes": 9674,
+      "sha256": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9"
+    },
+    "shared_consumer/consumer.py": {
+      "bytes": 9632,
+      "sha256": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc"
+    },
+    "shared_consumer_manifest.json": {
+      "bytes": 262,
+      "sha256": "7c32833bfec7f8d17ec6771e9683b922109f2e1c09e7e47359a86c03ad0ff395"
+    },
+    "solution/__init__.py": {
+      "bytes": 86,
+      "sha256": "94794d4f4ab4ba76eb58f73383008ea605e3a6e25afb91f550723b5c801e03aa"
+    },
+    "solution/token_chunk_head.py": {
+      "bytes": 6642,
+      "sha256": "c75d33b7adfa42e659c049ce9933a57501324bab7d7af8b3bbda0832bce73fb5"
+    },
+    "source_manifest.json": {
+      "bytes": 506,
+      "sha256": "7a305c5ca9ba0b37ecb5789bf93e8c12640307dd5f6c73e110d2439eefcbac8a"
+    },
+    "worker.py": {
+      "bytes": 13426,
+      "sha256": "435759a34108ac0d73ba51fbc6cf9251a7b18ab98296ae695532af8ce3d49d7d"
+    }
+  },
+  "validation_tests": {
+    "tests/test_packet.py": {
+      "bytes": 4636,
+      "sha256": "cc5834742bb13010602f01ebe1fa038665b43e3b8b825f60141fe788908b45b2"
+    },
+    "tests/test_streaming_bridge.py": {
+      "bytes": 3888,
+      "sha256": "991537ca4062f4ce6bc6881181706881849967a9f228153e90a0602123fd4f1d"
+    },
+    "tests/test_token_component.py": {
+      "bytes": 6056,
+      "sha256": "a440b83f37be0c6ff4c56ac90fabe4efb607862c422a630e8ec5528fd980796c"
+    }
+  },
+  "scope": "Exact accepted notebook and embedded source bytes; companion validation tests frozen locally at cutoff. No code executed by packager."
+}

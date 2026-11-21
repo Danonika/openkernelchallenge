@@ -1,0 +1,32 @@
+{
+  "candidate": "soup-residual-norm-component-v1-20261030",
+  "family": "Residual norm",
+  "status": "POSITIVE_COMPONENT_ONLY",
+  "conclusion": "20 ordinary+4 structural gates pass. Fused versus historical standalone warm forward reduction12.9–18.6%, backward16.4–33.7% across5 shapes. Extreme native0/candidate1 gradient retained. Fixed-order component only, not model peak/training/admission.",
+  "notebook_sha256": "ee35b397a9ecb02a40dfba0bda4802ff08c2bc5fd5a026d5ce88f6f8e1e9aec3",
+  "raw_output_archive_sha256": "0680c0332ab96c086292cff2c92cdce5e5a7beb5695ede7bb25fc70c8d287eb8",
+  "source_bound_receipt_bindings": [
+    {
+      "receipt": "residual_norm_microbench_attempt01_sourcebound_receipt.json",
+      "sha256": "e34fc6e0d8fe3fcda3b53d6d4a2695aebbb8e332e0800a70cf0e5c1d7f37215e",
+      "status": "COMPLETE_SOURCE_BOUND_MICROBENCH_ONLY",
+      "raw_output_archive_sha256": "0680c0332ab96c086292cff2c92cdce5e5a7beb5695ede7bb25fc70c8d287eb8",
+      "receipt_exported": false
+    }
+  ],
+  "official_score": null,
+  "admission": "UNKNOWN",
+  "full_task_success_claim": false,
+  "cap_seconds": 80,
+  "scope_limits": [
+    "Components are not full-model measurements.",
+    "Incomplete or diagnostic commands are not validated pairs.",
+    "Source availability and local tests do not imply Kaggle admission.",
+    "Prior failures remain tied to exact tested versions, not whole idea families."
+  ],
+  "export_exclusions": [
+    "No API identity/status blobs.",
+    "No raw output archive or private Sheet snapshot.",
+    "No credentials,model/cache files,or separately supplied native-dab4 package."
+  ]
+}

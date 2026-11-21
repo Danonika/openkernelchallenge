@@ -1,0 +1,340 @@
+{
+  "attachment_count": 52,
+  "unique_content_count": 47,
+  "files": [
+    {
+      "path": "pointwise_model.json",
+      "sha256": "d537609f333ee906c4a512f613d03ed79f13918554f018eec8a6727c72182db7",
+      "bytes": 10790,
+      "group": "jury"
+    },
+    {
+      "path": "numerical_stability.json",
+      "sha256": "c15f0b213c32d6724cdc855c6e108b960c948bd9e9fe1f3546ba87ff32fb3834",
+      "bytes": 3642,
+      "group": "jury"
+    },
+    {
+      "path": "test_rotary.py",
+      "sha256": "a8659bbb8455c6f20868672a7a41e4c96c67b5a066cd443addd0067acf4faf37",
+      "bytes": 18180,
+      "group": "jury"
+    },
+    {
+      "path": "exceptional_rows.json",
+      "sha256": "04e86ee36cc41b4b5410f699964bc5783f9bd5cf61f6246236a1c6654249f797",
+      "bytes": 3026,
+      "group": "jury"
+    },
+    {
+      "path": "Qwen_Inspired_Soup_Kernel_Optimization(6).md",
+      "sha256": "e9aa484d4db16fd80ed41f17230a1c7d6a700ba9819b05fcbe21b5b50732d260",
+      "bytes": 216421,
+      "group": "qwen"
+    },
+    {
+      "path": "ROUND_7_EVIDENCE.json",
+      "sha256": "e67159ab0e88210a1c826196814746c79535fa82e6909c80279c6f758947484f",
+      "bytes": 1293724,
+      "group": "lora"
+    },
+    {
+      "path": "Nanochat_Ngram_Soup_Transfer(4).md",
+      "sha256": "20dd2560b4b63ff242257752c5f3602420ef4a45ed5c3d2ae0ae7fa2db462143",
+      "bytes": 169886,
+      "group": "nanochat"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "987d75448e27fe68652fa23f626d20638fcb54c1b35bf8c749f259b1eff2acab",
+      "bytes": 11904,
+      "group": "jury"
+    },
+    {
+      "path": "batch7/KERNEL_HANDOFF(7).md",
+      "sha256": "3a025d7d9dc134db76e0116c013fe3d87d07db89e2e6ed87e91b6938850c4788",
+      "bytes": 8329,
+      "group": "jury"
+    },
+    {
+      "path": "batch7/Qwen_Inspired_Soup_Kernel_Optimization.md",
+      "sha256": "e138b869fe017b8496f7943be1d6b71748e40620f0188bdb1e1f8b35ec91cfa3",
+      "bytes": 22152,
+      "group": "qwen"
+    },
+    {
+      "path": "batch7/Qwen_Kernel_Optimization_Review.md",
+      "sha256": "0919adfe4a8782abb73ccfdb2b3f1fb03704d9f38f7645bb9594c23375ecd686",
+      "bytes": 24054,
+      "group": "qwen"
+    },
+    {
+      "path": "batch7/LORA_RESEARCH_ROUND_2.md",
+      "sha256": "fced12fa267fb984edcf5ebaf18283f828c82f21573260d090f6a12383d5c264",
+      "bytes": 26346,
+      "group": "lora"
+    },
+    {
+      "path": "batch5/Qwen_Inspired_Soup_Kernel_Optimization(2).md",
+      "sha256": "ee546848f068bc3a6848dd696d5c1e3c6c3c85405d70b4afeb6057a714bf85e0",
+      "bytes": 97628,
+      "group": "qwen"
+    },
+    {
+      "path": "batch5/LORA_RESEARCH_ROUND_4(1).md",
+      "sha256": "7e03f3b43278c30d45558b1afdc04f6ea80de17b9600cd38b9c9f564e6257943",
+      "bytes": 28310,
+      "group": "lora"
+    },
+    {
+      "path": "batch5/KERNEL_HANDOFF(2)(2).md",
+      "sha256": "064376301e1766efe0c3a4e8421d8b846b631f637110266315c2eeb832affddb",
+      "bytes": 13760,
+      "group": "jury"
+    },
+    {
+      "path": "batch5/Qwen_Inspired_Soup_Kernel_Optimization(3).md",
+      "sha256": "bdfa853513919d8293eb0ba42c76c09c4c09746e6a7ae373e807d369186ae95e",
+      "bytes": 124480,
+      "group": "qwen"
+    },
+    {
+      "path": "batch5/Nanochat_Ngram_Soup_Transfer(1).md",
+      "sha256": "2677ab5b8fee087fd885c680099a14b7c74967548161d5f2f079261a85509f32",
+      "bytes": 52446,
+      "group": "nanochat"
+    },
+    {
+      "path": "batch5/Nanochat_Ngram_Soup_Transfer(2).md",
+      "sha256": "e3b217669f00a99ec42c42a8a19a576ec1378c9d8f4b7d57eeee38737f725cdc",
+      "bytes": 83557,
+      "group": "nanochat"
+    },
+    {
+      "path": "batch5/Qwen_Kernel_Optimization_Review(3).md",
+      "sha256": "b226daaf76bea1f733b7713663f7f6126ff15de7552657186abbb260cdc9e304",
+      "bytes": 89780,
+      "group": "qwen"
+    },
+    {
+      "path": "batch5/Qwen_Kernel_Optimization_Review(2).md",
+      "sha256": "c496333dbea7314fa5d620145eedfdd031b0bb63459d1e50fa6b1eb872dce968",
+      "bytes": 64205,
+      "group": "qwen"
+    },
+    {
+      "path": "batch2/KERNEL_HANDOFF(5).md",
+      "sha256": "07c8fdaabf9dba6c23efd1cad0cbdab6b53ff0a40485055afc1c00e7c0f37a4d",
+      "bytes": 13296,
+      "group": "jury"
+    },
+    {
+      "path": "batch2/Qwen_Kernel_Optimization_Review(5).md",
+      "sha256": "b773cbfffb603bfbeaf62b9107af2e4e8179adaebb36df897627f3cfa97e25c7",
+      "bytes": 145384,
+      "group": "qwen"
+    },
+    {
+      "path": "batch2/LORA_RESEARCH_ROUND_6.md",
+      "sha256": "e8aba1374d121ad5b7232b9ba39f46d5ad9c9245c33ac64e5cb014de09284d91",
+      "bytes": 24150,
+      "group": "lora"
+    },
+    {
+      "path": "batch2/Qwen_Kernel_Optimization_Review(6).md",
+      "sha256": "9526c19ac07d2f882fa4ddd57bd3c5e1591b5c6977df1c1ba1a2d7b397066659",
+      "bytes": 179922,
+      "group": "qwen"
+    },
+    {
+      "path": "batch2/KERNEL_HANDOFF(4).md",
+      "sha256": "e2ce9fe3aebf4cd85b6a972f92244f3c16040b3d202f7c28b5bedf179a69f22c",
+      "bytes": 14200,
+      "group": "jury"
+    },
+    {
+      "path": "batch2/LORA_RESEARCH_ROUND_7.md",
+      "sha256": "81ad5c728ac79bf6e85e03d76dfbbd392d10cf2d81d66e0957e278315a0064f9",
+      "bytes": 27868,
+      "group": "lora"
+    },
+    {
+      "path": "batch2/ROUND_6_EVIDENCE.json",
+      "sha256": "97f9e9c78dea28b0e3c4fd2a4d644eba8f3c46a42649a5219bfdf09d189d7ee2",
+      "bytes": 228453,
+      "group": "lora"
+    },
+    {
+      "path": "batch2/Nanochat_Ngram_Soup_Transfer(3).md",
+      "sha256": "eac0e509bc88baf29068719293b12907941bb540a0d5ac75ff2209b607fd912a",
+      "bytes": 139026,
+      "group": "nanochat"
+    },
+    {
+      "path": "batch4/Research_Update(3).md",
+      "sha256": "4b582d870f9f32d470eeb49d7320d60eb34abf2b5852627daea73b5b935e7dbe",
+      "bytes": 15827,
+      "group": "jury"
+    },
+    {
+      "path": "batch4/KERNEL_HANDOFF(2)(1).md",
+      "sha256": "064376301e1766efe0c3a4e8421d8b846b631f637110266315c2eeb832affddb",
+      "bytes": 13760,
+      "group": "jury"
+    },
+    {
+      "path": "batch4/Kaggle_Candidate(1).ipynb",
+      "sha256": "aa330c1895f2ab6b831dc07d4838309efd2cc894b14a72d0a921cb08a798ca60",
+      "bytes": 9421,
+      "group": "jury"
+    },
+    {
+      "path": "batch4/Kernel_Handoff(2).md",
+      "sha256": "0aa8f1f71b5bdd7d39b96e5b93fccbecbe69a2c2b4603a075616d87d3a41e4c2",
+      "bytes": 11632,
+      "group": "jury"
+    },
+    {
+      "path": "batch4/CPU_NUMERICS_ROUND_4.json",
+      "sha256": "310a20452909e1bdadca925bd8581adf0a422f21d052eebc7775e9599df8ebf1",
+      "bytes": 914906,
+      "group": "lora"
+    },
+    {
+      "path": "batch4/LORA_RESEARCH_ROUND_4.md",
+      "sha256": "7e03f3b43278c30d45558b1afdc04f6ea80de17b9600cd38b9c9f564e6257943",
+      "bytes": 28310,
+      "group": "lora"
+    },
+    {
+      "path": "batch4/Kernel_Handoff(1).md",
+      "sha256": "0aa8f1f71b5bdd7d39b96e5b93fccbecbe69a2c2b4603a075616d87d3a41e4c2",
+      "bytes": 11632,
+      "group": "jury"
+    },
+    {
+      "path": "batch4/Research_Update(1).md",
+      "sha256": "4b582d870f9f32d470eeb49d7320d60eb34abf2b5852627daea73b5b935e7dbe",
+      "bytes": 15827,
+      "group": "jury"
+    },
+    {
+      "path": "batch3/Kernel_Handoff(3)(1).md",
+      "sha256": "b1af3f17d6af27aa4aef0d87be331ae5d4f88ecacf29d0109fb92c8e1d37b3a3",
+      "bytes": 13476,
+      "group": "jury"
+    },
+    {
+      "path": "batch3/KERNEL_HANDOFF(3).md",
+      "sha256": "eb765fbc4d1eba0e3bdc29a309a03ada46d6a761074e5c04df5fdc3d0a95d7a5",
+      "bytes": 12014,
+      "group": "jury"
+    },
+    {
+      "path": "batch3/ROUND_5_EVIDENCE.json",
+      "sha256": "65234be8fd914debf873062ed0399034adc9fa020397532a432dae165c46d766",
+      "bytes": 723203,
+      "group": "lora"
+    },
+    {
+      "path": "batch3/Qwen_Inspired_Soup_Kernel_Optimization(5).md",
+      "sha256": "4765bf1ac1cf7c756fdbe4f16ed60c73da8419ca6ff7fde6e24afa4dfe2ab77d",
+      "bytes": 180770,
+      "group": "qwen"
+    },
+    {
+      "path": "batch3/Qwen_Inspired_Soup_Kernel_Optimization(4).md",
+      "sha256": "8e2aac110319df5d07f40ce00bdf19ea0da44be2d6f13efc5d92511319238e1f",
+      "bytes": 152048,
+      "group": "qwen"
+    },
+    {
+      "path": "batch3/Research_Update(2).md",
+      "sha256": "78e1f32bd028393ff54cd4c60db11d9bcb38811567b3a2748ea509ca8af8eb5b",
+      "bytes": 22208,
+      "group": "jury"
+    },
+    {
+      "path": "batch3/Qwen_Kernel_Optimization_Review(4).md",
+      "sha256": "0490f3039381ff6b6b204dd0db420e94ba4379051490e56b182d7d3721c89474",
+      "bytes": 117666,
+      "group": "qwen"
+    },
+    {
+      "path": "batch3/LORA_RESEARCH_ROUND_5.md",
+      "sha256": "5c3d9f52e31a502e31d6d831c577ac0d552928f915da44dca4aa0e51e9ab2665",
+      "bytes": 25775,
+      "group": "lora"
+    },
+    {
+      "path": "batch6/LORA_RESEARCH_ROUND_3.md",
+      "sha256": "1790503eb9ec2ea97a636f6772aa994a00f547e452f5866761c7ce29bf1e1a99",
+      "bytes": 24875,
+      "group": "lora"
+    },
+    {
+      "path": "batch6/Nanochat_Ngram_Soup_Transfer.md",
+      "sha256": "c87ac6a587a6eb277a81df352e4096e67072d5e5eb3ee3e3fd562372fb4b2234",
+      "bytes": 28935,
+      "group": "nanochat"
+    },
+    {
+      "path": "batch6/Qwen_Kernel_Optimization_Review(1).md",
+      "sha256": "f51323df914e4e7cdd83a4fd63f212c22c5fbfc11fef90c8d32da81c617e90a5",
+      "bytes": 49924,
+      "group": "qwen"
+    },
+    {
+      "path": "batch6/Kernel_Handoff(6).md",
+      "sha256": "33e053f6d84bd4b11feaf793cfa0d4ae6d24b6857f175d0136cffe5433c0ce91",
+      "bytes": 9477,
+      "group": "jury"
+    },
+    {
+      "path": "batch6/PUBLIC_WORKLOAD_AUDIT.json",
+      "sha256": "1f2752aa53dd3e4f8715146ee45fe451b2cb04e7edd038d9c93ab7c249cec142",
+      "bytes": 7277,
+      "group": "lora"
+    },
+    {
+      "path": "batch6/Qwen_Inspired_Soup_Kernel_Optimization(2)(1).md",
+      "sha256": "ee546848f068bc3a6848dd696d5c1e3c6c3c85405d70b4afeb6057a714bf85e0",
+      "bytes": 97628,
+      "group": "qwen"
+    },
+    {
+      "path": "batch6/Qwen_Inspired_Soup_Kernel_Optimization(1).md",
+      "sha256": "9cc5ff0c104a23fd44d6598ac6b493579092fccb0ba093a387de281b73385a21",
+      "bytes": 59886,
+      "group": "qwen"
+    },
+    {
+      "path": "batch6/KERNEL_HANDOFF(1)(1).md",
+      "sha256": "e174df119cf1a48a31515e167b89bb6e66eb675f82e76a1d6a27c6982c3bc17c",
+      "bytes": 9671,
+      "group": "jury"
+    }
+  ],
+  "exact_duplicate_groups": [
+    [
+      "batch5/Qwen_Inspired_Soup_Kernel_Optimization(2).md",
+      "batch6/Qwen_Inspired_Soup_Kernel_Optimization(2)(1).md"
+    ],
+    [
+      "batch5/LORA_RESEARCH_ROUND_4(1).md",
+      "batch4/LORA_RESEARCH_ROUND_4.md"
+    ],
+    [
+      "batch5/KERNEL_HANDOFF(2)(2).md",
+      "batch4/KERNEL_HANDOFF(2)(1).md"
+    ],
+    [
+      "batch4/Research_Update(3).md",
+      "batch4/Research_Update(1).md"
+    ],
+    [
+      "batch4/Kernel_Handoff(2).md",
+      "batch4/Kernel_Handoff(1).md"
+    ]
+  ]
+}

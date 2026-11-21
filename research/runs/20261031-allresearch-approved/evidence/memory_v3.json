@@ -1,0 +1,1073 @@
+{
+  "candidate": "allresearch-streamed-eager-offload-v3",
+  "state": "failed",
+  "notebook_sha256": "269b43b953b39a7ef093b3df60b122b731d0b6bad0867cf6844ab82bfdd6c333",
+  "output_sha256": "42ee88a277de6b24b5b7d2eacc814feeaef6e8c4e254fbf6843ca6652c071e1f",
+  "nested_training": null,
+  "incomplete_training": {
+    "failure": "TIME_LIMIT_EXCEEDED",
+    "phase": "training",
+    "timeout_limit_s": 80.0,
+    "elapsed_at_termination_s": 80.00067272699926,
+    "last_logged_step": 46,
+    "required_steps": 64,
+    "observed_peak_mib_during_partial_run": 2179,
+    "public_eval": "NOT_EVALUATED",
+    "benchmark_eligible": false,
+    "log_bindings": [
+      {
+        "member": "results/harness/solution_1-train.log",
+        "sha256": "26b0b9005aef589ae3bfd0e3796f4c4cf11e1d5e5c29fe135d49cfa0a96df98c",
+        "last_logged_step": 46
+      },
+      {
+        "member": "results/streamed_moment_eager_offload_v3-2f2a19042535/raw/official_output/solution_1/train.log",
+        "sha256": "26b0b9005aef589ae3bfd0e3796f4c4cf11e1d5e5c29fe135d49cfa0a96df98c",
+        "last_logged_step": 46
+      }
+    ],
+    "note": "Censored run; elapsed time and observed peak are not a completed benchmark pair."
+  },
+  "official_admission": "UNKNOWN",
+  "paired": false,
+  "target": {
+    "command_s_below": 45,
+    "peak_mib_below": 1359,
+    "achieved": false
+  },
+  "preflight": {
+    "activation_offload_probe": {
+      "status": "PASS",
+      "scope": "CUDA_COMPONENT_PROBE_NOT_FULL_TASK",
+      "checks": [
+        {
+          "name": "cross_stream_same_bits",
+          "passed": true
+        },
+        {
+          "name": "transpose_layout_same_bits",
+          "passed": true
+        },
+        {
+          "name": "output",
+          "passed": true
+        },
+        {
+          "name": "input_gradient",
+          "passed": true
+        },
+        {
+          "name": "rng_state",
+          "passed": true
+        }
+      ],
+      "counts": {
+        "packed_tensors": 3,
+        "packed_logical_bytes": 13631488,
+        "unpacked_tensors": 3,
+        "unpacked_logical_bytes": 13631488
+      }
+    },
+    "composition": {
+      "status": "STRUCTURAL_CHECKS_COMPLETE_NUMERICAL_RESULTS_RECORDED",
+      "error": null,
+      "engineering_numeric_failures": 4,
+      "numerical_pass_claim": false,
+      "original_thresholds_changed": false,
+      "checks": {
+        "groups": [
+          {
+            "scale": 1.0,
+            "checks": {
+              "loss": {
+                "max_abs": 6.4849853515625e-05,
+                "rtol": 0.0001,
+                "atol": 1e-06
+              },
+              "native_clip_norm": {
+                "max_abs": 1.8477439880371094e-05,
+                "rtol": 0.001,
+                "atol": 1e-07
+              },
+              "scaled": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": {
+                  "name": "scaled/base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.0,
+                    "error_l2": 0.0,
+                    "reference_l2": 0.0,
+                    "relative_l2": 0.0
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 1e-07
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": {
+                  "name": "scaled/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 1.1444091796875e-05,
+                    "reference_max_abs": 0.0157623291015625,
+                    "error_l2": 0.0003896627884208861,
+                    "reference_l2": 0.5249734924306988,
+                    "relative_l2": 0.0007422523118580603
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 7.89116455078125e-05
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": {
+                  "name": "scaled/base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.0,
+                    "error_l2": 0.0,
+                    "reference_l2": 0.0,
+                    "relative_l2": 0.0
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 1e-07
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": {
+                  "name": "scaled/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 6.103515625e-05,
+                    "reference_max_abs": 0.07025146484375,
+                    "error_l2": 0.0006429731091908547,
+                    "reference_l2": 0.8803409773761042,
+                    "relative_l2": 0.0007303682615198317
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 0.00035135732421875
+                  },
+                  "failing_examples": []
+                }
+              },
+              "unscaled": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": {
+                  "name": "unscaled/base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.0,
+                    "error_l2": 0.0,
+                    "reference_l2": 0.0,
+                    "relative_l2": 0.0
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 1e-07
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": {
+                  "name": "unscaled/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 1.1444091796875e-05,
+                    "reference_max_abs": 0.0157623291015625,
+                    "error_l2": 0.0003896627884208861,
+                    "reference_l2": 0.5249734924306988,
+                    "relative_l2": 0.0007422523118580603
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 7.89116455078125e-05
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": {
+                  "name": "unscaled/base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.0,
+                    "error_l2": 0.0,
+                    "reference_l2": 0.0,
+                    "relative_l2": 0.0
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 1e-07
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": {
+                  "name": "unscaled/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 6.103515625e-05,
+                    "reference_max_abs": 0.07025146484375,
+                    "error_l2": 0.0006429731091908547,
+                    "reference_l2": 0.8803409773761042,
+                    "relative_l2": 0.0007303682615198317
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 0.00035135732421875
+                  },
+                  "failing_examples": []
+                }
+              },
+              "updates": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": {
+                  "name": "update/base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+                  "classification": "finite_nominal_lora_parameter_update_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.02551264315843582,
+                    "error_l2": 0.0,
+                    "reference_l2": 2.3230634959004433,
+                    "relative_l2": 0.0,
+                    "violating_elements": 0,
+                    "finite_elements": 24576
+                  },
+                  "original_tolerances": {
+                    "rtol": 0.005,
+                    "atol": 1e-06,
+                    "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": {
+                  "name": "update/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+                  "classification": "finite_nominal_lora_parameter_update_numeric",
+                  "passed": false,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 0.00039778421341907233,
+                    "reference_max_abs": 0.00019999986398033798,
+                    "error_l2": 0.001194218939270712,
+                    "reference_l2": 0.031351994387375605,
+                    "relative_l2": 0.038090684902380045,
+                    "violating_elements": 13,
+                    "finite_elements": 24576
+                  },
+                  "original_tolerances": {
+                    "rtol": 0.005,
+                    "atol": 1e-06,
+                    "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+                  },
+                  "failing_examples": [
+                    {
+                      "finite_flat_index": 4680,
+                      "actual": 0.00019442745542619377,
+                      "reference": -0.00019857716688420624
+                    },
+                    {
+                      "finite_flat_index": 4886,
+                      "actual": 0.00019773308304138482,
+                      "reference": -0.00019787330529652536
+                    },
+                    {
+                      "finite_flat_index": 6930,
+                      "actual": -0.00019661878468468785,
+                      "reference": 0.0001969215227290988
+                    },
+                    {
+                      "finite_flat_index": 8516,
+                      "actual": 0.00019873424025718123,
+                      "reference": 0.00019175620400346816
+                    },
+                    {
+                      "finite_flat_index": 10606,
+                      "actual": -0.00019625014101620764,
+                      "reference": 0.00019175620400346816
+                    },
+                    {
+                      "finite_flat_index": 10963,
+                      "actual": -0.00019857712322846055,
+                      "reference": 0.00019757314294110984
+                    },
+                    {
+                      "finite_flat_index": 13275,
+                      "actual": -0.00019899351173080504,
+                      "reference": -0.0001969215227290988
+                    },
+                    {
+                      "finite_flat_index": 13414,
+                      "actual": 0.00019579129002522677,
+                      "reference": 0.00019953631272073835
+                    }
+                  ]
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": {
+                  "name": "update/base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+                  "classification": "finite_nominal_lora_parameter_update_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.02551264315843582,
+                    "error_l2": 0.0,
+                    "reference_l2": 2.308721912485669,
+                    "relative_l2": 0.0,
+                    "violating_elements": 0,
+                    "finite_elements": 24576
+                  },
+                  "original_tolerances": {
+                    "rtol": 0.005,
+                    "atol": 1e-06,
+                    "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": {
+                  "name": "update/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+                  "classification": "finite_nominal_lora_parameter_update_numeric",
+                  "passed": false,
+                  "blocking": false,
+                  "scale": 1.0,
+                  "values": {
+                    "max_abs": 2.0902371034026146e-06,
+                    "reference_max_abs": 0.00019999999494757503,
+                    "error_l2": 2.1091297795481544e-06,
+                    "reference_l2": 0.012799894947633794,
+                    "relative_l2": 0.00016477711638860374,
+                    "violating_elements": 1,
+                    "finite_elements": 4096
+                  },
+                  "original_tolerances": {
+                    "rtol": 0.005,
+                    "atol": 1e-06,
+                    "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+                  },
+                  "failing_examples": [
+                    {
+                      "finite_flat_index": 2411,
+                      "actual": 0.00019966338004451245,
+                      "reference": 0.00019757314294110984
+                    }
+                  ]
+                }
+              },
+              "entropy": {
+                "max_abs": 0.0,
+                "rtol": 0.01,
+                "atol": 1e-06
+              },
+              "mean_token_accuracy": {
+                "max_abs": 0.0,
+                "rtol": 0,
+                "atol": 0
+              },
+              "num_tokens": {
+                "max_abs": 0.0,
+                "rtol": 0,
+                "atol": 0
+              },
+              "rewind_rows": {
+                "max_abs": 0.0002994537353515625,
+                "rtol": 0.0001,
+                "atol": 1e-06
+              }
+            },
+            "native_all_vs_combined_all": true,
+            "actual_hf_nf4_loaded": true,
+            "nf4_modules": [
+              "model.layers.0.self_attn.q_proj.base_layer",
+              "model.layers.0.self_attn.k_proj",
+              "model.layers.0.self_attn.v_proj.base_layer",
+              "model.layers.0.self_attn.o_proj",
+              "model.layers.0.mlp.gate_proj",
+              "model.layers.0.mlp.up_proj",
+              "model.layers.0.mlp.down_proj"
+            ],
+            "actual_args_type": "trl.trainer.sft_config.SFTConfig",
+            "average_tokens_across_devices": true,
+            "native_soup_dtype_alignment": {
+              "before_native_soup_alignment": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": "torch.bfloat16",
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": "torch.bfloat16",
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": "torch.bfloat16",
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": "torch.bfloat16"
+              },
+              "after_native_soup_alignment": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": "torch.float32",
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": "torch.float32",
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": "torch.float32",
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": "torch.float32"
+              },
+              "native_helper_cast_count": 4,
+              "native_helper_source_sha256": "80934a7f10387c114174801b41d45de3cbc53f85cd74f321bab9335cd3714d6f"
+            },
+            "one_decoder_call_per_transaction": true,
+            "rng_scaler_fifo_and_gather_order_preserved": true,
+            "output_request_native": true,
+            "foreign_hook_negatives": [
+              "peft",
+              "tuner",
+              "qwen",
+              "head"
+            ],
+            "support_after_forward": {
+              "nf4": true,
+              "rmsnorm": true,
+              "owners_intact": true,
+              "calls": {
+                "rmsnorm": 3,
+                "nf4_decode": 7
+              },
+              "counters_are_python_entries_not_gpu_completion": true
+            },
+            "diagnostics": {
+              "counts": {
+                "installed": 1,
+                "owned_consumer_guard": 1,
+                "backbone_once": 1,
+                "summary_loss_completed": 1,
+                "streaming_loss_return": 1,
+                "consumer_complete": 1
+              },
+              "reasons": {},
+              "support": {
+                "nf4": true,
+                "rmsnorm": true,
+                "owners_intact": true,
+                "calls": {
+                  "rmsnorm": 3,
+                  "nf4_decode": 11
+                },
+                "counters_are_python_entries_not_gpu_completion": true
+              },
+              "compact_mlp": {
+                "active": true,
+                "owners_intact": true,
+                "counts": {
+                  "owned": 1,
+                  "native": 0
+                },
+                "reasons": {},
+                "tracked_live_modules": 1,
+                "original_kernel_credit": 0,
+                "excluded_symbols": [
+                  "example_swiglu_fwd_kernel",
+                  "example_swiglu_bwd_kernel"
+                ],
+                "source_sha256": {
+                  "native_owner.py": "7b69f2a354def25cb53d4ca78f3c19082497838c5f6ee133d94694e6113d540c",
+                  "owned_half.py": "8a714205c4f1de8ff7997f9430e47fb417b54e66879b64fa80144896c52a807b",
+                  "starter_half.py": "3759f3761b3b3d2a8e018b80a8571c9cc1456b8adc1ed40e47e1c919132e7dda",
+                  "starter_swiglu.py": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6"
+                },
+                "first_order_only": true,
+                "exact_reference": "unchanged official starter, not native SiLU",
+                "counters_are_python_route_returns_not_gpu_completion": true,
+                "scope": "actual_native_FP16_gate_up_producers_FP32_output_and_dy_direct_half_adjoints"
+              },
+              "frozen_storage": {
+                "active": true,
+                "owners_intact": true,
+                "counts": {
+                  "captured": 1,
+                  "installed": 1,
+                  "declined": 0,
+                  "embedding_calls": 1,
+                  "head_fp16_calls": 0,
+                  "head_native_operand_calls": 0
+                },
+                "reasons": {},
+                "live_models": 1,
+                "live_storage_owners": 1,
+                "original_kernel_credit": 0,
+                "native_embedding_lookup": true,
+                "provenance": "actual_pre_PEFT_FP16_retained_before_source_pinned_widening",
+                "avoids_full_FP32_table_allocation": true,
+                "avoids_full_table_value_audit": true
+              },
+              "activation_offload": {
+                "active": true,
+                "owners_intact": true,
+                "counts": {
+                  "offloaded_forward": 1,
+                  "packed_tensors": 2,
+                  "packed_logical_bytes": 5304320,
+                  "unpacked_tensors": 2,
+                  "unpacked_logical_bytes": 5304320
+                },
+                "min_bytes": 1048576,
+                "same_dtype": true,
+                "original_kernel_credit": 0,
+                "scope": "native_backbone_saved_activations_only",
+                "gpu_validated": false
+              }
+            }
+          },
+          {
+            "scale": 65536.0,
+            "checks": {
+              "loss": {
+                "max_abs": 6.4849853515625e-05,
+                "rtol": 0.0001,
+                "atol": 1e-06
+              },
+              "native_clip_norm": {
+                "max_abs": 1.9431114196777344e-05,
+                "rtol": 0.001,
+                "atol": 1e-07
+              },
+              "scaled": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": {
+                  "name": "scaled/base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.0,
+                    "error_l2": 0.0,
+                    "reference_l2": 0.0,
+                    "relative_l2": 0.0
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 1e-07
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": {
+                  "name": "scaled/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 1.0,
+                    "reference_max_abs": 1033.0,
+                    "error_l2": 23.572534260824206,
+                    "reference_l2": 34405.35513985114,
+                    "relative_l2": 0.0006851414311814656
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 5.1650001
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": {
+                  "name": "scaled/base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.0,
+                    "error_l2": 0.0,
+                    "reference_l2": 0.0,
+                    "relative_l2": 0.0
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 1e-07
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": {
+                  "name": "scaled/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 2.125,
+                    "reference_max_abs": 4608.0,
+                    "error_l2": 40.17411214512127,
+                    "reference_l2": 57698.32163997491,
+                    "relative_l2": 0.0006962786958656974
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 23.0400001
+                  },
+                  "failing_examples": []
+                }
+              },
+              "unscaled": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": {
+                  "name": "unscaled/base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.0,
+                    "error_l2": 0.0,
+                    "reference_l2": 0.0,
+                    "relative_l2": 0.0
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 1e-07
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": {
+                  "name": "unscaled/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 1.52587890625e-05,
+                    "reference_max_abs": 0.0157623291015625,
+                    "error_l2": 0.0003596883279544709,
+                    "reference_l2": 0.5249840566993887,
+                    "relative_l2": 0.0006851414311814656
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 7.89116455078125e-05
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": {
+                  "name": "unscaled/base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.0,
+                    "error_l2": 0.0,
+                    "reference_l2": 0.0,
+                    "relative_l2": 0.0
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 1e-07
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": {
+                  "name": "unscaled/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+                  "classification": "finite_lora_gradient_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 3.24249267578125e-05,
+                    "reference_max_abs": 0.0703125,
+                    "error_l2": 0.0006130083029956249,
+                    "reference_l2": 0.8804065191646562,
+                    "relative_l2": 0.0006962786958656974
+                  },
+                  "original_tolerances": {
+                    "relative_l2_max": 0.001,
+                    "max_abs_reference_multiplier": 0.005,
+                    "max_abs_atol": 1e-07,
+                    "actual_max_abs_limit": 0.0003516625
+                  },
+                  "failing_examples": []
+                }
+              },
+              "updates": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": {
+                  "name": "update/base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+                  "classification": "finite_nominal_lora_parameter_update_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.02551264315843582,
+                    "error_l2": 0.0,
+                    "reference_l2": 2.3230634959004433,
+                    "relative_l2": 0.0,
+                    "violating_elements": 0,
+                    "finite_elements": 24576
+                  },
+                  "original_tolerances": {
+                    "rtol": 0.005,
+                    "atol": 1e-06,
+                    "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": {
+                  "name": "update/base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+                  "classification": "finite_nominal_lora_parameter_update_numeric",
+                  "passed": false,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 0.00039683456998318434,
+                    "reference_max_abs": 0.00019999986398033798,
+                    "error_l2": 0.0007829290488149581,
+                    "reference_l2": 0.03135265460862112,
+                    "relative_l2": 0.024971698842996028,
+                    "violating_elements": 10,
+                    "finite_elements": 24576
+                  },
+                  "original_tolerances": {
+                    "rtol": 0.005,
+                    "atol": 1e-06,
+                    "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+                  },
+                  "failing_examples": [
+                    {
+                      "finite_flat_index": 148,
+                      "actual": 0.0001945072872331366,
+                      "reference": 0.00019817623251583427
+                    },
+                    {
+                      "finite_flat_index": 1265,
+                      "actual": -0.0001758454309310764,
+                      "reference": 0.0001992354227695614
+                    },
+                    {
+                      "finite_flat_index": 2364,
+                      "actual": -0.0001995137718040496,
+                      "reference": -0.0001943953102454543
+                    },
+                    {
+                      "finite_flat_index": 4680,
+                      "actual": 0.0001992965117096901,
+                      "reference": 0.00019255714141763747
+                    },
+                    {
+                      "finite_flat_index": 10606,
+                      "actual": -0.00019816869462374598,
+                      "reference": 0.00019866587535943836
+                    },
+                    {
+                      "finite_flat_index": 13275,
+                      "actual": -0.00019952507864218205,
+                      "reference": -0.00019689087639562786
+                    },
+                    {
+                      "finite_flat_index": 14253,
+                      "actual": 0.00019690406043082476,
+                      "reference": -0.00019943832012359053
+                    },
+                    {
+                      "finite_flat_index": 14979,
+                      "actual": -0.00016727088950574398,
+                      "reference": -0.00019881906337104738
+                    }
+                  ]
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": {
+                  "name": "update/base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+                  "classification": "finite_nominal_lora_parameter_update_numeric",
+                  "passed": true,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 0.0,
+                    "reference_max_abs": 0.02551264315843582,
+                    "error_l2": 0.0,
+                    "reference_l2": 2.308721912485669,
+                    "relative_l2": 0.0,
+                    "violating_elements": 0,
+                    "finite_elements": 24576
+                  },
+                  "original_tolerances": {
+                    "rtol": 0.005,
+                    "atol": 1e-06,
+                    "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+                  },
+                  "failing_examples": []
+                },
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": {
+                  "name": "update/base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+                  "classification": "finite_nominal_lora_parameter_update_numeric",
+                  "passed": false,
+                  "blocking": false,
+                  "scale": 65536.0,
+                  "values": {
+                    "max_abs": 0.0003989667893620208,
+                    "reference_max_abs": 0.00019999996584374458,
+                    "error_l2": 0.00039896840721219943,
+                    "reference_l2": 0.012799899455608325,
+                    "relative_l2": 0.031169651652020586,
+                    "violating_elements": 1,
+                    "finite_elements": 4096
+                  },
+                  "original_tolerances": {
+                    "rtol": 0.005,
+                    "atol": 1e-06,
+                    "criterion": "abs(actual-reference)<=atol+rtol*abs(reference)"
+                  },
+                  "failing_examples": [
+                    {
+                      "finite_flat_index": 1953,
+                      "actual": -0.00019967296975664794,
+                      "reference": 0.00019929381960537285
+                    }
+                  ]
+                }
+              },
+              "entropy": {
+                "max_abs": 0.0,
+                "rtol": 0.01,
+                "atol": 1e-06
+              },
+              "mean_token_accuracy": {
+                "max_abs": 0.0,
+                "rtol": 0,
+                "atol": 0
+              },
+              "num_tokens": {
+                "max_abs": 0.0,
+                "rtol": 0,
+                "atol": 0
+              },
+              "rewind_rows": {
+                "max_abs": 0.0002994537353515625,
+                "rtol": 0.0001,
+                "atol": 1e-06
+              }
+            },
+            "native_all_vs_combined_all": true,
+            "actual_hf_nf4_loaded": true,
+            "nf4_modules": [
+              "model.layers.0.self_attn.q_proj.base_layer",
+              "model.layers.0.self_attn.k_proj",
+              "model.layers.0.self_attn.v_proj.base_layer",
+              "model.layers.0.self_attn.o_proj",
+              "model.layers.0.mlp.gate_proj",
+              "model.layers.0.mlp.up_proj",
+              "model.layers.0.mlp.down_proj"
+            ],
+            "actual_args_type": "trl.trainer.sft_config.SFTConfig",
+            "average_tokens_across_devices": true,
+            "native_soup_dtype_alignment": {
+              "before_native_soup_alignment": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": "torch.bfloat16",
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": "torch.bfloat16",
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": "torch.bfloat16",
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": "torch.bfloat16"
+              },
+              "after_native_soup_alignment": {
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": "torch.float32",
+                "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": "torch.float32",
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": "torch.float32",
+                "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": "torch.float32"
+              },
+              "native_helper_cast_count": 4,
+              "native_helper_source_sha256": "80934a7f10387c114174801b41d45de3cbc53f85cd74f321bab9335cd3714d6f"
+            },
+            "one_decoder_call_per_transaction": true,
+            "rng_scaler_fifo_and_gather_order_preserved": true,
+            "output_request_native": true,
+            "foreign_hook_negatives": [
+              "peft",
+              "tuner",
+              "qwen",
+              "head"
+            ],
+            "support_after_forward": {
+              "nf4": true,
+              "rmsnorm": true,
+              "owners_intact": true,
+              "calls": {
+                "rmsnorm": 3,
+                "nf4_decode": 7
+              },
+              "counters_are_python_entries_not_gpu_completion": true
+            },
+            "diagnostics": {
+              "counts": {
+                "installed": 2,
+                "owned_consumer_guard": 2,
+                "backbone_once": 2,
+                "summary_loss_completed": 2,
+                "streaming_loss_return": 2,
+                "consumer_complete": 2,
+                "native_consumer_fallback": 1,
+                "native_forward": 1
+              },
+              "reasons": {
+                "output_request": 1,
+                "unowned_or_arguments": 1
+              },
+              "support": {
+                "nf4": true,
+                "rmsnorm": true,
+                "owners_intact": true,
+                "calls": {
+                  "rmsnorm": 3,
+                  "nf4_decode": 11
+                },
+                "counters_are_python_entries_not_gpu_completion": true
+              },
+              "compact_mlp": {
+                "active": true,
+                "owners_intact": true,
+                "counts": {
+                  "owned": 1,
+                  "native": 0
+                },
+                "reasons": {},
+                "tracked_live_modules": 1,
+                "original_kernel_credit": 0,
+                "excluded_symbols": [
+                  "example_swiglu_fwd_kernel",
+                  "example_swiglu_bwd_kernel"
+                ],
+                "source_sha256": {
+                  "native_owner.py": "7b69f2a354def25cb53d4ca78f3c19082497838c5f6ee133d94694e6113d540c",
+                  "owned_half.py": "8a714205c4f1de8ff7997f9430e47fb417b54e66879b64fa80144896c52a807b",
+                  "starter_half.py": "3759f3761b3b3d2a8e018b80a8571c9cc1456b8adc1ed40e47e1c919132e7dda",
+                  "starter_swiglu.py": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6"
+                },
+                "first_order_only": true,
+                "exact_reference": "unchanged official starter, not native SiLU",
+                "counters_are_python_route_returns_not_gpu_completion": true,
+                "scope": "actual_native_FP16_gate_up_producers_FP32_output_and_dy_direct_half_adjoints"
+              },
+              "frozen_storage": {
+                "active": true,
+                "owners_intact": true,
+                "counts": {
+                  "captured": 1,
+                  "installed": 1,
+                  "declined": 0,
+                  "embedding_calls": 1,
+                  "head_fp16_calls": 0,
+                  "head_native_operand_calls": 0
+                },
+                "reasons": {},
+                "live_models": 1,
+                "live_storage_owners": 1,
+                "original_kernel_credit": 0,
+                "native_embedding_lookup": true,
+                "provenance": "actual_pre_PEFT_FP16_retained_before_source_pinned_widening",
+                "avoids_full_FP32_table_allocation": true,
+                "avoids_full_table_value_audit": true
+              },
+              "activation_offload": {
+                "active": true,
+                "owners_intact": true,
+                "counts": {
+                  "offloaded_forward": 1,
+                  "packed_tensors": 2,
+                  "packed_logical_bytes": 5304320,
+                  "unpacked_tensors": 2,
+                  "unpacked_logical_bytes": 5304320
+                },
+                "min_bytes": 1048576,
+                "same_dtype": true,
+                "original_kernel_credit": 0,
+                "scope": "native_backbone_saved_activations_only",
+                "gpu_validated": false
+              }
+            }
+          }
+        ],
+        "full_trainer_constructor": true,
+        "actual_nf4_quantizer_and_peft_path": true,
+        "synthetic_random_one_layer_checkpoint": true,
+        "actual_pretrained_weights": false,
+        "fixed_task_training": false,
+        "H": 1536,
+        "V": 151936,
+        "decoder_layers": 1,
+        "intermediate_size": 8960,
+        "B": 4,
+        "T": 37,
+        "token_chunks": 2,
+        "predeclared_gates": {
+          "loss_nll_rows": "rtol1e-4/atol1e-6",
+          "entropy": "rtol.01/atol1e-6",
+          "lora_gradients": "FP64snapshot norms,relativeL2<=.001,maxabs<=.005*reference_max+1e-7,exactnonfiniteclasses",
+          "lora_updates": "rtol.005/atol1e-6",
+          "scaler_rng_counts_accuracy": "exact"
+        }
+      }
+    }
+  },
+  "screening_status": {
+    "status": "FAILED_PARTIAL_OR_CENSORED",
+    "error": null,
+    "complete_fixed_task": false,
+    "complete_single_screen": false,
+    "errors": [
+      "outer_process_incomplete",
+      "packages_changed_or_unrecorded",
+      "task_identity",
+      "unexpected_eval_summary_or_profile",
+      "unexpected_or_missing_run_sides",
+      "solution:repeat_count",
+      "solution:run_identity",
+      "solution:public_eval_incomplete"
+    ],
+    "cleanup": null,
+    "complete_measurements": null
+  }
+}

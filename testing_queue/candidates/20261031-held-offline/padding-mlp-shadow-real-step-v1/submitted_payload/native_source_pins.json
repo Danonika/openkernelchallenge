@@ -1,0 +1,21 @@
+{
+  "soup_cli/config/loader.py": "5df34f5c0dd29bd8b0ac1da1288a61ad6f4fc9e01bb521a54e83d5f2f62f6f95",
+  "soup_cli/config/schema.py": "457c29b2ce16dd558b187481d017e8d1a3ad0437bb1e4908a8c2ecc219be1ae6",
+  "soup_cli/data/loader.py": "b9b75676c3770bb51303a7f266ac7dbcb9ef5660a71044f215924acec617d930",
+  "soup_cli/data/formats.py": "4159cb54ba9a07fb03ba4d87f04d0dd0510e1176346f5b261995b88248dbffd3",
+  "soup_cli/data/sft_format.py": "8ab8e59bb187894ecc646ed0fb0fbeecb6efea74132a63a3e6733180db2d1b49",
+  "soup_cli/data/loss_mask.py": "4f10f52a8708d3605deab46bc2b4bc81fb9cf153f9e0a9620a0d68ab62b5742a",
+  "soup_cli/trainer/sft.py": "c9215642984edf94f3fd7b5368753a973b37da7d96b01e93257bc600b0615073",
+  "soup_cli/trainer/rewind_hf.py": "1fe9542e1ab634d1e6f3ce9dc50f28872d0096cd0f7fdd2be344cce10afd5604",
+  "soup_cli/monitoring/rewind_log.py": "d4b645a32064fa607423181f7d09d1183e4811e17809f5e74be47a242414485d",
+  "soup_cli/utils/mixed_precision.py": "80934a7f10387c114174801b41d45de3cbc53f85cd74f321bab9335cd3714d6f",
+  "soup_cli/utils/eval_schedule.py": "9b7a256ea4bfd1c9e501d4cf901178e597ca0bd607bf870b93f833a9d212dede",
+  "soup_cli/utils/quant_menu.py": "d46d642b7bd74840a890a5bfaf8e765c594937f56a695171b3d5355bb77d5e34",
+  "transformers/trainer.py": "de9b74abdacb86b828e4df06de2679f9a2d9e970d1b8bc758e498f3845f9faa0",
+  "transformers/models/qwen2/modeling_qwen2.py": "34390fea7648b444d5727abef0b85acceba28f856aedec6c335d51253806bfee",
+  "transformers/integrations/sdpa_attention.py": "53c7229daca9ade4c5df874194448938c1edc925abbc71809f9750dd66381e6f",
+  "transformers/loss/loss_utils.py": "83db16b24ce5c3a0642097624aa9a0ae7eb72445c41d8b4d5059a129862fdbbe",
+  "trl/trainer/sft_trainer.py": "0c3a1a67e479a2b7037010844882b3170af3e8df856fe37ec1b9942e4e3c6544",
+  "trl/trainer/sft_config.py": "f840fe54aca0369c4c0c6d1516bbd7c5b305110c107d21ba2c31fd05d60df86d",
+  "trl/trainer/utils.py": "e1a6acd42c169f731056bb02b14f0096008c6def977822f325c1a7bf1f645d1f"
+}

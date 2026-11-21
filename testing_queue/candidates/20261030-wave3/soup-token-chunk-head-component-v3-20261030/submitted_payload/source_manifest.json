@@ -1,0 +1,7 @@
+{
+  "solution/__init__.py": "94794d4f4ab4ba76eb58f73383008ea605e3a6e25afb91f550723b5c801e03aa",
+  "solution/token_chunk_head.py": "c75d33b7adfa42e659c049ce9933a57501324bab7d7af8b3bbda0832bce73fb5",
+  "shared_consumer/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "shared_consumer/bridge_state.py": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9",
+  "shared_consumer/consumer.py": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc"
+}

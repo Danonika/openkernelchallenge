@@ -1,0 +1,22 @@
+{
+  "solution/__init__.py": "97e96dd1d186b2544a002a3eed74e3ec41dda273599479279c4a202230aa4b50",
+  "solution/chain.py": "99f0b18cc98da0971fbbdede0b796b98bfe5472aa93e61c9de29b09eb529dc2e",
+  "solution/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "solution/common/bridge_state.py": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9",
+  "solution/common/consumer.py": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc",
+  "solution/install.py": "607b202c8f16a337e3bda8065fb088d7f2f5fc255221547da3fff1b36fd333c9",
+  "solution/producer/__init__.py": "6e79458adeb6f5eea14c48f4d0fe4f138a09d377fb7206ff26a0e96ae0e468d6",
+  "solution/producer/adapter.py": "e51082e41f21e3e1e6b43ccc72074429cc9cd103b064db8b8e0b6912fd249f7b",
+  "solution/producer/materialized_ce.py": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1",
+  "solution/producer/metric_summary.py": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4",
+  "solution/producer/mixed_rows.py": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2",
+  "solution/producer/numerical_gates.py": "e23c0c7c87967392f95432d2b3f3062ae7798aa262efb58dde88c8c254bed990",
+  "solution/producer/telemetry.py": "c60d73a2ee932990ae32a8d2619fadc935803fd621c913f2ca390065cc7d201d",
+  "solution/producer/test_cpu_contract.py": "7df43cf9d3defcddfe93733af7680c749dcdd35578de287f0560ac3cdbcdc288",
+  "solution/producer/verify_integration.py": "54cc216efeebab9d5c5b80204fbba5744880f3f7a4a36b439fa482d89bfa6772",
+  "solution/producer/verify_metric_producer.py": "293d40ea9cb5622a845793bebdcfaf4e9f92f549330c58710eaadd3895c10d88",
+  "solution/producer/verify_rowmix.py": "10e9dbab399ddf63c08a8c394bd50cde914a86ca3ee5ed6db3aa0ee82934d916",
+  "solution/source_owners.py": "c701bfd7063e289d91c8e5b856b62827f6a9f4f2579aa23bbed4a911a5d38e5b",
+  "solution/telemetry.py": "9b2ba7aa90839766df556169472fdaa8252e145535ebf202f91f5952744efb1e",
+  "solution/web_preflight.py": "160f547c27ee839539f5f767dc702e93eb71c1273b8cbeec76e0ce8a803f77f8"
+}

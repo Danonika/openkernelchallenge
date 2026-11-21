@@ -1,0 +1,34 @@
+{
+  "scope": "Data-minimized jury-accepted scientific planning summaries only",
+  "source_report_sha256": {
+    "research_nf4_forward_cycle7.md": "0712f01da4f465163901ecaf6de253646e9e62588219bcdad636a21b76c36eb3",
+    "research_nf4_forward_cycle7_updates.json": "817c8315f56fa9e6304a2754fca92dec8a9e158d2c6c14f12e36e0f6b47be7ca",
+    "research_training_cycle6.md": "fffa7a2479cfed871f3f17edb4f450034a881aaa16fc74d531edf4c0dc650d8c",
+    "research_training_cycle6_updates.json": "44933d2cb7bcef44f0b0c810d7ef1a1b60321c04f578067d9ebebdd8d9eeef0a"
+  },
+  "files": {
+    "README.md": "5f2f6d3fe881c754f2027b7a4713a6976c3861da35621f1b4acfa554b76d251b",
+    "nf4-forward-summary.md": "01625426206bc21d9e424c4295e3bc82440635e28cafc6aa235774bc32510a11",
+    "training-ce-summary.md": "b17a6986424ecc3b5520b2de9c9a5f92ddebc811b070a854ac309ca220fc0f86"
+  },
+  "existing_ids": [
+    "SOUP-NEW-003",
+    "L1-TILELANG-03",
+    "SOUP-NEW-001",
+    "SOUP-NEW-002",
+    "liger_castaware_norm",
+    "sglang_norm_boundary"
+  ],
+  "new_ids": [],
+  "priority_changes": false,
+  "implementation_or_gpu_execution": false,
+  "new_measured_result": false,
+  "new_graph_points": false,
+  "omitted": [
+    "source/build/runner code",
+    "execution and infrastructure details",
+    "private account/control-plane metadata or links",
+    "row-level datasets and arrays",
+    "credentials and weights"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "result_metrics_equal": true,
+  "result_eval_equal": true,
+  "result_global_step_equals_checkpoint": true,
+  "result_64_logs_equal_checkpoint": true,
+  "public_row_identity_count": 256,
+  "public_row_identity_unique_count": 256,
+  "public_row_ids_exact_0_255": true,
+  "rewind_batch_count": 64,
+  "rewind_batch_sizes": [
+    4
+  ],
+  "adapter_tensor_count": 112,
+  "trainer_class": "RewindSFTTrainer",
+  "loss_first": 2.0589325428009033,
+  "loss_last": 2.008910655975342,
+  "loss_mean": 2.0569571405649185,
+  "evaluation_skipped_rows": 0
+}

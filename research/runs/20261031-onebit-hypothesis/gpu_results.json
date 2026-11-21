@@ -1,0 +1,1665 @@
+{
+  "status": "COMPLETE_COMPONENT_STUDY",
+  "scope": "ACTUAL_WEIGHT_COMPONENT_PROBE_NOT_TRAINING_OR_BENCHMARK",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "model_outputs_evaluated": false,
+  "official_admission": "UNKNOWN",
+  "original_kernel_credit": 0,
+  "samples": [
+    {
+      "tensor": "model.layers.0.self_attn.q_proj.weight",
+      "shape": [
+        1536,
+        1536
+      ],
+      "sampled_blocks": 2048,
+      "sample_selection": "Evenly spaced aligned blocks across the complete tensor",
+      "reference": "Native bitsandbytes whole-tensor NF4 with double quantization, decoded FP16",
+      "reference_reconstruction_bit_exact": true,
+      "codec_preparation_and_analysis_s": 0.6477412129970617,
+      "analysis": {
+        "pure_onebit": {
+          "bits_per_weight": 1.25,
+          "scale_bits_per_block": 16,
+          "error": {
+            "relative_l2": 0.6122612877320361,
+            "max_block_relative_l2": 0.8235699519309255,
+            "max_abs": 0.9063720703125
+          }
+        },
+        "adaptive": [
+          {
+            "block_rms_budget": 0.0,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.01,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.03,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.1,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.2,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75388,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 1757,
+              "onebit": 0,
+              "onebit_with_exceptions": 291
+            },
+            "exception_values": 7254,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.4,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 57757,
+            "selected_bytes": 57757,
+            "selected_bits_per_weight": 3.52520751953125,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 20287,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.3938365082564749,
+              "max_block_relative_l2": 0.3999902345759381,
+              "max_abs": 0.552978515625
+            }
+          },
+          {
+            "block_rms_budget": 0.6,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 42948,
+            "selected_bytes": 42948,
+            "selected_bits_per_weight": 2.621337890625,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 692,
+              "onebit_with_exceptions": 1356
+            },
+            "exception_values": 1657,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.5719010897664062,
+              "max_block_relative_l2": 0.5999705351096896,
+              "max_abs": 0.8017578125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tensor": "model.layers.0.mlp.down_proj.weight",
+      "shape": [
+        1536,
+        8960
+      ],
+      "sampled_blocks": 2048,
+      "sample_selection": "Evenly spaced aligned blocks across the complete tensor",
+      "reference": "Native bitsandbytes whole-tensor NF4 with double quantization, decoded FP16",
+      "reference_reconstruction_bit_exact": true,
+      "codec_preparation_and_analysis_s": 0.6232674439997936,
+      "analysis": {
+        "pure_onebit": {
+          "bits_per_weight": 1.25,
+          "scale_bits_per_block": 16,
+          "error": {
+            "relative_l2": 0.6055821878178245,
+            "max_block_relative_l2": 0.8016681205258062,
+            "max_abs": 0.89971923828125
+          }
+        },
+        "adaptive": [
+          {
+            "block_rms_budget": 0.0,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.01,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.03,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.1,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.2,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75453,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 1807,
+              "onebit": 0,
+              "onebit_with_exceptions": 241
+            },
+            "exception_values": 6016,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.4,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 57965,
+            "selected_bytes": 57965,
+            "selected_bits_per_weight": 3.53790283203125,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 20734,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.39384911585429483,
+              "max_block_relative_l2": 0.3999974732163183,
+              "max_abs": 0.476318359375
+            }
+          },
+          {
+            "block_rms_budget": 0.6,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 41786,
+            "selected_bytes": 41786,
+            "selected_bits_per_weight": 2.5504150390625,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 821,
+              "onebit_with_exceptions": 1227
+            },
+            "exception_values": 1505,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.5720400694757491,
+              "max_block_relative_l2": 0.5999673097420378,
+              "max_abs": 0.8062744140625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tensor": "model.layers.13.self_attn.q_proj.weight",
+      "shape": [
+        1536,
+        1536
+      ],
+      "sampled_blocks": 2048,
+      "sample_selection": "Evenly spaced aligned blocks across the complete tensor",
+      "reference": "Native bitsandbytes whole-tensor NF4 with double quantization, decoded FP16",
+      "reference_reconstruction_bit_exact": true,
+      "codec_preparation_and_analysis_s": 0.624014069999248,
+      "analysis": {
+        "pure_onebit": {
+          "bits_per_weight": 1.25,
+          "scale_bits_per_block": 16,
+          "error": {
+            "relative_l2": 0.6086711759582305,
+            "max_block_relative_l2": 0.7587447585961089,
+            "max_abs": 0.869140625
+          }
+        },
+        "adaptive": [
+          {
+            "block_rms_budget": 0.0,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.01,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.03,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.1,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.2,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75495,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 1832,
+              "onebit": 0,
+              "onebit_with_exceptions": 216
+            },
+            "exception_values": 5406,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.4,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 58048,
+            "selected_bytes": 58048,
+            "selected_bits_per_weight": 3.54296875,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 20855,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.39393381508722125,
+              "max_block_relative_l2": 0.3999999707439697,
+              "max_abs": 0.451416015625
+            }
+          },
+          {
+            "block_rms_budget": 0.6,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 42568,
+            "selected_bytes": 42568,
+            "selected_bits_per_weight": 2.59814453125,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 734,
+              "onebit_with_exceptions": 1314
+            },
+            "exception_values": 1595,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.5731156141551417,
+              "max_block_relative_l2": 0.5999737980363419,
+              "max_abs": 0.805908203125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tensor": "model.layers.13.mlp.down_proj.weight",
+      "shape": [
+        1536,
+        8960
+      ],
+      "sampled_blocks": 2048,
+      "sample_selection": "Evenly spaced aligned blocks across the complete tensor",
+      "reference": "Native bitsandbytes whole-tensor NF4 with double quantization, decoded FP16",
+      "reference_reconstruction_bit_exact": true,
+      "codec_preparation_and_analysis_s": 0.6299785439987318,
+      "analysis": {
+        "pure_onebit": {
+          "bits_per_weight": 1.25,
+          "scale_bits_per_block": 16,
+          "error": {
+            "relative_l2": 0.6127022231424413,
+            "max_block_relative_l2": 0.9557876121283208,
+            "max_abs": 0.960296630859375
+          }
+        },
+        "adaptive": [
+          {
+            "block_rms_budget": 0.0,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.01,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.03,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.1,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.2,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75445,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 1810,
+              "onebit": 0,
+              "onebit_with_exceptions": 238
+            },
+            "exception_values": 5907,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.4,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 57890,
+            "selected_bytes": 57890,
+            "selected_bits_per_weight": 3.5333251953125,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 20511,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.3937797274525009,
+              "max_block_relative_l2": 0.3999832710670674,
+              "max_abs": 0.539306640625
+            }
+          },
+          {
+            "block_rms_budget": 0.6,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 43481,
+            "selected_bytes": 43481,
+            "selected_bits_per_weight": 2.65386962890625,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 632,
+              "onebit_with_exceptions": 1416
+            },
+            "exception_values": 1731,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.5715913656350781,
+              "max_block_relative_l2": 0.5999570042930412,
+              "max_abs": 0.8023681640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tensor": "model.layers.27.self_attn.q_proj.weight",
+      "shape": [
+        1536,
+        1536
+      ],
+      "sampled_blocks": 2048,
+      "sample_selection": "Evenly spaced aligned blocks across the complete tensor",
+      "reference": "Native bitsandbytes whole-tensor NF4 with double quantization, decoded FP16",
+      "reference_reconstruction_bit_exact": true,
+      "codec_preparation_and_analysis_s": 0.6458221110005979,
+      "analysis": {
+        "pure_onebit": {
+          "bits_per_weight": 1.25,
+          "scale_bits_per_block": 16,
+          "error": {
+            "relative_l2": 0.634142750602763,
+            "max_block_relative_l2": 0.7966789450326487,
+            "max_abs": 0.8887939453125
+          }
+        },
+        "adaptive": [
+          {
+            "block_rms_budget": 0.0,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.01,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.03,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.1,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.2,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75626,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 1932,
+              "onebit": 0,
+              "onebit_with_exceptions": 116
+            },
+            "exception_values": 2903,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.4,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 59088,
+            "selected_bytes": 59088,
+            "selected_bits_per_weight": 3.6064453125,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 22951,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.39420724900112003,
+              "max_block_relative_l2": 0.39999642334305074,
+              "max_abs": 0.427001953125
+            }
+          },
+          {
+            "block_rms_budget": 0.6,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 46429,
+            "selected_bytes": 46429,
+            "selected_bits_per_weight": 2.83380126953125,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 312,
+              "onebit_with_exceptions": 1736
+            },
+            "exception_values": 2464,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.5751591275882018,
+              "max_block_relative_l2": 0.5999969331905658,
+              "max_abs": 0.783935546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tensor": "model.layers.27.mlp.down_proj.weight",
+      "shape": [
+        1536,
+        8960
+      ],
+      "sampled_blocks": 2048,
+      "sample_selection": "Evenly spaced aligned blocks across the complete tensor",
+      "reference": "Native bitsandbytes whole-tensor NF4 with double quantization, decoded FP16",
+      "reference_reconstruction_bit_exact": true,
+      "codec_preparation_and_analysis_s": 0.6341821229980269,
+      "analysis": {
+        "pure_onebit": {
+          "bits_per_weight": 1.25,
+          "scale_bits_per_block": 16,
+          "error": {
+            "relative_l2": 0.6178663041594399,
+            "max_block_relative_l2": 0.8752040641881901,
+            "max_abs": 0.92596435546875
+          }
+        },
+        "adaptive": [
+          {
+            "block_rms_budget": 0.0,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.01,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.03,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.1,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.2,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75478,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 1821,
+              "onebit": 0,
+              "onebit_with_exceptions": 227
+            },
+            "exception_values": 5674,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.4,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 58074,
+            "selected_bytes": 58074,
+            "selected_bits_per_weight": 3.5445556640625,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 20915,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.39396751950658004,
+              "max_block_relative_l2": 0.39999855188447064,
+              "max_abs": 0.450927734375
+            }
+          },
+          {
+            "block_rms_budget": 0.6,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 43932,
+            "selected_bytes": 43932,
+            "selected_bits_per_weight": 2.681396484375,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 584,
+              "onebit_with_exceptions": 1464
+            },
+            "exception_values": 1862,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.5736673542287923,
+              "max_block_relative_l2": 0.5999581054845252,
+              "max_abs": 0.8057861328125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tensor": "model.layers.13.self_attn.v_proj.weight",
+      "shape": [
+        256,
+        1536
+      ],
+      "sampled_blocks": 2048,
+      "sample_selection": "Evenly spaced aligned blocks across the complete tensor",
+      "reference": "Native bitsandbytes whole-tensor NF4 with double quantization, decoded FP16",
+      "reference_reconstruction_bit_exact": true,
+      "codec_preparation_and_analysis_s": 0.6309294429993315,
+      "analysis": {
+        "pure_onebit": {
+          "bits_per_weight": 1.25,
+          "scale_bits_per_block": 16,
+          "error": {
+            "relative_l2": 0.6219015730382097,
+            "max_block_relative_l2": 0.8251138599302081,
+            "max_abs": 0.8990478515625
+          }
+        },
+        "adaptive": [
+          {
+            "block_rms_budget": 0.0,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.01,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.03,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.1,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.2,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75473,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 1829,
+              "onebit": 0,
+              "onebit_with_exceptions": 219
+            },
+            "exception_values": 5448,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.4,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 58218,
+            "selected_bytes": 58218,
+            "selected_bits_per_weight": 3.5533447265625,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 21203,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.3938459271196704,
+              "max_block_relative_l2": 0.3999929373483775,
+              "max_abs": 0.462646484375
+            }
+          },
+          {
+            "block_rms_budget": 0.6,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 44724,
+            "selected_bytes": 44724,
+            "selected_bits_per_weight": 2.729736328125,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 497,
+              "onebit_with_exceptions": 1551
+            },
+            "exception_values": 1989,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.572871912697243,
+              "max_block_relative_l2": 0.5999902402682722,
+              "max_abs": 0.8104248046875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tensor": "model.layers.0.mlp.up_proj.weight",
+      "shape": [
+        8960,
+        1536
+      ],
+      "sampled_blocks": 2048,
+      "sample_selection": "Evenly spaced aligned blocks across the complete tensor",
+      "reference": "Native bitsandbytes whole-tensor NF4 with double quantization, decoded FP16",
+      "reference_reconstruction_bit_exact": true,
+      "codec_preparation_and_analysis_s": 0.6379425949999131,
+      "analysis": {
+        "pure_onebit": {
+          "bits_per_weight": 1.25,
+          "scale_bits_per_block": 16,
+          "error": {
+            "relative_l2": 0.6098541812913295,
+            "max_block_relative_l2": 0.7817071372588801,
+            "max_abs": 0.862548828125
+          }
+        },
+        "adaptive": [
+          {
+            "block_rms_budget": 0.0,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.01,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.03,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.1,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75780,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.2,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 75525,
+            "selected_bytes": 65536,
+            "selected_bits_per_weight": 4.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 1857,
+              "onebit": 0,
+              "onebit_with_exceptions": 191
+            },
+            "exception_values": 4768,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.4,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 58347,
+            "selected_bytes": 58347,
+            "selected_bits_per_weight": 3.56121826171875,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 21437,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.393880117367012,
+              "max_block_relative_l2": 0.3999965018645852,
+              "max_abs": 0.462158203125
+            }
+          },
+          {
+            "block_rms_budget": 0.6,
+            "blocks": 2048,
+            "reference_bits_per_weight": 4,
+            "reference_code_bytes": 65536,
+            "encoded_candidate_bytes": 42806,
+            "selected_bytes": 42806,
+            "selected_bits_per_weight": 2.6126708984375,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 708,
+              "onebit_with_exceptions": 1340
+            },
+            "exception_values": 1663,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.5731957322695693,
+              "max_block_relative_l2": 0.5999581902807728,
+              "max_abs": 0.785888671875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tensor": "model.embed_tokens.weight",
+      "shape": [
+        151936,
+        1536
+      ],
+      "sampled_blocks": 2048,
+      "sample_selection": "Evenly spaced blocks from three 32-row windows: first, middle, last",
+      "reference": "Original public checkpoint values retained in FP16; no extra NF4 quantization",
+      "analysis": {
+        "pure_onebit": {
+          "bits_per_weight": 1.25,
+          "scale_bits_per_block": 16,
+          "error": {
+            "relative_l2": 0.6013696139909568,
+            "max_block_relative_l2": 0.886701840201301,
+            "max_abs": 0.1526336669921875
+          }
+        },
+        "adaptive": [
+          {
+            "block_rms_budget": 0.0,
+            "blocks": 2048,
+            "reference_bits_per_weight": 16,
+            "reference_code_bytes": 262144,
+            "encoded_candidate_bytes": 272388,
+            "selected_bytes": 262144,
+            "selected_bits_per_weight": 16.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2048,
+              "onebit": 0,
+              "onebit_with_exceptions": 0
+            },
+            "exception_values": 0,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.01,
+            "blocks": 2048,
+            "reference_bits_per_weight": 16,
+            "reference_code_bytes": 262144,
+            "encoded_candidate_bytes": 272336,
+            "selected_bytes": 262144,
+            "selected_bits_per_weight": 16.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 2023,
+              "onebit": 0,
+              "onebit_with_exceptions": 25
+            },
+            "exception_values": 1349,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.03,
+            "blocks": 2048,
+            "reference_bits_per_weight": 16,
+            "reference_code_bytes": 262144,
+            "encoded_candidate_bytes": 267276,
+            "selected_bytes": 262144,
+            "selected_bits_per_weight": 16.0,
+            "selected_native_reference": true,
+            "candidate_modes": {
+              "native": 1038,
+              "onebit": 0,
+              "onebit_with_exceptions": 1010
+            },
+            "exception_values": 52994,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.0,
+              "max_block_relative_l2": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          {
+            "block_rms_budget": 0.1,
+            "blocks": 2048,
+            "reference_bits_per_weight": 16,
+            "reference_code_bytes": 262144,
+            "encoded_candidate_bytes": 218354,
+            "selected_bytes": 218354,
+            "selected_bits_per_weight": 13.3272705078125,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 85623,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.09664369301159792,
+              "max_block_relative_l2": 0.09999492507015695,
+              "max_abs": 0.01190185546875
+            }
+          },
+          {
+            "block_rms_budget": 0.2,
+            "blocks": 2048,
+            "reference_bits_per_weight": 16,
+            "reference_code_bytes": 262144,
+            "encoded_candidate_bytes": 163770,
+            "selected_bytes": 163770,
+            "selected_bits_per_weight": 9.9957275390625,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 58331,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.19559310419461104,
+              "max_block_relative_l2": 0.19996839643035483,
+              "max_abs": 0.01904296875
+            }
+          },
+          {
+            "block_rms_budget": 0.4,
+            "blocks": 2048,
+            "reference_bits_per_weight": 16,
+            "reference_code_bytes": 262144,
+            "encoded_candidate_bytes": 81598,
+            "selected_bytes": 81598,
+            "selected_bits_per_weight": 4.9803466796875,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 0,
+              "onebit_with_exceptions": 2048
+            },
+            "exception_values": 17245,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.3930234253722687,
+              "max_block_relative_l2": 0.3999994963458439,
+              "max_abs": 0.03023052215576172
+            }
+          },
+          {
+            "block_rms_budget": 0.6,
+            "blocks": 2048,
+            "reference_bits_per_weight": 16,
+            "reference_code_bytes": 262144,
+            "encoded_candidate_bytes": 42530,
+            "selected_bytes": 42530,
+            "selected_bits_per_weight": 2.5958251953125,
+            "selected_native_reference": false,
+            "candidate_modes": {
+              "native": 0,
+              "onebit": 892,
+              "onebit_with_exceptions": 1156
+            },
+            "exception_values": 1279,
+            "shared_nf4_scale_metadata_included": false,
+            "error": {
+              "relative_l2": 0.5607866500540062,
+              "max_block_relative_l2": 0.5999803696854294,
+              "max_abs": 0.0857696533203125
+            }
+          }
+        ]
+      },
+      "codec_preparation_and_analysis_s": 0.408600402999582
+    }
+  ],
+  "matrix_multiply_probes": [
+    {
+      "tensor": "model.layers.0.self_attn.q_proj.weight",
+      "inputs": "Synthetic normal FP16, not task activations",
+      "error": {
+        "relative_l2": 0.6207972116569325,
+        "max_block_relative_l2": 0.7106927993378995,
+        "max_abs": 13.80859375
+      },
+      "scope": "Projection sensitivity only; no speed or task-quality claim"
+    },
+    {
+      "tensor": "model.layers.13.mlp.down_proj.weight",
+      "inputs": "Synthetic normal FP16, not task activations",
+      "error": {
+        "relative_l2": 0.624538525100149,
+        "max_block_relative_l2": 0.6585541694843421,
+        "max_abs": 15.2783203125
+      },
+      "scope": "Projection sensitivity only; no speed or task-quality claim"
+    }
+  ],
+  "limitations": [
+    "Weight error budgets are not training/eval loss tolerances",
+    "No full-model quality, completed 64-step task, speed or target claim",
+    "Only one sign/scale/exception codec; not an impossibility result",
+    "NF4 scale metadata is shared and excluded on both sides of storage comparison",
+    "All preparation belongs to this diagnostic; no precomputed model tensors are exported"
+  ],
+  "self_check": {
+    "cases": [
+      "all_codes",
+      "zero_nf4",
+      "binary_exact_nf4",
+      "half_random",
+      "half_binary"
+    ],
+    "budgets_per_case": 7,
+    "golden_nibble_layout": true,
+    "roundtrip_and_error_bound_checks": 35,
+    "scope": "CPU_CODEC_ONLY_NOT_TRAINING_QUALITY"
+  },
+  "device": "Tesla T4",
+  "diagnostic_wall_s": 12.33986357699905
+}

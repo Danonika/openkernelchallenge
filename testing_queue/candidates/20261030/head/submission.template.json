@@ -1,0 +1,9 @@
+{
+  "candidate_id": "head-private-half-native-replay-20261030",
+  "backend": "GCP",
+  "baseline_id": "REPLACE_WITH_MEASURED_GCP_BASELINE_ID",
+  "entrypoint": "soup_screen_v1",
+  "artifact_kind": "solution_bundle",
+  "priority": 50,
+  "contains_secrets": false
+}

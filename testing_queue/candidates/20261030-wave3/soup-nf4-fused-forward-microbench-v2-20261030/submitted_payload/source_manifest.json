@@ -1,0 +1,10 @@
+{
+  "solution/__init__.py": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41",
+  "solution/fixtures.py": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50",
+  "solution/guarded_forward.py": "1e15c10626515be88ac4c4cdf4753b71b1c2af4ac2bfa81dba32b8fb9a63e4b9",
+  "solution/kernel.py": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8",
+  "solution/native_source_manifest.json": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7",
+  "solution/nf4_format.py": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4",
+  "solution/operand_probe.py": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528",
+  "solution/web_preflight.py": "a9c804d25b729449239448f637438e4c425e9a4a14b396d60c291b5dc3ced804"
+}

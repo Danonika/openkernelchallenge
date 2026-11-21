@@ -1,0 +1,66 @@
+{
+  "candidate": "allresearch-streamed-eager-offload-v2",
+  "state": "failed",
+  "notebook_sha256": "f2045a1c8e12e1ee83eb5db3aedeeb21b255bf948c04039a99bfbd82870a33da",
+  "output_sha256": "4cc61498fbb4931bc0928c234a752f8475749fef98ba2bd8e474ee468e4169f8",
+  "nested_training": null,
+  "incomplete_training": null,
+  "official_admission": "UNKNOWN",
+  "paired": false,
+  "target": {
+    "command_s_below": 45,
+    "peak_mib_below": 1359,
+    "achieved": false
+  },
+  "preflight": {
+    "activation_offload_probe": {
+      "status": "PASS",
+      "scope": "CUDA_COMPONENT_PROBE_NOT_FULL_TASK",
+      "checks": [
+        {
+          "name": "cross_stream_same_bits",
+          "passed": true
+        },
+        {
+          "name": "transpose_layout_same_bits",
+          "passed": true
+        },
+        {
+          "name": "output",
+          "passed": true
+        },
+        {
+          "name": "input_gradient",
+          "passed": true
+        },
+        {
+          "name": "rng_state",
+          "passed": true
+        }
+      ],
+      "counts": {
+        "packed_tensors": 3,
+        "packed_logical_bytes": 13631488,
+        "unpacked_tensors": 3,
+        "unpacked_logical_bytes": 13631488
+      }
+    },
+    "composition": {
+      "status": "BLOCKED_EXPLORATORY_STRUCTURAL_PREFLIGHT",
+      "error": "RuntimeError('Native Qwen2Model.forward differs from reviewed 5.16.1 source')",
+      "engineering_numeric_failures": 0,
+      "numerical_pass_claim": false,
+      "original_thresholds_changed": false,
+      "checks": null
+    }
+  },
+  "screening_status": {
+    "status": "BLOCKED_FAILED_OR_CENSORED",
+    "error": "RuntimeError('Candidate preflight incomplete; no training started')",
+    "complete_fixed_task": false,
+    "complete_single_screen": false,
+    "errors": null,
+    "cleanup": null,
+    "complete_measurements": null
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "artifact": "actual_batch_native_return_mlp_shadow_diagnostic",
+  "status": "VERIFIED_COMPLETE_NATIVE_RETURN_SHADOW_DIAGNOSTIC_NOT_PRODUCTION_PASS",
+  "source_binding": {
+    "notebook_sha256": "a01558a4e9d3c1bd94cf10663441c0c22eb825591d56b0393663d4830ecfeefd",
+    "source_zip_sha256": "9d8d043c14732b0d96e335b4c6a1659d2f4cf6f01fc3d275bf49b8513743b5b6",
+    "output_archive_sha256": "477aa30ff87c728f48d0e23406400093477e06c872b6e25379fdfbb68a9f95a1",
+    "executed_notebook_sha256": "6e1565ebcd31a1aee98ec69bf43477c3a2f783197961b1dc20d18736090ea933",
+    "private_result_review_sha256": "1eee933d79da386e1c04b1d800acc998446a714468afcfe866ff8592b14c0512",
+    "status": "EXACT_SOURCE_AND_COMPLETED_OUTPUT_BOUND"
+  },
+  "scope": "One fresh-model real-public-batch native-return shadow backward; compact values discarded; no optimizer update or full task.",
+  "checks": {
+    "accepted_and_status_identity": true,
+    "output_archive_hash": true,
+    "runner_source_execution_binding": true,
+    "all_notebook_cell_sources_unchanged": true,
+    "outer_completion_cleanup": true,
+    "runtime.log.process.json": true,
+    "worker.log.process.json": true,
+    "idle_before/idle.log.process.json": true,
+    "idle_after/idle.log.process.json": true,
+    "idle_before_after": true,
+    "wrapper_complete_no_export_omissions": true,
+    "worker_source_sha": true,
+    "exact17_source_manifest": true,
+    "all19_native_pins_before_after": true,
+    "batch_binding": true,
+    "collated_batch_hashes": true,
+    "single_step_no_fulltask": true,
+    "restoration_mask_rng": true,
+    "all28_mlp84_contexts": true,
+    "native_contexts_are_unowned_only": true,
+    "native_return_and_no_certificate": true,
+    "all84_finite_zero_witnesses": true,
+    "scaler_and_parameters_unchanged": true,
+    "rewind_complete": true,
+    "gate_proj_exact_count_geometry": true,
+    "gate_proj_finite_nonnegative_metrics": true,
+    "up_proj_exact_count_geometry": true,
+    "up_proj_finite_nonnegative_metrics": true,
+    "down_proj_exact_count_geometry": true,
+    "down_proj_finite_nonnegative_metrics": true
+  },
+  "family_stats": {
+    "gate_proj": {
+      "eligible": 28,
+      "owned_fallbacks": 0,
+      "K": 8960,
+      "input_width": 1536,
+      "full_rows": 1500,
+      "live_rows": 811,
+      "padding_rows": 689,
+      "metrics": {
+        "local_live_dx_relative_l2": {
+          "min": 0.0003614157486391804,
+          "max": 0.0003847095190187878
+        },
+        "local_live_dx_max_abs": {
+          "min": 0.015625,
+          "max": 0.25
+        },
+        "max_abs_actual_dy": {
+          "min": 91.8125,
+          "max": 928.0
+        },
+        "max_abs_decoded_weight": {
+          "min": 0.3828125,
+          "max": 1.0
+        },
+        "unrounded_absolute_dot_upper_bound": {
+          "min": 562065.0,
+          "max": 3183040.0
+        }
+      },
+      "zero_local_error_events": 0,
+      "unrounded_bound_below65504_count": 0,
+      "bound_is_range_certificate": false
+    },
+    "up_proj": {
+      "eligible": 28,
+      "owned_fallbacks": 0,
+      "K": 8960,
+      "input_width": 1536,
+      "full_rows": 1500,
+      "live_rows": 811,
+      "padding_rows": 689,
+      "metrics": {
+        "local_live_dx_relative_l2": {
+          "min": 0.00035713683408123483,
+          "max": 0.0003763028418954897
+        },
+        "local_live_dx_max_abs": {
+          "min": 0.015625,
+          "max": 0.25
+        },
+        "max_abs_actual_dy": {
+          "min": 102.25,
+          "max": 1622.0
+        },
+        "max_abs_decoded_weight": {
+          "min": 0.310546875,
+          "max": 0.921875
+        },
+        "unrounded_absolute_dot_upper_bound": {
+          "min": 356085.625,
+          "max": 9196740.0
+        }
+      },
+      "zero_local_error_events": 0,
+      "unrounded_bound_below65504_count": 0,
+      "bound_is_range_certificate": false
+    },
+    "down_proj": {
+      "eligible": 28,
+      "owned_fallbacks": 0,
+      "K": 1536,
+      "input_width": 8960,
+      "full_rows": 1500,
+      "live_rows": 811,
+      "padding_rows": 689,
+      "metrics": {
+        "local_live_dx_relative_l2": {
+          "min": 0.0,
+          "max": 0.0
+        },
+        "local_live_dx_max_abs": {
+          "min": 0.0,
+          "max": 0.0
+        },
+        "max_abs_actual_dy": {
+          "min": 14.5546875,
+          "max": 592.0
+        },
+        "max_abs_decoded_weight": {
+          "min": 0.55859375,
+          "max": 1.203125
+        },
+        "unrounded_absolute_dot_upper_bound": {
+          "min": 26897.0625,
+          "max": 507936.0
+        }
+      },
+      "zero_local_error_events": 28,
+      "unrounded_bound_below65504_count": 9,
+      "bound_is_range_certificate": false
+    }
+  },
+  "observed_eligibility": {
+    "bound_contexts": 84,
+    "expected_mlp_contexts_if_all_owned": 84,
+    "events": 193,
+    "shadow_eligible": 84,
+    "native_fallbacks": 0,
+    "unowned_native_contexts": 109
+  },
+  "precision_flags": {
+    "allow_fp16_reduced_precision_reduction": true,
+    "allow_fp16_accumulation": false,
+    "allow_tf32": false,
+    "math_sdp_fp16_bf16_reduction_allowed": false
+  },
+  "trainable_parameter_gradients_present": 112,
+  "nonfinite_gradient_elements": 0,
+  "training_step_calls": 1,
+  "optimizer_steps": 0,
+  "scaler_scale": 65536.0,
+  "parameters_and_scaler_unchanged": true,
+  "descriptive_fresh_batch_loss_not_quality_score": 2.189882755279541,
+  "production_clearance": false,
+  "range_certificate": false,
+  "propagated_compact_gradient_correctness": "NOT_TESTED",
+  "fulltask_quality_time_memory_score": "NOT_TESTED",
+  "admission": "UNKNOWN",
+  "next_action": "RESEARCH: observed eligibility is resolved. Prioritize whether a down-proj-only range policy can safely remove native witness; all28 down-proj observations have zero numeric local error, unlike gate/up. A witness-retained changed-return probe would be distinct integration evidence only, not an optimized candidate. Do not rerun this unchanged shadow or promote all84 compact returns.",
+  "remaining_blockers": [
+    "Native witness removal has no implemented source/backend-bound range/nonfinite policy; unrounded bound alone is not a certificate.",
+    "Only9/28 down bounds and0/56 gate/up bounds lie below65504 even before rounding analysis.",
+    "Compact outputs were discarded, so downstream gradient/GradScaler behavior was not tested.",
+    "Fresh batch29 row selection is not learned step29 or whole training distribution.",
+    "No stable layer IDs in events; only projection-family counts/event order are established."
+  ],
+  "training_time_seconds": null,
+  "whole_model_peak_mib": null,
+  "fulltask_quality": null,
+  "score": null,
+  "measurement_note": "Whole-notebook timings and host peaks are intentionally not presented as training/model metrics."
+}

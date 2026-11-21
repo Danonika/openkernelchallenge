@@ -1,0 +1,62 @@
+{
+  "candidate_id": "SOUP-NEW-001",
+  "source_sha256": "63a5fd43372a1dd8c6922c1485a1a24aad5bc571460512db03f8ae7536ef1de3",
+  "backend": "KAGGLE_T4",
+  "baseline_id": "base_KAGGLE_T4",
+  "environment_fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "task_fingerprint": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "harness_commit": "cccccccccccccccccccccccccccccccccccccccc",
+  "schema_version": 1,
+  "outcome": "aborted",
+  "execution": {
+    "run_reference": "run01",
+    "command_exit_code": -9,
+    "wrapper_exit_code": 0,
+    "nested_metrics_exit_code": 0,
+    "verified_global_step": null,
+    "visible_step": 63,
+    "expected_steps": 64,
+    "adapter_saved": null,
+    "wrapper_elapsed_s": 90.0,
+    "termination_reason": "timeout",
+    "task_completion_status": "INCOMPLETE"
+  },
+  "metrics": {
+    "command_runtime_s": null,
+    "observed_runtime_s": 79.04,
+    "runtime_kind": "right_censored",
+    "peak_memory_mib": 100.0,
+    "peak_kind": "partial",
+    "memory_scope": "gpu_physical_sum",
+    "eval_loss": null,
+    "own_kernel_share": null,
+    "admission": "UNKNOWN",
+    "score": null,
+    "runtime_scope": "native_train_command"
+  },
+  "provenance": {
+    "raw_result_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "checks_sha256": null,
+    "collector": "fake-runner",
+    "admission_reviewer": null,
+    "score_evidence_sha256": null,
+    "runtime_json_pointer": "/runs/solution/0/wall_s",
+    "peak_json_pointer": "/runs/solution/0/gpu_peak_mib",
+    "actual_route_counts": null,
+    "own_kernel_names": null,
+    "executed_source_manifest_sha256": null,
+    "source_set_matches_reviewed": null,
+    "source_allowlist_sha256": null,
+    "route_evidence_state": "unknown",
+    "route_evidence_scope": "unknown",
+    "activation_status": "UNKNOWN",
+    "own_share_scope": "unknown",
+    "own_share_evidence_sha256": null
+  },
+  "preflight": {
+    "status": "PASS",
+    "scope": "T4_PREFLIGHT",
+    "raw_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "source_sha256": "63a5fd43372a1dd8c6922c1485a1a24aad5bc571460512db03f8ae7536ef1de3"
+  }
+}

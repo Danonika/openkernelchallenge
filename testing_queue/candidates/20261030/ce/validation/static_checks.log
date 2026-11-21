@@ -1,0 +1,104 @@
+{
+  "status": "PASS_STATIC_AND_CPU_INFRASTRUCTURE_ONLY",
+  "checks": [
+    {
+      "name": "all_python_syntax",
+      "passed": true,
+      "details": {
+        "files": 11
+      }
+    },
+    {
+      "name": "exact_and_deterministic_solution_zip",
+      "passed": true,
+      "details": {
+        "files": 7,
+        "sha256": "b2e2622bb95d7d01bd69ae525d2d2098f42f3e4d43c807f058635ec60a20ed34"
+      }
+    },
+    {
+      "name": "notebook_syntax_cleared_and_embedded_bytes",
+      "passed": true,
+      "details": {
+        "cells": 6,
+        "code_cells": 3
+      }
+    },
+    {
+      "name": "numeric_contract_unchanged",
+      "passed": true,
+      "details": {
+        "kernel_count": 5,
+        "native_expression_ast_unchanged": true,
+        "fixed_gates_bytes_unchanged": true,
+        "fallback_graph_context_preserved": true,
+        "adapter_duplicate_item_removed": true
+      }
+    },
+    {
+      "name": "official_static_source_scan",
+      "passed": true,
+      "details": {
+        "own_named_kernels": [
+          "soup_ce_exp_tile_max",
+          "soup_ce_exp_row_max",
+          "soup_ce_exp_tile_sum",
+          "soup_ce_exp_selected",
+          "soup_ce_exp_backward"
+        ],
+        "copies": [],
+        "lookalikes": [],
+        "banned": [],
+        "broken": [],
+        "not_jury_originality_approval": true
+      }
+    },
+    {
+      "name": "official_source_manifest",
+      "passed": true,
+      "details": {
+        "files": 15,
+        "matches_local_official": true
+      }
+    },
+    {
+      "name": "completion_fail_closed_fixtures",
+      "passed": true,
+      "details": {
+        "empty_rejected": true,
+        "native_timeout_with_nested_64_rejected": true,
+        "nonfinite_quality_rejected": true
+      }
+    },
+    {
+      "name": "pinned_public_model_cache_cpu_fixtures",
+      "passed": true,
+      "details": {
+        "wrong_main_rejected": true,
+        "escaped_blob_rejected": true
+      }
+    },
+    {
+      "name": "route_parser_and_owned_timeout_cleanup_cpu_fixture",
+      "passed": true,
+      "details": {
+        "partial_line_ignored": true,
+        "missing_unknown": true,
+        "nested_session_child_terminated": true
+      }
+    },
+    {
+      "name": "queue_template_unresolved_baseline",
+      "passed": true,
+      "details": {
+        "submitted": false,
+        "baseline_fabricated": false
+      }
+    }
+  ],
+  "gpu_queried": false,
+  "gpu_executed": false,
+  "performance_claim": false,
+  "official_admission": "UNKNOWN",
+  "score": null
+}

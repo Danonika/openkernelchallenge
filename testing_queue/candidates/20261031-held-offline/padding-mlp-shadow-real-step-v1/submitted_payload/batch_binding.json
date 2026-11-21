@@ -1,0 +1,46 @@
+{
+  "step": 29,
+  "rows": [
+    52,
+    96,
+    250,
+    93
+  ],
+  "lengths": [
+    80,
+    375,
+    132,
+    224
+  ],
+  "width": 375,
+  "live_tokens": 811,
+  "padded_tokens": 1500,
+  "padding_tokens": 689,
+  "padding_fraction": 0.4593333333333333,
+  "supervised_tokens": [
+    22,
+    327,
+    83,
+    172
+  ],
+  "dense_attention_positions": 562500,
+  "per_row_square_positions": 214625,
+  "selection": "PREDECLARED lower-median actual padded width 375, actual ledger batch 29; fresh weights not actual trained step-29 state",
+  "ledger_sha256": "d52f29a14df99ae740f076261161a2e598be264373e240870fed2d365692946c",
+  "order_evidence": {
+    "job": "n_2e0cc5304b014bbea382b19f185ceb47",
+    "raw_zip_sha256": "1c6a939967234ee3c6d9dae1f2fe86d1b3073cee181740393ea1da4f6d3acf61",
+    "actual_result_sha256": "e5a56cfefb995309f76a318fe744f7c167cd48bdd0c3bbe9e6f0f3e4dac6fb75",
+    "all256_actual_Rewind_supervised_counts_match": true,
+    "all64_actual_num_tokens_increments_match": true,
+    "row_order_from_actual_Rewind_not_recreated_RNG_sampler": true
+  },
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "asset_sha256": {
+    "train.jsonl": "93d036d912bd81c337dc29893e13a76f36161d96f896ef4e02492e2f1a21a0dd",
+    "eval_public.jsonl": "b7f85b78ba3186dce4deab7cfb8bf8dcf7998e1517c5749ac0f5005886c6f70e",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "config.json": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670"
+  }
+}

@@ -2,17 +2,17 @@
 
 Ветка поставки — **main**. Подтверждённые результаты **47,73 с / 2263 MiB, 10/10 и 79/79 PASS** относятся к успешной сохранённой **Kaggle v1**, source COMMIT `156d8f9f944a928e31defaaf322d6130a9032afa`.
 
-Текущий [минимальный notebook в main](https://example.invalid/redacted) закреплён на достижимом из **main** source COMMIT `9937c8534d96855a6d713e38256c2f1aae34023f`. Bootstrap содержит проверенный снимок исходников; дополнительных веток и GitHub-токена не требует. Все 38 core-файлов и canonical solution SHA `2855411877ff29f8cc9f6d54dafca376c3ca805c0e264b8e39211cf428035f56` сохранены. Новые результаты минимальной версии здесь не заявляются.
+Текущий [минимальный notebook в репозитории](notebooks/Soup-Duo-Final-Submission-v1.ipynb) содержит проверенный снимок из исходного командного коммита `9937c8534d96855a6d713e38256c2f1aae34023f`. Bootstrap содержит проверенный снимок исходников; дополнительных веток и GitHub-токена не требует. Все 38 core-файлов и canonical solution SHA `2855411877ff29f8cc9f6d54dafca376c3ca805c0e264b8e39211cf428035f56` сохранены. Новые результаты минимальной версии здесь не заявляются.
 
-The current minimal notebook embeds the verified source snapshot pinned to main-reachable commit `9937c8534d96855a6d713e38256c2f1aae34023f`; it has no secondary-branch dependency. Core source is unchanged. The successful v1 measurements remain the evidence reported below; no new minimal-version run result is claimed.
+The current minimal notebook embeds the verified source snapshot from original team-repository commit `9937c8534d96855a6d713e38256c2f1aae34023f`; it has no secondary-branch dependency. Core source is unchanged. The successful v1 measurements remain the evidence reported below; no new minimal-version run result is claimed.
 
 **На одной Kaggle T4: 47,73 с вместо 86,39 с, 2263 MiB вместо 14345 MiB, eval loss +0,009%. Все 10 автоматических проверок пройдены.**
 
 Решение ускоряет фиксированное LoRA-обучение Soup 0.77.0, сокращая временные буферы, сохранённые активации и число запусков операций. Данные, настройки, адаптер и выходы Soup сохраняются.
 
-- [Публичный Kaggle notebook v1 с сохранённым результатом](https://example.invalid/redacted)
-- [Измеренный исходный commit `156d8f9f944a`](https://example.invalid/redacted)
-- [Презентация](https://example.invalid/redacted) · [Демо-видео, 2 мин 48 с](https://example.invalid/redacted)
+- [Архив измерений Kaggle v1](docs/evidence-final-v1/result.json) · [проверки](docs/evidence-final-v1/checks.json)
+- [Происхождение измеренного снимка `156d8f9f944a`](docs/committed-source-proof.json)
+- [Презентация](presentation/Soup-Duo-38123-Presentation-v1.pptx) · [сценарий демо](presentation/Demo-Script-RU.md)
 
 ## Что сделано
 
@@ -46,13 +46,13 @@ The current minimal notebook embeds the verified source snapshot pinned to main-
 
 Доказательства: [result.json](docs/evidence-final-v1/result.json), [checks.json](docs/evidence-final-v1/checks.json), [проверка целостности и полезной доли](docs/evidence-final-v1/verification.json). Result SHA-256: `91483e6e55038dcb7f81be5ae410e6811fe5c9a1fdb33501e6e5f88677c8c0b0`. Checks SHA-256: `4e3bc3236c6be3a394740028817ce23e6d0717d7a0b6d089e87dc31a3783e868`.
 
-Исторические результаты: выбранный вариант `adaptive448-head-vchunk4096-N1024-v1` показывал 38,123 с / 2261 MiB в одиночном запуске таблицы, job `n_a755cc946d544ae5ab94502096245ff4`. Его reference был другим оптимизированным кандидатом, не stock Soup. Предыдущая парная сессия v32 дала 46,78 с / 2263 MiB против 84,69 с / 14345 MiB. Эти результаты не подменяют итог финальной сессии выше; межсессионное абсолютное время может отличаться.
+Исторические результаты: выбранный вариант `adaptive448-head-vchunk4096-N1024-v1` показывал 38,123 с / 2261 MiB в одиночном запуске таблицы. Его reference был другим оптимизированным кандидатом, не stock Soup. Предыдущая парная сессия v32 дала 46,78 с / 2263 MiB против 84,69 с / 14345 MiB. Эти результаты не подменяют итог финальной сессии выше; межсессионное абсолютное время может отличаться.
 
 ## Как воспроизвести
 
-Для воспроизведения успешной v1 открыть [сохранённую Kaggle-версию 0](https://example.invalid/redacted), выбрать Copy & Edit, GPU T4 x2, Internet on и Run All; её COMMIT — `156d8f9f944a928e31defaaf322d6130a9032afa`.
+Сохранённый результат успешной Kaggle v1: [метрики](docs/evidence-final-v1/result.json), [проверки](docs/evidence-final-v1/checks.json) и [целостность исходников](docs/evidence-final-v1/verification.json). Исходный командный коммит измеренного снимка: `156d8f9f944a928e31defaaf322d6130a9032afa`.
 
-Текущая минимальная поставка: [notebook в main](https://example.invalid/redacted), source COMMIT `9937c8534d96855a6d713e38256c2f1aae34023f`. Она материализует тот же core-код из встроенного проверенного snapshot и вызывает официальный `run_task.py`. Удаление остальных веток на её воспроизведение не влияет.
+Текущая минимальная поставка: [notebook в main](notebooks/Soup-Duo-Final-Submission-v1.ipynb), исторический исходный командный коммит `9937c8534d96855a6d713e38256c2f1aae34023f`. Она материализует тот же core-код из встроенного проверенного snapshot и вызывает официальный `run_task.py`. Удаление остальных веток на её воспроизведение не влияет.
 
 Bootstrap адаптирован из официального шаблона: материализует точный plaintext-снимок реального командного commit и проверяет Git blob SHA и SHA-256 до исполнения. Доступ к private GitHub и GITHUB_TOKEN при запуске не требуются. В snapshot нет данных, адаптеров, весов или compiled caches. [Исходный официальный шаблон](templates/kaggle_notebook.ipynb) сохранён; `harness/`, `tests/`, `task/` не изменены. В каждом измеряемом запуске компиляционные кеши свежие.
 
@@ -87,12 +87,16 @@ Source commit: `156d8f9f944a928e31defaaf322d6130a9032afa`, tree `6a0c96a4dd32f98
 
 ## Команда и материалы
 
-| Участник | Роль | GitHub | Kaggle | Контакт капитана |
-|---|---|---|---|---|
-| Kolpenova Amina | Капитан | — | [aminakolpenova](https://example.invalid/redacted) | [Публичный Kaggle-профиль](https://example.invalid/redacted) |
-| Danonika | — | — | [daniyarkuttymbek](https://example.invalid/redacted) | — |
+| Участник | Роль |
+|---|---|
+| Kolpenova Amina | Капитан |
+| Danonika | Участник команды |
 
-[Презентация](https://example.invalid/redacted) · [PPTX в репозитории](presentation/Soup-Duo-38123-Presentation-v1.pptx) · [Видео, 168 секунд](https://example.invalid/redacted) · [Сценарий](presentation/Demo-Script-RU.md) · [Субтитры](presentation/Soup-Duo-Demo-v1.srt).
+[Презентация (PPTX)](presentation/Soup-Duo-38123-Presentation-v1.pptx) · [Сценарий](presentation/Demo-Script-RU.md) · [Субтитры](presentation/Soup-Duo-Demo-v1.srt).
+
+## Публичный архив
+
+Идентификаторы исходных коммитов выше описывают исторические снимки, а не коммиты переписанной публичной истории. [Что вошло в объединение веток](docs/PUBLIC_BRANCH_INTEGRATION.md). Архивные материалы не являются новым измерением.
 
 ## Ограничения
 

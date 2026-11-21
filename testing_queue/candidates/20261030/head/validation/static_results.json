@@ -1,0 +1,20 @@
+{
+  "scope": "Static/stdlib CPU checks only; no model, GPU or remote execution",
+  "checks": {
+    "all_python_syntax": true,
+    "notebook_json_cleared_and_code_syntax": true,
+    "notebook_embedded_bytes_match_packet": true,
+    "zip_source_hash_manifest_match": true,
+    "official_packager_deterministic": true,
+    "unchanged_official_commit_and_file_hashes": true,
+    "queue_template_shape_and_unresolved_baseline": true,
+    "completion_positive_and_seven_negative_fixtures": true,
+    "bundle_rejection_and_no_execute_safe_default": true,
+    "single_file_and_indexed_cache_fixtures": true,
+    "zero_triton_source_honestly_declared": true
+  },
+  "passed": 11,
+  "failed": 0,
+  "source_sha256": "fbe133d4fdf46353312c3de495f3d33958db04ce80380a9829628bc44daf0026",
+  "notebook_sha256": "dfec7260a546cf18a35bce2c7f0902870a9fdfa9963320af94a7200916321564"
+}

@@ -1,0 +1,39 @@
+{
+  "candidate": "soup-rotary-web80-20261030",
+  "complete_measurements": null,
+  "individual_command_observations_not_paired": [
+    {
+      "reported_external_peak_mib": 14345,
+      "reported_wall_s": 78.27,
+      "run": "base_1",
+      "scope": "harness log observation only; incomplete cohort; no ratio"
+    }
+  ],
+  "limits": [
+    "API state is not task correctness.",
+    "Internal 64 steps do not override a full-command timeout.",
+    "No ratio is formed from an incomplete cohort or another job.",
+    "Do not rerun unchanged failures automatically."
+  ],
+  "notebook_sha256": "e6bae793229acc6e2f70a2a10f3e511b48710549e014c2ac020d082db36ed660",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "815147db3f357d0b2b004e2269d578c86234983adc3f7c67d7c1aac7b6ef9fd1",
+  "paired_ratios": null,
+  "platform": "GCP development evidence, not Kaggle",
+  "preflight_statuses": [
+    "PASSED_PREFLIGHT_ONLY"
+  ],
+  "public_eval_verified": false,
+  "raw_receipt_filename": "rotary_attempt01_receipt_v4.json",
+  "raw_receipt_sha256": "123fc8460145f57c53b77c5cfc62987216c89ca0f41d586c095e729bd1a7640d",
+  "raw_review_status": "INCOMPLETE_CENSORED_OR_UNBOUND",
+  "score": null,
+  "training_limit": {
+    "deadline_reached": true,
+    "elapsed_s": 80.00012258399875,
+    "limit_s": 80.0,
+    "reason": "training_run_exceeded_limit",
+    "reported_wall_s": 80.0,
+    "run_name": "solution_1"
+  }
+}

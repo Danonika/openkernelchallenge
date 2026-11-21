@@ -1,0 +1,25 @@
+{
+  "candidate": "soup-lora-epilogue-fixed-web80-20261030",
+  "complete_measurements": null,
+  "individual_command_observations_not_paired": [],
+  "limits": [
+    "API state is not task correctness.",
+    "Internal 64 steps do not override a full-command timeout.",
+    "No ratio is formed from an incomplete cohort or another job.",
+    "Do not rerun unchanged failures automatically."
+  ],
+  "notebook_sha256": "525024d5cb247319b5bd9f5df5c6e5291e775e543280ccabe0eb45ae7fe6b07f",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "2a1d38b088a7372c2835d24043be48915ff519773af98f69cee84140bd4cb7d4",
+  "paired_ratios": null,
+  "platform": "GCP development evidence, not Kaggle",
+  "preflight_statuses": [
+    "GPU_PREFLIGHT_FAILED"
+  ],
+  "public_eval_verified": false,
+  "raw_receipt_filename": "lora_attempt01_receipt_v3.json",
+  "raw_receipt_sha256": "b6312f0d4159448412db0693d62d71cd6726f5e10c435437c5e075341c1fca77",
+  "raw_review_status": "INCOMPLETE_CENSORED_OR_UNBOUND",
+  "score": null,
+  "training_limit": null
+}

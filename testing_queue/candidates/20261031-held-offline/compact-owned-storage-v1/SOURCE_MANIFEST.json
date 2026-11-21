@@ -1,0 +1,172 @@
+{
+  "original_notebook_sha256": "f04b57461cb67bae2afd3038319a18098d0b56cfd1e548aaed65eb42df606adb",
+  "original_source_zip_sha256": "4fb83e4984c6ea230cc26f07563315c71667a68dc431ad2cdda89459e088a905",
+  "expanded_payload_sources": {
+    "README.md": {
+      "sha256": "15b1b23c69df23f8048d2925c991c2d9bad8df7159664c3d6eb9cd09f17d216d",
+      "bytes": 4442
+    },
+    "candidate_profile.json": {
+      "sha256": "6a71689859207cd78075703fb6717d358f53ddb502abb0d6c533cb796221eacf",
+      "bytes": 2740
+    },
+    "evidence_reader.py": {
+      "sha256": "95a3e3b9956bae7b998cd528c1e8e3023eda3a0a4f006ef29ca224eb8337b03c",
+      "bytes": 1702
+    },
+    "full_m_compact_storage_single_v1_manifest.json": {
+      "sha256": "46794e01c4771c28014a204af5e07f2f659d8bff7a1054c42f333b45e8ddd7fc",
+      "bytes": 3045
+    },
+    "official_manifest.json": {
+      "sha256": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+      "bytes": 1415
+    },
+    "owned_process_tree.py": {
+      "sha256": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+      "bytes": 5956
+    },
+    "prepare_asset_manifest.py": {
+      "sha256": "f2a0f36b5cd367d506c831c69f1a39d49c38c3c815758be5d0fd7a2ec033f46d",
+      "bytes": 2813
+    },
+    "process_guard.py": {
+      "sha256": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+      "bytes": 7506
+    },
+    "runtime_api_reference.json": {
+      "sha256": "d79e555702154a0516efa87ca22ab00dad39c515eefb12fc7332a0da40108881",
+      "bytes": 1023
+    },
+    "runtime_probe.py": {
+      "sha256": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+      "bytes": 2328
+    },
+    "solution/__init__.py": {
+      "sha256": "402658fe468cb8ba0b6298c885e3bcf324af7c640d8d09414444db1d9d18fb7d",
+      "bytes": 3642
+    },
+    "solution/ce_tile.py": {
+      "sha256": "2baea1f4b7c567379e3674b76204d39e9fb128eb6cfcda9a8d8edebbfd230e7b",
+      "bytes": 8481
+    },
+    "solution/chain.py": {
+      "sha256": "99f0b18cc98da0971fbbdede0b796b98bfe5472aa93e61c9de29b09eb529dc2e",
+      "bytes": 3701
+    },
+    "solution/common/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "solution/common/bridge_state.py": {
+      "sha256": "e3ba64446a8bb3eb8cd6ec31b4e5d0018a47c8f3b90d00da955dc2e444eb18e9",
+      "bytes": 9674
+    },
+    "solution/common/consumer.py": {
+      "sha256": "f018a9b6808d76381a205580e8a2ff9d2c0eb706fa34c8434fe41b0ad99da2bc",
+      "bytes": 9632
+    },
+    "solution/compact_mlp_install.py": {
+      "sha256": "4c7960649daaf690c23beb747f85173ccd5b2458f069c1b3660f0c155c5473d4",
+      "bytes": 10607
+    },
+    "solution/contracts.py": {
+      "sha256": "36bb54c6cac40b7f3896b2ce3a52665f972942f5e5856e237946a1f80091fb4b",
+      "bytes": 1790
+    },
+    "solution/exploratory_preflight.py": {
+      "sha256": "7523a69b024267fc0cb457b4a472b2aa3f5670eeb755ac1a96dd01790e6d9e23",
+      "bytes": 7010
+    },
+    "solution/frozen_storage.py": {
+      "sha256": "a3edfdfe568595e183ce57d858db4032d2e0e0b6cfe5bac8468dda3b0c299338",
+      "bytes": 18845
+    },
+    "solution/mlp_half/__init__.py": {
+      "sha256": "c8e25c83da77649c7e76d7e2557dca8a3b9e975a81fa738713211a9a8f8d6ff0",
+      "bytes": 80
+    },
+    "solution/mlp_half/native_owner.py": {
+      "sha256": "7b69f2a354def25cb53d4ca78f3c19082497838c5f6ee133d94694e6113d540c",
+      "bytes": 7981
+    },
+    "solution/mlp_half/owned_half.py": {
+      "sha256": "8a714205c4f1de8ff7997f9430e47fb417b54e66879b64fa80144896c52a807b",
+      "bytes": 6175
+    },
+    "solution/mlp_half/starter_half.py": {
+      "sha256": "3759f3761b3b3d2a8e018b80a8571c9cc1456b8adc1ed40e47e1c919132e7dda",
+      "bytes": 3306
+    },
+    "solution/mlp_half/starter_swiglu.py": {
+      "sha256": "e665910faeca6091c958ed7a191604484a44216f51d6fa069f5f48220e7472e6",
+      "bytes": 3185
+    },
+    "solution/original/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "solution/original/materialized_ce.py": {
+      "sha256": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1",
+      "bytes": 14846
+    },
+    "solution/original/metric_summary.py": {
+      "sha256": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4",
+      "bytes": 3256
+    },
+    "solution/original/mixed_rows.py": {
+      "sha256": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2",
+      "bytes": 7670
+    },
+    "solution/ownership.py": {
+      "sha256": "784c56dd5c0c8f6dca1311b38a71f07d7809824ab8ce33456579005b1e776f05",
+      "bytes": 6507
+    },
+    "solution/source_owners.py": {
+      "sha256": "c701bfd7063e289d91c8e5b856b62827f6a9f4f2579aa23bbed4a911a5d38e5b",
+      "bytes": 7989
+    },
+    "solution/streaming_boundary.py": {
+      "sha256": "75fe8bf958213a3782eafa023e4a3d1cd47cdca74835562bd81ad7827a9648aa",
+      "bytes": 10171
+    },
+    "solution/support/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "solution/support/nf4.py": {
+      "sha256": "9e07a73d45f7b7119fc1f5d1d3422351e5d34e2fbd9612f7b90f56bc17ad697a",
+      "bytes": 10430
+    },
+    "solution/support/rmsnorm.py": {
+      "sha256": "aa55a21fd921d2f5478444b03a32694a329bb10bbbe4f3bf46e4e78f2804a93c",
+      "bytes": 5869
+    },
+    "solution/support_install.py": {
+      "sha256": "cc2b400597bb35246c353893185c37087394bb6c0e5e9a3a677f21dc2bf38984",
+      "bytes": 7536
+    },
+    "solution/telemetry.py": {
+      "sha256": "86fbf73df07c9179474a94f2c5349f04d8a36df16ed3e084ec9433cb3055662c",
+      "bytes": 906
+    },
+    "solution/token_chunk_head.py": {
+      "sha256": "bcc6417e4d376920668bcb341f5491afe32847d768a7d10df75503b1c9e244ac",
+      "bytes": 4621
+    },
+    "solution/verify_tile.py": {
+      "sha256": "f4f6251987b6199365b853d48979a136ec2dc2626bed68f374ae2940ee6047a1",
+      "bytes": 6201
+    },
+    "solution/web_preflight.py": {
+      "sha256": "fb2ae9228b469ae6d4760923ab57f575f5dcdfaf383aa3e85ff8d3710d33c5e1",
+      "bytes": 24609
+    },
+    "web_runner.py": {
+      "sha256": "4b879032a2f8e55df581cae6420282e9534105726d969a9c21696dab665ac549",
+      "bytes": 17234
+    }
+  },
+  "source_bytes_preserved": true,
+  "source_archives_expanded_not_duplicated": true
+}

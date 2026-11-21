@@ -1,0 +1,125 @@
+{
+  "scope": "Syntax, clear notebook outputs, ZIP identity only; not execution or correctness proof",
+  "lanes": [
+    {
+      "lane": "ce",
+      "errors": [],
+      "notebooks": [
+        {
+          "path": "candidate.ipynb",
+          "code_cells": 3,
+          "sha256": "de59f30104f2b7ff1d6b8d88fd650e28318bbc485a3de2b2cd280d1601754a5b"
+        }
+      ],
+      "bundles": [
+        {
+          "path": "candidate.zip",
+          "files": 7,
+          "sha256": "b2e2622bb95d7d01bd69ae525d2d2098f42f3e4d43c807f058635ec60a20ed34"
+        }
+      ],
+      "gpu_validation": "NOT_RUN",
+      "structural_status": "PASS"
+    },
+    {
+      "lane": "head",
+      "errors": [],
+      "notebooks": [
+        {
+          "path": "candidate.ipynb",
+          "code_cells": 4,
+          "sha256": "dfec7260a546cf18a35bce2c7f0902870a9fdfa9963320af94a7200916321564"
+        }
+      ],
+      "bundles": [
+        {
+          "path": "candidate.zip",
+          "files": 3,
+          "sha256": "fbe133d4fdf46353312c3de495f3d33958db04ce80380a9829628bc44daf0026"
+        }
+      ],
+      "gpu_validation": "NOT_RUN",
+      "structural_status": "PASS"
+    },
+    {
+      "lane": "memory",
+      "errors": [],
+      "notebooks": [
+        {
+          "path": "candidate.ipynb",
+          "code_cells": 3,
+          "sha256": "8f41117f34ad3d51bda2e0ab30bb31941bfa4d47a0622ac365906029b9b89baa"
+        }
+      ],
+      "bundles": [
+        {
+          "path": "candidate.zip",
+          "files": 7,
+          "sha256": "055183cdd11a254e3462f25b95b4c0ec87a556cc58cb9bcc08e77f5390548979"
+        }
+      ],
+      "gpu_validation": "NOT_RUN",
+      "structural_status": "PASS"
+    },
+    {
+      "lane": "nf4",
+      "errors": [],
+      "notebooks": [
+        {
+          "path": "candidate.ipynb",
+          "code_cells": 4,
+          "sha256": "3bb4acc13beb182a97399335cbe1c8db3aef90e935af4af1b5a2844b47f17b42"
+        }
+      ],
+      "bundles": [
+        {
+          "path": "candidate.zip",
+          "files": 3,
+          "sha256": "33497fee4dbc96070e1207ec2df6d2e4eef1cf196d50c4d6e9df73e7c0fb649f"
+        }
+      ],
+      "gpu_validation": "NOT_RUN",
+      "structural_status": "PASS"
+    },
+    {
+      "lane": "lora",
+      "errors": [],
+      "notebooks": [
+        {
+          "path": "candidate.ipynb",
+          "code_cells": 3,
+          "sha256": "d1f00667dc12c28c29037f0ee0503d1cffcfaf1ae3e143485d30a1e2b40a114c"
+        }
+      ],
+      "bundles": [
+        {
+          "path": "candidate.zip",
+          "files": 3,
+          "sha256": "7e8a9969ff1f8236d55ce152d93432157ce27bfd9d9a28ad285f41693a7d38cf"
+        }
+      ],
+      "gpu_validation": "NOT_RUN",
+      "structural_status": "PASS"
+    },
+    {
+      "lane": "rotary",
+      "errors": [],
+      "notebooks": [
+        {
+          "path": "candidate.ipynb",
+          "code_cells": 3,
+          "sha256": "a9072b0653bcba603d16e32208c4697e40e25fd580b543e817b7cbc04857f10f"
+        }
+      ],
+      "bundles": [
+        {
+          "path": "candidate.zip",
+          "files": 5,
+          "sha256": "b874e6a4f23b9912014ed3f39e30c44716fc3af5aece742d5c03d447643d3829"
+        }
+      ],
+      "gpu_validation": "NOT_RUN",
+      "structural_status": "PASS"
+    }
+  ]
+}

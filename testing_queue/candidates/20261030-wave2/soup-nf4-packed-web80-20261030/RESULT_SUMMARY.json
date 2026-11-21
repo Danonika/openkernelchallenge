@@ -1,0 +1,39 @@
+{
+  "candidate": "soup-nf4-packed-web80-20261030",
+  "complete_measurements": null,
+  "individual_command_observations_not_paired": [
+    {
+      "reported_external_peak_mib": 14345,
+      "reported_wall_s": 79.57,
+      "run": "base_1",
+      "scope": "harness log observation only; incomplete cohort; no ratio"
+    }
+  ],
+  "limits": [
+    "API state is not task correctness.",
+    "Internal 64 steps do not override a full-command timeout.",
+    "No ratio is formed from an incomplete cohort or another job.",
+    "Do not rerun unchanged failures automatically."
+  ],
+  "notebook_sha256": "35bdebad98d08810be44374b93edc46237465c9af190df17523328b0f08fe54b",
+  "official_admission": "NOT_ESTABLISHED",
+  "output_sha256": "ca6749f0c27432c210391753be45b4a42562a3910748164fedb40d2d7fdbc40a",
+  "paired_ratios": null,
+  "platform": "GCP development evidence, not Kaggle",
+  "preflight_statuses": [
+    "GPU_PREFLIGHT_PASSED"
+  ],
+  "public_eval_verified": false,
+  "raw_receipt_filename": "nf4_attempt01_receipt_v3.json",
+  "raw_receipt_sha256": "faca4bbcb932ab925f11f241971ccdc269d0f0d3ac57d9b15f72683e9aaa83f8",
+  "raw_review_status": "INCOMPLETE_CENSORED_OR_UNBOUND",
+  "score": null,
+  "training_limit": {
+    "deadline_reached": true,
+    "elapsed_s": 80.00020651600062,
+    "limit_s": 80.0,
+    "reason": "training_run_exceeded_limit",
+    "reported_wall_s": 80.0,
+    "run_name": "solution_1"
+  }
+}

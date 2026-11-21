@@ -1,0 +1,24 @@
+{
+  "batched-ce-direct-dz-v1": {
+    "mode": "full_m_batched_ce_storage_single_v1",
+    "notebook_sha256": "23668968eb95204fde68a7a66c54dd81fb883457c868e6143999fcec9860aad6",
+    "source_zip_sha256": "7f9882870836adf2829da353997091f31ec21e9333534cf91ba5fa54f0040eaa",
+    "source_manifest_sha256": "e5f1395952d0d5444b022431744f904905133dad807671321cf7a9e54d98edf1",
+    "source_files": 31,
+    "single_review_status": "CLEARED_FOR_HELD_BOUNDED_CANDIDATE_SCREEN_NOT_EXECUTION_AUTHORITY",
+    "review_original_sha256": "3d637ccbe9c12eac99e9cd9d896acc46a0bef26dbbc8c4ff70a652150f45930e",
+    "target_result_in_this_proposal": true,
+    "result_scope": "Completed candidate-only 64-step/public-eval screen"
+  },
+  "shared-cast-independent-edges-v1": {
+    "mode": "full_m_batched_ce_shared_cast_single_v1",
+    "notebook_sha256": "1fa804db81e47f91cda047677b4eb24dff034637d39db79e8fdcdda7a8cc2643",
+    "source_zip_sha256": "54f99d18d76ebaf83f8b205940e5a630825080065773e0b8a025c45e4b65297d",
+    "source_manifest_sha256": "2b0d28f8936051eca96f217c3e7b619bc8f7c37b4ed83285aba27f0adc827cff",
+    "source_files": 33,
+    "single_review_status": "CLEARED_FOR_BOUNDED_CANDIDATE_SCREEN_NOT_EXECUTION_AUTHORITY",
+    "review_original_sha256": "4442712e427175b8d3b95d082039003651bad9b50d43d5c645b0fd4fe2081fb0",
+    "target_result_in_this_proposal": false,
+    "result_scope": "Source review and CPU evidence only here; no target outcome claim in this package."
+  }
+}

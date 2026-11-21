@@ -1,0 +1,357 @@
+{
+  "scope": "SYNTHETIC_CPU_CODEC_FEASIBILITY_NOT_MODEL_QUALITY_OR_SPEED",
+  "self_check": {
+    "cases": [
+      "all_codes",
+      "zero_nf4",
+      "binary_exact_nf4",
+      "half_random",
+      "half_binary"
+    ],
+    "budgets_per_case": 7,
+    "golden_nibble_layout": true,
+    "roundtrip_and_error_bound_checks": 35,
+    "scope": "CPU_CODEC_ONLY_NOT_TRAINING_QUALITY"
+  },
+  "synthetic_normal_nf4": {
+    "pure_onebit": {
+      "bits_per_weight": 1.25,
+      "scale_bits_per_block": 16,
+      "error": {
+        "relative_l2": 0.598786277366364,
+        "max_block_relative_l2": 0.7326283029099733,
+        "max_abs": 0.824951171875
+      }
+    },
+    "adaptive": [
+      {
+        "block_rms_budget": 0.0,
+        "blocks": 4096,
+        "reference_bits_per_weight": 4,
+        "reference_code_bytes": 131072,
+        "encoded_candidate_bytes": 151556,
+        "selected_bytes": 131072,
+        "selected_bits_per_weight": 4.0,
+        "selected_native_reference": true,
+        "candidate_modes": {
+          "native": 4096,
+          "onebit": 0,
+          "onebit_with_exceptions": 0
+        },
+        "exception_values": 0,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.0,
+          "max_block_relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      },
+      {
+        "block_rms_budget": 0.01,
+        "blocks": 4096,
+        "reference_bits_per_weight": 4,
+        "reference_code_bytes": 131072,
+        "encoded_candidate_bytes": 151556,
+        "selected_bytes": 131072,
+        "selected_bits_per_weight": 4.0,
+        "selected_native_reference": true,
+        "candidate_modes": {
+          "native": 4096,
+          "onebit": 0,
+          "onebit_with_exceptions": 0
+        },
+        "exception_values": 0,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.0,
+          "max_block_relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      },
+      {
+        "block_rms_budget": 0.03,
+        "blocks": 4096,
+        "reference_bits_per_weight": 4,
+        "reference_code_bytes": 131072,
+        "encoded_candidate_bytes": 151556,
+        "selected_bytes": 131072,
+        "selected_bits_per_weight": 4.0,
+        "selected_native_reference": true,
+        "candidate_modes": {
+          "native": 4096,
+          "onebit": 0,
+          "onebit_with_exceptions": 0
+        },
+        "exception_values": 0,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.0,
+          "max_block_relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      },
+      {
+        "block_rms_budget": 0.1,
+        "blocks": 4096,
+        "reference_bits_per_weight": 4,
+        "reference_code_bytes": 131072,
+        "encoded_candidate_bytes": 151556,
+        "selected_bytes": 131072,
+        "selected_bits_per_weight": 4.0,
+        "selected_native_reference": true,
+        "candidate_modes": {
+          "native": 4096,
+          "onebit": 0,
+          "onebit_with_exceptions": 0
+        },
+        "exception_values": 0,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.0,
+          "max_block_relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      },
+      {
+        "block_rms_budget": 0.2,
+        "blocks": 4096,
+        "reference_bits_per_weight": 4,
+        "reference_code_bytes": 131072,
+        "encoded_candidate_bytes": 150897,
+        "selected_bytes": 131072,
+        "selected_bits_per_weight": 4.0,
+        "selected_native_reference": true,
+        "candidate_modes": {
+          "native": 3590,
+          "onebit": 0,
+          "onebit_with_exceptions": 506
+        },
+        "exception_values": 12669,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.0,
+          "max_block_relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      },
+      {
+        "block_rms_budget": 0.4,
+        "blocks": 4096,
+        "reference_bits_per_weight": 4,
+        "reference_code_bytes": 131072,
+        "encoded_candidate_bytes": 115922,
+        "selected_bytes": 115922,
+        "selected_bits_per_weight": 3.53765869140625,
+        "selected_native_reference": false,
+        "candidate_modes": {
+          "native": 0,
+          "onebit": 0,
+          "onebit_with_exceptions": 4096
+        },
+        "exception_values": 41351,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.3937700642745091,
+          "max_block_relative_l2": 0.3999983972246642,
+          "max_abs": 0.477783203125
+        }
+      },
+      {
+        "block_rms_budget": 0.6,
+        "blocks": 4096,
+        "reference_bits_per_weight": 4,
+        "reference_code_bytes": 131072,
+        "encoded_candidate_bytes": 81016,
+        "selected_bytes": 81016,
+        "selected_bits_per_weight": 2.472412109375,
+        "selected_native_reference": false,
+        "candidate_modes": {
+          "native": 0,
+          "onebit": 1924,
+          "onebit_with_exceptions": 2172
+        },
+        "exception_values": 2569,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.5717998820818242,
+          "max_block_relative_l2": 0.5999971171482472,
+          "max_abs": 0.7772216796875
+        }
+      }
+    ]
+  },
+  "synthetic_normal_fp16": {
+    "pure_onebit": {
+      "bits_per_weight": 1.25,
+      "scale_bits_per_block": 16,
+      "error": {
+        "relative_l2": 0.5923028693719963,
+        "max_block_relative_l2": 0.7193477709829609,
+        "max_abs": 0.016359329223632812
+      }
+    },
+    "adaptive": [
+      {
+        "block_rms_budget": 0.0,
+        "blocks": 4096,
+        "reference_bits_per_weight": 16,
+        "reference_code_bytes": 524288,
+        "encoded_candidate_bytes": 544772,
+        "selected_bytes": 524288,
+        "selected_bits_per_weight": 16.0,
+        "selected_native_reference": true,
+        "candidate_modes": {
+          "native": 4096,
+          "onebit": 0,
+          "onebit_with_exceptions": 0
+        },
+        "exception_values": 0,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.0,
+          "max_block_relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      },
+      {
+        "block_rms_budget": 0.01,
+        "blocks": 4096,
+        "reference_bits_per_weight": 16,
+        "reference_code_bytes": 524288,
+        "encoded_candidate_bytes": 544760,
+        "selected_bytes": 524288,
+        "selected_bits_per_weight": 16.0,
+        "selected_native_reference": true,
+        "candidate_modes": {
+          "native": 4090,
+          "onebit": 0,
+          "onebit_with_exceptions": 6
+        },
+        "exception_values": 324,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.0,
+          "max_block_relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      },
+      {
+        "block_rms_budget": 0.03,
+        "blocks": 4096,
+        "reference_bits_per_weight": 16,
+        "reference_code_bytes": 524288,
+        "encoded_candidate_bytes": 536900,
+        "selected_bytes": 524288,
+        "selected_bits_per_weight": 16.0,
+        "selected_native_reference": true,
+        "candidate_modes": {
+          "native": 2311,
+          "onebit": 0,
+          "onebit_with_exceptions": 1785
+        },
+        "exception_values": 94239,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.0,
+          "max_block_relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      },
+      {
+        "block_rms_budget": 0.1,
+        "blocks": 4096,
+        "reference_bits_per_weight": 16,
+        "reference_code_bytes": 524288,
+        "encoded_candidate_bytes": 443642,
+        "selected_bytes": 443642,
+        "selected_bits_per_weight": 13.53887939453125,
+        "selected_native_reference": false,
+        "candidate_modes": {
+          "native": 0,
+          "onebit": 0,
+          "onebit_with_exceptions": 4096
+        },
+        "exception_values": 174715,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.09643718279338342,
+          "max_block_relative_l2": 0.09999854557356877,
+          "max_abs": 0.0036163330078125
+        }
+      },
+      {
+        "block_rms_budget": 0.2,
+        "blocks": 4096,
+        "reference_bits_per_weight": 16,
+        "reference_code_bytes": 524288,
+        "encoded_candidate_bytes": 338686,
+        "selected_bytes": 338686,
+        "selected_bits_per_weight": 10.33587646484375,
+        "selected_native_reference": false,
+        "candidate_modes": {
+          "native": 0,
+          "onebit": 0,
+          "onebit_with_exceptions": 4096
+        },
+        "exception_values": 122237,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.19561261948976735,
+          "max_block_relative_l2": 0.1999991166320361,
+          "max_abs": 0.00547027587890625
+        }
+      },
+      {
+        "block_rms_budget": 0.4,
+        "blocks": 4096,
+        "reference_bits_per_weight": 16,
+        "reference_code_bytes": 524288,
+        "encoded_candidate_bytes": 175442,
+        "selected_bytes": 175442,
+        "selected_bits_per_weight": 5.35406494140625,
+        "selected_native_reference": false,
+        "candidate_modes": {
+          "native": 0,
+          "onebit": 0,
+          "onebit_with_exceptions": 4096
+        },
+        "exception_values": 40615,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.39426704065133344,
+          "max_block_relative_l2": 0.3999976118574287,
+          "max_abs": 0.008964300155639648
+        }
+      },
+      {
+        "block_rms_budget": 0.6,
+        "blocks": 4096,
+        "reference_bits_per_weight": 16,
+        "reference_code_bytes": 524288,
+        "encoded_candidate_bytes": 80706,
+        "selected_bytes": 80706,
+        "selected_bits_per_weight": 2.46295166015625,
+        "selected_native_reference": false,
+        "candidate_modes": {
+          "native": 0,
+          "onebit": 2215,
+          "onebit_with_exceptions": 1881
+        },
+        "exception_values": 2107,
+        "shared_nf4_scale_metadata_included": false,
+        "error": {
+          "relative_l2": 0.5700791536954148,
+          "max_block_relative_l2": 0.599943432899378,
+          "max_abs": 0.015476226806640625
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "No actual model or activations",
+    "Weight RMS budgets are not loss tolerances",
+    "No GPU kernel, training speed, peak VRAM, official admission or target claim",
+    "One codec design; not an impossibility result for other quantizers"
+  ],
+  "elapsed_cpu_s": 1.1308081579991267
+}

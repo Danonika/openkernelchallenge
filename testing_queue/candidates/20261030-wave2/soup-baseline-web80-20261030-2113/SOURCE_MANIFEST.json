@@ -1,0 +1,18 @@
+{
+  "candidate": "soup-baseline-web80-20261030-2113",
+  "no_model_data_or_credentials_included": true,
+  "notebook": "00_baseline.ipynb",
+  "notebook_sha256": "f1e0c4bda09cef9d72d50953dbdcf2865726e98d4c2b8f560dc4e000972bb912",
+  "source_files": [],
+  "validation_scope": "Copied historical validation sources for audit; not executed from this relocated export. Submitted notebook bytes are unchanged and self-contained.",
+  "validation_tests": [
+    {
+      "path": "validation_tests/test_process_guard.py",
+      "sha256": "bee56cff64344a76076311cf92298eb593986bf85cd46810ffd0ff3a66909d38"
+    },
+    {
+      "path": "validation_tests/test_preparation.py",
+      "sha256": "1af9cf8dd35938acdb5a47142c3babf4322c572dc7564c9f067f034222abbc91"
+    }
+  ]
+}

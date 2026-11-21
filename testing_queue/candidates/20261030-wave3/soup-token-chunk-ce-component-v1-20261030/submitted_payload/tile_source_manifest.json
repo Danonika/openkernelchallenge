@@ -1,0 +1,9 @@
+{
+  "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "solution/ce_tile.py": "2baea1f4b7c567379e3674b76204d39e9fb128eb6cfcda9a8d8edebbfd230e7b",
+  "solution/original/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "solution/original/materialized_ce.py": "6519c8f1ddce7db270fbe425a8e8771aecda3f294ecc83839d4759531fd1dce1",
+  "solution/original/metric_summary.py": "8c5edea00c7f0b42501c71e34a986de05c28c3c56edf4d6181d2ddaf24142cf4",
+  "solution/original/mixed_rows.py": "091157cdb904b0a2fee09d720862b370d8f72f9d824023d37edbdf9c5e1726b2",
+  "solution/verify_tile.py": "f4f6251987b6199365b853d48979a136ec2dc2626bed68f374ae2940ee6047a1"
+}

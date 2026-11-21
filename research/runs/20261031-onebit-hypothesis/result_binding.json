@@ -1,0 +1,12 @@
+{
+  "notebook_sha256": "2ff7cd282b2dd0f79ba2c05bab5094706c26a13473c275f174efd12d7cda58ec",
+  "output_archive_sha256": "b1052b77dc4abbdacc66eb475abf6ceb1ced58c2efffed057f9e4764de2332c2",
+  "result_member": "results/onebit_weight_probe.json",
+  "result_member_sha256": "a1d3ddde68ce33d248584fdd5d2e2e3398e43d94529217f0be29e4b77b59c204",
+  "executed_code_matches_submitted": true,
+  "service_state": "completed",
+  "result_status": "COMPLETE_COMPONENT_STUDY",
+  "scope": "ACTUAL_WEIGHT_COMPONENT_PROBE_NOT_TRAINING_OR_BENCHMARK",
+  "benchmark_eligible": false,
+  "official_admission": "UNKNOWN"
+}

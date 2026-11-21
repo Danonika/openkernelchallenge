@@ -1,0 +1,19 @@
+{
+  "solution/__init__.py": "b493f17d8308fc5cbe2db07d6efcb158b109035b3247e14e776e257c65d43a41",
+  "solution/bias_diagnostic.py": "0f6b4f189650ac1d9f47f88d7f572d49064389757757887fdf82706b0baff891",
+  "solution/fixtures.py": "b6fe066d313c29016775ef60c84afa63816308569e466e9410a23aedf13f3c50",
+  "solution/guarded_forward.py": "ec292402af8a4e855a505d6471e713a71307933025fc97b4c8d22e4eda0ecd1b",
+  "solution/kernel.py": "b03795f1e4feaa99b78dee3d1b8f8c1eaca37943a82edc3ef1400e1ca4cc1cf8",
+  "solution/native_source_manifest.json": "905b88063941c039ae30f147c524832aad7766e99eb1c451998bac43417b6ac7",
+  "solution/nf4_format.py": "21189f97a7452a9607e2891be0402cdb455b721919cd91daedda16c1d7c8b0e4",
+  "solution/operand_probe.py": "546a62a6d0bb8bf7d95bee434da55d8e1111ce8e45bfcd782fb64f8087388528",
+  "solution/web_preflight.py": "99ade6f0bf26efeeb03a92e35853670644f49256bc89a3b54309b036bc5fa38a",
+  "process_guard.py": "82465943a3a9af3831a5399a3a55d09ac290ba7365c4e80d6bc5e79fab62a6ff",
+  "owned_process_tree.py": "693dde708da5c06053af239463952115ef5e8865f50bcbc51a2038237ca57d69",
+  "runtime_probe.py": "efe1b7cf3f3cf1e37bbc169a8468859c5127ec3281a37e39068703b2eb3c1480",
+  "official_manifest.json": "d013e1633940c27d708e2474a8280990000e33018e889ed14655c856329ff1d8",
+  "reviewed_support.py": "7c5d602d071383ef07fddd99670ed1cce3141feabd5af8394f053c6b4e07122c",
+  "worker.py": "c27b164216f6ceb71d0145faf965a72879768e39c8afc3e0dd6f12d62bee1ba7",
+  "driver.py": "e726fe3c5187e02d5ff77b5a6b9ea67312c3d74d1bd8042a8706b62be1a6530f",
+  "source_manifest.json": "0bc958615db0a7043327110133cdc3bd57615426c2784dd4dcca2ca91999dc5c"
+}

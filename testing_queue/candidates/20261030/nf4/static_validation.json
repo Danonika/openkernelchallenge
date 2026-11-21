@@ -1,0 +1,389 @@
+{
+  "status": "STATIC_AND_CPU_ORCHESTRATION_CHECKS_PASSED",
+  "gpu_tested": false,
+  "checks": [
+    {
+      "check": "all_python_syntax",
+      "passed": true
+    },
+    {
+      "check": "notebook_format_4",
+      "passed": true
+    },
+    {
+      "check": "cell_1_outputs_cleared",
+      "passed": true
+    },
+    {
+      "check": "cell_3_outputs_cleared",
+      "passed": true
+    },
+    {
+      "check": "cell_4_outputs_cleared",
+      "passed": true
+    },
+    {
+      "check": "cell_5_outputs_cleared",
+      "passed": true
+    },
+    {
+      "check": "embedded_solution/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "embedded_solution/packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "embedded_solution/routes.py",
+      "passed": true
+    },
+    {
+      "check": "embedded_support/check_kaggle_environment.py",
+      "passed": true
+    },
+    {
+      "check": "embedded_support/gpu_preflight.py",
+      "passed": true
+    },
+    {
+      "check": "embedded_support/prepare_asset_manifest.py",
+      "passed": true
+    },
+    {
+      "check": "embedded_driver_matches",
+      "passed": true
+    },
+    {
+      "check": "deterministic_bundle",
+      "passed": true
+    },
+    {
+      "check": "source_manifest",
+      "passed": true
+    },
+    {
+      "check": "zip_exact_source_set",
+      "passed": true
+    },
+    {
+      "check": "zip_hash_solution/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "zip_hash_solution/packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "zip_hash_solution/routes.py",
+      "passed": true
+    },
+    {
+      "check": "official_commit",
+      "passed": true
+    },
+    {
+      "check": "official_source_unchanged",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_packed_nf4.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced_routes.py",
+      "passed": true
+    },
+    {
+      "check": "native_backward_not_replaced___init__.py",
+      "passed": true
+    },
+    {
+      "check": "no_copied_old_decoder",
+      "passed": true
+    },
+    {
+      "check": "submission_baseline_unresolved",
+      "passed": true
+    },
+    {
+      "check": "default_authorization_gate",
+      "passed": true
+    },
+    {
+      "check": "timeout_censored",
+      "passed": true
+    },
+    {
+      "check": "timeout_lane_quarantined",
+      "passed": true
+    },
+    {
+      "check": "detached_child_targeted",
+      "passed": true
+    },
+    {
+      "check": "detached_child_no_longer_running",
+      "passed": true
+    },
+    {
+      "check": "keyboard_interrupt_receipt",
+      "passed": true
+    },
+    {
+      "check": "interrupted_lane_quarantined",
+      "passed": true
+    },
+    {
+      "check": "keyboard_interrupt_cleanup_confirmed",
+      "passed": true
+    },
+    {
+      "check": "keyboard_interrupt_detached_child_targeted",
+      "passed": true
+    },
+    {
+      "check": "keyboard_interrupt_child_not_running",
+      "passed": true
+    },
+    {
+      "check": "pid_birth_identity_guard",
+      "passed": true
+    },
+    {
+      "check": "already_exited_root_cleanup_race",
+      "passed": true
+    },
+    {
+      "check": "constructor_interruption_unknown",
+      "passed": true
+    },
+    {
+      "check": "constructor_interruption_quarantined",
+      "passed": true
+    },
+    {
+      "check": "owner_marker_exists_before_work",
+      "passed": true
+    },
+    {
+      "check": "normal_completion_result",
+      "passed": true
+    },
+    {
+      "check": "normal_completion_clears_owner_marker",
+      "passed": true
+    },
+    {
+      "check": "exception_retains_owner_marker",
+      "passed": true
+    },
+    {
+      "check": "abandoned_marker_blocks_new_run",
+      "passed": true
+    },
+    {
+      "check": "sigkill_fixture_started",
+      "passed": true
+    },
+    {
+      "check": "sigkill_retains_owner_marker",
+      "passed": true
+    },
+    {
+      "check": "sigterm_converted_to_cleanup_exception",
+      "passed": true
+    },
+    {
+      "check": "sigterm_retains_quarantine",
+      "passed": true
+    },
+    {
+      "check": "sigterm_handler_restored",
+      "passed": true
+    }
+  ],
+  "checks_count": 94,
+  "python_files_compiled": 12,
+  "candidate_sha256": "33497fee4dbc96070e1207ec2df6d2e4eef1cf196d50c4d6e9df73e7c0fb649f",
+  "notebook_sha256": "3bb4acc13beb182a97399335cbe1c8db3aef90e935af4af1b5a2844b47f17b42",
+  "official_source_files_checked": 15,
+  "admission": "UNKNOWN",
+  "score": null
+}
