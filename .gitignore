@@ -10,3 +10,16 @@ __pycache__/
 .env
 .env.*
 .venv/
+
+# Personal service credentials and private signing files.
+kaggle.json
+.netrc
+_netrc
+.pypirc
+.aws/credentials
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.p12
+*.pfx
